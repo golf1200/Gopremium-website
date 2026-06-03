@@ -2,10 +2,10 @@ import GpIcon from './shared/GpIcon';
 import GpReveal from './shared/GpReveal';
 
 const PRIME = [
-  { t: 'กระบอกน้ำเก็บอุณหภูมิ', moq: 'MOQ 100', from: 180, badge: 'ขายดี' },
-  { t: 'กระเป๋าผ้าแคนวาส', moq: 'MOQ 150', from: 120, badge: 'รักษ์โลก' },
-  { t: 'สมุดโน้ตปกหนัง PU', moq: 'MOQ 100', from: 95, badge: null },
-  { t: 'เซ็ตของใช้สำนักงาน', moq: 'MOQ 80', from: 240, badge: 'นิยม' },
+  { t: 'กระบอกน้ำเก็บอุณหภูมิ', moq: 'MOQ 100', from: 180, badge: 'ขายดี', img: 'bottle.jpg' },
+  { t: 'กระเป๋าผ้าแคนวาส', moq: 'MOQ 150', from: 120, badge: 'รักษ์โลก', img: 'bag.jpg' },
+  { t: 'สมุดโน้ตปกหนัง PU', moq: 'MOQ 100', from: 95, badge: null, img: 'notebook.jpg' },
+  { t: 'เซ็ตของใช้สำนักงาน', moq: 'MOQ 80', from: 240, badge: 'นิยม', img: 'office-set.jpg' },
 ];
 const UPSELL = [
   { icon: 'palette', t: 'บริการออกแบบเฉพาะ', d: 'คอนเซ็ปต์ & ดีไซน์เฉพาะแบรนด์ ไม่ใช่ของโหล' },
@@ -13,10 +13,6 @@ const UPSELL = [
   { icon: 'layers', t: 'จัดกิฟต์เซ็ต (Curation)', d: 'หลายชิ้นในเซ็ตเดียว เล่าเรื่องแบรนด์คุณ' },
   { icon: 'clock', t: 'งานด่วน (Rush)', d: 'ดีลกระชั้นก็ทันงาน วางแผนการผลิตให้' },
   { icon: 'truck', t: 'คลังสินค้า & จัดส่งรายคน', d: 'Kitting & fulfillment ส่งตรงถึงพนักงานแต่ละคน' },
-];
-
-const GRAD = [
-  ['#1F3A5F','#2C4F7C'],['#2C4F7C','#3E689B'],['#16293F','#1F3A5F'],['#3A4250','#566075'],
 ];
 
 export default function Products({ onQuote }) {
@@ -39,9 +35,11 @@ export default function Products({ onQuote }) {
                 <GpReveal key={i} delay={i * 70}>
                   <div className="gp-card" style={{ padding: 14, height: '100%', display: 'flex', flexDirection: 'column' }}>
                     <div style={{ position: 'relative' }}>
-                      <div style={{ width: '100%', height: 128, borderRadius: 11, background: `linear-gradient(135deg,${GRAD[i][0]},${GRAD[i][1]})`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <GpIcon name="box" size={32} stroke="rgba(255,255,255,.3)" />
-                      </div>
+                      <img
+                        src={`/images/${p.img}`}
+                        alt={p.t}
+                        style={{ width: '100%', height: 128, borderRadius: 11, objectFit: 'cover', display: 'block' }}
+                      />
                       {p.badge && <span className="gp-badge gp-badge-mustard" style={{ position: 'absolute', top: 9, left: 9, fontSize: 10.5, padding: '4px 9px' }}>{p.badge}</span>}
                     </div>
                     <h4 style={{ fontSize: 15.5, color: 'var(--gp-navy)', marginTop: 13 }}>{p.t}</h4>
