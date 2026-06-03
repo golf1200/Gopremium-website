@@ -6,14 +6,9 @@ import { gpScrollTo } from '../utils/scroll';
 function ImgPanel() {
   return (
     <div style={{ position: 'relative' }}>
-      <div style={{ width: '100%', height: 'min(560px,62vh)', borderRadius: 22, background: 'linear-gradient(135deg,#1F3A5F,#2C4F7C)', boxShadow: 'var(--gp-shadow)', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
-        <div className="gp-dotgrid on-dark" style={{ position: 'absolute', inset: 0, opacity: .4 }} />
-        <div style={{ position: 'relative', textAlign: 'center', padding: 32 }}>
-          <div style={{ width: 80, height: 80, borderRadius: 20, background: 'rgba(244,189,68,.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px', color: 'var(--gp-mustard)' }}>
-            <GpIcon name="box" size={40} stroke="var(--gp-mustard)" />
-          </div>
-          <p style={{ color: 'rgba(255,255,255,.5)', fontSize: 13, fontFamily: 'var(--gp-font-head)' }}>ภาพผลงานของเรา</p>
-        </div>
+      <div style={{ width: '100%', height: 'min(560px,62vh)', borderRadius: 22, boxShadow: 'var(--gp-shadow)', overflow: 'hidden', background: 'var(--gp-cloud-2)' }}>
+        <img src="/images/giftset-aroma.jpg" alt="กิฟต์เซ็ตพรีเมียมองค์กร ออกแบบเฉพาะแบรนด์ โดย GO PREMIUM"
+          style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
       </div>
       <div style={{ position: 'absolute', left: -18, bottom: 34, background: '#fff', borderRadius: 16, padding: '13px 15px', boxShadow: 'var(--gp-shadow-md)', width: 212, border: '1px solid var(--gp-grey-200)' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 7, fontSize: 11.5, color: 'var(--gp-mustard-deep)', fontFamily: 'var(--gp-font-head)', fontWeight: 600, whiteSpace: 'nowrap' }}>
@@ -21,13 +16,13 @@ function ImgPanel() {
         </div>
         <div style={{ fontFamily: 'var(--gp-font-head)', fontWeight: 600, fontSize: 14.5, color: 'var(--gp-navy)', marginTop: 5 }}>เซ็ตรักษ์โลก Everyday</div>
         <div style={{ fontSize: 11.5, color: 'var(--gp-grey)', marginTop: 2 }}>กระบอกน้ำ · กระเป๋าผ้า · สมุดรีไซเคิล</div>
-        <div style={{ fontFamily: 'var(--gp-font-head)', fontWeight: 600, fontSize: 13, color: 'var(--gp-navy)', marginTop: 7 }}>฿255–420 <span style={{ fontWeight: 400, color: 'var(--gp-grey)', fontSize: 11 }}>/ชุด</span></div>
+        <div style={{ fontFamily: 'var(--gp-font-head)', fontWeight: 600, fontSize: 12.5, color: 'var(--gp-navy)', marginTop: 7 }}>งบยืดหยุ่น <span style={{ fontWeight: 400, color: 'var(--gp-grey)', fontSize: 11 }}>· ปรับตามจำนวน</span></div>
       </div>
       <div style={{ position: 'absolute', right: -12, top: 26, background: 'var(--gp-navy)', color: '#fff', borderRadius: 14, padding: '11px 14px', boxShadow: 'var(--gp-shadow-md)' }}>
-        <div style={{ display: 'flex', gap: 3, color: 'var(--gp-mustard)' }}>
-          {[0,1,2,3,4].map((i) => <GpIcon key={i} name="star" size={13} stroke="none" />)}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 7, fontSize: 11.5, fontFamily: 'var(--gp-font-head)', fontWeight: 600, color: 'var(--gp-mustard)' }}>
+          <GpIcon name="check" size={13} stroke="var(--gp-mustard)" sw={2.6} /> Mockup ก่อนผลิต
         </div>
-        <div style={{ fontSize: 11.5, color: '#C7D4E6', marginTop: 4 }}>"ส่งตรงเวลา คุยง่ายมาก"</div>
+        <div style={{ fontSize: 11, color: '#C7D4E6', marginTop: 4 }}>เห็นงานจริงก่อนตัดสินใจ</div>
       </div>
     </div>
   );
@@ -76,7 +71,7 @@ export default function Hero({ onQuote }) {
               </div>
             </div>
             <div style={{ display: 'flex', gap: 26, flexWrap: 'wrap', marginTop: 34 }}>
-              {[['500+', 'ชิ้นงานส่งมอบ'], ['48 ชม.', 'ตอบกลับ + เสนอราคา'], ['100%', 'Mockup ก่อนผลิต']].map((s, i) => (
+              {[['7–14 วัน', 'งานพร้อมส่ง'], ['48 ชม.', 'ตอบกลับ + เสนอราคา'], ['100%', 'Mockup ก่อนผลิต']].map((s, i) => (
                 <div key={i}>
                   <div style={{ fontFamily: 'var(--gp-font-head)', fontWeight: 700, fontSize: 24, color: 'var(--gp-navy)' }}>{s[0]}</div>
                   <div style={{ fontSize: 12.5, color: 'var(--gp-grey)' }}>{s[1]}</div>

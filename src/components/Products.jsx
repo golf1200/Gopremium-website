@@ -1,11 +1,13 @@
 import GpIcon from './shared/GpIcon';
 import GpReveal from './shared/GpReveal';
 
+// Real GO PREMIUM product lines (from catalog). Prices intentionally omitted
+// until confirmed — CTA routes to a real quotation instead of a placeholder number.
 const PRIME = [
-  { t: 'กระบอกน้ำเก็บอุณหภูมิ', moq: 'MOQ 100', from: 180, badge: 'ขายดี', img: 'bottle.jpg' },
-  { t: 'กระเป๋าผ้าแคนวาส', moq: 'MOQ 150', from: 120, badge: 'รักษ์โลก', img: 'bag.jpg' },
-  { t: 'สมุดโน้ตปกหนัง PU', moq: 'MOQ 100', from: 95, badge: null, img: 'notebook.jpg' },
-  { t: 'เซ็ตของใช้สำนักงาน', moq: 'MOQ 80', from: 240, badge: 'นิยม', img: 'office-set.jpg' },
+  { t: 'กระบอกน้ำสุญญากาศ รุ่น Milo', moq: 'MOQ 100', img: 'drinkware-milo.jpg', badge: 'ขายดี' },
+  { t: 'กระเป๋าผ้า รุ่น Moov', moq: 'MOQ 150', img: 'bag-moov.jpg', badge: 'รักษ์โลก' },
+  { t: 'สมุดโน้ต รุ่น Idea', moq: 'MOQ 100', img: 'stationery-notebook.jpg', badge: null },
+  { t: 'กิฟต์เซ็ตธุรกิจ Executive', moq: 'MOQ 50', img: 'giftset-executive.jpg', badge: 'นิยม' },
 ];
 const UPSELL = [
   { icon: 'palette', t: 'บริการออกแบบเฉพาะ', d: 'คอนเซ็ปต์ & ดีไซน์เฉพาะแบรนด์ ไม่ใช่ของโหล' },
@@ -37,15 +39,16 @@ export default function Products({ onQuote }) {
                     <div style={{ position: 'relative' }}>
                       <img
                         src={`/images/${p.img}`}
-                        alt={p.t}
-                        style={{ width: '100%', height: 128, borderRadius: 11, objectFit: 'cover', display: 'block' }}
+                        alt={`${p.t} — ของพรีเมียมพิมพ์โลโก้สำหรับองค์กร โดย GO PREMIUM`}
+                        loading="lazy"
+                        style={{ width: '100%', height: 150, borderRadius: 11, objectFit: 'cover', display: 'block', background: 'var(--gp-cloud-2)' }}
                       />
                       {p.badge && <span className="gp-badge gp-badge-mustard" style={{ position: 'absolute', top: 9, left: 9, fontSize: 10.5, padding: '4px 9px' }}>{p.badge}</span>}
                     </div>
                     <h4 style={{ fontSize: 15.5, color: 'var(--gp-navy)', marginTop: 13 }}>{p.t}</h4>
-                    <p style={{ fontSize: 12, color: 'var(--gp-grey)', marginTop: 3 }}>พิมพ์โลโก้ · {p.moq}</p>
+                    <p style={{ fontSize: 12, color: 'var(--gp-grey)', marginTop: 3 }}>พิมพ์โลโก้ได้ · {p.moq}</p>
                     <div style={{ marginTop: 'auto', paddingTop: 13, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                      <span style={{ fontFamily: 'var(--gp-font-head)', fontWeight: 600, fontSize: 14.5, color: 'var(--gp-navy)' }}>เริ่ม ฿{p.from}</span>
+                      <span style={{ fontFamily: 'var(--gp-font-head)', fontWeight: 500, fontSize: 13, color: 'var(--gp-grey)' }}>ราคาตามดีไซน์</span>
                       <button className="gp-btn gp-btn-ghost gp-btn-sm" onClick={onQuote}>ขอราคา</button>
                     </div>
                   </div>
