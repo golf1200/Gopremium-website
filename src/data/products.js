@@ -5,6 +5,8 @@
 // ============================================================
 
 import rawProducts from './products-raw.json';
+import { variantSet, seoImage } from '../utils/images';
+import generatedImages from './product-images.generated.json';
 
 // ---------------------------------------------------------------------------
 // Occasion taxonomy (10 tags)
@@ -93,50 +95,53 @@ export const CATEGORY_GROUPS = [
 ];
 
 // ---------------------------------------------------------------------------
-// Image map: SKU -> path in /images/
-// Phase 1 curated photos; rest fall back to placeholder
+// Image map: SKU -> base image name (no path, no extension).
+// The base name resolves to the 3-master set via variantSet():
+//   /images/products/<base>/<base>-{square,landscape,hero}.jpg
+// with /images/<base>.jpg kept as a real-file fallback.
+// Phase 1 curated photos; un-mapped SKUs fall back to placeholder.
 // ---------------------------------------------------------------------------
 const IMAGE_MAP = {
   // Drinkware
-  DW002: '/images/drinkware-brewy.jpg',
-  DW006: '/images/drinkware-milo.jpg',
-  DW007: '/images/drinkware-chill.jpg',
-  DW001: '/images/drinkware-brewy.jpg',  // Loopa — similar silhouette
-  DW003: '/images/drinkware-chill.jpg',  // Peak — similar
-  DW005: '/images/drinkware-milo.jpg',   // Sip — similar
+  DW002: 'drinkware-brewy',
+  DW006: 'drinkware-milo',
+  DW007: 'drinkware-chill',
+  DW001: 'drinkware-brewy',  // Loopa — similar silhouette
+  DW003: 'drinkware-chill',  // Peak — similar
+  DW005: 'drinkware-milo',   // Sip — similar
   // Bags
-  BG012: '/images/bag-snap.jpg',
-  BG011: '/images/bag-snap.jpg',  // Uno — similar foldable
-  BG001: '/images/bag-snap.jpg',  // Classic tote
+  BG012: 'bag-snap',
+  BG011: 'bag-snap',  // Uno — similar foldable
+  BG001: 'bag-snap',  // Classic tote
   // Stationery
-  ST001: '/images/stationery-pen-oxygen.jpg',
-  ST002: '/images/stationery-pen-oxygen.jpg',
-  ST003: '/images/stationery-pen-oxygen.jpg',
-  ST004: '/images/stationery-pen-oxygen.jpg',
-  ST005: '/images/stationery-pen-oxygen.jpg',
-  ST006: '/images/stationery-notebook.jpg',
-  ST007: '/images/stationery-notebook.jpg',
-  ST008: '/images/stationery-notebook.jpg',
+  ST001: 'stationery-pen-oxygen',
+  ST002: 'stationery-pen-oxygen',
+  ST003: 'stationery-pen-oxygen',
+  ST004: 'stationery-pen-oxygen',
+  ST005: 'stationery-pen-oxygen',
+  ST006: 'stationery-notebook',
+  ST007: 'stationery-notebook',
+  ST008: 'stationery-notebook',
   // Kitchen / Lunch
-  KC003: '/images/lifestyle-lunchbox.jpg',
-  KC004: '/images/lifestyle-lunchbox.jpg',
+  KC003: 'lifestyle-lunchbox',
+  KC004: 'lifestyle-lunchbox',
   // Lifestyle
-  LS012: '/images/lifestyle-grip.jpg',
-  LS013: '/images/lifestyle-grip.jpg',
-  LS016: '/images/lifestyle-towel.jpg',
+  LS012: 'lifestyle-grip',
+  LS013: 'lifestyle-grip',
+  LS016: 'lifestyle-towel',
   // Giftset
-  GS001: '/images/giftset-executive.jpg',
-  GS002: '/images/giftset-executive.jpg',
-  GS003: '/images/giftset-executive.jpg',
+  GS001: 'giftset-executive',
+  GS002: 'giftset-executive',
+  GS003: 'giftset-executive',
   // Umbrella
-  UM001: '/images/umbrella-classic.jpg',
-  UM002: '/images/umbrella-classic.jpg',
-  UM003: '/images/umbrella-classic.jpg',
+  UM001: 'umbrella-classic',
+  UM002: 'umbrella-classic',
+  UM003: 'umbrella-classic',
   // Fan
-  FN008: '/images/minifan-haru.jpg',
-  FN001: '/images/minifan-haru.jpg',
-  FN002: '/images/minifan-haru.jpg',
-  FN005: '/images/minifan-haru.jpg',
+  FN008: 'minifan-haru',
+  FN001: 'minifan-haru',
+  FN002: 'minifan-haru',
+  FN005: 'minifan-haru',
 };
 
 // ---------------------------------------------------------------------------
@@ -202,13 +207,31 @@ function autoOccasions(product) {
 function buildCatalog(raw) {
   return raw
     .filter((p) => p.name && p.name.trim() && p.sku)   // remove blank rows
-    .map((p) => ({
-      ...p,
-      image:    IMAGE_MAP[p.sku] || '/images/placeholder.svg',
-      occasions: p.occasions && p.occasions.length > 0
-        ? p.occasions   // honour pre-tagged data if present
-        : autoOccasions(p),
-    }));
+    .map((p) => {
+      // Prefer curated 3-master set (with gallery); else fall back to the
+      // legacy shared photo via IMAGE_MAP; else placeholder.
+      const gen = generatedImages[p.sku];
+      let images;
+      if (gen) {
+        const dir = `/images/products/${gen.base}`;
+        images = {
+          square:    `${dir}/${gen.base}-square.jpg`,
+          landscape: `${dir}/${gen.base}-landscape.jpg`,
+          hero:      `${dir}/${gen.base}-hero.jpg`,
+          gallery:   gen.gallery,
+        };
+      } else {
+        images = variantSet(IMAGE_MAP[p.sku] || null); // null -> placeholder
+      }
+      return {
+        ...p,
+        images,                  // { square, landscape, hero, gallery?, original? } | null
+        image: seoImage(images), // real-file URL for SEO / JSON-LD (back-compat)
+        occasions: p.occasions && p.occasions.length > 0
+          ? p.occasions   // honour pre-tagged data if present
+          : autoOccasions(p),
+      };
+    });
 }
 
 export const products = buildCatalog(rawProducts);

@@ -1,6 +1,8 @@
+import { Link } from 'react-router-dom';
 import GpLogo from './shared/GpLogo';
 import GpSpark from './shared/GpSpark';
 import { gpScrollTo } from '../utils/scroll';
+import { track } from '../utils/analytics';
 import { site } from '../config';
 
 const COLS = [
@@ -12,7 +14,12 @@ export default function Footer() {
   const contacts = [
     { label: site.phone, href: `tel:${site.phoneIntl}` },
     { label: site.email, href: `mailto:${site.email}` },
-    { label: `LINE ${site.lineId}`, href: site.lineUrl || undefined },
+    {
+      label: `LINE ${site.lineId}`,
+      href: site.lineUrl || undefined,
+      external: !!site.lineUrl,
+      onClick: site.lineUrl ? () => track('contact_line', { source: 'footer' }) : undefined,
+    },
   ];
   return (
     <footer style={{ background: 'var(--gp-navy-900)', color: '#C7D4E6' }}>
@@ -37,13 +44,18 @@ export default function Footer() {
             <div style={{ fontFamily: 'var(--gp-font-head)', fontWeight: 500, color: '#fff', fontSize: 14, marginBottom: 13 }}>ติดต่อ</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 9, fontSize: 13.5, color: '#9FB2CC' }}>
               {contacts.map((c, i) => c.href
-                ? <a key={i} href={c.href} style={{ color: '#9FB2CC' }}>{c.label}</a>
+                ? <a key={i} href={c.href} onClick={c.onClick}
+                    {...(c.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                    style={{ color: '#9FB2CC' }}>{c.label}</a>
                 : <span key={i}>{c.label}</span>)}
             </div>
           </div>
         </div>
         <div style={{ borderTop: '1px solid rgba(255,255,255,.12)', marginTop: 34, paddingTop: 20, display: 'flex', justifyContent: 'space-between', gap: 16, flexWrap: 'wrap', fontSize: 12, color: '#7E92AE' }}>
-          <span>© 2026 {site.legalName} · All rights reserved.</span>
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
+            © 2026 {site.legalName} · All rights reserved.
+            <Link to="/privacy" style={{ color: '#9FB2CC', textDecoration: 'none' }}>นโยบายความเป็นส่วนตัว</Link>
+          </span>
           <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}><GpSpark size={12} /> ขับเคลื่อนประสบการณ์ด้วย AI</span>
         </div>
       </div>

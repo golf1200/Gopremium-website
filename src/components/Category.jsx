@@ -1,14 +1,17 @@
 import GpReveal from './shared/GpReveal';
+import GpImage from './shared/GpImage';
+import { variantSet } from '../utils/images';
 
 // 7 real GO PREMIUM categories. Counts reflect the actual product catalogue.
+// img = base image name (resolved to the 16:9 landscape master).
 const CATS = [
-  { label: 'ขายดี', badgeClass: 'gp-badge-mustard', name: 'แก้ว & กระบอกน้ำ', sub: '10+ รุ่น', img: 'drinkware-milo.jpg' },
-  { label: 'พิมพ์โลโก้ได้', badgeClass: 'gp-badge-navy', name: 'กระเป๋า & ถุงผ้า', sub: '16+ รุ่น', img: 'bag-moov.jpg' },
-  { label: 'ออฟฟิศ', badgeClass: 'gp-badge-navy', name: 'เครื่องเขียน & สำนักงาน', sub: '15+ รุ่น', img: 'stationery-notebook.jpg' },
-  { label: 'ไอที & แกดเจ็ต', badgeClass: 'gp-badge-navy', name: 'พัดลมพกพา & แกดเจ็ต', sub: '11+ รุ่น', img: 'minifan-haru.jpg' },
-  { label: 'พิมพ์โลโก้ได้', badgeClass: 'gp-badge-navy', name: 'ร่มพรีเมียม', sub: '6 รุ่น', img: 'umbrella-classic.jpg' },
-  { label: 'รักษ์โลก', badgeClass: 'gp-badge-mustard', name: 'ไลฟ์สไตล์ & ของใช้', sub: '16+ รุ่น', img: 'lifestyle-towel.jpg' },
-  { label: 'พรีเมียม', badgeClass: 'gp-badge-mustard', name: 'กิฟต์เซ็ต', sub: '5+ เซ็ต', img: 'giftset-aroma.jpg' },
+  { label: 'ขายดี', badgeClass: 'gp-badge-mustard', name: 'แก้ว & กระบอกน้ำ', sub: '10+ รุ่น', img: 'drinkware-milo' },
+  { label: 'พิมพ์โลโก้ได้', badgeClass: 'gp-badge-navy', name: 'กระเป๋า & ถุงผ้า', sub: '16+ รุ่น', img: 'bag-moov' },
+  { label: 'ออฟฟิศ', badgeClass: 'gp-badge-navy', name: 'เครื่องเขียน & สำนักงาน', sub: '15+ รุ่น', img: 'stationery-notebook' },
+  { label: 'ไอที & แกดเจ็ต', badgeClass: 'gp-badge-navy', name: 'พัดลมพกพา & แกดเจ็ต', sub: '11+ รุ่น', img: 'minifan-haru' },
+  { label: 'พิมพ์โลโก้ได้', badgeClass: 'gp-badge-navy', name: 'ร่มพรีเมียม', sub: '6 รุ่น', img: 'umbrella-classic' },
+  { label: 'รักษ์โลก', badgeClass: 'gp-badge-mustard', name: 'ไลฟ์สไตล์ & ของใช้', sub: '16+ รุ่น', img: 'lifestyle-towel' },
+  { label: 'พรีเมียม', badgeClass: 'gp-badge-mustard', name: 'กิฟต์เซ็ต', sub: '5+ เซ็ต', img: 'giftset-aroma' },
 ];
 
 export default function Category({ onQuote }) {
@@ -25,7 +28,7 @@ export default function Category({ onQuote }) {
             <GpReveal key={i} delay={i * 55}>
               <div style={{ background: '#fff', border: '1px solid var(--gp-grey-200)', borderRadius: 'var(--gp-radius)', overflow: 'hidden', boxShadow: 'var(--gp-shadow-sm)', textAlign: 'center', height: '100%', display: 'flex', flexDirection: 'column' }}>
                 <div style={{ height: 150, background: 'var(--gp-cloud-2)', position: 'relative', overflow: 'hidden' }}>
-                  <img src={`/images/${cat.img}`} alt={`${cat.name} ของพรีเมียมองค์กร GO PREMIUM`} loading="lazy"
+                  <GpImage images={variantSet(cat.img)} variant="landscape" alt={`${cat.name} ของพรีเมียมองค์กร GO PREMIUM`} loading="lazy"
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
                 <div style={{ padding: '12px 14px 16px', display: 'flex', flexDirection: 'column', flex: 1 }}>

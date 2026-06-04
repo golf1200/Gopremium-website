@@ -8,7 +8,7 @@
   <meta name="keywords" content="ของขวัญองค์กร, ของพรีเมียม, พรีเมียมพิมพ์โลโก้, กิฟต์เซ็ตองค์กร, ของชำร่วยองค์กร, corporate gift, premium gift Thailand, GO PREMIUM">
   <meta name="theme-color" content="#1F3A5F">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://gopremium-website.vercel.app/">
+  <link rel="canonical" href="__SITE_URL__/">
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="apple-touch-icon" href="/logo.png">
 
@@ -18,8 +18,8 @@
   <meta property="og:locale" content="th_TH">
   <meta property="og:title" content="GO PREMIUM — ของขวัญองค์กรดีไซน์เฉพาะ ขับเคลื่อนด้วย AI">
   <meta property="og:description" content="ออกแบบและผลิตของพรีเมียมสำหรับองค์กร พิมพ์โลโก้ได้ มี Mockup ก่อนผลิต พร้อม AI ช่วยคิดเซ็ตของขวัญ — ขอใบเสนอราคาฟรี">
-  <meta property="og:url" content="https://gopremium-website.vercel.app/">
-  <meta property="og:image" content="https://gopremium-website.vercel.app/og-image.jpg">
+  <meta property="og:url" content="__SITE_URL__/">
+  <meta property="og:image" content="__SITE_URL__/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
@@ -27,23 +27,17 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="GO PREMIUM — ของขวัญองค์กรดีไซน์เฉพาะ ขับเคลื่อนด้วย AI">
   <meta name="twitter:description" content="ออกแบบและผลิตของพรีเมียมสำหรับองค์กร พร้อม AI ช่วยคิดเซ็ตของขวัญ ขอใบเสนอราคาฟรี">
-  <meta name="twitter:image" content="https://gopremium-website.vercel.app/og-image.jpg">
+  <meta name="twitter:image" content="__SITE_URL__/og-image.jpg">
 
   <!-- Sitemap pointer -->
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
   <!-- ============================================================
        GA4 — Google Analytics 4
-       TODO: replace G-PLACEHOLDER with your real Measurement ID
-       from Google Analytics → Admin → Data Streams → Measurement ID
+       Loaded at runtime from src/utils/analytics.js, driven by `gaId`
+       in src/config.js. Set the Measurement ID there (single source);
+       while empty, GA does not load. No script tag needed here.
        ============================================================ -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLACEHOLDER"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-PLACEHOLDER');
-  </script> -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,9 +49,9 @@
     "@type": "Organization",
     "name": "GO PREMIUM",
     "legalName": "PASSION GROW TRADING CO., LTD.",
-    "url": "https://gopremium-website.vercel.app/",
-    "logo": "https://gopremium-website.vercel.app/logo.png",
-    "image": "https://gopremium-website.vercel.app/og-image.jpg",
+    "url": "__SITE_URL__/",
+    "logo": "__SITE_URL__/logo.png",
+    "image": "__SITE_URL__/og-image.jpg",
     "description": "ผู้ออกแบบและผลิตของพรีเมียม ของขวัญองค์กร และกิฟต์เซ็ตสำหรับธุรกิจ B2B ในประเทศไทย",
     "email": "info@passiongrow.co.th",
     "telephone": "+66-2-096-6465",

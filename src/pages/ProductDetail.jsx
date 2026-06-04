@@ -6,10 +6,10 @@ import { getProduct, getRelated, OCCASIONS, BUDGET_LABEL } from '../data/product
 import { useQuoteCtx } from '../contexts/QuoteContext';
 import ProductCard from '../components/ProductCard';
 import Breadcrumbs from '../components/Breadcrumbs';
+import ProductGallery from '../components/ProductGallery';
 import { useMeta } from '../hooks/useMeta';
+import { seoImage } from '../utils/images';
 import { site, lineHref } from '../config';
-
-const PLACEHOLDER = '/images/placeholder.svg';
 
 export default function ProductDetail() {
   const { sku } = useParams();
@@ -41,7 +41,7 @@ export default function ProductDetail() {
     '@type': 'Product',
     name: product.name,
     sku: product.sku,
-    image: [`${site.siteUrl}${product.image || PLACEHOLDER}`],
+    image: [`${site.siteUrl}${seoImage(product.images)}`],
     description: product.features,
     brand: { '@type': 'Brand', name: 'GO PREMIUM' },
     offers: product.price_300_thb != null ? {
@@ -73,7 +73,7 @@ export default function ProductDetail() {
     title: `${product.name} — GO PREMIUM`,
     description: `${product.features || product.name} | ของพรีเมียมพิมพ์โลโก้ ${product.category} MOQ ${product.moq || ''} ชิ้น`,
     canonical: `${site.siteUrl}/product/${product.slug}`,
-    image: `${site.siteUrl}${product.image || PLACEHOLDER}`,
+    image: `${site.siteUrl}${seoImage(product.images)}`,
     jsonLd: [jsonLd, breadcrumbLd],
   });
 
@@ -113,14 +113,10 @@ export default function ProductDetail() {
       }} id="product-detail-grid">
         {/* Left: image */}
         <div>
-          <div style={{ borderRadius: 16, overflow: 'hidden', background: 'var(--gp-cloud-2)', aspectRatio: '4/3' }}>
-            <img
-              src={product.image || PLACEHOLDER}
-              alt={`${product.name} — ของพรีเมียมพิมพ์โลโก้ GO PREMIUM`}
-              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-              onError={(e) => { e.currentTarget.src = PLACEHOLDER; }}
-            />
-          </div>
+          <ProductGallery
+            images={product.images}
+            alt={`${product.name} — ของพรีเมียมพิมพ์โลโก้ GO PREMIUM`}
+          />
           {/* Category tag */}
           <div style={{ marginTop: 12, display: 'flex', gap: 6, flexWrap: 'wrap' }}>
             <Link to={`/category/${product.category_slug}`}

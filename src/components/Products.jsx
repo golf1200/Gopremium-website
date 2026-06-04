@@ -1,13 +1,16 @@
 import GpIcon from './shared/GpIcon';
 import GpReveal from './shared/GpReveal';
+import GpImage from './shared/GpImage';
+import { variantSet } from '../utils/images';
 
 // Real GO PREMIUM product lines (from catalog). Prices intentionally omitted
 // until confirmed — CTA routes to a real quotation instead of a placeholder number.
+// img = base image name (resolved to the 16:9 landscape master).
 const PRIME = [
-  { t: 'กระบอกน้ำสุญญากาศ รุ่น Milo', moq: 'MOQ 100', img: 'drinkware-milo.jpg', badge: 'ขายดี' },
-  { t: 'กระเป๋าผ้า รุ่น Moov', moq: 'MOQ 150', img: 'bag-moov.jpg', badge: 'รักษ์โลก' },
-  { t: 'สมุดโน้ต รุ่น Idea', moq: 'MOQ 100', img: 'stationery-notebook.jpg', badge: null },
-  { t: 'กิฟต์เซ็ตธุรกิจ Executive', moq: 'MOQ 50', img: 'giftset-executive.jpg', badge: 'นิยม' },
+  { t: 'กระบอกน้ำสุญญากาศ รุ่น Milo', moq: 'MOQ 100', img: 'drinkware-milo', badge: 'ขายดี' },
+  { t: 'กระเป๋าผ้า รุ่น Moov', moq: 'MOQ 150', img: 'bag-moov', badge: 'รักษ์โลก' },
+  { t: 'สมุดโน้ต รุ่น Idea', moq: 'MOQ 100', img: 'stationery-notebook', badge: null },
+  { t: 'กิฟต์เซ็ตธุรกิจ Executive', moq: 'MOQ 50', img: 'giftset-executive', badge: 'นิยม' },
 ];
 const UPSELL = [
   { icon: 'palette', t: 'บริการออกแบบเฉพาะ', d: 'คอนเซ็ปต์ & ดีไซน์เฉพาะแบรนด์ ไม่ใช่ของโหล' },
@@ -37,8 +40,9 @@ export default function Products({ onQuote }) {
                 <GpReveal key={i} delay={i * 70}>
                   <div className="gp-card" style={{ padding: 14, height: '100%', display: 'flex', flexDirection: 'column' }}>
                     <div style={{ position: 'relative' }}>
-                      <img
-                        src={`/images/${p.img}`}
+                      <GpImage
+                        images={variantSet(p.img)}
+                        variant="landscape"
                         alt={`${p.t} — ของพรีเมียมพิมพ์โลโก้สำหรับองค์กร โดย GO PREMIUM`}
                         loading="lazy"
                         style={{ width: '100%', height: 150, borderRadius: 11, objectFit: 'cover', display: 'block', background: 'var(--gp-cloud-2)' }}

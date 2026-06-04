@@ -1,9 +1,15 @@
 import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import GpIcon from './shared/GpIcon';
+import { site } from '../config';
+import { sendQuote } from '../utils/sendQuote';
+import { track } from '../utils/analytics';
 
 export default function RFQ({ prefill }) {
   const [f, setF] = useState({ name: '', contact: '', occasion: 'ของขวัญปีใหม่พนักงาน', qty: '', date: '', budget: '', details: '' });
   const [err, setErr] = useState({});
+  const [consent, setConsent] = useState(false);
+  const [status, setStatus] = useState('idle'); // idle | submitting | error
   const [sent, setSent] = useState(false);
   const ref = useRef(null);
 
@@ -17,13 +23,36 @@ export default function RFQ({ prefill }) {
 
   function set(k, v) { setF((p) => ({ ...p, [k]: v })); if (err[k]) setErr((e) => ({ ...e, [k]: null })); }
 
-  function submit() {
+  async function submit() {
     const e = {};
     if (!f.name.trim()) e.name = 'กรุณากรอกชื่อ-บริษัท';
     if (!f.contact.trim()) e.contact = 'กรุณากรอกอีเมลหรือเบอร์โทร';
     else if (!/^[\d\s+\-()]{8,}$/.test(f.contact) && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.contact)) e.contact = 'รูปแบบอีเมล/เบอร์ไม่ถูกต้อง';
+    if (!consent) e.consent = 'กรุณายอมรับนโยบายความเป็นส่วนตัวก่อนส่ง';
     setErr(e);
-    if (Object.keys(e).length === 0) setSent(true);
+    if (Object.keys(e).length > 0) return;
+
+    const payload = {
+      _subject: `[GO PREMIUM] ขอใบเสนอราคา — ${f.name}`,
+      _gotcha: '',
+      ชื่อ_บริษัท: f.name,
+      ติดต่อ: f.contact,
+      โอกาส_งาน: f.occasion,
+      จำนวน: f.qty || '-',
+      ต้องการรับงาน: f.date || '-',
+      งบต่อชิ้น: f.budget || '-',
+      รายละเอียด: f.details || '-',
+    };
+
+    setStatus('submitting');
+    const { ok } = await sendQuote(payload);
+    if (ok) {
+      track('generate_lead', { form: 'rfq', occasion: f.occasion });
+      setStatus('idle');
+      setSent(true);
+    } else {
+      setStatus('error');
+    }
   }
 
   return (
@@ -105,8 +134,34 @@ export default function RFQ({ prefill }) {
                 <label className="gp-label">รายละเอียดเพิ่มเติม</label>
                 <textarea className="gp-textarea" value={f.details} onChange={(e) => set('details', e.target.value)} placeholder="บอกคอนเซ็ปต์หรือสินค้าที่สนใจ" />
               </div>
-              <button className="gp-btn gp-btn-primary gp-btn-lg" style={{ width: '100%' }} onClick={submit}>
-                ส่งขอใบเสนอราคา <GpIcon name="arrow" size={17} />
+
+              {/* honeypot — hidden from users, traps bots */}
+              <input type="text" name="_gotcha" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
+
+              {/* PDPA consent */}
+              <label style={{ display: 'flex', alignItems: 'flex-start', gap: 9, marginBottom: 6, cursor: 'pointer' }}>
+                <input
+                  type="checkbox"
+                  checked={consent}
+                  onChange={(ev) => { setConsent(ev.target.checked); if (err.consent) setErr((p) => ({ ...p, consent: null })); }}
+                  style={{ width: 16, height: 16, marginTop: 2, accentColor: 'var(--gp-navy)', flex: '0 0 auto' }}
+                />
+                <span style={{ fontSize: 12.5, color: 'var(--gp-grey)', lineHeight: 1.55 }}>
+                  ฉันยินยอมให้ GO PREMIUM เก็บและใช้ข้อมูลเพื่อติดต่อกลับและเสนอราคา ตาม
+                  <Link to="/privacy" target="_blank" style={{ color: 'var(--gp-navy)', textDecoration: 'underline' }}>นโยบายความเป็นส่วนตัว</Link>
+                </span>
+              </label>
+              {err.consent && <span className="gp-errmsg" style={{ display: 'block', marginBottom: 8 }}>{err.consent}</span>}
+
+              {status === 'error' && (
+                <p style={{ color: 'var(--gp-danger)', fontSize: 13, marginBottom: 12 }}>
+                  เกิดข้อผิดพลาด กรุณาลองใหม่ หรือติดต่อ {site.email}
+                </p>
+              )}
+
+              <button className="gp-btn gp-btn-primary gp-btn-lg" style={{ width: '100%' }} onClick={submit}
+                disabled={status === 'submitting' || !consent}>
+                {status === 'submitting' ? 'กำลังส่ง...' : <>ส่งขอใบเสนอราคา <GpIcon name="arrow" size={17} /></>}
               </button>
             </div>
           )}

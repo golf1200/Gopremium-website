@@ -1,21 +1,24 @@
 import GpReveal from './shared/GpReveal';
+import GpImage from './shared/GpImage';
+import { variantSet } from '../utils/images';
 
 // Concept examples (representative set ideas, real product imagery).
 // Not claimed as specific delivered client projects — see Trust section for real clients.
+// img = base image name (resolved to the 16:9 landscape master).
 const CASES = [
-  { t: 'เซ็ตปีใหม่องค์กร', tag: 'New Year', d: 'กล่อง + การ์ดเฉพาะแบรนด์ จัดเป็นเซ็ตพร้อมมอบ', img: 'giftset-executive.jpg' },
-  { t: 'Welcome Kit พนักงานใหม่', tag: 'Onboarding', d: 'ชุดต้อนรับสาย minimal โทนสีแบรนด์', img: 'drinkware-chill.jpg' },
-  { t: 'Eco Lifestyle Set', tag: 'รักษ์โลก', d: 'ของใช้คุณภาพ เล่าเรื่องความยั่งยืนขององค์กร', img: 'lifestyle-towel.jpg' },
-  { t: 'VIP Gift Box', tag: 'Client gift', d: 'กล่องของขวัญพรีเมียมสำหรับลูกค้าคนสำคัญ', img: 'giftset-aroma.jpg' },
-  { t: 'Event Giveaway', tag: 'Event', d: 'ของแจกพิมพ์โลโก้ ถ่ายรูปสวย พร้อมส่งทันงาน', img: 'bag-snap.jpg' },
-  { t: 'Custom Drinkware', tag: 'Milestone', d: 'กระบอกน้ำดีไซน์เฉพาะวาระ สลักโลโก้แบรนด์', img: 'drinkware-milo.jpg' },
+  { t: 'เซ็ตปีใหม่องค์กร', tag: 'New Year', d: 'กล่อง + การ์ดเฉพาะแบรนด์ จัดเป็นเซ็ตพร้อมมอบ', img: 'giftset-executive' },
+  { t: 'Welcome Kit พนักงานใหม่', tag: 'Onboarding', d: 'ชุดต้อนรับสาย minimal โทนสีแบรนด์', img: 'drinkware-chill' },
+  { t: 'Eco Lifestyle Set', tag: 'รักษ์โลก', d: 'ของใช้คุณภาพ เล่าเรื่องความยั่งยืนขององค์กร', img: 'lifestyle-towel' },
+  { t: 'VIP Gift Box', tag: 'Client gift', d: 'กล่องของขวัญพรีเมียมสำหรับลูกค้าคนสำคัญ', img: 'giftset-aroma' },
+  { t: 'Event Giveaway', tag: 'Event', d: 'ของแจกพิมพ์โลโก้ ถ่ายรูปสวย พร้อมส่งทันงาน', img: 'bag-snap' },
+  { t: 'Custom Drinkware', tag: 'Milestone', d: 'กระบอกน้ำดีไซน์เฉพาะวาระ สลักโลโก้แบรนด์', img: 'drinkware-milo' },
 ];
 
 function CaseCard({ c }) {
   return (
     <div style={{ position: 'relative', borderRadius: 16, overflow: 'hidden', boxShadow: 'var(--gp-shadow-sm)', border: '1px solid var(--gp-grey-200)', background: '#fff', height: '100%' }}>
       <div style={{ position: 'relative', height: 236, background: 'var(--gp-cloud-2)', overflow: 'hidden' }}>
-        <img src={`/images/${c.img}`} alt={`${c.t} — ตัวอย่างเซ็ตของขวัญองค์กร GO PREMIUM`} loading="lazy"
+        <GpImage images={variantSet(c.img)} variant="landscape" alt={`${c.t} — ตัวอย่างเซ็ตของขวัญองค์กร GO PREMIUM`} loading="lazy"
           style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
         <span className="gp-badge gp-badge-glass" style={{ position: 'absolute', top: 12, left: 12, fontSize: 11 }}>{c.tag}</span>
       </div>

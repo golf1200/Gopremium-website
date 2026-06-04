@@ -11,13 +11,18 @@ export const site = {
   phoneIntl: '+6620966465',          // used for tel: link
   email: 'info@passiongrow.co.th',
   // --- LINE Official Account ---
-  // TODO(golf): replace with the real LINE OA link, e.g. https://lin.ee/xxxxxxx
-  // Until then the LINE button falls back to the quote form (no dead link shipped).
-  lineUrl: '',                        // e.g. 'https://lin.ee/XXXXXXX'
+  lineUrl: 'https://lin.ee/z1GT1KR',  // real LINE OA link
+
   lineId: '@gopremium',
   // --- Social / web ---
   facebook: '',                       // e.g. 'https://facebook.com/gopremium'
   instagram: '',
+  // --- Canonical domain (SINGLE SOURCE OF TRUTH) ---
+  // This is the ONE place to change the production domain. On change:
+  //   • index.html canonical/OG/JSON-LD auto-follow at build (vite.config.js plugin)
+  //   • runtime <head> (useMeta) follows automatically
+  //   • sitemap.xml + robots.txt: rerun `node generate-sitemap.js` to regenerate
+  // No trailing slash.
   siteUrl: 'https://gopremium-website.vercel.app',
 };
 
@@ -30,4 +35,13 @@ export const lineHref = site.lineUrl || null;
 // 2. Set the form email to info@passiongrow.co.th
 // 3. Paste the form ID here (the part after /f/ in the endpoint URL)
 // ---------------------------------------------------------------------------
-export const formspreeId = ''; // e.g. 'xyzabcde'
+export const formspreeId = 'xbdejbyr'; // https://formspree.io/f/xbdejbyr → info@passiongrow.co.th
+
+// ---------------------------------------------------------------------------
+// GA4 — Google Analytics 4 (single source of truth)
+// Paste your Measurement ID here (Analytics → Admin → Data Streams → "G-XXXXXXXXXX").
+// While empty, GA does NOT load and tracking calls safely no-op — so the
+// generate_lead / contact_line plumbing is live and starts measuring the
+// moment a real ID is added. No other file needs editing.
+// ---------------------------------------------------------------------------
+export const gaId = ''; // e.g. 'G-ABC1234XYZ'

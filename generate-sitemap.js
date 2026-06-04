@@ -6,9 +6,10 @@
 import { readFileSync, writeFileSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { site } from './src/config.js';
 
 const __dir = dirname(fileURLToPath(import.meta.url));
-const SITE_URL = 'https://gopremium-website.vercel.app';
+const SITE_URL = site.siteUrl; // single source of truth — see src/config.js
 const products = JSON.parse(readFileSync(join(__dir, '../phase2/products.json'), 'utf8'));
 
 const OCCASIONS = [
@@ -49,3 +50,8 @@ const lines = [
 const xml = lines.join('\n');
 writeFileSync(join(__dir, 'public/sitemap.xml'), xml);
 console.log(`sitemap.xml generated: ${VALID_PRODUCTS.length} products + categories/occasions/budgets`);
+
+// robots.txt — kept in sync with the same SITE_URL single source
+const robots = `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`;
+writeFileSync(join(__dir, 'public/robots.txt'), robots);
+console.log(`robots.txt generated → ${SITE_URL}/sitemap.xml`);

@@ -3,8 +3,7 @@
 // ============================================================
 import { Link } from 'react-router-dom';
 import { useQuoteCtx } from '../contexts/QuoteContext';
-
-const PLACEHOLDER = '/images/placeholder.svg';
+import GpImage from './shared/GpImage';
 
 export default function ProductCard({ product, compact = false }) {
   const { add, remove, has } = useQuoteCtx();
@@ -54,14 +53,14 @@ export default function ProductCard({ product, compact = false }) {
       >
         {/* Image */}
         <div style={{ position: 'relative', overflow: 'hidden', flexShrink: 0 }}>
-          <img
-            src={product.image || PLACEHOLDER}
+          <GpImage
+            images={product.images}
+            variant="square"
             alt={`${product.name} — ของพรีเมียมพิมพ์โลโก้ GO PREMIUM`}
             loading="lazy"
             style={{ width: '100%', height: compact ? 160 : 200, objectFit: 'cover', display: 'block', background: 'var(--gp-cloud-2)', transition: 'transform .35s' }}
             onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.04)'}
             onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
-            onError={(e) => { e.currentTarget.src = PLACEHOLDER; }}
           />
           {/* Budget badge */}
           {budget_label && (

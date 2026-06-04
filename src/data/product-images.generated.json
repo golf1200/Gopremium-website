@@ -1,0 +1,710 @@
+{
+  "GS001": {
+    "base": "gs001-business-basic",
+    "gallery": [
+      "/images/products/gs001-business-basic/gs001-business-basic-square.jpg",
+      "/images/products/gs001-business-basic/gs001-business-basic-02.jpg",
+      "/images/products/gs001-business-basic/gs001-business-basic-03.jpg",
+      "/images/products/gs001-business-basic/gs001-business-basic-04.jpg",
+      "/images/products/gs001-business-basic/gs001-business-basic-05.jpg"
+    ]
+  },
+  "GS002": {
+    "base": "gs002-business-smart",
+    "gallery": [
+      "/images/products/gs002-business-smart/gs002-business-smart-square.jpg",
+      "/images/products/gs002-business-smart/gs002-business-smart-02.jpg",
+      "/images/products/gs002-business-smart/gs002-business-smart-03.jpg",
+      "/images/products/gs002-business-smart/gs002-business-smart-04.jpg",
+      "/images/products/gs002-business-smart/gs002-business-smart-05.jpg"
+    ]
+  },
+  "GS003": {
+    "base": "gs003-business-executive",
+    "gallery": [
+      "/images/products/gs003-business-executive/gs003-business-executive-square.jpg",
+      "/images/products/gs003-business-executive/gs003-business-executive-02.jpg",
+      "/images/products/gs003-business-executive/gs003-business-executive-03.jpg",
+      "/images/products/gs003-business-executive/gs003-business-executive-04.jpg",
+      "/images/products/gs003-business-executive/gs003-business-executive-05.jpg"
+    ]
+  },
+  "BG013": {
+    "base": "bg013-pico",
+    "gallery": [
+      "/images/products/bg013-pico/bg013-pico-square.jpg",
+      "/images/products/bg013-pico/bg013-pico-02.jpg",
+      "/images/products/bg013-pico/bg013-pico-03.jpg",
+      "/images/products/bg013-pico/bg013-pico-04.jpg"
+    ]
+  },
+  "BG001": {
+    "base": "bg001-classic",
+    "gallery": [
+      "/images/products/bg001-classic/bg001-classic-square.jpg",
+      "/images/products/bg001-classic/bg001-classic-02.jpg",
+      "/images/products/bg001-classic/bg001-classic-03.jpg",
+      "/images/products/bg001-classic/bg001-classic-04.jpg",
+      "/images/products/bg001-classic/bg001-classic-05.jpg"
+    ]
+  },
+  "BG002": {
+    "base": "bg002-classic-wide",
+    "gallery": [
+      "/images/products/bg002-classic-wide/bg002-classic-wide-square.jpg",
+      "/images/products/bg002-classic-wide/bg002-classic-wide-02.jpg",
+      "/images/products/bg002-classic-wide/bg002-classic-wide-03.jpg",
+      "/images/products/bg002-classic-wide/bg002-classic-wide-04.jpg",
+      "/images/products/bg002-classic-wide/bg002-classic-wide-05.jpg"
+    ]
+  },
+  "BG003": {
+    "base": "bg003-everyday",
+    "gallery": [
+      "/images/products/bg003-everyday/bg003-everyday-square.jpg",
+      "/images/products/bg003-everyday/bg003-everyday-02.jpg",
+      "/images/products/bg003-everyday/bg003-everyday-03.jpg",
+      "/images/products/bg003-everyday/bg003-everyday-04.jpg",
+      "/images/products/bg003-everyday/bg003-everyday-05.jpg"
+    ]
+  },
+  "BG004": {
+    "base": "bg004-stripe",
+    "gallery": [
+      "/images/products/bg004-stripe/bg004-stripe-square.jpg",
+      "/images/products/bg004-stripe/bg004-stripe-02.jpg",
+      "/images/products/bg004-stripe/bg004-stripe-03.jpg",
+      "/images/products/bg004-stripe/bg004-stripe-04.jpg",
+      "/images/products/bg004-stripe/bg004-stripe-05.jpg"
+    ]
+  },
+  "BG005": {
+    "base": "bg005-fold",
+    "gallery": [
+      "/images/products/bg005-fold/bg005-fold-square.jpg",
+      "/images/products/bg005-fold/bg005-fold-02.jpg",
+      "/images/products/bg005-fold/bg005-fold-03.jpg",
+      "/images/products/bg005-fold/bg005-fold-04.jpg",
+      "/images/products/bg005-fold/bg005-fold-05.jpg"
+    ]
+  },
+  "BG006": {
+    "base": "bg006-essential",
+    "gallery": [
+      "/images/products/bg006-essential/bg006-essential-square.jpg",
+      "/images/products/bg006-essential/bg006-essential-02.jpg",
+      "/images/products/bg006-essential/bg006-essential-03.jpg",
+      "/images/products/bg006-essential/bg006-essential-04.jpg",
+      "/images/products/bg006-essential/bg006-essential-05.jpg"
+    ]
+  },
+  "BG007": {
+    "base": "bg007-rin",
+    "gallery": [
+      "/images/products/bg007-rin/bg007-rin-square.jpg",
+      "/images/products/bg007-rin/bg007-rin-02.jpg",
+      "/images/products/bg007-rin/bg007-rin-03.jpg",
+      "/images/products/bg007-rin/bg007-rin-04.jpg",
+      "/images/products/bg007-rin/bg007-rin-05.jpg"
+    ]
+  },
+  "BG008": {
+    "base": "bg008-rin-soft",
+    "gallery": [
+      "/images/products/bg008-rin-soft/bg008-rin-soft-square.jpg",
+      "/images/products/bg008-rin-soft/bg008-rin-soft-02.jpg",
+      "/images/products/bg008-rin-soft/bg008-rin-soft-03.jpg",
+      "/images/products/bg008-rin-soft/bg008-rin-soft-04.jpg",
+      "/images/products/bg008-rin-soft/bg008-rin-soft-05.jpg"
+    ]
+  },
+  "BG009": {
+    "base": "bg009-bucket",
+    "gallery": [
+      "/images/products/bg009-bucket/bg009-bucket-square.jpg",
+      "/images/products/bg009-bucket/bg009-bucket-02.jpg",
+      "/images/products/bg009-bucket/bg009-bucket-03.jpg",
+      "/images/products/bg009-bucket/bg009-bucket-04.jpg",
+      "/images/products/bg009-bucket/bg009-bucket-05.jpg"
+    ]
+  },
+  "BG010": {
+    "base": "bg010-cross-body",
+    "gallery": [
+      "/images/products/bg010-cross-body/bg010-cross-body-square.jpg",
+      "/images/products/bg010-cross-body/bg010-cross-body-02.jpg",
+      "/images/products/bg010-cross-body/bg010-cross-body-03.jpg",
+      "/images/products/bg010-cross-body/bg010-cross-body-04.jpg",
+      "/images/products/bg010-cross-body/bg010-cross-body-05.jpg"
+    ]
+  },
+  "BG011": {
+    "base": "bg011-uno",
+    "gallery": [
+      "/images/products/bg011-uno/bg011-uno-square.jpg",
+      "/images/products/bg011-uno/bg011-uno-02.jpg",
+      "/images/products/bg011-uno/bg011-uno-03.jpg",
+      "/images/products/bg011-uno/bg011-uno-04.jpg",
+      "/images/products/bg011-uno/bg011-uno-05.jpg"
+    ]
+  },
+  "BG012": {
+    "base": "bg012-snap",
+    "gallery": [
+      "/images/products/bg012-snap/bg012-snap-square.jpg",
+      "/images/products/bg012-snap/bg012-snap-02.jpg",
+      "/images/products/bg012-snap/bg012-snap-03.jpg",
+      "/images/products/bg012-snap/bg012-snap-04.jpg",
+      "/images/products/bg012-snap/bg012-snap-05.jpg"
+    ]
+  },
+  "BG014": {
+    "base": "bg014-viva",
+    "gallery": [
+      "/images/products/bg014-viva/bg014-viva-square.jpg",
+      "/images/products/bg014-viva/bg014-viva-02.jpg",
+      "/images/products/bg014-viva/bg014-viva-03.jpg",
+      "/images/products/bg014-viva/bg014-viva-04.jpg",
+      "/images/products/bg014-viva/bg014-viva-05.jpg"
+    ]
+  },
+  "BG015": {
+    "base": "bg015-noma",
+    "gallery": [
+      "/images/products/bg015-noma/bg015-noma-square.jpg",
+      "/images/products/bg015-noma/bg015-noma-02.jpg",
+      "/images/products/bg015-noma/bg015-noma-03.jpg",
+      "/images/products/bg015-noma/bg015-noma-04.jpg",
+      "/images/products/bg015-noma/bg015-noma-05.jpg"
+    ]
+  },
+  "BG016": {
+    "base": "bg016-noma-edition",
+    "gallery": [
+      "/images/products/bg016-noma-edition/bg016-noma-edition-square.jpg",
+      "/images/products/bg016-noma-edition/bg016-noma-edition-02.jpg",
+      "/images/products/bg016-noma-edition/bg016-noma-edition-03.jpg",
+      "/images/products/bg016-noma-edition/bg016-noma-edition-04.jpg",
+      "/images/products/bg016-noma-edition/bg016-noma-edition-05.jpg"
+    ]
+  },
+  "DW001": {
+    "base": "dw001-loopa",
+    "gallery": [
+      "/images/products/dw001-loopa/dw001-loopa-square.jpg",
+      "/images/products/dw001-loopa/dw001-loopa-02.jpg",
+      "/images/products/dw001-loopa/dw001-loopa-03.jpg",
+      "/images/products/dw001-loopa/dw001-loopa-04.jpg",
+      "/images/products/dw001-loopa/dw001-loopa-05.jpg"
+    ]
+  },
+  "DW002": {
+    "base": "dw002-brewy",
+    "gallery": [
+      "/images/products/dw002-brewy/dw002-brewy-square.jpg",
+      "/images/products/dw002-brewy/dw002-brewy-02.jpg",
+      "/images/products/dw002-brewy/dw002-brewy-03.jpg",
+      "/images/products/dw002-brewy/dw002-brewy-04.jpg",
+      "/images/products/dw002-brewy/dw002-brewy-05.jpg"
+    ]
+  },
+  "DW003": {
+    "base": "dw003-peak",
+    "gallery": [
+      "/images/products/dw003-peak/dw003-peak-square.jpg",
+      "/images/products/dw003-peak/dw003-peak-02.jpg",
+      "/images/products/dw003-peak/dw003-peak-03.jpg",
+      "/images/products/dw003-peak/dw003-peak-04.jpg",
+      "/images/products/dw003-peak/dw003-peak-05.jpg"
+    ]
+  },
+  "DW004": {
+    "base": "dw004-cupsy",
+    "gallery": [
+      "/images/products/dw004-cupsy/dw004-cupsy-square.jpg",
+      "/images/products/dw004-cupsy/dw004-cupsy-02.jpg",
+      "/images/products/dw004-cupsy/dw004-cupsy-03.jpg",
+      "/images/products/dw004-cupsy/dw004-cupsy-04.jpg",
+      "/images/products/dw004-cupsy/dw004-cupsy-05.jpg"
+    ]
+  },
+  "DW005": {
+    "base": "dw005-sip",
+    "gallery": [
+      "/images/products/dw005-sip/dw005-sip-square.jpg",
+      "/images/products/dw005-sip/dw005-sip-02.jpg",
+      "/images/products/dw005-sip/dw005-sip-03.jpg",
+      "/images/products/dw005-sip/dw005-sip-04.jpg",
+      "/images/products/dw005-sip/dw005-sip-05.jpg"
+    ]
+  },
+  "DW006": {
+    "base": "dw006-milo",
+    "gallery": [
+      "/images/products/dw006-milo/dw006-milo-square.jpg",
+      "/images/products/dw006-milo/dw006-milo-02.jpg",
+      "/images/products/dw006-milo/dw006-milo-03.jpg",
+      "/images/products/dw006-milo/dw006-milo-04.jpg",
+      "/images/products/dw006-milo/dw006-milo-05.jpg"
+    ]
+  },
+  "DW007": {
+    "base": "dw007-chill",
+    "gallery": [
+      "/images/products/dw007-chill/dw007-chill-square.jpg",
+      "/images/products/dw007-chill/dw007-chill-02.jpg",
+      "/images/products/dw007-chill/dw007-chill-03.jpg",
+      "/images/products/dw007-chill/dw007-chill-04.jpg",
+      "/images/products/dw007-chill/dw007-chill-05.jpg"
+    ]
+  },
+  "DW008": {
+    "base": "dw008-flow",
+    "gallery": [
+      "/images/products/dw008-flow/dw008-flow-square.jpg",
+      "/images/products/dw008-flow/dw008-flow-02.jpg",
+      "/images/products/dw008-flow/dw008-flow-03.jpg",
+      "/images/products/dw008-flow/dw008-flow-04.jpg",
+      "/images/products/dw008-flow/dw008-flow-05.jpg"
+    ]
+  },
+  "DW009": {
+    "base": "dw009-trekka",
+    "gallery": [
+      "/images/products/dw009-trekka/dw009-trekka-square.jpg",
+      "/images/products/dw009-trekka/dw009-trekka-02.jpg",
+      "/images/products/dw009-trekka/dw009-trekka-03.jpg",
+      "/images/products/dw009-trekka/dw009-trekka-04.jpg",
+      "/images/products/dw009-trekka/dw009-trekka-05.jpg"
+    ]
+  },
+  "DW010": {
+    "base": "dw010-roam",
+    "gallery": [
+      "/images/products/dw010-roam/dw010-roam-square.jpg",
+      "/images/products/dw010-roam/dw010-roam-02.jpg",
+      "/images/products/dw010-roam/dw010-roam-03.jpg",
+      "/images/products/dw010-roam/dw010-roam-04.jpg",
+      "/images/products/dw010-roam/dw010-roam-05.jpg"
+    ]
+  },
+  "FN001": {
+    "base": "fn001-mini",
+    "gallery": [
+      "/images/products/fn001-mini/fn001-mini-square.jpg",
+      "/images/products/fn001-mini/fn001-mini-02.jpg",
+      "/images/products/fn001-mini/fn001-mini-03.jpg",
+      "/images/products/fn001-mini/fn001-mini-04.jpg",
+      "/images/products/fn001-mini/fn001-mini-05.jpg"
+    ]
+  },
+  "FN002": {
+    "base": "fn002-beezy",
+    "gallery": [
+      "/images/products/fn002-beezy/fn002-beezy-square.jpg",
+      "/images/products/fn002-beezy/fn002-beezy-02.jpg",
+      "/images/products/fn002-beezy/fn002-beezy-03.jpg",
+      "/images/products/fn002-beezy/fn002-beezy-04.jpg",
+      "/images/products/fn002-beezy/fn002-beezy-05.jpg"
+    ]
+  },
+  "FN003": {
+    "base": "fn003-neko",
+    "gallery": [
+      "/images/products/fn003-neko/fn003-neko-square.jpg",
+      "/images/products/fn003-neko/fn003-neko-02.jpg",
+      "/images/products/fn003-neko/fn003-neko-03.jpg",
+      "/images/products/fn003-neko/fn003-neko-04.jpg",
+      "/images/products/fn003-neko/fn003-neko-05.jpg"
+    ]
+  },
+  "FN004": {
+    "base": "fn004-kuma",
+    "gallery": [
+      "/images/products/fn004-kuma/fn004-kuma-square.jpg",
+      "/images/products/fn004-kuma/fn004-kuma-02.jpg",
+      "/images/products/fn004-kuma/fn004-kuma-03.jpg",
+      "/images/products/fn004-kuma/fn004-kuma-04.jpg",
+      "/images/products/fn004-kuma/fn004-kuma-05.jpg"
+    ]
+  },
+  "FN005": {
+    "base": "fn005-poco",
+    "gallery": [
+      "/images/products/fn005-poco/fn005-poco-square.jpg",
+      "/images/products/fn005-poco/fn005-poco-02.jpg",
+      "/images/products/fn005-poco/fn005-poco-03.jpg",
+      "/images/products/fn005-poco/fn005-poco-04.jpg",
+      "/images/products/fn005-poco/fn005-poco-05.jpg"
+    ]
+  },
+  "FN006": {
+    "base": "fn006-mino",
+    "gallery": [
+      "/images/products/fn006-mino/fn006-mino-square.jpg",
+      "/images/products/fn006-mino/fn006-mino-02.jpg",
+      "/images/products/fn006-mino/fn006-mino-03.jpg",
+      "/images/products/fn006-mino/fn006-mino-04.jpg",
+      "/images/products/fn006-mino/fn006-mino-05.jpg"
+    ]
+  },
+  "FN007": {
+    "base": "fn007-sola",
+    "gallery": [
+      "/images/products/fn007-sola/fn007-sola-square.jpg",
+      "/images/products/fn007-sola/fn007-sola-02.jpg",
+      "/images/products/fn007-sola/fn007-sola-03.jpg",
+      "/images/products/fn007-sola/fn007-sola-04.jpg",
+      "/images/products/fn007-sola/fn007-sola-05.jpg"
+    ]
+  },
+  "FN008": {
+    "base": "fn008-haru",
+    "gallery": [
+      "/images/products/fn008-haru/fn008-haru-square.jpg",
+      "/images/products/fn008-haru/fn008-haru-02.jpg",
+      "/images/products/fn008-haru/fn008-haru-03.jpg",
+      "/images/products/fn008-haru/fn008-haru-04.jpg",
+      "/images/products/fn008-haru/fn008-haru-05.jpg"
+    ]
+  },
+  "FN009": {
+    "base": "fn009-airo",
+    "gallery": [
+      "/images/products/fn009-airo/fn009-airo-square.jpg",
+      "/images/products/fn009-airo/fn009-airo-02.jpg",
+      "/images/products/fn009-airo/fn009-airo-03.jpg",
+      "/images/products/fn009-airo/fn009-airo-04.jpg",
+      "/images/products/fn009-airo/fn009-airo-05.jpg"
+    ]
+  },
+  "FN010": {
+    "base": "fn010-nero",
+    "gallery": [
+      "/images/products/fn010-nero/fn010-nero-square.jpg",
+      "/images/products/fn010-nero/fn010-nero-02.jpg",
+      "/images/products/fn010-nero/fn010-nero-03.jpg",
+      "/images/products/fn010-nero/fn010-nero-04.jpg",
+      "/images/products/fn010-nero/fn010-nero-05.jpg"
+    ]
+  },
+  "FN011": {
+    "base": "fn011-kiri",
+    "gallery": [
+      "/images/products/fn011-kiri/fn011-kiri-square.jpg",
+      "/images/products/fn011-kiri/fn011-kiri-02.jpg",
+      "/images/products/fn011-kiri/fn011-kiri-03.jpg",
+      "/images/products/fn011-kiri/fn011-kiri-04.jpg",
+      "/images/products/fn011-kiri/fn011-kiri-05.jpg"
+    ]
+  },
+  "LS001": {
+    "base": "ls001-card-holder-wave",
+    "gallery": [
+      "/images/products/ls001-card-holder-wave/ls001-card-holder-wave-square.jpg",
+      "/images/products/ls001-card-holder-wave/ls001-card-holder-wave-02.jpg",
+      "/images/products/ls001-card-holder-wave/ls001-card-holder-wave-03.jpg",
+      "/images/products/ls001-card-holder-wave/ls001-card-holder-wave-04.jpg",
+      "/images/products/ls001-card-holder-wave/ls001-card-holder-wave-05.jpg"
+    ]
+  },
+  "LS002": {
+    "base": "ls002-card-holder-slim",
+    "gallery": [
+      "/images/products/ls002-card-holder-slim/ls002-card-holder-slim-square.jpg",
+      "/images/products/ls002-card-holder-slim/ls002-card-holder-slim-02.jpg",
+      "/images/products/ls002-card-holder-slim/ls002-card-holder-slim-03.jpg",
+      "/images/products/ls002-card-holder-slim/ls002-card-holder-slim-04.jpg",
+      "/images/products/ls002-card-holder-slim/ls002-card-holder-slim-05.jpg"
+    ]
+  },
+  "LS003": {
+    "base": "ls003-card-holder-mini",
+    "gallery": [
+      "/images/products/ls003-card-holder-mini/ls003-card-holder-mini-square.jpg",
+      "/images/products/ls003-card-holder-mini/ls003-card-holder-mini-02.jpg",
+      "/images/products/ls003-card-holder-mini/ls003-card-holder-mini-03.jpg",
+      "/images/products/ls003-card-holder-mini/ls003-card-holder-mini-04.jpg",
+      "/images/products/ls003-card-holder-mini/ls003-card-holder-mini-05.jpg"
+    ]
+  },
+  "LS004": {
+    "base": "ls004-card-holder-vario",
+    "gallery": [
+      "/images/products/ls004-card-holder-vario/ls004-card-holder-vario-square.jpg",
+      "/images/products/ls004-card-holder-vario/ls004-card-holder-vario-02.jpg",
+      "/images/products/ls004-card-holder-vario/ls004-card-holder-vario-03.jpg",
+      "/images/products/ls004-card-holder-vario/ls004-card-holder-vario-04.jpg",
+      "/images/products/ls004-card-holder-vario/ls004-card-holder-vario-05.jpg"
+    ]
+  },
+  "LS005": {
+    "base": "ls005-card-holder-pullo",
+    "gallery": [
+      "/images/products/ls005-card-holder-pullo/ls005-card-holder-pullo-square.jpg",
+      "/images/products/ls005-card-holder-pullo/ls005-card-holder-pullo-02.jpg",
+      "/images/products/ls005-card-holder-pullo/ls005-card-holder-pullo-03.jpg",
+      "/images/products/ls005-card-holder-pullo/ls005-card-holder-pullo-04.jpg",
+      "/images/products/ls005-card-holder-pullo/ls005-card-holder-pullo-05.jpg"
+    ]
+  },
+  "LS006": {
+    "base": "ls006-luggage-tag-lugo",
+    "gallery": [
+      "/images/products/ls006-luggage-tag-lugo/ls006-luggage-tag-lugo-square.jpg",
+      "/images/products/ls006-luggage-tag-lugo/ls006-luggage-tag-lugo-02.jpg",
+      "/images/products/ls006-luggage-tag-lugo/ls006-luggage-tag-lugo-03.jpg",
+      "/images/products/ls006-luggage-tag-lugo/ls006-luggage-tag-lugo-04.jpg",
+      "/images/products/ls006-luggage-tag-lugo/ls006-luggage-tag-lugo-05.jpg"
+    ]
+  },
+  "LS007": {
+    "base": "ls007-luggage-tag-lugo-cover",
+    "gallery": [
+      "/images/products/ls007-luggage-tag-lugo-cover/ls007-luggage-tag-lugo-cover-square.jpg",
+      "/images/products/ls007-luggage-tag-lugo-cover/ls007-luggage-tag-lugo-cover-02.jpg",
+      "/images/products/ls007-luggage-tag-lugo-cover/ls007-luggage-tag-lugo-cover-03.jpg",
+      "/images/products/ls007-luggage-tag-lugo-cover/ls007-luggage-tag-lugo-cover-04.jpg",
+      "/images/products/ls007-luggage-tag-lugo-cover/ls007-luggage-tag-lugo-cover-05.jpg"
+    ]
+  },
+  "LS008": {
+    "base": "ls008-luggage-tag-aero",
+    "gallery": [
+      "/images/products/ls008-luggage-tag-aero/ls008-luggage-tag-aero-square.jpg",
+      "/images/products/ls008-luggage-tag-aero/ls008-luggage-tag-aero-02.jpg",
+      "/images/products/ls008-luggage-tag-aero/ls008-luggage-tag-aero-03.jpg",
+      "/images/products/ls008-luggage-tag-aero/ls008-luggage-tag-aero-04.jpg",
+      "/images/products/ls008-luggage-tag-aero/ls008-luggage-tag-aero-05.jpg"
+    ]
+  },
+  "LS009": {
+    "base": "ls009-key-cover-kino",
+    "gallery": [
+      "/images/products/ls009-key-cover-kino/ls009-key-cover-kino-square.jpg",
+      "/images/products/ls009-key-cover-kino/ls009-key-cover-kino-02.jpg",
+      "/images/products/ls009-key-cover-kino/ls009-key-cover-kino-03.jpg",
+      "/images/products/ls009-key-cover-kino/ls009-key-cover-kino-04.jpg",
+      "/images/products/ls009-key-cover-kino/ls009-key-cover-kino-05.jpg"
+    ]
+  },
+  "LS010": {
+    "base": "ls010-key-cover-kino-cover",
+    "gallery": [
+      "/images/products/ls010-key-cover-kino-cover/ls010-key-cover-kino-cover-square.jpg",
+      "/images/products/ls010-key-cover-kino-cover/ls010-key-cover-kino-cover-02.jpg",
+      "/images/products/ls010-key-cover-kino-cover/ls010-key-cover-kino-cover-03.jpg",
+      "/images/products/ls010-key-cover-kino-cover/ls010-key-cover-kino-cover-04.jpg",
+      "/images/products/ls010-key-cover-kino-cover/ls010-key-cover-kino-cover-05.jpg"
+    ]
+  },
+  "LS011": {
+    "base": "ls011-passport-cover",
+    "gallery": [
+      "/images/products/ls011-passport-cover/ls011-passport-cover-square.jpg",
+      "/images/products/ls011-passport-cover/ls011-passport-cover-02.jpg",
+      "/images/products/ls011-passport-cover/ls011-passport-cover-03.jpg",
+      "/images/products/ls011-passport-cover/ls011-passport-cover-04.jpg",
+      "/images/products/ls011-passport-cover/ls011-passport-cover-05.jpg"
+    ]
+  },
+  "LS012": {
+    "base": "ls012-smart-grip-flex",
+    "gallery": [
+      "/images/products/ls012-smart-grip-flex/ls012-smart-grip-flex-square.jpg",
+      "/images/products/ls012-smart-grip-flex/ls012-smart-grip-flex-02.jpg",
+      "/images/products/ls012-smart-grip-flex/ls012-smart-grip-flex-03.jpg",
+      "/images/products/ls012-smart-grip-flex/ls012-smart-grip-flex-04.jpg",
+      "/images/products/ls012-smart-grip-flex/ls012-smart-grip-flex-05.jpg"
+    ]
+  },
+  "LS013": {
+    "base": "ls013-smart-grip-tri-fold",
+    "gallery": [
+      "/images/products/ls013-smart-grip-tri-fold/ls013-smart-grip-tri-fold-square.jpg",
+      "/images/products/ls013-smart-grip-tri-fold/ls013-smart-grip-tri-fold-02.jpg",
+      "/images/products/ls013-smart-grip-tri-fold/ls013-smart-grip-tri-fold-03.jpg",
+      "/images/products/ls013-smart-grip-tri-fold/ls013-smart-grip-tri-fold-04.jpg",
+      "/images/products/ls013-smart-grip-tri-fold/ls013-smart-grip-tri-fold-05.jpg"
+    ]
+  },
+  "LS014": {
+    "base": "ls014-deli",
+    "gallery": [
+      "/images/products/ls014-deli/ls014-deli-square.jpg",
+      "/images/products/ls014-deli/ls014-deli-02.jpg",
+      "/images/products/ls014-deli/ls014-deli-03.jpg",
+      "/images/products/ls014-deli/ls014-deli-04.jpg",
+      "/images/products/ls014-deli/ls014-deli-05.jpg"
+    ]
+  },
+  "LS015": {
+    "base": "ls015-deli-plus",
+    "gallery": [
+      "/images/products/ls015-deli-plus/ls015-deli-plus-square.jpg",
+      "/images/products/ls015-deli-plus/ls015-deli-plus-02.jpg",
+      "/images/products/ls015-deli-plus/ls015-deli-plus-03.jpg",
+      "/images/products/ls015-deli-plus/ls015-deli-plus-04.jpg",
+      "/images/products/ls015-deli-plus/ls015-deli-plus-05.jpg"
+    ]
+  },
+  "LS016": {
+    "base": "ls016-raku",
+    "gallery": [
+      "/images/products/ls016-raku/ls016-raku-square.jpg",
+      "/images/products/ls016-raku/ls016-raku-02.jpg",
+      "/images/products/ls016-raku/ls016-raku-03.jpg",
+      "/images/products/ls016-raku/ls016-raku-04.jpg",
+      "/images/products/ls016-raku/ls016-raku-05.jpg"
+    ]
+  },
+  "ST001": {
+    "base": "st001-oxygen",
+    "gallery": [
+      "/images/products/st001-oxygen/st001-oxygen-square.jpg",
+      "/images/products/st001-oxygen/st001-oxygen-02.jpg",
+      "/images/products/st001-oxygen/st001-oxygen-03.jpg",
+      "/images/products/st001-oxygen/st001-oxygen-04.jpg",
+      "/images/products/st001-oxygen/st001-oxygen-05.jpg"
+    ]
+  },
+  "ST002": {
+    "base": "st002-eco",
+    "gallery": [
+      "/images/products/st002-eco/st002-eco-square.jpg",
+      "/images/products/st002-eco/st002-eco-02.jpg",
+      "/images/products/st002-eco/st002-eco-03.jpg",
+      "/images/products/st002-eco/st002-eco-04.jpg",
+      "/images/products/st002-eco/st002-eco-05.jpg"
+    ]
+  },
+  "ST003": {
+    "base": "st003-luxe",
+    "gallery": [
+      "/images/products/st003-luxe/st003-luxe-square.jpg",
+      "/images/products/st003-luxe/st003-luxe-02.jpg",
+      "/images/products/st003-luxe/st003-luxe-03.jpg",
+      "/images/products/st003-luxe/st003-luxe-04.jpg",
+      "/images/products/st003-luxe/st003-luxe-05.jpg"
+    ]
+  },
+  "ST004": {
+    "base": "st004-mira",
+    "gallery": [
+      "/images/products/st004-mira/st004-mira-square.jpg",
+      "/images/products/st004-mira/st004-mira-02.jpg",
+      "/images/products/st004-mira/st004-mira-03.jpg",
+      "/images/products/st004-mira/st004-mira-04.jpg",
+      "/images/products/st004-mira/st004-mira-05.jpg"
+    ]
+  },
+  "ST005": {
+    "base": "st005-tekt",
+    "gallery": [
+      "/images/products/st005-tekt/st005-tekt-square.jpg",
+      "/images/products/st005-tekt/st005-tekt-02.jpg",
+      "/images/products/st005-tekt/st005-tekt-03.jpg",
+      "/images/products/st005-tekt/st005-tekt-04.jpg",
+      "/images/products/st005-tekt/st005-tekt-05.jpg"
+    ]
+  },
+  "ST006": {
+    "base": "st006-idea",
+    "gallery": [
+      "/images/products/st006-idea/st006-idea-square.jpg",
+      "/images/products/st006-idea/st006-idea-02.jpg",
+      "/images/products/st006-idea/st006-idea-03.jpg",
+      "/images/products/st006-idea/st006-idea-04.jpg",
+      "/images/products/st006-idea/st006-idea-05.jpg"
+    ]
+  },
+  "ST007": {
+    "base": "st007-folio",
+    "gallery": [
+      "/images/products/st007-folio/st007-folio-square.jpg",
+      "/images/products/st007-folio/st007-folio-02.jpg",
+      "/images/products/st007-folio/st007-folio-03.jpg",
+      "/images/products/st007-folio/st007-folio-04.jpg",
+      "/images/products/st007-folio/st007-folio-05.jpg"
+    ]
+  },
+  "ST008": {
+    "base": "st008-muse",
+    "gallery": [
+      "/images/products/st008-muse/st008-muse-square.jpg",
+      "/images/products/st008-muse/st008-muse-02.jpg",
+      "/images/products/st008-muse/st008-muse-03.jpg",
+      "/images/products/st008-muse/st008-muse-04.jpg",
+      "/images/products/st008-muse/st008-muse-05.jpg"
+    ]
+  },
+  "ST009": {
+    "base": "st009-sticky-note-cube",
+    "gallery": [
+      "/images/products/st009-sticky-note-cube/st009-sticky-note-cube-square.jpg",
+      "/images/products/st009-sticky-note-cube/st009-sticky-note-cube-02.jpg",
+      "/images/products/st009-sticky-note-cube/st009-sticky-note-cube-03.jpg",
+      "/images/products/st009-sticky-note-cube/st009-sticky-note-cube-04.jpg",
+      "/images/products/st009-sticky-note-cube/st009-sticky-note-cube-05.jpg"
+    ]
+  },
+  "ST010": {
+    "base": "st010-sticky-note-memo",
+    "gallery": [
+      "/images/products/st010-sticky-note-memo/st010-sticky-note-memo-square.jpg",
+      "/images/products/st010-sticky-note-memo/st010-sticky-note-memo-02.jpg",
+      "/images/products/st010-sticky-note-memo/st010-sticky-note-memo-03.jpg",
+      "/images/products/st010-sticky-note-memo/st010-sticky-note-memo-04.jpg",
+      "/images/products/st010-sticky-note-memo/st010-sticky-note-memo-05.jpg"
+    ]
+  },
+  "UM001": {
+    "base": "um001-automatic-lite",
+    "gallery": [
+      "/images/products/um001-automatic-lite/um001-automatic-lite-square.jpg",
+      "/images/products/um001-automatic-lite/um001-automatic-lite-02.jpg",
+      "/images/products/um001-automatic-lite/um001-automatic-lite-03.jpg",
+      "/images/products/um001-automatic-lite/um001-automatic-lite-04.jpg",
+      "/images/products/um001-automatic-lite/um001-automatic-lite-05.jpg"
+    ]
+  },
+  "UM002": {
+    "base": "um002-automatic-premium",
+    "gallery": [
+      "/images/products/um002-automatic-premium/um002-automatic-premium-square.jpg",
+      "/images/products/um002-automatic-premium/um002-automatic-premium-02.jpg",
+      "/images/products/um002-automatic-premium/um002-automatic-premium-03.jpg",
+      "/images/products/um002-automatic-premium/um002-automatic-premium-04.jpg",
+      "/images/products/um002-automatic-premium/um002-automatic-premium-05.jpg"
+    ]
+  },
+  "UM003": {
+    "base": "um003-automatic-elite",
+    "gallery": [
+      "/images/products/um003-automatic-elite/um003-automatic-elite-square.jpg",
+      "/images/products/um003-automatic-elite/um003-automatic-elite-02.jpg",
+      "/images/products/um003-automatic-elite/um003-automatic-elite-03.jpg",
+      "/images/products/um003-automatic-elite/um003-automatic-elite-04.jpg"
+    ]
+  },
+  "UM004": {
+    "base": "um004-automatic-signature",
+    "gallery": [
+      "/images/products/um004-automatic-signature/um004-automatic-signature-square.jpg",
+      "/images/products/um004-automatic-signature/um004-automatic-signature-02.jpg",
+      "/images/products/um004-automatic-signature/um004-automatic-signature-03.jpg",
+      "/images/products/um004-automatic-signature/um004-automatic-signature-04.jpg",
+      "/images/products/um004-automatic-signature/um004-automatic-signature-05.jpg"
+    ]
+  },
+  "UM005": {
+    "base": "um005-automatic-luxury",
+    "gallery": [
+      "/images/products/um005-automatic-luxury/um005-automatic-luxury-square.jpg",
+      "/images/products/um005-automatic-luxury/um005-automatic-luxury-02.jpg",
+      "/images/products/um005-automatic-luxury/um005-automatic-luxury-03.jpg",
+      "/images/products/um005-automatic-luxury/um005-automatic-luxury-04.jpg",
+      "/images/products/um005-automatic-luxury/um005-automatic-luxury-05.jpg"
+    ]
+  }
+}

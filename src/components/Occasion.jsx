@@ -1,12 +1,15 @@
 import GpReveal from './shared/GpReveal';
+import GpImage from './shared/GpImage';
+import { variantSet } from '../utils/images';
 
+// img = base image name (resolved to the 16:9 landscape master).
 const OCCASIONS = [
-  { title: 'ของขวัญปีใหม่', desc: 'กิฟต์เซ็ตและของพรีเมียมสำหรับมอบพนักงาน ลูกค้า และคู่ค้าช่วงปลายปี', img: 'giftset-executive.jpg', badge: 'พีคสุด' },
-  { title: 'ชุดต้อนรับพนักงานใหม่', desc: 'Welcome kit สร้างความประทับใจวันแรก เสริมภาพลักษณ์องค์กร', img: 'drinkware-chill.jpg', badge: null },
-  { title: 'ของขวัญลูกค้า VIP', desc: 'ของพรีเมียมระดับผู้บริหาร แพ็กเกจหรู สื่อถึงความใส่ใจ', img: 'giftset-aroma.jpg', badge: 'Exclusive' },
-  { title: 'งานอีเวนต์ & สัมมนา', desc: 'ของแจกพิมพ์โลโก้ พร้อมส่งทันงาน เหมาะกับงานจำนวนมาก', img: 'bag-snap.jpg', badge: null },
-  { title: 'ครบรอบ & Milestone', desc: 'ของที่ระลึกพิเศษเฉพาะวาระ ดีไซน์สั่งทำ สะท้อนความสำเร็จ', img: 'drinkware-milo.jpg', badge: 'Custom' },
-  { title: 'ของขวัญรักษ์โลก', desc: 'วัสดุคุณภาพ เล่าเรื่อง ESG ขององค์กร เทรนด์ 2026', img: 'lifestyle-towel.jpg', badge: 'Eco' },
+  { title: 'ของขวัญปีใหม่', desc: 'กิฟต์เซ็ตและของพรีเมียมสำหรับมอบพนักงาน ลูกค้า และคู่ค้าช่วงปลายปี', img: 'giftset-executive', badge: 'พีคสุด' },
+  { title: 'ชุดต้อนรับพนักงานใหม่', desc: 'Welcome kit สร้างความประทับใจวันแรก เสริมภาพลักษณ์องค์กร', img: 'drinkware-chill', badge: null },
+  { title: 'ของขวัญลูกค้า VIP', desc: 'ของพรีเมียมระดับผู้บริหาร แพ็กเกจหรู สื่อถึงความใส่ใจ', img: 'giftset-aroma', badge: 'Exclusive' },
+  { title: 'งานอีเวนต์ & สัมมนา', desc: 'ของแจกพิมพ์โลโก้ พร้อมส่งทันงาน เหมาะกับงานจำนวนมาก', img: 'bag-snap', badge: null },
+  { title: 'ครบรอบ & Milestone', desc: 'ของที่ระลึกพิเศษเฉพาะวาระ ดีไซน์สั่งทำ สะท้อนความสำเร็จ', img: 'drinkware-milo', badge: 'Custom' },
+  { title: 'ของขวัญรักษ์โลก', desc: 'วัสดุคุณภาพ เล่าเรื่อง ESG ขององค์กร เทรนด์ 2026', img: 'lifestyle-towel', badge: 'Eco' },
 ];
 
 export default function Occasion({ onQuote }) {
@@ -22,8 +25,8 @@ export default function Occasion({ onQuote }) {
           {OCCASIONS.map((occ, i) => (
             <GpReveal key={i} delay={i * 60}>
               <div style={{ background: '#fff', border: '1px solid var(--gp-grey-200)', borderRadius: 'var(--gp-radius)', overflow: 'hidden', boxShadow: 'var(--gp-shadow-sm)', display: 'flex', flexDirection: 'column', height: '100%' }}>
-                <div style={{ position: 'relative', height: 150, background: 'var(--gp-cloud-2)', overflow: 'hidden' }}>
-                  <img src={`/images/${occ.img}`} alt={`${occ.title} — ของขวัญองค์กร GO PREMIUM`} loading="lazy"
+                <div style={{ position: 'relative', aspectRatio: '16/9', background: 'var(--gp-cloud-2)', overflow: 'hidden' }}>
+                  <GpImage images={variantSet(occ.img)} variant="landscape" alt={`${occ.title} — ของขวัญองค์กร GO PREMIUM`} loading="lazy"
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   {occ.badge && (
                     <span className="gp-badge gp-badge-glass" style={{ position: 'absolute', top: 10, left: 12, zIndex: 2, fontSize: 10, padding: '3px 9px' }}>{occ.badge}</span>

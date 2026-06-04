@@ -2,13 +2,15 @@ import { useState } from 'react';
 import HeroCarousel from './HeroCarousel';
 import GpIcon from './shared/GpIcon';
 import GpSpark from './shared/GpSpark';
+import GpImage from './shared/GpImage';
+import { variantSet } from '../utils/images';
 import { gpScrollTo } from '../utils/scroll';
 
 function ImgPanel() {
   return (
     <div style={{ position: 'relative' }}>
       <div style={{ width: '100%', height: 'min(560px,62vh)', borderRadius: 22, boxShadow: 'var(--gp-shadow)', overflow: 'hidden', background: 'var(--gp-cloud-2)' }}>
-        <img src="/images/giftset-aroma.jpg" alt="กิฟต์เซ็ตพรีเมียมองค์กร ออกแบบเฉพาะแบรนด์ โดย GO PREMIUM"
+        <GpImage images={variantSet('giftset-aroma')} variant="hero" alt="กิฟต์เซ็ตพรีเมียมองค์กร ออกแบบเฉพาะแบรนด์ โดย GO PREMIUM"
           style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
       </div>
       <div style={{ position: 'absolute', left: -18, bottom: 34, background: '#fff', borderRadius: 16, padding: '13px 15px', boxShadow: 'var(--gp-shadow-md)', width: 212, border: '1px solid var(--gp-grey-200)' }}>

@@ -7,26 +7,18 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useQuoteCtx } from '../contexts/QuoteContext';
 import { getProduct } from '../data/products';
 import Breadcrumbs from '../components/Breadcrumbs';
+import GpImage from '../components/shared/GpImage';
 import { useMeta } from '../hooks/useMeta';
 import { site } from '../config';
-
-// ---------------------------------------------------------------------------
-// SETUP: Create a free Formspree form at https://formspree.io (takes 2 min)
-// Then paste the form ID (the part after formspree.io/f/) into config.js:
-//   export const formspreeId = 'xyzabcde';
-// ---------------------------------------------------------------------------
-import { formspreeId } from '../config';
-const FORMSPREE_URL = formspreeId
-  ? `https://formspree.io/f/${formspreeId}`
-  : null;
-
-const PLACEHOLDER = '/images/placeholder.svg';
+import { sendQuote } from '../utils/sendQuote';
+import { track } from '../utils/analytics';
 
 export default function QuotePage() {
   const { items, remove, updateQty, clear } = useQuoteCtx();
   const navigate = useNavigate();
   const [f, setF] = useState({ name: '', company: '', contact: '', date: '', message: '' });
   const [err, setErr] = useState({});
+  const [consent, setConsent] = useState(false);
   const [status, setStatus] = useState('idle'); // idle | submitting | success | error
 
   useMeta({
@@ -46,6 +38,7 @@ export default function QuotePage() {
       errs.contact = 'รูปแบบไม่ถูกต้อง';
     }
     if (items.length === 0) errs.items = 'กรุณาเลือกสินค้าอย่างน้อย 1 รายการ';
+    if (!consent) errs.consent = 'กรุณายอมรับนโยบายความเป็นส่วนตัวก่อนส่ง';
     setErr(errs);
     if (Object.keys(errs).length > 0) return;
 
@@ -57,6 +50,7 @@ export default function QuotePage() {
 
     const payload = {
       _subject: `[GO PREMIUM] ใบขอราคา — ${f.name} ${f.company ? `(${f.company})` : ''}`,
+      _gotcha: '',
       ชื่อ: f.name,
       บริษัท: f.company || '-',
       ติดต่อ: f.contact,
@@ -65,31 +59,13 @@ export default function QuotePage() {
       ข้อความเพิ่มเติม: f.message || '-',
     };
 
-    if (!FORMSPREE_URL) {
-      // Fallback: open mailto with pre-filled body
-      const body = encodeURIComponent(
-        `ขอใบเสนอราคา\n\nชื่อ: ${f.name}\nบริษัท: ${f.company}\nติดต่อ: ${f.contact}\nวันที่ต้องการ: ${f.date}\n\nรายการ:\n${productLines}\n\nข้อความ: ${f.message}`
-      );
-      window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(payload._subject)}&body=${body}`;
+    setStatus('submitting');
+    const { ok } = await sendQuote(payload);
+    if (ok) {
+      track('generate_lead', { form: 'quote', items: items.length });
       setStatus('success');
       clear();
-      return;
-    }
-
-    setStatus('submitting');
-    try {
-      const res = await fetch(FORMSPREE_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(payload),
-      });
-      if (res.ok) {
-        setStatus('success');
-        clear();
-      } else {
-        setStatus('error');
-      }
-    } catch {
+    } else {
       setStatus('error');
     }
   }
@@ -145,11 +121,11 @@ export default function QuotePage() {
                   const p = getProduct(it.sku);
                   return (
                     <div key={it.sku} style={{ display: 'flex', gap: 14, paddingBottom: 18, marginBottom: 18, borderBottom: '1px solid var(--gp-grey-200)', alignItems: 'flex-start' }}>
-                      <img
-                        src={p?.image || PLACEHOLDER}
+                      <GpImage
+                        images={p?.images}
+                        variant="square"
                         alt={it.name}
                         style={{ width: 70, height: 70, objectFit: 'cover', borderRadius: 10, flex: '0 0 auto', background: 'var(--gp-cloud-2)' }}
-                        onError={(e) => { e.currentTarget.src = PLACEHOLDER; }}
                       />
                       <div style={{ flex: 1, minWidth: 0 }}>
                         <p style={{ fontSize: 14.5, color: 'var(--gp-navy)', fontWeight: 500, lineHeight: 1.3 }}>{it.name}</p>
@@ -239,6 +215,21 @@ export default function QuotePage() {
                 <textarea className="gp-textarea" value={f.message} onChange={(e) => setField('message', e.target.value)} placeholder="สี, ดีไซน์, ข้อกำหนดพิเศษ..." />
               </Field>
 
+              {/* PDPA consent */}
+              <label style={{ display: 'flex', alignItems: 'flex-start', gap: 9, marginBottom: 6, cursor: 'pointer' }}>
+                <input
+                  type="checkbox"
+                  checked={consent}
+                  onChange={(e) => { setConsent(e.target.checked); if (err.consent) setErr((p) => ({ ...p, consent: null })); }}
+                  style={{ width: 16, height: 16, marginTop: 2, accentColor: 'var(--gp-navy)', flex: '0 0 auto' }}
+                />
+                <span style={{ fontSize: 12.5, color: 'var(--gp-grey)', lineHeight: 1.55 }}>
+                  ฉันยินยอมให้ GO PREMIUM เก็บและใช้ข้อมูลเพื่อติดต่อกลับและเสนอราคา ตาม
+                  <Link to="/privacy" target="_blank" style={{ color: 'var(--gp-navy)', textDecoration: 'underline' }}>นโยบายความเป็นส่วนตัว</Link>
+                </span>
+              </label>
+              {err.consent && <p style={{ color: 'var(--gp-danger)', fontSize: 13, marginBottom: 8 }}>{err.consent}</p>}
+
               {status === 'error' && (
                 <p style={{ color: 'var(--gp-danger)', fontSize: 13, marginBottom: 12 }}>
                   เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง หรือติดต่อ {site.email}
@@ -249,7 +240,7 @@ export default function QuotePage() {
                 type="submit"
                 className="gp-btn gp-btn-primary gp-btn-lg"
                 style={{ width: '100%', marginTop: 4 }}
-                disabled={status === 'submitting'}
+                disabled={status === 'submitting' || !consent}
               >
                 {status === 'submitting' ? 'กำลังส่ง...' : 'ส่งใบขอราคา'}
                 {status !== 'submitting' && (
