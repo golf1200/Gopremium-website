@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  GO PREMIUM sitemap — generated 2026-06-04
+  Product URLs: /product/<sku-slug> (245 items)
+  Category URLs: /category/<slug> (18 items)
+  Occasion URLs: /occasion/<slug> (10 items)
+  Budget URLs: /budget/<slug> (4 items)
+  Note: Regenerate this file after catalog updates by running the generate-sitemap script.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://gopremium-website.vercel.app/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://gopremium-website.vercel.app/products</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://gopremium-website.vercel.app/quote</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <!-- Categories -->
+  <url><loc>https://gopremium-website.vercel.app/category/drinkware</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://gopremium-website.vercel.app/category/bags</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://gopremium-website.vercel.app/category/stationery</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://gopremium-website.vercel.app/category/fan</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://gopremium-website.vercel.app/category/umbrella</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://gopremium-website.vercel.app/category/lifestyle</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://gopremium-website.vercel.app/category/kitchen</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://gopremium-website.vercel.app/category/giftset</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://gopremium-website.vercel.app/category/scent</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://gopremium-website.vercel.app/category/gadget</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://gopremium-website.vercel.app/category/powerbank</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://gopremium-website.vercel.app/category/packaging</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://gopremium-website.vercel.app/category/souvenir</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://gopremium-website.vercel.app/category/luggage</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://gopremium-website.vercel.app/category/garment</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://gopremium-website.vercel.app/category/hat</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://gopremium-website.vercel.app/category/pet</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://gopremium-website.vercel.app/category/baby-kid</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <!-- Occasions -->
+  <url><loc>https://gopremium-website.vercel.app/occasion/new-year</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://gopremium-website.vercel.app/occasion/songkran</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://gopremium-website.vercel.app/occasion/new-employee</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://gopremium-website.vercel.app/occasion/vip</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://gopremium-website.vercel.app/occasion/event</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://gopremium-website.vercel.app/occasion/milestone</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://gopremium-website.vercel.app/occasion/esg</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://gopremium-website.vercel.app/occasion/thank-you</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://gopremium-website.vercel.app/occasion/executive</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://gopremium-website.vercel.app/occasion/mass-staff</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <!-- Budget tiers -->
+  <url><loc>https://gopremium-website.vercel.app/budget/value</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://gopremium-website.vercel.app/budget/smart</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://gopremium-website.vercel.app/budget/premium</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://gopremium-website.vercel.app/budget/executive</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+</urlset>

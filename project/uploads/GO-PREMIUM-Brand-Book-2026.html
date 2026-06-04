@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GO PREMIUM — Brand Book (ฉบับปรับปรุง 2026)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1F3A5F;
+    --navy-soft:#2C4F7C;
+    --mustard:#F4BD44;
+    --mustard-soft:#F8D586;
+    --white:#FFFFFF;
+    --ink:#1A2230;
+    --grey:#5B6472;
+    --line:#E3E7ED;
+    --bg:#F5F6F8;
+    --page-w:210mm;
+    --page-h:297mm;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{background:var(--bg);}
+  body{font-family:'Sarabun',sans-serif;color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,h4,.head{font-family:'Kanit',sans-serif;font-weight:600;line-height:1.2;letter-spacing:.2px;}
+  .page{
+    position:relative;width:var(--page-w);min-height:var(--page-h);
+    background:var(--white);margin:14px auto;padding:24mm 22mm;
+    box-shadow:0 6px 26px rgba(31,58,95,.10);overflow:hidden;
+  }
+  .pagenum{position:absolute;bottom:12mm;right:22mm;font-family:'Kanit';font-size:11px;color:var(--grey);letter-spacing:2px;}
+  .pagelabel{position:absolute;bottom:12mm;left:22mm;font-family:'Kanit';font-size:10px;color:var(--grey);letter-spacing:3px;text-transform:uppercase;}
+  .kicker{font-family:'Kanit';font-weight:600;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--mustard);}
+  .kicker.navy{color:var(--navy-soft);}
+  h2.section{font-size:30px;color:var(--navy);margin:6px 0 4px;}
+  .lead{font-size:15px;color:var(--grey);max-width:62ch;}
+  .rule{height:3px;width:54px;background:var(--mustard);border-radius:3px;margin:14px 0 22px;}
+  p{margin-bottom:11px;font-size:13.5px;}
+  .small{font-size:12px;color:var(--grey);}
+  .tag-prop{display:inline-block;font-family:'Kanit';font-size:9.5px;font-weight:500;letter-spacing:1px;
+    background:var(--mustard-soft);color:#6b4e08;padding:2px 8px;border-radius:20px;vertical-align:middle;margin-left:8px;text-transform:uppercase;}
+  .tag-core{background:#D7E2F1;color:var(--navy);}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .card{border:1px solid var(--line);border-radius:14px;padding:18px 18px;background:#fff;}
+  .card h4{font-size:15px;color:var(--navy);margin-bottom:6px;}
+  .card .ic{font-family:'Kanit';font-weight:700;color:var(--mustard);font-size:13px;letter-spacing:1px;}
+  ul.clean{list-style:none;}
+  ul.clean li{position:relative;padding-left:18px;font-size:13px;margin-bottom:7px;}
+  ul.clean li:before{content:"";position:absolute;left:0;top:8px;width:7px;height:7px;background:var(--mustard);border-radius:2px;}
+  .do li:before{background:#3FA66A;}
+  .dont li:before{background:#D9534F;border-radius:50%;}
+  /* COVER */
+  .cover{background:var(--navy);color:#fff;display:flex;flex-direction:column;justify-content:space-between;}
+  .cover .logo-mark{font-family:'Kanit';font-weight:700;font-size:64px;letter-spacing:1px;line-height:.95;}
+  .cover .logo-mark .go{color:#fff;}
+  .cover .logo-mark .pr{color:var(--mustard);}
+  .cover .sub{font-family:'Kanit';font-weight:300;font-size:18px;letter-spacing:6px;text-transform:uppercase;color:var(--mustard-soft);margin-top:6px;}
+  .cover .tagline{font-family:'Kanit';font-weight:300;font-size:26px;line-height:1.35;max-width:24ch;}
+  .cover .tagline b{font-weight:600;color:var(--mustard);}
+  .cover .meta{font-family:'Kanit';font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#A9BBD2;}
+  .cover .swoosh{position:absolute;right:-90px;top:-90px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle at 30% 30%,var(--mustard),transparent 62%);opacity:.22;}
+  .cover .bar{position:absolute;left:0;bottom:0;height:10px;width:100%;background:var(--mustard);}
+  /* TOC */
+  .toc{display:grid;grid-template-columns:1fr 1fr;gap:6px 40px;margin-top:8px;}
+  .toc .row{display:flex;align-items:baseline;border-bottom:1px dotted var(--line);padding:8px 0;}
+  .toc .n{font-family:'Kanit';font-weight:600;color:var(--mustard);width:30px;font-size:13px;}
+  .toc .t{font-family:'Kanit';font-weight:500;color:var(--navy);font-size:13.5px;flex:1;}
+  .toc .pg{font-family:'Kanit';color:var(--grey);font-size:12px;}
+  /* colors */
+  .swatch{border-radius:12px;height:120px;display:flex;flex-direction:column;justify-content:flex-end;padding:12px;color:#fff;border:1px solid var(--line);}
+  .swatch .nm{font-family:'Kanit';font-weight:600;font-size:14px;}
+  .swatch .hex{font-family:'Kanit';font-size:12px;opacity:.9;}
+  .ratio{display:flex;height:40px;border-radius:8px;overflow:hidden;border:1px solid var(--line);margin:6px 0 4px;}
+  /* type specimen */
+  .spec{border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:12px;}
+  .spec .big{font-size:34px;color:var(--navy);}
+  .scale-row{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--line);padding:9px 0;}
+  .scale-row .lab{width:120px;font-family:'Kanit';font-size:11px;color:var(--grey);letter-spacing:1px;}
+  /* logo boxes */
+  .logobox{border:1px solid var(--line);border-radius:12px;height:130px;display:flex;align-items:center;justify-content:center;font-family:'Kanit';font-weight:700;font-size:30px;}
+  .lb-navy{background:var(--navy);color:#fff;} .lb-navy .pr{color:var(--mustard);}
+  .lb-white{background:#fff;color:var(--navy);} .lb-white .pr{color:var(--mustard);}
+  .lb-mustard{background:var(--mustard);color:var(--navy);} .lb-mustard .pr{color:#fff;}
+  .clearspace{position:relative;border:1px dashed var(--mustard);border-radius:10px;height:150px;display:flex;align-items:center;justify-content:center;background:#fff;}
+  .misuse{border:1px solid var(--line);border-radius:10px;height:96px;display:flex;align-items:center;justify-content:center;font-family:'Kanit';font-weight:700;font-size:20px;position:relative;color:var(--navy);}
+  .misuse .x{position:absolute;top:6px;right:8px;color:#D9534F;font-size:18px;font-weight:700;}
+  .note{background:var(--bg);border-left:3px solid var(--mustard);border-radius:0 8px 8px 0;padding:12px 14px;font-size:12.5px;color:var(--grey);}
+  table.spectable{width:100%;border-collapse:collapse;font-size:12px;}
+  table.spectable th,table.spectable td{border:1px solid var(--line);padding:8px 10px;text-align:left;}
+  table.spectable th{background:var(--navy);color:#fff;font-family:'Kanit';font-weight:500;}
+  table.spectable td .chiplabel{font-family:'Kanit';}
+  .persona{border:1px solid var(--line);border-radius:14px;padding:16px;}
+  .persona .role{font-family:'Kanit';font-weight:600;color:var(--navy);font-size:15px;}
+  .persona .who{font-size:11.5px;color:var(--grey);margin-bottom:8px;}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 30px;font-size:13px;}
+  .contact-grid .k{font-family:'Kanit';font-size:11px;letter-spacing:1px;color:var(--mustard);text-transform:uppercase;}
+  @media print{
+    html,body{background:#fff;}
+    .page{box-shadow:none;margin:0;width:auto;min-height:auto;page-break-after:always;padding:18mm 16mm;}
+    .page:last-child{page-break-after:auto;}
+    @page{size:A4;margin:0;}
+    .noprint{display:none!important;}
+  }
+  .banner{max-width:var(--page-w);margin:18px auto 0;background:#fff;border:1px solid var(--line);border-left:4px solid var(--mustard);border-radius:10px;padding:14px 18px;font-size:13px;color:var(--grey);}
+  .banner b{color:var(--navy);font-family:'Kanit';}
+</style>
+</head>
+<body>
+
+<div class="banner noprint">
+  <b>วิธีบันทึกเป็น PDF:</b> กด <b>Ctrl/⌘ + P</b> → เลือกปลายทางเป็น <b>Save as PDF</b> → ขนาด A4 → Margins: None → เปิด “Background graphics” เพื่อให้สีแบรนด์ครบ ฟอนต์ไทยจะถูกฝังในไฟล์ PDF อัตโนมัติ
+</div>
+
+<!-- ============ PAGE 1 — COVER ============ -->
+<section class="page cover">
+  <div class="swoosh"></div>
+  <div>
+    <div class="meta">Brand Book · ฉบับปรับปรุง 2026 · v2.0</div>
+  </div>
+  <div>
+    <div class="logo-mark"><span class="go">GO</span> <span class="pr">PREMIUM</span></div>
+    <div class="sub">ผลิตของพรีเมียม</div>
+    <div style="height:34px"></div>
+    <div class="tagline">Go beyond the gift<br><b>มากกว่าของขวัญ</b> คือประสบการณ์ที่น่าจดจำ</div>
+  </div>
+  <div class="meta">PASSION GROW TRADING CO., LTD. · @gopremium</div>
+  <div class="bar"></div>
+</section>
+
+<!-- ============ PAGE 2 — TOC ============ -->
+<section class="page">
+  <div class="kicker">Contents</div>
+  <h2 class="section">สารบัญ</h2>
+  <div class="rule"></div>
+  <div class="lead">คู่มือนี้แบ่งเป็น 2 ส่วน: <b>กลยุทธ์แบรนด์ (Brand Strategy)</b> ว่าเราเป็นใครและสื่อสารอย่างไร และ <b>อัตลักษณ์ภาพ (Visual Identity)</b> ว่าแบรนด์ต้องดูและรู้สึกอย่างไร</div>
+  <div style="height:18px"></div>
+  <div class="toc">
+    <div class="row"><span class="n">01</span><span class="t">เรื่องราวแบรนด์ · Brand Story</span><span class="pg">03</span></div>
+    <div class="row"><span class="n">02</span><span class="t">แก่นแบรนด์ · Vision / Mission / Values</span><span class="pg">04</span></div>
+    <div class="row"><span class="n">03</span><span class="t">จุดยืน & คุณค่า · Positioning</span><span class="pg">05</span></div>
+    <div class="row"><span class="n">04</span><span class="t">กลุ่มเป้าหมาย · Target Audience</span><span class="pg">06</span></div>
+    <div class="row"><span class="n">05</span><span class="t">บุคลิกแบรนด์ · Brand Personality</span><span class="pg">07</span></div>
+    <div class="row"><span class="n">06</span><span class="t">น้ำเสียงการสื่อสาร · Tone of Voice</span><span class="pg">08</span></div>
+    <div class="row"><span class="n">07</span><span class="t">ข้อความหลัก · Messaging & Tagline</span><span class="pg">09</span></div>
+    <div class="row"><span class="n">08</span><span class="t">โลโก้ · Logo System</span><span class="pg">10</span></div>
+    <div class="row"><span class="n">09</span><span class="t">พื้นที่ปลอดภัย & ขนาด · Clear Space</span><span class="pg">11</span></div>
+    <div class="row"><span class="n">10</span><span class="t">ข้อห้ามการใช้โลโก้ · Logo Misuse</span><span class="pg">12</span></div>
+    <div class="row"><span class="n">11</span><span class="t">สีแบรนด์ · Color Palette</span><span class="pg">13</span></div>
+    <div class="row"><span class="n">12</span><span class="t">ตัวอักษร · Typography</span><span class="pg">14</span></div>
+    <div class="row"><span class="n">13</span><span class="t">ไอคอนแบรนด์ · Brand Icon</span><span class="pg">15</span></div>
+    <div class="row"><span class="n">14</span><span class="t">ภาพ & อาร์ตไดเรกชัน · Art Direction</span><span class="pg">16</span></div>
+    <div class="row"><span class="n">15</span><span class="t">โซเชียลมีเดีย · Social Media</span><span class="pg">17</span></div>
+    <div class="row"><span class="n">16</span><span class="t">การนำไปใช้ · Applications</span><span class="pg">18</span></div>
+    <div class="row"><span class="n">17</span><span class="t">ติดต่อ · Contact</span><span class="pg">19</span></div>
+  </div>
+  <div style="height:22px"></div>
+  <div class="note"><b style="font-family:'Kanit';color:var(--navy)">หมายเหตุ</b> &nbsp;ป้าย <span class="tag-prop">ร่างเสนอ</span> หมายถึงเนื้อหากลยุทธ์ที่เพิ่มเข้ามาใหม่ในฐานะข้อเสนอจากฝ่ายการตลาด รอการยืนยันจากเจ้าของแบรนด์ &nbsp; ส่วนป้าย <span class="tag-prop tag-core">เดิม</span> คือเนื้อหาจาก Brand Book ฉบับแรก</div>
+  <div class="pagelabel">Contents</div><div class="pagenum">02</div>
+</section>
+
+<!-- ============ PAGE 3 — BRAND STORY ============ -->
+<section class="page">
+  <div class="kicker">01 · Brand Story</div>
+  <h2 class="section">เรื่องราวแบรนด์ <span class="tag-prop">ร่างเสนอ</span></h2>
+  <div class="rule"></div>
+  <div class="lead">GO PREMIUM โดย Passion Grow Trading คือผู้ออกแบบและผลิตของพรีเมียมและของขวัญองค์กร ที่เชื่อว่าของขวัญที่ดีไม่ได้วัดกันที่ราคา แต่วัดกันที่ “ความรู้สึก” ที่ผู้รับจะจดจำ</div>
+  <div style="height:16px"></div>
+  <p>ในตลาดของพรีเมียมที่เต็มไปด้วยสินค้าเหมือน ๆ กัน เราเลือกยืนคนละจุด เราไม่ได้ขาย “ของแจก” แต่เราออกแบบ <b>ประสบการณ์การให้</b> ที่ช่วยให้แบรนด์และองค์กรของลูกค้าสร้างความสัมพันธ์ที่ลึกขึ้นกับพนักงาน คู่ค้า และลูกค้าของเขา นั่นคือความหมายของ <b>“Go beyond the gift”</b></p>
+  <div class="grid3" style="margin-top:10px">
+    <div class="card"><div class="ic">WHY</div><h4>ทำไมเราถึงมีอยู่</h4><p class="small">เพราะของขวัญที่ถูกออกแบบมาอย่างตั้งใจ สามารถเปลี่ยนการให้ธรรมดา ให้กลายเป็นความประทับใจที่อยู่ในความทรงจำ</p></div>
+    <div class="card"><div class="ic">HOW</div><h4>เราทำอย่างไร</h4><p class="small">ผสานการออกแบบที่พิถีพิถัน วัสดุคุณภาพ และการผลิตที่ควบคุมได้จริง เพื่อให้ทุกชิ้นงานสะท้อนแบรนด์ของลูกค้า</p></div>
+    <div class="card"><div class="ic">WHAT</div><h4>เราส่งมอบอะไร</h4><p class="small">ของพรีเมียม ของขวัญองค์กร และกิฟต์เซ็ตที่ออกแบบเฉพาะ ครบตั้งแต่คอนเซ็ปต์ ดีไซน์ ผลิต ถึงส่งมอบ</p></div>
+  </div>
+  <div style="height:14px"></div>
+  <div class="note"><b style="font-family:'Kanit';color:var(--navy)">บริบทตลาด 2026</b> &nbsp;งบของขวัญองค์กรในไทยปี 2026 เติบโตราว 12% เทียบปีก่อน และของขวัญที่ออกแบบเฉพาะตั้งราคาได้สูงกว่าสินค้าทั่วไป 30–50% เทรนด์เด่นคือ รักษ์โลก แพ็กเกจมินิมอล และการปรับให้เฉพาะบุคคล ซึ่งสอดคล้องกับจุดยืน “ประสบการณ์ที่น่าจดจำ” ของ GO PREMIUM โดยตรง</div>
+  <div class="pagelabel">Brand Strategy</div><div class="pagenum">03</div>
+</section>
+
+<!-- ============ PAGE 4 — FOUNDATION ============ -->
+<section class="page">
+  <div class="kicker">02 · Brand Foundation</div>
+  <h2 class="section">แก่นแบรนด์ <span class="tag-prop">ร่างเสนอ</span></h2>
+  <div class="rule"></div>
+  <div class="grid2">
+    <div class="card" style="background:var(--navy);color:#fff;border:none">
+      <div class="ic" style="color:var(--mustard)">VISION · วิสัยทัศน์</div>
+      <p style="font-size:16px;font-family:'Kanit';font-weight:300;line-height:1.5;color:#fff;margin-top:6px">เป็นแบรนด์ของพรีเมียมอันดับต้นของไทย ที่องค์กรนึกถึงเป็นอันดับแรกเมื่อต้องการ “ส่งมอบความรู้สึก” ไม่ใช่แค่ส่งมอบสินค้า</p>
+    </div>
+    <div class="card" style="background:var(--mustard);color:var(--navy);border:none">
+      <div class="ic" style="color:var(--navy)">MISSION · พันธกิจ</div>
+      <p style="font-size:14px;color:var(--navy);margin-top:6px">ออกแบบและผลิตของพรีเมียมที่มีคุณภาพ มีดีไซน์ และตรงคอนเซ็ปต์ของลูกค้า พร้อมบริการที่ไว้ใจได้ตั้งแต่ต้นจนจบงาน</p>
+    </div>
+  </div>
+  <div style="height:18px"></div>
+  <div class="kicker navy">Core Values · คุณค่าหลัก 4 ข้อ</div>
+  <div class="grid2" style="margin-top:12px">
+    <div class="card"><h4>1. Design with intention — ออกแบบอย่างมีเจตนา</h4><p class="small">ทุกชิ้นมีเหตุผล ไม่ใส่ลวดลายเกินจำเป็น ความเรียบที่ตั้งใจคือความพรีเมียม</p></div>
+    <div class="card"><h4>2. Quality you can feel — คุณภาพที่สัมผัสได้</h4><p class="small">เลือกวัสดุและงานผลิตที่ผู้รับรับรู้ได้ตั้งแต่แรกจับ</p></div>
+    <div class="card"><h4>3. Reliable partner — คู่คิดที่ไว้ใจได้</h4><p class="small">ตรงเวลา สื่อสารชัด แก้ปัญหาเป็น ทำให้ลูกค้าสบายใจ</p></div>
+    <div class="card"><h4>4. Meaningful giving — การให้ที่มีความหมาย</h4><p class="small">มองข้ามตัวสินค้าไปสู่ความสัมพันธ์ที่ของขวัญสร้างขึ้น</p></div>
+  </div>
+  <div class="pagelabel">Brand Strategy</div><div class="pagenum">04</div>
+</section>
+
+<!-- ============ PAGE 5 — POSITIONING ============ -->
+<section class="page">
+  <div class="kicker">03 · Positioning</div>
+  <h2 class="section">จุดยืน & คุณค่าหลัก <span class="tag-prop">ร่างเสนอ</span></h2>
+  <div class="rule"></div>
+  <div class="card" style="border-left:4px solid var(--mustard)">
+    <div class="ic">Positioning Statement</div>
+    <p style="font-size:15px;line-height:1.6;margin-top:6px">สำหรับ<b>องค์กรและแบรนด์</b>ที่ต้องการสร้างความประทับใจให้พนักงาน คู่ค้า และลูกค้า — <b>GO PREMIUM</b> คือผู้ออกแบบและผลิตของพรีเมียมที่เปลี่ยน “ของแจก” ให้เป็น “ประสบการณ์ที่น่าจดจำ” ด้วยดีไซน์ที่พิถีพิถัน คุณภาพที่สัมผัสได้ และบริการครบวงจรที่ไว้ใจได้</p>
+  </div>
+  <div style="height:16px"></div>
+  <div class="grid2">
+    <div>
+      <div class="kicker navy">Value Proposition · เราต่างอย่างไร</div>
+      <ul class="clean" style="margin-top:10px">
+        <li><b>ดีไซน์นำ ไม่ใช่ราคานำ</b> — ขายความรู้สึกและความหมาย ไม่แข่งราคาถูกอย่างเดียว</li>
+        <li><b>Customization จริง</b> — ออกแบบเฉพาะแบรนด์ ตั้งแต่คอนเซ็ปต์ถึงแพ็กเกจ</li>
+        <li><b>ครบวงจร</b> — คิด ออกแบบ ผลิต ส่งมอบ ในที่เดียว</li>
+        <li><b>ความน่าเชื่อถือ</b> — นิติบุคคลจดทะเบียน ตรงเวลา สื่อสารชัด</li>
+      </ul>
+    </div>
+    <div>
+      <div class="kicker navy">Brand Pillars · 3 เสาหลัก</div>
+      <div class="card" style="margin-top:10px;padding:12px 14px"><b style="font-family:'Kanit';color:var(--navy)">DESIGN</b><p class="small" style="margin:2px 0 0">ดีไซน์ที่ดูแพงและมีรสนิยม</p></div>
+      <div class="card" style="margin-top:8px;padding:12px 14px"><b style="font-family:'Kanit';color:var(--navy)">QUALITY</b><p class="small" style="margin:2px 0 0">วัสดุและงานผลิตที่สัมผัสได้</p></div>
+      <div class="card" style="margin-top:8px;padding:12px 14px"><b style="font-family:'Kanit';color:var(--navy)">TRUST</b><p class="small" style="margin:2px 0 0">บริการที่ไว้ใจได้ทุกขั้นตอน</p></div>
+    </div>
+  </div>
+  <div style="height:14px"></div>
+  <div class="note"><b style="font-family:'Kanit';color:var(--navy)">ความเสี่ยงที่ต้องระวัง</b> &nbsp;ตลาดของพรีเมียมแข่งด้านราคารุนแรง (เช่น Bangkok Premiums, Giftmanufactory, THAIVENIR) หากสื่อสารแต่ “พรีเมียม” โดยไม่มีดีไซน์/บริการที่พิสูจน์ได้จริง จะถูกลูกค้ามองเป็นสินค้าทั่วไปและกดราคา จุดยืนนี้จึงต้องมาคู่กับพอร์ตงานและรีวิวที่จับต้องได้</div>
+  <div class="pagelabel">Brand Strategy</div><div class="pagenum">05</div>
+</section>
+
+<!-- ============ PAGE 6 — AUDIENCE ============ -->
+<section class="page">
+  <div class="kicker">04 · Target Audience</div>
+  <h2 class="section">กลุ่มเป้าหมาย <span class="tag-prop">ร่างเสนอ</span></h2>
+  <div class="rule"></div>
+  <div class="lead">GO PREMIUM เป็นธุรกิจ B2B เป็นหลัก ผู้ตัดสินใจมักไม่ใช่ผู้ใช้ปลายทาง การสื่อสารจึงต้องตอบทั้ง “ความเสี่ยงของคนสั่ง” และ “ความประทับใจของคนรับ”</div>
+  <div style="height:14px"></div>
+  <div class="grid3">
+    <div class="persona">
+      <div class="role">HR / People</div>
+      <div class="who">ผู้จัดการฝ่ายบุคคล องค์กรกลาง–ใหญ่</div>
+      <p class="small"><b>ต้องการ:</b> ของขวัญพนักงาน/ปีใหม่ที่ดูใส่ใจ งบคุมได้ ส่งตรงเวลา</p>
+      <p class="small"><b>กลัว:</b> ของดูถูก ผลิตช้า พลาดดีล</p>
+    </div>
+    <div class="persona">
+      <div class="role">Marketing / Brand</div>
+      <div class="who">นักการตลาด เอเจนซี อีเวนต์</div>
+      <p class="small"><b>ต้องการ:</b> ของพรีเมียมที่ตรงคอนเซ็ปต์แคมเปญ ดีไซน์เด่น ถ่ายรูปสวย</p>
+      <p class="small"><b>กลัว:</b> งานไม่ตรงบรีф แบรนด์ดูไม่พรีเมียม</p>
+    </div>
+    <div class="persona">
+      <div class="role">SME / เจ้าของธุรกิจ</div>
+      <div class="who">เจ้าของกิจการ ผู้บริหาร</div>
+      <p class="small"><b>ต้องการ:</b> ของขวัญลูกค้า/คู่ค้าที่สร้างความสัมพันธ์ จบในที่เดียว</p>
+      <p class="small"><b>กลัว:</b> ยุ่งยาก คุยหลายเจ้า คุณภาพไม่นิ่ง</p>
+    </div>
+  </div>
+  <div style="height:16px"></div>
+  <div class="grid2">
+    <div class="card"><h4>โอกาสสำคัญตามฤดูกาล</h4><ul class="clean"><li>ปีใหม่ & เทศกาล (พีคสุด)</li><li>ครบรอบบริษัท / Employee milestone</li><li>เปิดตัวสินค้า / อีเวนต์ / สัมมนา</li><li>ของขวัญคู่ค้า & VIP</li></ul></div>
+    <div class="card"><h4>สิ่งที่ลูกค้าใช้ตัดสินใจ</h4><ul class="clean"><li>เห็นภาพงานจริง & พอร์ตโฟลิโอ</li><li>ความเร็วในการตอบ & เสนอราคา</li><li>ความมั่นใจเรื่องกำหนดส่ง</li><li>ตัวอย่าง/Mockup ก่อนผลิตจริง</li></ul></div>
+  </div>
+  <div class="pagelabel">Brand Strategy</div><div class="pagenum">06</div>
+</section>
+
+<!-- ============ PAGE 7 — PERSONALITY ============ -->
+<section class="page">
+  <div class="kicker">05 · Brand Personality</div>
+  <h2 class="section">บุคลิกแบรนด์ <span class="tag-prop">ร่างเสนอ</span></h2>
+  <div class="rule"></div>
+  <div class="lead">ถ้า GO PREMIUM เป็นคน เขาคือ “ที่ปรึกษาด้านการให้ที่มีรสนิยม” — มืออาชีพ ทันสมัย อบอุ่นแต่ไม่เวอร์ มั่นใจแต่ไม่โอ้อวด</div>
+  <div style="height:14px"></div>
+  <div class="kicker navy">Archetype หลัก: The Creator × The Caregiver</div>
+  <p class="small" style="margin-top:6px">สร้างสรรค์งานดีไซน์ที่มีรสนิยม (Creator) ควบคู่กับความใส่ใจในความสัมพันธ์และประสบการณ์ของผู้รับ (Caregiver)</p>
+  <div style="height:14px"></div>
+  <div class="kicker navy">Personality Sliders · เราอยู่ตรงไหน</div>
+  <table class="spectable" style="margin-top:10px">
+    <tr><th style="width:33%">ไม่ใช่เรา</th><th style="width:34%">สเกล</th><th style="width:33%">เป็นเรา</th></tr>
+    <tr><td>ราคาถูก / ลดแลกแจก</td><td style="text-align:center">●———————○</td><td>พรีเมียม / มีคุณค่า</td></tr>
+    <tr><td>หวือหวา ฉูดฉาด</td><td style="text-align:center">●———————○</td><td>เรียบ มีรสนิยม</td></tr>
+    <tr><td>ทางการแข็งกระด้าง</td><td style="text-align:center">○————●———○</td><td>อบอุ่น เป็นกันเอง</td></tr>
+    <tr><td>ขายของ</td><td style="text-align:center">●———————○</td><td>ให้คำปรึกษา</td></tr>
+    <tr><td>ตามเทรนด์ไปเรื่อย</td><td style="text-align:center">○———●——————○</td><td>ทันสมัยอย่างมีจุดยืน</td></tr>
+  </table>
+  <div style="height:14px"></div>
+  <div class="grid2">
+    <div class="card do"><h4 style="color:#2f7d52">เป็น</h4><ul class="clean"><li>มืออาชีพ น่าเชื่อถือ</li><li>มีรสนิยม เข้าใจดีไซน์</li><li>ใส่ใจรายละเอียด</li><li>จริงใจ ใช้งานได้จริง</li></ul></div>
+    <div class="card dont"><h4 style="color:#b3413d">ไม่เป็น</h4><ul class="clean"><li>ขายของแบบกดดัน</li><li>เวอร์ คุยโต</li><li>ฉูดฉาด เกินจริง</li><li>วิชาการ น่าเบื่อ</li></ul></div>
+  </div>
+  <div class="pagelabel">Brand Strategy</div><div class="pagenum">07</div>
+</section>
+
+<!-- ============ PAGE 8 — TONE OF VOICE ============ -->
+<section class="page">
+  <div class="kicker">06 · Tone of Voice</div>
+  <h2 class="section">น้ำเสียงการสื่อสาร <span class="tag-prop">ร่างเสนอ</span></h2>
+  <div class="rule"></div>
+  <div class="lead">เขียนให้เหมือนที่ปรึกษามือโปรที่คุยกับลูกค้าด้วยความเคารพ ชัดเจน ตรงประเด็น และอบอุ่น ไม่ใช่โบรชัวร์ขายของ</div>
+  <div style="height:14px"></div>
+  <div class="grid2">
+    <div class="card"><h4>หลัก 4 ข้อ</h4><ul class="clean"><li><b>ชัด</b> — สั้น ตรงประเด็น ลูกค้าเข้าใจทันที</li><li><b>มืออาชีพ</b> — สุภาพ น่าเชื่อถือ มีข้อมูลรองรับ</li><li><b>อบอุ่น</b> — เป็นมิตร ใส่ใจ ไม่แข็งทื่อ</li><li><b>มั่นใจ</b> — กล้ายืนยันคุณภาพ แต่ไม่โอ้อวด</li></ul></div>
+    <div class="card"><h4>คำที่ใช้ & เลี่ยง</h4>
+      <p class="small"><b>ใช้:</b> ออกแบบเฉพาะ, พิถีพิถัน, ตรงคอนเซ็ปต์, ส่งมอบ, ประสบการณ์, ใส่ใจ</p>
+      <p class="small"><b>เลี่ยง:</b> ถูกที่สุด, เกรดเอ++, สุดยอด!!!, โปรแรง, ของแจกทั่วไป</p>
+    </div>
+  </div>
+  <div style="height:14px"></div>
+  <div class="kicker navy">ตัวอย่างเปรียบเทียบ</div>
+  <table class="spectable" style="margin-top:10px">
+    <tr><th>สถานการณ์</th><th>❌ อย่าเขียน</th><th>✅ เขียนแบบนี้</th></tr>
+    <tr><td>เปิดการขาย</td><td>โปรโมชั่นของแจกราคาถูกที่สุด!!!</td><td>ออกแบบของขวัญองค์กรที่สะท้อนแบรนด์คุณ — ปรึกษาฟรีก่อนเริ่มงาน</td></tr>
+    <tr><td>แนะนำสินค้า</td><td>สินค้าเกรดพรีเมียมสุดยอดมาก</td><td>กิฟต์เซ็ตที่เลือกวัสดุและดีไซน์ให้เข้ากับโอกาสของคุณ</td></tr>
+    <tr><td>ปิดการขาย</td><td>รีบสั่งด่วน เดี๋ยวหมด!</td><td>แจ้งจำนวนและกำหนดส่งให้เรา เราวางแผนการผลิตให้ทันงานคุณ</td></tr>
+  </table>
+  <div class="pagelabel">Brand Strategy</div><div class="pagenum">08</div>
+</section>
+
+<!-- ============ PAGE 9 — MESSAGING ============ -->
+<section class="page">
+  <div class="kicker">07 · Messaging</div>
+  <h2 class="section">ข้อความหลัก & สโลแกน</h2>
+  <div class="rule"></div>
+  <div class="card" style="background:var(--navy);color:#fff;border:none;text-align:center;padding:26px">
+    <div class="ic" style="color:var(--mustard)">TAGLINE หลัก <span class="tag-prop tag-core">เดิม</span></div>
+    <div style="font-family:'Kanit';font-weight:300;font-size:30px;margin-top:8px">Go beyond the gift</div>
+    <div style="font-size:15px;color:var(--mustard-soft);margin-top:4px">มากกว่าของขวัญ คือประสบการณ์ที่น่าจดจำ</div>
+  </div>
+  <div style="height:16px"></div>
+  <div class="grid2">
+    <div class="card"><h4>Message Pillars <span class="tag-prop">ร่างเสนอ</span></h4><ul class="clean"><li><b>ดีไซน์เฉพาะคุณ</b> — ไม่ใช่ของโหลทั่วไป</li><li><b>คุณภาพที่สัมผัสได้</b> — แพงในแบบที่จับต้องได้</li><li><b>จบครบในที่เดียว</b> — คิด ออกแบบ ผลิต ส่ง</li></ul></div>
+    <div class="card"><h4>ประโยคพร้อมใช้ <span class="tag-prop">ร่างเสนอ</span></h4><ul class="clean"><li>“เปลี่ยนของแจก ให้เป็นของที่อยากเก็บ”</li><li>“ของขวัญที่สะท้อนแบรนด์คุณ”</li><li>“ออกแบบการให้ ที่ผู้รับจดจำ”</li></ul></div>
+  </div>
+  <div style="height:16px"></div>
+  <div class="kicker navy">วิธีเขียนชื่อแบรนด์ “GO PREMIUM” <span class="tag-prop tag-core">เดิม</span></div>
+  <div class="grid3" style="margin-top:10px">
+    <div class="card"><div class="ic">RULE 1</div><p class="small">ใช้ตัวพิมพ์ใหญ่ทั้งหมดเสมอ — <b>GO PREMIUM</b></p></div>
+    <div class="card"><div class="ic">RULE 2</div><p class="small">เว้นวรรคเดียวระหว่างคำ — GO·PREMIUM ไม่ใช่ GOPREMIUM</p></div>
+    <div class="card"><div class="ic">RULE 3</div><p class="small">ใช้ “GO PREMIUM” เหมือนกันทั้งเนื้อหาไทยและอังกฤษ</p></div>
+  </div>
+  <div class="pagelabel">Brand Strategy</div><div class="pagenum">09</div>
+</section>
+
+<!-- ============ PAGE 10 — LOGO ============ -->
+<section class="page">
+  <div class="kicker">08 · Logo System</div>
+  <h2 class="section">โลโก้ <span class="tag-prop tag-core">เดิม + ปรับ</span></h2>
+  <div class="rule"></div>
+  <div class="lead">โลโก้ GO PREMIUM มี 2 เวอร์ชันการจัดวางตามพื้นที่ใช้งาน และต้องอยู่บนพื้นที่ที่อ่านง่ายเสมอ &nbsp;(หมายเหตุ: ช่องด้านล่างเป็นภาพแทนตำแหน่ง โปรดใส่ไฟล์โลโก้จริงจากโฟลเดอร์ Logo)</div>
+  <div style="height:14px"></div>
+  <div class="kicker navy">เวอร์ชันการจัดวาง</div>
+  <div class="grid2" style="margin-top:10px">
+    <div><div class="logobox lb-navy"><span>GO</span>&nbsp;<span class="pr">PREMIUM</span></div><p class="small" style="text-align:center;margin-top:6px">แนวนอน — สำหรับพื้นที่กว้าง</p></div>
+    <div><div class="logobox lb-navy" style="flex-direction:column;font-size:24px"><span>GO</span><span class="pr">PREMIUM</span></div><p class="small" style="text-align:center;margin-top:6px">สี่เหลี่ยม/แนวตั้ง — พื้นที่จำกัด</p></div>
+  </div>
+  <div style="height:16px"></div>
+  <div class="kicker navy">เวอร์ชันสี (Logo Color Tone)</div>
+  <div class="grid3" style="margin-top:10px">
+    <div><div class="logobox lb-navy" style="font-size:22px"><span>GO</span>&nbsp;<span class="pr">PR</span></div><p class="small" style="text-align:center;margin-top:6px">พื้นเข้ม → โลโก้ขาว/เหลือง</p></div>
+    <div><div class="logobox lb-white" style="font-size:22px"><span>GO</span>&nbsp;<span class="pr">PR</span></div><p class="small" style="text-align:center;margin-top:6px">พื้นสว่าง → โลโก้กรมท่า</p></div>
+    <div><div class="logobox lb-mustard" style="font-size:22px"><span>GO</span>&nbsp;<span class="pr">PR</span></div><p class="small" style="text-align:center;margin-top:6px">พื้นเหลือง → โลโก้กรมท่า/ขาว</p></div>
+  </div>
+  <div class="pagelabel">Visual Identity</div><div class="pagenum">10</div>
+</section>
+
+<!-- ============ PAGE 11 — CLEAR SPACE ============ -->
+<section class="page">
+  <div class="kicker">09 · Clear Space & Sizing</div>
+  <h2 class="section">พื้นที่ปลอดภัย & ขนาดต่ำสุด <span class="tag-prop">เพิ่มใหม่</span></h2>
+  <div class="rule"></div>
+  <div class="lead">เพื่อให้โลโก้โดดเด่นเสมอ ต้องเว้นพื้นที่ว่างรอบโลโก้ และไม่ใช้เล็กเกินกว่าที่กำหนด (ส่วนนี้ Brand Book เดิมยังไม่มี — แนะนำให้กำหนดเป็นมาตรฐาน)</div>
+  <div style="height:14px"></div>
+  <div class="grid2">
+    <div>
+      <div class="kicker navy">Clear Space</div>
+      <div class="clearspace" style="margin-top:10px"><span style="font-family:'Kanit';font-weight:700;font-size:26px;color:var(--navy)">GO <span style="color:var(--mustard)">PREMIUM</span></span></div>
+      <p class="small" style="margin-top:8px">เว้นระยะรอบโลโก้อย่างน้อยเท่ากับความสูงของตัวอักษร “G” ทุกด้าน ห้ามมีข้อความ/ภาพ/ขอบรุกล้ำเข้ามา</p>
+    </div>
+    <div>
+      <div class="kicker navy">Minimum Size · ขนาดเล็กสุด</div>
+      <div class="card" style="margin-top:10px"><h4>งานพิมพ์ (Print)</h4><p class="small">โลโก้แนวนอนกว้างไม่ต่ำกว่า <b>25 มม.</b> เพื่อให้คำว่า PREMIUM ยังอ่านออก</p></div>
+      <div class="card" style="margin-top:8px"><h4>งานดิจิทัล (Digital)</h4><p class="small">กว้างไม่ต่ำกว่า <b>90 px</b> &nbsp;·&nbsp; ไอคอนเดี่ยวไม่ต่ำกว่า <b>32 px</b></p></div>
+      <div class="note" style="margin-top:10px">ตัวเลขเป็นค่าเริ่มต้นที่แนะนำ ปรับได้ตามไฟล์โลโก้จริง</div>
+    </div>
+  </div>
+  <div class="pagelabel">Visual Identity</div><div class="pagenum">11</div>
+</section>
+
+<!-- ============ PAGE 12 — MISUSE ============ -->
+<section class="page">
+  <div class="kicker">10 · Logo Misuse</div>
+  <h2 class="section">ข้อห้ามการใช้โลโก้ <span class="tag-prop tag-core">เดิม</span></h2>
+  <div class="rule"></div>
+  <div class="lead">เพื่อรักษาความสม่ำเสมอของแบรนด์ ห้ามดัดแปลงโลโก้ในลักษณะต่อไปนี้</div>
+  <div style="height:14px"></div>
+  <div class="grid3">
+    <div><div class="misuse"><span class="x">✕</span>GO <span style="color:var(--mustard)">PR</span> GIFT</div><p class="small" style="text-align:center;margin-top:5px">ห้ามเพิ่มข้อความ/ภาพบนโลโก้</p></div>
+    <div><div class="misuse"><span class="x">✕</span><span style="-webkit-text-stroke:1px #D9534F">GO PR</span></div><p class="small" style="text-align:center;margin-top:5px">ห้ามเพิ่มเส้นขอบหรือเอฟเฟกต์</p></div>
+    <div><div class="misuse"><span class="x">✕</span><span style="color:#9b59b6">GO <span style="color:#27ae60">PR</span></span></div><p class="small" style="text-align:center;margin-top:5px">ห้ามใช้สีนอกเหนือที่กำหนด</p></div>
+    <div><div class="misuse"><span class="x">✕</span><span style="transform:rotate(-12deg)">GO PR</span></div><p class="small" style="text-align:center;margin-top:5px">ห้ามเอียง/หมุนโลโก้</p></div>
+    <div><div class="misuse" style="background:linear-gradient(45deg,#888,#ccc,#555);color:#fff"><span class="x">✕</span>GO PR</div><p class="small" style="text-align:center;margin-top:5px">ห้ามวางบนพื้นหลังรกหรือลายตา</p></div>
+    <div><div class="misuse" style="font-family:'Times New Roman',serif"><span class="x">✕</span>GO PR</div><p class="small" style="text-align:center;margin-top:5px">ห้ามเปลี่ยนเป็นฟอนต์อื่น</p></div>
+    <div><div class="misuse"><span class="x">✕</span><span style="opacity:.35">GO PR</span></div><p class="small" style="text-align:center;margin-top:5px">ห้ามลดความทึบ/ทำโปร่งใส</p></div>
+    <div><div class="misuse"><span class="x">✕</span><span style="transform:scaleX(1.8)">GO PR</span></div><p class="small" style="text-align:center;margin-top:5px">ห้ามยืด/บีบสัดส่วน</p></div>
+    <div><div class="misuse"><span class="x">✕</span>G O P R</div><p class="small" style="text-align:center;margin-top:5px">ห้ามจัดองค์ประกอบใหม่</p></div>
+  </div>
+  <div class="pagelabel">Visual Identity</div><div class="pagenum">12</div>
+</section>
+
+<!-- ============ PAGE 13 — COLOR ============ -->
+<section class="page">
+  <div class="kicker">11 · Color Palette</div>
+  <h2 class="section">สีแบรนด์ <span class="tag-prop tag-core">เดิม + ขยาย</span></h2>
+  <div class="rule"></div>
+  <div class="kicker navy">สีหลัก (Primary)</div>
+  <div class="grid3" style="margin-top:10px">
+    <div class="swatch" style="background:#1F3A5F"><span class="nm">Navy</span><span class="hex">HEX #1F3A5F · RGB 31·58·95</span></div>
+    <div class="swatch" style="background:#F4BD44;color:#3a2c00"><span class="nm">Mustard Yellow</span><span class="hex">HEX #F4BD44 · RGB 244·189·68</span></div>
+    <div class="swatch" style="background:#FFFFFF;color:#1A2230;border:1px solid var(--line)"><span class="nm">White</span><span class="hex">HEX #FFFFFF · RGB 255·255·255</span></div>
+  </div>
+  <div style="height:16px"></div>
+  <div class="kicker navy">สีรอง / กลาง (Supporting & Neutral) <span class="tag-prop">เพิ่มใหม่</span></div>
+  <div class="grid3" style="margin-top:10px">
+    <div class="swatch" style="background:#2C4F7C;height:78px"><span class="nm">Navy Soft</span><span class="hex">#2C4F7C</span></div>
+    <div class="swatch" style="background:#F8D586;color:#3a2c00;height:78px"><span class="nm">Mustard Soft</span><span class="hex">#F8D586</span></div>
+    <div class="swatch" style="background:#F5F6F8;color:#1A2230;height:78px;border:1px solid var(--line)"><span class="nm">Cloud Grey</span><span class="hex">#F5F6F8</span></div>
+  </div>
+  <div style="height:16px"></div>
+  <div class="grid2">
+    <div>
+      <div class="kicker navy">สัดส่วนการใช้สี (60·30·10)</div>
+      <div class="ratio" style="margin-top:10px"><div style="flex:6;background:#fff;border-right:1px solid var(--line)"></div><div style="flex:3;background:#1F3A5F"></div><div style="flex:1;background:#F4BD44"></div></div>
+      <p class="small">ขาว 60% (พื้นที่หายใจ) · กรมท่า 30% (โครงสร้าง/ข้อความ) · เหลือง 10% (เน้นจุดสำคัญเท่านั้น) ห้ามใช้เหลืองเป็นพื้นใหญ่ทั้งหน้า</p>
+    </div>
+    <div>
+      <div class="kicker navy">Accessibility · ความคมชัด</div>
+      <ul class="clean" style="margin-top:10px">
+        <li>กรมท่าบนขาว = คอนทราสต์สูง ✓ ใช้กับข้อความได้</li>
+        <li>ขาวบนกรมท่า ✓ ใช้กับข้อความได้</li>
+        <li>เหลืองบนขาว ✗ คอนทราสต์ต่ำ — ห้ามใช้กับตัวอักษรเล็ก ใช้เป็นพื้น/กราฟิกเท่านั้น</li>
+        <li>ตัวอักษรบนเหลือง ให้ใช้กรมท่าเสมอ</li>
+      </ul>
+    </div>
+  </div>
+  <div class="pagelabel">Visual Identity</div><div class="pagenum">13</div>
+</section>
+
+<!-- ============ PAGE 14 — TYPOGRAPHY ============ -->
+<section class="page">
+  <div class="kicker">12 · Typography</div>
+  <h2 class="section">ตัวอักษร <span class="tag-prop tag-core">เดิม</span></h2>
+  <div class="rule"></div>
+  <div class="spec"><div class="ic">Satoshi — For Header (อังกฤษ)</div><div class="big">Go beyond the gift</div><div class="small">ABCDEFGHIJKLM abcdefghijklm 1234567890</div></div>
+  <div class="grid2">
+    <div class="spec"><div class="ic">TT Norms — For Body (อังกฤษ)</div><p style="font-size:14px">The premium gift, designed with intention.</p><div class="small">ABCDEFG abcdefg 1234567890</div></div>
+    <div class="spec"><div class="ic">Open Sans — For Thai (ภาษาไทย)</div><p style="font-size:14px">มากกว่าของขวัญ คือประสบการณ์</p><div class="small">กขคงจฉชซ 1234567890</div></div>
+  </div>
+  <div class="kicker navy" style="margin-top:6px">ลำดับชั้นตัวอักษร (Hierarchy) <span class="tag-prop">เพิ่มใหม่</span></div>
+  <div style="margin-top:6px">
+    <div class="scale-row"><span class="lab">H1 · Heading</span><span style="font-family:'Kanit';font-weight:600;font-size:28px;color:var(--navy)">หัวเรื่องหลัก 28</span></div>
+    <div class="scale-row"><span class="lab">H2 · Subhead</span><span style="font-family:'Kanit';font-weight:500;font-size:20px;color:var(--navy)">หัวเรื่องรอง 20</span></div>
+    <div class="scale-row"><span class="lab">Body</span><span style="font-size:14px">เนื้อหาหลัก ขนาด 14 อ่านสบาย เว้นระยะบรรทัด 1.6</span></div>
+    <div class="scale-row"><span class="lab">Caption</span><span class="small" style="font-size:11px">คำอธิบายภาพ / หมายเหตุ ขนาด 11</span></div>
+  </div>
+  <div class="note" style="margin-top:14px"><b style="font-family:'Kanit';color:var(--navy)">หมายเหตุการแสดงผล</b> &nbsp;เอกสารฉบับนี้แสดงผลด้วยฟอนต์ <b>Kanit</b> (หัวเรื่อง) และ <b>Sarabun</b> (เนื้อหา) เพื่อให้ภาษาไทยคมชัด ส่วนฟอนต์ทางการของแบรนด์ยังคงเป็น Satoshi / TT Norms / Open Sans ตามที่กำหนดด้านบน ควรฝังไฟล์ฟอนต์จริงในเทมเพลตงานออกแบบ</div>
+  <div class="pagelabel">Visual Identity</div><div class="pagenum">14</div>
+</section>
+
+<!-- ============ PAGE 15 — BRAND ICON ============ -->
+<section class="page">
+  <div class="kicker">13 · Brand Icon</div>
+  <h2 class="section">ไอคอนแบรนด์ <span class="tag-prop tag-core">เดิม</span></h2>
+  <div class="rule"></div>
+  <div class="lead">ไอคอน GO PREMIUM เป็นองค์ประกอบเสริมที่มาจากโลโก้หลัก ใช้เพื่อเสริมการรับรู้แบรนด์ ไม่ใช้แทนโลโก้เต็ม</div>
+  <div style="height:14px"></div>
+  <div class="grid2">
+    <div class="card do"><h4 style="color:#2f7d52">DO’S · ควรทำ</h4><ul class="clean"><li>ใช้เป็นกราฟิกเสริมบนแพ็กเกจ แท็ก หรือสื่อสิ่งพิมพ์</li><li>ใช้ในเลย์เอาต์ที่มีโลโก้เต็มอยู่แล้ว</li><li>ใช้เฉพาะสีแบรนด์และสัดส่วนที่กำหนด</li></ul></div>
+    <div class="card dont"><h4 style="color:#b3413d">DON’TS · ห้ามทำ</h4><ul class="clean"><li>ใช้ไอคอนแทนโลโก้ในส่วนหัวหรือรูปโปรไฟล์</li><li>ยืด หมุน เปลี่ยนสี หรือใส่เอฟเฟกต์</li><li>ใช้ไอคอนเดี่ยวในจุดที่ต้องระบุแบรนด์ชัดเจน</li></ul></div>
+  </div>
+  <div class="pagelabel">Visual Identity</div><div class="pagenum">15</div>
+</section>
+
+<!-- ============ PAGE 16 — ART DIRECTION ============ -->
+<section class="page">
+  <div class="kicker">14 · Art Direction</div>
+  <h2 class="section">ภาพ & อาร์ตไดเรกชัน <span class="tag-prop tag-core">เดิม + ขยาย</span></h2>
+  <div class="rule"></div>
+  <div class="grid2">
+    <div class="card"><h4>Mood & Tone</h4><ul class="clean"><li>Professional — มืออาชีพ</li><li>Modern — ทันสมัย</li><li>Well-designed — ออกแบบมาอย่างดี ดูมีระเบียบ แต่ไม่แข็งกระด้าง</li><li>ใช้แสงธรรมชาติ (natural light) ไม่ใช้สีสดฉูดฉาด</li><li>ให้ความรู้สึก real-life / ใช้งานได้จริง</li></ul></div>
+    <div class="card"><h4>Background Setting</h4><ul class="clean"><li>ออฟฟิศสมัยใหม่ (Modern Office)</li><li>โต๊ะขาวเรียบสะอาด เฟอร์นิเจอร์ไม้</li><li>โทน soft earth-tone · ต้นไม้เขียวเพื่อความสดชื่น</li><li>พร็อพ: laptop, notebook, ปากกา, โคมไฟสมัยใหม่</li></ul></div>
+  </div>
+  <div style="height:14px"></div>
+  <div class="kicker navy">แนวทางถ่ายภาพสินค้า <span class="tag-prop">เพิ่มใหม่</span></div>
+  <div class="grid3" style="margin-top:10px">
+    <div class="card"><div class="ic">DO</div><p class="small">โฟกัสที่ผิวสัมผัสและรายละเอียดวัสดุ ให้เห็นความพรีเมียม</p></div>
+    <div class="card"><div class="ic">DO</div><p class="small">จัดวางแบบมีพื้นที่ว่าง (negative space) ให้ภาพหายใจ</p></div>
+    <div class="card"><div class="ic">DON’T</div><p class="small">เลี่ยงพื้นหลังรก ฟิลเตอร์จัด หรือแสงแฟลชแข็ง</p></div>
+  </div>
+  <div class="pagelabel">Visual Identity</div><div class="pagenum">16</div>
+</section>
+
+<!-- ============ PAGE 17 — SOCIAL ============ -->
+<section class="page">
+  <div class="kicker">15 · Social Media</div>
+  <h2 class="section">โซเชียลมีเดีย <span class="tag-prop tag-core">เดิม + ขยาย</span></h2>
+  <div class="rule"></div>
+  <div class="kicker navy">ขนาดไฟล์มาตรฐาน</div>
+  <table class="spectable" style="margin-top:10px">
+    <tr><th>แพลตฟอร์ม</th><th>ชิ้นงาน</th><th>ขนาด (px)</th></tr>
+    <tr><td>Facebook</td><td>Profile</td><td>720 × 720</td></tr>
+    <tr><td>Facebook</td><td>Cover</td><td>820 × 360</td></tr>
+    <tr><td>Instagram <span class="tag-prop">เพิ่ม</span></td><td>Post / Carousel</td><td>1080 × 1080 / 1080 × 1350</td></tr>
+    <tr><td>Instagram / TikTok <span class="tag-prop">เพิ่ม</span></td><td>Story / Reel</td><td>1080 × 1920</td></tr>
+    <tr><td>LINE OA <span class="tag-prop">เพิ่ม</span></td><td>Rich message</td><td>1040 × 1040</td></tr>
+  </table>
+  <div style="height:14px"></div>
+  <div class="grid2">
+    <div class="card"><h4>หลักการโพสต์ <span class="tag-prop">ร่างเสนอ</span></h4><ul class="clean"><li>พื้นขาวสะอาด เน้นภาพสินค้าจริง</li><li>ใช้เหลืองเป็นจุดเน้นเล็ก ๆ ไม่ท่วมเฟรม</li><li>หัวเรื่องสั้น ตรงประเด็น (Kanit/Satoshi)</li><li>ทุกโพสต์มีโลโก้หรือไอคอนแบรนด์</li></ul></div>
+    <div class="card"><h4>เสาเนื้อหา (Content Pillars) <span class="tag-prop">ร่างเสนอ</span></h4><ul class="clean"><li>ผลงานจริง / Case study</li><li>ไอเดียของขวัญตามโอกาส</li><li>เบื้องหลังการผลิต & คุณภาพ</li><li>รีวิว & เสียงจากลูกค้า</li></ul></div>
+  </div>
+  <div class="pagelabel">Visual Identity</div><div class="pagenum">17</div>
+</section>
+
+<!-- ============ PAGE 18 — APPLICATIONS ============ -->
+<section class="page">
+  <div class="kicker">16 · Applications</div>
+  <h2 class="section">การนำไปใช้ <span class="tag-prop">เพิ่มใหม่</span></h2>
+  <div class="rule"></div>
+  <div class="lead">ตัวอย่างการนำอัตลักษณ์ไปใช้กับงานจริง เพื่อความสม่ำเสมอของแบรนด์ในทุกจุดสัมผัส</div>
+  <div style="height:14px"></div>
+  <div class="grid3">
+    <div><div class="logobox lb-navy" style="height:110px;font-size:18px;flex-direction:column"><span>GO <span class="pr">PREMIUM</span></span><span style="font-size:9px;font-weight:300;color:#A9BBD2;letter-spacing:2px;margin-top:6px">NAME CARD</span></div><p class="small" style="text-align:center;margin-top:6px">นามบัตร — พื้นกรมท่า โลโก้ขาว</p></div>
+    <div><div class="logobox lb-white" style="height:110px;font-size:16px;flex-direction:column"><span style="font-size:11px;color:var(--grey);letter-spacing:1px">GIFT TAG</span><span style="margin-top:8px">GO <span class="pr">PR</span></span></div><p class="small" style="text-align:center;margin-top:6px">แท็กของขวัญ — ใช้ไอคอนแบรนด์</p></div>
+    <div><div class="logobox lb-mustard" style="height:110px;font-size:16px;flex-direction:column"><span style="font-size:10px;letter-spacing:1px">PACKAGING</span><span style="margin-top:8px">GO <span class="pr">PR</span></span></div><p class="small" style="text-align:center;margin-top:6px">กล่อง/แพ็กเกจ — เหลืองเป็นแอ็กเซนต์</p></div>
+  </div>
+  <div style="height:16px"></div>
+  <div class="card"><h4>ลายเซ็นอีเมล (Email Signature)</h4>
+    <p style="font-family:'Kanit';color:var(--navy);font-weight:600;margin:6px 0 0">คุณแป้ง · GO PREMIUM</p>
+    <p class="small" style="margin:0">PASSION GROW TRADING CO., LTD. &nbsp;|&nbsp; 081-887-2627 &nbsp;|&nbsp; info@passiongrow.co.th</p>
+    <p class="small" style="margin:0">www.ผลิตของพรีเมียม.com &nbsp;|&nbsp; @gopremium</p>
+  </div>
+  <div class="pagelabel">Visual Identity</div><div class="pagenum">18</div>
+</section>
+
+<!-- ============ PAGE 19 — CONTACT ============ -->
+<section class="page cover" style="justify-content:center;gap:30px">
+  <div class="swoosh"></div>
+  <div>
+    <div class="kicker">Contact</div>
+    <div class="logo-mark" style="font-size:46px;margin-top:8px"><span class="go">GO</span> <span class="pr">PREMIUM</span></div>
+    <div class="sub">ผลิตของพรีเมียม</div>
+  </div>
+  <div class="contact-grid" style="color:#fff">
+    <div><div class="k">บริษัท</div>PASSION GROW TRADING CO., LTD.</div>
+    <div><div class="k">Tax ID</div>0105567196422</div>
+    <div style="grid-column:1/3"><div class="k">ที่อยู่</div>594/235 ถ.กาญจนาภิเษก แขวงบางไผ่ เขตบางแค กรุงเทพฯ 10160</div>
+    <div><div class="k">โทร</div>081-887-2627 (คุณแป้ง)</div>
+    <div><div class="k">อีเมล</div>info@passiongrow.co.th</div>
+    <div><div class="k">เว็บไซต์</div>www.ผลิตของพรีเมียม.com</div>
+    <div><div class="k">โซเชียล</div>@gopremium</div>
+  </div>
+  <div class="tagline" style="font-size:20px"><b>Go beyond the gift</b><br>มากกว่าของขวัญ คือประสบการณ์ที่น่าจดจำ</div>
+  <div class="bar"></div>
+</section>
+
+</body>
+</html>
