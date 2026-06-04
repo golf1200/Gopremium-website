@@ -232,6 +232,9 @@ input,select,textarea{font-family:var(--body)}
 .pd{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,56px);align-items:start}
 .pd-img{background:#fff;border-radius:var(--r-xl);box-shadow:var(--sh-sm);overflow:hidden;aspect-ratio:1/1}
 .pd-img img{width:100%;height:100%;object-fit:cover}
+.pd-thumbs{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+.pd-thumbs img{width:64px;height:64px;border-radius:10px;object-fit:cover;border:1px solid var(--line);cursor:pointer;background:#fff;transition:.15s}
+.pd-thumbs img:hover{border-color:var(--mustard)}
 .pd h1{font-size:clamp(26px,3vw,38px);color:var(--navy);margin:14px 0 8px;letter-spacing:-.02em}
 .pd-price{font-family:var(--head);font-size:30px;font-weight:700;color:var(--navy);margin:10px 0}.pd-price small{font-family:var(--body);font-size:14px;font-weight:400;color:var(--grey)}
 .spec{border-top:1px solid var(--line);margin-top:22px;padding-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:14px 20px}
@@ -401,11 +404,13 @@ const catList=Object.keys(CL).filter(c=>byCat[c]).sort((a,b)=>byCat[b].length-by
 const baht=n=>n?('฿'+n.toLocaleString('en-US')):'สอบถามราคา';
 const esc=s=>(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const grpIcon=c=>{const g=GROUPS.find(x=>x.cats.includes(c));return g?g.icon:'🎁';};
+const pimg=p=>p.img||mock(p.catSlug,p.sku);                                   // real photo or mockup fallback
+const repImg=cat=>{const a=byCat[cat]||[];const r=a.find(p=>p.img)||a[0];return r?pimg(r):mock(cat,cat);};
 
 /* ===== reusable bits ===== */
 function card(p){
   const tier=p.tier?`<span class="ptier">${esc(p.tier)}</span>`:'';
-  return `<a class="pcard" href="#/p/${p.sku}"><div class="pthumb"><span class="pchip">${esc(CL[p.catSlug]||p.cat)}</span>${tier}<img loading="lazy" src="${mock(p.catSlug,p.sku)}" alt="${esc(p.name)}"></div>
+  return `<a class="pcard" href="#/p/${p.sku}"><div class="pthumb"><span class="pchip">${esc(CL[p.catSlug]||p.cat)}</span>${tier}<img loading="lazy" src="${pimg(p)}" alt="${esc(p.name)}"></div>
     <div class="pbody"><div class="pname">${esc(p.name)}</div><div class="pfeat">${esc(p.features)}</div>
     <div class="pfoot"><div class="pprice">${baht(p.price)} <small>${p.price?'/ชิ้น':''}</small></div><div class="pmoq">MOQ ${p.moq}</div></div></div></a>`;
 }
@@ -516,7 +521,7 @@ const VALUES=[
 const CLIENTS=['c1','c2','c3','c4','c5','c6','c7','c8','c9','c10','c11','c12','c13','c14','c15','c16','c17','c18','c19','c20'];
 
 function viewHome(){
-  const collage=['giftset','drinkware','bags','stationery','umbrella'].map(c=>byCat[c]?byCat[c][0]:null).filter(Boolean);
+  const collage=['bags','drinkware','giftset','lifestyle','stationery'].map(c=>(byCat[c]||[]).find(p=>p.img)||(byCat[c]||[])[0]).filter(Boolean);
   const feat=catList.slice(0,4).map(c=>byCat[c][0]).concat(catList.slice(0,4).map(c=>byCat[c][1]||byCat[c][0])).slice(0,8);
   const clientRow=[...CLIENTS,...CLIENTS].map(c=>`<img src="clients/${c}.png" alt="ลูกค้าองค์กรของ GO PREMIUM" loading="lazy">`).join('');
   return `
@@ -537,7 +542,7 @@ function viewHome(){
       </div>
       <div class="hero-actions"><a class="btn btn-primary btn-lg" href="#/quote">ขอใบเสนอราคา <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-ghost btn-lg" href="#/all">ดูแคตตาล็อก ${P.length} รายการ</a></div>
     </div>
-    <div class="hero-collage">${collage.map(p=>`<img src="${mock(p.catSlug,p.sku)}" alt="${esc(p.name)}">`).join('')}</div>
+    <div class="hero-collage">${collage.map(p=>`<img src="${pimg(p)}" alt="${esc(p.name)}">`).join('')}</div>
   </div></section>
 
   <section class="trust"><div class="wrap cap"><span>ได้รับความไว้วางใจจากองค์กรชั้นนำ</span><i></i></div>
@@ -552,7 +557,7 @@ function viewHome(){
 
   <section class="sec" style="background:var(--cloud)"><div class="wrap">
     <div class="shead"><span class="eyebrow"><span class="dot"></span>เลือกตามโอกาส</span><h2 class="h2">ของขวัญที่ใช่ สำหรับทุกโอกาส</h2><p class="lead">ไม่รู้จะเริ่มจากไหน? เลือกโอกาสของคุณ — เราแนะนำสินค้าและดีไซน์ที่เหมาะสมให้ทันที</p></div>
-    <div class="g-auto occ-grid">${OCCS.map(o=>`<div class="occ"><div class="im"><img src="${mock(o[2],o[0])}" alt="${o[0]}">${o[3]?`<span class="badge badge-glass glass">${o[3]}</span>`:''}</div><div class="bd"><h4>${o[0]}</h4><p>${o[1]}</p><div style="display:flex;align-items:center;justify-content:space-between;margin-top:8px"><span style="font-family:var(--head);font-size:12.5px;color:var(--grey)">ปรับตามงบ & จำนวน</span><a class="btn btn-ghost btn-sm" href="#/c/${o[2]}">ดูไอเดีย</a></div></div></div>`).join('')}</div>
+    <div class="g-auto occ-grid">${OCCS.map(o=>`<div class="occ"><div class="im"><img src="${repImg(o[2])}" alt="${o[0]}">${o[3]?`<span class="badge badge-glass glass">${o[3]}</span>`:''}</div><div class="bd"><h4>${o[0]}</h4><p>${o[1]}</p><div style="display:flex;align-items:center;justify-content:space-between;margin-top:8px"><span style="font-family:var(--head);font-size:12.5px;color:var(--grey)">ปรับตามงบ & จำนวน</span><a class="btn btn-ghost btn-sm" href="#/c/${o[2]}">ดูไอเดีย</a></div></div></div>`).join('')}</div>
   </div></section>
 
   <section class="sec" style="background:#fff"><div class="wrap">
@@ -562,7 +567,7 @@ function viewHome(){
 
   <section class="sec" style="background:var(--cloud)"><div class="wrap">
     <div class="shead"><span class="eyebrow"><span class="dot"></span>ประเภทสินค้า</span><h2 class="h2">รู้ว่าอยากได้อะไร? เลือกเลย</h2><p class="lead">สินค้าทุกชิ้นพิมพ์โลโก้ได้ ปรับสีตามแบรนด์ และมี Mockup ให้ดูก่อนผลิตทุกออเดอร์</p></div>
-    <div class="g-auto cat-grid">${CATS.map(c=>`<a class="cat-tile" href="#/c/${c[3]}"><div class="im"><img src="${mock(c[3],c[2])}" alt="${c[2]}"></div><div class="bd"><span class="badge badge-${c[1]}" style="align-self:center;font-size:9.5px">${c[0]}</span><h4>${c[2]}</h4><div class="ct">${byCat[c[3]]?byCat[c[3]].length+' รุ่น':''}</div><span class="btn btn-ghost btn-sm" style="margin-top:auto">ดูสินค้า</span></div></a>`).join('')}</div>
+    <div class="g-auto cat-grid">${CATS.map(c=>`<a class="cat-tile" href="#/c/${c[3]}"><div class="im"><img src="${repImg(c[3])}" alt="${c[2]}"></div><div class="bd"><span class="badge badge-${c[1]}" style="align-self:center;font-size:9.5px">${c[0]}</span><h4>${c[2]}</h4><div class="ct">${byCat[c[3]]?byCat[c[3]].length+' รุ่น':''}</div><span class="btn btn-ghost btn-sm" style="margin-top:auto">ดูสินค้า</span></div></a>`).join('')}</div>
   </div></section>
 
   <section class="sec" style="background:#fff"><div class="wrap">
@@ -578,7 +583,7 @@ function viewHome(){
 
   <section class="sec" style="background:#fff"><div class="wrap">
     <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:38px"><div class="shead" style="margin-bottom:0"><span class="eyebrow"><span class="dot"></span>ตัวอย่างแนวงาน</span><h2 class="h2">ไอเดียเซ็ตของขวัญที่เราออกแบบให้ได้</h2><p class="lead">ตัวอย่างแนวทางการจัดเซ็ตตามโอกาส ทุกงานผ่าน Mockup ก่อนผลิตจริง</p></div></div>
-    <div class="g-auto occ-grid">${CASES.map(c=>`<div class="occ"><div class="im" style="aspect-ratio:4/3"><img src="${mock(c[3],c[0])}" alt="${c[0]}"><span class="badge badge-glass glass">${c[1]}</span></div><div class="bd"><h4>${c[0]}</h4><p>${c[2]}</p></div></div>`).join('')}</div>
+    <div class="g-auto occ-grid">${CASES.map(c=>`<div class="occ"><div class="im" style="aspect-ratio:4/3"><img src="${repImg(c[3])}" alt="${c[0]}"><span class="badge badge-glass glass">${c[1]}</span></div><div class="bd"><h4>${c[0]}</h4><p>${c[2]}</p></div></div>`).join('')}</div>
   </div></section>
 
   <section class="sec" style="background:var(--cloud)"><div class="wrap">
@@ -648,7 +653,7 @@ function viewProduct(sku){
   const rel=byCat[p.catSlug].filter(x=>x.sku!==p.sku).slice(0,4);
   return `<section class="sec" style="padding-top:30px"><div class="wrap">
     <div class="crumbs"><a href="#/">หน้าแรก</a> / <a href="#/c/${p.catSlug}">${esc(CL[p.catSlug]||p.cat)}</a> / <b>${esc(p.name)}</b></div>
-    <div class="pd"><div class="pd-img"><img src="${mock(p.catSlug,p.sku)}" alt="${esc(p.name)}"></div>
+    <div class="pd"><div><div class="pd-img"><img id="pdMain" src="${pimg(p)}" alt="${esc(p.name)}"></div>${(p.gallery&&p.gallery.length>1)?`<div class="pd-thumbs">${p.gallery.map(g=>`<img src="${g}" alt="" onclick="document.getElementById('pdMain').src='${g}'">`).join('')}</div>`:''}</div>
       <div><span class="eyebrow"><span class="dot"></span>${esc(CL[p.catSlug]||p.cat)} · ${esc(p.sku)}</span>
         <h1>${esc(p.name)}</h1><p class="muted" style="font-size:16px;line-height:1.7">${esc(p.features)}</p>
         <div class="pd-price">${baht(p.price)} <small>${p.price?'/ ชิ้น (เริ่มที่ MOQ '+p.moq+' ชิ้น)':''}</small></div>

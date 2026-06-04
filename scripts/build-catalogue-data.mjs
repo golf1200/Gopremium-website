@@ -1,23 +1,35 @@
 import fs from 'node:fs';
 
 const raw = JSON.parse(fs.readFileSync('src/data/products-raw.json', 'utf8'));
+// Real curated product photos (71 SKUs). Un-mapped SKUs fall back to SVG mockup.
+const gen = JSON.parse(fs.readFileSync('src/data/product-images.generated.json', 'utf8'));
 
 // Public fields only (never cost / supplier / 1688)
-const products = raw.map(p => ({
-  sku: p.sku,
-  slug: p.slug,
-  name: p.name,
-  cat: p.category,
-  catSlug: p.category_slug,
-  features: p.features || '',
-  size: p.size || '',
-  material: p.material || '',
-  price: p.price_300_thb || null,
-  tier: p.budget_tier || '',
-  moq: p.moq || 50,
-  logo: Array.isArray(p.free_logo) ? p.free_logo : [],
-  logoMax: p.logo_max_cm || '',
-}));
+const products = raw.map(p => {
+  const gi = gen[p.sku];
+  let img = null, gallery = null;
+  if (gi && Array.isArray(gi.gallery) && gi.gallery.length) {
+    img = gi.gallery.find(g => g.includes('-square')) || gi.gallery[0];
+    gallery = gi.gallery;
+  }
+  return {
+    sku: p.sku,
+    slug: p.slug,
+    name: p.name,
+    cat: p.category,
+    catSlug: p.category_slug,
+    features: p.features || '',
+    size: p.size || '',
+    material: p.material || '',
+    price: p.price_300_thb || null,
+    tier: p.budget_tier || '',
+    moq: p.moq || 50,
+    logo: Array.isArray(p.free_logo) ? p.free_logo : [],
+    logoMax: p.logo_max_cm || '',
+    img,        // real photo (square) or null → mockup fallback
+    gallery,    // full photo set for product page, or null
+  };
+});
 
 // Category groups for the mega-menu / browse (mirrors the live site taxonomy)
 const groups = [
@@ -51,4 +63,5 @@ const out =
   'window.GP_TIERLABELS=' + JSON.stringify(tierLabels) + ';\n';
 
 fs.writeFileSync('public/catalogue-data.js', out);
-console.log('wrote public/catalogue-data.js —', products.length, 'products,', Object.keys(catLabels).length, 'categories,', (out.length / 1024).toFixed(1), 'KB');
+const withPhoto = products.filter(p => p.img).length;
+console.log('wrote public/catalogue-data.js —', products.length, 'products (' + withPhoto + ' with real photos,', (products.length - withPhoto), 'mockup),', (out.length / 1024).toFixed(1), 'KB');
