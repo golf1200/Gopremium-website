@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GO PREMIUM — สั่งทำของพรีเมียมแบรนด์ จำนวนมาก สำหรับองค์กร</title>
+<meta name="description" content="ของขวัญองค์กร ของแจกพนักงาน ของชำร่วยอีเวนต์ พิมพ์โลโก้แบรนด์คุณ — GO PREMIUM ดูแลครบ ตั้งแต่ดีไซน์ ผลิต ถึงส่งมอบ ตอบกลับพร้อมราคาภายใน 48 ชม." />
+<link rel="icon" href="favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+/* ============================================================
+   GO PREMIUM · /corporate — layout cloned from Manus reference,
+   recolored to the GO PREMIUM Brand Book (Navy + Mustard · Prompt)
+   ============================================================ */
+:root{
+  --gp-navy:#1F3A5F; --gp-navy-700:#16293F; --gp-navy-900:#0E1B2C; --gp-navy-soft:#2C4F7C;
+  --gp-mustard:#F4BD44; --gp-mustard-deep:#E0A92B; --gp-mustard-soft:#F8D586;
+  --gp-white:#fff; --gp-ink:#1A2230; --gp-grey:#5B6472; --gp-grey-400:#8A93A2;
+  --gp-grey-200:#E3E7ED; --gp-cloud:#F5F6F8; --gp-cloud-2:#EEF1F5;
+  --gp-danger:#B3413D;
+  --gp-radius:16px; --gp-radius-lg:24px; --gp-radius-xl:32px; --gp-radius-sm:10px; --gp-pill:999px;
+  --gp-shadow:0 18px 50px -18px rgba(31,58,95,.30);
+  --gp-shadow-lg:0 24px 60px -18px rgba(31,58,95,.32);
+  --gp-shadow-md:0 12px 34px -14px rgba(31,58,95,.22);
+  --gp-shadow-sm:0 4px 16px -6px rgba(31,58,95,.16);
+  --gp-maxw:1200px; --gp-gutter:clamp(20px,5vw,64px);
+  --gp-font:'Prompt',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--gp-font);color:var(--gp-ink);background:var(--gp-white);line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--gp-font);font-weight:700;line-height:1.12;margin:0;letter-spacing:-.02em}
+p{margin:0}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button{font-family:inherit;cursor:pointer}
+input,textarea,select{font-family:inherit}
+
+.wrap{max-width:var(--gp-maxw);margin:0 auto;padding-left:var(--gp-gutter);padding-right:var(--gp-gutter)}
+.gradient-text{color:var(--gp-mustard-deep)}
+.muted{color:var(--gp-grey)}
+.dotgrid{background-image:radial-gradient(rgba(31,58,95,.10) 1px,transparent 1px);background-size:22px 22px}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:600;font-size:15px;padding:13px 24px;border-radius:var(--gp-pill);border:1.5px solid transparent;line-height:1;white-space:nowrap;transition:transform .18s cubic-bezier(.2,.7,.3,1),background .18s,box-shadow .18s,border-color .18s,color .18s}
+.btn svg{width:17px;height:17px}
+.btn-primary{background:var(--gp-mustard);color:var(--gp-navy);box-shadow:0 10px 24px -10px rgba(244,189,68,.8)}
+.btn-primary:hover{background:var(--gp-mustard-deep);transform:translateY(-2px)}
+.btn-secondary{background:var(--gp-navy);color:#fff}
+.btn-secondary:hover{background:var(--gp-navy-soft);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--gp-navy);border-color:var(--gp-grey-200)}
+.btn-ghost:hover{border-color:var(--gp-navy);background:rgba(31,58,95,.03)}
+.btn-line{background:#06C755;color:#fff;box-shadow:0 10px 24px -12px rgba(6,199,85,.75)}
+.btn-line:hover{background:#05b34c;transform:translateY(-2px)}
+.btn-line-ghost{background:transparent;color:#06C755;border-color:#06C755}
+.btn-line-ghost:hover{background:rgba(6,199,85,.08)}
+.btn-sm{font-size:13px;padding:9px 17px}
+.btn-lg{font-size:16px;padding:15px 30px}
+
+/* ---------- Header ---------- */
+.site-header{position:sticky;top:0;z-index:50;width:100%;background:rgba(255,255,255,.82);backdrop-filter:blur(16px);border-bottom:1px solid var(--gp-grey-200)}
+.header-row{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand-logo{display:flex;align-items:center;gap:11px}
+.brand-logo img{height:44px;width:44px;object-fit:contain;transition:transform .2s}
+.brand-logo:hover img{transform:scale(1.04)}
+.brand-logo .word{font-weight:800;font-size:20px;letter-spacing:.02em;color:var(--gp-navy);line-height:1}
+.brand-logo .word b{color:var(--gp-mustard-deep);font-weight:800}
+.brand-logo .word small{display:block;font-size:9.5px;font-weight:600;letter-spacing:.34em;color:var(--gp-grey-400);margin-top:3px}
+.nav-desktop{display:flex;align-items:center;gap:2px}
+.navlink{padding:8px 14px;font-size:14.5px;font-weight:500;color:var(--gp-navy);border-radius:var(--gp-pill);transition:.15s}
+.navlink:hover{color:var(--gp-mustard-deep);background:var(--gp-cloud)}
+.navlink.is-active{background:linear-gradient(92deg,var(--gp-navy),var(--gp-navy-soft));color:#fff}
+.header-cta{display:flex;align-items:center;gap:10px}
+.burger{display:none;background:none;border:none;padding:8px}
+.nav-mobile{display:none;background:#fff;border-bottom:1px solid var(--gp-grey-200);box-shadow:var(--gp-shadow-md)}
+.nav-mobile.open{display:block}
+.nav-mobile a,.nav-mobile .m-row{display:block;padding:13px 4px;border-bottom:1px solid var(--gp-grey-200);font-size:15.5px;font-weight:500;color:var(--gp-navy)}
+.m-actions{display:flex;flex-direction:column;gap:10px;padding:16px 0}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#FBFCFD 0%,var(--gp-cloud) 100%)}
+.hero .glow{position:absolute;right:-8%;top:-22%;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle at 35% 35%,rgba(244,189,68,.30),transparent 60%);pointer-events:none}
+.hero .glow2{position:absolute;left:-12%;bottom:-30%;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle at 40% 40%,rgba(31,58,95,.10),transparent 62%);pointer-events:none}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,4vw,56px);align-items:center;padding:clamp(56px,8vw,96px) 0}
+.pop-tag{display:inline-flex;align-items:center;gap:8px;background:var(--gp-mustard-soft);color:#6B4E08;font-weight:600;font-size:13px;letter-spacing:.02em;padding:7px 15px;border-radius:var(--gp-pill);margin-bottom:18px}
+.pop-tag .dot{width:7px;height:7px;border-radius:50%;background:var(--gp-mustard-deep)}
+.hero h1{font-size:clamp(34px,5.2vw,62px);font-weight:800;color:var(--gp-navy);letter-spacing:-.03em;line-height:1.02;margin-bottom:16px;text-wrap:balance}
+.hero .lead{font-size:clamp(16px,1.3vw,18px);color:var(--gp-grey);max-width:46ch;line-height:1.7;margin-bottom:14px}
+.hero .proof{font-size:15px;font-weight:700}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.stat-card{background:#fff;border:1px solid var(--gp-grey-200);border-radius:var(--gp-radius-lg);box-shadow:var(--gp-shadow-sm);padding:22px 22px;transition:transform .2s,box-shadow .2s}
+.stat-card:hover{transform:translateY(-3px);box-shadow:var(--gp-shadow-md)}
+.stat-num{font-size:clamp(26px,3vw,34px);font-weight:800;color:var(--gp-navy);letter-spacing:-.02em;line-height:1}
+.stat-card .gradient-text{font-weight:800}
+.stat-lbl{font-size:13px;color:var(--gp-grey);margin-top:6px}
+
+/* ---------- Section base ---------- */
+.section{padding:clamp(56px,8vw,104px) 0}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--gp-mustard-deep)}
+.eyebrow .dot{width:6px;height:6px;border-radius:2px;background:currentColor}
+.sec-head{text-align:center;max-width:60ch;margin:0 auto 44px}
+.sec-head h2{font-size:clamp(28px,3.6vw,44px);color:var(--gp-navy);font-weight:800;letter-spacing:-.025em;margin:14px 0 12px;text-wrap:balance}
+.sec-head p{color:var(--gp-grey);font-size:clamp(15px,1.2vw,17px)}
+
+/* ---------- Product showcase ---------- */
+.showcase{background:#fff}
+.prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.prod-card{background:#fff;border-radius:var(--gp-radius);box-shadow:var(--gp-shadow-sm);overflow:hidden;transition:transform .2s,box-shadow .2s}
+.prod-card:hover{transform:translateY(-5px);box-shadow:var(--gp-shadow)}
+.prod-thumb{position:relative;aspect-ratio:1/1;background:var(--gp-cloud-2);overflow:hidden}
+.prod-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .4s cubic-bezier(.2,.7,.3,1)}
+.prod-card:hover .prod-thumb img{transform:scale(1.06)}
+.prod-cat{position:absolute;top:12px;left:12px;background:rgba(31,58,95,.92);color:#fff;font-size:11.5px;font-weight:600;padding:5px 11px;border-radius:var(--gp-pill)}
+.prod-body{padding:15px 16px 18px}
+.prod-name{font-weight:600;font-size:15.5px;color:var(--gp-navy)}
+.prod-meta{font-size:12.5px;color:var(--gp-grey);margin-top:3px}
+.showcase-foot{text-align:center;margin-top:40px}
+
+/* ---------- Quote form ---------- */
+.quote-section{background:linear-gradient(180deg,var(--gp-cloud) 0%,#fff 100%);position:relative;overflow:hidden}
+.quote-card{position:relative;z-index:1;background:#fff;border:1px solid var(--gp-grey-200);border-radius:var(--gp-radius-xl);box-shadow:var(--gp-shadow-lg);padding:clamp(26px,4vw,52px);max-width:920px;margin:0 auto}
+.quote-card .head{text-align:center;margin-bottom:30px}
+.quote-card .head h2{font-size:clamp(24px,3vw,34px);color:var(--gp-navy);font-weight:800}
+.quote-card .head p{font-size:14.5px;color:var(--gp-grey);margin-top:8px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field.full{grid-column:1/-1}
+.label{font-size:13.5px;font-weight:500;color:var(--gp-navy);display:flex;align-items:center;gap:5px}
+.req{color:var(--gp-danger)}
+.input,.select,.textarea{width:100%;font-size:15px;color:var(--gp-ink);padding:13px 15px;border:1.5px solid var(--gp-grey-200);border-radius:var(--gp-radius-sm);background:#fff;outline:none;transition:.16s}
+.input::placeholder,.textarea::placeholder{color:var(--gp-grey-400)}
+.input:focus,.select:focus,.textarea:focus{border-color:var(--gp-mustard);box-shadow:0 0 0 4px rgba(244,189,68,.22)}
+.input.err,.select.err{border-color:var(--gp-danger);box-shadow:0 0 0 4px rgba(179,65,61,.14)}
+.textarea{min-height:120px;resize:vertical}
+.hint{font-size:12px;color:var(--gp-grey-400)}
+.errmsg{font-size:12.5px;color:var(--gp-danger)}
+.dropzone{margin-top:2px;width:100%;height:128px;border:2px dashed var(--gp-grey-200);border-radius:var(--gp-radius);background:var(--gp-cloud);display:flex;align-items:center;justify-content:center;text-align:center;color:var(--gp-grey);transition:.16s}
+.dropzone:hover{border-color:var(--gp-mustard);background:#fff;color:var(--gp-navy)}
+.dropzone .dz-title{font-weight:600;font-size:14px}
+.dropzone .dz-sub{font-size:12px;margin-top:4px}
+.submit-row{margin-top:24px}
+.or-divider{display:flex;align-items:center;gap:12px;margin:16px 0;color:var(--gp-grey-400);font-size:12.5px}
+.or-divider span{flex:1;height:1px;background:var(--gp-grey-200)}
+.form-note{font-size:12.5px;color:var(--gp-grey);text-align:center;margin-top:14px}
+/* success */
+.quote-success{display:none;text-align:center;padding:18px 8px}
+.quote-success.show{display:block}
+.success-ic{width:72px;height:72px;border-radius:50%;background:var(--gp-mustard-soft);display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+.quote-success h3{font-size:24px;color:var(--gp-navy)}
+.quote-success p{font-size:14.5px;color:var(--gp-grey);margin:12px auto 0;max-width:40ch}
+
+/* ---------- Footer ---------- */
+.site-footer{border-top:1px solid var(--gp-grey-200);background:linear-gradient(180deg,#fff,#FAFAFC);margin-top:8px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.2fr;gap:32px;padding:56px 0 8px}
+.foot-brand img{height:42px;width:auto;margin-bottom:14px}
+.foot-brand p{font-size:14px;color:var(--gp-grey);max-width:38ch;line-height:1.7}
+.foot-tag{font-size:14px;font-weight:700;margin-top:12px}
+.socials{display:flex;gap:10px;margin-top:18px}
+.socials a{width:40px;height:40px;border-radius:50%;background:var(--gp-cloud-2);display:flex;align-items:center;justify-content:center;color:var(--gp-navy);transition:.16s}
+.socials a:hover{background:var(--gp-navy);color:#fff}
+.foot-col h4{font-size:14px;font-weight:700;color:var(--gp-navy);margin-bottom:14px}
+.foot-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.foot-col a,.foot-col li{font-size:14px;color:var(--gp-grey);transition:.15s}
+.foot-col a:hover{color:var(--gp-navy)}
+.foot-bottom{border-top:1px solid var(--gp-grey-200);padding:20px 0;text-align:center;font-size:12.5px;color:var(--gp-grey)}
+
+/* ---------- Floating LINE + mobile CTA ---------- */
+.line-fab{position:fixed;right:22px;bottom:22px;z-index:45;display:inline-flex;align-items:center;gap:9px}
+.mobile-cta{display:none}
+
+/* ---------- Responsive ---------- */
+@media (max-width:980px){
+  .prod-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:860px){
+  .hero-grid{grid-template-columns:1fr;gap:36px}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:28px}
+}
+@media (max-width:760px){
+  .nav-desktop{display:none}
+  .header-cta .btn:not(.burger){display:none}
+  .burger{display:inline-flex}
+  .prod-grid{grid-template-columns:repeat(2,1fr)}
+  .form-grid{grid-template-columns:1fr}
+  .line-fab{display:none}
+  .mobile-cta{display:grid;grid-template-columns:1fr 1fr;gap:9px;position:fixed;left:0;right:0;bottom:0;z-index:46;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-top:1px solid var(--gp-grey-200);box-shadow:0 -8px 28px -16px rgba(31,58,95,.4)}
+  body{padding-bottom:72px}
+}
+@media (max-width:520px){
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .prod-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================ HEADER ============================ -->
+<header class="site-header">
+  <div class="wrap header-row">
+    <a href="#top" class="brand-logo" aria-label="GO PREMIUM">
+      <img src="logo.png" alt="GO PREMIUM" onerror="this.src='GoPremium Logo Navy-yellow.png'" />
+      <span class="word">GO<b>PREMIUM</b><small>PREMIUM GIFTS</small></span>
+    </a>
+    <nav class="nav-desktop">
+      <a class="navlink" href="catalogue.html">แคตตาล็อกสินค้า</a>
+      <a class="navlink is-active" href="#quote">ของขวัญองค์กร</a>
+      <a class="navlink" href="#showcase">บริการของเรา</a>
+      <a class="navlink" href="catalogue.html#/all">ผลงาน</a>
+      <a class="navlink" href="#footer">เกี่ยวกับเรา</a>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-line btn-sm" href="https://lin.ee/z1GT1KR" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 9.1 9.1 0 0 1-3.1-.5L3 21l1.5-4.4A8.38 8.38 0 0 1 4 11.5 8.5 8.5 0 0 1 21 11.5z"/></svg>
+        LINE
+      </a>
+      <a class="btn btn-primary btn-sm" href="#quote">ขอใบเสนอราคา</a>
+      <button class="burger" id="burger" aria-label="เมนู">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1F3A5F" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <div class="wrap">
+      <a href="catalogue.html">แคตตาล็อกสินค้า</a>
+      <a href="#quote">ของขวัญองค์กร</a>
+      <a href="#showcase">บริการของเรา</a>
+      <a href="catalogue.html#/all">ผลงาน</a>
+      <a href="#footer">เกี่ยวกับเรา</a>
+      <div class="m-actions">
+        <a class="btn btn-primary" href="#quote">ขอใบเสนอราคา</a>
+        <a class="btn btn-line-ghost" href="https://lin.ee/z1GT1KR" target="_blank" rel="noopener">ทักทาง LINE @gopremium</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<!-- ============================ HERO ============================ -->
+<section class="hero">
+  <div class="dotgrid" style="position:absolute;inset:0;opacity:.5;-webkit-mask-image:radial-gradient(120% 90% at 72% 0%,#000 30%,transparent 75%);mask-image:radial-gradient(120% 90% at 72% 0%,#000 30%,transparent 75%)"></div>
+  <div class="glow"></div><div class="glow2"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="pop-tag"><span class="dot"></span>สำหรับองค์กร &amp; ฝ่ายจัดซื้อ</span>
+      <h1>สั่งทำ <span class="gradient-text">ของพรีเมียมแบรนด์คุณ</span> จำนวนมาก</h1>
+      <p class="lead">ของขวัญองค์กร ของแจกพนักงาน ของชำร่วยอีเวนต์ พิมพ์โลโก้แบรนด์คุณ — GO PREMIUM ดูแลให้ครบจบ ตั้งแต่คอนเซ็ปต์ ดีไซน์ ผลิต ถึงส่งมอบ คุณภาพระดับแบรนด์</p>
+      <p class="proof" style="color:var(--gp-navy)">ส่งงานแล้วกว่า <b style="color:var(--gp-mustard-deep)">100,000 ชิ้น</b> ให้ลูกค้า <b style="color:var(--gp-mustard-deep)">500+ แบรนด์</b>ทั่วไทย</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary btn-lg" href="#quote">ขอใบเสนอราคา
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn-ghost btn-lg" href="#showcase">ดูสินค้าของเรา</a>
+      </div>
+    </div>
+    <div class="stat-grid">
+      <div class="stat-card"><div class="stat-num">50<span class="gradient-text">+</span></div><div class="stat-lbl">ขั้นต่ำต่อออเดอร์ (MOQ)</div></div>
+      <div class="stat-card"><div class="stat-num">7–14 <span style="font-size:.6em">วัน</span></div><div class="stat-lbl">ระยะเวลาผลิต</div></div>
+      <div class="stat-card"><div class="stat-num gradient-text">500+</div><div class="stat-lbl">แบรนด์ที่ไว้ใจ</div></div>
+      <div class="stat-card"><div class="stat-num gradient-text">100K+</div><div class="stat-lbl">ชิ้นที่ส่งมอบแล้ว</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PRODUCT SHOWCASE ===================== -->
+<section class="section showcase" id="showcase">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow"><span class="dot"></span>สินค้าของเรา</span>
+      <h2>ของพรีเมียมที่เราออกแบบ &amp; ผลิตให้แบรนด์</h2>
+      <p>คัดสรรวัสดุเกรดพรีเมียม พิมพ์โลโก้ได้หลายเทคนิค พร้อม Mockup ให้ดูก่อนผลิตจริงทุกงาน</p>
+    </div>
+    <div class="prod-grid" id="prodGrid"></div>
+    <div class="showcase-foot">
+      <a class="btn btn-secondary btn-lg" href="catalogue.html#/all">ดูแคตตาล็อกเต็ม 245 รายการ</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== QUOTE FORM ===================== -->
+<section class="section quote-section" id="quote">
+  <div class="dotgrid" style="position:absolute;inset:0;opacity:.4"></div>
+  <div class="wrap">
+    <form class="quote-card" id="quoteForm" novalidate>
+      <div class="head" id="formHead">
+        <span class="eyebrow"><span class="dot"></span>ขอใบเสนอราคา · ปรึกษาฟรี</span>
+        <h2 style="margin-top:12px">ขอใบเสนอราคา</h2>
+        <p>กรอกบรีฟสั้นๆ — เราจะตอบกลับพร้อมไอเดีย ราคา และไทม์ไลน์ภายใน 48 ชั่วโมง</p>
+      </div>
+
+      <div class="form-body" id="formBody">
+        <div class="form-grid">
+          <div class="field">
+            <label class="label">ชื่อบริษัท</label>
+            <input class="input" name="company" placeholder="ชื่อบริษัทของคุณ">
+          </div>
+          <div class="field">
+            <label class="label">ชื่อผู้ติดต่อ <span class="req">*</span></label>
+            <input class="input" name="contact" placeholder="ชื่อ-นามสกุล">
+            <span class="errmsg" data-err="contact" style="display:none">กรุณากรอกชื่อผู้ติดต่อ</span>
+          </div>
+          <div class="field">
+            <label class="label">อีเมล <span class="req">*</span></label>
+            <input class="input" name="email" type="email" placeholder="you@company.com">
+            <span class="errmsg" data-err="email" style="display:none">กรุณากรอกอีเมลให้ถูกต้อง</span>
+          </div>
+          <div class="field">
+            <label class="label">เบอร์โทร <span class="req">*</span></label>
+            <input class="input" name="phone" placeholder="08x-xxx-xxxx">
+            <span class="errmsg" data-err="phone" style="display:none">กรุณากรอกเบอร์โทร</span>
+          </div>
+          <div class="field">
+            <label class="label">โอกาส / งาน</label>
+            <select class="select" name="occasion">
+              <option>ของขวัญปีใหม่พนักงาน</option>
+              <option>ของขวัญลูกค้า / คู่ค้า</option>
+              <option>อีเวนต์ / บูธ / สัมมนา</option>
+              <option>ต้อนรับพนักงานใหม่</option>
+              <option>ของผู้บริหาร / VIP</option>
+              <option>รักษ์โลก / ESG</option>
+              <option>อื่น ๆ</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="label">จำนวน <span class="req">*</span></label>
+            <input class="input" name="qty" inputmode="numeric" placeholder="เช่น 200">
+            <span class="hint">ขั้นต่ำ 50 ชิ้น</span>
+            <span class="errmsg" data-err="qty" style="display:none">กรุณาระบุจำนวน</span>
+          </div>
+          <div class="field">
+            <label class="label">วันที่ต้องการรับของ</label>
+            <input class="input" name="date" type="date">
+          </div>
+          <div class="field">
+            <label class="label">งบประมาณต่อชิ้น (฿)</label>
+            <input class="input" name="budget" inputmode="numeric" placeholder="เช่น 300">
+          </div>
+          <div class="field full">
+            <label class="label">บรีฟ / ความต้องการ</label>
+            <textarea class="textarea" name="brief" placeholder="เล่าเกี่ยวกับโปรเจกต์ ตำแหน่งโลโก้ สี แพ็กเกจจิ้ง สถานที่จัดส่ง..."></textarea>
+          </div>
+          <div class="field full">
+            <label class="label">โลโก้ / งานอาร์ต</label>
+            <input type="file" id="logoFile" accept="image/*,.pdf,.ai" hidden>
+            <button type="button" class="dropzone" id="dropzone">
+              <div>
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="margin:0 auto 8px"><path d="M12 16V4M6 10l6-6 6 6M4 20h16"/></svg>
+                <div class="dz-title" id="dzTitle">อัปโหลดโลโก้ / งานอาร์ต</div>
+                <div class="dz-sub">PNG / JPG / PDF / AI — คลิกเพื่อเลือกไฟล์</div>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <div class="submit-row">
+          <button type="submit" class="btn btn-primary btn-lg" style="width:100%">
+            ส่งขอใบเสนอราคา
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+          <div class="or-divider"><span></span>หรือ<span></span></div>
+          <a class="btn btn-line-ghost btn-lg" style="width:100%" href="https://lin.ee/z1GT1KR" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 9.1 9.1 0 0 1-3.1-.5L3 21l1.5-4.4A8.38 8.38 0 0 1 4 11.5 8.5 8.5 0 0 1 21 11.5z"/></svg>
+            ทักมาที่ LINE @gopremium
+          </a>
+          <p class="form-note">ตอบกลับภายใน 48 ชั่วโมงทำการ · ปรึกษาฟรี ไม่มีข้อผูกมัด · ไม่มี spam แน่นอน</p>
+        </div>
+      </div>
+
+      <div class="quote-success" id="quoteSuccess">
+        <div class="success-ic">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#1F3A5F" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>
+        </div>
+        <h3>ได้รับคำขอแล้ว ขอบคุณค่ะ</h3>
+        <p>ทีม GO PREMIUM จะติดต่อกลับพร้อมไอเดียและช่วงราคาภายใน 48 ชั่วโมงทำการ</p>
+        <a class="btn btn-ghost" style="margin-top:22px" href="#quote" onclick="resetQuote()">ส่งคำขอใหม่</a>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="site-footer" id="footer">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <span style="display:flex;align-items:center;gap:11px;margin-bottom:6px">
+        <img src="logo.png" alt="GO PREMIUM" style="height:44px;width:44px;margin-bottom:0" onerror="this.src='GoPremium Logo Navy-yellow.png'">
+        <span style="font-weight:800;font-size:22px;color:var(--gp-navy);letter-spacing:.02em">GO<b style="color:var(--gp-mustard-deep)">PREMIUM</b></span>
+      </span>
+      <p>ของพรีเมียมพิมพ์โลโก้ B2B ครบวงจร — ของขวัญองค์กร ของแจกพนักงาน ของชำร่วยอีเวนต์ ออกแบบเฉพาะแบรนด์ ผลิตในไทยโดย GO PREMIUM</p>
+      <p class="foot-tag gradient-text">มากกว่าของขวัญ คือประสบการณ์ที่น่าจดจำ</p>
+      <div class="socials">
+        <a href="https://lin.ee/z1GT1KR" target="_blank" rel="noopener" aria-label="LINE"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 9.1 9.1 0 0 1-3.1-.5L3 21l1.5-4.4A8.38 8.38 0 0 1 4 11.5 8.5 8.5 0 0 1 21 11.5z"/></svg></a>
+        <a href="tel:+6620966465" aria-label="โทร"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+        <a href="mailto:info@passiongrow.co.th" aria-label="อีเมล"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/></svg></a>
+      </div>
+    </div>
+    <div class="foot-col">
+      <h4>สินค้า</h4>
+      <ul>
+        <li><a href="#showcase">แคตตาล็อกทั้งหมด</a></li>
+        <li><a href="#showcase">Drinkware</a></li>
+        <li><a href="#showcase">กระเป๋า &amp; เดินทาง</a></li>
+        <li><a href="#showcase">เครื่องเขียน &amp; ออฟฟิศ</a></li>
+        <li><a href="#showcase">กิฟต์เซ็ต</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h4>บริษัท</h4>
+      <ul>
+        <li><a href="#footer">เกี่ยวกับ GO PREMIUM</a></li>
+        <li><a href="#quote">ของขวัญองค์กร</a></li>
+        <li><a href="#quote">ขอใบเสนอราคา</a></li>
+        <li><a href="#showcase">ผลงานของเรา</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h4>ติดต่อเรา</h4>
+      <ul>
+        <li><a href="tel:+6620966465">โทร 02-096-6465</a></li>
+        <li><a href="mailto:info@passiongrow.co.th">info@passiongrow.co.th</a></li>
+        <li><a href="https://lin.ee/z1GT1KR" target="_blank" rel="noopener">LINE @gopremium</a></li>
+        <li>PASSION GROW TRADING CO., LTD.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">© 2026 GO PREMIUM by Passion Grow Trading · ผลิตในกรุงเทพฯ ด้วย 💖</div>
+</footer>
+
+<!-- ============================ FLOATING ============================ -->
+<a class="btn btn-line line-fab" href="https://lin.ee/z1GT1KR" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 9.1 9.1 0 0 1-3.1-.5L3 21l1.5-4.4A8.38 8.38 0 0 1 4 11.5 8.5 8.5 0 0 1 21 11.5z"/></svg>
+  แชทกับเรา
+</a>
+<div class="mobile-cta">
+  <a class="btn btn-line-ghost btn-sm" href="https://lin.ee/z1GT1KR" target="_blank" rel="noopener">LINE</a>
+  <a class="btn btn-primary btn-sm" href="#quote">ขอใบเสนอราคา</a>
+</div>
+
+<script>
+// Mobile menu
+const burger=document.getElementById('burger'),navMobile=document.getElementById('navMobile');
+burger.addEventListener('click',()=>navMobile.classList.toggle('open'));
+navMobile.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navMobile.classList.remove('open')));
+
+// Upload dropzone
+const dz=document.getElementById('dropzone'),logoFile=document.getElementById('logoFile'),dzTitle=document.getElementById('dzTitle');
+dz.addEventListener('click',()=>logoFile.click());
+logoFile.addEventListener('change',()=>{ if(logoFile.files[0]) dzTitle.textContent='✓ '+logoFile.files[0].name; });
+
+// Form validate + success
+const form=document.getElementById('quoteForm');
+form.addEventListener('submit',e=>{
+  e.preventDefault();
+  const f=form.elements; let ok=true;
+  const checks={contact:f.contact.value.trim()!=='',email:/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.email.value.trim()),phone:f.phone.value.trim().length>=8,qty:f.qty.value.trim()!==''};
+  for(const k in checks){
+    const input=f[k],msg=form.querySelector('[data-err="'+k+'"]');
+    if(!checks[k]){ok=false;input.classList.add('err');if(msg)msg.style.display='block';}
+    else{input.classList.remove('err');if(msg)msg.style.display='none';}
+  }
+  if(!ok){form.querySelector('.err').focus();return;}
+  document.getElementById('formHead').style.display='none';
+  document.getElementById('formBody').style.display='none';
+  document.getElementById('quoteSuccess').classList.add('show');
+  document.getElementById('quote').scrollIntoView({behavior:'smooth'});
+});
+function resetQuote(){
+  form.reset();dzTitle.textContent='อัปโหลดโลโก้ / งานอาร์ต';
+  document.getElementById('quoteSuccess').classList.remove('show');
+  document.getElementById('formHead').style.display='';
+  document.getElementById('formBody').style.display='';
+}
+
+/* ---- AI-style studio mockups for the showcase (SVG, no real photos) ---- */
+(function(){
+  const NAVY='#1F3A5F',MUST='#F4BD44';
+  const TINTS=[['#F4F6F9','#E7ECF3'],['#FBF6EA','#F4E9CF'],['#EFF3F7','#E1EAF4'],['#F3F5F2','#E6EDE6'],['#F8F3EF','#EEE3DA'],['#F2F0F6','#E6E1F0']];
+  const h=s=>{let x=0;for(let i=0;i<s.length;i++)x=(x*31+s.charCodeAt(i))>>>0;return x;};
+  const G={
+    giftset:`<rect x='36' y='52' width='48' height='44' rx='4'/><rect x='31' y='42' width='58' height='14' rx='3'/><rect x='56' y='42' width='8' height='54' fill='${MUST}' stroke='none'/><path d='M60 42 C50 30 40 40 60 42 C70 30 80 40 60 42' fill='${MUST}' stroke='none'/>`,
+    drinkware:`<path d='M42 20 H78 V26 H42 Z'/><path d='M44 26 L76 26 L71 100 Q70 108 62 108 L58 108 Q50 108 49 100 Z'/><path d='M47 54 L73 54 L71.5 72 L48.5 72 Z' fill='${MUST}' stroke='none'/>`,
+    bags:`<path d='M34 46 L86 46 L80 106 L40 106 Z'/><path d='M46 47 C46 30 58 30 58 47'/><path d='M62 47 C62 30 74 30 74 47'/><rect x='50' y='66' width='20' height='24' rx='3' fill='${MUST}' stroke='none'/>`,
+    stationery:`<rect x='36' y='28' width='40' height='60' rx='5'/><path d='M44 28 V88 M50 40 H68 M50 52 H68 M50 64 H62'/><path d='M64 28 V52 L60 46 L56 52 V28' fill='${MUST}' stroke='none'/><path d='M70 70 L96 96' stroke-width='7'/>`,
+    umbrella:`<path d='M28 62 Q60 24 92 62 Q76 54 60 62 Q44 54 28 62 Z'/><path d='M60 62 V98 Q60 106 52 105'/><path d='M44 58 Q52 46 60 62' fill='${MUST}' stroke='none'/>`,
+    fan:`<circle cx='60' cy='50' r='30'/><circle cx='60' cy='50' r='7' fill='${MUST}' stroke='none'/><path d='M60 50 C58 30 80 32 78 48'/><path d='M60 50 C80 52 78 74 62 70'/><path d='M60 50 C40 48 42 26 58 30'/><path d='M60 80 V102 M48 104 H72'/>`,
+    powerbank:`<rect x='44' y='22' width='32' height='76' rx='9'/><path d='M62 38 L51 66 H60 L55 86 L72 56 H63 Z' fill='${MUST}' stroke='none'/>`,
+    kitchen:`<rect x='34' y='50' width='52' height='46' rx='9'/><path d='M34 65 H86'/><path d='M52 50 V44 H68 V50'/><rect x='30' y='70' width='6' height='12' rx='2' fill='${MUST}' stroke='none'/><rect x='84' y='70' width='6' height='12' rx='2' fill='${MUST}' stroke='none'/>`,
+  };
+  function mock(cat,sku){
+    const t=TINTS[h(sku)%TINTS.length],g=G[cat]||G.giftset;
+    const svg=`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'><defs><radialGradient id='b' cx='50%' cy='34%' r='80%'><stop offset='0' stop-color='${t[0]}'/><stop offset='1' stop-color='${t[1]}'/></radialGradient></defs><rect width='400' height='400' fill='url(#b)'/><circle cx='200' cy='168' r='124' fill='#ffffff' opacity='.45'/><ellipse cx='200' cy='306' rx='112' ry='20' fill='${NAVY}' opacity='.08'/><g transform='translate(88,76) scale(1.86)' fill='none' stroke='${NAVY}' stroke-width='4.4' stroke-linecap='round' stroke-linejoin='round'>${g}</g></svg>`;
+    return "data:image/svg+xml,"+encodeURIComponent(svg);
+  }
+  const items=[
+    ['giftset','เซ็ตผู้บริหาร Executive','กิฟต์เซ็ต','GS003'],
+    ['drinkware','กระบอกน้ำสแตนเลส Loopa','Drinkware','DW001'],
+    ['bags','กระเป๋าเป้ Daily','กระเป๋า','BG020'],
+    ['stationery','ปากกาโลหะ Oxygen','เครื่องเขียน','ST001'],
+    ['umbrella','ร่มออโต้ Lite','ไลฟ์สไตล์','UM001'],
+    ['fan','พัดลมพกพา Mini','แกดเจ็ต','FN001'],
+    ['powerbank','พาวเวอร์แบงก์ Pocket','แกดเจ็ต','PB001'],
+    ['kitchen','กล่องอาหาร Deli','ครัว','KC001'],
+  ];
+  const grid=document.getElementById('prodGrid');
+  if(grid) grid.innerHTML=items.map(([cat,name,label,sku])=>
+    `<a class="prod-card" href="catalogue.html#/c/${cat}" style="text-decoration:none">
+       <div class="prod-thumb"><span class="prod-cat">${label}</span><img src="${mock(cat,sku)}" alt="${name}" loading="lazy"></div>
+       <div class="prod-body"><div class="prod-name">${name}</div><div class="prod-meta">พิมพ์โลโก้แบรนด์ · Mockup ก่อนผลิต</div></div>
+     </a>`).join('');
+})();
+</script>
+</body>
+</html>
