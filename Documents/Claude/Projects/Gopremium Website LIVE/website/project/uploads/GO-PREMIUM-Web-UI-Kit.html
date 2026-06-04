@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GO PREMIUM · Web UI Kit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   GO PREMIUM · DESIGN TOKENS  (คัดลอกบล็อกนี้ไปใช้ในเว็บจริงได้เลย)
+   ============================================================ */
+:root{
+  /* Brand colors */
+  --gp-navy:#1F3A5F;
+  --gp-navy-700:#16293F;
+  --gp-navy-soft:#2C4F7C;
+  --gp-mustard:#F4BD44;
+  --gp-mustard-soft:#F8D586;
+  --gp-white:#FFFFFF;
+  /* Neutrals */
+  --gp-ink:#1A2230;
+  --gp-grey:#5B6472;
+  --gp-grey-200:#E3E7ED;
+  --gp-cloud:#F5F6F8;
+  /* Feedback */
+  --gp-success:#2F7D52;
+  --gp-danger:#B3413D;
+  /* Type */
+  --gp-font-head:'Kanit',sans-serif;     /* official: Satoshi */
+  --gp-font-body:'Sarabun',sans-serif;   /* official: TT Norms / Open Sans (Thai) */
+  /* Radius / shadow / spacing */
+  --gp-radius:14px;
+  --gp-radius-sm:9px;
+  --gp-radius-pill:999px;
+  --gp-shadow:0 8px 26px rgba(31,58,95,.12);
+  --gp-shadow-sm:0 3px 12px rgba(31,58,95,.08);
+  --gp-gap:18px;
+}
+
+/* ===== Reusable component classes (production-ready) ===== */
+*{box-sizing:border-box;}
+body{margin:0;font-family:var(--gp-font-body);color:var(--gp-ink);background:var(--gp-cloud);line-height:1.6;-webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4{font-family:var(--gp-font-head);font-weight:600;line-height:1.2;margin:0;}
+
+/* Buttons */
+.gp-btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--gp-font-head);font-weight:500;
+  font-size:15px;padding:12px 22px;border-radius:var(--gp-radius-pill);border:2px solid transparent;
+  cursor:pointer;text-decoration:none;transition:.18s;line-height:1;}
+.gp-btn-primary{background:var(--gp-mustard);color:var(--gp-navy);}
+.gp-btn-primary:hover{background:#efb22f;transform:translateY(-1px);}
+.gp-btn-secondary{background:var(--gp-navy);color:#fff;}
+.gp-btn-secondary:hover{background:var(--gp-navy-soft);}
+.gp-btn-ghost{background:transparent;color:var(--gp-navy);border-color:var(--gp-grey-200);}
+.gp-btn-ghost:hover{border-color:var(--gp-navy);}
+.gp-btn-sm{font-size:13px;padding:8px 16px;}
+.gp-btn-lg{font-size:17px;padding:15px 30px;}
+
+/* Badges / pills */
+.gp-badge{display:inline-block;font-family:var(--gp-font-head);font-size:11px;font-weight:600;letter-spacing:.5px;
+  padding:4px 11px;border-radius:var(--gp-radius-pill);text-transform:uppercase;}
+.gp-badge-navy{background:#D7E2F1;color:var(--gp-navy);}
+.gp-badge-mustard{background:var(--gp-mustard-soft);color:#6B4E08;}
+.gp-badge-solid{background:var(--gp-navy);color:#fff;}
+
+/* Form */
+.gp-field{margin-bottom:14px;}
+.gp-label{display:block;font-family:var(--gp-font-head);font-size:13px;font-weight:500;color:var(--gp-navy);margin-bottom:5px;}
+.gp-input,.gp-select,.gp-textarea{width:100%;font-family:var(--gp-font-body);font-size:14px;color:var(--gp-ink);
+  padding:11px 13px;border:1.5px solid var(--gp-grey-200);border-radius:var(--gp-radius-sm);background:#fff;outline:none;transition:.15s;}
+.gp-input:focus,.gp-select:focus,.gp-textarea:focus{border-color:var(--gp-mustard);box-shadow:0 0 0 3px rgba(244,189,68,.25);}
+.gp-textarea{min-height:90px;resize:vertical;}
+
+/* Cards */
+.gp-card{background:#fff;border:1px solid var(--gp-grey-200);border-radius:var(--gp-radius);padding:20px;box-shadow:var(--gp-shadow-sm);}
+.gp-card-portfolio{padding:0;overflow:hidden;}
+.gp-card-portfolio .thumb{height:150px;display:flex;align-items:flex-end;padding:14px;color:#fff;font-family:var(--gp-font-head);font-weight:600;}
+.gp-card-portfolio .body{padding:16px 18px;}
+.gp-feature-ic{width:46px;height:46px;border-radius:12px;background:var(--gp-mustard-soft);display:flex;align-items:center;justify-content:center;margin-bottom:10px;}
+
+/* ============================================================
+   ↓↓↓ ส่วนด้านล่างนี้คือ "หน้า style guide" ไม่ต้องคัดลอกไปเว็บ ↓↓↓
+   ============================================================ */
+.sg-top{background:var(--gp-navy);color:#fff;padding:34px 6vw 40px;position:relative;overflow:hidden;}
+.sg-top .swoosh{position:absolute;right:-80px;top:-80px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle at 30% 30%,var(--gp-mustard),transparent 62%);opacity:.22;}
+.sg-top h1{font-size:34px;font-weight:300;}
+.sg-top h1 b{font-weight:600;color:var(--gp-mustard);}
+.sg-top p{color:#A9BBD2;max-width:60ch;font-size:14px;}
+.sg-wrap{max-width:1080px;margin:0 auto;padding:0 6vw 80px;}
+.sg-sec{background:#fff;border:1px solid var(--gp-grey-200);border-radius:18px;padding:26px 28px;margin-top:24px;box-shadow:var(--gp-shadow-sm);}
+.sg-sec>.tag{font-family:var(--gp-font-head);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gp-mustard);font-weight:600;}
+.sg-sec h2{font-size:22px;color:var(--gp-navy);margin:4px 0 4px;}
+.sg-sec .desc{color:var(--gp-grey);font-size:13.5px;margin-bottom:18px;}
+.sg-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;}
+.sg-grid{display:grid;gap:16px;}
+.demo{border:1px dashed var(--gp-grey-200);border-radius:12px;padding:20px;background:var(--gp-cloud);}
+.code{position:relative;background:var(--gp-navy-700);border-radius:10px;margin-top:12px;}
+.code pre{margin:0;padding:15px 16px;overflow:auto;color:#cfe0f5;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;line-height:1.55;white-space:pre;}
+.code .copy{position:absolute;top:9px;right:9px;background:var(--gp-mustard);color:var(--gp-navy);border:none;font-family:var(--gp-font-head);
+  font-size:11px;font-weight:600;padding:5px 11px;border-radius:7px;cursor:pointer;}
+.code .copy.done{background:var(--gp-success);color:#fff;}
+.swatch{border-radius:12px;height:92px;display:flex;flex-direction:column;justify-content:flex-end;padding:10px;border:1px solid var(--gp-grey-200);}
+.swatch .nm{font-family:var(--gp-font-head);font-weight:600;font-size:13px;}
+.swatch .vr{font-family:ui-monospace,monospace;font-size:10.5px;opacity:.85;}
+.note{background:var(--gp-cloud);border-left:3px solid var(--gp-mustard);border-radius:0 8px 8px 0;padding:12px 14px;font-size:12.5px;color:var(--gp-grey);margin-top:14px;}
+.toc{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+.toc a{font-family:var(--gp-font-head);font-size:12px;text-decoration:none;color:#fff;background:rgba(255,255,255,.12);padding:6px 12px;border-radius:20px;}
+.toc a:hover{background:var(--gp-mustard);color:var(--gp-navy);}
+.scale-row{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--gp-grey-200);padding:9px 0;}
+.scale-row .lab{width:140px;font-family:ui-monospace,monospace;font-size:11px;color:var(--gp-grey);}
+@media(max-width:760px){.sg-top h1{font-size:26px;}}
+</style>
+</head>
+<body>
+
+<!-- ===================== STYLEGUIDE HEADER ===================== -->
+<header class="sg-top">
+  <div class="swoosh"></div>
+  <div style="position:relative;z-index:1">
+    <!-- INLINE SVG LOGO (web-rendered representation) -->
+    <svg width="230" height="44" viewBox="0 0 230 44" xmlns="http://www.w3.org/2000/svg" aria-label="GO PREMIUM">
+      <g>
+        <rect x="0" y="6" width="32" height="32" rx="8" fill="#F4BD44"/>
+        <path d="M9 22a7 7 0 1 1 7 7" fill="none" stroke="#1F3A5F" stroke-width="3.4" stroke-linecap="round"/>
+        <circle cx="16" cy="29" r="2.4" fill="#1F3A5F"/>
+      </g>
+      <text x="44" y="29" font-family="Kanit,sans-serif" font-size="22" font-weight="700" fill="#FFFFFF">GO</text>
+      <text x="80" y="29" font-family="Kanit,sans-serif" font-size="22" font-weight="700" fill="#F4BD44">PREMIUM</text>
+    </svg>
+    <h1 style="margin-top:18px">Web <b>UI Kit</b></h1>
+    <p>ชุดคอมโพเนนต์พร้อมใช้สำหรับเว็บไซต์ใหม่ ทุกชิ้นมีโค้ดให้กดคัดลอกไปวางได้เลย สีและฟอนต์อิงตาม Brand Book ของ GO PREMIUM</p>
+    <div class="toc">
+      <a href="#logo">Logo</a><a href="#color">Colors</a><a href="#type">Type</a><a href="#btn">Buttons</a>
+      <a href="#badge">Badges</a><a href="#form">RFQ Form</a><a href="#cards">Cards</a><a href="#nav">Navbar</a>
+      <a href="#hero">Hero</a><a href="#steps">How it works</a><a href="#cta">CTA</a><a href="#footer">Footer</a>
+    </div>
+  </div>
+</header>
+
+<div class="sg-wrap">
+
+  <div class="note" style="margin-top:24px"><b style="font-family:var(--gp-font-head);color:var(--gp-navy)">วิธีใช้:</b> คัดลอกบล็อก Design Tokens ใน &lt;style&gt; ด้านบนของไฟล์ไปไว้ในเว็บก่อน แล้วค่อยหยิบคอมโพเนนต์ที่ต้องการ คลาสทั้งหมดขึ้นต้นด้วย <code>gp-</code> เพื่อไม่ชนกับคลาสอื่น</div>
+
+  <!-- LOGO -->
+  <section class="sg-sec" id="logo">
+    <div class="tag">Brand Mark</div>
+    <h2>โลโก้ & การวางบนพื้น</h2>
+    <div class="desc">เวอร์ชัน SVG ในตัว (ตัวตั้งต้น) ใช้บนพื้นสว่าง/เข้ม/เหลือง สำหรับงานจริงแนะนำให้สลับเป็นไฟล์โลโก้ทางการของคุณ</div>
+    <div class="sg-grid" style="grid-template-columns:repeat(3,1fr)">
+      <div class="demo" style="background:#fff;text-align:center">
+        <svg width="170" height="34" viewBox="0 0 230 44"><rect x="0" y="6" width="32" height="32" rx="8" fill="#F4BD44"/><path d="M9 22a7 7 0 1 1 7 7" fill="none" stroke="#1F3A5F" stroke-width="3.4" stroke-linecap="round"/><circle cx="16" cy="29" r="2.4" fill="#1F3A5F"/><text x="44" y="29" font-family="Kanit" font-size="22" font-weight="700" fill="#1F3A5F">GO</text><text x="80" y="29" font-family="Kanit" font-size="22" font-weight="700" fill="#F4BD44">PREMIUM</text></svg>
+        <div style="font-size:11px;color:var(--gp-grey);margin-top:8px">บนพื้นสว่าง</div>
+      </div>
+      <div class="demo" style="background:var(--gp-navy);text-align:center">
+        <svg width="170" height="34" viewBox="0 0 230 44"><rect x="0" y="6" width="32" height="32" rx="8" fill="#F4BD44"/><path d="M9 22a7 7 0 1 1 7 7" fill="none" stroke="#1F3A5F" stroke-width="3.4" stroke-linecap="round"/><circle cx="16" cy="29" r="2.4" fill="#1F3A5F"/><text x="44" y="29" font-family="Kanit" font-size="22" font-weight="700" fill="#fff">GO</text><text x="80" y="29" font-family="Kanit" font-size="22" font-weight="700" fill="#F4BD44">PREMIUM</text></svg>
+        <div style="font-size:11px;color:#A9BBD2;margin-top:8px">บนพื้นเข้ม</div>
+      </div>
+      <div class="demo" style="background:var(--gp-mustard);text-align:center">
+        <svg width="170" height="34" viewBox="0 0 230 44"><rect x="0" y="6" width="32" height="32" rx="8" fill="#1F3A5F"/><path d="M9 22a7 7 0 1 1 7 7" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round"/><circle cx="16" cy="29" r="2.4" fill="#fff"/><text x="44" y="29" font-family="Kanit" font-size="22" font-weight="700" fill="#1F3A5F">GO</text><text x="80" y="29" font-family="Kanit" font-size="22" font-weight="700" fill="#fff">PREMIUM</text></svg>
+        <div style="font-size:11px;color:var(--gp-navy);margin-top:8px">บนพื้นเหลือง</div>
+      </div>
+    </div>
+    <div class="note"><b style="font-family:var(--gp-font-head);color:var(--gp-navy)">ไฟล์โลโก้จริงของคุณ</b> มีใน Drive โฟลเดอร์ Logo แล้ว (GoPremium Logo Navy/White/Navy-yellow/White-yellow + Icon) แนะนำ export เป็น <b>.svg</b> เพิ่ม แล้ววางที่ <code>/assets/logo/</code> จากนั้นแทนที่ &lt;svg&gt; ด้านบนด้วย <code>&lt;img src="/assets/logo/gopremium-navy.svg" alt="GO PREMIUM"&gt;</code></div>
+  </section>
+
+  <!-- COLOR -->
+  <section class="sg-sec" id="color">
+    <div class="tag">Design Tokens</div>
+    <h2>สีแบรนด์</h2>
+    <div class="desc">ใช้ตามสัดส่วน 60 (ขาว) / 30 (กรมท่า) / 10 (เหลือง) เหลืองใช้เน้นจุดสำคัญเท่านั้น</div>
+    <div class="sg-grid" style="grid-template-columns:repeat(4,1fr)">
+      <div class="swatch" style="background:#1F3A5F;color:#fff"><span class="nm">Navy</span><span class="vr">--gp-navy · #1F3A5F</span></div>
+      <div class="swatch" style="background:#F4BD44;color:#3a2c00"><span class="nm">Mustard</span><span class="vr">--gp-mustard · #F4BD44</span></div>
+      <div class="swatch" style="background:#2C4F7C;color:#fff"><span class="nm">Navy Soft</span><span class="vr">--gp-navy-soft · #2C4F7C</span></div>
+      <div class="swatch" style="background:#F8D586;color:#3a2c00"><span class="nm">Mustard Soft</span><span class="vr">--gp-mustard-soft</span></div>
+      <div class="swatch" style="background:#FFFFFF;color:#1A2230"><span class="nm">White</span><span class="vr">--gp-white · #FFFFFF</span></div>
+      <div class="swatch" style="background:#F5F6F8;color:#1A2230"><span class="nm">Cloud</span><span class="vr">--gp-cloud · #F5F6F8</span></div>
+      <div class="swatch" style="background:#1A2230;color:#fff"><span class="nm">Ink</span><span class="vr">--gp-ink · #1A2230</span></div>
+      <div class="swatch" style="background:#5B6472;color:#fff"><span class="nm">Grey</span><span class="vr">--gp-grey · #5B6472</span></div>
+    </div>
+    <div class="code"><button class="copy">คัดลอก</button><pre>:root{
+  --gp-navy:#1F3A5F;  --gp-navy-soft:#2C4F7C;
+  --gp-mustard:#F4BD44; --gp-mustard-soft:#F8D586;
+  --gp-white:#FFFFFF; --gp-cloud:#F5F6F8;
+  --gp-ink:#1A2230;  --gp-grey:#5B6472; --gp-grey-200:#E3E7ED;
+}</pre></div>
+  </section>
+
+  <!-- TYPE -->
+  <section class="sg-sec" id="type">
+    <div class="tag">Typography</div>
+    <h2>ตัวอักษร & ลำดับชั้น</h2>
+    <div class="desc">หัวเรื่อง: Kanit (ตัวแทนเว็บของ Satoshi) · เนื้อหา: Sarabun (ไทย/อังกฤษ อ่านง่าย)</div>
+    <div class="demo" style="background:#fff">
+      <div class="scale-row"><span class="lab">H1 / 40-48</span><span style="font-family:var(--gp-font-head);font-weight:600;font-size:34px;color:var(--gp-navy)">มากกว่าของขวัญ</span></div>
+      <div class="scale-row"><span class="lab">H2 / 28-32</span><span style="font-family:var(--gp-font-head);font-weight:600;font-size:24px;color:var(--gp-navy)">ของขวัญองค์กรดีไซน์เฉพาะ</span></div>
+      <div class="scale-row"><span class="lab">H3 / 20-22</span><span style="font-family:var(--gp-font-head);font-weight:500;font-size:19px;color:var(--gp-navy)">บริการครบวงจร</span></div>
+      <div class="scale-row"><span class="lab">Body / 15-16</span><span style="font-size:15px">เนื้อหาหลัก อ่านสบาย เว้นบรรทัด 1.6 The premium gift, designed with intention.</span></div>
+      <div class="scale-row"><span class="lab">Caption / 12-13</span><span style="font-size:12.5px;color:var(--gp-grey)">คำอธิบายภาพ / หมายเหตุ</span></div>
+    </div>
+    <div class="code"><button class="copy">คัดลอก</button><pre>h1,h2,h3{font-family:var(--gp-font-head);font-weight:600;}
+body,p{font-family:var(--gp-font-body);font-size:16px;line-height:1.6;}
+/* โหลดฟอนต์: Kanit + Sarabun จาก Google Fonts */</pre></div>
+  </section>
+
+  <!-- BUTTONS -->
+  <section class="sg-sec" id="btn">
+    <div class="tag">Component</div>
+    <h2>ปุ่ม (Buttons)</h2>
+    <div class="desc">ปุ่มหลัก (เหลือง) = CTA สำคัญ เช่น ขอใบเสนอราคา · ปุ่มรอง (กรมท่า) = action ทั่วไป · ปุ่ม ghost = action รอง</div>
+    <div class="demo"><div class="sg-row">
+      <a class="gp-btn gp-btn-primary">ขอใบเสนอราคา</a>
+      <a class="gp-btn gp-btn-secondary">ดูผลงาน</a>
+      <a class="gp-btn gp-btn-ghost">ปรึกษาฟรี</a>
+      <a class="gp-btn gp-btn-primary gp-btn-sm">เล็ก</a>
+      <a class="gp-btn gp-btn-primary gp-btn-lg">ใหญ่</a>
+    </div></div>
+    <div class="code"><button class="copy">คัดลอก</button><pre>&lt;a class="gp-btn gp-btn-primary"&gt;ขอใบเสนอราคา&lt;/a&gt;
+&lt;a class="gp-btn gp-btn-secondary"&gt;ดูผลงาน&lt;/a&gt;
+&lt;a class="gp-btn gp-btn-ghost"&gt;ปรึกษาฟรี&lt;/a&gt;
+&lt;!-- ขนาด: เพิ่ม gp-btn-sm หรือ gp-btn-lg --&gt;</pre></div>
+  </section>
+
+  <!-- BADGES -->
+  <section class="sg-sec" id="badge">
+    <div class="tag">Component</div>
+    <h2>ป้าย (Badges / Tags)</h2>
+    <div class="desc">ใช้กำกับหมวดสินค้า สถานะ หรือจุดเด่น เช่น “ขายดี” “งานด่วน” “รักษ์โลก”</div>
+    <div class="demo"><div class="sg-row">
+      <span class="gp-badge gp-badge-navy">ขายดี</span>
+      <span class="gp-badge gp-badge-mustard">งานด่วน</span>
+      <span class="gp-badge gp-badge-solid">NEW</span>
+      <span class="gp-badge gp-badge-mustard">รักษ์โลก</span>
+    </div></div>
+    <div class="code"><button class="copy">คัดลอก</button><pre>&lt;span class="gp-badge gp-badge-navy"&gt;ขายดี&lt;/span&gt;
+&lt;span class="gp-badge gp-badge-mustard"&gt;งานด่วน&lt;/span&gt;
+&lt;span class="gp-badge gp-badge-solid"&gt;NEW&lt;/span&gt;</pre></div>
+  </section>
+
+  <!-- FORM -->
+  <section class="sg-sec" id="form">
+    <div class="tag">Lead Capture</div>
+    <h2>ฟอร์มขอใบเสนอราคา (RFQ)</h2>
+    <div class="desc">หัวใจของเว็บ ฟอร์มสั้นที่เก็บข้อมูลพอให้เสนอราคาได้ ส่งต่อเข้า CRM ได้ทันที</div>
+    <div class="demo" style="background:#fff">
+      <div style="max-width:520px">
+        <div class="gp-field"><label class="gp-label">ชื่อ-บริษัท</label><input class="gp-input" placeholder="เช่น คุณแป้ง · บริษัท ABC"></div>
+        <div class="sg-row" style="gap:14px">
+          <div class="gp-field" style="flex:1"><label class="gp-label">โอกาส/งาน</label>
+            <select class="gp-select"><option>ของขวัญปีใหม่พนักงาน</option><option>ของขวัญลูกค้า/คู่ค้า</option><option>อีเวนต์/แคมเปญ</option><option>อื่น ๆ</option></select></div>
+          <div class="gp-field" style="flex:1"><label class="gp-label">จำนวน (ชิ้น)</label><input class="gp-input" placeholder="เช่น 200"></div>
+        </div>
+        <div class="sg-row" style="gap:14px">
+          <div class="gp-field" style="flex:1"><label class="gp-label">ต้องการรับงาน</label><input class="gp-input" type="date"></div>
+          <div class="gp-field" style="flex:1"><label class="gp-label">งบต่อชิ้น (THB)</label><input class="gp-input" placeholder="เช่น 250"></div>
+        </div>
+        <div class="gp-field"><label class="gp-label">รายละเอียดเพิ่มเติม</label><textarea class="gp-textarea" placeholder="บอกคอนเซ็ปต์หรือสินค้าที่สนใจ"></textarea></div>
+        <a class="gp-btn gp-btn-primary gp-btn-lg" style="width:100%;justify-content:center">ส่งขอใบเสนอราคา</a>
+      </div>
+    </div>
+    <div class="note"><b style="font-family:var(--gp-font-head);color:var(--gp-navy)">เคล็ดลับ:</b> ฟิลด์ “งบต่อชิ้น” และ “เดดไลน์” ช่วยคัดกรอง Lead ที่จริงจัง และให้ทีมเสนอราคาได้แม่นขึ้น เชื่อมฟอร์มเข้า CRM/อีเมลด้วย Zapier</div>
+    <div class="code"><button class="copy">คัดลอก</button><pre>&lt;div class="gp-field"&gt;
+  &lt;label class="gp-label"&gt;ชื่อ-บริษัท&lt;/label&gt;
+  &lt;input class="gp-input" placeholder="เช่น คุณแป้ง · บริษัท ABC"&gt;
+&lt;/div&gt;
+&lt;a class="gp-btn gp-btn-primary gp-btn-lg" style="width:100%;justify-content:center"&gt;ส่งขอใบเสนอราคา&lt;/a&gt;</pre></div>
+  </section>
+
+  <!-- CARDS -->
+  <section class="sg-sec" id="cards">
+    <div class="tag">Components</div>
+    <h2>การ์ด (Cards)</h2>
+    <div class="desc">การ์ดสินค้า, ผลงาน, รีวิว และจุดเด่นบริการ</div>
+    <div class="sg-grid" style="grid-template-columns:repeat(2,1fr)">
+
+      <!-- Product card -->
+      <div class="gp-card">
+        <div style="height:120px;border-radius:10px;background:var(--gp-cloud);display:flex;align-items:center;justify-content:center;color:var(--gp-grey);font-size:12px;margin-bottom:12px">[ ภาพสินค้า ]</div>
+        <span class="gp-badge gp-badge-mustard">ขายดี</span>
+        <h3 style="font-size:17px;color:var(--gp-navy);margin:8px 0 4px">กระบอกน้ำเก็บอุณหภูมิ</h3>
+        <p style="font-size:13px;color:var(--gp-grey);margin:0 0 10px">พิมพ์โลโก้ MOQ 100 ชิ้น</p>
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <span style="font-family:var(--gp-font-head);font-weight:600;color:var(--gp-navy)">เริ่ม 180 THB</span>
+          <a class="gp-btn gp-btn-ghost gp-btn-sm">ขอราคา</a>
+        </div>
+      </div>
+
+      <!-- Portfolio card -->
+      <div class="gp-card gp-card-portfolio">
+        <div class="thumb" style="background:linear-gradient(135deg,#1F3A5F,#2C4F7C)">เซ็ตปีใหม่ บริษัท ABC</div>
+        <div class="body">
+          <span class="gp-badge gp-badge-navy">Case study</span>
+          <p style="font-size:13px;margin:8px 0 0;color:var(--gp-grey)">กิฟต์เซ็ต 500 ชุด ออกแบบกล่อง + การ์ดเฉพาะแบรนด์ ส่งทันปีใหม่</p>
+        </div>
+      </div>
+
+      <!-- Testimonial -->
+      <div class="gp-card" style="background:var(--gp-navy);color:#fff;border:none">
+        <div style="font-family:var(--gp-font-head);font-size:30px;color:var(--gp-mustard);line-height:1">“</div>
+        <p style="font-size:14px;color:#e6edf6;margin:0 0 12px">งานดีไซน์สวย ส่งตรงเวลา คุยง่ายมาก ปีหน้าสั่งอีกแน่นอน</p>
+        <div style="font-family:var(--gp-font-head);font-weight:500;font-size:13px">คุณเอ · HR Manager, บริษัท ABC</div>
+      </div>
+
+      <!-- Feature -->
+      <div class="gp-card">
+        <div class="gp-feature-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1F3A5F" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <h3 style="font-size:16px;color:var(--gp-navy);margin-bottom:4px">Mockup ก่อนผลิต</h3>
+        <p style="font-size:13px;color:var(--gp-grey);margin:0">เห็นงานก่อนตัดสินใจ มั่นใจ ไม่กลัวงานพลาด</p>
+      </div>
+    </div>
+    <div class="code"><button class="copy">คัดลอก</button><pre>&lt;div class="gp-card"&gt;
+  &lt;span class="gp-badge gp-badge-mustard"&gt;ขายดี&lt;/span&gt;
+  &lt;h3&gt;กระบอกน้ำเก็บอุณหภูมิ&lt;/h3&gt;
+  &lt;p&gt;พิมพ์โลโก้ MOQ 100 ชิ้น&lt;/p&gt;
+  &lt;a class="gp-btn gp-btn-ghost gp-btn-sm"&gt;ขอราคา&lt;/a&gt;
+&lt;/div&gt;</pre></div>
+  </section>
+
+  <!-- NAVBAR -->
+  <section class="sg-sec" id="nav">
+    <div class="tag">Layout</div>
+    <h2>แถบเมนู (Navbar)</h2>
+    <div class="desc">โปร่ง อ่านง่าย มี CTA เหลืองมุมขวาเสมอ</div>
+    <div class="demo" style="padding:0;overflow:hidden">
+      <div style="display:flex;align-items:center;justify-content:space-between;background:#fff;padding:13px 20px;border-bottom:1px solid var(--gp-grey-200)">
+        <svg width="150" height="30" viewBox="0 0 230 44"><rect x="0" y="6" width="32" height="32" rx="8" fill="#F4BD44"/><path d="M9 22a7 7 0 1 1 7 7" fill="none" stroke="#1F3A5F" stroke-width="3.4" stroke-linecap="round"/><circle cx="16" cy="29" r="2.4" fill="#1F3A5F"/><text x="44" y="29" font-family="Kanit" font-size="22" font-weight="700" fill="#1F3A5F">GO</text><text x="80" y="29" font-family="Kanit" font-size="22" font-weight="700" fill="#F4BD44">PREMIUM</text></svg>
+        <div class="sg-row" style="gap:22px">
+          <a style="font-family:var(--gp-font-head);font-size:14px;color:var(--gp-navy);text-decoration:none">ผลงาน</a>
+          <a style="font-family:var(--gp-font-head);font-size:14px;color:var(--gp-navy);text-decoration:none">สินค้า</a>
+          <a style="font-family:var(--gp-font-head);font-size:14px;color:var(--gp-navy);text-decoration:none">วิธีสั่งทำ</a>
+          <a class="gp-btn gp-btn-primary gp-btn-sm">ขอใบเสนอราคา</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HERO -->
+  <section class="sg-sec" id="hero">
+    <div class="tag">Section</div>
+    <h2>Hero (ส่วนหัวหน้าแรก)</h2>
+    <div class="desc">สื่อจุดยืนใน 5 วินาที + CTA เด่น 2 ปุ่ม</div>
+    <div class="demo" style="padding:0;overflow:hidden">
+      <div style="background:var(--gp-navy);color:#fff;padding:48px 40px;position:relative;overflow:hidden">
+        <div style="position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#F4BD44,transparent 62%);opacity:.25"></div>
+        <div style="position:relative;max-width:560px">
+          <span class="gp-badge gp-badge-mustard">ของขวัญองค์กร · ดีไซน์เฉพาะ</span>
+          <h1 style="font-size:38px;font-weight:300;margin:14px 0 8px">มากกว่าของขวัญ<br><b style="font-weight:600;color:var(--gp-mustard)">คือประสบการณ์ที่น่าจดจำ</b></h1>
+          <p style="color:#cdd9ea;font-size:15px;max-width:46ch">เราออกแบบและผลิตของพรีเมียมที่สะท้อนแบรนด์คุณ ตั้งแต่คอนเซ็ปต์ ดีไซน์ ผลิต ถึงส่งมอบ จบในที่เดียว</p>
+          <div class="sg-row" style="margin-top:20px">
+            <a class="gp-btn gp-btn-primary gp-btn-lg">ขอใบเสนอราคา</a>
+            <a class="gp-btn gp-btn-ghost gp-btn-lg" style="color:#fff;border-color:rgba(255,255,255,.4)">ดูผลงาน</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="code"><button class="copy">คัดลอก</button><pre>&lt;section style="background:var(--gp-navy);color:#fff;padding:80px 6vw"&gt;
+  &lt;span class="gp-badge gp-badge-mustard"&gt;ของขวัญองค์กร · ดีไซน์เฉพาะ&lt;/span&gt;
+  &lt;h1&gt;มากกว่าของขวัญ คือประสบการณ์ที่น่าจดจำ&lt;/h1&gt;
+  &lt;p&gt;เราออกแบบและผลิตของพรีเมียมที่สะท้อนแบรนด์คุณ...&lt;/p&gt;
+  &lt;a class="gp-btn gp-btn-primary gp-btn-lg"&gt;ขอใบเสนอราคา&lt;/a&gt;
+  &lt;a class="gp-btn gp-btn-ghost gp-btn-lg"&gt;ดูผลงาน&lt;/a&gt;
+&lt;/section&gt;</pre></div>
+  </section>
+
+  <!-- STEPS -->
+  <section class="sg-sec" id="steps">
+    <div class="tag">Section</div>
+    <h2>วิธีการทำงาน (How it works)</h2>
+    <div class="desc">4 ขั้น ลดความกลัว “งานพลาด” ของลูกค้า B2B</div>
+    <div class="demo" style="background:#fff">
+      <div class="sg-grid" style="grid-template-columns:repeat(4,1fr)">
+        <div style="text-align:center"><div style="width:42px;height:42px;border-radius:50%;background:var(--gp-navy);color:#fff;font-family:var(--gp-font-head);font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 8px">1</div><div style="font-family:var(--gp-font-head);font-weight:500;color:var(--gp-navy);font-size:14px">ปรึกษา</div><p style="font-size:12px;color:var(--gp-grey);margin:4px 0 0">บอกโจทย์ งบ จำนวน</p></div>
+        <div style="text-align:center"><div style="width:42px;height:42px;border-radius:50%;background:var(--gp-navy);color:#fff;font-family:var(--gp-font-head);font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 8px">2</div><div style="font-family:var(--gp-font-head);font-weight:500;color:var(--gp-navy);font-size:14px">ดีไซน์</div><p style="font-size:12px;color:var(--gp-grey);margin:4px 0 0">ทำ Mockup ให้ดูก่อน</p></div>
+        <div style="text-align:center"><div style="width:42px;height:42px;border-radius:50%;background:var(--gp-navy);color:#fff;font-family:var(--gp-font-head);font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 8px">3</div><div style="font-family:var(--gp-font-head);font-weight:500;color:var(--gp-navy);font-size:14px">ผลิต</div><p style="font-size:12px;color:var(--gp-grey);margin:4px 0 0">ควบคุมคุณภาพทุกชิ้น</p></div>
+        <div style="text-align:center"><div style="width:42px;height:42px;border-radius:50%;background:var(--gp-mustard);color:var(--gp-navy);font-family:var(--gp-font-head);font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 8px">4</div><div style="font-family:var(--gp-font-head);font-weight:500;color:var(--gp-navy);font-size:14px">ส่งมอบ</div><p style="font-size:12px;color:var(--gp-grey);margin:4px 0 0">ตรงเวลา ทันงาน</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="sg-sec" id="cta">
+    <div class="tag">Section</div>
+    <h2>แถบ CTA</h2>
+    <div class="desc">วางก่อน footer เพื่อปิดการขายครั้งสุดท้าย</div>
+    <div class="demo" style="padding:0;overflow:hidden">
+      <div style="background:var(--gp-mustard);padding:34px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px">
+        <div><h2 style="color:var(--gp-navy);font-size:24px">พร้อมเริ่มของขวัญชิ้นต่อไปแล้วหรือยัง</h2><p style="color:#5a4408;font-size:14px;margin:4px 0 0">ปรึกษาฟรี พร้อมตัวอย่างก่อนผลิต</p></div>
+        <a class="gp-btn gp-btn-secondary gp-btn-lg">คุยกับเราเลย</a>
+      </div>
+    </div>
+    <div class="code"><button class="copy">คัดลอก</button><pre>&lt;section style="background:var(--gp-mustard);padding:60px 6vw;text-align:center"&gt;
+  &lt;h2 style="color:var(--gp-navy)"&gt;พร้อมเริ่มของขวัญชิ้นต่อไปแล้วหรือยัง&lt;/h2&gt;
+  &lt;a class="gp-btn gp-btn-secondary gp-btn-lg"&gt;คุยกับเราเลย&lt;/a&gt;
+&lt;/section&gt;</pre></div>
+  </section>
+
+  <!-- FOOTER -->
+  <section class="sg-sec" id="footer">
+    <div class="tag">Layout</div>
+    <h2>Footer</h2>
+    <div class="demo" style="padding:0;overflow:hidden">
+      <div style="background:var(--gp-navy-700);color:#cdd9ea;padding:30px 30px 22px">
+        <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px">
+          <div style="max-width:280px">
+            <svg width="160" height="32" viewBox="0 0 230 44"><rect x="0" y="6" width="32" height="32" rx="8" fill="#F4BD44"/><path d="M9 22a7 7 0 1 1 7 7" fill="none" stroke="#1F3A5F" stroke-width="3.4" stroke-linecap="round"/><circle cx="16" cy="29" r="2.4" fill="#1F3A5F"/><text x="44" y="29" font-family="Kanit" font-size="22" font-weight="700" fill="#fff">GO</text><text x="80" y="29" font-family="Kanit" font-size="22" font-weight="700" fill="#F4BD44">PREMIUM</text></svg>
+            <p style="font-size:12.5px;margin:10px 0 0">มากกว่าของขวัญ คือประสบการณ์ที่น่าจดจำ</p>
+          </div>
+          <div style="font-size:12.5px;line-height:1.9">
+            <div style="font-family:var(--gp-font-head);color:#fff;margin-bottom:4px">ติดต่อ</div>
+            081-887-2627 (คุณแป้ง)<br>info@passiongrow.co.th<br>@gopremium
+          </div>
+        </div>
+        <div style="border-top:1px solid rgba(255,255,255,.12);margin-top:18px;padding-top:12px;font-size:11px;color:#8ea3bf">© 2026 PASSION GROW TRADING CO., LTD. · All rights reserved.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="note" style="margin-top:24px"><b style="font-family:var(--gp-font-head);color:var(--gp-navy)">ส่งต่อให้ทีมเว็บ:</b> ไฟล์นี้ใช้เป็น “แหล่งความจริงเดียว” ของดีไซน์ได้เลย นักพัฒนาเปิดดูคอมโพเนนต์ + คัดลอกโค้ด ส่วน Design Tokens ใน &lt;style&gt; ควรย้ายไปเป็นไฟล์ <code>tokens.css</code> กลาง แล้ว import ทุกหน้า</div>
+
+</div>
+
+<script>
+document.querySelectorAll('.code .copy').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var code=btn.parentElement.querySelector('pre').innerText;
+    navigator.clipboard.writeText(code).then(function(){
+      btn.textContent='คัดลอกแล้ว ✓';btn.classList.add('done');
+      setTimeout(function(){btn.textContent='คัดลอก';btn.classList.remove('done');},1600);
+    });
+  });
+});
+</script>
+</body>
+</html>

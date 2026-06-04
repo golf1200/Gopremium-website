@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GO PREMIUM — ของขวัญองค์กรดีไซน์เฉพาะ ขับเคลื่อนด้วย AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   GO PREMIUM · PRINT VERSION
+   ============================================================ */
+:root {
+  --gp-navy: #1F3A5F;
+  --gp-navy-700: #16293F;
+  --gp-navy-900: #0E1B2C;
+  --gp-navy-soft: #2C4F7C;
+  --gp-mustard: #F4BD44;
+  --gp-mustard-deep: #E0A92B;
+  --gp-mustard-soft: #F8D586;
+  --gp-white: #FFFFFF;
+  --gp-ink: #1A2230;
+  --gp-grey: #5B6472;
+  --gp-grey-400: #8A93A2;
+  --gp-grey-200: #E3E7ED;
+  --gp-cloud: #F5F6F8;
+  --gp-cloud-2: #EEF1F5;
+  --gp-font-head: 'Plus Jakarta Sans', 'Kanit', sans-serif;
+  --gp-font-body: 'Kanit', 'Plus Jakarta Sans', sans-serif;
+  --gp-radius: 14px;
+  --gp-radius-lg: 20px;
+  --gp-radius-sm: 9px;
+  --gp-radius-pill: 999px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  font-family: var(--gp-font-body);
+  color: var(--gp-ink);
+  background: #fff;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--gp-font-head);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+/* ---- Page setup ---- */
+@page { size: A4 portrait; margin: 0; }
+
+/* ---- Section = one page ---- */
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  break-before: page;
+  break-inside: avoid;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.page:first-child { break-before: auto; }
+
+/* ---- Inner wrap ---- */
+.wrap {
+  max-width: 100%;
+  padding: 36px 52px;
+  flex: 1;
+}
+
+/* ---- Eyebrow ---- */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--gp-font-head);
+  font-weight: 600;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gp-mustard-deep);
+  margin-bottom: 10px;
+}
+.eyebrow .dot {
+  width: 5px; height: 5px;
+  border-radius: 2px;
+  background: currentColor;
+  flex-shrink: 0;
+}
+.eyebrow.light { color: var(--gp-mustard); }
+
+/* ---- Logo ---- */
+.logo-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  font-family: var(--gp-font-head);
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: -0.03em;
+  color: var(--gp-navy);
+}
+.logo-go {
+  background: var(--gp-mustard);
+  color: var(--gp-navy);
+  border-radius: 6px;
+  padding: 1px 7px;
+  margin-right: 7px;
+  line-height: 1.35;
+}
+.logo-wrap.light { color: #fff; }
+.logo-wrap.light .logo-go { background: var(--gp-mustard); color: var(--gp-navy); }
+
+/* ---- Badges ---- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--gp-font-head);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 4px 10px;
+  border-radius: var(--gp-radius-pill);
+}
+.badge-navy { background: #D7E2F1; color: var(--gp-navy); }
+.badge-mustard { background: var(--gp-mustard-soft); color: #6B4E08; }
+.badge-solid { background: var(--gp-navy); color: #fff; }
+.badge-ai {
+  background: linear-gradient(120deg, rgba(244,189,68,.2), rgba(255,255,255,.05));
+  color: var(--gp-mustard-deep);
+  border: 1px solid rgba(244,189,68,.45);
+}
+
+/* ---- Cards ---- */
+.card {
+  background: #fff;
+  border: 1px solid var(--gp-grey-200);
+  border-radius: var(--gp-radius);
+  padding: 18px;
+}
+
+/* ---- Dot grid texture ---- */
+.dotgrid {
+  background-image: radial-gradient(rgba(31,58,95,.10) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+.dotgrid.dark {
+  background-image: radial-gradient(rgba(255,255,255,.08) 1px, transparent 1px);
+}
+
+/* ---- Grids ---- */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+.grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 14px; }
+.grid-auto { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; }
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.gap-8 { gap: 8px; }
+.gap-12 { gap: 12px; }
+.gap-16 { gap: 16px; }
+.items-center { align-items: center; }
+.wrap-col { flex-wrap: wrap; }
+
+/* ---- Colours ---- */
+.bg-cloud { background: var(--gp-cloud); }
+.bg-navy { background: var(--gp-navy); }
+.bg-navy-900 { background: var(--gp-navy-900); }
+.bg-mustard { background: var(--gp-mustard); }
+.text-navy { color: var(--gp-navy); }
+.text-grey { color: var(--gp-grey); }
+.text-white { color: #fff; }
+.text-mustard { color: var(--gp-mustard); }
+.text-mustard-deep { color: var(--gp-mustard-deep); }
+
+/* ---- Image placeholder ---- */
+.img-placeholder {
+  background: var(--gp-cloud-2);
+  border: 1.5px dashed var(--gp-grey-200);
+  border-radius: var(--gp-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--gp-font-head);
+  font-size: 11px;
+  color: var(--gp-grey-400);
+  letter-spacing: 0.03em;
+}
+
+/* ---- Steps number ---- */
+.step-num {
+  font-family: var(--gp-font-head);
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--gp-grey-200);
+}
+
+/* ---- Stars ---- */
+.stars { color: var(--gp-mustard); font-size: 13px; letter-spacing: 2px; }
+
+/* ---- Print animations freeze ---- */
+@media print {
+  *, *::before, *::after {
+    animation-delay: -99s !important;
+    animation-duration: 0.001s !important;
+    animation-iteration-count: 1 !important;
+    animation-fill-mode: both !important;
+    animation-play-state: running !important;
+    transition-duration: 0s !important;
+  }
+}
+
+/* ============================================================
+   PAGE-SPECIFIC STYLES
+   ============================================================ */
+
+/* ── 1 HERO ── */
+#pg-hero {
+  background: linear-gradient(180deg, #FBFCFD 0%, var(--gp-cloud) 100%);
+}
+#pg-hero .hero-inner {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 40px;
+  align-items: center;
+  flex: 1;
+  padding: 44px 52px 36px;
+}
+#pg-hero h1 {
+  font-size: 46px;
+  color: var(--gp-navy);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin-bottom: 14px;
+  text-wrap: balance;
+}
+#pg-hero h1 .accent { color: var(--gp-mustard-deep); }
+#pg-hero .lead {
+  font-size: 15px;
+  color: var(--gp-grey);
+  max-width: 44ch;
+  line-height: 1.7;
+  margin-bottom: 22px;
+}
+#pg-hero .cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gp-mustard);
+  color: var(--gp-navy);
+  font-family: var(--gp-font-head);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px 24px;
+  border-radius: var(--gp-radius-pill);
+  border: none;
+  margin-right: 10px;
+}
+#pg-hero .cta-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--gp-navy);
+  font-family: var(--gp-font-head);
+  font-weight: 500;
+  font-size: 14px;
+  padding: 11px 22px;
+  border-radius: var(--gp-radius-pill);
+  border: 1.5px solid var(--gp-grey-200);
+}
+.nav-print {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 52px;
+  border-bottom: 1px solid var(--gp-grey-200);
+  background: #fff;
+}
+.nav-print-links {
+  display: flex;
+  gap: 20px;
+  font-family: var(--gp-font-head);
+  font-size: 12.5px;
+  color: var(--gp-navy);
+  font-weight: 500;
+}
+.stat-num {
+  font-family: var(--gp-font-head);
+  font-weight: 700;
+  font-size: 26px;
+  color: var(--gp-navy);
+}
+.stat-label { font-size: 11px; color: var(--gp-grey); margin-top: 1px; }
+
+/* ── AI CONCIERGE chip on hero card ── */
+.hero-card-chip {
+  background: #fff;
+  border-radius: 13px;
+  padding: 11px 13px;
+  border: 1px solid var(--gp-grey-200);
+  box-shadow: 0 12px 30px -14px rgba(31,58,95,.22);
+  width: 190px;
+}
+.hero-card-chip .chip-label {
+  font-family: var(--gp-font-head);
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--gp-mustard-deep);
+  margin-bottom: 4px;
+}
+.hero-card-chip .chip-title {
+  font-family: var(--gp-font-head);
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--gp-navy);
+  margin-bottom: 2px;
+}
+.hero-card-chip .chip-sub { font-size: 10.5px; color: var(--gp-grey); }
+.hero-card-chip .chip-price {
+  font-family: var(--gp-font-head);
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--gp-navy);
+  margin-top: 5px;
+}
+.rating-chip {
+  background: var(--gp-navy);
+  color: #fff;
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 10.5px;
+  color: #C7D4E6;
+}
+
+/* ── HOW IT WORKS icon boxes ── */
+.step-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ── PORTFOLIO case placeholders ── */
+.case-badge-glass {
+  display: inline-flex;
+  background: rgba(255,255,255,.15);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: var(--gp-radius-pill);
+  font-family: var(--gp-font-head);
+  font-size: 9px;
+  font-weight: 600;
+  padding: 3px 9px;
+  letter-spacing: 0.04em;
+}
+
+/* ── REVIEW cards ── */
+.review-card {
+  padding: 20px;
+  border-radius: var(--gp-radius);
+  height: 100%;
+}
+.review-quote {
+  font-family: var(--gp-font-head);
+  font-size: 14.5px;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+.reviewer-avatar {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--gp-font-head);
+  font-weight: 700;
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+/* ── RFQ section ── */
+#pg-rfq {
+  background: linear-gradient(165deg, #16293F, #1F3A5F);
+  color: #fff;
+}
+.rfq-form-box {
+  background: #fff;
+  border-radius: var(--gp-radius-lg);
+  padding: 26px;
+  color: var(--gp-ink);
+}
+.rfq-label {
+  font-family: var(--gp-font-head);
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--gp-navy);
+  margin-bottom: 4px;
+  display: block;
+}
+.rfq-field {
+  width: 100%;
+  border: 1.5px solid var(--gp-grey-200);
+  border-radius: 9px;
+  padding: 9px 12px;
+  font-family: var(--gp-font-body);
+  font-size: 13px;
+  color: var(--gp-ink);
+  background: #fff;
+  margin-bottom: 10px;
+}
+.rfq-textarea {
+  width: 100%;
+  border: 1.5px solid var(--gp-grey-200);
+  border-radius: 9px;
+  padding: 9px 12px;
+  font-family: var(--gp-font-body);
+  font-size: 13px;
+  color: var(--gp-grey-400);
+  background: #fff;
+  height: 64px;
+  margin-bottom: 12px;
+}
+.rfq-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #CBD7E8;
+  font-size: 12.5px;
+  margin-bottom: 10px;
+}
+.rfq-trust-icon {
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  background: rgba(244,189,68,.15);
+  color: var(--gp-mustard);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 14px;
+}
+
+/* ── FOOTER ── */
+#pg-footer {
+  background: var(--gp-navy-900);
+  color: #C7D4E6;
+}
+#pg-footer .foot-col-head {
+  font-family: var(--gp-font-head);
+  font-weight: 500;
+  color: #fff;
+  font-size: 13px;
+  margin-bottom: 11px;
+}
+#pg-footer .foot-link {
+  font-size: 12px;
+  color: #9FB2CC;
+  display: block;
+  margin-bottom: 7px;
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════
+     PAGE 1 · HERO
+══════════════════════════════════════════════ -->
+<div class="page" id="pg-hero">
+  <!-- Nav bar -->
+  <div class="nav-print">
+    <div class="logo-wrap">
+      <span class="logo-go">GO</span>PREMIUM
+    </div>
+    <div class="nav-print-links">
+      <span>AI Concierge</span>
+      <span>ผลงาน</span>
+      <span>สินค้า &amp; บริการ</span>
+      <span>วิธีสั่งทำ</span>
+      <span>รีวิว</span>
+    </div>
+    <span style="display:inline-flex;align-items:center;background:var(--gp-mustard);color:var(--gp-navy);font-family:var(--gp-font-head);font-weight:600;font-size:12px;padding:8px 18px;border-radius:999px;">ขอใบเสนอราคา</span>
+  </div>
+
+  <div class="hero-inner">
+    <!-- LEFT -->
+    <div>
+      <div class="eyebrow"><span class="dot"></span>ของขวัญองค์กร · ดีไซน์เฉพาะแบรนด์คุณ</div>
+      <h1>มากกว่าของขวัญ<br>คือ<span class="accent">ประสบการณ์</span><br>ที่น่าจดจำ</h1>
+      <p class="lead">เราออกแบบและผลิตของพรีเมียมที่สะท้อนแบรนด์คุณ ครบตั้งแต่คอนเซ็ปต์ ดีไซน์ ผลิต ถึงส่งมอบ — และตอนนี้มี <strong style="color:var(--gp-navy)">AI ช่วยคิดเซ็ตของขวัญ</strong> ให้คุณในไม่กี่วินาที</p>
+
+      <div style="margin-bottom:28px;">
+        <span class="cta-btn">ขอใบเสนอราคา →</span>
+        <span class="cta-ghost">ดูผลงานจริง</span>
+      </div>
+
+      <!-- AI bar hint -->
+      <div style="background:#fff;border:1.5px solid var(--gp-grey-200);border-radius:13px;padding:10px 14px;max-width:440px;display:flex;align-items:center;gap:10px;box-shadow:0 4px 16px -6px rgba(31,58,95,.14);">
+        <span style="color:var(--gp-mustard-deep);font-size:15px;">✦</span>
+        <span style="font-family:var(--gp-font-head);font-size:12px;color:var(--gp-grey);flex:1;">เช่น ของขวัญลูกค้า VIP 50 ชุด ดูหรู</span>
+        <span style="background:var(--gp-navy);color:#fff;font-family:var(--gp-font-head);font-size:11.5px;font-weight:600;padding:7px 14px;border-radius:999px;">✦ ถาม AI</span>
+      </div>
+
+      <!-- Stats -->
+      <div style="display:flex;gap:28px;flex-wrap:wrap;margin-top:24px;">
+        <div><div class="stat-num">500+</div><div class="stat-label">ชิ้นงานส่งมอบ</div></div>
+        <div><div class="stat-num">48 ชม.</div><div class="stat-label">ตอบกลับ + เสนอราคา</div></div>
+        <div><div class="stat-num">100%</div><div class="stat-label">Mockup ก่อนผลิต</div></div>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div style="position:relative;">
+      <div class="img-placeholder" style="width:100%;height:340px;border-radius:20px;">รูปงานเด่น</div>
+
+      <!-- AI chip -->
+      <div class="hero-card-chip" style="position:absolute;left:-18px;bottom:30px;">
+        <div class="chip-label">✦ AI แนะนำ</div>
+        <div class="chip-title">เซ็ตรักษ์โลก Everyday</div>
+        <div class="chip-sub">กระบอกน้ำ · กระเป๋าผ้า · สมุดรีไซเคิล</div>
+        <div class="chip-price">฿255–420 <span style="font-weight:400;color:var(--gp-grey);font-size:10px;">/ชุด</span></div>
+      </div>
+
+      <!-- Rating chip -->
+      <div class="rating-chip" style="position:absolute;right:-10px;top:22px;">
+        <div class="stars">★★★★★</div>
+        <div style="font-size:10px;color:#C7D4E6;margin-top:3px;">"ส่งตรงเวลา คุยง่ายมาก"</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trust bar -->
+  <div style="border-top:1px solid var(--gp-grey-200);padding:14px 52px;background:#fff;display:flex;align-items:center;gap:18px;flex-wrap:wrap;">
+    <span style="font-family:var(--gp-font-head);font-size:10px;letter-spacing:.1em;color:var(--gp-grey);text-transform:uppercase;white-space:nowrap;">ได้รับความไว้วางใจจาก</span>
+    <div style="display:flex;gap:32px;flex-wrap:wrap;align-items:center;">
+      <span style="font-family:var(--gp-font-head);font-weight:600;font-size:17px;color:#AEB6C2;">ABC Corp</span>
+      <span style="font-family:var(--gp-font-head);font-weight:600;font-size:17px;color:#AEB6C2;">SiamTech</span>
+      <span style="font-family:var(--gp-font-head);font-weight:600;font-size:17px;color:#AEB6C2;">Bloom &amp; Co.</span>
+      <span style="font-family:var(--gp-font-head);font-weight:600;font-size:17px;color:#AEB6C2;">NovaBank</span>
+      <span style="font-family:var(--gp-font-head);font-weight:600;font-size:17px;color:#AEB6C2;">Greenleaf</span>
+      <span style="font-family:var(--gp-font-head);font-weight:600;font-size:17px;color:#AEB6C2;">Lotus Group</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     PAGE 2 · AI CONCIERGE + HOW IT WORKS
+══════════════════════════════════════════════ -->
+<div class="page" style="background:var(--gp-cloud);">
+  <div class="wrap">
+
+    <!-- AI Concierge section -->
+    <div style="margin-bottom:38px;">
+      <div class="eyebrow"><span class="dot"></span>✦ AI Gift Concierge</div>
+      <div style="display:grid;grid-template-columns:1fr 1.1fr;gap:36px;align-items:start;">
+        <div>
+          <h2 style="font-size:30px;color:var(--gp-navy);margin-bottom:12px;line-height:1.1;">บอกโจทย์ · AI<br>คิดเซ็ตให้ทันที</h2>
+          <p style="font-size:13.5px;color:var(--gp-grey);line-height:1.7;max-width:42ch;">ระบุงบ โอกาส และจำนวน — AI วิเคราะห์และเสนอ 3 คอนเซ็ปต์ของขวัญพร้อมช่วงราคา ส่ง brief ต่อเป็นใบเสนอราคาได้ในคลิกเดียว</p>
+          <div style="margin-top:18px;background:#fff;border:1.5px solid var(--gp-grey-200);border-radius:13px;padding:10px 14px;display:flex;align-items:center;gap:10px;max-width:360px;">
+            <span style="color:var(--gp-mustard-deep);font-size:15px;">✦</span>
+            <span style="font-size:12px;color:var(--gp-grey-400);flex:1;">ของขวัญลูกค้า VIP 50 ชุด ดูหรู &#8203;งบ 500฿</span>
+            <span style="background:var(--gp-navy);color:#fff;font-family:var(--gp-font-head);font-size:11px;font-weight:600;padding:6px 12px;border-radius:999px;">ถาม AI</span>
+          </div>
+        </div>
+        <!-- AI result card -->
+        <div style="background:linear-gradient(165deg,#1F3A5F,#16293F);border-radius:18px;padding:22px;color:#fff;position:relative;overflow:hidden;">
+          <div class="dotgrid dark" style="position:absolute;inset:0;opacity:.45;border-radius:18px;"></div>
+          <div style="position:relative;">
+            <div style="display:flex;align-items:center;gap:7px;margin-bottom:14px;">
+              <span class="badge badge-ai" style="font-size:9px;padding:3px 9px;">✦ AI แนะนำ 3 คอนเซ็ปต์</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:10px;">
+              <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:11px;padding:13px;">
+                <div style="font-family:var(--gp-font-head);font-weight:600;font-size:14px;margin-bottom:4px;">เซ็ตรักษ์โลก Everyday</div>
+                <div style="font-size:11.5px;color:#B9C6DA;margin-bottom:6px;">กระบอกน้ำสเตนเลส · กระเป๋าผ้า canvas · สมุดรีไซเคิล</div>
+                <div style="font-family:var(--gp-font-head);font-weight:600;font-size:13px;color:var(--gp-mustard);">฿320–420/ชุด</div>
+              </div>
+              <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:11px;padding:13px;opacity:.8;">
+                <div style="font-family:var(--gp-font-head);font-weight:600;font-size:13.5px;margin-bottom:4px;">Luxe Desk Set</div>
+                <div style="font-size:11px;color:#B9C6DA;margin-bottom:5px;">สมุด PU · ปากกา metal · ที่ชาร์จไร้สาย</div>
+                <div style="font-family:var(--gp-font-head);font-weight:600;font-size:12.5px;color:var(--gp-mustard);">฿460–580/ชุด</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="height:1px;background:var(--gp-grey-200);margin-bottom:32px;"></div>
+
+    <!-- How It Works -->
+    <div>
+      <div class="eyebrow"><span class="dot"></span>วิธีการทำงาน</div>
+      <h2 style="font-size:26px;color:var(--gp-navy);margin-bottom:6px;">ครบ จบในที่เดียว — ไม่ต้องกลัวงานพลาด</h2>
+      <p style="font-size:13px;color:var(--gp-grey);margin-bottom:22px;max-width:56ch;">4 ขั้นตอนที่โปร่งใส ออกแบบมาเพื่อให้ลูกค้า B2B มั่นใจตั้งแต่ทักครั้งแรกจนของถึงมือ</p>
+      <div class="grid-4">
+        <!-- Step 01 -->
+        <div class="card">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:13px;">
+            <div class="step-icon" style="background:var(--gp-mustard-soft);color:var(--gp-navy);">
+              <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7A8.38 8.38 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.38 8.38 0 0 1 21 11.5Z"/></svg>
+            </div>
+            <span class="step-num">01</span>
+          </div>
+          <h4 style="font-size:15px;color:var(--gp-navy);margin-bottom:6px;">ปรึกษา</h4>
+          <p style="font-size:11.5px;color:var(--gp-grey);line-height:1.55;">บอกโจทย์ โอกาส งบ และจำนวน ทีมเราตอบไวภายใน 48 ชม.</p>
+        </div>
+        <!-- Step 02 (AI) -->
+        <div style="background:linear-gradient(165deg,#1F3A5F,#16293F);border-radius:var(--gp-radius);padding:18px;position:relative;overflow:hidden;">
+          <div class="dotgrid dark" style="position:absolute;inset:0;opacity:.45;border-radius:var(--gp-radius);"></div>
+          <div style="position:relative;">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:13px;">
+              <div class="step-icon" style="background:rgba(244,189,68,.15);color:var(--gp-mustard);">
+                <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a9 9 0 1 1 0-18c4.97 0 9 3.58 9 8 0 2.5-2 4-4 4h-2a2 2 0 0 0-1.5 3.3A1.5 1.5 0 0 1 12 21Z"/></svg>
+              </div>
+              <span style="font-family:var(--gp-font-head);font-weight:700;font-size:22px;color:rgba(255,255,255,.2);">02</span>
+            </div>
+            <h4 style="font-size:15px;color:#fff;margin-bottom:4px;display:flex;align-items:center;gap:6px;">ดีไซน์ + AI Mockup <span class="badge badge-ai" style="font-size:8px;padding:2px 7px;">✦ AI</span></h4>
+            <p style="font-size:11.5px;color:#B9C6DA;line-height:1.55;">เห็นภาพงานจริงก่อนตัดสินใจ ใช้ AI ขึ้น Mockup โลโก้บนสินค้าให้ดูทันที</p>
+          </div>
+        </div>
+        <!-- Step 03 -->
+        <div class="card">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:13px;">
+            <div class="step-icon" style="background:var(--gp-mustard-soft);color:var(--gp-navy);">
+              <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8l9 5 9-5Zm0 0v8l-9 5-9-5V8"/></svg>
+            </div>
+            <span class="step-num">03</span>
+          </div>
+          <h4 style="font-size:15px;color:var(--gp-navy);margin-bottom:6px;">ผลิต</h4>
+          <p style="font-size:11.5px;color:var(--gp-grey);line-height:1.55;">ควบคุมคุณภาพทุกชิ้น วัสดุที่สัมผัสได้ถึงความพรีเมียม</p>
+        </div>
+        <!-- Step 04 -->
+        <div class="card">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:13px;">
+            <div class="step-icon" style="background:var(--gp-mustard-soft);color:var(--gp-navy);">
+              <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v8H3V7Zm11 3h4l3 3v2h-7v-5ZM7 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm10 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/></svg>
+            </div>
+            <span class="step-num">04</span>
+          </div>
+          <h4 style="font-size:15px;color:var(--gp-navy);margin-bottom:6px;">ส่งมอบ</h4>
+          <p style="font-size:11.5px;color:var(--gp-grey);line-height:1.55;">ตรงเวลา ทันงาน พร้อมบริการจัดส่งรายคน (kitting) ถ้าต้องการ</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     PAGE 3 · PRODUCTS & SERVICES
+══════════════════════════════════════════════ -->
+<div class="page" style="background:#fff;">
+  <div class="wrap">
+    <div class="eyebrow"><span class="dot"></span>สินค้า &amp; บริการ</div>
+    <h2 style="font-size:30px;color:var(--gp-navy);margin-bottom:8px;">เริ่มจากสินค้าที่ใช่<br>แล้วยกระดับให้เป็นประสบการณ์</h2>
+    <p style="font-size:13.5px;color:var(--gp-grey);max-width:56ch;margin-bottom:28px;line-height:1.65;">สินค้าหลักราคาเข้าถึงได้เป็นจุดเริ่ม — บริการเสริมคือสิ่งที่เปลี่ยน "ของแจก" ให้กลายเป็น "ของที่อยากเก็บ"</p>
+
+    <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:36px;align-items:start;">
+      <!-- PRIME products -->
+      <div>
+        <div style="display:flex;align-items:center;gap:9px;margin-bottom:15px;">
+          <span class="badge badge-solid">PRIME</span>
+          <span style="font-family:var(--gp-font-head);font-size:13px;color:var(--gp-navy);font-weight:500;">สินค้ายอดนิยม</span>
+        </div>
+        <div class="grid-2">
+          <!-- Product cards -->
+          <div class="card" style="padding:13px;">
+            <div class="img-placeholder" style="height:110px;border-radius:10px;margin-bottom:11px;">กระบอกน้ำ</div>
+            <div style="display:flex;align-items:start;justify-content:space-between;">
+              <div>
+                <h4 style="font-size:13.5px;color:var(--gp-navy);">กระบอกน้ำเก็บอุณหภูมิ</h4>
+                <p style="font-size:10.5px;color:var(--gp-grey);margin-top:2px;">พิมพ์โลโก้ · MOQ 100</p>
+              </div>
+              <span class="badge badge-mustard" style="font-size:8.5px;white-space:nowrap;">ขายดี</span>
+            </div>
+            <div style="font-family:var(--gp-font-head);font-weight:600;font-size:13px;color:var(--gp-navy);margin-top:9px;">เริ่ม ฿180</div>
+          </div>
+
+          <div class="card" style="padding:13px;">
+            <div class="img-placeholder" style="height:110px;border-radius:10px;margin-bottom:11px;">กระเป๋าผ้า</div>
+            <div style="display:flex;align-items:start;justify-content:space-between;">
+              <div>
+                <h4 style="font-size:13.5px;color:var(--gp-navy);">กระเป๋าผ้าแคนวาส</h4>
+                <p style="font-size:10.5px;color:var(--gp-grey);margin-top:2px;">พิมพ์โลโก้ · MOQ 150</p>
+              </div>
+              <span class="badge badge-mustard" style="font-size:8.5px;white-space:nowrap;">รักษ์โลก</span>
+            </div>
+            <div style="font-family:var(--gp-font-head);font-weight:600;font-size:13px;color:var(--gp-navy);margin-top:9px;">เริ่ม ฿120</div>
+          </div>
+
+          <div class="card" style="padding:13px;">
+            <div class="img-placeholder" style="height:110px;border-radius:10px;margin-bottom:11px;">สมุดโน้ต</div>
+            <div>
+              <h4 style="font-size:13.5px;color:var(--gp-navy);">สมุดโน้ตปกหนัง PU</h4>
+              <p style="font-size:10.5px;color:var(--gp-grey);margin-top:2px;">พิมพ์โลโก้ · MOQ 100</p>
+            </div>
+            <div style="font-family:var(--gp-font-head);font-weight:600;font-size:13px;color:var(--gp-navy);margin-top:9px;">เริ่ม ฿95</div>
+          </div>
+
+          <div class="card" style="padding:13px;">
+            <div class="img-placeholder" style="height:110px;border-radius:10px;margin-bottom:11px;">ชุดสำนักงาน</div>
+            <div style="display:flex;align-items:start;justify-content:space-between;">
+              <div>
+                <h4 style="font-size:13.5px;color:var(--gp-navy);">เซ็ตของใช้สำนักงาน</h4>
+                <p style="font-size:10.5px;color:var(--gp-grey);margin-top:2px;">พิมพ์โลโก้ · MOQ 80</p>
+              </div>
+              <span class="badge badge-mustard" style="font-size:8.5px;">นิยม</span>
+            </div>
+            <div style="font-family:var(--gp-font-head);font-weight:600;font-size:13px;color:var(--gp-navy);margin-top:9px;">เริ่ม ฿240</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- UPSELL services -->
+      <div>
+        <div style="display:flex;align-items:center;gap:9px;margin-bottom:15px;">
+          <span class="badge badge-mustard">UPSELL</span>
+          <span style="font-family:var(--gp-font-head);font-size:13px;color:var(--gp-navy);font-weight:500;">บริการเพิ่มมูลค่า</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div style="display:flex;gap:12px;align-items:flex-start;background:var(--gp-cloud);border-radius:13px;padding:13px;border:1px solid var(--gp-grey-200);">
+            <div style="width:38px;height:38px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;border:1px solid var(--gp-grey-200);flex-shrink:0;color:var(--gp-navy);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a9 9 0 1 1 0-18c4.97 0 9 3.58 9 8 0 2.5-2 4-4 4h-2a2 2 0 0 0-1.5 3.3A1.5 1.5 0 0 1 12 21Z"/></svg>
+            </div>
+            <div><h4 style="font-size:13px;color:var(--gp-navy);">บริการออกแบบเฉพาะ</h4><p style="font-size:11px;color:var(--gp-grey);margin-top:2px;">คอนเซ็ปต์ &amp; ดีไซน์เฉพาะแบรนด์ ไม่ใช่ของโหล</p></div>
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;background:var(--gp-cloud);border-radius:13px;padding:13px;border:1px solid var(--gp-grey-200);">
+            <div style="width:38px;height:38px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;border:1px solid var(--gp-grey-200);flex-shrink:0;color:var(--gp-navy);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8l9 5 9-5Zm0 0v8l-9 5-9-5V8"/></svg>
+            </div>
+            <div><h4 style="font-size:13px;color:var(--gp-navy);">แพ็กเกจ &amp; กล่องพรีเมียม</h4><p style="font-size:11px;color:var(--gp-grey);margin-top:2px;">กล่อง การ์ด และแท็กแบรนด์ ยกระดับการแกะกล่อง</p></div>
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;background:var(--gp-cloud);border-radius:13px;padding:13px;border:1px solid var(--gp-grey-200);">
+            <div style="width:38px;height:38px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;border:1px solid var(--gp-grey-200);flex-shrink:0;color:var(--gp-navy);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 8l9 5 9-5-9-5Zm-9 9 9 5 9-5M3 16l9 5 9-5"/></svg>
+            </div>
+            <div><h4 style="font-size:13px;color:var(--gp-navy);">จัดกิฟต์เซ็ต (Curation)</h4><p style="font-size:11px;color:var(--gp-grey);margin-top:2px;">หลายชิ้นในเซ็ตเดียว เล่าเรื่องแบรนด์คุณ</p></div>
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;background:var(--gp-cloud);border-radius:13px;padding:13px;border:1px solid var(--gp-grey-200);">
+            <div style="width:38px;height:38px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;border:1px solid var(--gp-grey-200);flex-shrink:0;color:var(--gp-navy);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0-14v5l3 2"/></svg>
+            </div>
+            <div><h4 style="font-size:13px;color:var(--gp-navy);">งานด่วน (Rush)</h4><p style="font-size:11px;color:var(--gp-grey);margin-top:2px;">ดีลกระชั้นก็ทันงาน วางแผนการผลิตให้</p></div>
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;background:var(--gp-cloud);border-radius:13px;padding:13px;border:1px solid var(--gp-grey-200);">
+            <div style="width:38px;height:38px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;border:1px solid var(--gp-grey-200);flex-shrink:0;color:var(--gp-navy);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v8H3V7Zm11 3h4l3 3v2h-7v-5ZM7 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm10 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/></svg>
+            </div>
+            <div><h4 style="font-size:13px;color:var(--gp-navy);">คลังสินค้า &amp; จัดส่งรายคน</h4><p style="font-size:11px;color:var(--gp-grey);margin-top:2px;">Kitting &amp; fulfillment ส่งตรงถึงพนักงานแต่ละคน</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     PAGE 4 · PORTFOLIO
+══════════════════════════════════════════════ -->
+<div class="page" style="background:var(--gp-cloud);">
+  <div class="wrap">
+    <div class="eyebrow"><span class="dot"></span>ผลงานจริง</div>
+    <h2 style="font-size:30px;color:var(--gp-navy);margin-bottom:6px;">งานที่ส่งมอบแล้ว<br>คือคำสัญญาที่จับต้องได้</h2>
+    <p style="font-size:13px;color:var(--gp-grey);margin-bottom:24px;max-width:56ch;">เลือกดูตามโอกาส — ปีใหม่ ต้อนรับพนักงาน อีเวนต์ และลูกค้า VIP ทุกชิ้นผ่าน Mockup ก่อนผลิตจริง</p>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+      <!-- Case 1 -->
+      <div style="background:#fff;border-radius:var(--gp-radius);overflow:hidden;border:1px solid var(--gp-grey-200);">
+        <div class="img-placeholder" style="height:150px;border-radius:0;border:none;border-bottom:1px solid var(--gp-grey-200);">รูปผลงาน</div>
+        <div style="padding:13px 14px 16px;">
+          <h4 style="font-size:14px;color:var(--gp-navy);margin-bottom:4px;">เซ็ตปีใหม่ บริษัท ABC</h4>
+          <div class="badge badge-navy" style="font-size:9px;margin-bottom:7px;">Case study · 500 ชุด</div>
+          <p style="font-size:11.5px;color:var(--gp-grey);line-height:1.5;">ออกแบบกล่อง + การ์ดเฉพาะแบรนด์ ส่งทันปีใหม่</p>
+        </div>
+      </div>
+      <!-- Case 2 -->
+      <div style="background:#fff;border-radius:var(--gp-radius);overflow:hidden;border:1px solid var(--gp-grey-200);">
+        <div class="img-placeholder" style="height:150px;border-radius:0;border:none;border-bottom:1px solid var(--gp-grey-200);">รูปผลงาน</div>
+        <div style="padding:13px 14px 16px;">
+          <h4 style="font-size:14px;color:var(--gp-navy);margin-bottom:4px;">Welcome Kit · SiamTech</h4>
+          <div class="badge badge-navy" style="font-size:9px;margin-bottom:7px;">Onboarding · 120 ชุด</div>
+          <p style="font-size:11.5px;color:var(--gp-grey);line-height:1.5;">ชุดต้อนรับพนักงานใหม่ สาย minimal สีแบรนด์</p>
+        </div>
+      </div>
+      <!-- Case 3 -->
+      <div style="background:#fff;border-radius:var(--gp-radius);overflow:hidden;border:1px solid var(--gp-grey-200);">
+        <div class="img-placeholder" style="height:150px;border-radius:0;border:none;border-bottom:1px solid var(--gp-grey-200);">รูปผลงาน</div>
+        <div style="padding:13px 14px 16px;">
+          <h4 style="font-size:14px;color:var(--gp-navy);margin-bottom:4px;">Press Kit เปิดตัวสินค้า</h4>
+          <div class="badge badge-navy" style="font-size:9px;margin-bottom:7px;">Event · 80 ชุด</div>
+          <p style="font-size:11.5px;color:var(--gp-grey);line-height:1.5;">กล่องสื่อมวลชนพรีเมียม ถ่ายรูปลงสื่อสวย</p>
+        </div>
+      </div>
+      <!-- Case 4 -->
+      <div style="background:#fff;border-radius:var(--gp-radius);overflow:hidden;border:1px solid var(--gp-grey-200);">
+        <div class="img-placeholder" style="height:130px;border-radius:0;border:none;border-bottom:1px solid var(--gp-grey-200);">รูปผลงาน</div>
+        <div style="padding:13px 14px 16px;">
+          <h4 style="font-size:14px;color:var(--gp-navy);margin-bottom:4px;">VIP Box · NovaBank</h4>
+          <div class="badge badge-navy" style="font-size:9px;margin-bottom:7px;">Client gift · 60 ชุด</div>
+          <p style="font-size:11.5px;color:var(--gp-grey);line-height:1.5;">กล่องหนังหรู สลักชื่อลูกค้าคนสำคัญรายบุคคล</p>
+        </div>
+      </div>
+      <!-- Case 5 -->
+      <div style="background:#fff;border-radius:var(--gp-radius);overflow:hidden;border:1px solid var(--gp-grey-200);">
+        <div class="img-placeholder" style="height:130px;border-radius:0;border:none;border-bottom:1px solid var(--gp-grey-200);">รูปผลงาน</div>
+        <div style="padding:13px 14px 16px;">
+          <h4 style="font-size:14px;color:var(--gp-navy);margin-bottom:4px;">Eco Set · Greenleaf</h4>
+          <div class="badge badge-navy" style="font-size:9px;margin-bottom:7px;">รักษ์โลก · 300 ชุด</div>
+          <p style="font-size:11.5px;color:var(--gp-grey);line-height:1.5;">วัสดุรีไซเคิล 100% เล่าเรื่องความยั่งยืน</p>
+        </div>
+      </div>
+      <!-- Case 6 -->
+      <div style="background:#fff;border-radius:var(--gp-radius);overflow:hidden;border:1px solid var(--gp-grey-200);">
+        <div class="img-placeholder" style="height:130px;border-radius:0;border:none;border-bottom:1px solid var(--gp-grey-200);">รูปผลงาน</div>
+        <div style="padding:13px 14px 16px;">
+          <h4 style="font-size:14px;color:var(--gp-navy);margin-bottom:4px;">ครบรอบ 10 ปี Lotus</h4>
+          <div class="badge badge-navy" style="font-size:9px;margin-bottom:7px;">Milestone · 250 ชุด</div>
+          <p style="font-size:11.5px;color:var(--gp-grey);line-height:1.5;">ของที่ระลึกครบรอบ ดีไซน์พิเศษเฉพาะวาระ</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     PAGE 5 · REVIEWS + RFQ
+══════════════════════════════════════════════ -->
+<div class="page" id="pg-rfq">
+  <!-- Reviews top half -->
+  <div style="padding:36px 52px 28px;background:#fff;">
+    <div class="eyebrow"><span class="dot"></span>เสียงจากลูกค้า</div>
+    <h2 style="font-size:26px;color:var(--gp-navy);margin-bottom:20px;">ลูกค้า B2B กลัวงานพลาด เราจึงทำให้ไว้ใจได้</h2>
+    <div class="grid-3">
+      <!-- Review 1 -->
+      <div class="review-card" style="background:#fff;border:1px solid var(--gp-grey-200);">
+        <div class="stars" style="margin-bottom:10px;">★★★★★</div>
+        <p class="review-quote" style="color:var(--gp-ink);">"งานดีไซน์สวย ส่งตรงเวลา คุยง่ายมาก ปีหน้าสั่งอีกแน่นอน"</p>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:14px;">
+          <div class="reviewer-avatar" style="background:var(--gp-mustard-soft);color:var(--gp-navy);">เ</div>
+          <div>
+            <div style="font-family:var(--gp-font-head);font-weight:500;font-size:12.5px;color:var(--gp-navy);">คุณเอ</div>
+            <div style="font-size:10.5px;color:var(--gp-grey);">HR Manager, ABC Corp</div>
+          </div>
+        </div>
+      </div>
+      <!-- Review 2 (navy) -->
+      <div class="review-card" style="background:linear-gradient(165deg,#1F3A5F,#16293F);position:relative;overflow:hidden;">
+        <div class="dotgrid dark" style="position:absolute;inset:0;opacity:.4;border-radius:var(--gp-radius);"></div>
+        <div style="position:relative;">
+          <div class="stars" style="margin-bottom:10px;">★★★★★</div>
+          <p class="review-quote" style="color:#E6EDF6;">"AI ช่วยคิดเซ็ตได้ตรงใจมาก ประหยัดเวลาเลือกของไปเยอะ"</p>
+          <div style="display:flex;align-items:center;gap:10px;margin-top:14px;">
+            <div class="reviewer-avatar" style="background:rgba(244,189,68,.2);color:var(--gp-mustard);">บ</div>
+            <div>
+              <div style="font-family:var(--gp-font-head);font-weight:500;font-size:12.5px;color:#fff;">คุณบี</div>
+              <div style="font-size:10.5px;color:#9FB2CC;">Marketing Lead, Orbit Agency</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Review 3 -->
+      <div class="review-card" style="background:#fff;border:1px solid var(--gp-grey-200);">
+        <div class="stars" style="margin-bottom:10px;">★★★★★</div>
+        <p class="review-quote" style="color:var(--gp-ink);">"เห็น Mockup ก่อนผลิตทำให้มั่นใจ ไม่ต้องลุ้นว่างานจะพลาด"</p>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:14px;">
+          <div class="reviewer-avatar" style="background:var(--gp-mustard-soft);color:var(--gp-navy);">ซ</div>
+          <div>
+            <div style="font-family:var(--gp-font-head);font-weight:500;font-size:12.5px;color:var(--gp-navy);">คุณซี</div>
+            <div style="font-size:10.5px;color:var(--gp-grey);">เจ้าของธุรกิจ, Bloom &amp; Co.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RFQ bottom half -->
+  <div style="flex:1;background:linear-gradient(165deg,#16293F,#1F3A5F);padding:28px 52px 36px;position:relative;overflow:hidden;">
+    <div class="dotgrid dark" style="position:absolute;inset:0;opacity:.45;"></div>
+    <div style="position:absolute;left:-6%;bottom:-20%;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle at 40% 40%, rgba(244,189,68,.25), transparent 62%);pointer-events:none;"></div>
+    <div style="position:relative;display:grid;grid-template-columns:1fr 1.15fr;gap:40px;align-items:start;">
+      <!-- Left -->
+      <div>
+        <div class="eyebrow light"><span class="dot"></span>ขอใบเสนอราคา · ปรึกษาฟรี</div>
+        <h2 style="font-size:26px;color:#fff;margin-top:10px;margin-bottom:10px;line-height:1.12;">เริ่มของขวัญ<br>ชิ้นต่อไปของคุณ</h2>
+        <p style="font-size:13px;color:#B9C6DA;max-width:38ch;line-height:1.65;margin-bottom:18px;">กรอกข้อมูลสั้นๆ ทีมเราจะตอบกลับพร้อมไอเดียและช่วงราคาภายใน 48 ชม.</p>
+        <div class="rfq-trust-item"><div class="rfq-trust-icon">🛡</div>นิติบุคคลจดทะเบียน เชื่อถือได้</div>
+        <div class="rfq-trust-item"><div class="rfq-trust-icon">⏱</div>ตอบกลับ + เสนอราคาใน 48 ชม.</div>
+        <div class="rfq-trust-item"><div class="rfq-trust-icon">🎨</div>Mockup ก่อนผลิตเสมอ</div>
+        <div style="margin-top:20px;display:flex;align-items:center;gap:10px;">
+          <div style="width:38px;height:38px;border-radius:50%;background:#06C755;display:flex;align-items:center;justify-content:center;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7A8.38 8.38 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.38 8.38 0 0 1 21 11.5Z"/></svg>
+          </div>
+          <span style="font-family:var(--gp-font-head);font-size:13px;color:#CBD7E8;">081-887-2627 (คุณแป้ง)</span>
+        </div>
+        <div style="margin-top:8px;font-size:12.5px;color:#9FB2CC;">info@passiongrow.co.th &nbsp;·&nbsp; @gopremium</div>
+      </div>
+      <!-- Right: form -->
+      <div class="rfq-form-box">
+        <h3 style="font-size:17px;color:var(--gp-navy);margin-bottom:3px;">แบบฟอร์มขอใบเสนอราคา</h3>
+        <p style="font-size:11px;color:var(--gp-grey);margin-bottom:14px;">ใช้เวลาไม่ถึง 1 นาที · <span style="color:#B3413D;">*</span> จำเป็น</p>
+        <label class="rfq-label">ชื่อ-บริษัท *</label>
+        <div class="rfq-field" style="color:var(--gp-grey-400);">เช่น คุณแป้ง · บริษัท ABC</div>
+        <label class="rfq-label">อีเมล หรือ เบอร์โทร *</label>
+        <div class="rfq-field" style="color:var(--gp-grey-400);">you@company.com หรือ 08x-xxx-xxxx</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+          <div>
+            <label class="rfq-label">โอกาส / งาน</label>
+            <div class="rfq-field" style="color:var(--gp-ink);">ของขวัญปีใหม่พนักงาน</div>
+          </div>
+          <div>
+            <label class="rfq-label">จำนวน (ชิ้น)</label>
+            <div class="rfq-field" style="color:var(--gp-grey-400);">เช่น 200</div>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+          <div>
+            <label class="rfq-label">ต้องการรับงาน</label>
+            <div class="rfq-field" style="color:var(--gp-grey-400);">วว/ดด/ปป</div>
+          </div>
+          <div>
+            <label class="rfq-label">งบ/ชิ้น (฿)</label>
+            <div class="rfq-field" style="color:var(--gp-grey-400);">เช่น 300</div>
+          </div>
+        </div>
+        <label class="rfq-label">รายละเอียดเพิ่มเติม</label>
+        <div class="rfq-textarea">บอกคอนเซ็ปต์หรือสินค้าที่สนใจ</div>
+        <div style="background:var(--gp-mustard);color:var(--gp-navy);font-family:var(--gp-font-head);font-weight:600;font-size:14px;padding:12px;border-radius:999px;text-align:center;">ส่งขอใบเสนอราคา →</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     PAGE 6 · CTA + FOOTER
+══════════════════════════════════════════════ -->
+<div class="page" id="pg-footer">
+  <!-- CTA banner -->
+  <div style="padding:40px 52px;background:var(--gp-cloud);">
+    <div style="background:var(--gp-mustard);border-radius:20px;padding:40px 48px;display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative;overflow:hidden;">
+      <div style="position:absolute;right:-50px;top:-50px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.22);pointer-events:none;"></div>
+      <div style="position:relative;max-width:30ch;">
+        <h2 style="font-size:30px;color:var(--gp-navy);letter-spacing:-.02em;line-height:1.15;">พร้อมเริ่มของขวัญชิ้นต่อไปแล้วหรือยัง</h2>
+        <p style="color:#6B4E08;font-size:14px;margin-top:10px;">ปรึกษาฟรี พร้อม Mockup ก่อนผลิต — หรือให้ AI ช่วยคิดเซ็ตให้ก่อนก็ได้</p>
+      </div>
+      <div style="position:relative;display:flex;gap:12px;flex-wrap:wrap;">
+        <span style="display:inline-flex;align-items:center;background:var(--gp-navy);color:#fff;font-family:var(--gp-font-head);font-weight:600;font-size:14px;padding:13px 26px;border-radius:999px;">คุยกับเราเลย</span>
+        <span style="display:inline-flex;align-items:center;background:transparent;color:var(--gp-navy);font-family:var(--gp-font-head);font-weight:500;font-size:14px;padding:12px 24px;border-radius:999px;border:1.5px solid rgba(31,58,95,.3);">✦ ลอง AI Concierge</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div style="flex:1;background:var(--gp-navy-900);padding:40px 52px 30px;">
+    <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px;margin-bottom:28px;">
+      <!-- Brand col -->
+      <div>
+        <div class="logo-wrap light" style="font-size:20px;margin-bottom:14px;">
+          <span class="logo-go">GO</span>PREMIUM
+        </div>
+        <p style="font-size:12px;color:#9FB2CC;line-height:1.7;max-width:28ch;">มากกว่าของขวัญ คือประสบการณ์ที่น่าจดจำ — ผู้ออกแบบและผลิตของพรีเมียมสำหรับองค์กร</p>
+      </div>
+      <!-- Explore col -->
+      <div>
+        <div class="foot-col-head">สำรวจ</div>
+        <a class="foot-link">AI Concierge</a>
+        <a class="foot-link">ผลงาน</a>
+        <a class="foot-link">สินค้า &amp; บริการ</a>
+        <a class="foot-link">วิธีสั่งทำ</a>
+      </div>
+      <!-- Company col -->
+      <div>
+        <div class="foot-col-head">บริษัท</div>
+        <a class="foot-link">รีวิวลูกค้า</a>
+        <a class="foot-link">ขอใบเสนอราคา</a>
+      </div>
+      <!-- Contact col -->
+      <div>
+        <div class="foot-col-head">ติดต่อ</div>
+        <span class="foot-link">081-887-2627 (คุณแป้ง)</span>
+        <span class="foot-link">info@passiongrow.co.th</span>
+        <span class="foot-link">@gopremium</span>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,.1);padding-top:18px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;">
+      <span style="font-size:11px;color:#7E92AE;">© 2026 PASSION GROW TRADING CO., LTD. · All rights reserved.</span>
+      <span style="font-size:11px;color:#7E92AE;display:inline-flex;align-items:center;gap:5px;">✦ ขับเคลื่อนประสบการณ์ด้วย AI</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Wait for fonts, then print
+  document.fonts.ready.then(function() {
+    setTimeout(function() { window.print(); }, 500);
+  });
+</script>
+</body>
+</html>

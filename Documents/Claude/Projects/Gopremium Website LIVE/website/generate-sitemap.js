@@ -1,0 +1,51 @@
+// ============================================================
+// GO PREMIUM — Generate sitemap.xml from products.json
+// Usage: node generate-sitemap.js
+// Run from website/ folder after updating catalog data.
+// ============================================================
+import { readFileSync, writeFileSync } from 'fs';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __dir = dirname(fileURLToPath(import.meta.url));
+const SITE_URL = 'https://gopremium-website.vercel.app';
+const products = JSON.parse(readFileSync(join(__dir, '../phase2/products.json'), 'utf8'));
+
+const OCCASIONS = [
+  'new-year','songkran','new-employee','vip','event',
+  'milestone','esg','thank-you','executive','mass-staff',
+];
+const BUDGET_TIERS = ['value','smart','premium','executive'];
+const CATEGORIES = [...new Set(products.map((p) => p.category_slug).filter(Boolean))];
+const VALID_PRODUCTS = products.filter((p) => p.name && p.name.trim() && p.slug);
+
+const today = new Date().toISOString().split('T')[0];
+
+function url(loc, priority = '0.7', changefreq = 'weekly') {
+  return `  <url><loc>${SITE_URL}${loc}</loc><changefreq>${changefreq}</changefreq><priority>${priority}</priority><lastmod>${today}</lastmod></url>`;
+}
+
+const lines = [
+  '<?xml version="1.0" encoding="UTF-8"?>',
+  '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+  url('/', '1.0', 'weekly'),
+  url('/products', '0.9', 'weekly'),
+  url('/quote', '0.8', 'monthly'),
+  '',
+  '  <!-- Categories -->',
+  ...CATEGORIES.map((slug) => url(`/category/${slug}`, '0.8')),
+  '',
+  '  <!-- Occasions -->',
+  ...OCCASIONS.map((slug) => url(`/occasion/${slug}`, '0.8', 'monthly')),
+  '',
+  '  <!-- Budget tiers -->',
+  ...BUDGET_TIERS.map((slug) => url(`/budget/${slug}`, '0.7', 'monthly')),
+  '',
+  `  <!-- Products (${VALID_PRODUCTS.length} items) -->`,
+  ...VALID_PRODUCTS.map((p) => url(`/product/${p.slug}`, '0.7')),
+  '</urlset>',
+];
+
+const xml = lines.join('\n');
+writeFileSync(join(__dir, 'public/sitemap.xml'), xml);
+console.log(`sitemap.xml generated: ${VALID_PRODUCTS.length} products + categories/occasions/budgets`);

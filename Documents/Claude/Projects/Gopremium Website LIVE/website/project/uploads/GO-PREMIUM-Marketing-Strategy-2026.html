@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GO PREMIUM · Marketing Strategy 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1F3A5F; --navy-soft:#2C4F7C; --mustard:#F4BD44; --mustard-soft:#F8D586;
+    --white:#FFFFFF; --ink:#1A2230; --grey:#5B6472; --line:#E3E7ED; --bg:#F5F6F8;
+    --green:#2f7d52; --red:#b3413d;
+    --page-w:210mm; --page-h:297mm;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{background:var(--bg);}
+  body{font-family:'Sarabun',sans-serif;color:var(--ink);line-height:1.62;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,h4,.head{font-family:'Kanit',sans-serif;font-weight:600;line-height:1.2;}
+  .page{position:relative;width:var(--page-w);min-height:var(--page-h);background:var(--white);
+    margin:14px auto;padding:22mm 20mm;box-shadow:0 6px 26px rgba(31,58,95,.10);overflow:hidden;}
+  .pagenum{position:absolute;bottom:11mm;right:20mm;font-family:'Kanit';font-size:11px;color:var(--grey);letter-spacing:2px;}
+  .pagelabel{position:absolute;bottom:11mm;left:20mm;font-family:'Kanit';font-size:10px;color:var(--grey);letter-spacing:3px;text-transform:uppercase;}
+  .kicker{font-family:'Kanit';font-weight:600;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--mustard);}
+  .kicker.navy{color:var(--navy-soft);}
+  h2.section{font-size:27px;color:var(--navy);margin:6px 0 2px;}
+  .lead{font-size:14.5px;color:var(--grey);max-width:66ch;}
+  .rule{height:3px;width:54px;background:var(--mustard);border-radius:3px;margin:12px 0 18px;}
+  p{margin-bottom:9px;font-size:13px;}
+  .small{font-size:12px;color:var(--grey);}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+  .card{border:1px solid var(--line);border-radius:13px;padding:15px 16px;background:#fff;}
+  .card h4{font-size:14px;color:var(--navy);margin-bottom:5px;}
+  .card .ic{font-family:'Kanit';font-weight:700;color:var(--mustard);font-size:12px;letter-spacing:1px;}
+  ul.clean{list-style:none;} ol.clean{list-style:none;counter-reset:c;}
+  ul.clean li{position:relative;padding-left:17px;font-size:12.5px;margin-bottom:6px;}
+  ul.clean li:before{content:"";position:absolute;left:0;top:7px;width:7px;height:7px;background:var(--mustard);border-radius:2px;}
+  .do li:before{background:var(--green);} .dont li:before{background:var(--red);border-radius:50%;}
+  ol.clean li{position:relative;padding-left:30px;font-size:12.5px;margin-bottom:8px;counter-increment:c;}
+  ol.clean li:before{content:counter(c);position:absolute;left:0;top:0;width:20px;height:20px;background:var(--navy);color:#fff;border-radius:50%;font-family:'Kanit';font-size:11px;display:flex;align-items:center;justify-content:center;}
+  .note{background:var(--bg);border-left:3px solid var(--mustard);border-radius:0 8px 8px 0;padding:11px 13px;font-size:12px;color:var(--grey);}
+  .note.red{border-left-color:var(--red);} .note.green{border-left-color:var(--green);}
+  table.t{width:100%;border-collapse:collapse;font-size:11.5px;}
+  table.t th,table.t td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top;}
+  table.t th{background:var(--navy);color:#fff;font-family:'Kanit';font-weight:500;}
+  table.t td.b{font-family:'Kanit';font-weight:500;color:var(--navy);}
+  .pill{display:inline-block;font-family:'Kanit';font-size:9.5px;font-weight:600;letter-spacing:.5px;padding:2px 8px;border-radius:20px;text-transform:uppercase;}
+  .pill.now{background:#D7E2F1;color:var(--navy);} .pill.next{background:var(--mustard-soft);color:#6b4e08;} .pill.later{background:#e7e9ee;color:var(--grey);}
+  .kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+  .kpi .b{border:1px solid var(--line);border-radius:12px;padding:13px;text-align:center;}
+  .kpi .num{font-family:'Kanit';font-weight:700;font-size:24px;color:var(--navy);}
+  .kpi .lab{font-size:10.5px;color:var(--grey);}
+  .verdict{background:var(--navy);color:#fff;border-radius:14px;padding:18px 20px;}
+  .verdict .big{font-family:'Kanit';font-weight:600;font-size:22px;color:var(--mustard);}
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:13px;overflow:hidden;}
+  .twocol .h{font-family:'Kanit';font-weight:600;padding:10px 14px;color:#fff;font-size:13px;}
+  .twocol .c{padding:13px 14px;font-size:12.5px;}
+  .bar-track{height:34px;border-radius:7px;overflow:hidden;display:flex;border:1px solid var(--line);}
+  .cover{background:var(--navy);color:#fff;display:flex;flex-direction:column;justify-content:space-between;}
+  .cover .swoosh{position:absolute;right:-90px;top:-90px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle at 30% 30%,var(--mustard),transparent 62%);opacity:.22;}
+  .cover .bar{position:absolute;left:0;bottom:0;height:10px;width:100%;background:var(--mustard);}
+  .cover .logo{font-family:'Kanit';font-weight:700;font-size:40px;} .cover .logo .pr{color:var(--mustard);}
+  .cover .meta{font-family:'Kanit';font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#A9BBD2;}
+  .cover h1{font-size:46px;font-weight:300;line-height:1.15;} .cover h1 b{font-weight:600;color:var(--mustard);}
+  @media print{
+    html,body{background:#fff;}
+    .page{box-shadow:none;margin:0;width:auto;min-height:auto;page-break-after:always;padding:16mm 14mm;}
+    .page:last-child{page-break-after:auto;}
+    @page{size:A4;margin:0;}
+    .noprint{display:none!important;}
+  }
+  .banner{max-width:var(--page-w);margin:18px auto 0;background:#fff;border:1px solid var(--line);border-left:4px solid var(--mustard);border-radius:10px;padding:13px 18px;font-size:12.5px;color:var(--grey);}
+  .banner b{color:var(--navy);font-family:'Kanit';}
+</style>
+</head>
+<body>
+
+<div class="banner noprint"><b>บันทึกเป็น PDF:</b> กด <b>Ctrl/⌘ + P</b> → Save as PDF → A4 → Margins: None → เปิด “Background graphics”</div>
+
+<!-- COVER -->
+<section class="page cover">
+  <div class="swoosh"></div>
+  <div class="meta">Marketing Strategy · 2026 · Marketing Director View</div>
+  <div>
+    <div class="logo">GO <span class="pr">PREMIUM</span></div>
+    <div style="height:26px"></div>
+    <h1>แผนชนะตลาด<br><b>ของพรีเมียม B2B</b></h1>
+    <div style="height:14px"></div>
+    <div class="small" style="color:#A9BBD2;max-width:46ch">สำหรับทีมเล็ก งบการตลาดต่ำกว่า 30,000 THB/เดือน เป้าหมายหลัก: เพิ่ม Lead B2B คุณภาพ</div>
+  </div>
+  <div class="meta">PASSION GROW TRADING CO., LTD. · @gopremium</div>
+  <div class="bar"></div>
+</section>
+
+<!-- EXEC SUMMARY -->
+<section class="page">
+  <div class="kicker">บทสรุปผู้บริหาร</div>
+  <h2 class="section">หัวใจของกลยุทธ์ใน 1 หน้า</h2>
+  <div class="rule"></div>
+  <div class="verdict">
+    <div class="small" style="color:#A9BBD2;letter-spacing:2px">THE BIG BET</div>
+    <div class="big" style="margin:4px 0 6px">ชนะด้วย “ดีไซน์ + บริการที่ไว้ใจได้” ไม่ใช่ราคาถูก</div>
+    <p style="color:#dfe6f0;font-size:13px;margin:0">ทีมเล็กแข่งราคากับโรงงานใหญ่ไม่ได้และไม่ควรแข่ง เราชนะด้วยการเป็น “คู่คิดด้านของขวัญที่มีรสนิยม” สำหรับ HR และฝ่ายการตลาด ที่กลัวงานพลาดมากกว่ากลัวจ่ายแพง</p>
+  </div>
+  <div style="height:14px"></div>
+  <div class="grid2">
+    <div class="card"><div class="ic">วิธี WIN</div><ul class="clean">
+      <li>เจาะ Niche: ของขวัญองค์กรดีไซน์ดี งานด่วนทันใจ MOQ ไม่สูง</li>
+      <li>ใช้ “ผลงานจริง + รีวิว” เป็นอาวุธหลักสร้างความเชื่อใจ</li>
+      <li>เปลี่ยนเว็บเป็นเครื่องเก็บ Lead ไม่ใช่แค่โบรชัวร์</li>
+    </ul></div>
+    <div class="card"><div class="ic">วิธี PROMOTE (งบจำกัด)</div><ul class="clean">
+      <li>เน้น “ลูกค้าตั้งใจซื้ออยู่แล้ว”: Google Search + SEO + LINE OA</li>
+      <li>Content ผลงาน/เบื้องหลังบน FB-IG-TikTok แบบสม่ำเสมอ</li>
+      <li>Outbound ตรงถึง HR/Marketing + พาร์ตเนอร์เอเจนซี</li>
+    </ul></div>
+  </div>
+  <div style="height:12px"></div>
+  <div class="grid2">
+    <div class="card"><div class="ic">REBRAND?</div><p class="small" style="margin:0"><b style="color:var(--navy);font-family:'Kanit'">ปรับ ไม่ใช่รื้อ (ประมาณ 20-25%)</b> CI ปัจจุบันดีพอแล้ว เก็บโลโก้ สี และ tagline ไว้ ลงทุนกับ “ของที่ขาด” แทน: ระบบภาพ, เทมเพลต, เว็บ, แคตตาล็อก</p></div>
+    <div class="card"><div class="ic">เป้าหมายวัดผล 90 วัน</div><p class="small" style="margin:0">วาง Foundation ครบ + ได้ Qualified Lead B2B <b style="color:var(--navy);font-family:'Kanit'">10-20 ราย/เดือน</b> ภายในเดือนที่ 3 พร้อมระบบติดตามที่วัดได้</p></div>
+  </div>
+  <div style="height:12px"></div>
+  <div class="note red"><b style="font-family:'Kanit';color:var(--red)">ขอพูดตรง:</b> ด้วยงบต่ำกว่า 30,000 THB/เดือนและทีม 1-3 คน ห้ามกระจายทำทุกช่องทางพร้อมกัน จะเฉลี่ยจนไม่เห็นผล ต้องโฟกัส 2-3 ช่องทางที่ปิดการขายได้จริงก่อน แล้วค่อยขยาย</div>
+  <div class="pagelabel">Executive Summary</div><div class="pagenum">02</div>
+</section>
+
+<!-- MARKET -->
+<section class="page">
+  <div class="kicker">01 · Market & Competition</div>
+  <h2 class="section">สนามแข่ง: เราอยู่ตรงไหน</h2>
+  <div class="rule"></div>
+  <div class="grid2">
+    <div>
+      <div class="kicker navy">ข้อเท็จจริงตลาด (FACTS)</div>
+      <ul class="clean" style="margin-top:8px">
+        <li>งบของขวัญองค์กรไทยปี 2026 โต ~12% YoY องค์กรเริ่มมองของขวัญเป็นเครื่องมือสร้างความสัมพันธ์ ไม่ใช่แค่ของแจก</li>
+        <li>ของขวัญที่ออกแบบเฉพาะ ตั้งราคาได้สูงกว่าของทั่วไป 30-50%</li>
+        <li>เทรนด์เด่น: รักษ์โลก, แพ็กเกจมินิมอล, ปรับเฉพาะบุคคล (personalization)</li>
+        <li>ตลาดแบ่งเป็น Promotional ~55% / เทศกาล ~25% / Custom corporate ~20%</li>
+      </ul>
+    </div>
+    <div>
+      <div class="kicker navy">คู่แข่งหลัก</div>
+      <ul class="clean" style="margin-top:8px">
+        <li><b>โรงงาน/รายใหญ่</b> (Bangkok Premiums, Giftmanufactory, THAIVENIR): ของครบ ราคาแข่งได้ แต่ดีไซน์กลาง ๆ บริการเหมือนโรงงาน</li>
+        <li><b>ร้านเทรดทั่วไป/จีน-importers</b>: ถูกสุด แต่ดีไซน์โหล คุมงานยาก</li>
+        <li><b>ช่องว่างที่เปิดอยู่:</b> งานดีไซน์ดี + บริการใส่ใจ + MOQ ยืดหยุ่นสำหรับ SME/แคมเปญ</li>
+      </ul>
+    </div>
+  </div>
+  <div style="height:14px"></div>
+  <div class="kicker navy">SWOT ย่อ (สมมติฐานเบื้องต้น รอยืนยันจากข้อมูลจริงของคุณ)</div>
+  <div class="grid4" style="margin-top:10px">
+    <div class="card" style="border-top:3px solid var(--green)"><h4 style="color:var(--green)">Strengths</h4><p class="small" style="margin:0">CI พรีเมียมพร้อม, tagline ชัด, คล่องตัว ปรับเร็ว, คุยลูกค้าได้ใกล้ชิด</p></div>
+    <div class="card" style="border-top:3px solid var(--red)"><h4 style="color:var(--red)">Weaknesses</h4><p class="small" style="margin:0">แบรนด์ยังใหม่/คนรู้จักน้อย, ทีมเล็ก, งบจำกัด, พอร์ตผลงานอาจยังไม่หนา</p></div>
+    <div class="card" style="border-top:3px solid var(--navy)"><h4 style="color:var(--navy)">Opportunities</h4><p class="small" style="margin:0">งบตลาดโต, เทรนด์ personalization/eco, ช่องว่างดีไซน์ดี+บริการดี</p></div>
+    <div class="card" style="border-top:3px solid var(--mustard)"><h4 style="color:#6b4e08">Threats</h4><p class="small" style="margin:0">สงครามราคา, ลูกค้าเทียบหลายเจ้า, ฤดูกาลกระจุก (ปลายปี)</p></div>
+  </div>
+  <div style="height:12px"></div>
+  <div class="note"><b style="font-family:'Kanit';color:var(--navy)">นัยเชิงกลยุทธ์:</b> ตลาดโตและมีพื้นที่สำหรับงานดีไซน์ดี แต่ถ้าเราเล่นเกมราคา เราแพ้แน่นอนเพราะต้นทุนสเกลสู้รายใหญ่ไม่ได้ ทางรอดคือ “ขายคุณค่าและความมั่นใจ”</div>
+  <div class="pagelabel">Strategy</div><div class="pagenum">03</div>
+</section>
+
+<!-- HOW TO WIN -->
+<section class="page">
+  <div class="kicker">02 · How to Win</div>
+  <h2 class="section">3 ทางเลือกเชิงกลยุทธ์ที่ต้องกล้าตัดสินใจ</h2>
+  <div class="rule"></div>
+  <div class="card" style="border-left:4px solid var(--mustard);margin-bottom:12px">
+    <div class="ic">CHOICE 1 · จะเล่นที่ไหน (Where to play)</div>
+    <p style="margin:5px 0 0"><b>เลือก:</b> ของขวัญองค์กร & กิฟต์เซ็ตดีไซน์เฉพาะ สำหรับองค์กรกลาง-เล็กและทีมการตลาด/อีเวนต์ <br><b>ไม่เล่น:</b> งานประมูลของแจกล้านชิ้นราคาต่ำ (ปล่อยให้โรงงานใหญ่ไป)</p>
+  </div>
+  <div class="card" style="border-left:4px solid var(--mustard);margin-bottom:12px">
+    <div class="ic">CHOICE 2 · จะชนะอย่างไร (How to win)</div>
+    <p style="margin:5px 0 0">ชนะที่ <b>“ความเชื่อใจ”</b> ผ่าน 3 สิ่งที่จับต้องได้: (1) พอร์ตผลงาน/รีวิวที่เห็นภาพจริง, (2) ความเร็วในการตอบและเสนอราคา, (3) ตัวอย่าง/Mockup ก่อนผลิต ลูกค้า B2B กลัว “งานพลาด” มากกว่ากลัว “จ่ายแพง”</p>
+  </div>
+  <div class="card" style="border-left:4px solid var(--mustard)">
+    <div class="ic">CHOICE 3 · จุดต่างที่จดจำได้ (Differentiator)</div>
+    <p style="margin:5px 0 0">วาง GO PREMIUM เป็น <b>“คู่คิดด้านของขวัญที่มีรสนิยม”</b> ที่ให้คำปรึกษา ไม่ใช่แค่รับออเดอร์ จุดขายรอง: ตอบไว, MOQ ยืดหยุ่น, ดีไซน์ในทีม</p>
+  </div>
+  <div style="height:14px"></div>
+  <div class="kicker navy">โฟกัส ICP (ลูกค้าที่คุ้มค่าที่สุดก่อน)</div>
+  <table class="t" style="margin-top:9px">
+    <tr><th>ลำดับ</th><th>กลุ่ม</th><th>ทำไมเริ่มกลุ่มนี้</th><th>เข้าถึงทางไหน</th></tr>
+    <tr><td class="b">1</td><td class="b">HR องค์กรกลาง-เล็ก</td><td>ซื้อซ้ำทุกปี (ปีใหม่/พนักงาน) ดีลใหญ่กว่า</td><td>LinkedIn, อีเมล, LINE, referral</td></tr>
+    <tr><td class="b">2</td><td class="b">Marketing / เอเจนซี / อีเวนต์</td><td>งานบ่อย ตัดสินใจไว เน้นดีไซน์</td><td>IG/TikTok ผลงาน, พาร์ตเนอร์</td></tr>
+    <tr><td class="b">3</td><td class="b">SME / เจ้าของธุรกิจ</td><td>ของขวัญลูกค้า/คู่ค้า อยากจบในที่เดียว</td><td>Google Search, Facebook</td></tr>
+  </table>
+  <div class="pagelabel">Strategy</div><div class="pagenum">04</div>
+</section>
+
+<!-- FUNNEL & KPI -->
+<section class="page">
+  <div class="kicker">03 · Funnel & KPI</div>
+  <h2 class="section">เปลี่ยนคนแปลกหน้า ให้เป็นใบสั่งซื้อ</h2>
+  <div class="rule"></div>
+  <div class="lead">B2B ของพรีเมียมเป็นการขายแบบ “ปรึกษาแล้วขอใบเสนอราคา (RFQ)” กลยุทธ์ทั้งหมดต้องดันคนให้ขยับลงตามขั้นนี้ และเราต้องวัดทุกขั้น</div>
+  <div style="height:12px"></div>
+  <table class="t">
+    <tr><th>ขั้น Funnel</th><th>เป้าหมายของขั้นนี้</th><th>ตัวชี้วัด (KPI)</th><th>เป้าเดือนที่ 3 (สมมติฐาน)</th></tr>
+    <tr><td class="b">Reach</td><td>คนเห็นแบรนด์</td><td>Reach / Impressions</td><td>ตั้ง baseline ให้วัดได้</td></tr>
+    <tr><td class="b">Visit</td><td>เข้าเว็บ/โปรไฟล์</td><td>Sessions, ค่าโฆษณา/คลิก</td><td>1,500-3,000 visits/เดือน</td></tr>
+    <tr><td class="b">Lead</td><td>ทักแชต/กรอกฟอร์ม/แอด LINE</td><td>Leads, Conversion rate</td><td>40-80 leads/เดือน</td></tr>
+    <tr><td class="b">Qualified (SQL)</td><td>มีโจทย์จริง ขอใบเสนอราคา</td><td>RFQ, % qualified</td><td>10-20 ราย/เดือน</td></tr>
+    <tr><td class="b">Win</td><td>ปิดการขาย</td><td>ยอดปิด, Win rate, AOV</td><td>วัด Win rate เพื่อปรับ</td></tr>
+    <tr><td class="b">Repeat</td><td>ซื้อซ้ำ/บอกต่อ</td><td>Repeat rate, Referral</td><td>เก็บฐานเพื่อปีถัดไป</td></tr>
+  </table>
+  <div style="height:12px"></div>
+  <div class="grid2">
+    <div class="note green"><b style="font-family:'Kanit';color:var(--green)">ระบบที่ต้องมี (ฟรี/ถูก):</b> HubSpot Free CRM เก็บทุก Lead, เชื่อม LINE OA + ฟอร์มเว็บเข้ามาด้วย Zapier, ตั้ง Google Analytics 4 + Google Search Console วันแรก</div>
+    <div class="note red"><b style="font-family:'Kanit';color:var(--red)">กับดักที่ต้องเลี่ยง:</b> วัดแต่ยอดไลก์/ผู้ติดตาม สิ่งเหล่านี้ไม่จ่ายบิล ให้ยึด “จำนวน RFQ และยอดปิด” เป็นตัวตัดสินว่าช่องทางไหนคุ้ม</div>
+  </div>
+  <div class="pagelabel">Strategy</div><div class="pagenum">05</div>
+</section>
+
+<!-- PROMOTION -->
+<section class="page">
+  <div class="kicker">04 · Promotion Plan</div>
+  <h2 class="section">แผนโปรโมตสำหรับงบจำกัด</h2>
+  <div class="rule"></div>
+  <div class="lead">จัดลำดับตาม “ความตั้งใจซื้อ” ก่อน เริ่มจากคนที่กำลังหาอยู่แล้ว (ปิดง่าย ถูกสุด) แล้วค่อยขยายไปสร้างการรับรู้</div>
+  <div style="height:12px"></div>
+  <table class="t">
+    <tr><th>ช่องทาง</th><th>บทบาท</th><th>สิ่งที่ทำ</th><th>ลำดับ</th></tr>
+    <tr><td class="b">Google Search + SEO</td><td>เก็บคนตั้งใจซื้อ</td><td>ทำหน้าเว็บ/บทความติดคำค้น “รับผลิตของพรีเมียม”, “ของขวัญองค์กร”, “กิฟต์เซ็ตพนักงาน” + ยิง Search ads คำ high-intent</td><td><span class="pill now">ทำเลย</span></td></tr>
+    <tr><td class="b">Google Business Profile</td><td>ความน่าเชื่อถือ + ฟรี</td><td>ตั้งโปรไฟล์ รูปผลงาน รีวิวลูกค้า</td><td><span class="pill now">ทำเลย</span></td></tr>
+    <tr><td class="b">LINE OA</td><td>ปิดการขาย/ดูแลลูกค้า</td><td>ปุ่มแชตทุกที่ ตอบไว ส่งแคตตาล็อก เก็บฐานลูกค้าเดิม</td><td><span class="pill now">ทำเลย</span></td></tr>
+    <tr><td class="b">Facebook / IG (Organic)</td><td>โชว์ผลงาน + รีวิว</td><td>ลงผลงานจริง/เบื้องหลัง 3-4 โพสต์/สัปดาห์ ตามเสาเนื้อหา</td><td><span class="pill now">ทำเลย</span></td></tr>
+    <tr><td class="b">Outbound ตรง (HR/Mkt)</td><td>ล่าดีลใหญ่</td><td>รายชื่อเป้าหมาย + อีเมล/LINE/LinkedIn เสนอ “ปรึกษาฟรี + ตัวอย่าง”</td><td><span class="pill next">เดือน 1-2</span></td></tr>
+    <tr><td class="b">Meta Ads (Lead/Retarget)</td><td>ขยาย + ดึงกลับ</td><td>ยิงโฆษณาผลงานเด่น เก็บ Lead, retarget คนเข้าเว็บ</td><td><span class="pill next">เดือน 2</span></td></tr>
+    <tr><td class="b">พาร์ตเนอร์</td><td>ได้ลูกค้าต่อเนื่อง</td><td>จับมือเอเจนซี/ออร์แกไนเซอร์/ร้านดอกไม้-ของชำร่วย แบ่งค่าแนะนำ</td><td><span class="pill next">เดือน 2-3</span></td></tr>
+    <tr><td class="b">TikTok</td><td>การรับรู้ราคาถูก</td><td>คลิปสั้นเบื้องหลังการผลิต/แกะกล่อง</td><td><span class="pill later">เดือน 3+</span></td></tr>
+  </table>
+  <div style="height:12px"></div>
+  <div class="grid3">
+    <div class="card"><div class="ic">แคมเปญหมุนตามฤดู</div><p class="small" style="margin:0">เริ่มสื่อสารปีใหม่ตั้งแต่ ก.ย.-ต.ค. (ก่อนพีค) ช่วงอื่นเล่นธีม onboarding พนักงาน, ครบรอบบริษัท, อีเวนต์</p></div>
+    <div class="card"><div class="ic">อาวุธปิดการขาย</div><p class="small" style="margin:0">“ปรึกษาฟรี + Mockup ก่อนผลิต” ลดความกลัวงานพลาดของลูกค้า เป็น Offer ที่ทรงพลังกว่าส่วนลด</p></div>
+    <div class="card"><div class="ic">Content Pillars</div><p class="small" style="margin:0">ผลงานจริง / ไอเดียตามโอกาส / เบื้องหลังคุณภาพ / รีวิวลูกค้า (สลับ 4 แกนนี้)</p></div>
+  </div>
+  <div class="pagelabel">Strategy</div><div class="pagenum">06</div>
+</section>
+
+<!-- PRIME vs UPSELL -->
+<section class="page">
+  <div class="kicker">05 · Offer Architecture</div>
+  <h2 class="section">โครงสร้างข้อเสนอ: Prime & Upsell</h2>
+  <div class="rule"></div>
+  <div class="lead">แยกให้ชัดว่าอะไรคือ “ตัวดึงลูกค้าเข้า (Prime)” และอะไรคือ “ตัวเพิ่มมูลค่าต่อบิล (Upsell)” เพื่อให้ทีมขายรู้ว่าจะเสนออะไรเมื่อไหร่ และเพิ่มยอดเฉลี่ยต่อออเดอร์ (AOV)</div>
+  <div style="height:14px"></div>
+  <div class="twocol">
+    <div>
+      <div class="h" style="background:var(--navy)">PRIME · ตัวหลักที่ดึงลูกค้าเข้า</div>
+      <div class="c">
+        <ul class="clean">
+          <li><b>รับผลิตของพรีเมียม/ของขวัญองค์กรตามสั่ง</b> (สินค้าหลัก ราคาเข้าถึงได้)</li>
+          <li>สินค้ายอดนิยม: กระเป๋า, แก้ว/กระบอกน้ำ, ร่ม, สมุด, เซ็ตของใช้สำนักงาน</li>
+          <li>พิมพ์โลโก้ตามแบรนด์ลูกค้า</li>
+        </ul>
+        <p class="small" style="margin:6px 0 0"><b>หน้าที่:</b> เป็นเหตุผลให้ลูกค้าทักเข้ามาและเปรียบเทียบราคาได้ ทำให้เริ่มบทสนทนา</p>
+      </div>
+    </div>
+    <div>
+      <div class="h" style="background:var(--mustard);color:var(--navy)">UPSELL · ตัวเพิ่มมูลค่า & กำไร</div>
+      <div class="c">
+        <ul class="clean">
+          <li><b>บริการออกแบบเฉพาะ</b> (custom design / คอนเซ็ปต์)</li>
+          <li><b>แพ็กเกจ & กล่องพรีเมียม</b> + การ์ด/แท็กแบรนด์</li>
+          <li><b>จัดกิฟต์เซ็ต (curation)</b> หลายชิ้นในเซ็ตเดียว</li>
+          <li><b>งานด่วน (rush)</b> สำหรับดีลกระชั้น</li>
+          <li><b>คลังสินค้า + จัดส่งรายคน (kitting/fulfillment)</b> ส่งให้พนักงานแต่ละคน</li>
+        </ul>
+        <p class="small" style="margin:6px 0 0"><b>หน้าที่:</b> ยกมูลค่าบิล + สร้างจุดต่างที่โรงงานทั่วไปไม่ทำ</p>
+      </div>
+    </div>
+  </div>
+  <div style="height:14px"></div>
+  <div class="note green"><b style="font-family:'Kanit';color:var(--green)">สคริปต์เพิ่มยอด:</b> เมื่อลูกค้าถามราคาสินค้า Prime ให้เสนอ Upsell เป็น “แพ็กเกจประสบการณ์” เช่น “เพิ่มกล่องพรีเมียม + การ์ดแบรนด์ ทำให้ของขวัญดูมีค่าขึ้นทันที สนใจให้จัดเป็นเซ็ตไหมคะ” ตรงกับจุดยืน Go beyond the gift</div>
+  <div class="pagelabel">Strategy</div><div class="pagenum">07</div>
+</section>
+
+<!-- REBRAND & CI -->
+<section class="page">
+  <div class="kicker">06 · Rebrand & CI</div>
+  <h2 class="section">ต้องปรับแบรนด์มากแค่ไหน</h2>
+  <div class="rule"></div>
+  <div class="verdict">
+    <div class="small" style="color:#A9BBD2;letter-spacing:2px">คำตัดสินจาก Marketing Director</div>
+    <div class="big" style="margin:4px 0 6px">Evolve ไม่ใช่ Revolution · ปรับราว 20-25%</div>
+    <p style="color:#dfe6f0;font-size:13px;margin:0">CI ปัจจุบันแข็งแรงและพรีเมียมอยู่แล้ว การรื้อใหม่ทั้งหมดจะเปลืองงบ เสียการจดจำที่สะสมไว้ และไม่ตอบเป้าหมาย Lead B2B เลย เงินก้อนเดียวกันควรลงกับ “ของที่ขาด” มากกว่า</p>
+  </div>
+  <div style="height:14px"></div>
+  <div class="grid2">
+    <div class="card do"><h4 style="color:var(--green)">เก็บไว้ (ห้ามแตะ)</h4><ul class="clean">
+      <li>โลโก้ GO PREMIUM</li>
+      <li>สีกรมท่า + มัสตาร์ด + ขาว</li>
+      <li>Tagline “Go beyond the gift”</li>
+      <li>โทนภาพมืออาชีพ/มินิมอล</li>
+    </ul></div>
+    <div class="card"><h4 style="color:var(--mustard)">เพิ่ม/ปรับ (ลงทุนตรงนี้)</h4><ul class="clean">
+      <li>ระบบภาพถ่ายสินค้า (มาตรฐานการถ่าย/แต่ง)</li>
+      <li>เทมเพลตโซเชียล + ใบเสนอราคา + แคตตาล็อก</li>
+      <li>ขยายสีกลาง/รอง + กฎ accessibility</li>
+      <li>เนื้อหาแบรนด์ (positioning, tone) จาก Brand Book ใหม่</li>
+      <li>ทำให้ tagline มีคำไทยติดปาก เช่น “ของขวัญที่อยากเก็บ”</li>
+    </ul></div>
+  </div>
+  <div style="height:12px"></div>
+  <div class="note red"><b style="font-family:'Kanit';color:var(--red)">เมื่อไหร่ค่อยคิด Rebrand ใหญ่:</b> ต่อเมื่อแบรนด์โตจนชื่อ/ภาพลักษณ์เดิมจำกัดการเติบโต (เช่น ขยายไป segment ใหม่) หรือมีงบและฐานลูกค้าแน่นแล้ว ตอนนี้ยังไม่ใช่จังหวะนั้น</div>
+  <div class="pagelabel">Strategy</div><div class="pagenum">08</div>
+</section>
+
+<!-- WEBSITE -->
+<section class="page">
+  <div class="kicker">07 · New Website</div>
+  <h2 class="section">เว็บใหม่ = เครื่องเก็บ Lead</h2>
+  <div class="rule"></div>
+  <div class="lead">เป้าหมายเดียวของเว็บนี้คือ “เปลี่ยนผู้เข้าชมเป็น RFQ/แชต” ทุกหน้าทุกองค์ประกอบต้องรับใช้เป้านี้ ไม่ใช่แค่สวย</div>
+  <div style="height:12px"></div>
+  <div class="grid2">
+    <div>
+      <div class="kicker navy">โครงหน้าเว็บที่ต้องมี</div>
+      <ol class="clean" style="margin-top:9px">
+        <li><b>หน้าแรก:</b> จุดยืนชัดใน 5 วินาที + ปุ่ม “ขอใบเสนอราคา/ปรึกษาฟรี” เด่น</li>
+        <li><b>ผลงาน (Portfolio):</b> หัวใจของเว็บ จัดตามอุตสาหกรรม/โอกาส มีภาพจริง</li>
+        <li><b>สินค้า/บริการ:</b> แยก Prime กับ Upsell ให้ชัด</li>
+        <li><b>วิธีการทำงาน:</b> 4 ขั้น (ปรึกษา > ดีไซน์ > ผลิต > ส่ง) ลดความกลัว</li>
+        <li><b>รีวิว/ลูกค้าที่ไว้วางใจ:</b> โลโก้ลูกค้า + คำรีวิว</li>
+        <li><b>บทความ SEO:</b> ไอเดียของขวัญตามโอกาส (ดึง organic)</li>
+        <li><b>ติดต่อ + ฟอร์ม RFQ:</b> ฟอร์มสั้น + LINE + โทร</li>
+      </ol>
+    </div>
+    <div>
+      <div class="kicker navy">กลไกเก็บ Lead (สำคัญสุด)</div>
+      <ul class="clean" style="margin-top:9px">
+        <li>ปุ่มลอย LINE/แชตทุกหน้า</li>
+        <li>ฟอร์ม RFQ สั้น: ชื่อ, บริษัท, โอกาส, จำนวน, เดดไลน์, งบ</li>
+        <li>ดาวน์โหลดแคตตาล็อก “แลกอีเมล” (เก็บ Lead)</li>
+        <li>เชื่อมฟอร์ม > CRM อัตโนมัติ (Zapier)</li>
+      </ul>
+      <div class="note" style="margin-top:10px"><b style="font-family:'Kanit';color:var(--navy)">เทคโนโลยี (งบประหยัด):</b> WordPress, Webflow หรือ Framer ก็พอ เน้นโหลดเร็ว, มือถือสวย, ใส่ GA4 + Search Console + Pixel ตั้งแต่วันแรก ไม่ต้องลงทุนระบบแพง</div>
+    </div>
+  </div>
+  <div style="height:10px"></div>
+  <div class="note green"><b style="font-family:'Kanit';color:var(--green)">SEO ที่คุ้มสุดตอนเริ่ม:</b> ทำหน้า/บทความเจาะคำที่ลูกค้าตั้งใจหา เช่น “รับผลิตของพรีเมียม”, “ของขวัญปีใหม่พนักงาน”, “กิฟต์เซ็ตองค์กร” ดีกว่าไล่คำกว้างที่แข่งยาก</div>
+  <div class="pagelabel">Execution</div><div class="pagenum">09</div>
+</section>
+
+<!-- CATALOG -->
+<section class="page">
+  <div class="kicker">08 · New Catalog</div>
+  <h2 class="section">แคตตาล็อกใหม่: เครื่องมือปิดการขาย</h2>
+  <div class="rule"></div>
+  <div class="lead">แคตตาล็อกไม่ใช่ “รายการสินค้า” แต่คือเครื่องมือช่วยให้ลูกค้าตัดสินใจและจินตนาการของขวัญของตัวเองได้ ควรทำ 2 เวอร์ชัน: ดิจิทัล (PDF/เว็บ) เป็นหลัก + พิมพ์เฉพาะลูกค้า VIP</div>
+  <div style="height:12px"></div>
+  <div class="grid2">
+    <div class="card"><h4>โครงแคตตาล็อกที่แนะนำ</h4><ol class="clean" style="margin-top:4px">
+      <li>หน้าปก + จุดยืน (Go beyond the gift)</li>
+      <li>ทำไมเลือก GO PREMIUM (3 เหตุผล + รีวิว)</li>
+      <li>หมวดสินค้า Prime (จัดตามการใช้งาน/โอกาส)</li>
+      <li>บริการ Upsell (ดีไซน์/แพ็กเกจ/เซ็ต/fulfillment)</li>
+      <li>ผลงานจริง (before-after / case)</li>
+      <li>ขั้นตอนสั่งทำ + MOQ + ระยะเวลา</li>
+      <li>หน้า CTA: ปรึกษาฟรี + ช่องทางติดต่อ + QR LINE</li>
+    </ol></div>
+    <div class="card"><h4>กฎการออกแบบ (ให้ดูพรีเมียม)</h4><ul class="clean" style="margin-top:4px">
+      <li>ภาพสินค้าจริงคุณภาพสูง พื้นที่ว่างเยอะ</li>
+      <li>ยึดสัดส่วนสี 60/30/10 ตาม Brand Book</li>
+      <li>จัดตาม “โอกาส” ไม่ใช่แค่ประเภทสินค้า (ปีใหม่ / พนักงาน / ลูกค้า VIP / อีเวนต์)</li>
+      <li>ทุกหมวดมี CTA และราคาเริ่มต้น/ช่วง MOQ</li>
+      <li>ไฟล์ดิจิทัลคลิกทักไลน์ได้ทันที</li>
+    </ul></div>
+  </div>
+  <div style="height:12px"></div>
+  <div class="note"><b style="font-family:'Kanit';color:var(--navy)">เคล็ดเพิ่มยอด:</b> ใส่ “แพ็กเกจแนะนำ” (bundle) ในแคตตาล็อก เช่น เซ็ตปีใหม่ 3 ระดับราคา (Good / Better / Best) ช่วยให้ลูกค้าเลือกง่ายและดันให้เลือกตัวกลาง-บน เป็นการ Upsell แบบนุ่มนวล</div>
+  <div class="pagelabel">Execution</div><div class="pagenum">10</div>
+</section>
+
+<!-- BUDGET & 90 DAY -->
+<section class="page">
+  <div class="kicker">09 · Budget & 90-Day Plan</div>
+  <h2 class="section">งบ & แผนลงมือ 90 วัน</h2>
+  <div class="rule"></div>
+  <div class="kicker navy">ตัวอย่างจัดสรรงบ ~30,000 THB/เดือน (ปรับได้ตามผล)</div>
+  <div class="bar-track" style="margin-top:10px">
+    <div style="flex:40;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Kanit';font-size:11px">Ads 40%</div>
+    <div style="flex:20;background:var(--navy-soft);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Kanit';font-size:11px">Content 20%</div>
+    <div style="flex:13;background:var(--mustard);color:var(--navy);display:flex;align-items:center;justify-content:center;font-family:'Kanit';font-size:10px">Tools 13%</div>
+    <div style="flex:14;background:var(--mustard-soft);color:var(--navy);display:flex;align-items:center;justify-content:center;font-family:'Kanit';font-size:10px">Web/SEO 14%</div>
+    <div style="flex:13;background:#cdd4de;color:var(--navy);display:flex;align-items:center;justify-content:center;font-family:'Kanit';font-size:10px">สำรอง 13%</div>
+  </div>
+  <table class="t" style="margin-top:8px">
+    <tr><th>หมวด</th><th>ราว (THB/เดือน)</th><th>ใช้ทำอะไร</th></tr>
+    <tr><td class="b">โฆษณา (Google Search + Meta)</td><td>~12,000</td><td>เก็บ Lead ตั้งใจซื้อ + retarget</td></tr>
+    <tr><td class="b">คอนเทนต์/ถ่ายภาพ</td><td>~6,000</td><td>ถ่ายผลงาน, คลิปสั้น, กราฟิก</td></tr>
+    <tr><td class="b">เครื่องมือ</td><td>~3,000-4,000</td><td>LINE OA, อีเมล, scheduling, CRM (เริ่มที่ฟรี)</td></tr>
+    <tr><td class="b">เว็บ/SEO</td><td>~4,000</td><td>ปรับปรุงต่อเนื่อง + บทความ</td></tr>
+    <tr><td class="b">สำรอง/ดันฤดูกาล</td><td>~4,000</td><td>เก็บไว้บูสต์ช่วงปลายปี</td></tr>
+  </table>
+  <p class="small" style="margin-top:5px"><i>ตัวเลขเป็นกรอบวางแผน ไม่ใช่ราคาตายตัว ช่วงพีคปลายปีควรเพิ่มงบโฆษณาชั่วคราว</i></p>
+  <div style="height:10px"></div>
+  <div class="grid3">
+    <div class="card"><div class="ic">เดือน 1 · FOUNDATION</div><ul class="clean"><li>วาง CRM + GA4 + Pixel</li><li>เปิด LINE OA + Google Business</li><li>เก็บผลงาน/รีวิวเดิมให้พร้อม</li><li>ร่างเว็บ + แคตตาล็อกใหม่</li></ul></div>
+    <div class="card"><div class="ic">เดือน 2 · ACTIVATE</div><ul class="clean"><li>เปิดเว็บ + ปล่อยแคตตาล็อก</li><li>เริ่ม Google Search ads</li><li>คอนเทนต์สม่ำเสมอ + outbound</li><li>เริ่มหาพาร์ตเนอร์</li></ul></div>
+    <div class="card"><div class="ic">เดือน 3 · OPTIMIZE</div><ul class="clean"><li>ดู KPI: ช่องไหนได้ RFQ คุ้ม</li><li>ตัดช่องที่ไม่เวิร์ก เพิ่มช่องที่เวิร์ก</li><li>เตรียมแคมเปญปีใหม่</li><li>เป้า 10-20 SQL/เดือน</li></ul></div>
+  </div>
+  <div class="pagelabel">Execution</div><div class="pagenum">11</div>
+</section>
+
+<!-- RISKS -->
+<section class="page">
+  <div class="kicker">10 · Risks & Next Step</div>
+  <h2 class="section">ความเสี่ยง สมมติฐาน และก้าวต่อไป</h2>
+  <div class="rule"></div>
+  <div class="grid2">
+    <div>
+      <div class="kicker navy">ความเสี่ยงหลัก & ทางรับมือ</div>
+      <table class="t" style="margin-top:9px">
+        <tr><th>ความเสี่ยง</th><th>รับมือ</th></tr>
+        <tr><td>ถูกดึงเข้าสงครามราคา</td><td>ยึดขายคุณค่า/ดีไซน์ เสนอ Mockup แทนลดราคา</td></tr>
+        <tr><td>ยอดกระจุกปลายปี</td><td>หาดีลนอกฤดู (onboarding, อีเวนต์) + สัญญาประจำปี</td></tr>
+        <tr><td>ทีมเล็ก ทำไม่ทัน</td><td>โฟกัส 2-3 ช่องทาง ใช้ระบบ/ออโตเมชันช่วย</td></tr>
+        <tr><td>ผลงานยังน้อย</td><td>เก็บเคสทุกงาน ขอรีวิว ทำงานตัวอย่างเอง</td></tr>
+      </table>
+    </div>
+    <div>
+      <div class="kicker navy">สมมติฐานที่ต้องยืนยัน</div>
+      <ul class="clean" style="margin-top:9px">
+        <li>ตัวเลข KPI/งบเป็นกรอบเริ่มต้น ต้องปรับตามต้นทุน/มาร์จิ้นจริงของคุณ</li>
+        <li>กลุ่ม ICP ลำดับ 1 (HR) ตั้งจากตรรกะตลาด ควรเช็กกับลูกค้าจริงที่เคยปิดได้</li>
+        <li>Vision/Positioning อ้างจาก Brand Book ฉบับร่างที่เสนอไป รอคุณยืนยัน</li>
+      </ul>
+      <div class="note green" style="margin-top:10px"><b style="font-family:'Kanit';color:var(--green)">ก้าวต่อไปที่แนะนำ:</b> เริ่มที่ Foundation เดือน 1 (CRM + LINE + เก็บผลงาน) เพราะถูกและทำให้ทุกอย่างหลังจากนี้วัดผลได้</div>
+    </div>
+  </div>
+  <div style="height:14px"></div>
+  <div class="verdict">
+    <div class="small" style="color:#A9BBD2;letter-spacing:2px">สรุปให้จำง่าย</div>
+    <p style="color:#fff;font-size:14px;margin:6px 0 0">อย่าแข่งถูก จงแข่งให้ “น่าเชื่อใจและดูแพง” · เว็บและแคตตาล็อกมีหน้าที่เก็บ Lead · ปรับแบรนด์แค่ 20-25% · โฟกัสช่องทางที่ได้ RFQ จริง แล้ววัดผลทุกเดือน</p>
+  </div>
+  <div class="pagelabel">Execution</div><div class="pagenum">12</div>
+</section>
+
+</body>
+</html>
