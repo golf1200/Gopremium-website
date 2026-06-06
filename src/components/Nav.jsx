@@ -4,15 +4,21 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import GpLogo from './shared/GpLogo';
+import GpIcon from './shared/GpIcon';
 import { useQuoteCtx } from '../contexts/QuoteContext';
 import { CATEGORY_GROUPS, OCCASIONS, BUDGET_TIERS } from '../data/products';
 import { gpScrollTo } from '../utils/scroll';
+import { track } from '../utils/analytics';
+import { site } from '../config';
+
+const SPY_SECTIONS = ['ai', 'occasion', 'budget', 'portfolio'];
 
 export default function Nav() {
   const [scrolled, setScrolled]       = useState(false);
   const [mobileOpen, setMobileOpen]   = useState(false);
   const [megaOpen, setMegaOpen]       = useState(false);
   const [megaTimer, setMegaTimer]     = useState(null);
+  const [active, setActive]           = useState('');
   const megaRef                        = useRef(null);
   const location                       = useLocation();
   const navigate                       = useNavigate();
@@ -25,6 +31,26 @@ export default function Nav() {
     window.addEventListener('scroll', h, { passive: true });
     return () => window.removeEventListener('scroll', h);
   }, []);
+
+  // Scroll-spy: highlight the nav item for the section currently in view (home only)
+  useEffect(() => {
+    if (!isHome) { setActive(''); return; }
+    const els = SPY_SECTIONS
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+    if (!els.length) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        const vis = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (vis) setActive(vis.target.id);
+      },
+      { rootMargin: '-45% 0px -50% 0px', threshold: [0, .25, .5, 1] }
+    );
+    els.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, [isHome, location.pathname]);
 
   // Close mega on route change
   useEffect(() => { setMegaOpen(false); setMobileOpen(false); }, [location.pathname]);
@@ -77,13 +103,22 @@ export default function Nav() {
               </button>
             </div>
 
-            <NavLink label="AI Concierge"    onClick={() => scrollOrGo('ai')} />
-            <NavLink label="เลือกตามโอกาส" onClick={() => scrollOrGo('occasion')} />
-            <NavLink label="เลือกตามงบ"    onClick={() => scrollOrGo('budget')} />
-            <NavLink label="ผลงานของเรา"   onClick={() => scrollOrGo('portfolio')} />
+            <NavLink label="AI Concierge"    active={active === 'ai'}        onClick={() => scrollOrGo('ai')} />
+            <NavLink label="เลือกตามโอกาส" active={active === 'occasion'}  onClick={() => scrollOrGo('occasion')} />
+            <NavLink label="เลือกตามงบ"    active={active === 'budget'}    onClick={() => scrollOrGo('budget')} />
+            <NavLink label="ผลงานของเรา"   active={active === 'portfolio'} onClick={() => scrollOrGo('portfolio')} />
+
+            {/* LINE — first-class contact CTA (brief §9.10) */}
+            {site.lineUrl && (
+              <a href={site.lineUrl} target="_blank" rel="noopener noreferrer"
+                onClick={() => track('contact_line', { source: 'header' })}
+                className="gp-btn gp-btn-line gp-btn-sm" style={{ marginLeft: 6 }}>
+                <GpIcon name="chat" size={15} stroke="#fff" sw={2.2} /> LINE
+              </a>
+            )}
 
             {/* Quote button with badge */}
-            <Link to="/quote" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 6, marginLeft: 4 }}>
+            <Link to="/quote" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 6, marginLeft: 6 }}>
               <div style={{ position: 'relative' }}>
                 <button className="gp-btn gp-btn-primary gp-btn-sm">ขอใบเสนอราคา</button>
                 {count > 0 && (
@@ -230,13 +265,14 @@ export default function Nav() {
 // ---------------------------------------------------------------------------
 // Sub-components
 // ---------------------------------------------------------------------------
-function NavLink({ label, onClick }) {
+function NavLink({ label, onClick, active = false }) {
   return (
     <button
       onClick={onClick}
+      className={`gp-navlink${active ? ' active' : ''}`}
       style={{ ...navLinkStyle, background: 'none', border: 'none', cursor: 'pointer', padding: '6px 10px', borderRadius: 8 }}
       onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--gp-mustard-deep)'; e.currentTarget.style.background = 'var(--gp-cloud)'; }}
-      onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--gp-navy)'; e.currentTarget.style.background = 'none'; }}
+      onMouseLeave={(e) => { if (!e.currentTarget.classList.contains('active')) e.currentTarget.style.color = 'var(--gp-navy)'; e.currentTarget.style.background = 'none'; }}
     >
       {label}
     </button>

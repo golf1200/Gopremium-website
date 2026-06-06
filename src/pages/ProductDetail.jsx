@@ -1,6 +1,7 @@
 // ============================================================
 // GO PREMIUM — /product/:sku  Product detail page
 // ============================================================
+import { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { getProduct, getRelated, OCCASIONS, BUDGET_LABEL } from '../data/products';
 import { useQuoteCtx } from '../contexts/QuoteContext';
@@ -8,6 +9,7 @@ import ProductCard from '../components/ProductCard';
 import Breadcrumbs from '../components/Breadcrumbs';
 import ProductGallery from '../components/ProductGallery';
 import { useMeta } from '../hooks/useMeta';
+import { track } from '../utils/analytics';
 import { seoImage } from '../utils/images';
 import { site, lineHref } from '../config';
 
@@ -76,6 +78,11 @@ export default function ProductDetail() {
     image: `${site.siteUrl}${seoImage(product.images)}`,
     jsonLd: [jsonLd, breadcrumbLd],
   });
+
+  // view_item: fire when a product page loads / changes
+  useEffect(() => {
+    track('view_item', { sku: product.sku, category: product.category });
+  }, [product.sku, product.category]);
 
   function handleQuoteToggle() {
     if (inQuote) remove(product.sku);

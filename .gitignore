@@ -6,3 +6,7 @@ dist/
 # local dev run logs
 dev_out.log
 dev_err.log
+
+# 1688 scraper — persisted browser session (contains login cookies) + outputs
+scripts/.1688-profile/
+scripts/scrape-1688-results.json

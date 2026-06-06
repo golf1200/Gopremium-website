@@ -25,7 +25,7 @@ export default function Floating() {
   }
 
   return (
-    <div style={{
+    <div className="gp-floating" style={{
       position: 'fixed', right: 'clamp(16px,2.5vw,28px)', bottom: 'clamp(16px,2.5vw,28px)',
       zIndex: 45, display: 'flex', flexDirection: 'column', gap: 10, alignItems: 'flex-end',
       opacity: show ? 1 : 0, transform: show ? 'none' : 'translateY(16px)',

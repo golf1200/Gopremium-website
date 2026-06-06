@@ -47,7 +47,7 @@ export default function RFQ({ prefill }) {
     setStatus('submitting');
     const { ok } = await sendQuote(payload);
     if (ok) {
-      track('generate_lead', { form: 'rfq', occasion: f.occasion });
+      track('generate_lead', { source: 'home_rfq', occasion: f.occasion, budget: f.budget || undefined });
       setStatus('idle');
       setSent(true);
     } else {
@@ -62,7 +62,7 @@ export default function RFQ({ prefill }) {
       <div className="gp-wrap gp-rfq-grid" style={{ position: 'relative', display: 'grid', gridTemplateColumns: '1fr 1.1fr', gap: 'clamp(28px,4.5vw,72px)', alignItems: 'center' }}>
         <div>
           <span className="gp-eyebrow on-dark"><span className="dot" />ขอใบเสนอราคา · ปรึกษาฟรี</span>
-          <h2 className="gp-h2 on-dark" style={{ marginTop: 16, maxWidth: '15ch' }}>เริ่มของขวัญชิ้นต่อไปของคุณ</h2>
+          <h2 className="gp-h2 gp-h2-xl on-dark" style={{ marginTop: 16, maxWidth: '15ch' }}>เริ่มของขวัญชิ้นต่อไปของคุณ</h2>
           <p className="gp-lead on-dark" style={{ marginTop: 14, maxWidth: '42ch' }}>กรอกข้อมูลสั้นๆ ทีมเราจะตอบกลับพร้อมไอเดียและช่วงราคาภายใน 48 ชม. ปรึกษาฟรี ไม่มีข้อผูกมัด</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginTop: 26 }}>
             {[['shield','นิติบุคคลจดทะเบียน เชื่อถือได้'],['clock','ตอบกลับ + เสนอราคาใน 48 ชม.'],['palette','Mockup ก่อนผลิตเสมอ']].map((x, i) => (
@@ -163,6 +163,20 @@ export default function RFQ({ prefill }) {
                 disabled={status === 'submitting' || !consent}>
                 {status === 'submitting' ? 'กำลังส่ง...' : <>ส่งขอใบเสนอราคา <GpIcon name="arrow" size={17} /></>}
               </button>
+
+              {/* LINE alternative (brief §9.13) — lower-friction path for buyers who'd rather chat */}
+              {site.lineUrl && (
+                <>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, margin: '14px 0 12px', color: 'var(--gp-grey-400)', fontSize: 12.5 }}>
+                    <span style={{ flex: 1, height: 1, background: 'var(--gp-grey-200)' }} />หรือ<span style={{ flex: 1, height: 1, background: 'var(--gp-grey-200)' }} />
+                  </div>
+                  <a href={site.lineUrl} target="_blank" rel="noopener noreferrer"
+                    onClick={() => track('contact_line', { source: 'rfq' })}
+                    className="gp-btn gp-btn-line-ghost gp-btn-lg" style={{ width: '100%', textDecoration: 'none' }}>
+                    <GpIcon name="chat" size={18} stroke="#06C755" sw={2} /> ทักมาที่ LINE {site.lineId}
+                  </a>
+                </>
+              )}
             </div>
           )}
         </div>

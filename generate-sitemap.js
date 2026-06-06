@@ -10,7 +10,7 @@ import { site } from './src/config.js';
 
 const __dir = dirname(fileURLToPath(import.meta.url));
 const SITE_URL = site.siteUrl; // single source of truth — see src/config.js
-const products = JSON.parse(readFileSync(join(__dir, '../phase2/products.json'), 'utf8'));
+const products = JSON.parse(readFileSync(join(__dir, 'src/data/products-raw.json'), 'utf8'));
 
 const OCCASIONS = [
   'new-year','songkran','new-employee','vip','event',

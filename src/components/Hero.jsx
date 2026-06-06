@@ -48,7 +48,7 @@ export default function Hero({ onQuote }) {
         <div style={{ display: 'grid', gridTemplateColumns: '1.04fr .96fr', gap: 'clamp(28px,4vw,64px)', alignItems: 'center' }} className="gp-hero-split">
           <div>
             <span className="gp-eyebrow"><span className="dot" />ของขวัญองค์กร · ดีไซน์เฉพาะแบรนด์คุณ</span>
-            <h1 style={{ fontSize: 'clamp(34px,5.2vw,66px)', color: 'var(--gp-navy)', letterSpacing: '-.025em', marginTop: 18, fontWeight: 600, textWrap: 'balance', lineHeight: 1 }}>
+            <h1 style={{ fontSize: 'clamp(34px,5.2vw,66px)', color: 'var(--gp-navy)', letterSpacing: '-.03em', marginTop: 18, fontWeight: 800, textWrap: 'balance', lineHeight: 1 }}>
               มากกว่าของขวัญ<br />
               คือ<span style={{ position: 'relative', whiteSpace: 'nowrap' }}>
                 <span style={{ color: 'var(--gp-mustard-deep)' }}>ประสบการณ์</span>

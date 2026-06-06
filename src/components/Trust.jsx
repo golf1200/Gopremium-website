@@ -15,7 +15,7 @@ export default function Trust() {
         <div style={{ display: 'flex', alignItems: 'center', gap: 54, width: 'max-content', animation: 'gp-marquee 42s linear infinite' }}>
           {row.map((src, i) => (
             <img key={i} src={`/clients/${src}`} alt="โลโก้ลูกค้าองค์กรของ GO PREMIUM" loading="lazy"
-              style={{ height: 38, width: 'auto', objectFit: 'contain', flex: '0 0 auto', filter: 'grayscale(1)', opacity: .7, transition: 'filter .2s, opacity .2s' }}
+              style={{ height: 48, width: 'auto', objectFit: 'contain', flex: '0 0 auto', filter: 'grayscale(1)', opacity: .8, transition: 'filter .2s, opacity .2s' }}
               onMouseEnter={(e) => { e.currentTarget.style.filter = 'none'; e.currentTarget.style.opacity = '1'; }}
               onMouseLeave={(e) => { e.currentTarget.style.filter = 'grayscale(1)'; e.currentTarget.style.opacity = '.7'; }} />
           ))}

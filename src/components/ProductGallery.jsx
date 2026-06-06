@@ -38,7 +38,7 @@ export default function ProductGallery({ images, alt }) {
                 transition: 'border-color .15s',
               }}
             >
-              <GpImage src={g} alt=""
+              <GpImage src={g} alt={`${alt} — รูปที่ ${i + 1}`}
                 style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
             </button>
           ))}

@@ -3,6 +3,7 @@
 // ============================================================
 
 import { useState, useCallback, useEffect } from 'react';
+import { track } from '../utils/analytics';
 
 const STORAGE_KEY = 'gp_quote_v1';
 
@@ -24,14 +25,17 @@ export function useQuote() {
   }, [items]);
 
   const add = useCallback((product) => {
+    let added = false;
     setItems((prev) => {
       const exists = prev.find((i) => i.sku === product.sku);
       if (exists) return prev; // already in list
+      added = true;
       return [
         ...prev,
         { sku: product.sku, name: product.name, qty: product.moq || 100 },
       ];
     });
+    if (added) track('add_to_quote', { sku: product.sku });
   }, []);
 
   const remove = useCallback((sku) => {

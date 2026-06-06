@@ -2,7 +2,7 @@
 // GO PREMIUM — /quote  Quote builder + RFQ submission
 // Email: info@passiongrow.co.th via Formspree
 // ============================================================
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useQuoteCtx } from '../contexts/QuoteContext';
 import { getProduct } from '../data/products';
@@ -26,6 +26,12 @@ export default function QuotePage() {
     description: 'ส่งใบขอราคาสินค้าพรีเมียม ทีมเราจะตอบกลับภายใน 48 ชม.',
     canonical: `${site.siteUrl}/quote`,
   });
+
+  // view_quote: fire once when landing on /quote with items in the list
+  useEffect(() => {
+    if (items.length > 0) track('view_quote', { items: items.length });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   function setField(k, v) { setF((p) => ({ ...p, [k]: v })); if (err[k]) setErr((e) => ({ ...e, [k]: null })); }
 
@@ -62,7 +68,7 @@ export default function QuotePage() {
     setStatus('submitting');
     const { ok } = await sendQuote(payload);
     if (ok) {
-      track('generate_lead', { form: 'quote', items: items.length });
+      track('generate_lead', { source: 'quote_page', items: items.length });
       setStatus('success');
       clear();
     } else {

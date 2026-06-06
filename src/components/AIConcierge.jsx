@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import GpSpark from './shared/GpSpark';
+import { track } from '../utils/analytics';
 
 const EXAMPLES = [
   'ของขวัญปีใหม่พนักงาน 200 คน งบ 300฿/ชิ้น สายรักษ์โลก',
@@ -74,6 +75,7 @@ export default function AIConcierge({ onRequestQuote }) {
   async function run(text) {
     const brief = (text != null ? text : q).trim();
     if (!brief) { inputRef.current && inputRef.current.focus(); return; }
+    track('ai_concierge_run', { brief });
     setQ(brief);
     setStatus('loading');
     setResults([]);

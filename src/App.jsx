@@ -4,6 +4,7 @@ import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Floating from './components/Floating';
 import QuoteFab from './components/QuoteFab';
+import MobileCTABar from './components/MobileCTABar';
 
 import Home from './pages/Home';
 import Catalog from './pages/Catalog';
@@ -36,6 +37,7 @@ export default function App() {
         <Footer />
         <QuoteFab />
         <Floating />
+        <MobileCTABar />
       </QuoteProvider>
     </BrowserRouter>
   );

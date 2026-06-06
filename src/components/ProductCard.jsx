@@ -48,8 +48,8 @@ export default function ProductCard({ product, compact = false }) {
         transition: 'box-shadow .2s, transform .2s',
         cursor: 'pointer',
       }}
-        onMouseEnter={(e) => { e.currentTarget.style.boxShadow = 'var(--gp-shadow-lg)'; e.currentTarget.style.transform = 'translateY(-3px)'; }}
-        onMouseLeave={(e) => { e.currentTarget.style.boxShadow = 'var(--gp-shadow)'; e.currentTarget.style.transform = 'none'; }}
+        onMouseEnter={(e) => { e.currentTarget.style.boxShadow = 'var(--gp-shadow-lg)'; e.currentTarget.style.transform = 'translateY(-4px)'; }}
+        onMouseLeave={(e) => { e.currentTarget.style.boxShadow = 'var(--gp-shadow-sm)'; e.currentTarget.style.transform = 'none'; }}
       >
         {/* Image */}
         <div style={{ position: 'relative', overflow: 'hidden', flexShrink: 0 }}>
@@ -58,7 +58,7 @@ export default function ProductCard({ product, compact = false }) {
             variant="square"
             alt={`${product.name} — ของพรีเมียมพิมพ์โลโก้ GO PREMIUM`}
             loading="lazy"
-            style={{ width: '100%', height: compact ? 160 : 200, objectFit: 'cover', display: 'block', background: 'var(--gp-cloud-2)', transition: 'transform .35s' }}
+            style={{ width: '100%', aspectRatio: '4 / 3', height: compact ? 185 : 'auto', minHeight: compact ? undefined : 230, objectFit: 'cover', display: 'block', background: 'var(--gp-cloud-2)', transition: 'transform .35s' }}
             onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.04)'}
             onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
           />

@@ -66,7 +66,7 @@ await page.waitForTimeout(700);
 evts = await page.evaluate(() => window.__events);
 const leadEvt = evts.find((e) => e[0] === 'event' && e[1] === 'generate_lead');
 ok('6c. RFQ success fires generate_lead', !!leadEvt, JSON.stringify(leadEvt?.[2] || null));
-ok('6d. generate_lead tags form=rfq', leadEvt?.[2]?.form === 'rfq');
+ok('6d. generate_lead tags source=home_rfq', leadEvt?.[2]?.source === 'home_rfq');
 
 // ---------- console clean ----------
 ok('6e. no console errors / page exceptions', consoleErrors.length === 0, consoleErrors.slice(0, 5).join(' | '));

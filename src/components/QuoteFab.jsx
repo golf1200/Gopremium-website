@@ -12,6 +12,7 @@ export default function QuoteFab() {
 
   return (
     <button
+      className="gp-quote-fab"
       onClick={() => navigate('/quote')}
       aria-label={`ดูใบขอราคา ${count} รายการ`}
       style={{
