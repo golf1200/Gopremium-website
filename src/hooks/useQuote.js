@@ -35,7 +35,7 @@ export function useQuote() {
         { sku: product.sku, name: product.name, qty: product.moq || 100 },
       ];
     });
-    if (added) track('add_to_quote', { sku: product.sku });
+    if (added) track('add_to_quote', { sku: product.sku, item_name: product.name, item_category: product.category });
   }, []);
 
   const remove = useCallback((sku) => {

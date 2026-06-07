@@ -81,7 +81,12 @@ export default function ProductDetail() {
 
   // view_item: fire when a product page loads / changes
   useEffect(() => {
-    track('view_item', { sku: product.sku, category: product.category });
+    track('view_item', {
+      sku: product.sku,
+      category: product.category,
+      item_name: product.name,
+      price: product.price_300_thb ?? undefined,
+    });
   }, [product.sku, product.category]);
 
   function handleQuoteToggle() {
