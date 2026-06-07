@@ -119,6 +119,30 @@ export default function Catalog() {
         </div>
       </div>
 
+      {/* Quick-pick filter bar — sticky, always reachable */}
+      <div className="gp-quick-bar" style={{ position: 'sticky', top: 80, zIndex: 20, background: '#fff', borderBottom: '1px solid var(--gp-grey-200)', boxShadow: '0 4px 10px rgba(31,58,95,.05)' }}>
+        <div className="gp-wrap" style={{ display: 'flex', flexDirection: 'column', gap: 9, padding: '12px 0' }}>
+          {/* Occasion pills */}
+          <div className="gp-quick-row">
+            <span className="gp-quick-label">🎁 โอกาส</span>
+            {OCCASIONS.map((o) => (
+              <QuickPill key={o.slug} label={o.label}
+                active={urlOcc === o.slug}
+                onClick={() => setFilter('occ', urlOcc === o.slug ? '' : o.slug)} />
+            ))}
+          </div>
+          {/* Budget pills */}
+          <div className="gp-quick-row">
+            <span className="gp-quick-label">💰 งบ/ชิ้น</span>
+            {BUDGET_TIERS.map((b) => (
+              <QuickPill key={b.slug} label={b.label}
+                active={urlBudget === b.slug}
+                onClick={() => setFilter('budget', urlBudget === b.slug ? '' : b.slug)} />
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* Active filter chips */}
       {activeCount > 0 && (
         <div style={{ background: 'var(--gp-cloud)', padding: '10px 0', borderBottom: '1px solid var(--gp-grey-200)' }}>
@@ -139,7 +163,7 @@ export default function Catalog() {
       <div className="gp-wrap" style={{ paddingTop: 32, paddingBottom: 64, display: 'grid', gridTemplateColumns: '220px 1fr', gap: 32, alignItems: 'start' }} id="catalog-main">
         {/* Sidebar filter */}
         <aside className={`gp-catalog-sidebar${filterOpen ? ' open' : ''}`}
-          style={{ position: 'sticky', top: 90 }}>
+          style={{ position: 'sticky', top: 176 }}>
           <FilterSection title="หมวดหมู่">
             {CATEGORIES.map((c) => (
               <FilterItem key={c.slug} label={`${c.label} (${c.count})`}
@@ -250,6 +274,26 @@ function FilterItem({ label, active, onClick }) {
       }}>
         {active && <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3"><path d="M20 6L9 17l-5-5"/></svg>}
       </span>
+      {label}
+    </button>
+  );
+}
+
+function QuickPill({ label, active, onClick }) {
+  return (
+    <button onClick={onClick} style={{
+      flex: '0 0 auto',
+      padding: '7px 14px',
+      borderRadius: 20,
+      border: `1.5px solid ${active ? 'var(--gp-navy)' : 'var(--gp-grey-200)'}`,
+      background: active ? 'var(--gp-navy)' : '#fff',
+      color: active ? '#fff' : 'var(--gp-navy)',
+      fontSize: 13,
+      fontWeight: active ? 600 : 500,
+      cursor: 'pointer',
+      whiteSpace: 'nowrap',
+      transition: '.15s',
+    }}>
       {label}
     </button>
   );

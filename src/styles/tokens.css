@@ -386,6 +386,34 @@ button { font-family: inherit; cursor: pointer; }
   .gp-filter-toggle      { display: flex !important; }
 }
 
+/* Catalog quick-pick filter bar */
+.gp-quick-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;          /* Firefox */
+  -ms-overflow-style: none;       /* IE/Edge */
+  scroll-padding-left: 4px;
+  -webkit-overflow-scrolling: touch;
+}
+.gp-quick-row::-webkit-scrollbar { display: none; }  /* Chrome/Safari */
+.gp-quick-label {
+  flex: 0 0 auto;
+  font-family: var(--gp-font-head);
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--gp-navy);
+  padding-right: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  position: sticky;
+  left: 0;
+  background: #fff;
+  z-index: 1;
+}
+
 /* Mobile quote fab — avoid overlap with Floating */
 @media (max-width: 560px) {
   .gp-quote-fab { bottom: 80px !important; }
