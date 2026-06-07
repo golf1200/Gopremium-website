@@ -172,7 +172,7 @@ export default function OccasionPage() {
         {/* CTA */}
         <section style={{ marginTop: 48, textAlign: 'center', background: 'linear-gradient(135deg,#16293F,var(--gp-navy))', borderRadius: 'var(--gp-radius-lg)', padding: 'clamp(28px,4vw,44px)' }}>
           <h2 style={{ color: '#fff', fontSize: 'clamp(20px,2.5vw,26px)', fontFamily: 'var(--gp-font-head)' }}>พร้อมเริ่มของขวัญสำหรับ{label}แล้วหรือยัง?</h2>
-          <p style={{ color: '#CBD7E8', fontSize: 14.5, marginTop: 10, maxWidth: '50ch', marginInline: 'auto' }}>ให้ AI ช่วยคิดเซ็ตที่ใช่ หรือขอใบเสนอราคาฟรี ทีมงานตอบกลับภายใน 48 ชม.</p>
+          <p style={{ color: '#CBD7E8', fontSize: 14.5, marginTop: 10, maxWidth: '50ch', marginInline: 'auto' }}>ให้ AI ช่วยคิดเซ็ตที่ใช่ หรือขอใบเสนอราคาฟรี ทีมงานตอบกลับภายใน 2 ชม.</p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', marginTop: 22, flexWrap: 'wrap' }}>
             <Link to="/#ai" className="gp-btn gp-btn-primary gp-btn-lg" style={{ textDecoration: 'none' }}>ให้ AI ช่วยคิด</Link>
             <Link to="/quote" className="gp-btn gp-btn-ghost gp-btn-lg" style={{ textDecoration: 'none', color: '#fff', borderColor: 'rgba(255,255,255,.4)' }}>ขอใบเสนอราคา</Link>

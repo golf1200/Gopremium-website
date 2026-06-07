@@ -23,7 +23,7 @@ export default function QuotePage() {
 
   useMeta({
     title: 'ใบขอราคา — GO PREMIUM',
-    description: 'ส่งใบขอราคาสินค้าพรีเมียม ทีมเราจะตอบกลับภายใน 48 ชม.',
+    description: 'ส่งใบขอราคาสินค้าพรีเมียม ทีมเราจะตอบกลับภายใน 2 ชม.',
     canonical: `${site.siteUrl}/quote`,
   });
 
@@ -83,7 +83,7 @@ export default function QuotePage() {
         <div className="gp-wrap">
           <Breadcrumbs crumbs={[{ label: 'หน้าแรก', href: '/' }, { label: 'ใบขอราคา' }]} />
           <h1 style={{ color: '#fff', fontSize: 'clamp(22px,3vw,32px)', marginTop: 12, fontFamily: 'var(--gp-font-head)' }}>ใบขอราคา</h1>
-          <p style={{ color: '#CBD7E8', fontSize: 14, marginTop: 5 }}>ตอบกลับพร้อมราคาและ mockup ภายใน 48 ชม.</p>
+          <p style={{ color: '#CBD7E8', fontSize: 14, marginTop: 5 }}>ตอบกลับพร้อมราคาและ mockup ภายใน 2 ชม.</p>
         </div>
       </div>
 
@@ -92,7 +92,7 @@ export default function QuotePage() {
           <div style={{ width: 72, height: 72, borderRadius: '50%', background: 'rgba(34,197,94,.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px', fontSize: 36 }}>✅</div>
           <h2 style={{ color: 'var(--gp-navy)', fontSize: 26 }}>ส่งใบขอราคาสำเร็จ</h2>
           <p style={{ color: 'var(--gp-grey)', marginTop: 10, lineHeight: 1.65 }}>
-            ทีม GO PREMIUM จะติดต่อกลับที่ <b style={{ color: 'var(--gp-navy)' }}>{f.contact}</b> พร้อมไอเดียและช่วงราคาภายใน 48 ชม.
+            ทีม GO PREMIUM จะติดต่อกลับที่ <b style={{ color: 'var(--gp-navy)' }}>{f.contact}</b> พร้อมไอเดียและช่วงราคาภายใน 2 ชม.
           </p>
           <div style={{ display: 'flex', gap: 10, justifyContent: 'center', marginTop: 28 }}>
             <Link to="/" className="gp-btn gp-btn-ghost" style={{ textDecoration: 'none' }}>หน้าแรก</Link>
@@ -184,7 +184,7 @@ export default function QuotePage() {
             <div style={{ background: '#fff', borderRadius: 12, padding: '16px 20px', boxShadow: 'var(--gp-shadow)' }}>
               {[
                 ['🛡️', 'ปลอดภัย ไม่มีข้อผูกมัด', 'ขอราคาฟรี ไม่มีค่าใช้จ่าย'],
-                ['⏱️', 'ตอบกลับ 48 ชม.', 'พร้อม mockup และช่วงราคา'],
+                ['⏱️', 'ตอบกลับ 2 ชม.', 'พร้อม mockup และช่วงราคา'],
                 ['🎨', 'Mockup ก่อนผลิตทุกครั้ง', 'เห็นผลจริงก่อนตัดสินใจ'],
               ].map(([icon, t, d]) => (
                 <div key={t} style={{ display: 'flex', alignItems: 'flex-start', gap: 12, marginBottom: 12 }}>

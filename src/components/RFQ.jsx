@@ -63,9 +63,9 @@ export default function RFQ({ prefill }) {
         <div>
           <span className="gp-eyebrow on-dark"><span className="dot" />ขอใบเสนอราคา · ปรึกษาฟรี</span>
           <h2 className="gp-h2 gp-h2-xl on-dark" style={{ marginTop: 16, maxWidth: '15ch' }}>เริ่มของขวัญชิ้นต่อไปของคุณ</h2>
-          <p className="gp-lead on-dark" style={{ marginTop: 14, maxWidth: '42ch' }}>กรอกข้อมูลสั้นๆ ทีมเราจะตอบกลับพร้อมไอเดียและช่วงราคาภายใน 48 ชม. ปรึกษาฟรี ไม่มีข้อผูกมัด</p>
+          <p className="gp-lead on-dark" style={{ marginTop: 14, maxWidth: '42ch' }}>กรอกข้อมูลสั้นๆ ทีมเราจะตอบกลับพร้อมไอเดียและช่วงราคาภายใน 2 ชม. ปรึกษาฟรี ไม่มีข้อผูกมัด</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginTop: 26 }}>
-            {[['shield','นิติบุคคลจดทะเบียน เชื่อถือได้'],['clock','ตอบกลับ + เสนอราคาใน 48 ชม.'],['palette','Mockup ก่อนผลิตเสมอ']].map((x, i) => (
+            {[['shield','นิติบุคคลจดทะเบียน เชื่อถือได้'],['clock','ตอบกลับ + เสนอราคาใน 2 ชม.'],['palette','Mockup ก่อนผลิตเสมอ']].map((x, i) => (
               <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 11, color: '#CBD7E8', fontSize: 14 }}>
                 <span style={{ width: 34, height: 34, borderRadius: 9, background: 'rgba(244,189,68,.15)', color: 'var(--gp-mustard)', display: 'flex', alignItems: 'center', justifyContent: 'center', flex: '0 0 auto' }}>
                   <GpIcon name={x[0]} size={18} />
@@ -83,7 +83,7 @@ export default function RFQ({ prefill }) {
               </div>
               <h3 style={{ fontSize: 23, color: 'var(--gp-navy)' }}>ได้รับคำขอแล้ว ขอบคุณค่ะ</h3>
               <p style={{ fontSize: 14, color: 'var(--gp-grey)', marginTop: 10, maxWidth: '36ch', marginLeft: 'auto', marginRight: 'auto' }}>
-                ทีม GO PREMIUM จะติดต่อกลับที่ <b style={{ color: 'var(--gp-navy)' }}>{f.contact}</b> พร้อมไอเดียและช่วงราคาภายใน 48 ชม.
+                ทีม GO PREMIUM จะติดต่อกลับที่ <b style={{ color: 'var(--gp-navy)' }}>{f.contact}</b> พร้อมไอเดียและช่วงราคาภายใน 2 ชม.
               </p>
               <button className="gp-btn gp-btn-ghost" style={{ marginTop: 22 }}
                 onClick={() => { setSent(false); setF({ name:'', contact:'', occasion:'ของขวัญปีใหม่พนักงาน', qty:'', date:'', budget:'', details:'' }); }}>

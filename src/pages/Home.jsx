@@ -29,7 +29,7 @@ import Hero from '../components/Hero';
 export default function Home() {
   useMeta({
     title: 'GO PREMIUM — ของพรีเมียมพิมพ์โลโก้ B2B ครบวงจร',
-    description: 'ของที่ระลึกพรีเมียม ของขวัญองค์กร ของแจกพนักงาน พิมพ์โลโก้ได้ ราคาส่ง MOQ เริ่มต้น 50 ชิ้น ตอบกลับภายใน 48 ชม.',
+    description: 'ของที่ระลึกพรีเมียม ของขวัญองค์กร ของแจกพนักงาน พิมพ์โลโก้ได้ ราคาส่ง MOQ เริ่มต้น 50 ชิ้น ตอบกลับภายใน 2 ชม.',
     canonical: site.siteUrl,
   });
 

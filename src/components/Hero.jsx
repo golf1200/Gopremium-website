@@ -74,7 +74,7 @@ export default function Hero({ onQuote }) {
               </div>
             </div>
             <div style={{ display: 'flex', gap: 26, flexWrap: 'wrap', marginTop: 34 }}>
-              {[['7–14 วัน', 'งานพร้อมส่ง'], ['48 ชม.', 'ตอบกลับ + เสนอราคา'], ['100%', 'Mockup ก่อนผลิต']].map((s, i) => (
+              {[['7–14 วัน', 'งานพร้อมส่ง'], ['2 ชม.', 'ตอบกลับ + เสนอราคา'], ['100%', 'Mockup ก่อนผลิต']].map((s, i) => (
                 <div key={i}>
                   <div style={{ fontFamily: 'var(--gp-font-head)', fontWeight: 700, fontSize: 24, color: 'var(--gp-navy)' }}>{s[0]}</div>
                   <div style={{ fontSize: 12.5, color: 'var(--gp-grey)' }}>{s[1]}</div>
