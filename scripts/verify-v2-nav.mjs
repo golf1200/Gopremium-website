@@ -80,6 +80,41 @@ ok('3a. /express shows "สินค้าส่งด่วน 7–14 วัน
 ok('3b. /express shows service points', expApp.includes('ตอบกลับ') && expApp.includes('Mockup'));
 ok('3c. /express has quote CTA', expApp.includes('ขอใบเสนอราคา'));
 
+// 6. Catalogue (สินค้าทั้งหมด) — new filters + AI filter
+await page.goto(`${BASE}/#/all`, { waitUntil: 'networkidle' });
+await page.waitForTimeout(150);
+ok('6a. occasion filter group present', await page.locator('#occFilter button').count() >= 6);
+ok('6b. budget (tier) filter group present', await page.locator('#tierFilter button').count() >= 5);
+ok('6c. AI filter input present', await page.locator('#aifq').count() === 1);
+const totalCount = await page.locator('#countLbl').innerText();
+
+// budget filter by price (value = ไม่เกิน ฿60): every shown card price must be ≤ 60
+await page.locator('#tierFilter button[data-tier="value"]').click();
+await page.waitForTimeout(120);
+const valuePrices = await page.evaluate(() => [...document.querySelectorAll('#grid .pcard .pprice')].map(e => parseInt(e.textContent.replace(/[^\d]/g, ''), 10)).filter(n => n > 0));
+ok('6d. budget=value shows only ≤฿60 (derived from price)', valuePrices.length > 0 && valuePrices.every(p => p <= 60), `max=${Math.max(...valuePrices)} n=${valuePrices.length}`);
+ok('6e. budget filter shows a removable chip', (await page.locator('#afchips .afchip').count()) >= 1);
+
+// occasion filter narrows to mapped categories
+await page.locator('#afchips [data-clr="all"]').click();
+await page.waitForTimeout(80);
+await page.locator('#occFilter button[data-occ="newyear"]').click();
+await page.waitForTimeout(120);
+const occCats = await page.evaluate(() => [...document.querySelectorAll('#grid .pcard .pchip')].map(e => e.textContent.trim()));
+ok('6f. occasion=ปีใหม่ narrows results', occCats.length > 0 && occCats.length < 245);
+
+// AI filter: "ของขวัญปีใหม่ งบ 100" → sets occasion + budget chips, results respect ≤100
+await page.locator('#afchips [data-clr="all"]').click();
+await page.waitForTimeout(80);
+await page.fill('#aifq', 'ของขวัญปีใหม่พนักงาน งบ 100 กระบอกน้ำ');
+await page.locator('.aifilter button').click();
+await page.waitForTimeout(150);
+const aiChips = await page.locator('#afchips .afchip').allInnerTexts();
+const aiPrices = await page.evaluate(() => [...document.querySelectorAll('#grid .pcard .pprice')].map(e => parseInt(e.textContent.replace(/[^\d]/g, ''), 10)).filter(n => n > 0));
+ok('6g. AI filter parsed budget (≤฿100)', aiPrices.length === 0 || aiPrices.every(p => p <= 100), `max=${aiPrices.length ? Math.max(...aiPrices) : 'n/a'}`);
+ok('6h. AI filter set category chip (กระบอก→drinkware)', aiChips.some(c => c.includes('หมวด')), aiChips.join(' / '));
+ok('6i. AI filter no console errors', consoleErrors.length === 0);
+
 // 4. No console errors anywhere
 ok('4. no console/page errors', consoleErrors.length === 0, consoleErrors.slice(0, 3).join(' | '));
 

@@ -59,7 +59,8 @@ input,select,textarea{font-family:var(--body)}
 .hd{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
 .hd-row{display:flex;align-items:center;justify-content:space-between;height:74px}
 .brand{display:flex;align-items:center;gap:12px}
-.brand .mark{height:46px;width:46px;object-fit:contain}
+.brand .logo{height:42px;width:auto;display:block}
+@media(max-width:600px){.brand .logo{height:34px}}
 .brand .word{font-family:var(--head);font-weight:700;font-size:21px;letter-spacing:.04em;color:var(--navy);line-height:1}
 .brand .word b{color:var(--mustard-deep);font-weight:700}
 .brand .word small{display:block;font-family:var(--head);font-size:9px;font-weight:400;letter-spacing:.3em;color:var(--grey-400);margin-top:4px}
@@ -233,6 +234,13 @@ input,select,textarea{font-family:var(--body)}
 .search input{border:none;outline:none;font-size:14.5px;width:100%;background:none}
 .sortsel{font-family:var(--head);border:1.5px solid var(--line);border-radius:var(--pill);padding:9px 14px;font-size:13.5px;color:var(--navy);background:#fff;outline:none}
 .filter-toggle{display:none}
+.aifilter{background:linear-gradient(165deg,var(--navy),var(--navy-700));border-radius:var(--r-lg);padding:16px 18px;margin-bottom:18px}
+.aifilter .cap{font-family:var(--head);font-size:12.5px;color:var(--mustard);margin-bottom:9px;display:flex;align-items:center;gap:7px;font-weight:500}
+.aifilter .row{display:flex;gap:9px;flex-wrap:wrap}
+.aifilter input{flex:1;min-width:200px;border:none;outline:none;border-radius:var(--pill);padding:11px 16px;font-size:14.5px;color:var(--navy)}
+.afchips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.afchip{display:inline-flex;align-items:center;gap:7px;font-family:var(--head);font-size:12.5px;background:var(--mustard-soft);color:#6B4E08;border:none;border-radius:var(--pill);padding:6px 12px}
+.afchip .x{cursor:pointer;font-weight:700;opacity:.55}.afchip .x:hover{opacity:1}
 .crumbs{font-size:13.5px;color:var(--grey);margin-bottom:18px}.crumbs a:hover{color:var(--navy)}.crumbs b{color:var(--navy)}
 .count-lbl{font-size:14px;color:var(--grey);margin-bottom:16px}.count-lbl b{color:var(--navy)}
 
@@ -282,6 +290,7 @@ input,select,textarea{font-family:var(--body)}
 .ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.3fr;gap:32px;padding:56px 0 8px}
 .ft .word{font-family:var(--head);font-weight:700;font-size:24px;color:#fff;letter-spacing:.04em}.ft .word b{color:var(--mustard)}
 .ft .word small{display:block;font-size:9px;font-weight:400;letter-spacing:.3em;color:#A9BBD2;margin-top:4px}
+.ft .logo-ft{height:46px;width:auto;display:block}
 .ft p{font-size:14px;color:#A9BBD2;max-width:42ch;line-height:1.7;margin-top:14px}
 .ft h4{font-family:var(--head);font-size:14px;font-weight:500;color:#fff;margin-bottom:14px}
 .ft ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
@@ -315,8 +324,7 @@ input,select,textarea{font-family:var(--body)}
 <header class="hd">
   <div class="wrap hd-row">
     <a class="brand" href="#/" aria-label="GO PREMIUM">
-      <img class="mark" src="logo.png" alt="GO PREMIUM" onerror="this.src='GoPremium Logo Navy-yellow.png'">
-      <span class="word">GO <b>PREMIUM</b><small>ผลิตของพรีเมียม</small></span>
+      <img class="logo" src="logo.png" alt="GO PREMIUM" onerror="this.onerror=null;this.src='icon.png'">
     </a>
     <nav class="nav">
       <a href="#/">หน้าแรก</a>
@@ -341,7 +349,7 @@ input,select,textarea{font-family:var(--body)}
 <footer class="ft" id="footer">
   <div class="wrap ft-grid">
     <div>
-      <span class="word">GO <b>PREMIUM</b><small>ผลิตของพรีเมียม</small></span>
+      <img class="logo-ft" src="logo-white.png" alt="GO PREMIUM" onerror="this.onerror=null;this.src='icon-white.png'">
       <p>GO PREMIUM โดย Passion Grow Trading — ออกแบบและผลิตของพรีเมียมและของขวัญองค์กรที่เปลี่ยน “ของแจก” ให้เป็น “ประสบการณ์ที่น่าจดจำ” ครบตั้งแต่คอนเซ็ปต์ ดีไซน์ ผลิต ถึงส่งมอบ</p>
       <p style="font-family:var(--head);color:var(--mustard);font-weight:300;margin-top:10px">Go beyond the gift</p>
     </div>
@@ -611,16 +619,32 @@ function viewHome(){
 function askAI(){const v=(document.getElementById('aiq')||{}).value||'';location.hash='#/quote';setTimeout(()=>{const d=document.querySelector('#quoteForm [name=details]');if(d&&v)d.value=v;},120);}
 
 /* ===== CATALOGUE ===== */
-let FILTER={cat:'all',tier:'all',q:'',sort:'pop'};
-function viewCatalogue(preset){
-  FILTER={cat:preset||'all',tier:'all',q:'',sort:'pop'};setTimeout(renderGrid,0);
+// งบ/ชิ้น คำนวณจากราคาจริง (สินค้าส่วนใหญ่ field tier ว่าง) — ช่วงตรงกับ GP_TIERLABELS
+function priceTier(pr){if(!pr)return '';return pr<=60?'value':pr<=150?'smart':pr<=300?'premium':'executive';}
+// ตัวกรอง "เลือกตามโอกาส" — แมปโอกาส → หมวดสินค้าที่เหมาะ (และช่วงงบถ้ามี) แก้ไข/เพิ่มได้ที่นี่
+const OCC_FILTERS=[
+  {k:'newyear',label:'🎁 ปีใหม่',cats:['giftset','drinkware','lifestyle']},
+  {k:'welcome',label:'👋 ต้อนรับพนักงานใหม่',cats:['drinkware','bags','stationery']},
+  {k:'vip',label:'💎 ลูกค้า / ผู้บริหาร VIP',cats:['giftset','lifestyle','drinkware'],tier:['premium','executive']},
+  {k:'event',label:'🎤 อีเวนต์ & สัมมนา',cats:['bags','stationery','fan','umbrella']},
+  {k:'eco',label:'🌿 รักษ์โลก / ESG',cats:['lifestyle','bags','drinkware']},
+  {k:'milestone',label:'🏆 ครบรอบ & Milestone',cats:['drinkware','giftset','souvenir']},
+];
+let FILTER={cat:'all',occ:'all',tier:'all',pmax:0,q:'',sort:'pop'};
+function viewCatalogue(opts){
+  const o=typeof opts==='string'?{cat:opts}:(opts||{});
+  FILTER={cat:o.cat||'all',occ:o.occ||'all',tier:o.tier||'all',pmax:0,q:'',sort:'pop'};
+  setTimeout(()=>{renderGrid();syncControls();},0);
+  const occBtns=[['all','ทุกโอกาส'],...OCC_FILTERS.map(x=>[x.k,x.label])].map(([k,lab])=>`<button data-occ="${k}" class="${k===FILTER.occ?'on':''}">${esc(lab)}</button>`).join('');
   const catBtns=['all',...catList].map(c=>`<button data-cat="${c}" class="${c===FILTER.cat?'on':''}">${c==='all'?'ทั้งหมด':esc(CL[c])}<span class="n">${c==='all'?P.length:byCat[c].length}</span></button>`).join('');
   const tierBtns=['all','value','smart','premium','executive'].map(t=>`<button data-tier="${t}" class="${t===FILTER.tier?'on':''}">${t==='all'?'ทุกงบ':esc(TL[t])}</button>`).join('');
   return `<section class="sec" style="padding-top:34px"><div class="wrap">
-    <div class="crumbs"><a href="#/">หน้าแรก</a> / <b id="crumbCat">แคตตาล็อก</b></div>
+    <div class="crumbs"><a href="#/">หน้าแรก</a> / <b id="crumbCat">สินค้าทั้งหมด</b></div>
     <div class="cat-layout">
-      <aside class="side" id="side"><h4>หมวดหมู่</h4><div class="flist" id="catFilter">${catBtns}</div><h4>งบประมาณ / ชิ้น</h4><div class="flist" id="tierFilter">${tierBtns}</div></aside>
+      <aside class="side" id="side"><h4>เลือกตามโอกาส</h4><div class="flist" id="occFilter">${occBtns}</div><h4>หมวดหมู่</h4><div class="flist" id="catFilter">${catBtns}</div><h4>งบประมาณ / ชิ้น</h4><div class="flist" id="tierFilter">${tierBtns}</div></aside>
       <div>
+        <div class="aifilter"><div class="cap">✦ AI ช่วยกรอง — พิมพ์โจทย์เป็นภาษาคน เดี๋ยวจัดตัวกรองให้</div><div class="row"><input id="aifq" placeholder="เช่น ของขวัญปีใหม่พนักงาน งบ 200 กระบอกน้ำ"><button class="btn btn-secondary" onclick="aiFilter()">✦ กรองด้วย AI</button></div></div>
+        <div class="afchips" id="afchips"></div>
         <div class="toolbar"><button class="btn btn-ghost btn-sm filter-toggle" id="ftoggle">ตัวกรอง ▾</button>
           <div class="search"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#8A93A2" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4-4"/></svg><input id="q" placeholder="ค้นหาสินค้า เช่น กระบอกน้ำ, ปากกา, เป้..."></div>
           <select class="sortsel" id="sort"><option value="pop">เรียง: แนะนำ</option><option value="low">ราคาน้อย→มาก</option><option value="high">ราคามาก→น้อย</option><option value="name">ชื่อ A→Z</option></select></div>
@@ -632,8 +656,10 @@ function viewCatalogue(preset){
 function renderGrid(){
   const grid=document.getElementById('grid');if(!grid)return;
   let l=P.slice();
+  if(FILTER.occ&&FILTER.occ!=='all'){const o=OCC_FILTERS.find(x=>x.k===FILTER.occ);if(o)l=l.filter(p=>o.cats.includes(p.catSlug)&&(!o.tier||o.tier.includes(priceTier(p.price))));}
   if(FILTER.cat!=='all')l=l.filter(p=>p.catSlug===FILTER.cat);
-  if(FILTER.tier!=='all')l=l.filter(p=>p.tier===FILTER.tier);
+  if(FILTER.tier&&FILTER.tier!=='all')l=l.filter(p=>priceTier(p.price)===FILTER.tier);
+  if(FILTER.pmax)l=l.filter(p=>p.price&&p.price<=FILTER.pmax);
   if(FILTER.q){const q=FILTER.q.toLowerCase();l=l.filter(p=>(p.name+' '+p.features+' '+p.cat).toLowerCase().includes(q));}
   if(FILTER.sort==='low')l.sort((a,b)=>(a.price||1e9)-(b.price||1e9));
   else if(FILTER.sort==='high')l.sort((a,b)=>(b.price||0)-(a.price||0));
@@ -643,11 +669,57 @@ function renderGrid(){
   document.getElementById('countLbl').innerHTML=`พบ <b>${l.length}</b> รายการ`;
   const cc=document.getElementById('crumbCat');if(cc)cc.textContent=FILTER.cat==='all'?'สินค้าทั้งหมด':CL[FILTER.cat];
 }
+// แสดง chip ตัวกรองที่ใช้อยู่ + ปุ่มลบ
+function renderChips(){
+  const box=document.getElementById('afchips');if(!box)return;
+  const c=[];
+  if(FILTER.occ&&FILTER.occ!=='all'){const o=OCC_FILTERS.find(x=>x.k===FILTER.occ);c.push(['occ','โอกาส: '+(o?o.label:FILTER.occ)]);}
+  if(FILTER.cat!=='all')c.push(['cat','หมวด: '+CL[FILTER.cat]]);
+  if(FILTER.tier&&FILTER.tier!=='all')c.push(['tier','งบ: '+TL[FILTER.tier]]);
+  if(FILTER.pmax)c.push(['pmax','งบไม่เกิน ฿'+FILTER.pmax]);
+  if(FILTER.q)c.push(['q','คำค้น: '+FILTER.q]);
+  box.innerHTML=c.length?c.map(x=>`<span class="afchip"><b>${esc(x[1])}</b><span class="x" data-clr="${x[0]}">✕</span></span>`).join('')+`<span class="afchip" data-clr="all" style="cursor:pointer;background:var(--cloud);color:var(--navy)">ล้างทั้งหมด</span>`:'';
+}
+// อัปเดตสถานะปุ่ม + input ให้ตรงกับ FILTER (ใช้หลัง AI filter / ลบ chip)
+function syncControls(){
+  const set=(id,attr,val)=>{const box=document.getElementById(id);if(box)box.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset[attr]===val));};
+  set('occFilter','occ',FILTER.occ||'all');
+  set('catFilter','cat',FILTER.cat||'all');
+  set('tierFilter','tier',FILTER.tier||'all');
+  const q=document.getElementById('q');if(q)q.value=FILTER.q||'';
+  renderChips();
+}
+// AI Filter — local heuristic (ไม่เรียก API): แปลงข้อความ → ตัวกรอง
+function aiFilter(){
+  const s=((document.getElementById('aifq')||{}).value||'').trim();if(!s)return;
+  const t=s.toLowerCase();
+  FILTER.occ='all';FILTER.cat='all';FILTER.tier='all';FILTER.pmax=0;FILTER.q='';
+  let matched=false;
+  const num=(t.match(/(\d[\d,]{0,6})/)||[])[1];
+  if(num){const n=+num.replace(/,/g,'');if(n>0&&n<100000){FILTER.pmax=n;matched=true;}}
+  const OCCKW=[['newyear',/ปีใหม่|new ?year|ปลายปี|สงกรานต์/],['welcome',/ต้อนรับ|พนักงานใหม่|onboard|welcome|วันแรก/],['vip',/vip|ผู้บริหาร|ลูกค้าคนสำคัญ|คู่ค้า|exclusive|หรู|พรีเมียมสุด/],['event',/อีเวนต์|สัมมนา|event|ออกบูธ|บูธ|แจกงาน|งานแสดง/],['eco',/รักษ์โลก|eco|esg|ยั่งยืน|green|รีไซเคิล/],['milestone',/ครบรอบ|milestone|รางวัล|เกษียณ|ความสำเร็จ/]];
+  for(const [k,re] of OCCKW){if(re.test(t)){FILTER.occ=k;matched=true;break;}}
+  const CATKW=[['drinkware',/กระบอก|แก้ว|น้ำ|ดื่ม|tumbler/],['bags',/กระเป๋า|เป้|ถุง|bag/],['stationery',/ปากกา|สมุด|เครื่องเขียน|โน้ต|note|pen/],['fan',/พัดลม|fan/],['powerbank',/พาวเวอร์|powerbank|แบตสำรอง/],['umbrella',/ร่ม|umbrella/],['giftset',/เซ็ต|กิฟต์|gift ?set|ชุดของขวัญ/],['hat',/หมวก|cap/],['garment',/เสื้อ|polo|garment/],['lifestyle',/ไลฟ์สไตล์|ของใช้|lifestyle/]];
+  for(const [k,re] of CATKW){if(re.test(t)){FILTER.cat=k;matched=true;break;}}
+  // กัน occ+cat ที่ขัดกันจนผลว่าง — หมวดเจาะจงชนะ
+  if(FILTER.occ!=='all'&&FILTER.cat!=='all'){const o=OCC_FILTERS.find(x=>x.k===FILTER.occ);if(o&&!o.cats.includes(FILTER.cat))FILTER.occ='all';}
+  if(!matched)FILTER.q=s;
+  renderGrid();syncControls();
+}
+function clearDim(k){
+  if(k==='all'){FILTER.occ='all';FILTER.cat='all';FILTER.tier='all';FILTER.pmax=0;FILTER.q='';const a=document.getElementById('aifq');if(a)a.value='';}
+  else if(k==='pmax')FILTER.pmax=0;else if(k==='q')FILTER.q='';else FILTER[k]=k==='cat'?'all':'all';
+  renderGrid();syncControls();
+}
 function bindCatalogue(){
-  const cf=document.getElementById('catFilter'),tf=document.getElementById('tierFilter');if(!cf)return;
-  cf.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;FILTER.cat=b.dataset.cat;mark(cf,b);renderGrid();});
-  tf.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;FILTER.tier=b.dataset.tier;mark(tf,b);renderGrid();});
-  document.getElementById('q').addEventListener('input',e=>{FILTER.q=e.target.value;renderGrid();});
+  const cf=document.getElementById('catFilter');if(!cf)return;
+  const of=document.getElementById('occFilter'),tf=document.getElementById('tierFilter');
+  of.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;FILTER.occ=b.dataset.occ;FILTER.cat='all';mark(of,b);renderGrid();syncControls();});
+  cf.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;FILTER.cat=b.dataset.cat;FILTER.occ='all';mark(cf,b);renderGrid();syncControls();});
+  tf.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;FILTER.tier=b.dataset.tier;mark(tf,b);renderGrid();syncControls();});
+  document.getElementById('afchips').addEventListener('click',e=>{const x=e.target.closest('[data-clr]');if(!x)return;clearDim(x.dataset.clr);});
+  document.getElementById('q').addEventListener('input',e=>{FILTER.q=e.target.value;renderGrid();renderChips();});
+  document.getElementById('aifq').addEventListener('keydown',e=>{if(e.key==='Enter')aiFilter();});
   document.getElementById('sort').addEventListener('change',e=>{FILTER.sort=e.target.value;renderGrid();});
   document.getElementById('ftoggle').addEventListener('click',()=>document.getElementById('side').classList.toggle('open'));
 }
@@ -734,7 +806,9 @@ function render(){
   if(h==='/'){app.innerHTML=viewHome();bindQuote();}
   else if(h==='/all'){app.innerHTML=viewCatalogue('all');bindCatalogue();}
   else if(h==='/quote'){app.innerHTML=viewQuote();bindQuote();}
-  else if((m=h.match(/^\/c\/(.+)$/))){app.innerHTML=viewCatalogue(decodeURIComponent(m[1]));bindCatalogue();}
+  else if((m=h.match(/^\/c\/(.+)$/))){app.innerHTML=viewCatalogue({cat:decodeURIComponent(m[1])});bindCatalogue();}
+  else if((m=h.match(/^\/o\/(.+)$/))){app.innerHTML=viewCatalogue({occ:decodeURIComponent(m[1])});bindCatalogue();}
+  else if((m=h.match(/^\/b\/(.+)$/))){app.innerHTML=viewCatalogue({tier:decodeURIComponent(m[1])});bindCatalogue();}
   else if((m=h.match(/^\/p\/(.+)$/))){app.innerHTML=viewProduct(decodeURIComponent(m[1]));}
   else if(h==='/about'){app.innerHTML=viewAbout();}
   else if(h==='/express'){app.innerHTML=viewExpress();}
