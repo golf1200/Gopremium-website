@@ -44,4 +44,4 @@ export const formspreeId = 'xbdejbyr'; // https://formspree.io/f/xbdejbyr → in
 // generate_lead / contact_line plumbing is live and starts measuring the
 // moment a real ID is added. No other file needs editing.
 // ---------------------------------------------------------------------------
-export const gaId = ''; // e.g. 'G-ABC1234XYZ'
+export const gaId = 'G-JTMVQM245Y'; // GA4 Measurement ID → GoPremium Website stream
