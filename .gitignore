@@ -11,3 +11,6 @@ dev_err.log
 scripts/.1688-profile/
 scripts/scrape-1688-results.json
 .commit-msg.tmp
+
+# Generated reports (regenerate with scripts/build-product-master-xlsx.mjs)
+PRODUCT-MASTER.xlsx
