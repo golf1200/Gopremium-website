@@ -1,0 +1,32 @@
+[
+  {
+    "sku": "DW001",
+    "mode": "main",
+    "input": "C:/Users/Golf/Gopremium-website/Gopremium new version/รูปสินค้า/1.Drinkware/DW001 - Loopa/AW กระบอกน้ำสแตนเลส รุ่น Loopa/1.png",
+    "prompt": "Place THIS exact stainless tumbler on a clean light wooden café table beside a window, a softly blurred coffee cup and a small plant in the background, warm morning light."
+  },
+  {
+    "sku": "BG001",
+    "mode": "main",
+    "input": "C:/Users/Golf/Gopremium-website/Gopremium new version/รูปสินค้า/3.Bag/BG001 - classic/กระเป๋าผ้า รุ่น Classic/1.png",
+    "prompt": "Show THIS exact natural canvas tote bag standing upright on a light neutral surface in a bright minimal studio with soft daylight from the side."
+  },
+  {
+    "sku": "ST001",
+    "mode": "main",
+    "input": "C:/Users/Golf/Gopremium-website/Gopremium new version/รูปสินค้า/2.Stationery/ST001 - ปากกา รุ่น oxygen/O1CN017FYb381VhJtr7Bt0t_!!2200616692684-0-cib.jpg",
+    "prompt": "Remove the decorative picture frame and ALL text, then place THIS exact pen on a tidy premium light-wood office desk beside an open notebook and a small plant, soft daylight from the left."
+  },
+  {
+    "sku": "DW001",
+    "mode": "clean",
+    "out": "02",
+    "input": "C:/Users/Golf/Gopremium-website/Gopremium new version/รูปสินค้า/1.Drinkware/DW001 - Loopa/O1CN012PctJN1oHBzlPASMV_!!2811215199-0-cib.jpg"
+  },
+  {
+    "sku": "BG001",
+    "mode": "clean",
+    "out": "02",
+    "input": "C:/Users/Golf/Gopremium-website/Gopremium new version/รูปสินค้า/3.Bag/BG001 - classic/O1CN012OUKJL1OaiurLdVr9_!!2211638321722-0-cib.jpg"
+  }
+]

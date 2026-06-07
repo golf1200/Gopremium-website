@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GO PREMIUM — Hero Banner · ออกแบบใหม่ (เลือกแบบ)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1F3A5F; --navy-soft:#2C4F7C; --navy-700:#16293F;
+  --mustard:#F4BD44; --mustard-deep:#E0A92B; --mustard-soft:#F8D586;
+  --ink:#1A2230; --grey:#5B6472; --grey-400:#8A93A2;
+  --cloud:#F5F6F8; --cloud-2:#EEF1F5; --line:#E3E7ED;
+  --r:16px; --r-lg:24px; --r-xl:32px; --pill:999px;
+  --sh:0 18px 50px -18px rgba(31,58,95,.30);
+  --sh-md:0 12px 34px -14px rgba(31,58,95,.22);
+  --sh-sm:0 4px 16px -6px rgba(31,58,95,.16);
+  --head:'Kanit',sans-serif; --body:'Sarabun',sans-serif;
+  --maxw:1240px; --gut:clamp(20px,5vw,64px);
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;font-family:var(--body);color:var(--ink);background:#EDEFF3;line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--head);font-weight:600;line-height:1.12;margin:0;letter-spacing:-.01em}
+h1{font-weight:700}
+p{margin:0}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gut)}
+
+/* buttons (matched to live site) */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--head);font-weight:500;font-size:15px;padding:12px 23px;border-radius:var(--pill);border:1.5px solid transparent;line-height:1;white-space:nowrap;transition:.18s}
+.btn svg{width:17px;height:17px}
+.btn-primary{background:var(--mustard);color:var(--navy);box-shadow:0 10px 24px -10px rgba(244,189,68,.8)}
+.btn-primary:hover{background:var(--mustard-deep);transform:translateY(-2px)}
+.btn-secondary{background:var(--navy);color:#fff}
+.btn-ghost{background:transparent;color:var(--navy);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--navy)}
+.btn-lg{font-size:16px;padding:15px 30px}
+
+/* ===== page chrome ===== */
+.page-head{background:var(--navy);color:#fff;padding:34px 0 30px}
+.page-head h1{font-size:27px;color:#fff}
+.page-head p{color:#C7D4E6;margin:10px 0 0;font-size:15px;max-width:84ch}
+.page-head .note{margin-top:14px;font-size:13px;color:#9FB2CC;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:11px 15px;max-width:84ch}
+.page-head .note b{color:var(--mustard)}
+
+.opt{padding:46px 0 54px;border-bottom:1px solid #DEE2E9}
+.opt:nth-child(even){background:#F6F7FA}
+.opt-cap{display:flex;align-items:flex-start;gap:14px;margin-bottom:26px;flex-wrap:wrap}
+.badge{font-family:var(--head);font-weight:600;font-size:13px;background:var(--navy);color:#fff;border-radius:var(--pill);padding:6px 14px;white-space:nowrap;align-self:center}
+.badge.rec{background:var(--mustard);color:var(--navy)}
+.opt-cap .meta h3{font-size:20px;color:var(--navy)}
+.opt-cap .meta p{font-size:14px;color:var(--grey);margin-top:4px;max-width:74ch}
+
+/* ===== shared hero left column content ===== */
+.tag{display:inline-flex;align-items:center;gap:8px;font-family:var(--head);background:var(--mustard-soft);color:#6B4E08;font-weight:500;font-size:13px;padding:7px 15px;border-radius:var(--pill);margin-bottom:16px}
+.tag .dot{width:7px;height:7px;border-radius:50%;background:var(--mustard-deep)}
+.h-en{font-family:var(--head);font-weight:300;font-size:clamp(16px,1.6vw,20px);letter-spacing:.04em;color:var(--navy-soft);margin-bottom:14px}
+.h-title{font-weight:700;color:var(--navy);letter-spacing:-.025em;line-height:1.04;margin-bottom:12px}
+.h-title em{font-style:normal;color:var(--mustard-deep)}
+.h-lead{font-size:clamp(15px,1.2vw,17.5px);color:var(--grey);line-height:1.7;max-width:46ch}
+.h-lead b{color:var(--navy)}
+.ai-box{margin-top:20px;max-width:540px}
+.ai-box .cap{display:flex;align-items:center;gap:7px;margin-bottom:8px;font-size:12.5px;color:var(--grey);font-family:var(--head)}
+.ai-row{display:flex;gap:8px;background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:7px;box-shadow:var(--sh-sm)}
+.ai-row input{border:none;outline:none;flex:1;min-width:0;padding:8px 10px;font-size:14.5px;background:none}
+.ai-row .btn{padding:10px 16px}
+.hstats{display:flex;gap:30px;flex-wrap:wrap;margin-top:24px}
+.hstats .n{font-family:var(--head);font-weight:700;font-size:24px;color:var(--navy)}
+.hstats .l{font-size:12.5px;color:var(--grey)}
+.h-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+
+/* ===== shared image / carousel ===== */
+.hslides{position:relative;width:100%;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh);background:var(--cloud)}
+.htrack{display:flex;width:300%;height:100%;transition:transform .55s cubic-bezier(.4,0,.2,1)}
+.htrack .slide{width:33.3333%;height:100%;flex:0 0 auto;position:relative}
+.htrack img{width:100%;height:100%;object-fit:cover}
+.hdots{position:absolute;left:0;right:0;bottom:14px;z-index:3;display:flex;justify-content:center;gap:8px}
+.hdots i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.6);box-shadow:0 1px 3px rgba(31,58,95,.45);cursor:pointer;transition:.25s}
+.hdots i.on{background:var(--mustard);width:22px;border-radius:4px}
+
+/* keyword overlay variants */
+.kw-chip{position:absolute;z-index:2;left:18px;bottom:48px;display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--head);font-weight:600;font-size:15px;color:#fff;
+  background:rgba(22,41,63,.55);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.28);
+  padding:9px 16px;border-radius:var(--pill)}
+.kw-chip .dot{width:7px;height:7px;border-radius:50%;background:var(--mustard)}
+.kw-big{position:absolute;z-index:2;left:26px;bottom:54px;font-family:var(--head);font-weight:700;
+  color:#fff;font-size:clamp(30px,3.6vw,46px);line-height:1;letter-spacing:-.02em;
+  text-shadow:0 4px 22px rgba(15,25,40,.55)}
+.kw-big small{display:block;font-weight:400;font-size:.42em;letter-spacing:.06em;margin-top:8px;color:var(--mustard-soft)}
+.scrim-b{position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(15,25,40,.62) 0%,rgba(15,25,40,.12) 34%,transparent 60%)}
+.scrim-l{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(15,25,40,.55) 0%,rgba(15,25,40,.10) 38%,transparent 62%)}
+
+/* note ribbon inside each option */
+.specs{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.specs span{font-size:12.5px;font-family:var(--head);color:var(--navy);background:#fff;border:1px solid var(--line);border-radius:var(--pill);padding:6px 13px}
+.specs span b{color:var(--mustard-deep)}
+
+/* ================= OPTION A : Balanced 50/50 ================= */
+.heroA{background:linear-gradient(180deg,#FBFCFD,var(--cloud));border-radius:var(--r-xl);padding:clamp(30px,4vw,58px) clamp(26px,4vw,56px);position:relative;overflow:hidden}
+.heroA .glow{position:absolute;right:-6%;top:-24%;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle at 35% 35%,rgba(244,189,68,.26),transparent 60%);pointer-events:none}
+.heroA-in{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1.08fr;gap:clamp(34px,4vw,62px);align-items:center}
+.heroA .h-title{font-size:clamp(34px,4.4vw,58px)}
+.heroA .hslides{aspect-ratio:4/3}
+.heroA .htrack img{object-position:72% center}
+
+/* ================= OPTION B : Big Visual (image-forward) ================= */
+.heroB{background:linear-gradient(180deg,#FBFCFD,var(--cloud));border-radius:var(--r-xl);padding:clamp(28px,3.4vw,52px) clamp(26px,4vw,56px);position:relative;overflow:hidden}
+.heroB .glow{position:absolute;left:-10%;bottom:-30%;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(244,189,68,.22),transparent 62%);pointer-events:none}
+.heroB-in{position:relative;z-index:1;display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(30px,3.4vw,52px);align-items:center}
+.heroB .h-title{font-size:clamp(30px,3.8vw,50px)}
+.heroB .hslides{aspect-ratio:5/4}
+.heroB .htrack img{object-position:80% center}
+
+/* ================= OPTION C : Full-bleed editorial ================= */
+.heroC{position:relative;border-radius:var(--r-xl);overflow:hidden;background:var(--navy-700);min-height:560px;display:flex;align-items:stretch}
+.heroC-in{position:relative;z-index:2;display:grid;grid-template-columns:1.02fr .98fr;width:100%}
+.heroC .left{padding:clamp(34px,4vw,60px);align-self:center;color:#fff}
+.heroC .tag{background:rgba(244,189,68,.16);color:var(--mustard-soft);border:1px solid rgba(244,189,68,.4)}
+.heroC .h-en{color:#A9BCD6}
+.heroC .h-title{color:#fff}
+.heroC .h-title em{color:var(--mustard)}
+.heroC .h-lead{color:#C2CFE2}.heroC .h-lead b{color:#fff}
+.heroC .hstats .n{color:#fff}.heroC .hstats .l{color:#9FB2CC}
+.heroC .ai-row{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.18)}
+.heroC .ai-row input{color:#fff}
+.heroC .ai-row input::placeholder{color:#8FA3BE}
+.heroC .ai-box .cap{color:#9FB2CC}
+.heroC .right{position:relative}
+.heroC .hslides{position:absolute;inset:0;border-radius:0;box-shadow:none;width:100%;height:100%}
+.heroC .htrack,.heroC .htrack .slide{height:100%}
+.heroC .htrack img{object-position:82% center}
+.heroC .right::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(90deg,var(--navy-700) 0%,rgba(22,41,63,.35) 26%,transparent 52%)}
+.heroC .kw-big{bottom:auto;top:34px;right:34px;left:auto;text-align:right}
+
+@media(max-width:860px){
+  .heroA-in,.heroB-in,.heroC-in{grid-template-columns:1fr;gap:30px}
+  .heroC{min-height:0}
+  .heroC .right{min-height:340px}
+  .heroC .right::before{background:linear-gradient(0deg,var(--navy-700) 0%,transparent 55%)}
+}
+.foot{padding:40px 0 60px;text-align:center;color:var(--grey);font-size:14px}
+</style>
+</head>
+<body>
+
+<header class="page-head">
+  <div class="wrap">
+    <h1>GO PREMIUM — Hero Banner ออกแบบใหม่ · เลือกแบบ</h1>
+    <p>3 ตัวเลือกตามโจทย์: <b style="color:#fff">Hero ใหญ่ขึ้น</b> · รูปภาพใหญ่สมดุลกับตัวหนังสือฝั่งซ้าย · เอา headline/โลโก้ที่ฝังในรูปออก เหลือแค่ <b style="color:#fff">keyword สั้นๆ</b> (เพราะฝั่งซ้ายมีข้อความเยอะอยู่แล้ว)</p>
+    <div class="note">⚠️ <b>หมายเหตุ:</b> ตอนนี้รูป banner เดิมยัง “ฝัง” โลโก้ + headline มาในไฟล์ JPG — ใน mockup นี้ผมจึง <b>crop รูปเพื่อซ่อนข้อความเดิม</b> แล้ววาง keyword ทับด้วย HTML เพื่อให้เห็นคอนเซ็ปต์ก่อน เมื่อเลือกแบบได้แล้ว ขั้นถัดไปคือ <b>regenerate รูปสะอาด (ไม่มีตัวหนังสือ/โลโก้)</b> ผ่าน image-pipeline แล้วใช้ keyword overlay จริง</div>
+  </div>
+</header>
+
+<!-- ============ OPTION A ============ -->
+<section class="opt">
+  <div class="wrap">
+    <div class="opt-cap">
+      <span class="badge rec">แบบ A · แนะนำ</span>
+      <div class="meta">
+        <h3>Balanced 50 / 50 — สมดุลซ้าย-ขวา</h3>
+        <p>รูปใหญ่ขึ้นเป็นสัดส่วน 4:3 ขนาดใกล้เคียงกับฝั่งข้อความ · keyword เป็น “ป้ายแก้วฝ้า” (glass chip) มุมล่างซ้าย — เรียบ พรีเมียม ไม่แย่งสายตา</p>
+      </div>
+    </div>
+    <div class="wrap" style="padding:0">
+    <div class="heroA"><div class="glow"></div>
+      <div class="heroA-in">
+        <div class="hcopy">
+          <span class="tag"><span class="dot"></span>ของพรีเมียม & ของขวัญองค์กร · ดีไซน์เฉพาะแบรนด์</span>
+          <div class="h-en">Go beyond the gift</div>
+          <h1 class="h-title">มากกว่าของขวัญ<br>คือ<em>ประสบการณ์</em>ที่น่าจดจำ</h1>
+          <p class="h-lead">เราออกแบบและผลิตของพรีเมียมที่สะท้อนแบรนด์คุณ ครบตั้งแต่คอนเซ็ปต์ ดีไซน์ ผลิต ถึงส่งมอบ — และมี <b>AI ช่วยคิดเซ็ตของขวัญ</b> ให้ในไม่กี่วินาที</p>
+          <div class="ai-box">
+            <div class="cap">✦ ลองให้ AI ช่วยคิดของขวัญ — พิมพ์โจทย์ของคุณ</div>
+            <div class="ai-row"><input placeholder="เช่น ของขวัญปีใหม่พนักงาน 200 คน งบ 300฿ สายมินิมอล"><button class="btn btn-secondary">✦ ถาม AI</button></div>
+          </div>
+          <div class="hstats">
+            <div><div class="n">7–14 วัน</div><div class="l">งานพร้อมส่ง</div></div>
+            <div><div class="n">2 ชม.</div><div class="l">ตอบกลับ + เสนอราคา</div></div>
+            <div><div class="n">100%</div><div class="l">Mockup ก่อนผลิต</div></div>
+          </div>
+          <div class="h-actions">
+            <a class="btn btn-primary btn-lg">ขอใบเสนอราคา <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="btn btn-ghost btn-lg">ดูแคตตาล็อก 71 รายการ</a>
+          </div>
+        </div>
+        <div class="hslides" data-kw="chip">
+          <div class="htrack">
+            <div class="slide"><img src="public/banners/banner1.jpg" alt=""><div class="scrim-b"></div><span class="kw-chip"><span class="dot"></span>งานด่วน · พร้อมส่ง 7–14 วัน</span></div>
+            <div class="slide"><img src="public/banners/banner2.jpg" alt=""><div class="scrim-b"></div><span class="kw-chip"><span class="dot"></span>AI ช่วยคิดเซ็ตของขวัญ</span></div>
+            <div class="slide"><img src="public/banners/banner3.jpg" alt=""><div class="scrim-b"></div><span class="kw-chip"><span class="dot"></span>ของขวัญองค์กร · ทุกโอกาส</span></div>
+          </div>
+          <div class="hdots"></div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="specs">
+      <span>สัดส่วนรูป <b>4 : 3</b></span><span>กริด <b>1 : 1.08</b></span><span>keyword: <b>glass chip</b></span><span>พื้นหลังสว่าง</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OPTION B ============ -->
+<section class="opt">
+  <div class="wrap">
+    <div class="opt-cap">
+      <span class="badge">แบบ B</span>
+      <div class="meta">
+        <h3>Big Visual — เน้นรูปเด่น</h3>
+        <p>รูปเป็นพระเอก (สัดส่วน 5:4 ใหญ่กว่าฝั่งซ้าย) · keyword เป็น “คำใหญ่” ตัว Kanit สีขาวพร้อมคำขยายเล็ก — สะดุดตา เหมาะถ้าอยากให้รูปนำ</p>
+      </div>
+    </div>
+    <div class="wrap" style="padding:0">
+    <div class="heroB"><div class="glow"></div>
+      <div class="heroB-in">
+        <div class="hcopy">
+          <span class="tag"><span class="dot"></span>ของพรีเมียม & ของขวัญองค์กร</span>
+          <div class="h-en">Go beyond the gift</div>
+          <h1 class="h-title">มากกว่าของขวัญ<br>คือ<em>ประสบการณ์</em>ที่น่าจดจำ</h1>
+          <p class="h-lead">ออกแบบ-ผลิตของพรีเมียมที่สะท้อนแบรนด์คุณ ครบจบในที่เดียว พร้อม <b>AI ช่วยคิดเซ็ตของขวัญ</b></p>
+          <div class="hstats">
+            <div><div class="n">7–14 วัน</div><div class="l">งานพร้อมส่ง</div></div>
+            <div><div class="n">2 ชม.</div><div class="l">เสนอราคา</div></div>
+            <div><div class="n">100%</div><div class="l">Mockup ก่อนผลิต</div></div>
+          </div>
+          <div class="h-actions">
+            <a class="btn btn-primary btn-lg">ขอใบเสนอราคา <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="btn btn-ghost btn-lg">ดูแคตตาล็อก</a>
+          </div>
+        </div>
+        <div class="hslides">
+          <div class="htrack">
+            <div class="slide"><img src="public/banners/banner1.jpg" alt=""><div class="scrim-b"></div><div class="kw-big">งานด่วน<small>พร้อมส่ง 7–14 วัน</small></div></div>
+            <div class="slide"><img src="public/banners/banner2.jpg" alt=""><div class="scrim-b"></div><div class="kw-big">AI Gift<small>ช่วยคิดเซ็ตของขวัญ</small></div></div>
+            <div class="slide"><img src="public/banners/banner3.jpg" alt=""><div class="scrim-b"></div><div class="kw-big">ทุกโอกาส<small>ของขวัญองค์กร</small></div></div>
+          </div>
+          <div class="hdots"></div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="specs">
+      <span>สัดส่วนรูป <b>5 : 4</b></span><span>กริด <b>0.82 : 1.18</b> (รูปใหญ่กว่า)</span><span>keyword: <b>คำใหญ่</b></span><span>ฝั่งซ้ายกระชับขึ้น</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OPTION C ============ -->
+<section class="opt">
+  <div class="wrap">
+    <div class="opt-cap">
+      <span class="badge">แบบ C</span>
+      <div class="meta">
+        <h3>Full-bleed Editorial — รูปเต็มพื้นที่ พื้นหลังกรมท่า</h3>
+        <p>รูปเต็มขอบครึ่งขวาแบบ full-height ไล่เฉดเข้าฝั่งซ้ายกรมท่า · keyword คำใหญ่มุมขวาบน — หรูหรา ดูเป็นแบรนด์ระดับพรีเมียมที่สุด</p>
+      </div>
+    </div>
+    <div class="wrap" style="padding:0">
+    <div class="heroC">
+      <div class="heroC-in">
+        <div class="left">
+          <span class="tag"><span class="dot"></span>ของพรีเมียม & ของขวัญองค์กร</span>
+          <div class="h-en">Go beyond the gift</div>
+          <h1 class="h-title" style="font-size:clamp(32px,4vw,54px)">มากกว่าของขวัญ<br>คือ<em>ประสบการณ์</em>ที่น่าจดจำ</h1>
+          <p class="h-lead">ออกแบบและผลิตของพรีเมียมที่สะท้อนแบรนด์คุณ ครบตั้งแต่คอนเซ็ปต์ถึงส่งมอบ พร้อม <b>AI ช่วยคิดเซ็ตของขวัญ</b></p>
+          <div class="ai-box">
+            <div class="cap">✦ ลองให้ AI ช่วยคิดของขวัญ</div>
+            <div class="ai-row"><input placeholder="เช่น ของขวัญปีใหม่พนักงาน 200 คน งบ 300฿"><button class="btn btn-primary">✦ ถาม AI</button></div>
+          </div>
+          <div class="hstats">
+            <div><div class="n">7–14 วัน</div><div class="l">งานพร้อมส่ง</div></div>
+            <div><div class="n">2 ชม.</div><div class="l">เสนอราคา</div></div>
+            <div><div class="n">100%</div><div class="l">Mockup ก่อนผลิต</div></div>
+          </div>
+          <div class="h-actions">
+            <a class="btn btn-primary btn-lg">ขอใบเสนอราคา <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="btn btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.34)">ดูแคตตาล็อก</a>
+          </div>
+        </div>
+        <div class="right">
+          <div class="hslides">
+            <div class="htrack">
+              <div class="slide"><img src="public/banners/banner1.jpg" alt=""><div class="kw-big">งานด่วน<small>พร้อมส่ง 7–14 วัน</small></div></div>
+              <div class="slide"><img src="public/banners/banner2.jpg" alt=""><div class="kw-big">AI Gift<small>ช่วยคิดเซ็ตของขวัญ</small></div></div>
+              <div class="slide"><img src="public/banners/banner3.jpg" alt=""><div class="kw-big">ทุกโอกาส<small>ของขวัญองค์กร</small></div></div>
+            </div>
+            <div class="hdots"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="specs">
+      <span>รูป <b>full-bleed</b> สูงเต็ม</span><span>พื้นหลัง <b>กรมท่า</b></span><span>keyword: <b>คำใหญ่ มุมขวาบน</b></span><span>โทนพรีเมียมสุด</span>
+    </div>
+  </div>
+</section>
+
+<div class="foot wrap">
+  เลือกแบบที่ชอบ (A / B / C) แล้วบอกผมได้เลย — ผมจะนำไปทำเป็น hero จริงในเว็บ และ regenerate รูป banner แบบสะอาด (ไม่มีตัวหนังสือ/โลโก้ฝังในรูป) ให้ตรงคอนเซ็ปต์
+</div>
+
+<script>
+document.querySelectorAll('.hslides').forEach(function(box){
+  var track=box.querySelector('.htrack');
+  var dotsWrap=box.querySelector('.hdots');
+  var n=track.children.length, i=0, t=null;
+  for(var k=0;k<n;k++){var d=document.createElement('i');d.dataset.i=k;if(k===0)d.className='on';dotsWrap.appendChild(d);}
+  var dots=dotsWrap.querySelectorAll('i');
+  function go(x){i=(x+n)%n;track.style.transform='translateX(-'+(i*(100/n))+'%)';dots.forEach(function(d,j){d.classList.toggle('on',j===i);});}
+  function start(){stop();t=setInterval(function(){go(i+1);},4500);}
+  function stop(){if(t){clearInterval(t);t=null;}}
+  dots.forEach(function(d){d.addEventListener('click',function(){go(+d.dataset.i);start();});});
+  box.addEventListener('mouseenter',stop);box.addEventListener('mouseleave',start);
+  start();
+});
+</script>
+</body>
+</html>

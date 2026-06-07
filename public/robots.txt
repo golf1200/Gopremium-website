@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gopremium-website.vercel.app/sitemap.xml
+Sitemap: https://www.xn--22ck4b1ansahhp4gvdtab7n8e.com/sitemap.xml

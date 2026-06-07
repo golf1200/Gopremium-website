@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GO PREMIUM — Layout แบบที่ 1 (ปุ่มลอย + แผง Slide-in)</title>
+<style>
+  :root{
+    --gp-navy:#1F3A5F; --gp-navy-2:#2C4F7C; --gp-gold:#F4BD44; --gp-gold-2:#F8D586;
+    --gp-ink:#1b2530; --gp-grey:#6b7785; --gp-grey-200:#e6e9ee; --gp-grey-300:#cfd5de;
+    --gp-cloud:#f5f7fa; --gp-danger:#d33;
+    --gp-font-head:'Segoe UI',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Segoe UI',system-ui,'Sarabun',sans-serif;color:var(--gp-ink);background:#fff;}
+  .gp-wrap{max-width:1160px;margin:0 auto;padding:0 20px;}
+
+  .nav{position:fixed;top:0;left:0;right:0;height:64px;background:var(--gp-navy);z-index:50;display:flex;align-items:center;}
+  .nav .gp-wrap{display:flex;align-items:center;justify-content:space-between;width:100%;}
+  .nav .logo{color:#fff;font-weight:800;letter-spacing:1px;font-size:18px;}
+  .nav .logo span{color:var(--gp-gold);}
+  .nav .links{display:flex;gap:22px;color:#cbd7e8;font-size:14px;}
+  .page{padding-top:64px;}
+
+  .hero{background:var(--gp-navy);padding:24px 0 22px;}
+  .hero h1{color:#fff;font-size:clamp(22px,3vw,32px);margin-top:6px;font-family:var(--gp-font-head);}
+  .hero .crumb{color:#9fb3cc;font-size:12.5px;}
+  .hero p{color:#cbd7e8;font-size:14px;margin-top:4px;}
+
+  .searchbar{background:#fff;border-bottom:1px solid var(--gp-grey-200);padding:14px 0;}
+  .searchbar .gp-wrap{display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+  .search{flex:1 1 260px;display:flex;align-items:center;gap:8px;background:var(--gp-cloud);border-radius:10px;padding:9px 14px;border:1px solid var(--gp-grey-200);}
+  .search input{border:none;background:none;flex:1;font-size:14px;color:var(--gp-ink);outline:none;}
+  .sort{padding:9px 12px;border-radius:10px;border:1px solid var(--gp-grey-200);background:#fff;font-size:13.5px;color:var(--gp-ink);cursor:pointer;}
+
+  /* Product area full width */
+  .main{padding-top:28px;padding-bottom:80px;}
+  .count{font-size:14px;color:var(--gp-grey);margin-bottom:20px;}
+  .count b{color:var(--gp-navy);}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:20px;}
+  .card{border:1px solid var(--gp-grey-200);border-radius:14px;overflow:hidden;background:#fff;transition:.15s;}
+  .card:hover{box-shadow:0 8px 22px rgba(31,58,95,.10);transform:translateY(-2px);}
+  .card .img{height:150px;background:linear-gradient(135deg,#eef2f7,#dde6f0);display:flex;align-items:center;justify-content:center;font-size:40px;}
+  .card .body{padding:12px 14px;}
+  .card .cat{font-size:11px;color:var(--gp-gold);font-weight:700;text-transform:uppercase;letter-spacing:.4px;}
+  .card .name{font-size:14px;font-weight:600;margin:3px 0 6px;line-height:1.35;}
+  .card .price{font-size:13px;color:var(--gp-navy);font-weight:700;}
+  .card .occ{font-size:11px;color:var(--gp-grey);margin-top:4px;}
+
+  /* ★ Floating filter button — left side, always visible */
+  .fab{position:fixed;left:24px;top:50%;transform:translateY(-50%);z-index:40;
+       background:var(--gp-navy);color:#fff;border:none;cursor:pointer;
+       padding:16px 12px;border-radius:14px;box-shadow:0 8px 24px rgba(31,58,95,.30);
+       display:flex;flex-direction:column;align-items:center;gap:8px;font-weight:700;font-size:13px;
+       writing-mode:vertical-rl;letter-spacing:1px;transition:.15s;}
+  .fab:hover{background:var(--gp-navy-2);}
+  .fab .ic{writing-mode:horizontal-tb;font-size:18px;}
+  .fab .badge{writing-mode:horizontal-tb;background:var(--gp-gold);color:var(--gp-navy);
+              border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:12px;}
+
+  /* ★ Slide-in panel */
+  .overlay{position:fixed;inset:0;background:rgba(20,30,45,.45);z-index:60;opacity:0;visibility:hidden;transition:.2s;}
+  .overlay.open{opacity:1;visibility:visible;}
+  .panel{position:fixed;top:0;left:0;bottom:0;width:340px;max-width:88vw;background:#fff;z-index:70;
+         transform:translateX(-100%);transition:.25s cubic-bezier(.4,0,.2,1);overflow-y:auto;
+         box-shadow:6px 0 30px rgba(0,0,0,.18);}
+  .panel.open{transform:translateX(0);}
+  .panel-head{position:sticky;top:0;background:var(--gp-navy);color:#fff;padding:18px 20px;
+              display:flex;align-items:center;justify-content:space-between;}
+  .panel-head h2{font-size:16px;font-family:var(--gp-font-head);}
+  .panel-head button{background:none;border:none;color:#fff;font-size:26px;cursor:pointer;line-height:1;}
+  .panel-body{padding:18px 20px 24px;}
+  .fsec{margin-bottom:22px;}
+  .fsec h3{font-family:var(--gp-font-head);font-size:13px;font-weight:600;color:var(--gp-navy);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;}
+  .fitem{display:flex;align-items:center;gap:9px;background:none;border:none;cursor:pointer;padding:7px 4px;border-radius:6px;text-align:left;width:100%;color:var(--gp-grey);font-size:14px;}
+  .fitem .box{width:17px;height:17px;border-radius:4px;flex:0 0 auto;border:1.5px solid var(--gp-grey-300);background:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;}
+  .fitem.active{color:var(--gp-navy);font-weight:600;}
+  .fitem.active .box{border-color:var(--gp-navy);background:var(--gp-navy);}
+  .panel-foot{position:sticky;bottom:0;background:#fff;border-top:1px solid var(--gp-grey-200);padding:14px 20px;display:flex;gap:10px;}
+  .btn{flex:1;padding:11px;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;border:none;}
+  .btn-primary{background:var(--gp-navy);color:#fff;}
+  .btn-ghost{background:#fff;border:1px solid var(--gp-grey-300);color:var(--gp-grey);}
+
+  .note{background:var(--gp-gold-2);color:#5a4a10;font-size:12.5px;padding:8px 0;text-align:center;}
+</style>
+</head>
+<body>
+
+<div class="note">📐 แบบที่ 1 — ปุ่ม "ตัวกรอง" ลอยฝั่งซ้ายตลอดเวลา (กดดูได้) · เลื่อนหน้าลงดูปุ่มจะยังอยู่ · กดแล้วแผงกรองเลื่อนออกมาจากซ้าย</div>
+
+<nav class="nav"><div class="gp-wrap">
+  <div class="logo">GO<span>PREMIUM</span></div>
+  <div class="links"><span>หน้าแรก</span><span>สินค้า</span><span>องค์กร</span><span>ขอใบเสนอราคา</span></div>
+</div></nav>
+
+<div class="page">
+  <div class="hero"><div class="gp-wrap">
+    <div class="crumb">หน้าแรก › แคตตาล็อกสินค้า</div>
+    <h1>แคตตาล็อกสินค้า</h1>
+    <p>71 รายการ · 7 หมวดหมู่ · พิมพ์โลโก้ได้ทุกชิ้น</p>
+  </div></div>
+
+  <div class="searchbar"><div class="gp-wrap">
+    <div class="search">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6b7785" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input placeholder="ค้นหาสินค้า เช่น กระบอกน้ำ, โน้ตบุ๊ก...">
+    </div>
+    <select class="sort"><option>แนะนำ</option><option>ราคา: น้อยไปมาก</option><option>ราคา: มากไปน้อย</option></select>
+  </div></div>
+
+  <div class="main"><div class="gp-wrap">
+    <p class="count"><b id="num">71</b> รายการ</p>
+    <div class="grid" id="grid"></div>
+  </div></div>
+</div>
+
+<!-- ★ Floating filter button -->
+<button class="fab" onclick="openPanel()">
+  <span class="ic">⚙</span>
+  ตัวกรอง
+  <span class="badge" id="fab-badge" style="display:none">0</span>
+</button>
+
+<!-- ★ Slide-in panel -->
+<div class="overlay" id="overlay" onclick="closePanel()"></div>
+<aside class="panel" id="panel">
+  <div class="panel-head"><h2>ตัวกรองสินค้า</h2><button onclick="closePanel()">×</button></div>
+  <div class="panel-body">
+    <div class="fsec"><h3>หมวดหมู่</h3>
+      <button class="fitem"><span class="box"></span>Drinkware (18)</button>
+      <button class="fitem"><span class="box"></span>Bag (12)</button>
+      <button class="fitem"><span class="box"></span>Stationery (11)</button>
+      <button class="fitem"><span class="box"></span>Umbrella (8)</button>
+      <button class="fitem"><span class="box"></span>Giftset (9)</button>
+    </div>
+    <div class="fsec"><h3>เลือกตามโอกาส</h3>
+      <button class="fitem"><span class="box"></span>ปีใหม่</button>
+      <button class="fitem"><span class="box"></span>สงกรานต์</button>
+      <button class="fitem"><span class="box"></span>ลูกค้า VIP</button>
+      <button class="fitem"><span class="box"></span>อีเวนต์/บูธ/สัมมนา</button>
+      <button class="fitem"><span class="box"></span>รักษ์โลก/ESG</button>
+    </div>
+    <div class="fsec"><h3>งบต่อชิ้น (300 pcs)</h3>
+      <button class="fitem"><span class="box"></span>Value (ไม่เกิน ฿60)</button>
+      <button class="fitem"><span class="box"></span>Smart (฿61–150)</button>
+      <button class="fitem"><span class="box"></span>Premium (฿151–300)</button>
+      <button class="fitem"><span class="box"></span>Executive (฿300+)</button>
+    </div>
+    <div class="fsec"><h3>เทคนิคพิมพ์</h3>
+      <button class="fitem"><span class="box"></span>ฟรี เลเซอร์</button>
+      <button class="fitem"><span class="box"></span>ฟรี สกรีน</button>
+      <button class="fitem"><span class="box"></span>ฟรี UV</button>
+    </div>
+  </div>
+  <div class="panel-foot">
+    <button class="btn btn-ghost" onclick="clearAll()">ล้าง</button>
+    <button class="btn btn-primary" onclick="closePanel()">ดูสินค้า (<span id="foot-num">71</span>)</button>
+  </div>
+</aside>
+
+<script>
+  const EMOJI=['🍶','👜','📒','🌀','☂️','🎁','🕯️','🥤','🖊️','🧳','🔋','🧴'];
+  const CATS=['Drinkware','Bag','Stationery','Mini Fan','Umbrella','Giftset','Lifestyle'];
+  const OCCS=['ปีใหม่','สงกรานต์','ลูกค้า VIP','อีเวนต์/บูธ','รักษ์โลก/ESG'];
+  const grid=document.getElementById('grid');
+  Array.from({length:24}).forEach((_,i)=>{
+    const c=document.createElement('div');c.className='card';
+    c.innerHTML=`<div class="img">${EMOJI[i%EMOJI.length]}</div>
+      <div class="body"><div class="cat">${CATS[i%CATS.length]}</div>
+      <div class="name">สินค้าตัวอย่าง รุ่น ${i+1}</div>
+      <div class="price">฿${[45,89,120,210,55,160,320,75][i%8]} <span style="color:#6b7785;font-weight:400;font-size:11px">/ ชิ้น</span></div>
+      <div class="occ">เหมาะกับ: ${OCCS[i%OCCS.length]}</div></div>`;
+    grid.appendChild(c);
+  });
+
+  function openPanel(){document.getElementById('panel').classList.add('open');document.getElementById('overlay').classList.add('open');}
+  function closePanel(){document.getElementById('panel').classList.remove('open');document.getElementById('overlay').classList.remove('open');}
+
+  let count=0;
+  document.querySelectorAll('.fitem').forEach(b=>b.onclick=()=>{
+    b.classList.toggle('active');
+    count=document.querySelectorAll('.fitem.active').length;
+    const badge=document.getElementById('fab-badge');
+    badge.textContent=count;badge.style.display=count?'flex':'none';
+    const shown=count?Math.max(6,71-count*9):71;
+    document.getElementById('num').textContent=shown;
+    document.getElementById('foot-num').textContent=shown;
+  });
+  function clearAll(){document.querySelectorAll('.fitem.active').forEach(b=>b.classList.remove('active'));
+    count=0;document.getElementById('fab-badge').style.display='none';
+    document.getElementById('num').textContent=71;document.getElementById('foot-num').textContent=71;}
+</script>
+</body>
+</html>

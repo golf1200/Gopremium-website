@@ -14,3 +14,6 @@ scripts/scrape-1688-results.json
 
 # Generated reports (regenerate with scripts/build-product-master-xlsx.mjs)
 PRODUCT-MASTER.xlsx
+
+# Image pipeline — Gemini staging area (review before publishing to public/)
+scripts/image-pipeline/staged/
