@@ -69,8 +69,9 @@ input,select,textarea{font-family:var(--body)}
 .hd-cta{display:flex;align-items:center;gap:10px}
 .burger{display:none;background:none;border:none;padding:8px}
 .mega-wrap{position:relative}
-.mega{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--sh);padding:22px;width:min(720px,90vw);display:none;grid-template-columns:repeat(3,1fr);gap:8px 26px}
-.mega-wrap:hover .mega{display:grid}
+.mega{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--sh);padding:22px;width:min(720px,90vw);display:grid;grid-template-columns:repeat(3,1fr);gap:8px 26px;visibility:hidden;opacity:0;pointer-events:none;transition:opacity .16s ease,visibility .16s ease;transition-delay:.22s}
+.mega::before{content:"";position:absolute;left:0;right:0;top:-12px;height:12px}
+.mega-wrap:hover .mega,.mega:hover{visibility:visible;opacity:1;pointer-events:auto;transition-delay:0s}
 .mega h5{font-family:var(--head);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--grey-400);margin:6px 0 8px}
 .mega a{display:block;padding:6px 8px;border-radius:8px;font-size:13.5px;color:var(--navy)}
 .mega a:hover{background:var(--cloud);color:var(--mustard-deep)}
@@ -319,9 +320,8 @@ input,select,textarea{font-family:var(--body)}
     </a>
     <nav class="nav">
       <a href="#/">หน้าแรก</a>
-      <div class="mega-wrap"><button class="navlink">แคตตาล็อก ▾</button><div class="mega" id="megaMenu"></div></div>
-      <a href="#/all">สินค้าทั้งหมด</a>
-      <a href="#/express">สินค้าส่งด่วน</a>
+      <a href="#/express">⚡ สินค้าส่งด่วน</a>
+      <div class="mega-wrap"><a class="navlink" href="#/all">สินค้าทั้งหมด ▾</a><div class="mega" id="megaMenu"></div></div>
       <a href="#/about">เกี่ยวกับเรา</a>
       <a href="#/quote">ขอใบเสนอราคา</a>
     </nav>
@@ -748,7 +748,7 @@ window.addEventListener('hashchange',render);
 function buildChrome(){
   document.getElementById('megaMenu').innerHTML=GROUPS.map(g=>`<div><h5>${g.icon} ${esc(g.group)}</h5>${g.cats.filter(c=>byCat[c]).map(c=>`<a href="#/c/${c}">${esc(CL[c])} <span style="color:var(--grey-400);font-size:12px">(${byCat[c].length})</span></a>`).join('')}</div>`).join('');
   document.getElementById('footCats').innerHTML=catList.slice(0,6).map(c=>`<li><a href="#/c/${c}">${esc(CL[c])}</a></li>`).join('');
-  document.getElementById('drawer').innerHTML=`<div class="wrap" style="padding:8px 0 22px"><a href="#/">หน้าแรก</a><a href="#/all">สินค้าทั้งหมด (${P.length})</a><a href="#/express">สินค้าส่งด่วน</a>${catList.map(c=>`<a href="#/c/${c}">${esc(CL[c])} (${byCat[c].length})</a>`).join('')}<a href="#/about">เกี่ยวกับเรา</a><div style="display:flex;flex-direction:column;gap:9px;padding-top:14px"><a class="btn btn-primary" href="#/quote">ขอใบเสนอราคา</a><a class="btn btn-line-ghost" href="https://lin.ee/z1GT1KR" target="_blank" rel="noopener">ทักทาง LINE @gopremium</a></div></div>`;
+  document.getElementById('drawer').innerHTML=`<div class="wrap" style="padding:8px 0 22px"><a href="#/">หน้าแรก</a><a href="#/express">⚡ สินค้าส่งด่วน</a><a href="#/all">สินค้าทั้งหมด (${P.length})</a>${catList.map(c=>`<a href="#/c/${c}">${esc(CL[c])} (${byCat[c].length})</a>`).join('')}<a href="#/about">เกี่ยวกับเรา</a><div style="display:flex;flex-direction:column;gap:9px;padding-top:14px"><a class="btn btn-primary" href="#/quote">ขอใบเสนอราคา</a><a class="btn btn-line-ghost" href="https://lin.ee/z1GT1KR" target="_blank" rel="noopener">ทักทาง LINE @gopremium</a></div></div>`;
 }
 document.getElementById('burger').addEventListener('click',()=>document.getElementById('drawer').classList.toggle('open'));
 buildChrome();render();

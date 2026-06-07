@@ -28,15 +28,40 @@ const consoleErrors = [];
 page.on('console', m => { if (m.type() === 'error') consoleErrors.push(m.text()); });
 page.on('pageerror', e => consoleErrors.push('pageerror: ' + e.message));
 
-// 1. Home loads, nav has both new/updated links
+// 1. Home loads; nav order + labels are correct
 await page.goto(`${BASE}/`, { waitUntil: 'networkidle' });
-const navText = await page.locator('nav.nav').innerText();
-ok('1a. nav has "สินค้าส่งด่วน"', navText.includes('สินค้าส่งด่วน'));
-ok('1b. nav has "เกี่ยวกับเรา"', navText.includes('เกี่ยวกับเรา'));
-const aboutHref = await page.locator('nav.nav a', { hasText: 'เกี่ยวกับเรา' }).getAttribute('href');
-ok('1c. เกี่ยวกับเรา links to #/about (not scroll #about)', aboutHref === '#/about', `href=${aboutHref}`);
-const expHref = await page.locator('nav.nav a', { hasText: 'สินค้าส่งด่วน' }).getAttribute('href');
-ok('1d. สินค้าส่งด่วน links to #/express', expHref === '#/express', `href=${expHref}`);
+const order = await page.evaluate(() =>
+  [...document.querySelectorAll('nav.nav > a, nav.nav > .mega-wrap > a.navlink')].map(e => e.textContent.trim()));
+ok('1a. nav item #1 is หน้าแรก', order[0] === 'หน้าแรก', `got=${order[0]}`);
+ok('1b. nav item #2 is ⚡ สินค้าส่งด่วน', order[1]?.includes('สินค้าส่งด่วน') && order[1]?.includes('⚡'), `got=${order[1]}`);
+ok('1c. nav item #3 is the สินค้าทั้งหมด dropdown', order[2]?.includes('สินค้าทั้งหมด'), `got=${order[2]}`);
+ok('1d. only ONE "สินค้าทั้งหมด" in nav (no duplicate)', order.filter(t => t.includes('สินค้าทั้งหมด')).length === 1, `count=${order.filter(t => t.includes('สินค้าทั้งหมด')).length}`);
+const expHref = await page.locator('nav.nav > a', { hasText: 'สินค้าส่งด่วน' }).getAttribute('href');
+ok('1e. สินค้าส่งด่วน links to #/express', expHref === '#/express', `href=${expHref}`);
+const dropHref = await page.locator('.mega-wrap a.navlink').getAttribute('href');
+ok('1f. สินค้าทั้งหมด dropdown trigger is clickable → #/all', dropHref === '#/all', `href=${dropHref}`);
+const aboutHref = await page.locator('nav.nav > a', { hasText: 'เกี่ยวกับเรา' }).getAttribute('href');
+ok('1g. เกี่ยวกับเรา links to #/about', aboutHref === '#/about', `href=${aboutHref}`);
+
+// 5. Mega menu: opens on hover, stays interactive, category click navigates
+const megaVis = async () => page.evaluate(() => {
+  const m = document.querySelector('.mega'); const s = getComputedStyle(m);
+  return s.visibility === 'visible' && +s.opacity > 0.9;
+});
+await page.hover('.mega-wrap a.navlink');
+await page.waitForTimeout(120);
+ok('5a. mega opens on hover (visible + opaque)', await megaVis());
+ok('5b. transparent bridge over the gap exists (.mega::before)', await page.evaluate(() => getComputedStyle(document.querySelector('.mega'), '::before').content !== 'none'));
+// move into the menu and click the first category — must navigate, not vanish
+const firstCat = page.locator('#megaMenu a').first();
+const catHref = await firstCat.getAttribute('href');
+await firstCat.hover();
+await page.waitForTimeout(60);
+ok('5c. mega still visible after moving into it', await megaVis());
+await firstCat.click();
+await page.waitForTimeout(120);
+const hashAfter = await page.evaluate(() => location.hash);
+ok('5d. clicking a category navigates to it', hashAfter.startsWith('#/c/'), `hash=${hashAfter} target=${catHref}`);
 
 // 2. About is its own page (top of page, has crumbs, story heading, NOT the home hero)
 await page.goto(`${BASE}/#/about`, { waitUntil: 'networkidle' });
