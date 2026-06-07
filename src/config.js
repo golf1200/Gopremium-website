@@ -23,7 +23,7 @@ export const site = {
   //   • runtime <head> (useMeta) follows automatically
   //   • sitemap.xml + robots.txt: rerun `node generate-sitemap.js` to regenerate
   // No trailing slash.
-  siteUrl: 'https://gopremium-website.vercel.app',
+  siteUrl: 'https://www.xn--22ck4b1ansahhp4gvdtab7n8e.com',
 };
 
 // LINE click handler target: real LINE link if set, else null (caller routes to form)
