@@ -115,13 +115,19 @@ input,select,textarea{font-family:var(--body)}
 .hstats{display:flex;gap:28px;flex-wrap:wrap;margin-top:22px}
 .hstats .n{font-family:var(--head);font-weight:700;font-size:24px;color:var(--navy)}
 .hstats .l{font-size:12.5px;color:var(--grey)}
-.hero-slides{position:relative;aspect-ratio:4/5;max-height:480px;margin:0 auto;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-md);background:linear-gradient(160deg,#fff,var(--cloud))}
-.hero-slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;animation:heroFade 30s linear infinite}
+.hero-slides{position:relative;aspect-ratio:4/5;max-height:480px;margin:0 auto;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-md);background:var(--cloud)}
+.hero-track{display:flex;width:400%;height:100%;animation:heroSwipe 21s infinite}
+.hero-track img{width:25%;height:100%;object-fit:cover;flex:0 0 auto}
 .hero-slides .hdots{position:absolute;left:0;right:0;bottom:14px;z-index:2;display:flex;justify-content:center;gap:7px}
-.hero-slides .hdots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.55);box-shadow:0 1px 3px rgba(31,58,95,.4);animation:heroDot 30s linear infinite}
-@keyframes heroFade{0%{opacity:0}3%{opacity:1}14%{opacity:1}17%{opacity:0}100%{opacity:0}}
-@keyframes heroDot{0%{background:rgba(255,255,255,.55)}3%{background:var(--mustard)}16%{background:var(--mustard)}19%{background:rgba(255,255,255,.55)}100%{background:rgba(255,255,255,.55)}}
-@media(prefers-reduced-motion:reduce){.hero-slides img{animation:none}.hero-slides img:first-child{opacity:1}.hero-slides .hdots i{animation:none}}
+.hero-slides .hdots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.5);box-shadow:0 1px 3px rgba(31,58,95,.45);animation:21s infinite}
+.hero-slides .hdots i:nth-child(1){animation-name:heroDot1}
+.hero-slides .hdots i:nth-child(2){animation-name:heroDot2}
+.hero-slides .hdots i:nth-child(3){animation-name:heroDot3}
+@keyframes heroSwipe{0%,22%{transform:translateX(0)}28%,47%{transform:translateX(-25%)}53%,72%{transform:translateX(-50%)}78%,100%{transform:translateX(-75%)}}
+@keyframes heroDot1{0%,22%{background:var(--mustard)}26%,74%{background:rgba(255,255,255,.5)}78%,100%{background:var(--mustard)}}
+@keyframes heroDot2{0%,24%{background:rgba(255,255,255,.5)}28%,47%{background:var(--mustard)}51%,100%{background:rgba(255,255,255,.5)}}
+@keyframes heroDot3{0%,49%{background:rgba(255,255,255,.5)}53%,72%{background:var(--mustard)}76%,100%{background:rgba(255,255,255,.5)}}
+@media(prefers-reduced-motion:reduce){.hero-track{animation:none}}
 
 /* trust marquee */
 .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff;padding:26px 0;overflow:hidden}
@@ -538,10 +544,13 @@ const VALUES=[
 const CLIENTS=['c1','c2','c3','c4','c5','c6','c7','c8','c9','c10','c11','c12','c13','c14','c15','c16','c17','c18','c19','c20'];
 
 function viewHome(){
-  const heroCats=['drinkware','bags','giftset','lifestyle','stationery','fan'];
-  const heroPics=heroCats.map(c=>repImg(c));
-  const heroSlides=heroPics.map((src,i)=>`<img src="${src}" alt="ผลงานของพรีเมียมแบรนด์ GO PREMIUM" style="animation-delay:${i*5}s" loading="${i?'lazy':'eager'}">`).join('');
-  const heroDots=heroPics.map((_,i)=>`<i style="animation-delay:${i*5}s"></i>`).join('');
+  const banners=[
+    ['banners/banner1.jpg','งานด่วน พร้อมส่ง 7–14 วัน · ของพรีเมียมองค์กร GO PREMIUM'],
+    ['banners/banner2.jpg','AI ช่วยคิดเซ็ตของขวัญในไม่กี่วินาที · GO PREMIUM'],
+    ['banners/banner3.jpg','ของขวัญองค์กรและเทศกาลที่สะท้อนแบรนด์คุณ · GO PREMIUM'],
+  ];
+  const heroSlides=[...banners,banners[0]].map(([src,alt],i)=>`<img src="${src}" alt="${esc(alt)}" loading="${i?'lazy':'eager'}">`).join('');
+  const heroDots=banners.map(()=>'<i></i>').join('');
   const feat=catList.slice(0,4).map(c=>byCat[c][0]).concat(catList.slice(0,4).map(c=>byCat[c][1]||byCat[c][0])).slice(0,8);
   const clientRow=[...CLIENTS,...CLIENTS].map(c=>`<img src="clients/${c}.png" alt="ลูกค้าองค์กรของ GO PREMIUM" loading="lazy">`).join('');
   return `
@@ -562,7 +571,7 @@ function viewHome(){
       </div>
       <div class="hero-actions"><a class="btn btn-primary btn-lg" href="#/quote">ขอใบเสนอราคา <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-ghost btn-lg" href="#/all">ดูแคตตาล็อก ${P.length} รายการ</a></div>
     </div>
-    <div class="hero-slides">${heroSlides}<div class="hdots">${heroDots}</div></div>
+    <div class="hero-slides"><div class="hero-track">${heroSlides}</div><div class="hdots">${heroDots}</div></div>
   </div></section>
 
   <section class="trust"><div class="wrap cap"><span>ได้รับความไว้วางใจจากองค์กรชั้นนำ</span><i></i></div>

@@ -1,0 +1,11 @@
+Fix v2 homepage logo: show full brand wordmark in header & footer
+
+The live homepage (public/v2.html) cropped the logo into a 46x46 square
+icon box sitting next to a hand-typeset "GO PREMIUM" wordmark, so the
+real logo rendered tiny/squished and duplicated the text. Replace both
+the header lockup and the footer typeset wordmark with the actual brand
+logo image (logo.png navy-yellow in header, logo-white.png white-yellow
+on the navy footer), sized to height with auto width. icon.png /
+icon-white.png kept as onerror fallbacks.
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>
