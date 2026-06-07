@@ -115,6 +115,18 @@ ok('6g. AI filter parsed budget (≤฿100)', aiPrices.length === 0 || aiPrices.
 ok('6h. AI filter set category chip (กระบอก→drinkware)', aiChips.some(c => c.includes('หมวด')), aiChips.join(' / '));
 ok('6i. AI filter no console errors', consoleErrors.length === 0);
 
+// 7. Home occasion tiles deep-link into the filtered catalogue (#/o/<key>)
+await page.goto(`${BASE}/`, { waitUntil: 'networkidle' });
+await page.waitForTimeout(120);
+const occLinks = await page.evaluate(() => [...document.querySelectorAll('a')].map(a => a.getAttribute('href')).filter(h => h && h.startsWith('#/o/')));
+ok('7a. home has occasion deep-links (#/o/...)', occLinks.length >= 6, `n=${occLinks.length}`);
+await page.goto(`${BASE}/#/o/newyear`, { waitUntil: 'networkidle' });
+await page.waitForTimeout(150);
+const occChip = await page.locator('#afchips .afchip').allInnerTexts();
+ok('7b. #/o/newyear opens catalogue with occasion chip active', occChip.some(c => c.includes('โอกาส')), occChip.join(' / '));
+const occBtnOn = await page.locator('#occFilter button[data-occ="newyear"].on').count();
+ok('7c. occasion sidebar button reflects the route', occBtnOn === 1);
+
 // 4. No console errors anywhere
 ok('4. no console/page errors', consoleErrors.length === 0, consoleErrors.slice(0, 3).join(' | '));
 

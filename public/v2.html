@@ -493,13 +493,14 @@ const SVCS=[
   ['แพ็ก & จัดส่งรายคน','Kitting & fulfillment ส่งตรงถึงพนักงานหรือลูกค้าแต่ละคน หลายสาขาก็ทำได้',0,'<rect x="1" y="6" width="15" height="11"/><path d="M16 10h4l3 3v4h-7"/>'],
   ['งานด่วน 7–14 วัน','สำหรับองค์กรที่มี deadline ชัด พร้อมผลิตและส่งมอบตรงเวลาทุกออเดอร์',0,'<path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1L12 16.8 5.7 21l2.3-7.1-6-4.5h7.6z"/>'],
 ];
+// [label, desc, categorySlug(สำหรับรูป), badge, occasionKey(→ OCC_FILTERS / route #/o/)]
 const OCCS=[
-  ['ของขวัญปีใหม่','กิฟต์เซ็ตและของพรีเมียมสำหรับมอบพนักงาน ลูกค้า และคู่ค้าช่วงปลายปี','giftset','พีคสุด'],
-  ['ชุดต้อนรับพนักงานใหม่','Welcome kit สร้างความประทับใจวันแรก เสริมภาพลักษณ์องค์กร','drinkware',null],
-  ['ของขวัญลูกค้า VIP','ของพรีเมียมระดับผู้บริหาร แพ็กเกจหรู สื่อถึงความใส่ใจ','giftset','Exclusive'],
-  ['งานอีเวนต์ & สัมมนา','ของแจกพิมพ์โลโก้ พร้อมส่งทันงาน เหมาะกับงานจำนวนมาก','bags',null],
-  ['ครบรอบ & Milestone','ของที่ระลึกพิเศษเฉพาะวาระ ดีไซน์สั่งทำ สะท้อนความสำเร็จ','drinkware','Custom'],
-  ['ของขวัญรักษ์โลก','วัสดุคุณภาพ เล่าเรื่อง ESG ขององค์กร เทรนด์ 2026','lifestyle','Eco'],
+  ['ของขวัญปีใหม่','กิฟต์เซ็ตและของพรีเมียมสำหรับมอบพนักงาน ลูกค้า และคู่ค้าช่วงปลายปี','giftset','พีคสุด','newyear'],
+  ['ชุดต้อนรับพนักงานใหม่','Welcome kit สร้างความประทับใจวันแรก เสริมภาพลักษณ์องค์กร','drinkware',null,'welcome'],
+  ['ของขวัญลูกค้า VIP','ของพรีเมียมระดับผู้บริหาร แพ็กเกจหรู สื่อถึงความใส่ใจ','giftset','Exclusive','vip'],
+  ['งานอีเวนต์ & สัมมนา','ของแจกพิมพ์โลโก้ พร้อมส่งทันงาน เหมาะกับงานจำนวนมาก','bags',null,'event'],
+  ['ครบรอบ & Milestone','ของที่ระลึกพิเศษเฉพาะวาระ ดีไซน์สั่งทำ สะท้อนความสำเร็จ','drinkware','Custom','milestone'],
+  ['ของขวัญรักษ์โลก','วัสดุคุณภาพ เล่าเรื่อง ESG ขององค์กร เทรนด์ 2026','lifestyle','Eco','eco'],
 ];
 const TIERS=[
   ['เริ่มต้น','navy','ไม่เกิน 60 ฿','ของแจกงานอีเวนต์ จำนวนมาก MOQ 300+ ชิ้น',['ปากกาพิมพ์โลโก้','กระเป๋าผ้าสปันบอนด์','พวงกุญแจ','ของชำร่วย'],0],
@@ -586,7 +587,7 @@ function viewHome(){
 
   <section class="sec" style="background:var(--cloud)"><div class="wrap">
     <div class="shead"><span class="eyebrow"><span class="dot"></span>เลือกตามโอกาส</span><h2 class="h2">ของขวัญที่ใช่ สำหรับทุกโอกาส</h2><p class="lead">ไม่รู้จะเริ่มจากไหน? เลือกโอกาสของคุณ — เราแนะนำสินค้าและดีไซน์ที่เหมาะสมให้ทันที</p></div>
-    <div class="g-auto occ-grid">${OCCS.map(o=>`<div class="occ"><div class="im"><img src="${repImg(o[2])}" alt="${o[0]}">${o[3]?`<span class="badge badge-glass glass">${o[3]}</span>`:''}</div><div class="bd"><h4>${o[0]}</h4><p>${o[1]}</p><div style="display:flex;align-items:center;justify-content:space-between;margin-top:8px"><span style="font-family:var(--head);font-size:12.5px;color:var(--grey)">ปรับตามงบ & จำนวน</span><a class="btn btn-ghost btn-sm" href="#/c/${o[2]}">ดูไอเดีย</a></div></div></div>`).join('')}</div>
+    <div class="g-auto occ-grid">${OCCS.map(o=>`<div class="occ"><div class="im"><img src="${repImg(o[2])}" alt="${o[0]}">${o[3]?`<span class="badge badge-glass glass">${o[3]}</span>`:''}</div><div class="bd"><h4>${o[0]}</h4><p>${o[1]}</p><div style="display:flex;align-items:center;justify-content:space-between;margin-top:8px"><span style="font-family:var(--head);font-size:12.5px;color:var(--grey)">ปรับตามงบ & จำนวน</span><a class="btn btn-ghost btn-sm" href="#/o/${o[4]}">ดูไอเดีย</a></div></div></div>`).join('')}</div>
   </div></section>
 
   <section class="sec" style="background:#fff"><div class="wrap">
