@@ -1,13 +1,12 @@
 import { useState, useEffect } from 'react';
 import GpImage from './shared/GpImage';
-import { variantSet } from '../utils/images';
 
-// Base image names — resolved to the 7:8 hero master.
-const SLIDES = ['giftset-aroma', 'giftset-executive', 'drinkware-brewy'];
+// Designed hero banners (each is a complete marketing visual with embedded text).
+const SLIDES = ['/banners/banner1.jpg', '/banners/banner2.jpg', '/banners/banner3.jpg'];
 const ALT = [
-  'กิฟต์เซ็ตพรีเมียมองค์กร ออกแบบเฉพาะแบรนด์ โดย GO PREMIUM',
-  'กิฟต์เซ็ตธุรกิจ Executive ของขวัญพิมพ์โลโก้สำหรับองค์กร GO PREMIUM',
-  'กระบอกน้ำแก้วสแตนเลสพิมพ์โลโก้สำหรับองค์กร โดย GO PREMIUM',
+  'งานด่วน พร้อมส่งภายใน 7-14 วัน ของพรีเมียมพิมพ์โลโก้สำหรับองค์กร โดย GO PREMIUM',
+  'AI ช่วยคิดเซ็ตของขวัญองค์กร เลือกง่าย ตรงโจทย์ โดย GO PREMIUM',
+  'ของขวัญองค์กรคุณภาพพรีเมียม ตอบโจทย์ทุกโอกาส โดย GO PREMIUM',
 ];
 
 export default function HeroCarousel() {
@@ -26,7 +25,7 @@ export default function HeroCarousel() {
       onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
       <div style={{ position: 'relative', width: '100%', height: 'min(560px,62vh)', borderRadius: 22, overflow: 'hidden', boxShadow: 'var(--gp-shadow)', background: 'var(--gp-cloud-2)' }}>
         {SLIDES.map((s, i) => (
-          <GpImage key={s} images={variantSet(s)} variant="hero" alt={ALT[i]} loading={i === 0 ? 'eager' : 'lazy'}
+          <GpImage key={s} src={s} alt={ALT[i]} loading={i === 0 ? 'eager' : 'lazy'}
             style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: i === idx ? 1 : 0, transition: 'opacity .9s ease', display: 'block' }} />
         ))}
       </div>
