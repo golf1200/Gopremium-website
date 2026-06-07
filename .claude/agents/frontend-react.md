@@ -23,6 +23,7 @@ Navy `#1F3A5F`, Gold `#F4BD44`, Navy-2 `#2C4F7C`, Gold-2 `#F8D586`. Use the exis
 - AIConcierge is a **local heuristic only** — no API key, no paid calls. Keep it that way.
 - The RFQ/quote flow is the primary conversion path; don't break form submission (Formspree) or LINE/quote CTA routing.
 - Run `npm run dev` to check locally if needed; always run `npm run build` before handing off.
+- **One writer per file:** you own files under `src/components`, `src/pages`, `src/config.js`. Do not run in parallel with `copywriter-th` on the same component (it edits text inside your files) — sequence it. See CLAUDE.md Rule #1.
 
 ## When done
 Hand off to `qa-deploy` (build → verify → push to `main` → Vercel auto-deploys). Flag any change that affects SEO (new route, title, meta) so `seo-performance` updates the sitemap/head.

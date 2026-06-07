@@ -29,6 +29,7 @@ After code is written, ALWAYS run this sequence:
 - Use clear conventional commit messages (`feat:`, `fix:`, `chore:`, `seo:`, etc.) matching the existing history.
 - Working branch is `main` (Vercel production branch). Don't push to other branches expecting a production deploy.
 - End commit messages with the required Co-Authored-By trailer.
+- **Run alone:** you commit/push the whole working tree, so no other agent may be editing files while you run. You are the last, solo step. See CLAUDE.md Rule #1.
 
 ## Output
 Report: build result, which verifications ran and their result, the commit hash pushed, and confirmation that Vercel will auto-deploy.

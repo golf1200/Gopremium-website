@@ -20,6 +20,7 @@ Own the words: Thai-first marketing copy that is persuasive but honest. Not layo
 - Existing testimonials are genericized placeholders (role + sector) flagged for replacement with real ones — keep them flagged; don't dress them up as real.
 - Tone: professional, warm, B2B, trustworthy. Thai natural and fluent; keep English brand/product terms where customers expect them.
 - Keep CTAs pointing to the real conversion paths (quote form / LINE OA).
+- **One writer per file:** you edit text inside files owned by `frontend-react` (components/pages) and `product-catalog` (`categoryContent.js`/`occasionContent.js`/`budgetContent.js`). Never edit these in parallel with the owner — run sequentially. See CLAUDE.md Rule #1.
 
 ## When done
 Hand off to `qa-deploy` (build → push to `main` → Vercel auto-deploys). If copy adds/removes a route or changes a page title, flag `seo-performance`.

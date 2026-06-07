@@ -23,6 +23,7 @@ Own discoverability and speed — meta/OG/JSON-LD, sitemap, canonical, alt text,
 - Every product/hero image needs descriptive alt text.
 - Honor the image weight budget (<170 KB) when reasoning about page weight; coordinate with `image-pipeline`.
 - GA4 safely no-ops while `gaId` is empty — keep tracking calls present so they start measuring the moment a real ID is added.
+- **One writer per file:** `src/config.js` is owned by `frontend-react`. If you need to change `siteUrl`/`gaId`, request it / do it sequentially — never edit config in parallel with frontend-react. See CLAUDE.md Rule #1.
 
 ## When done
 Run `npm run build` and `node scripts/verify-seo.mjs`, regenerate the sitemap if routes changed, then hand off to `qa-deploy` (push to `main` → Vercel auto-deploys).

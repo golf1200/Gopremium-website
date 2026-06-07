@@ -24,6 +24,7 @@ Own all **image assets** and their optimization — not product text data, not U
 - Prefer modern formats per `IMAGE-SPEC.md`; keep correct dimensions — don't upscale.
 - Long-cache headers are set in `vercel.json` for `/images/*` (immutable). So use content-hashed/stable names; never silently overwrite a cached filename with different content.
 - Don't commit raw/unoptimized source images into `public/`.
+- **One writer per file:** `docs/PRODUCTS-NO-IMAGE.md` is shared with `product-catalog` — only one edits at a time, never parallel. See CLAUDE.md Rule #1.
 
 ## When done
 Run `npm run build` to confirm assets copy into `dist/`, then hand off to `qa-deploy` (push to `main` → Vercel auto-deploys). Update `docs/PRODUCTS-NO-IMAGE.md` if you cleared items.

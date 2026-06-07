@@ -22,6 +22,7 @@ Own all product/catalog **data** — not images (that's `image-pipeline`), not U
 - **No invented prices.** Keep budget-range guidance only; never write per-item baht figures unless the user supplies real numbers.
 - The 1688 scraper persists a login session under `scripts/.1688-profile/` (gitignored). Never commit cookies or scraper result JSON.
 - After data changes, regenerate dependent artifacts (`build-catalogue-data.mjs` etc.) and run `npm run build` to confirm nothing breaks.
+- **One writer per file:** `categoryContent.js`/`occasionContent.js`/`budgetContent.js` and `docs/PRODUCTS-NO-IMAGE.md` are shared (with `copywriter-th` / `image-pipeline`). Only one agent edits at a time — never parallel. See CLAUDE.md Rule #1.
 
 ## When done
 Hand off to `qa-deploy` (build → verify → push to `main` → Vercel auto-deploys). Mention any new products that still need images so `image-pipeline` can pick them up.
