@@ -17,3 +17,6 @@ PRODUCT-MASTER.xlsx
 
 # Image pipeline — Gemini staging area (review before publishing to public/)
 scripts/image-pipeline/staged/
+
+# Local review artifact (regenerate with scripts/build-blog-review.mjs)
+content/blog/REVIEW-blog.html

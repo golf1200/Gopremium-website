@@ -17,6 +17,13 @@ const OCCASIONS = [
   'milestone','esg','thank-you','executive','mass-staff',
 ];
 const BUDGET_TIERS = ['value','smart','premium','executive'];
+const BLOG_SLUGS = [
+  'ของขวัญปีใหม่องค์กร-2026',
+  'ของพรีเมียมพิมพ์โลโก้',
+  'ของขวัญองค์กรตามงบประมาณ',
+  'ของพรีเมียมรักษ์โลก',
+  'ของชำร่วยงานอีเวนต์องค์กร',
+];
 const CATEGORIES = [...new Set(products.map((p) => p.category_slug).filter(Boolean))];
 const VALID_PRODUCTS = products.filter((p) => p.name && p.name.trim() && p.slug);
 
@@ -32,6 +39,10 @@ const lines = [
   url('/', '1.0', 'weekly'),
   url('/products', '0.9', 'weekly'),
   url('/quote', '0.8', 'monthly'),
+  url('/blog', '0.8', 'weekly'),
+  '',
+  '  <!-- Blog / Insights -->',
+  ...BLOG_SLUGS.map((s) => url(`/blog/${encodeURIComponent(s)}`, '0.7', 'monthly')),
   '',
   '  <!-- Categories -->',
   ...CATEGORIES.map((slug) => url(`/category/${slug}`, '0.8')),

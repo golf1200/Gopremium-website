@@ -102,17 +102,18 @@ input,select,textarea{font-family:var(--body)}
 .badge-ai{background:rgba(244,189,68,.16);color:var(--mustard-deep);border:1px solid rgba(244,189,68,.4)}
 
 /* hero */
-.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#FBFCFD,var(--cloud))}
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#FBFCFD,var(--cloud));--hd:75px;--trust:130px}
 .hero .glow{position:absolute;right:-8%;top:-20%;width:540px;height:540px;border-radius:50%;background:radial-gradient(circle at 35% 35%,rgba(244,189,68,.28),transparent 60%);pointer-events:none}
-.hero-in{position:relative;z-index:1;display:grid;grid-template-columns:.92fr 1.18fr;gap:clamp(28px,4vw,56px);align-items:stretch;padding:clamp(10px,1.4vw,20px) 0 clamp(12px,1.6vw,22px)}
-.hero-left{display:flex;flex-direction:column;justify-content:space-between;gap:clamp(12px,1.8vw,22px);min-height:0}
-.hero-left .tag{margin-bottom:0}
+.hero-in{position:relative;z-index:1;display:grid;grid-template-columns:.92fr 1.18fr;gap:clamp(28px,4vw,56px);align-items:stretch;min-height:calc(100svh - var(--hd) - var(--trust));padding:clamp(12px,1.6vw,22px) 0 clamp(14px,1.8vw,24px)}
+.hero-left{display:flex;flex-direction:column;justify-content:space-between;gap:clamp(9.6px,1.66vw,19px);min-height:0}
+.hero-left .tag{margin-bottom:0;align-self:flex-start}
 .hero-left .htxt{display:flex;flex-direction:column}
-.hero-left .htxt .en{margin-bottom:6px}
+.hero-left .htxt .en{margin-bottom:5px}
 .hero-left .htxt h1{margin-bottom:8px}
-.hero-left .htxt .lead{margin-bottom:0}
-.hero-left .ai-box{margin-top:0}
-.hero-left .hstats{margin-top:0}
+.hero-left .htxt .lead{margin-bottom:0;font-size:clamp(17.2px,1.31vw,19.4px);line-height:1.55}
+.hero-left .ai-box{margin-top:0;max-width:540px}
+.hero-left .hstats{margin-top:0;gap:28px}
+.hero-left .hstats .n{font-size:24.8px}
 .hero-left .hero-actions{margin-top:0}
 .tag{display:inline-flex;align-items:center;gap:8px;font-family:var(--head);background:var(--mustard-soft);color:#6B4E08;font-weight:500;font-size:13.5px;padding:8px 16px;border-radius:var(--pill);margin-bottom:18px;border:1px solid rgba(244,189,68,.55);box-shadow:0 2px 10px -4px rgba(244,189,68,.6);animation:tagpulse 2.4s ease-in-out infinite}
 @keyframes tagpulse{0%,100%{box-shadow:0 2px 10px -4px rgba(244,189,68,.6)}50%{box-shadow:0 3px 20px 1px rgba(244,189,68,.95)}}
@@ -121,7 +122,7 @@ input,select,textarea{font-family:var(--body)}
 .flash{display:inline-block;animation:flash 1.05s ease-in-out infinite}
 @keyframes flash{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.2;transform:scale(.9)}}
 @media(prefers-reduced-motion:reduce){.flash,.tag{animation:none}}
-.hero h1{font-size:clamp(29px,3.9vw,46px);font-weight:700;color:var(--navy);letter-spacing:-.025em;line-height:1.06;margin-bottom:10px;text-wrap:balance}
+.hero h1{font-size:clamp(34px,4.48vw,52px);font-weight:700;color:var(--navy);letter-spacing:-.025em;line-height:1.07;margin-bottom:10px;text-wrap:balance}
 .hero h1 em{font-style:normal;color:var(--mustard-deep)}
 .hero h1 .pre{display:block;font-size:.62em;font-weight:600;color:var(--navy-soft);letter-spacing:0;margin-bottom:3px}
 .hero .en{font-family:var(--head);font-weight:300;font-size:clamp(16px,1.6vw,20px);letter-spacing:.04em;color:var(--navy-soft);margin-bottom:16px}
@@ -134,7 +135,7 @@ input,select,textarea{font-family:var(--body)}
 .hstats>div{text-align:center}
 .hstats .n{font-family:var(--head);font-weight:700;font-size:22px;color:var(--navy)}
 .hstats .l{font-size:12.5px;color:var(--grey)}
-.hero-slides{position:relative;height:100%;min-height:260px;width:100%;margin:0 auto;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-md);background:var(--cloud)}
+.hero-slides{position:relative;height:100%;min-height:360px;width:100%;margin:0 auto;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-md);background:var(--cloud)}
 .hero-track{display:flex;width:300%;height:100%;transition:transform .55s cubic-bezier(.4,0,.2,1)}
 .hero-track img{width:33.3333%;height:100%;object-fit:cover;flex:0 0 auto}
 .hero-slides .hdots{position:absolute;left:0;right:0;bottom:14px;z-index:2;display:flex;justify-content:center;gap:8px}
@@ -242,13 +243,25 @@ input,select,textarea{font-family:var(--body)}
 
 /* catalogue layout */
 .cat-layout{display:grid;grid-template-columns:240px 1fr;gap:32px;align-items:start}
-.side{position:sticky;top:90px;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.side{position:sticky;top:182px;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px}
 .side h4{font-family:var(--head);font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--grey-400);margin:0 0 10px}
-.flist{display:flex;flex-direction:column;gap:2px;margin-bottom:22px}
-.flist button{font-family:var(--head);text-align:left;background:none;border:none;padding:8px 11px;border-radius:8px;font-size:14px;color:var(--navy);display:flex;justify-content:space-between;gap:8px}
-.flist button:hover{background:var(--cloud)}
-.flist button.on{background:var(--navy);color:#fff;font-weight:500}
-.flist button.on .n{color:var(--mustard)}.flist .n{color:var(--grey-400);font-size:12.5px}
+.flist{display:flex;flex-direction:column;gap:1px;margin-bottom:20px}
+.flist button{font-family:var(--head);text-align:left;background:none;border:none;padding:7px 7px;border-radius:8px;font-size:14px;color:var(--grey);display:flex;align-items:center;gap:9px;width:100%}
+.flist button .box{width:17px;height:17px;border-radius:5px;flex:0 0 auto;border:1.6px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;line-height:1;color:#fff;transition:border-color .15s,background .15s}
+.flist button .lbl{flex:1;line-height:1.3}
+.flist button:hover{color:var(--navy)}.flist button:hover .box{border-color:var(--navy-soft)}
+.flist button.on{color:var(--navy);font-weight:600}
+.flist button.on .box{border-color:var(--navy);background:var(--navy)}
+.flist button.on .box::after{content:'✓'}
+.flist .n{color:var(--grey-400);font-size:12.5px;font-weight:400;margin-left:auto}
+/* ★ quick-pick sticky bar (Option 3 — ปุ่มลัด โอกาส/งบ) */
+.quick-bar{position:sticky;top:74px;z-index:30;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh-sm);padding:11px 15px;margin-bottom:20px;display:flex;flex-direction:column;gap:8px}
+.qrow{display:flex;align-items:center;gap:8px;overflow-x:auto;scrollbar-width:none}
+.qrow::-webkit-scrollbar{display:none}
+.qlabel{flex:0 0 auto;font-family:var(--head);font-size:12.5px;font-weight:600;color:var(--navy);display:inline-flex;align-items:center;gap:5px;position:sticky;left:0;background:rgba(255,255,255,.94);padding-right:6px;z-index:1}
+.qpill{flex:0 0 auto;padding:7px 14px;border-radius:var(--pill);border:1.5px solid var(--line);background:#fff;color:var(--navy);font-family:var(--head);font-size:13px;font-weight:500;cursor:pointer;white-space:nowrap;transition:border-color .15s,background .15s,color .15s}
+.qpill:hover{border-color:var(--navy-soft)}
+.qpill.on{border-color:var(--navy);background:var(--navy);color:#fff}
 .toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px;flex-wrap:wrap}
 .search{display:flex;align-items:center;gap:8px;background:#fff;border:1.5px solid var(--line);border-radius:var(--pill);padding:9px 16px;min-width:240px;flex:1;max-width:420px}
 .search input{border:none;outline:none;font-size:14.5px;width:100%;background:none}
@@ -325,6 +338,8 @@ input,select,textarea{font-family:var(--body)}
 @media(max-width:1080px){.pgrid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:920px){
   .hero-in,.quote-grid,.pd{grid-template-columns:1fr;gap:34px}
+  .hero-in{min-height:0}
+  .hero-left{height:auto}
   .hero-slides{height:auto;min-height:0;aspect-ratio:3/2}
   .cat-layout{grid-template-columns:1fr}.side{position:static;display:none}.side.open{display:block}.filter-toggle{display:inline-flex}
   .ft-grid{grid-template-columns:1fr 1fr;gap:26px}
@@ -351,6 +366,8 @@ input,select,textarea{font-family:var(--body)}
       <a href="#/">หน้าแรก</a>
       <a href="#/express" class="nav-rush"><span class="flash">⚡</span> สินค้าส่งด่วน</a>
       <div class="mega-wrap"><a class="navlink" href="#/all">สินค้าทั้งหมด ▾</a><div class="mega" id="megaMenu"></div></div>
+      <a href="#/portfolio">ผลงานของเรา</a>
+      <a href="/blog">บทความ &amp; ไอเดีย</a>
       <a href="#/about">เกี่ยวกับเรา</a>
     </nav>
     <div class="hd-cta">
@@ -376,6 +393,8 @@ input,select,textarea{font-family:var(--body)}
     <div><h4>หมวดหมู่</h4><ul id="footCats"></ul></div>
     <div><h4>บริษัท</h4><ul>
       <li><a href="#/about">เรื่องราวแบรนด์</a></li>
+      <li><a href="#/portfolio">ผลงานของเรา</a></li>
+      <li><a href="/blog">บทความ &amp; ไอเดีย</a></li>
       <li><a href="#/all">สินค้าทั้งหมด</a></li>
       <li><a href="#/express">สินค้าส่งด่วน</a></li>
       <li><a href="#/quote">ขอใบเสนอราคา</a></li>
@@ -638,6 +657,15 @@ function viewHome(){
 
   <section class="sec about" id="about"><div class="wrap">${aboutStory()}</div></section>
 
+  <section class="sec" style="background:#fff"><div class="wrap">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:38px"><div class="shead" style="margin-bottom:0"><span class="eyebrow"><span class="dot"></span>บทความ & ไอเดีย</span><h2 class="h2">ไอเดีย & ความรู้เรื่องของขวัญองค์กร</h2><p class="lead">คู่มือเลือกของ เทคนิคพิมพ์โลโก้ และไอเดียจัดเซ็ตตามงบ — อัปเดตจากทีม GO PREMIUM</p></div><a class="btn btn-ghost" href="/blog">ดูบทความทั้งหมด</a></div>
+    <div class="g-auto occ-grid">
+      <a class="occ" href="/blog/ของขวัญปีใหม่องค์กร-2026"><div class="im"><img src="/blog/newyear-2026.jpg" alt="ของขวัญปีใหม่องค์กร 2026" loading="lazy"><span class="badge badge-glass glass">เทรนด์ & ไอเดีย</span></div><div class="bd"><h4>ของขวัญปีใหม่องค์กร 2026: คู่มือเลือกของพรีเมียมให้พนักงานและลูกค้า</h4><p>รวมไอเดีย งบประมาณ และไทม์ไลน์สั่งผลิตให้ทันปีใหม่ 2026 แบบครบจบในที่เดียว</p><span style="font-family:var(--head);font-size:12.5px;color:var(--mustard-deep);margin-top:6px">อ่าน 6 นาที →</span></div></a>
+      <a class="occ" href="/blog/ของพรีเมียมพิมพ์โลโก้"><div class="im"><img src="/blog/logo-printing.jpg" alt="ของพรีเมียมพิมพ์โลโก้" loading="lazy"><span class="badge badge-glass glass">ความรู้ & เทคนิค</span></div><div class="bd"><h4>ของพรีเมียมพิมพ์โลโก้: เลือกเทคนิคไหนให้แบรนด์ดูดีและคุ้มงบ</h4><p>สกรีน เลเซอร์ ปัก หรือ UV — แต่ละเทคนิคเหมาะกับวัสดุและงบไม่เหมือนกัน</p><span style="font-family:var(--head);font-size:12.5px;color:var(--mustard-deep);margin-top:6px">อ่าน 6 นาที →</span></div></a>
+      <a class="occ" href="/blog/ของขวัญองค์กรตามงบประมาณ"><div class="im"><img src="/blog/by-budget.jpg" alt="ของขวัญองค์กรตามงบประมาณ" loading="lazy"><span class="badge badge-glass glass">เทรนด์ & ไอเดีย</span></div><div class="bd"><h4>จัดของขวัญองค์กรตามงบ: ได้ของดูดีทุกช่วงราคา 60–1,000+ บาท</h4><p>งบเท่าไหร่ก็มีของที่ใช่ แบ่งให้เห็นภาพชัด 4 ช่วงงบพร้อมตัวอย่าง</p><span style="font-family:var(--head);font-size:12.5px;color:var(--mustard-deep);margin-top:6px">อ่าน 6 นาที →</span></div></a>
+    </div>
+  </div></section>
+
   ${ctaBand()}
   ${quoteSection()}`;
 }
@@ -660,11 +688,17 @@ function viewCatalogue(opts){
   const o=typeof opts==='string'?{cat:opts}:(opts||{});
   FILTER={cat:o.cat||'all',occ:o.occ||'all',tier:o.tier||'all',pmax:0,q:'',sort:'pop'};
   setTimeout(()=>{renderGrid();syncControls();},0);
-  const occBtns=[['all','ทุกโอกาส'],...OCC_FILTERS.map(x=>[x.k,x.label])].map(([k,lab])=>`<button data-occ="${k}" class="${k===FILTER.occ?'on':''}">${esc(lab)}</button>`).join('');
-  const catBtns=['all',...catList].map(c=>`<button data-cat="${c}" class="${c===FILTER.cat?'on':''}">${c==='all'?'ทั้งหมด':esc(CL[c])}<span class="n">${c==='all'?P.length:byCat[c].length}</span></button>`).join('');
-  const tierBtns=['all','value','smart','premium','executive'].map(t=>`<button data-tier="${t}" class="${t===FILTER.tier?'on':''}">${t==='all'?'ทุกงบ':esc(TL[t])}</button>`).join('');
+  const occBtns=[['all','ทุกโอกาส'],...OCC_FILTERS.map(x=>[x.k,x.label])].map(([k,lab])=>`<button data-occ="${k}" class="${k===FILTER.occ?'on':''}"><span class="box"></span><span class="lbl">${esc(lab)}</span></button>`).join('');
+  const catBtns=['all',...catList].map(c=>`<button data-cat="${c}" class="${c===FILTER.cat?'on':''}"><span class="box"></span><span class="lbl">${c==='all'?'ทั้งหมด':esc(CL[c])}</span><span class="n">${c==='all'?P.length:byCat[c].length}</span></button>`).join('');
+  const tierBtns=['all','value','smart','premium','executive'].map(t=>`<button data-tier="${t}" class="${t===FILTER.tier?'on':''}"><span class="box"></span><span class="lbl">${t==='all'?'ทุกงบ':esc(TL[t])}</span></button>`).join('');
+  const occQuick=OCC_FILTERS.map(x=>`<button class="qpill ${x.k===FILTER.occ?'on':''}" data-occ="${x.k}">${esc(x.label)}</button>`).join('');
+  const tierQuick=['value','smart','premium','executive'].map(t=>`<button class="qpill ${t===FILTER.tier?'on':''}" data-tier="${t}">${esc(TL[t])}</button>`).join('');
   return `<section class="sec" style="padding-top:34px"><div class="wrap">
     <div class="crumbs"><a href="#/">หน้าแรก</a> / <b id="crumbCat">สินค้าทั้งหมด</b></div>
+    <div class="quick-bar" id="quickBar">
+      <div class="qrow" id="occQuick"><span class="qlabel">🎁 โอกาส</span>${occQuick}</div>
+      <div class="qrow" id="tierQuick"><span class="qlabel">💰 งบ/ชิ้น</span>${tierQuick}</div>
+    </div>
     <div class="cat-layout">
       <aside class="side" id="side"><h4>เลือกตามโอกาส</h4><div class="flist" id="occFilter">${occBtns}</div><h4>หมวดหมู่</h4><div class="flist" id="catFilter">${catBtns}</div><h4>งบประมาณ / ชิ้น</h4><div class="flist" id="tierFilter">${tierBtns}</div></aside>
       <div>
@@ -711,6 +745,8 @@ function syncControls(){
   set('occFilter','occ',FILTER.occ||'all');
   set('catFilter','cat',FILTER.cat||'all');
   set('tierFilter','tier',FILTER.tier||'all');
+  set('occQuick','occ',FILTER.occ||'all');
+  set('tierQuick','tier',FILTER.tier||'all');
   const q=document.getElementById('q');if(q)q.value=FILTER.q||'';
   renderChips();
 }
@@ -742,6 +778,9 @@ function bindCatalogue(){
   of.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;FILTER.occ=b.dataset.occ;FILTER.cat='all';mark(of,b);renderGrid();syncControls();});
   cf.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;FILTER.cat=b.dataset.cat;FILTER.occ='all';mark(cf,b);renderGrid();syncControls();});
   tf.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;FILTER.tier=b.dataset.tier;mark(tf,b);renderGrid();syncControls();});
+  const oq=document.getElementById('occQuick'),tq=document.getElementById('tierQuick');
+  oq.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;FILTER.occ=(FILTER.occ===b.dataset.occ)?'all':b.dataset.occ;FILTER.cat='all';renderGrid();syncControls();});
+  tq.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;FILTER.tier=(FILTER.tier===b.dataset.tier)?'all':b.dataset.tier;renderGrid();syncControls();});
   document.getElementById('afchips').addEventListener('click',e=>{const x=e.target.closest('[data-clr]');if(!x)return;clearDim(x.dataset.clr);});
   document.getElementById('q').addEventListener('input',e=>{FILTER.q=e.target.value;renderGrid();renderChips();});
   document.getElementById('aifq').addEventListener('keydown',e=>{if(e.key==='Enter')aiFilter();});
@@ -811,6 +850,38 @@ function viewExpress(){
   </div></section>${ctaBand()}`;
 }
 
+/* ===== PORTFOLIO (ผลงานของเรา · Landing Page) =====
+   หน้ารวมแนวงาน/ผลงานที่เราออกแบบและผลิตให้องค์กร ใช้ข้อมูลชุดเดียวกับหน้าแรก
+   (CASES, OCCS, STEPS, REVS, CLIENTS) — ไม่มีการกล่าวอ้างลูกค้า/ราคาปลอม */
+function viewPortfolio(){
+  const clientRow=[...CLIENTS,...CLIENTS].map(c=>`<img src="clients/${c}.png" alt="ลูกค้าองค์กรของ GO PREMIUM" loading="lazy">`).join('');
+  return `<section class="sec" style="padding-top:34px"><div class="wrap">
+    <div class="crumbs"><a href="#/">หน้าแรก</a> / <b>ผลงานของเรา</b></div>
+    <div class="shead"><span class="eyebrow"><span class="dot"></span>ผลงานของเรา · Our Work</span><h2 class="h2">ตัวอย่างผลงานที่เราออกแบบและผลิตให้องค์กร</h2><p class="lead">รวมแนวงานของขวัญองค์กรและของพรีเมียมที่เราดูแลครบ ตั้งแต่คอนเซ็ปต์ ดีไซน์ ผลิต ถึงส่งมอบ — ทุกงานผ่าน Mockup ก่อนผลิตจริง</p></div>
+    <div class="g-auto occ-grid">${CASES.map(c=>`<div class="occ"><div class="im" style="aspect-ratio:4/3"><img src="${repImg(c[3])}" alt="${c[0]}"><span class="badge badge-glass glass">${c[1]}</span></div><div class="bd"><h4>${c[0]}</h4><p>${c[2]}</p></div></div>`).join('')}</div>
+  </div></section>
+
+  <section class="sec" style="background:var(--cloud)"><div class="wrap">
+    <div class="shead center"><span class="eyebrow"><span class="dot"></span>แนวงานตามโอกาส</span><h2 class="h2">จัดเซ็ตได้ทุกโอกาสสำคัญ</h2><p class="lead" style="text-align:center">เลือกโอกาสของคุณ — ดูไอเดียสินค้าและดีไซน์ที่เราแนะนำสำหรับงานนั้น ๆ</p></div>
+    <div class="g-auto occ-grid">${OCCS.map(o=>`<div class="occ"><div class="im"><img src="${repImg(o[2])}" alt="${o[0]}">${o[3]?`<span class="badge badge-glass glass">${o[3]}</span>`:''}</div><div class="bd"><h4>${o[0]}</h4><p>${o[1]}</p><div style="display:flex;align-items:center;justify-content:space-between;margin-top:8px"><span style="font-family:var(--head);font-size:12.5px;color:var(--grey)">ปรับตามงบ & จำนวน</span><a class="btn btn-ghost btn-sm" href="#/o/${o[4]}">ดูไอเดีย</a></div></div></div>`).join('')}</div>
+  </div></section>
+
+  <section class="sec" style="background:#fff"><div class="wrap">
+    <div class="shead center"><span class="eyebrow"><span class="dot"></span>ขั้นตอนการทำงาน</span><h2 class="h2" style="max-width:20ch">เบื้องหลังทุกผลงาน — ครบ จบในที่เดียว</h2></div>
+    <div class="g-auto step-grid">${STEPS.map(s=>`<div class="step ${s[3]?'ai':''}"><div class="top"><div class="ic"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${s[4]}</svg></div><span class="nn">${s[0]}</span></div><h4>${s[1]}${s[3]?' <span class="badge badge-ai">✦ AI</span>':''}</h4><p>${s[2]}</p></div>`).join('')}</div>
+  </div></section>
+
+  <section class="sec" style="background:var(--cloud)"><div class="wrap">
+    <div class="shead center"><span class="eyebrow"><span class="dot"></span>เสียงจากลูกค้า</span><h2 class="h2">องค์กรที่ไว้ใจให้เราดูแล</h2></div>
+    <div class="g-auto rev-grid">${REVS.map(r=>`<div class="rev ${r[3]?'dk':''}"><div class="stars">${'<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1L12 16.8 5.7 21l2.3-7.1-6-4.5h7.6z"/></svg>'.repeat(5)}</div><q>"${r[0]}"</q><div class="who"><div class="av">${r[2]}</div><div class="r">${r[1]}</div></div></div>`).join('')}</div>
+  </div></section>
+
+  <section class="sec" style="background:#fff;padding-top:0"><div class="wrap" style="text-align:center;margin-bottom:24px"><span class="eyebrow" style="justify-content:center"><span class="dot"></span>ไว้วางใจโดยองค์กรชั้นนำ</span></div>
+    <div class="marq"><div class="marq-row">${clientRow}</div></div></section>
+
+  ${ctaBand()}${quoteSection()}`;
+}
+
 /* ===== quote form binding ===== */
 function bindQuote(){
   const f=document.getElementById('quoteForm');if(!f)return;
@@ -857,6 +928,7 @@ function render(){
   else if((m=h.match(/^\/b\/(.+)$/))){app.innerHTML=viewCatalogue({tier:decodeURIComponent(m[1])});bindCatalogue();}
   else if((m=h.match(/^\/p\/(.+)$/))){app.innerHTML=viewProduct(decodeURIComponent(m[1]));}
   else if(h==='/about'){app.innerHTML=viewAbout();}
+  else if(h==='/portfolio'){app.innerHTML=viewPortfolio();bindQuote();}
   else if(h==='/express'){app.innerHTML=viewExpress();}
   else if(h==='about'){app.innerHTML=viewHome();bindQuote();initHero();setTimeout(()=>{const a=document.getElementById('about');if(a)a.scrollIntoView();},60);return;}
   else{app.innerHTML=viewHome();bindQuote();}
@@ -869,7 +941,7 @@ window.addEventListener('hashchange',render);
 function buildChrome(){
   document.getElementById('megaMenu').innerHTML=GROUPS.map(g=>`<div><h5>${g.icon} ${esc(g.group)}</h5>${g.cats.filter(c=>byCat[c]).map(c=>`<a href="#/c/${c}">${esc(CL[c])} <span style="color:var(--grey-400);font-size:12px">(${byCat[c].length})</span></a>`).join('')}</div>`).join('');
   document.getElementById('footCats').innerHTML=catList.slice(0,6).map(c=>`<li><a href="#/c/${c}">${esc(CL[c])}</a></li>`).join('');
-  document.getElementById('drawer').innerHTML=`<div class="wrap" style="padding:8px 0 22px"><a href="#/">หน้าแรก</a><a href="#/express">⚡ สินค้าส่งด่วน</a><a href="#/all">สินค้าทั้งหมด (${P.length})</a>${catList.map(c=>`<a href="#/c/${c}">${esc(CL[c])} (${byCat[c].length})</a>`).join('')}<a href="#/about">เกี่ยวกับเรา</a><div style="display:flex;flex-direction:column;gap:9px;padding-top:14px"><a class="btn btn-primary" href="#/quote">ขอใบเสนอราคา</a><a class="btn btn-line-ghost" href="https://lin.ee/z1GT1KR" target="_blank" rel="noopener">ทักทาง LINE @gopremium</a></div></div>`;
+  document.getElementById('drawer').innerHTML=`<div class="wrap" style="padding:8px 0 22px"><a href="#/">หน้าแรก</a><a href="#/express">⚡ สินค้าส่งด่วน</a><a href="#/all">สินค้าทั้งหมด (${P.length})</a>${catList.map(c=>`<a href="#/c/${c}">${esc(CL[c])} (${byCat[c].length})</a>`).join('')}<a href="#/portfolio">ผลงานของเรา</a><a href="/blog">บทความ &amp; ไอเดีย</a><a href="#/about">เกี่ยวกับเรา</a><div style="display:flex;flex-direction:column;gap:9px;padding-top:14px"><a class="btn btn-primary" href="#/quote">ขอใบเสนอราคา</a><a class="btn btn-line-ghost" href="https://lin.ee/z1GT1KR" target="_blank" rel="noopener">ทักทาง LINE @gopremium</a></div></div>`;
 }
 document.getElementById('burger').addEventListener('click',()=>document.getElementById('drawer').classList.toggle('open'));
 buildChrome();render();
