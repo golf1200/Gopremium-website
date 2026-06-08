@@ -102,8 +102,8 @@ input,select,textarea{font-family:var(--body)}
 .badge-ai{background:rgba(244,189,68,.16);color:var(--mustard-deep);border:1px solid rgba(244,189,68,.4)}
 
 /* hero */
-.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#FBFCFD,var(--cloud));--hd:75px;--trust:130px}
-.hero .glow{position:absolute;right:-8%;top:-20%;width:540px;height:540px;border-radius:50%;background:radial-gradient(circle at 35% 35%,rgba(244,189,68,.28),transparent 60%);pointer-events:none}
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#fff,#F8FAFC);--hd:75px;--trust:130px}
+.hero .glow{position:absolute;right:-8%;top:-20%;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle at 35% 35%,rgba(244,189,68,.16),transparent 62%);pointer-events:none}
 .hero-in{position:relative;z-index:1;display:grid;grid-template-columns:.92fr 1.18fr;gap:clamp(28px,4vw,56px);align-items:stretch;min-height:calc(100svh - var(--hd) - var(--trust));padding:clamp(12px,1.6vw,22px) 0 clamp(14px,1.8vw,24px)}
 .hero-left{display:flex;flex-direction:column;justify-content:space-between;gap:clamp(9.6px,1.66vw,19px);min-height:0}
 .hero-left .tag{margin-bottom:0;align-self:flex-start}
@@ -143,6 +143,19 @@ input,select,textarea{font-family:var(--body)}
 .hero-slides .hdots i:hover{background:rgba(255,255,255,.9)}
 .hero-slides .hdots i.on{background:var(--mustard);width:22px;border-radius:4px;cursor:default}
 @media(prefers-reduced-motion:reduce){.hero-track{transition:none}}
+/* ── Minimal Navy hero accents ─────────────────────────────── */
+.hero h1 .thin{font-weight:500;color:var(--ink)}
+.eyebrow-h{display:inline-flex;align-items:center;gap:11px;font-family:var(--head);font-weight:500;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--grey);align-self:flex-start}
+.eyebrow-h .ln{width:30px;height:1.5px;background:var(--mustard-deep);display:inline-block;border-radius:2px}
+.hpill-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hpill{display:inline-flex;align-items:center;font-family:var(--head);font-weight:600;font-size:13.5px;color:var(--navy);background:var(--cloud);border:1px solid var(--line);padding:7px 16px;border-radius:var(--pill)}
+.hpill .sep{color:var(--mustard-deep);margin:0 7px}
+.htrust{font-size:12.5px;color:var(--grey)}.htrust b{color:var(--navy);font-weight:600}
+.hero-left .hstats{border-top:1px solid var(--line);padding-top:18px;gap:0}
+.hero-left .hstats>div{flex:1;text-align:left;padding:0 18px}
+.hero-left .hstats>div:first-child{padding-left:0}
+.hero-left .hstats>div+div{border-left:1px solid var(--line)}
+.hstats .n span{color:var(--mustard-deep)}
 
 /* trust marquee */
 .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff;padding:26px 0;overflow:hidden}
@@ -590,21 +603,24 @@ function viewHome(){
   return `
   <section class="hero"><div class="glow"></div><div class="wrap hero-in">
     <div class="hero-left">
-      <span class="tag"><span class="flash" style="font-size:15px;line-height:1">🔥</span>ผู้ผลิตของพรีเมียมตัวจริง · ผลิตแล้วกว่า <b>100,000 ชิ้น</b> ทั่วไทย</span>
+      <span class="eyebrow-h"><span class="ln"></span>Go beyond the gift</span>
       <div class="htxt">
-        <div class="en">Go beyond the gift</div>
-        <h1><span class="pre">มากกว่าของขวัญ</span>คือ<em>ประสบการณ์</em></h1>
+        <h1><span class="pre">มากกว่าของขวัญ</span><span class="thin">คือ</span><em>ประสบการณ์</em></h1>
         <p class="lead" style="max-width:42ch">บริการของขวัญองค์กรครบจบในที่เดียว พร้อม <b style="color:var(--navy)">AI ช่วยคิดเซ็ตของขวัญ</b> ให้ตรงงบ ตรงโจทย์ และทันเวลา</p>
       </div>
       <div class="ai-box">
         <div class="ai-row"><input id="aiq" placeholder="เช่น ของขวัญปีใหม่พนักงาน 200 คน งบ 300฿ สายมินิมอล"><button class="btn btn-secondary" onclick="askAI()">✦ ถาม AI</button></div>
       </div>
-      <div class="hstats">
-        <div><div class="n">7–14 วัน</div><div class="l">งานพร้อมส่ง</div></div>
-        <div><div class="n">2 ชม.</div><div class="l">ตอบกลับ + เสนอราคา</div></div>
-        <div><div class="n">100%</div><div class="l">Mockup ก่อนผลิต</div></div>
+      <div class="hpill-row">
+        <span class="hpill">เร็ว<span class="sep">·</span>ครบ<span class="sep">·</span>พรีเมียม</span>
+        <span class="htrust">ผลิตแล้วกว่า <b>100,000 ชิ้น</b> ทั่วไทย</span>
       </div>
       <div class="hero-actions"><a class="btn btn-primary btn-lg" href="#/quote">ขอใบเสนอราคา <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-ghost btn-lg" href="#/all">ดูแคตตาล็อก ${P.length} รายการ</a></div>
+      <div class="hstats">
+        <div><div class="n">7–14 <span>วัน</span></div><div class="l">งานพร้อมส่ง</div></div>
+        <div><div class="n">2 <span>ชม.</span></div><div class="l">ตอบกลับ + เสนอราคา</div></div>
+        <div><div class="n">100<span>%</span></div><div class="l">Mockup ก่อนผลิต</div></div>
+      </div>
     </div>
     <div class="hero-slides"><div class="hero-track">${heroSlides}</div><div class="hdots">${heroDots}</div></div>
   </div></section>
