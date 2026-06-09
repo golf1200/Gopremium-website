@@ -613,7 +613,7 @@ function viewHome(){
         <p class="lead" style="max-width:42ch">บริการของขวัญองค์กรครบจบในที่เดียว พร้อม <b style="color:var(--navy)">AI ช่วยคิดเซ็ตของขวัญ</b> ให้ตรงงบ ตรงโจทย์ และทันเวลา</p>
       </div>
       <div class="ai-box">
-        <div class="ai-row"><input id="aiq" placeholder="เช่น ของขวัญปีใหม่พนักงาน 200 คน งบ 300฿ สายมินิมอล"><button class="btn btn-secondary" onclick="askAI()">✦ ถาม AI</button></div>
+        <div class="ai-row"><input id="aiq" placeholder="ของขวัญปีใหม่พนักงานสองร้อยคน, งบ300บาท"><button class="btn btn-secondary" onclick="askAI()">✦ ถาม AI</button></div>
       </div>
       <div class="fastblock">
         <span class="fast-line">เร็ว<s>●</s>ครบ<s>●</s>พรีเมียม</span>
@@ -936,6 +936,32 @@ function initHero(){
   go(0);start();
 }
 
+/* ===== AI box: minimal typewriter placeholder ===== */
+function initAIType(){
+  const el=document.getElementById('aiq');
+  if(!el) return;
+  const full='ของขวัญปีใหม่พนักงานสองร้อยคน, งบ300บาท';
+  if(window._aiTypeT){clearTimeout(window._aiTypeT);window._aiTypeT=null;}
+  const reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(reduce){el.placeholder=full;return;}
+  // split by grapheme so Thai vowels/tone marks stay attached to their consonant
+  let units;
+  try{const seg=new Intl.Segmenter('th',{granularity:'grapheme'});units=[...seg.segment(full)].map(s=>s.segment);}
+  catch(e){units=Array.from(full);}
+  const caret='▏';let i=0,dir=1;
+  const tick=(d)=>{window._aiTypeT=setTimeout(step,d);};
+  function step(){
+    if(!document.body.contains(el)){window._aiTypeT=null;return;}      // input gone → stop loop
+    if(document.activeElement===el||el.value){return tick(600);}       // pause while user is typing
+    i+=dir;
+    if(i>=units.length){i=units.length;dir=-1;el.placeholder=units.join('');return tick(2200);} // hold full
+    if(i<=0){i=0;dir=1;el.placeholder='';return tick(650);}            // brief blank before retype
+    el.placeholder=units.slice(0,i).join('')+caret;
+    tick(dir>0?(55+Math.random()*55):30);                              // type slow, erase fast
+  }
+  step();
+}
+
 /* ===== router ===== */
 function render(){
   const h=location.hash.replace(/^#/,'')||'/';const app=document.getElementById('app');
@@ -950,9 +976,9 @@ function render(){
   else if(h==='/about'){app.innerHTML=viewAbout();}
   else if(h==='/portfolio'){app.innerHTML=viewPortfolio();bindQuote();}
   else if(h==='/express'){app.innerHTML=viewExpress();}
-  else if(h==='about'){app.innerHTML=viewHome();bindQuote();initHero();setTimeout(()=>{const a=document.getElementById('about');if(a)a.scrollIntoView();},60);return;}
+  else if(h==='about'){app.innerHTML=viewHome();bindQuote();initHero();initAIType();setTimeout(()=>{const a=document.getElementById('about');if(a)a.scrollIntoView();},60);return;}
   else{app.innerHTML=viewHome();bindQuote();}
-  if(document.querySelector('.hero-slides'))initHero();
+  if(document.querySelector('.hero-slides')){initHero();initAIType();}
   window.scrollTo(0,0);
 }
 window.addEventListener('hashchange',render);
