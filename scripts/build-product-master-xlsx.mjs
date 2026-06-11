@@ -55,9 +55,103 @@ const RED_BG = 'FFFBE0E0', RED_TX = 'FFC0162C';
 const ZEBRA = 'FFF6F8FB';
 const fill = (argb) => ({ type: 'pattern', pattern: 'solid', fgColor: { argb } });
 
+const YELLOW_IN = 'FFFFF2B8';          // ช่องกรอกราคา
+const today = new Date().toISOString().slice(0, 10);
+
 const wb = new ExcelJS.Workbook();
 wb.creator = 'GO PREMIUM';
 wb.created = new Date();
+
+const needPrice = rows.filter((p) => p.live && !p.price);
+const execCount = rows.filter((p) => (p.price || 0) > 300).length;
+
+/* ============ Sheet 0: TO-DO (เปิดไฟล์มาเจอชีตนี้ก่อน) ============ */
+const td = wb.addWorksheet('📋 TO-DO', { views: [{ state: 'frozen', ySplit: 3 }] });
+td.columns = [{ width: 6 }, { width: 52 }, { width: 16 }, { width: 12 }, { width: 13 }, { width: 78 }];
+const tdTitle = td.addRow(['GO PREMIUM — TO-DO ต่อจากงาน SEO/Tracking Overhaul (11 มิ.ย. 2026)']);
+tdTitle.font = { bold: true, size: 15, color: { argb: NAVY } }; tdTitle.height = 26;
+td.mergeCells('A1:F1');
+const tdWarn = td.addRow([`อัปเดตล่าสุด: ${today} · ⚠️ ไฟล์นี้สร้างใหม่อัตโนมัติทุกครั้งที่รัน node scripts/build-product-master-xlsx.mjs — เครื่องหมายที่ติ๊กในชีตนี้จะหายเมื่อสร้างใหม่ แต่ "ราคาที่กรอกในชีตถัดไป" จะถูกเก็บถาวรเมื่อสั่ง import แล้ว`]);
+tdWarn.font = { italic: true, size: 10, color: { argb: RED_TX } }; td.mergeCells('A2:F2'); tdWarn.height = 30;
+tdWarn.alignment = { wrapText: true, vertical: 'middle' };
+const tdHead = td.addRow(['#', 'งาน', 'เหลือ / เป้า', 'ความสำคัญ', 'สถานะ (ติ๊กเอง)', 'วิธีทำ']);
+tdHead.font = { bold: true, color: { argb: 'FFFFFFFF' } };
+tdHead.eachCell((c) => { c.fill = fill(NAVY); c.alignment = { vertical: 'middle', horizontal: 'center' }; });
+const TODO = [
+  ['เติมราคาสินค้า', `${needPrice.length} SKU`, '🔴 สูงมาก',
+   'ไปที่ชีต "ราคาที่ต้องเติม" → กรอกราคาในช่องสีเหลือง → เซฟไฟล์ → บอก Claude ว่า "import ราคา" (รัน node scripts/import-prices-from-master.mjs แล้ว deploy ให้) — ราคาที่กรอกจะปลดล็อก filter งบ + AI search + ราคาขึ้น Google'],
+  ['ตั้ง Key Events ใน GA4 (ทำเองครั้งเดียว ~10 นาที)', '2 events', '🔴 สูงมาก',
+   'เปิด GA4 (G-JTMVQM245Y) → Admin → Events → เปิดสวิตช์ "Mark as key event" ให้ generate_lead และ contact_line — จำเป็นก่อนยิงโฆษณา ไม่งั้นวัด conversion ไม่ได้'],
+  ['Submit sitemap ใน Google Search Console', '2 โดเมน', '🔴 สูง',
+   'search.google.com/search-console → เพิ่ม property ทั้งโดเมนไทยและ vercel.app → Sitemaps → submit "sitemap.xml"'],
+  ['หารูปจริงให้สินค้าที่ยังใช้ภาพ mockup', `${rows.length - rows.filter((p) => p.img).length} SKU`, '🟠 สูง',
+   'ดูชีต Master คอลัมน์ "มีรูปภาพ" = ✗ ไม่มี — ถ่าย/หารูปแล้วส่งให้ Claude เข้า image pipeline ตามเดิม'],
+  ['เติมสินค้า/ราคาช่วง Executive (มากกว่า ฿300)', `ตอนนี้มี ${execCount} ตัว`, '🟠 กลาง',
+   'กลุ่ม VIP/ผู้บริหารแทบไม่มีของเสนอ — เลือกสินค้าหรู ๆ จากแคตตาล็อกที่ยังไม่มีราคา แล้วตั้งราคา 300+ หรือเพิ่ม SKU ใหม่'],
+  ['ตั้งชื่อ + ข้อมูลให้ 5 SKU ที่ยังไม่มีชื่อ (หรือตัดทิ้ง)', 'BG043 DW030 DW031 LS025 LS027', '🟡 กลาง',
+   'ตอนนี้ถูกซ่อนจากเว็บแล้ว (ไม่โชว์การ์ดเปล่า) — ถ้าจะขายให้ตั้งชื่อ/ราคา/รูป แล้วแจ้ง Claude ปลดล็อก'],
+  ['เลือก SKU สำหรับหน้า "สินค้าส่งด่วน" (#/express)', 'EXPRESS_SKUS ยังว่าง', '🟡 กลาง',
+   'เลือกรุ่นที่ผลิต/ส่งทัน 7–14 วันจริง แล้วส่งรายการ SKU ให้ Claude เติมใน v2.html'],
+  ['ตัดสินใจชะตา catalogue.html / corporate.html', '2 ไฟล์ orphan', '🟡 กลาง',
+   'ตอนนี้ไม่มีลิงก์เข้า-ไม่อยู่ใน sitemap — ใช้เป็น landing โฆษณา (แนะนำ) หรือลบทิ้ง'],
+  ['เขียน blog SEO ต่อเนื่อง', 'เดือนละ 2 บทความ', '🟡 กลาง',
+   'มี 5 บทความแล้ว ลิงก์ครบจากหน้าแรกแล้ว — หัวข้อถัดไปดู docs/SEO-CONTENT-PLAN.md'],
+  ['ระยะยาว: pre-render หน้าสินค้า + rebrand CI เป็น Master Final', '—', '⚪ ต่ำ',
+   'pre-render ดัน SEO 78→90+ · เว็บยังใช้พาเลตเก่า #1F3A5F/Kanit — rebrand เป็น #13244a/#f4b223/Anuphan เป็นงานดีไซน์แยก'],
+];
+TODO.forEach((t, i) => {
+  const r = td.addRow([i + 1, t[0], t[1], t[2], '☐', t[3]]);
+  r.alignment = { vertical: 'top', wrapText: true };
+  r.height = 42;
+  if (i % 2 === 1) r.eachCell((c) => (c.fill = fill(ZEBRA)));
+  r.getCell(1).alignment = { horizontal: 'center', vertical: 'top' };
+  r.getCell(2).font = { bold: true, color: { argb: NAVY } };
+  r.getCell(5).alignment = { horizontal: 'center', vertical: 'top' };
+  r.getCell(6).font = { size: 10, color: { argb: 'FF444C58' } };
+});
+
+/* ============ Sheet 0.5: ราคาที่ต้องเติม (ช่องกรอก) ============ */
+const pr = wb.addWorksheet('ราคาที่ต้องเติม', { views: [{ state: 'frozen', ySplit: 3 }] });
+pr.columns = [
+  { header: 'SKU', key: 'sku', width: 11 },
+  { header: 'ชื่อสินค้า', key: 'name', width: 44 },
+  { header: 'หมวดหมู่', key: 'catTh', width: 20 },
+  { header: 'MOQ', key: 'moq', width: 8 },
+  { header: 'ราคา/ชิ้น ฿ ← กรอกตรงนี้', key: 'price', width: 22 },
+  { header: 'ลิงก์ 1688 (ไว้เช็คต้นทุน)', key: 'link', width: 30 },
+];
+pr.spliceRows(1, 0, [], []); // เลื่อน header ไปแถว 3 เพื่อใส่ title + คำอธิบาย
+pr.getCell('A1').value = `ราคาที่ต้องเติม — ${needPrice.length} SKU (เฉพาะที่ขึ้นเว็บแล้วแต่ยังไม่มีราคา) · ราคาอ้างอิงที่ 300 ชิ้น พิมพ์โลโก้`;
+pr.getCell('A1').font = { bold: true, size: 14, color: { argb: NAVY } };
+pr.mergeCells('A1:F1'); pr.getRow(1).height = 24;
+pr.getCell('A2').value = 'กรอกเฉพาะช่องสีเหลือง → เซฟไฟล์ → บอก Claude ว่า "import ราคา" — ระบบจะอัปเดตเข้าเว็บ (products-raw.json + catalog-master.json) แล้ว deploy ให้ · กรอกไม่ครบก็ import ได้ ทำทีละหมวดได้';
+pr.getCell('A2').font = { italic: true, size: 10, color: { argb: AMBER_TX } };
+pr.mergeCells('A2:F2'); pr.getRow(2).height = 28;
+pr.getRow(2).alignment = { wrapText: true, vertical: 'middle' };
+const prHead = pr.getRow(3);
+prHead.font = { bold: true, color: { argb: 'FFFFFFFF' } };
+prHead.eachCell((c) => { c.fill = fill(NAVY); c.alignment = { vertical: 'middle', horizontal: 'center', wrapText: true }; });
+prHead.height = 24;
+// จัดกลุ่มตามหมวด เรียงหมวดที่ค้างเยอะสุดก่อน
+const npByCat = {};
+needPrice.forEach((p) => { (npByCat[p.catTh] ??= []).push(p); });
+Object.keys(npByCat).sort((a, b) => npByCat[b].length - npByCat[a].length).forEach((cat) => {
+  const hr = pr.addRow([`${cat} — ค้าง ${npByCat[cat].length} รายการ`]);
+  pr.mergeCells(`A${hr.number}:F${hr.number}`);
+  hr.getCell(1).fill = fill(GOLD);
+  hr.getCell(1).font = { bold: true, color: { argb: NAVY } };
+  hr.height = 20;
+  npByCat[cat].forEach((p) => {
+    const r = pr.addRow({ sku: p.sku, name: p.name, catTh: p.catTh, moq: p.moq, price: '', link: p.link || '—' });
+    r.alignment = { vertical: 'middle', wrapText: true };
+    r.height = 22;
+    r.getCell('sku').font = { bold: true, color: { argb: NAVY } };
+    const cell = r.getCell('price');
+    cell.fill = fill(YELLOW_IN);
+    cell.numFmt = '#,##0';
+    cell.border = { top: { style: 'thin' }, bottom: { style: 'thin' }, left: { style: 'thin' }, right: { style: 'thin' } };
+  });
+});
 
 /* ============ Sheet 1: master list ============ */
 const ws = wb.addWorksheet('รายการสินค้า (Master)', { views: [{ state: 'frozen', ySplit: 1 }] });
@@ -81,7 +175,7 @@ ws.columns = [
 rows.forEach((p, i) => {
   ws.addRow({
     no: i + 1, sku: p.sku, name: p.name, features: p.features || '—', catTh: p.catTh,
-    price: p.price ?? '—', status: p.status,
+    price: p.price ?? (p.live ? '⚠ ใส่ราคา' : '—'), status: p.status,
     complete: p.complete ? '✓ ครบ' : '✗ ไม่ครบ',
     img: p.img ? '✓ มี' : '✗ ไม่มี',
     live: p.live ? '✓ ขึ้นแล้ว' : '✗ ยังไม่ขึ้น',
@@ -106,9 +200,10 @@ for (let r = 2; r <= ws.rowCount; r++) {
   if (r % 2 === 0) row.eachCell((c) => (c.fill = fill(ZEBRA)));
   // SKU bold
   row.getCell('sku').font = { bold: true, color: { argb: NAVY } };
-  // price
+  // price — ถ้าขึ้นเว็บแล้วแต่ไม่มีราคา = ไฮไลต์แดง (ไปกรอกที่ชีต "ราคาที่ต้องเติม")
   const pc = row.getCell('price');
   if (typeof p.price === 'number') { pc.numFmt = '#,##0'; pc.alignment = { horizontal: 'right', vertical: 'top' }; }
+  else if (p.live) { pc.fill = fill(RED_BG); pc.font = { bold: true, color: { argb: RED_TX } }; pc.alignment = { horizontal: 'center', vertical: 'middle' }; }
   else { pc.font = { color: { argb: RED_TX } }; pc.alignment = { horizontal: 'center', vertical: 'top' }; }
   // status — colour by state
   const sc = row.getCell('status');
@@ -160,6 +255,7 @@ metric('มีรูปภาพจริง', img, 'รูปที่ publish 
 metric('ยังไม่มีรูปภาพ', total - img, 'ใช้ mockup ชั่วคราว — ต้องหา/ถ่ายรูป', AMBER_BG, AMBER_TX);
 metric('ข้อมูลครบทุกช่อง', complete, 'live + รูป + ราคา + รายละเอียด + ขนาด + วัสดุ', GREEN_BG, GREEN_TX);
 metric('ข้อมูลยังไม่ครบ', total - complete, 'ขาดอย่างน้อย 1 ช่อง', AMBER_BG, AMBER_TX);
+metric('ยังไม่มีราคา (ขึ้นเว็บแล้ว)', needPrice.length, 'กรอกที่ชีต "ราคาที่ต้องเติม" → สั่ง import', RED_BG, RED_TX);
 sm.addRow([]);
 const bh = sm.addRow(['แยกตามหมวดหมู่ (เว็บไซต์)', 'จำนวน', 'มีรูป / ขึ้น live']);
 bh.font = { bold: true, color: { argb: 'FFFFFFFF' } };
