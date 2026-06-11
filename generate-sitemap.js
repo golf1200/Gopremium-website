@@ -12,10 +12,8 @@ const __dir = dirname(fileURLToPath(import.meta.url));
 const SITE_URL = site.siteUrl; // single source of truth — see src/config.js
 const products = JSON.parse(readFileSync(join(__dir, 'src/data/products-raw.json'), 'utf8'));
 
-const OCCASIONS = [
-  'new-year','songkran','new-employee','vip','event',
-  'milestone','esg','thank-you','executive','mass-staff',
-];
+// ต้องตรงกับ OCC_FILTERS keys ใน public/v2.html (หน้าเว็บจริง)
+const OCCASIONS = ['newyear','welcome','vip','event','eco','milestone'];
 const BUDGET_TIERS = ['value','smart','premium','executive'];
 const BLOG_SLUGS = [
   'ของขวัญปีใหม่องค์กร-2026',

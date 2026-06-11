@@ -5,14 +5,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <!-- Google tag (gtag.js) — GA4 G-JTMVQM245Y -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JTMVQM245Y"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JTMVQM245Y');</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JTMVQM245Y',{send_page_view:false});/* page_view ยิงจาก router (SPA) */</script>
 <!-- Vercel Web Analytics + Speed Insights (enable in Vercel project settings) -->
 <script defer src="/_vercel/insights/script.js"></script>
 <script defer src="/_vercel/speed-insights/script.js"></script>
 <base href="/" />
 <!-- GO PREMIUM v2.0 · production homepage -->
-<title>GO PREMIUM 2.0 — มากกว่าของขวัญ คือประสบการณ์</title>
-<meta name="description" content="GO PREMIUM โดย Passion Grow Trading — ออกแบบและผลิตของพรีเมียม ของขวัญองค์กร พิมพ์โลโก้ ครบวงจร ดีไซน์ ผลิต ส่งมอบ · แคตตาล็อก 245 รายการ · ตอบกลับใน 2 ชม." />
+<title>ของพรีเมียม ของขวัญองค์กร พิมพ์โลโก้ ครบวงจร | GO PREMIUM</title>
+<meta name="description" content="GO PREMIUM โดย Passion Grow Trading — ออกแบบและผลิตของพรีเมียม ของขวัญองค์กร พิมพ์โลโก้ ครบวงจร ดีไซน์ ผลิต ส่งมอบ · แคตตาล็อก 240 รายการ · ตอบกลับใน 2 ชม." />
+<link rel="canonical" href="https://www.xn--22ck4b1ansahhp4gvdtab7n8e.com/" id="canon" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="GO PREMIUM" />
+<meta property="og:locale" content="th_TH" />
+<meta property="og:url" content="https://www.xn--22ck4b1ansahhp4gvdtab7n8e.com/" id="ogUrl" />
+<meta property="og:title" content="ของพรีเมียม ของขวัญองค์กร พิมพ์โลโก้ ครบวงจร | GO PREMIUM" id="ogTitle" />
+<meta property="og:description" content="ออกแบบและผลิตของพรีเมียม ของขวัญองค์กร พิมพ์โลโก้ ครบวงจร · แคตตาล็อก 240 รายการ · Mockup ก่อนผลิต · ตอบกลับใน 2 ชม." id="ogDesc" />
+<meta property="og:image" content="https://www.xn--22ck4b1ansahhp4gvdtab7n8e.com/og-image.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="ของพรีเมียม ของขวัญองค์กร พิมพ์โลโก้ ครบวงจร | GO PREMIUM" id="twTitle" />
+<meta name="twitter:description" content="ออกแบบและผลิตของพรีเมียม ของขวัญองค์กร พิมพ์โลโก้ ครบวงจร · แคตตาล็อก 240 รายการ · Mockup ก่อนผลิต · ตอบกลับใน 2 ชม." id="twDesc" />
+<meta name="twitter:image" content="https://www.xn--22ck4b1ansahhp4gvdtab7n8e.com/og-image.jpg" />
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.xn--22ck4b1ansahhp4gvdtab7n8e.com/#org","name":"GO PREMIUM","legalName":"Passion Grow Trading Co., Ltd.","url":"https://www.xn--22ck4b1ansahhp4gvdtab7n8e.com/","logo":"https://www.xn--22ck4b1ansahhp4gvdtab7n8e.com/logo.png","email":"info@passiongrow.co.th","sameAs":["https://lin.ee/z1GT1KR"]},{"@type":"WebSite","@id":"https://www.xn--22ck4b1ansahhp4gvdtab7n8e.com/#website","name":"GO PREMIUM — ของพรีเมียม ของขวัญองค์กร พิมพ์โลโก้","url":"https://www.xn--22ck4b1ansahhp4gvdtab7n8e.com/","inLanguage":"th","publisher":{"@id":"https://www.xn--22ck4b1ansahhp4gvdtab7n8e.com/#org"}}]}</script>
+<script type="application/ld+json" id="ldRoute"></script>
 <link rel="icon" href="favicon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -474,7 +488,8 @@ function mock(cat,sku){
 }
 
 /* ===== data ===== */
-const P=window.GP_PRODUCTS,GROUPS=window.GP_GROUPS,CL=window.GP_CATLABELS,TL=window.GP_TIERLABELS;
+// ตัด SKU ที่ยังไม่มีชื่อ (master ระบุ "ยังไม่ขึ้นเว็บ") ออกจากทุกหน้า
+const P=window.GP_PRODUCTS.filter(p=>p.name&&p.name.trim()),GROUPS=window.GP_GROUPS,CL=window.GP_CATLABELS,TL=window.GP_TIERLABELS;
 const byCat={};P.forEach(p=>{(byCat[p.catSlug]??=[]).push(p);});
 const catList=Object.keys(CL).filter(c=>byCat[c]).sort((a,b)=>byCat[b].length-byCat[a].length);
 const baht=n=>n?('฿'+n.toLocaleString('en-US')):'สอบถามราคา';
@@ -482,6 +497,10 @@ const esc=s=>(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"
 const grpIcon=c=>{const g=GROUPS.find(x=>x.cats.includes(c));return g?g.icon:'🎁';};
 const pimg=p=>p.img||mock(p.catSlug,p.sku);                                   // real photo or mockup fallback
 const repImg=cat=>{const a=byCat[cat]||[];const r=a.find(p=>p.img)||a[0];return r?pimg(r):mock(cat,cat);};
+
+/* ===== analytics (GA4 events — SPA) ===== */
+function track(ev,params){try{if(window.gtag)gtag('event',ev,params||{});}catch(e){}}
+document.addEventListener('click',e=>{const a=e.target.closest&&e.target.closest('a[href*="lin.ee"]');if(a)track('contact_line',{source:(location.hash||'#/').slice(1)});});
 
 /* ===== reusable bits ===== */
 function card(p){
@@ -599,11 +618,11 @@ const CLIENTS=['c1','c2','c3','c4','c5','c6','c7','c8','c9','c10','c11','c12','c
 
 function viewHome(){
   const banners=[
-    ['banners/banner1.jpg','งานด่วน พร้อมส่ง 7–14 วัน · ของพรีเมียมองค์กร GO PREMIUM'],
-    ['banners/banner2.jpg','AI ช่วยคิดเซ็ตของขวัญในไม่กี่วินาที · GO PREMIUM'],
-    ['banners/banner3.jpg','ของขวัญองค์กรและเทศกาลที่สะท้อนแบรนด์คุณ · GO PREMIUM'],
+    ['banners/banner1.webp','งานด่วน พร้อมส่ง 7–14 วัน · ของพรีเมียมองค์กร GO PREMIUM'],
+    ['banners/banner2.webp','AI ช่วยคิดเซ็ตของขวัญในไม่กี่วินาที · GO PREMIUM'],
+    ['banners/banner3.webp','ของขวัญองค์กรและเทศกาลที่สะท้อนแบรนด์คุณ · GO PREMIUM'],
   ];
-  const heroSlides=banners.map(([src,alt],i)=>`<img src="${src}" alt="${esc(alt)}" loading="${i?'lazy':'eager'}">`).join('');
+  const heroSlides=banners.map(([src,alt],i)=>`<img src="${src}" alt="${esc(alt)}" width="1204" height="1306" loading="${i?'lazy':'eager'}" ${i?'':'fetchpriority="high"'} decoding="async">`).join('');
   const heroDots=banners.map((_,i)=>`<i data-i="${i}" role="button" tabindex="0" aria-label="ไปสไลด์ที่ ${i+1}"></i>`).join('');
   const feat=catList.slice(0,4).map(c=>byCat[c][0]).concat(catList.slice(0,4).map(c=>byCat[c][1]||byCat[c][0])).slice(0,8);
   const clientRow=[...CLIENTS,...CLIENTS].map(c=>`<img src="clients/${c}.png" alt="ลูกค้าองค์กรของ GO PREMIUM" loading="lazy">`).join('');
@@ -694,13 +713,21 @@ function viewHome(){
       <a class="occ" href="/blog/ของขวัญปีใหม่องค์กร-2026"><div class="im"><img src="/blog/newyear-2026.jpg" alt="ของขวัญปีใหม่องค์กร 2026" loading="lazy"><span class="badge badge-glass glass">เทรนด์ & ไอเดีย</span></div><div class="bd"><h4>ของขวัญปีใหม่องค์กร 2026: คู่มือเลือกของพรีเมียมให้พนักงานและลูกค้า</h4><p>รวมไอเดีย งบประมาณ และไทม์ไลน์สั่งผลิตให้ทันปีใหม่ 2026 แบบครบจบในที่เดียว</p><span style="font-family:var(--head);font-size:12.5px;color:var(--mustard-deep);margin-top:6px">อ่าน 6 นาที →</span></div></a>
       <a class="occ" href="/blog/ของพรีเมียมพิมพ์โลโก้"><div class="im"><img src="/blog/logo-printing.jpg" alt="ของพรีเมียมพิมพ์โลโก้" loading="lazy"><span class="badge badge-glass glass">ความรู้ & เทคนิค</span></div><div class="bd"><h4>ของพรีเมียมพิมพ์โลโก้: เลือกเทคนิคไหนให้แบรนด์ดูดีและคุ้มงบ</h4><p>สกรีน เลเซอร์ ปัก หรือ UV — แต่ละเทคนิคเหมาะกับวัสดุและงบไม่เหมือนกัน</p><span style="font-family:var(--head);font-size:12.5px;color:var(--mustard-deep);margin-top:6px">อ่าน 6 นาที →</span></div></a>
       <a class="occ" href="/blog/ของขวัญองค์กรตามงบประมาณ"><div class="im"><img src="/blog/by-budget.jpg" alt="ของขวัญองค์กรตามงบประมาณ" loading="lazy"><span class="badge badge-glass glass">เทรนด์ & ไอเดีย</span></div><div class="bd"><h4>จัดของขวัญองค์กรตามงบ: ได้ของดูดีทุกช่วงราคา 60–1,000+ บาท</h4><p>งบเท่าไหร่ก็มีของที่ใช่ แบ่งให้เห็นภาพชัด 4 ช่วงงบพร้อมตัวอย่าง</p><span style="font-family:var(--head);font-size:12.5px;color:var(--mustard-deep);margin-top:6px">อ่าน 6 นาที →</span></div></a>
+      <a class="occ" href="/blog/ของพรีเมียมรักษ์โลก"><div class="im"><img src="/blog/eco-gift.jpg" alt="ของพรีเมียมรักษ์โลก ESG" loading="lazy"><span class="badge badge-glass glass">เทรนด์ & ไอเดีย</span></div><div class="bd"><h4>ของพรีเมียมรักษ์โลก: ของขวัญองค์กรสาย ESG ที่เล่าเรื่องแบรนด์ได้</h4><p>วัสดุรีไซเคิล ดีไซน์ยั่งยืน — เลือกของขวัญที่สะท้อนความใส่ใจสิ่งแวดล้อมขององค์กร</p><span style="font-family:var(--head);font-size:12.5px;color:var(--mustard-deep);margin-top:6px">อ่าน 6 นาที →</span></div></a>
+      <a class="occ" href="/blog/ของชำร่วยงานอีเวนต์องค์กร"><div class="im"><img src="/blog/event-souvenir.jpg" alt="ของชำร่วยงานอีเวนต์องค์กร" loading="lazy"><span class="badge badge-glass glass">ความรู้ & เทคนิค</span></div><div class="bd"><h4>ของชำร่วยงานอีเวนต์องค์กร: เลือกของแจกให้คนจำแบรนด์ได้</h4><p>ของแจกงานสัมมนา ออกบูธ และอีเวนต์ ที่คุ้มงบและถ่ายรูปขึ้น พร้อมไทม์ไลน์สั่งผลิต</p><span style="font-family:var(--head);font-size:12.5px;color:var(--mustard-deep);margin-top:6px">อ่าน 6 นาที →</span></div></a>
     </div>
   </div></section>
 
   ${ctaBand()}
   ${quoteSection()}`;
 }
-function askAI(){const v=(document.getElementById('aiq')||{}).value||'';location.hash='#/quote';setTimeout(()=>{const d=document.querySelector('#quoteForm [name=details]');if(d&&v)d.value=v;},120);}
+// กล่อง AI หน้าแรก → พาไปหน้าแคตตาล็อกแล้วรันตัวกรอง AI ทันที (เสนอสินค้าจริง ไม่ใช่แค่ฟอร์ม)
+function askAI(){
+  const v=((document.getElementById('aiq')||{}).value||'').trim();
+  track('ai_search',{query:v,source:'hero'});
+  location.hash='#/all';
+  setTimeout(()=>{const i=document.getElementById('aifq');if(i&&v){i.value=v;aiFilter();}},80);
+}
 
 /* ===== CATALOGUE ===== */
 // งบ/ชิ้น คำนวณจากราคาจริง (สินค้าส่วนใหญ่ field tier ว่าง) — ช่วงตรงกับ GP_TIERLABELS
@@ -750,7 +777,7 @@ function renderGrid(){
   if(FILTER.cat!=='all')l=l.filter(p=>p.catSlug===FILTER.cat);
   if(FILTER.tier&&FILTER.tier!=='all')l=l.filter(p=>priceTier(p.price)===FILTER.tier);
   if(FILTER.pmax)l=l.filter(p=>p.price&&p.price<=FILTER.pmax);
-  if(FILTER.q){const q=FILTER.q.toLowerCase();l=l.filter(p=>(p.name+' '+p.features+' '+p.cat).toLowerCase().includes(q));}
+  if(FILTER.q){const q=FILTER.q.toLowerCase();l=l.filter(p=>(p.name+' '+p.features+' '+p.cat+' '+(p.material||'')+' '+(p.size||'')+' '+p.sku+' '+(p.logo||[]).join(' ')).toLowerCase().includes(q));}
   if(FILTER.sort==='low')l.sort((a,b)=>(a.price||1e9)-(b.price||1e9));
   else if(FILTER.sort==='high')l.sort((a,b)=>(b.price||0)-(a.price||0));
   else if(FILTER.sort==='name')l.sort((a,b)=>a.name.localeCompare(b.name,'th'));
@@ -787,15 +814,49 @@ function aiFilter(){
   const t=s.toLowerCase();
   FILTER.occ='all';FILTER.cat='all';FILTER.tier='all';FILTER.pmax=0;FILTER.q='';
   let matched=false;
-  const num=(t.match(/(\d[\d,]{0,6})/)||[])[1];
-  if(num){const n=+num.replace(/,/g,'');if(n>0&&n<100000){FILTER.pmax=n;matched=true;}}
-  const OCCKW=[['newyear',/ปีใหม่|new ?year|ปลายปี|สงกรานต์/],['welcome',/ต้อนรับ|พนักงานใหม่|onboard|welcome|วันแรก/],['vip',/vip|ผู้บริหาร|ลูกค้าคนสำคัญ|คู่ค้า|exclusive|หรู|พรีเมียมสุด/],['event',/อีเวนต์|สัมมนา|event|ออกบูธ|บูธ|แจกงาน|งานแสดง/],['eco',/รักษ์โลก|eco|esg|ยั่งยืน|green|รีไซเคิล/],['milestone',/ครบรอบ|milestone|รางวัล|เกษียณ|ความสำเร็จ/]];
+  // งบ/ชิ้น: เลขใกล้คำว่า "งบ/ไม่เกิน/ราคา" > เลขที่ตามด้วย "บาท/฿" > เลขเดี่ยวที่ไม่ใช่จำนวน (คน/ชิ้น/ใบ)
+  let bm=t.match(/(\d[\d,]{0,6})\s*(?:-|–|ถึง)\s*(\d[\d,]{0,6})\s*(?:บาท|฿)?/);
+  if(bm){const n=Math.max(+bm[1].replace(/,/g,''),+bm[2].replace(/,/g,''));if(n>0&&n<100000){FILTER.pmax=n;matched=true;}}
+  else{
+    bm=t.match(/(?:งบ(?:ประมาณ)?|ไม่เกิน|budget|ราคา)\D{0,10}(\d[\d,]{0,6})/)||t.match(/(\d[\d,]{0,6})\s*(?:บาท|฿|baht)/);
+    if(!bm){const nums=[...t.matchAll(/(\d[\d,]{0,6})(\s*(?:คน|ชิ้น|อัน|ใบ|เซ็ต|กล่อง|ท่าน|ออเดอร์))?/g)].filter(x=>!x[2]);if(nums.length===1)bm=nums[0];}
+    if(bm){const n=+bm[1].replace(/,/g,'');if(n>0&&n<100000){FILTER.pmax=n;matched=true;}}
+  }
+  if(!FILTER.pmax&&/งบน้อย|ประหยัด|ราคาถูก|ถูก ๆ|ถูกๆ/.test(t)){FILTER.tier='value';matched=true;}
+  const OCCKW=[
+    ['newyear',/ปีใหม่|new ?year|ปลายปี|ส่งท้ายปี|สงกรานต์|ปีเก่า|เทศกาล/],
+    ['welcome',/ต้อนรับ|พนักงานใหม่|onboard|welcome|วันแรก|เวลคัม|first ?day/],
+    ['vip',/vip|ผู้บริหาร|ลูกค้าคนสำคัญ|ลูกค้าพิเศษ|คู่ค้า|exclusive|หรู|พรีเมียมสุด|ระดับสูง/],
+    ['event',/อีเวนต์|สัมมนา|event|ออกบูธ|บูธ|แจกงาน|งานแสดง|ประชุม|expo|งานแฟร์|ออกงาน|seminar/],
+    ['eco',/รักษ์โลก|eco|esg|ยั่งยืน|green|รีไซเคิล|สิ่งแวดล้อม|recycle|ใส่ใจโลก/],
+    ['milestone',/ครบรอบ|milestone|รางวัล|เกษียณ|ความสำเร็จ|ฉลอง|anniversary|ที่ระลึกบริษัท/],
+  ];
   for(const [k,re] of OCCKW){if(re.test(t)){FILTER.occ=k;matched=true;break;}}
-  const CATKW=[['drinkware',/กระบอก|แก้ว|น้ำ|ดื่ม|tumbler/],['bags',/กระเป๋า|เป้|ถุง|bag/],['stationery',/ปากกา|สมุด|เครื่องเขียน|โน้ต|note|pen/],['fan',/พัดลม|fan/],['powerbank',/พาวเวอร์|powerbank|แบตสำรอง/],['umbrella',/ร่ม|umbrella/],['giftset',/เซ็ต|กิฟต์|gift ?set|ชุดของขวัญ/],['hat',/หมวก|cap/],['garment',/เสื้อ|polo|garment/],['lifestyle',/ไลฟ์สไตล์|ของใช้|lifestyle/]];
-  for(const [k,re] of CATKW){if(re.test(t)){FILTER.cat=k;matched=true;break;}}
+  // เรียงหมวดเฉพาะเจาะจงก่อนหมวดกว้าง (luggage/packaging ก่อน bags ฯลฯ) — match แรกชนะ
+  const CATKW=[
+    ['luggage',/กระเป๋าเดินทาง|ล้อลาก|luggage|trolley|เดินทาง/],
+    ['packaging',/กล่องของขวัญ|บรรจุภัณฑ์|แพ็กเกจ|ริบบิ้น|ถุงกระดาษ|ถุงของขวัญ|packaging/],
+    ['kitchen',/กล่องข้าว|กล่องอาหาร|ปิ่นโต|ช้อน|ส้อม|จาน|ชาม|เขียง|ครัว|lunch ?box|kitchen/],
+    ['scent',/น้ำหอม|เทียนหอม|อโรม่า|ก้านหอม|diffuser|candle|กลิ่น/],
+    ['drinkware',/กระบอก|แก้ว|กระติก|ขวดน้ำ|น้ำ|ดื่ม|tumbler|flask|mug/],
+    ['powerbank',/พาวเวอร์|powerbank|แบตสำรอง|ที่ชาร์จ/],
+    ['fan',/พัดลม|fan/],
+    ['umbrella',/ร่ม|umbrella/],
+    ['stationery',/ปากกา|สมุด|เครื่องเขียน|โน้ต|ดินสอ|แฟ้ม|post ?it|note|pen/],
+    ['souvenir',/ของชำร่วย|ของที่ระลึก|พวงกุญแจ|keychain|เหรียญ|โล่|แม่เหล็ก|magnet/],
+    ['pet',/สัตว์เลี้ยง|สุนัข|หมา|แมว|pet/],
+    ['baby-kid',/เด็ก|ทารก|baby|kid/],
+    ['hat',/หมวก|cap|บักเก็ต/],
+    ['garment',/เสื้อ|polo|ยูนิฟอร์ม|แจ็กเก็ต|ฮู้ด|t-?shirt|ทีเชิ้ต|garment/],
+    ['bags',/กระเป๋า|เป้|ถุงผ้า|ถุง|tote|bag/],
+    ['giftset',/เซ็ต|กิฟต์|กิ๊ฟ|กิฟท์|gift ?set|ชุดของขวัญ/],
+    ['lifestyle',/ไลฟ์สไตล์|ของใช้|ผ้าขนหนู|หมอน|lifestyle/],
+  ];
+  for(const [k,re] of CATKW){if(re.test(t)&&byCat[k]){FILTER.cat=k;matched=true;break;}}
   // กัน occ+cat ที่ขัดกันจนผลว่าง — หมวดเจาะจงชนะ
   if(FILTER.occ!=='all'&&FILTER.cat!=='all'){const o=OCC_FILTERS.find(x=>x.k===FILTER.occ);if(o&&!o.cats.includes(FILTER.cat))FILTER.occ='all';}
   if(!matched)FILTER.q=s;
+  track('ai_search',{query:s,source:'catalogue',cat:FILTER.cat,occ:FILTER.occ,pmax:FILTER.pmax});
   renderGrid();syncControls();
 }
 function clearDim(k){
@@ -920,8 +981,15 @@ function bindQuote(){
     const ck={name:el.name.value.trim()!=='',contact:/^[\d\s+\-()]{8,}$/.test(el.contact.value.trim())||/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(el.contact.value.trim())};
     for(const k in ck){const i=el[k],m=f.querySelector('[data-e="'+k+'"]');if(!ck[k]){ok=false;i.classList.add('err');if(m)m.style.display='block';}else{i.classList.remove('err');if(m)m.style.display='none';}}
     if(!ok){f.querySelector('.err').focus();return;}
-    document.getElementById('qbody').style.display='none';document.getElementById('qok').classList.add('show');
-    document.getElementById('quote').scrollIntoView({behavior:'smooth'});
+    const btn=f.querySelector('button[type=submit]');btn.disabled=true;btn.style.opacity='.6';
+    // ส่งเข้า Formspree (→ info@passiongrow.co.th) — ID เดียวกับ src/config.js
+    fetch('https://formspree.io/f/xbdejbyr',{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}})
+      .then(r=>{if(!r.ok)throw new Error('formspree '+r.status);
+        track('generate_lead',{source:'v2_quote_form',occasion:el.occasion.value||'',qty:el.qty.value||'',budget:el.budget.value||''});
+        document.getElementById('qbody').style.display='none';document.getElementById('qok').classList.add('show');
+        const q=document.getElementById('quote');if(q)q.scrollIntoView({behavior:'smooth'});})
+      .catch(()=>{alert('ส่งคำขอไม่สำเร็จ กรุณาลองใหม่อีกครั้ง หรือทักทาง LINE @gopremium ได้เลยค่ะ');})
+      .finally(()=>{btn.disabled=false;btn.style.opacity='';});
   });
 }
 function resetQuote(){const f=document.getElementById('quoteForm');if(!f)return;f.reset();document.getElementById('qok').classList.remove('show');document.getElementById('qbody').style.display='';}
@@ -974,21 +1042,63 @@ function initAIType(){
 }
 
 /* ===== router ===== */
+const SITE='https://www.xn--22ck4b1ansahhp4gvdtab7n8e.com';
+const DEF_TITLE='ของพรีเมียม ของขวัญองค์กร พิมพ์โลโก้ ครบวงจร | GO PREMIUM';
+const DEF_DESC='GO PREMIUM โดย Passion Grow Trading — ออกแบบและผลิตของพรีเมียม ของขวัญองค์กร พิมพ์โลโก้ ครบวงจร ดีไซน์ ผลิต ส่งมอบ · แคตตาล็อก '+P.length+' รายการ · ตอบกลับใน 2 ชม.';
+// อัปเดต title/description/canonical/OG รายหน้า + ยิง GA4 page_view (SPA)
+function setMeta(title,desc,path){
+  document.title=title;
+  const url=SITE+(path||'/');
+  const put=(sel,attr,v)=>{const el=document.querySelector(sel);if(el&&v)el.setAttribute(attr,v);};
+  put('meta[name=description]','content',desc||DEF_DESC);
+  put('#canon','href',url);put('#ogUrl','content',url);
+  put('#ogTitle','content',title);put('#twTitle','content',title);
+  put('#ogDesc','content',desc||DEF_DESC);put('#twDesc','content',desc||DEF_DESC);
+  track('page_view',{page_path:path||'/',page_title:title});
+}
+// JSON-LD Product รายหน้าสินค้า (ล้างเมื่อออกจากหน้า)
+function setProductLD(p){
+  const el=document.getElementById('ldRoute');if(!el)return;
+  if(!p){el.textContent='';return;}
+  const ld={'@context':'https://schema.org','@type':'Product','name':p.name,'sku':p.sku,'description':p.features||'','category':CL[p.catSlug]||p.cat,'brand':{'@type':'Brand','name':'GO PREMIUM'},'url':SITE+'/product/'+p.slug};
+  if(p.img)ld.image=SITE+p.img.split('?')[0];
+  if(p.price)ld.offers={'@type':'Offer','priceCurrency':'THB','price':String(p.price),'availability':'https://schema.org/InStock','url':SITE+'/product/'+p.slug};
+  el.textContent=JSON.stringify(ld);
+}
+// แปลง URL แบบ path (จาก sitemap/ลิงก์ภายนอก เช่น /product/dw001) → route ภายใน เพื่อให้ทุก URL แสดงเนื้อหาที่ถูกต้อง
+function routeFromPath(){
+  let p;try{p=decodeURIComponent(location.pathname);}catch(e){p=location.pathname;}
+  if(p==='/products'||p==='/catalogue')return '/all';
+  if(p==='/quote')return '/quote';
+  let m;
+  if((m=p.match(/^\/category\/([^/]+)\/?$/)))return '/c/'+m[1];
+  // alias สำหรับ slug โอกาสของแอปเก่าที่อาจติด index แล้ว
+  const OCC_ALIAS={'new-year':'newyear','songkran':'newyear','new-employee':'welcome','esg':'eco','thank-you':'milestone','executive':'vip','mass-staff':'event'};
+  if((m=p.match(/^\/occasion\/([^/]+)\/?$/)))return '/o/'+(OCC_ALIAS[m[1]]||m[1]);
+  if((m=p.match(/^\/budget\/([^/]+)\/?$/)))return '/b/'+m[1];
+  if((m=p.match(/^\/product\/([^/]+)\/?$/))){const s=m[1].toLowerCase();const pr=P.find(x=>(x.slug||'').toLowerCase()===s||x.sku.toLowerCase()===s);if(pr)return '/p/'+pr.sku;}
+  return '/';
+}
+const OCC_TITLE=k=>{const o=OCC_FILTERS.find(x=>x.k===k);return o?o.label.replace(/^[^ก-๙a-zA-Z]+\s*/,''):k;};
 function render(){
-  const h=location.hash.replace(/^#/,'')||'/';const app=document.getElementById('app');
+  const h=location.hash.replace(/^#/,'')||routeFromPath();const app=document.getElementById('app');
   document.getElementById('drawer').classList.remove('open');let m;
-  if(h==='/'){app.innerHTML=viewHome();bindQuote();}
-  else if(h==='/all'){app.innerHTML=viewCatalogue('all');bindCatalogue();}
-  else if(h==='/quote'){app.innerHTML=viewQuote();bindQuote();}
-  else if((m=h.match(/^\/c\/(.+)$/))){app.innerHTML=viewCatalogue({cat:decodeURIComponent(m[1])});bindCatalogue();}
-  else if((m=h.match(/^\/o\/(.+)$/))){app.innerHTML=viewCatalogue({occ:decodeURIComponent(m[1])});bindCatalogue();}
-  else if((m=h.match(/^\/b\/(.+)$/))){app.innerHTML=viewCatalogue({tier:decodeURIComponent(m[1])});bindCatalogue();}
-  else if((m=h.match(/^\/p\/(.+)$/))){app.innerHTML=viewProduct(decodeURIComponent(m[1]));}
-  else if(h==='/about'){app.innerHTML=viewAbout();}
-  else if(h==='/portfolio'){app.innerHTML=viewPortfolio();bindQuote();}
-  else if(h==='/express'){app.innerHTML=viewExpress();}
-  else if(h==='about'){app.innerHTML=viewHome();bindQuote();initHero();initAIType();setTimeout(()=>{const a=document.getElementById('about');if(a)a.scrollIntoView();},60);return;}
-  else{app.innerHTML=viewHome();bindQuote();}
+  setProductLD(null);
+  if(h==='/'){app.innerHTML=viewHome();bindQuote();setMeta(DEF_TITLE,DEF_DESC,'/');}
+  else if(h==='/all'){app.innerHTML=viewCatalogue('all');bindCatalogue();setMeta('สินค้าทั้งหมด '+P.length+' รายการ — ของพรีเมียมพิมพ์โลโก้ | GO PREMIUM','แคตตาล็อกของพรีเมียมพิมพ์โลโก้ '+P.length+' รายการ เลือกตามโอกาส งบประมาณ และหมวดสินค้า พร้อม Mockup ก่อนผลิต','/products');}
+  else if(h==='/quote'){app.innerHTML=viewQuote();bindQuote();setMeta('ขอใบเสนอราคาของพรีเมียม — ตอบกลับใน 2 ชม. | GO PREMIUM','ขอใบเสนอราคาของขวัญองค์กรและของพรีเมียมพิมพ์โลโก้ ปรึกษาฟรี ตอบกลับพร้อมช่วงราคาภายใน 2 ชม.','/quote');}
+  else if((m=h.match(/^\/c\/(.+)$/))){const c=decodeURIComponent(m[1]);app.innerHTML=viewCatalogue({cat:c});bindCatalogue();setMeta((CL[c]||c)+' พิมพ์โลโก้ ราคาขายส่ง | GO PREMIUM',(CL[c]||c)+'สำหรับองค์กร พิมพ์โลโก้ได้ทุกชิ้น '+(byCat[c]?byCat[c].length+' รุ่น ':'')+'พร้อม Mockup ก่อนผลิต ขอใบเสนอราคาฟรี','/category/'+c);}
+  else if((m=h.match(/^\/o\/(.+)$/))){const o=decodeURIComponent(m[1]);app.innerHTML=viewCatalogue({occ:o});bindCatalogue();setMeta('ของขวัญ'+OCC_TITLE(o)+' — ของพรีเมียมองค์กร | GO PREMIUM','รวมของพรีเมียมและของขวัญองค์กรสำหรับ'+OCC_TITLE(o)+' พิมพ์โลโก้ จัดเซ็ตได้ พร้อม Mockup ก่อนผลิต','/occasion/'+o);}
+  else if((m=h.match(/^\/b\/(.+)$/))){const b=decodeURIComponent(m[1]);app.innerHTML=viewCatalogue({tier:b});bindCatalogue();setMeta('ของพรีเมียมงบ '+(TL[b]||b)+' | GO PREMIUM','ของขวัญองค์กรช่วงงบ '+(TL[b]||b)+' คัดแล้วว่าดูดีในงบ พิมพ์โลโก้ได้ พร้อมใบเสนอราคาใน 2 ชม.','/budget/'+b);}
+  else if((m=h.match(/^\/p\/(.+)$/))){const sku=decodeURIComponent(m[1]);app.innerHTML=viewProduct(sku);
+    const p=P.find(x=>x.sku===sku);
+    if(p){setMeta(p.name+' — '+(CL[p.catSlug]||p.cat)+' พิมพ์โลโก้ | GO PREMIUM',(p.features||p.name)+(p.price?' · ราคา ฿'+p.price.toLocaleString('en-US')+'/ชิ้น (อ้างอิง 300 ชิ้น)':' · สอบถามราคา')+' · MOQ '+p.moq+' ชิ้น · Mockup ก่อนผลิต','/product/'+p.slug);setProductLD(p);track('view_item',{sku:p.sku,item_name:p.name,item_category:p.catSlug,price:p.price||0});}
+    else setMeta(DEF_TITLE,DEF_DESC,'/');}
+  else if(h==='/about'){app.innerHTML=viewAbout();setMeta('เกี่ยวกับเรา — GO PREMIUM by Passion Grow Trading','GO PREMIUM ผู้ออกแบบและผลิตของพรีเมียมและของขวัญองค์กร เชื่อในการให้ที่มีความหมาย ครบวงจรตั้งแต่ไอเดียถึงส่งมอบ','/about');}
+  else if(h==='/portfolio'){app.innerHTML=viewPortfolio();bindQuote();setMeta('ผลงานของเรา — ตัวอย่างของขวัญองค์กรที่เราออกแบบ | GO PREMIUM','ตัวอย่างผลงานของขวัญองค์กรและของพรีเมียมที่ GO PREMIUM ออกแบบและผลิต ครบทุกโอกาส ทุกงานผ่าน Mockup ก่อนผลิต','/portfolio');}
+  else if(h==='/express'){app.innerHTML=viewExpress();setMeta('สินค้าส่งด่วน 7–14 วัน — ของพรีเมียมงานด่วน | GO PREMIUM','ของพรีเมียมและของขวัญองค์กรงานด่วน ผลิตและส่งมอบใน 7–14 วัน ตอบกลับใน 2 ชม. พร้อม Mockup ก่อนผลิต','/express');}
+  else if(h==='about'){app.innerHTML=viewHome();bindQuote();initHero();initAIType();setMeta(DEF_TITLE,DEF_DESC,'/');setTimeout(()=>{const a=document.getElementById('about');if(a)a.scrollIntoView();},60);return;}
+  else{app.innerHTML=viewHome();bindQuote();setMeta(DEF_TITLE,DEF_DESC,'/');}
   if(document.querySelector('.hero-slides')){initHero();initAIType();}
   window.scrollTo(0,0);
 }
