@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GO PREMIUM — Website Architecture & SEO Audit · 11 มิ.ย. 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#13244a;--gold:#f4b223;--ink:#1c2433;--grey:#5d6675;--line:#e4e8ef;--cloud:#f6f7fa;--ok:#2F7D52;--warn:#B07A18;--bad:#B3413D}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'IBM Plex Sans Thai','Anuphan',sans-serif;color:var(--ink);background:#fff;line-height:1.75;font-size:15px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+header{background:var(--navy);color:#fff;padding:54px 0 44px}
+header .tag{font-family:Sora;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600}
+header h1{font-family:'Anuphan';font-weight:700;font-size:34px;margin-top:10px;line-height:1.3}
+header p{color:#bdc9de;margin-top:10px;max-width:72ch}
+h2{font-family:'Anuphan';font-weight:700;font-size:23px;color:var(--navy);margin:0 0 6px}
+h3{font-family:'Anuphan';font-weight:600;font-size:16.5px;color:var(--navy);margin:22px 0 8px}
+section{padding:38px 0;border-bottom:1px solid var(--line)}
+.eyebrow{font-family:Sora;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.sub{color:var(--grey);font-size:13.5px;margin-bottom:18px}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:13.5px}
+th{background:var(--navy);color:#fff;text-align:left;padding:9px 12px;font-family:'Anuphan';font-weight:600;font-size:12.5px}
+td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:nth-child(even) td{background:var(--cloud)}
+.score-row{display:flex;gap:16px;flex-wrap:wrap;margin:20px 0}
+.score{flex:1;min-width:150px;border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center}
+.score .n{font-family:Sora;font-size:34px;font-weight:700;color:var(--navy)}
+.score .n small{font-size:15px;color:var(--grey);font-weight:400}
+.score .l{font-size:12.5px;color:var(--grey);margin-top:4px}
+.score.hi{background:var(--navy);color:#fff}.score.hi .n{color:var(--gold)}.score.hi .l{color:#bdc9de}
+.pill{display:inline-block;border-radius:99px;padding:1px 10px;font-size:11.5px;font-weight:600;white-space:nowrap}
+.ok{background:#E7F3EC;color:var(--ok)}.warn{background:#FBF2DC;color:var(--warn)}.bad{background:#F8E8E7;color:var(--bad)}.info{background:#E8EEF8;color:#2C4F7C}
+.fixed{background:#E7F3EC;color:var(--ok)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin:16px 0}
+.card{border:1px solid var(--line);border-radius:14px;padding:18px}
+.card h4{font-family:'Anuphan';font-weight:600;font-size:15px;color:var(--navy);margin-bottom:6px}
+.card p{font-size:13.5px;color:var(--grey)}
+/* architecture diagram */
+.arch{background:var(--cloud);border:1px solid var(--line);border-radius:16px;padding:26px;margin:18px 0;overflow-x:auto}
+.arch .lane{display:flex;gap:14px;align-items:stretch;margin-bottom:14px;flex-wrap:wrap}
+.node{background:#fff;border:1.6px solid var(--navy);border-radius:11px;padding:10px 14px;min-width:150px;flex:1}
+.node b{font-family:'Anuphan';font-size:13.5px;color:var(--navy);display:block}
+.node span{font-size:11.5px;color:var(--grey);display:block;line-height:1.5}
+.node.gold{border-color:var(--gold);background:#FFFBF0}
+.node.dim{border-style:dashed;border-color:#9aa6b8;opacity:.85}
+.node.dark{background:var(--navy)}.node.dark b{color:#fff}.node.dark span{color:#bdc9de}
+.arrow{display:flex;align-items:center;justify-content:center;color:var(--grey);font-size:18px;min-width:24px}
+.lane-label{font-family:Sora;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--grey);margin:14px 0 6px;font-weight:600}
+.legend{display:flex;gap:18px;font-size:11.5px;color:var(--grey);margin-top:10px;flex-wrap:wrap}
+.legend i{display:inline-block;width:14px;height:14px;border-radius:4px;vertical-align:-2px;margin-right:5px}
+code{background:var(--cloud);border:1px solid var(--line);border-radius:5px;padding:1px 6px;font-size:12.5px;font-family:Consolas,monospace;color:var(--navy)}
+ul{padding-left:22px}li{margin:4px 0}
+footer{padding:30px 0 50px;color:var(--grey);font-size:12.5px}
+@media print{section{break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<header><div class="wrap">
+  <div class="tag">GO PREMIUM · Technical & Marketing Audit</div>
+  <h1>Website Architecture & SEO Audit<br>+ บันทึกการ Optimize ที่ deploy แล้ว</h1>
+  <p>ตรวจสอบเมื่อ 11 มิถุนายน 2026 · เว็บจริง: www.ผลิตของพรีเมี่ยม.com (xn--22ck4b1ansahhp4gvdtab7n8e.com) + gopremium-website.vercel.app · อ้างอิงข้อมูลสินค้าจาก PRODUCT-MASTER.xlsx (245 SKU)</p>
+</div></header>
+
+<section><div class="wrap">
+  <div class="eyebrow">Scorecard</div>
+  <h2>คะแนนภาพรวม — ก่อน / หลัง Optimize รอบนี้</h2>
+  <div class="score-row">
+    <div class="score"><div class="n">48<small>/100</small></div><div class="l">SEO ก่อนแก้</div></div>
+    <div class="score hi"><div class="n">~78<small>/100</small></div><div class="l">SEO หลังแก้ (ประเมิน)</div></div>
+    <div class="score"><div class="n">0 → 5</div><div class="l">Conversion events ที่วัดได้</div></div>
+    <div class="score"><div class="n">15/15</div><div class="l">คำค้น AI ตอบถูก (เดิม ~8/15)</div></div>
+    <div class="score"><div class="n">−180<small>KB</small></div><div class="l">น้ำหนัก hero (WebP)</div></div>
+  </div>
+  <p><b style="color:var(--bad)">การค้นพบที่สำคัญที่สุด:</b> ฟอร์มขอใบเสนอราคาบนเว็บจริง <b>ไม่เคยส่งข้อมูลออกไปที่ไหนเลย</b> — โค้ดเดิม validate แล้วโชว์ "ได้รับคำขอแล้ว" โดยไม่มีการส่งจริง ทุก lead ที่ลูกค้ากรอกฟอร์มหายทั้งหมด ตอนนี้แก้ให้ส่งเข้า Formspree → info@passiongrow.co.th แล้ว ✅</p>
+</div></section>
+
+<section><div class="wrap">
+  <div class="eyebrow">Architecture</div>
+  <h2>แผนผังสถาปัตยกรรมเว็บไซต์</h2>
+  <p class="sub">โครงสร้างจริงของระบบ ทั้งฝั่ง deploy, หน้าเว็บ, และ data pipeline ของสินค้า</p>
+
+  <div class="arch">
+    <div class="lane-label">① Hosting / Deploy</div>
+    <div class="lane">
+      <div class="node"><b>GitHub · golf1200/Gopremium-website</b><span>branch main = production · repo root คือโฟลเดอร์ website/</span></div>
+      <div class="arrow">→</div>
+      <div class="node"><b>Vercel (auto-deploy)</b><span>build: generate-sitemap.js → vite build → postbuild-home.mjs</span></div>
+      <div class="arrow">→</div>
+      <div class="node dark"><b>www.ผลิตของพรีเมี่ยม.com</b><span>+ gopremium-website.vercel.app · rewrite ทุก path → index.html</span></div>
+    </div>
+
+    <div class="lane-label">② หน้าเว็บที่เสิร์ฟจริง</div>
+    <div class="lane">
+      <div class="node gold"><b>index.html = v2.html (SPA หลัก)</b><span>หน้าแรก · #/all · #/c/หมวด(17) · #/o/โอกาส(6) · #/b/งบ(4) · #/p/สินค้า(240) · #/express · #/portfolio · #/about · #/quote<br><b>ใหม่:</b> รองรับ URL แบบ path จาก sitemap ด้วย (/product/…, /category/…)</span></div>
+      <div class="node"><b>/blog (static HTML)</b><span>บทความ SEO ภาษาไทย 5 บทความ + index — crawl ได้จริงทุกหน้า</span></div>
+      <div class="node dim"><b>/old.html (React app เดิม)</b><span>เก็บไว้อ้างอิง ไม่ลิงก์จากที่ไหน</span></div>
+      <div class="node dim"><b>catalogue.html · corporate.html</b><span>landing เดี่ยว ยังเป็น orphan (ไม่มีลิงก์เข้า/ไม่อยู่ใน sitemap)</span></div>
+    </div>
+
+    <div class="lane-label">③ Data Pipeline สินค้า (ทิศทางการไหลของข้อมูล)</div>
+    <div class="lane">
+      <div class="node"><b>ข้อมูลสินค้า.xlsx (Desktop)</b><span>ต้นทางจริงที่กรอกข้อมูล</span></div>
+      <div class="arrow">→</div>
+      <div class="node"><b>catalog-master.json + products-raw.json + product-images.generated.json</b><span>scripts/extract-catalog.mjs</span></div>
+      <div class="arrow">→</div>
+      <div class="node gold"><b>public/catalogue-data.js</b><span>ข้อมูล 245 SKU ที่เว็บใช้จริง (เว็บแสดง 240 — ตัด 5 SKU ไร้ชื่อออก)</span></div>
+    </div>
+    <div class="lane">
+      <div class="node dim" style="max-width:46%"><b>PRODUCT-MASTER.xlsx</b><span>⚠️ เป็นรายงานที่ generate <i>จาก</i> ข้อมูลเว็บ (downstream) ไม่ใช่ต้นทาง — รีเฟรชล่าสุด 11 มิ.ย. 2026 แล้ว (เดิมค้างที่ 7 มิ.ย.)</span></div>
+      <div class="node" style="max-width:46%"><b>sitemap.xml + robots.txt</b><span>generate อัตโนมัติตอน build · 277 URLs (240 สินค้า + 17 หมวด + 6 โอกาส + 4 งบ + blog 5 + core)</span></div>
+    </div>
+    <div class="legend"><span><i style="background:#FFFBF0;border:1.6px solid var(--gold)"></i>จุดที่แก้ไขรอบนี้</span><span><i style="background:#fff;border:1.6px solid var(--navy)"></i>ทำงานปกติ</span><span><i style="background:#fff;border:1.6px dashed #9aa6b8"></i>orphan / รอตัดสินใจ</span></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="eyebrow">SEO</div>
+  <h2>ผล Audit SEO + สิ่งที่แก้แล้ว</h2>
+  <table>
+    <tr><th style="width:42%">ประเด็น</th><th style="width:14%">ความรุนแรง</th><th>สถานะ</th></tr>
+    <tr><td>ไม่มี canonical tag — sitemap 281 URLs ชี้เข้าหน้าเดียวกัน (soft-duplicate ทั้งเว็บ)</td><td><span class="pill bad">วิกฤต</span></td><td><span class="pill fixed">แก้แล้ว</span> canonical รายหน้า + router อ่าน path จาก sitemap แล้วเรนเดอร์เนื้อหาที่ตรงจริง (/product/dw001 → หน้าสินค้านั้นจริง พร้อม title เฉพาะ)</td></tr>
+    <tr><td>ไม่มี OG / Twitter tags — แชร์ขึ้น LINE/Facebook ไม่มีรูป-ไม่มีคำอธิบาย</td><td><span class="pill bad">วิกฤต</span></td><td><span class="pill fixed">แก้แล้ว</span> ครบชุด + og:image</td></tr>
+    <tr><td>ไม่มี Structured Data (JSON-LD) เลย</td><td><span class="pill bad">วิกฤต</span></td><td><span class="pill fixed">แก้แล้ว</span> Organization + WebSite ที่ head และ Product schema (ชื่อ/ราคา/รูป/SKU) ทุกหน้าสินค้า</td></tr>
+    <tr><td>title เดียวทั้งเว็บ ("GO PREMIUM 2.0 — มากกว่าของขวัญ...") ไม่มี keyword</td><td><span class="pill warn">สูง</span></td><td><span class="pill fixed">แก้แล้ว</span> title หลักเป็น "ของพรีเมียม ของขวัญองค์กร พิมพ์โลโก้ ครบวงจร | GO PREMIUM" + title/description เฉพาะทุก route</td></tr>
+    <tr><td>slug โอกาสใน sitemap (new-year, esg…) ไม่ตรง key จริงของ v2 (newyear, eco…)</td><td><span class="pill warn">สูง</span></td><td><span class="pill fixed">แก้แล้ว</span> sitemap ใช้ key จริง + ทำ alias รองรับ URL เก่า 7 ตัว</td></tr>
+    <tr><td>บทความ blog 2/5 เป็น orphan (ไม่มีลิงก์จากหน้าแรก)</td><td><span class="pill warn">สูง</span></td><td><span class="pill fixed">แก้แล้ว</span> หน้าแรกลิงก์ครบ 5 บทความ</td></tr>
+    <tr><td>5 SKU ไร้ชื่อ-ไร้ราคา (BG043, DW030, DW031, LS025, LS027) โชว์เป็นการ์ดเปล่าบนเว็บ</td><td><span class="pill warn">สูง</span></td><td><span class="pill fixed">แก้แล้ว</span> ซ่อนจากทุกหน้า (master ระบุ "ยังไม่ขึ้นเว็บ" อยู่แล้ว)</td></tr>
+    <tr><td>catalogue.html / corporate.html เป็น orphan pages</td><td><span class="pill info">กลาง</span></td><td><span class="pill warn">รอตัดสินใจ</span> จะใช้เป็น landing โฆษณา (แนะนำ) หรือลบ — ถ้าใช้ ควรใส่ canonical กันชนกับหน้าหลัก</td></tr>
+    <tr><td>SPA hash-routing — Google ต้องเรนเดอร์ JS จึงเห็นเนื้อหา (ช้ากว่า static)</td><td><span class="pill info">กลาง</span></td><td><span class="pill warn">ยอมรับได้ช่วงนี้</span> ระยะยาวถ้าจะจริงจัง SEO มาก ควร pre-render หน้าสินค้า/หมวดเป็น static HTML</td></tr>
+  </table>
+  <h3>สิ่งที่ต้องทำเองใน Google (ทำครั้งเดียว ~15 นาที)</h3>
+  <ul>
+    <li>Google Search Console → เพิ่ม property ทั้ง 2 โดเมน → submit <code>sitemap.xml</code> ใหม่</li>
+    <li>GA4 Admin → Events → ตั้ง <code>generate_lead</code> และ <code>contact_line</code> เป็น <b>Key Events</b> (ใช้วัด conversion โฆษณา)</li>
+    <li>ถ้าจะยิง Google Ads → ลิงก์ GA4 กับ Ads แล้ว import key events เป็น conversions</li>
+  </ul>
+</div></section>
+
+<section><div class="wrap">
+  <div class="eyebrow">Tracking</div>
+  <h2>ระบบ Tracking — เดิม "ติดแต่หูหนวก" ตอนนี้วัดครบ funnel</h2>
+  <p class="sub">เดิมมีแค่ GA4 (G-JTMVQM245Y) ยิง page_view หน้าแรกครั้งเดียว — การกระทำทุกอย่างหลังจากนั้นมองไม่เห็นเลย วัด ROI โฆษณาไม่ได้</p>
+  <table>
+    <tr><th>Event</th><th>ยิงเมื่อ</th><th>ใช้ทำอะไร</th></tr>
+    <tr><td><code>page_view</code> (ทุก route)</td><td>เปลี่ยนหน้าใน SPA ทุกครั้ง + โหลดแรก</td><td>เห็น journey จริง: หน้าแรก → หมวด → สินค้า → ฟอร์ม</td></tr>
+    <tr><td><code>generate_lead</code> ⭐</td><td>ส่งฟอร์มขอใบเสนอราคาสำเร็จ (พร้อม occasion/จำนวน/งบ)</td><td>Conversion หลัก — ผูกกับโฆษณาได้</td></tr>
+    <tr><td><code>contact_line</code> ⭐</td><td>คลิกปุ่ม LINE ทุกปุ่มทั้งเว็บ (จับอัตโนมัติ)</td><td>Conversion ช่องทางหลักอันดับ 2 + รู้ว่าคลิกจากหน้าไหน</td></tr>
+    <tr><td><code>view_item</code></td><td>เปิดหน้าสินค้า (sku, ชื่อ, หมวด, ราคา)</td><td>สินค้าไหนคนดูเยอะ → ใช้เลือกตัวทำตลาด</td></tr>
+    <tr><td><code>ai_search</code></td><td>ใช้กล่อง AI (ทั้งหน้าแรกและหน้าแคตตาล็อก) พร้อมคำค้น</td><td>เห็นว่าลูกค้าพิมพ์หาอะไร → ปรับ keyword/สต๊อกตามจริง</td></tr>
+  </table>
+  <p>ยังไม่ได้ติด (ตัดสินใจเมื่อเริ่มยิงโฆษณา): Meta Pixel, LINE Tag, TikTok — โครง <code>track()</code> รองรับเพิ่มได้ทันที</p>
+</div></section>
+
+<section><div class="wrap">
+  <div class="eyebrow">Products & Pricing</div>
+  <h2>สินค้า vs PRODUCT-MASTER.xlsx + ความสมบูรณ์ของราคา</h2>
+  <div class="cards">
+    <div class="card"><h4>✅ ข้อมูลตรงกัน 100%</h4><p>245 SKU ตรงกันทุกตัว — ราคา ชื่อ หมวด MOQ ไม่มี mismatch เลย (0/245) · เว็บแสดง 240 หลังตัด 5 SKU ที่ master ระบุ "ยังไม่ขึ้นเว็บ"</p></div>
+    <div class="card"><h4>⚠️ ราคา: ช่องโหว่ใหญ่สุดของแคตตาล็อก</h4><p><b>174/245 SKU (71%) ยังไม่มีราคา</b> → ขึ้น "สอบถามราคา" และหายจาก filter งบทุกตัว เหลือสินค้า filter ตามงบได้แค่ 71 ตัว — เติมราคาใน ข้อมูลสินค้า.xlsx แล้ว rebuild จะปลดล็อกทั้ง filter งบ + AI search + Product schema (ราคาขึ้น Google ได้)</p></div>
+    <div class="card"><h4>⚠️ งบระดับ Executive เกือบว่าง</h4><p>ราคาที่มีอยู่กระจาย: value 24 · smart 33 · premium 12 · <b>executive แค่ 2 ตัว</b> — filter "ผู้บริหาร/VIP" แทบไม่มีของเสนอ ควรเติมสินค้า/ราคาช่วง ฿300+ </p></div>
+    <div class="card"><h4>✅ รูปสินค้า</h4><p>194/245 มีรูปจริง (79%) · 51 SKU ใช้ภาพ mockup รอถ่าย/หา (ตรงกับงานที่ค้างอยู่ 48+ SKU) · PRODUCT-MASTER.xlsx รีเฟรชแล้ววันนี้ ธง "มีรูป" ตรงกับเว็บแล้ว</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="eyebrow">AI Search & Filters</div>
+  <h2>กล่อง AI + ระบบ Filter — ผลทดสอบหลังแก้</h2>
+  <p class="sub">แก้: กล่อง AI หน้าแรกพาไป "ผลสินค้าจริงที่กรองแล้ว" (เดิมพาไปฟอร์มเปล่า) · เพิ่ม keyword ครบทั้ง 17 หมวด (เดิมมี 10 ขาด kitchen/scent/souvenir/luggage/pet/baby-kid/packaging) · อ่านงบฉลาดขึ้น (เข้าใจช่วง 100–200, ไม่หลงตัวเลขจำนวน "500 ชิ้น") · ค้นลึกถึงวัสดุ/ขนาด/SKU/เทคนิคพิมพ์</p>
+  <table>
+    <tr><th>คำค้นที่ลูกค้าพิมพ์</th><th>ผลลัพธ์</th><th>ตัวกรองที่ AI ตั้งให้</th></tr>
+    <tr><td>ของขวัญปีใหม่ งบ 300</td><td>25 รายการ ✓</td><td>โอกาส: ปีใหม่ · งบ ≤฿300</td></tr>
+    <tr><td>แก้วน้ำ logo บริษัท</td><td>29 รายการ ✓</td><td>หมวด: แก้ว & กระบอกน้ำ</td></tr>
+    <tr><td>กระเป๋าผ้า 500 ชิ้น</td><td>51 รายการ ✓</td><td>หมวด: กระเป๋า (ไม่หลงคิดว่า 500 คืองบ)</td></tr>
+    <tr><td>gift set ผู้บริหาร</td><td>3 รายการ ✓</td><td>VIP + กิฟต์เซ็ต + งบ premium/executive</td></tr>
+    <tr><td>น้ำหอม</td><td>7 รายการ ✓</td><td>หมวด: กลิ่น & สมุนไพร (เดิมหลงไป "แก้วน้ำ")</td></tr>
+    <tr><td>กล่องข้าว · ของชำร่วย · กระเป๋าเดินทาง · powerbank · ร่ม · พัดลมมือถือ · สมุดโน้ต 200 · งบ 100-200 ปากกา · ของแจกพนักงานใหม่ · ของพรีเมี่ยมรักษ์โลก</td><td>ถูกต้องทั้งหมด ✓</td><td>รวม <b>15/15 คำค้นตอบถูก</b> (Playwright test กับ build จริง)</td></tr>
+  </table>
+  <p>Filter งบ (value ≤60 / smart 61–150 / premium 151–300 / executive 300+), โอกาส 6 แบบ, หมวด 17 หมวด — ตรวจ mapping แล้วทุกโอกาสมีสินค้ารองรับจริง ไม่มีกรณีผลว่าง</p>
+</div></section>
+
+<section><div class="wrap">
+  <div class="eyebrow">Speed</div>
+  <h2>Speed Test & Performance</h2>
+  <p class="sub">หมายเหตุ: PageSpeed Insights API ติด rate-limit ระหว่างตรวจ — ตัวเลขนี้จากการวิเคราะห์ critical path ของไฟล์จริง · รันคะแนนทางการได้ที่ pagespeed.web.dev (Vercel Speed Insights ก็เก็บ Core Web Vitals จากผู้ใช้จริงอยู่แล้ว)</p>
+  <table>
+    <tr><th>รายการ</th><th>ก่อน</th><th>หลัง</th></tr>
+    <tr><td>Hero banners (โหลดแรกเห็นทันที)</td><td>JPEG 386 KB</td><td><b>WebP 206 KB (−47%)</b> + width/height กัน layout shift + fetchpriority=high</td></tr>
+    <tr><td>HTML + CSS + JS หน้าแรก (gzip)</td><td colspan="2">~85 KB — อยู่ในเกณฑ์ดี (single-file SPA, CSS inline)</td></tr>
+    <tr><td>Fonts (Kanit+Sarabun 11 weights)</td><td colspan="2">~100 KB · มี preconnect + display=swap แล้ว — ลด weight ที่ไม่ใช้ได้อีกถ้าต้องการ</td></tr>
+    <tr><td>catalogue-data.js</td><td colspan="2">168 KB (gzip ~45 KB) โหลดท้าย body — ยอมรับได้ เพราะ AI box หน้าแรกต้องใช้ข้อมูลสินค้า</td></tr>
+    <tr><td>รูปสินค้า 1,078 ไฟล์ (61 MB รวม)</td><td colspan="2">เฉลี่ย 58 KB/รูป มี lazy-loading + cache 1 ปีแล้ว · เกินนโยบาย 170KB แค่ 3 ไฟล์ (สูงสุด 226KB) · ขั้นถัดไป: แปลง WebP ทั้ง catalog จะลดอีก ~40%</td></tr>
+  </table>
+</div></section>
+
+<section style="border-bottom:none"><div class="wrap">
+  <div class="eyebrow">Roadmap</div>
+  <h2>สิ่งที่เหลือ — เรียงตามผลต่อการตลาด</h2>
+  <table>
+    <tr><th style="width:6%">#</th><th>งาน</th><th style="width:30%">เหตุผล</th></tr>
+    <tr><td>1</td><td>เติมราคาให้ 174 SKU ที่ยังว่าง (เริ่มจากหมวดขายดี: bags, drinkware)</td><td>ปลดล็อก filter งบ + AI search + ราคาโชว์บน Google</td></tr>
+    <tr><td>2</td><td>ตั้ง Key Events ใน GA4 + submit sitemap ใน Search Console (15 นาที)</td><td>เริ่มเก็บ conversion ตั้งแต่วันนี้ ก่อนยิงโฆษณา</td></tr>
+    <tr><td>3</td><td>หารูปจริงให้ 51 SKU ที่เหลือ</td><td>การ์ด mockup ลดความน่าเชื่อถือ/CTR</td></tr>
+    <tr><td>4</td><td>เติมสินค้า/ราคาช่วง Executive (฿300+)</td><td>กลุ่ม VIP margin สูงสุด แต่ตอนนี้มีของเสนอแค่ 2 ตัว</td></tr>
+    <tr><td>5</td><td>ตัดสินใจ catalogue.html / corporate.html (ใช้เป็น ad landing หรือลบ)</td><td>กัน duplicate content + ใช้ประโยชน์เป็น landing โฆษณา</td></tr>
+    <tr><td>6</td><td>เขียน blog ต่อเนื่อง (เดือนละ 2) + ทำ internal link จากบทความเข้าหมวดสินค้า</td><td>เครื่องยนต์ SEO ระยะยาวของคีย์เวิร์ด "ของพรีเมียม/ของขวัญองค์กร"</td></tr>
+    <tr><td>7</td><td>ระยะยาว: pre-render หน้าสินค้า/หมวดเป็น static HTML</td><td>ดัน SEO score 78 → 90+ (Google ไม่ต้องรอเรนเดอร์ JS)</td></tr>
+    <tr><td>8</td><td>หมายเหตุ CI: v2 ยังใช้พาเลตเดิม (#1F3A5F/#F4BD44/Kanit) ไม่ใช่ Master Final (#13244a/#f4b223/Anuphan)</td><td>รอจังหวะ rebrand หน้าเว็บให้ตรง brand book — เป็นงานดีไซน์แยกต่างหาก</td></tr>
+  </table>
+</div></section>
+
+<footer><div class="wrap">
+  GO PREMIUM by Passion Grow Trading Co., Ltd. · จัดทำ 11 มิ.ย. 2026 · การแก้ไขทั้งหมด deploy แล้วใน commit <code>7375775</code> (branch main → Vercel)
+</div></footer>
+</body>
+</html>

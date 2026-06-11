@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GO PREMIUM — Marketing Strategy &amp; Positioning</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#13244a; --gold:#f4b223; --ink:#1b2436; --muted:#5b6678;
+    --line:#e6e9f0; --bg:#f6f7fb; --card:#ffffff; --soft:#fbf6e9;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:'Anuphan','IBM Plex Sans Thai',system-ui,sans-serif;line-height:1.65;font-size:16px}
+  .wrap{max-width:920px;margin:0 auto;padding:0 24px 80px}
+  h1,h2,h3{font-family:'Sora','Anuphan',sans-serif;color:var(--navy);line-height:1.25}
+  /* Cover */
+  .cover{background:linear-gradient(135deg,var(--navy) 0%,#0c1a38 100%);color:#fff;
+    padding:64px 48px;border-radius:0 0 28px 28px;margin-bottom:36px;position:relative;overflow:hidden}
+  .cover::after{content:"";position:absolute;right:-60px;top:-60px;width:240px;height:240px;
+    background:radial-gradient(circle,rgba(244,178,35,.35),transparent 70%)}
+  .kicker{letter-spacing:.22em;text-transform:uppercase;font-size:12px;color:var(--gold);font-weight:700;margin:0 0 14px}
+  .cover h1{color:#fff;font-size:40px;margin:0 0 10px}
+  .cover p{color:#c9d2e6;max-width:600px;margin:8px 0 0}
+  .badge{display:inline-block;margin-top:22px;background:rgba(244,178,35,.16);border:1px solid rgba(244,178,35,.5);
+    color:var(--gold);padding:6px 14px;border-radius:999px;font-size:13px;font-weight:600}
+  /* TLDR */
+  .tldr{background:var(--soft);border:1px solid #f0e2bf;border-left:5px solid var(--gold);
+    border-radius:14px;padding:22px 26px;margin:0 0 34px}
+  .tldr h2{margin:0 0 12px;font-size:18px}
+  .tldr ol{margin:0;padding-left:20px}
+  .tldr li{margin:7px 0}
+  /* Sections */
+  section{background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:30px 34px;margin:0 0 24px;box-shadow:0 1px 3px rgba(19,36,74,.04)}
+  section>h2{font-size:23px;margin:0 0 18px;padding-bottom:12px;border-bottom:2px solid var(--line);
+    display:flex;align-items:center;gap:12px}
+  .num{background:var(--navy);color:#fff;width:34px;height:34px;border-radius:9px;
+    display:inline-flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-size:16px;flex:none}
+  table{width:100%;border-collapse:collapse;margin:8px 0;font-size:15px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:#f0f2f8;color:var(--navy);font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.04em}
+  tr:last-child td{border-bottom:none}
+  .map{background:var(--navy);color:#dbe3f4;border-radius:12px;padding:22px 24px;
+    font-family:'IBM Plex Mono',ui-monospace,monospace;white-space:pre;overflow-x:auto;font-size:13px;line-height:1.5}
+  .map b{color:var(--gold)}
+  blockquote{margin:18px 0;padding:16px 22px;background:var(--soft);border-left:4px solid var(--gold);
+    border-radius:0 10px 10px 0;font-size:17px}
+  blockquote strong{color:var(--navy)}
+  .wedge{counter-reset:none}
+  ol.wedges{list-style:none;padding:0;margin:0;counter-reset:w}
+  ol.wedges>li{counter-increment:w;position:relative;padding:14px 16px 14px 56px;margin:10px 0;
+    background:#fafbfe;border:1px solid var(--line);border-radius:12px}
+  ol.wedges>li::before{content:counter(w);position:absolute;left:14px;top:14px;width:28px;height:28px;
+    background:var(--gold);color:var(--navy);border-radius:8px;display:flex;align-items:center;justify-content:center;
+    font-family:'Sora',sans-serif;font-weight:700;font-size:14px}
+  .warn{background:#fff4e8;border:1px solid #f6d6a8;color:#7a4a12;padding:6px 10px;border-radius:8px;
+    font-size:13px;display:inline-block;margin-top:6px}
+  /* Phase cards */
+  .phases{display:grid;gap:14px}
+  .phase{border:1px solid var(--line);border-radius:12px;padding:16px 20px;background:#fafbfe}
+  .phase h3{margin:0 0 8px;font-size:15px;color:var(--gold);text-transform:uppercase;letter-spacing:.05em}
+  .phase ol{margin:0;padding-left:20px}
+  .phase li{margin:5px 0}
+  .tag-trap{background:#fdecec;border:1px solid #f4c0c0;border-left:5px solid #d24b4b;
+    border-radius:12px;padding:20px 24px}
+  .tag-trap h2{color:#b33636;border:none;padding:0}
+  footer{color:var(--muted);font-size:13px;text-align:center;margin-top:30px;line-height:1.8}
+  footer .scope{display:inline-block;background:#eef1f7;border-radius:8px;padding:8px 14px;margin-top:8px}
+  @media print{
+    body{background:#fff;font-size:12.5px}
+    .wrap{max-width:none;padding:0 8px}
+    section,.tldr{box-shadow:none;break-inside:avoid}
+    .cover{border-radius:0}
+  }
+</style>
+</head>
+<body>
+<div class="cover">
+  <p class="kicker">GO PREMIUM · Strategy Brief</p>
+  <h1>Marketing Strategy &amp; Positioning</h1>
+  <p>กลยุทธ์การวางตำแหน่งและการตลาด อิงข้อมูลคู่แข่งจริง 12 ราย (Giftwise + 11 ราย · 8,652 สินค้า) ที่ดึงจากข้อมูลสาธารณะ</p>
+  <span class="badge">อัปเดต มิ.ย. 2026 · สร้างซ้ำได้ด้วย /marketing-strategy</span>
+</div>
+
+<div class="wrap">
+
+  <div class="tldr">
+    <h2>⚡ TL;DR — ใจความ 30 วินาที</h2>
+    <ol>
+      <li><strong>สินค้าเหมือนกันหมด</strong> เพราะทุกเจ้าซื้อจากโรงงานชุดเดียวกัน → ตัวสินค้าไม่ใช่จุดขาย</li>
+      <li><strong>กับดัก:</strong> เอา list คู่แข่งมาลงให้ครบ = กลายเป็น "OfficeMate ที่เล็กกว่า" แข่งจำนวน/ราคาแล้วแพ้</li>
+      <li><strong>ทางออก:</strong> Curate ไม่ใช่ Replicate — คัดเฉพาะตัวเด่น นำเสนอให้ดีกว่า จัดเป็นคอลเลกชันตามโอกาส</li>
+      <li><strong>Positioning ที่ว่าง:</strong> "พรีเมียม + ราคาโปร่งใส + ส่งเร็ว" ในตลาดที่ทุกเจ้ายัง "ขอใบเสนอราคา"</li>
+      <li><strong>Move แรก:</strong> เว็บเราเองเปิดราคาแค่ 71/245 SKU — ติดราคาให้ครบคือจุดต่างเบอร์ 1</li>
+    </ol>
+  </div>
+
+  <section>
+    <h2><span class="num">1</span> ภาพตลาด (จากข้อมูลจริง)</h2>
+    <table>
+      <tr><th>สิ่งที่เจอ</th><th>ตัวเลข</th><th>นัยเชิงกลยุทธ์</th></tr>
+      <tr><td>ตลาด premium gift ไทย</td><td>~THB 1.35bn โต 6–8% กระจายตัวสูง</td><td>ไม่มีเจ้าตลาดเด็ดขาด = ช่องว่างเปิด</td></tr>
+      <tr><td>คู่แข่ง <b>ซ่อนราคา</b></td><td>8,652 สินค้า เปิดราคาแค่ 1,351 (16%)</td><td>"quote-only" = จุดอ่อนร่วมทั้งวงการ</td></tr>
+      <tr><td>ดิจิทัล/SEO อ่อน</td><td>Giftwise บล็อกหยุดนิ่ง ~19 เดือน</td><td>ช่องเจาะด้วย content/SEO เปิดกว้าง</td></tr>
+      <tr><td>ช่อง premium/luxury</td><td>ยังว่าง</td><td>ขึ้นบนได้ ไม่ต้องสู้ราคาถูก</td></tr>
+      <tr><td>Giftwise (เจ้าใหญ่)</td><td>LINE OA 46,042 เพื่อน · ไม่มี Lazada</td><td>จุดแข็ง = community; จุดอ่อน = SEO ตาย + ราคาทึบ</td></tr>
+    </table>
+    <p style="margin-top:16px"><strong>3 รายอันตรายสุด — อย่าสู้ตรงๆ ในจุดแข็งเขา:</strong> <b>Giftmanufactory</b> (design-led, ราคาครบ 627) · <b>Premium Perfect</b> (ทุน 10M+ โรงงานเอง + FB 78k) · <b>OfficeMate</b> (เครือ Central, สเกลใหญ่)</p>
+  </section>
+
+  <section class="tag-trap">
+    <h2>⚠️ กับดักของ "เอา list คู่แข่งมา regenerate"</h2>
+    <p>ถ้าลง 8,652 SKU ให้ครบ = แข่งด้วยจำนวน+ราคา ซึ่งแพ้ OfficeMate (เครือ Central) ตั้งแต่ยังไม่เริ่ม</p>
+    <p style="margin-bottom:0"><strong>เปลี่ยนกรอบคิด: Replicate → Curate</strong> — อย่าลงทุกตัว เลือกเฉพาะ SKU ขายดี/มาร์จิ้นดี · ความต่างอยู่ที่ <strong>การคัดสรร + การนำเสนอ + การจัดเซ็ต</strong> ไม่ใช่ขนาดแคตตาล็อก · ใช้แกลเลอรี AI-enhanced (โปรเจกต์ image-audit 71 SKU) เป็นอาวุธพรีเซนต์</p>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span> Positioning</h2>
+    <div class="map">            PREMIUM / ดีไซน์สูง
+                    │
+   Giftmanufactory  │  <b>★ GO PREMIUM</b>  ← ที่ว่าง: พรีเมียม + ราคาโปร่งใส
+   (ดีไซน์ดี        │     (โปร่งใส + เร็ว + ดีไซน์)
+    แต่ราคาทึบ)     │
+  ──────────────────┼──────────────────
+   คู่แข่งส่วนใหญ่    │   OfficeMate
+   (ทึบ + คอมมอดิตี้) │   (ราคาโปร่ง แต่ไม่พรีเมียม)
+                    │
+            ราคาทึบ ←→ ราคาโปร่งใส</div>
+    <blockquote><strong>GO PREMIUM</strong> — ของขวัญองค์กรระดับพรีเมียมที่ <strong>เห็นราคา เห็นงานจริง สั่งได้เร็ว</strong> ในตลาดที่ทุกเจ้ายัง "ขอใบเสนอราคา" และตอบช้า</blockquote>
+    <p><strong>Brand architecture 2 ชั้น (ใช้ของที่มีอยู่แล้ว):</strong></p>
+    <table>
+      <tr><th>แบรนด์</th><th>ตำแหน่ง</th><th>กลุ่มเป้าหมาย</th></tr>
+      <tr><td><b>GO PREMIUM</b> (core)</td><td>คัดสรร · ราคาโปร่งใส · ส่งเร็ว</td><td>HR / Marketing / SME</td></tr>
+      <tr><td><b>GO PREMIUM Exclusive</b></td><td>bespoke / co-brand (Royal Navy + Champagne Gold)</td><td>Super-VIP</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span> จุดต่าง (Differentiation Wedges)</h2>
+    <ol class="wedges">
+      <li><strong>ราคาโปร่งใส</strong> — แสดงราคา/ช่วงราคา + MOQ ทุก SKU (คู่แข่ง 84% ซ่อน) → trust + SEO + ลด friction <span class="warn">⚠️ GoPremium เองเปิดราคาแค่ 71/245 → แก้ก่อนเป็นอย่างแรก</span></li>
+      <li><strong>เร็ว</strong> — ดัน <code>#/express</code> ให้ชัด ("ส่งใน X วัน") คู่แข่งตอบช้าหมด</li>
+      <li><strong>ดีไซน์/พรีเซนต์</strong> — แกลเลอรี AI-enhanced + mockup โลโก้ลูกค้า สู้ Giftmanufactory ด้วยต้นทุนถูกกว่า</li>
+      <li><strong>Content/SEO</strong> — Giftwise บล็อกตาย 19 เดือน; เรามี 5 บทความไทยพร้อม → wire <code>#/blog</code> เก็บ organic ที่ทุกเจ้าทิ้ง</li>
+      <li><strong>ขายเป็น solution ตามโอกาส/บุคคล</strong> — "ชุดต้อนรับพนักงานใหม่" · "ของขวัญปีใหม่ลูกค้า VIP" · "Onboarding Kit" → มาร์จิ้นดีกว่า เทียบราคายากกว่า</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span> Action Plan</h2>
+    <div class="phases">
+      <div class="phase">
+        <h3>ทำทันที (สัปดาห์นี้)</h3>
+        <ol>
+          <li>ติดราคา/ช่วงราคา + MOQ ให้ครบทุก SKU ← จุดต่างเบอร์ 1 และเป็นจุดอ่อนของเราเอง</li>
+          <li>คัด SKU จาก list คู่แข่ง — เอาเฉพาะตัวขายดี/มาร์จิ้นดี (อย่าลงครบ)</li>
+        </ol>
+      </div>
+      <div class="phase">
+        <h3>30 วัน</h3>
+        <ol start="3">
+          <li>สร้าง 5–8 "คอลเลกชันตามโอกาส" จาก SKU ที่คัด</li>
+          <li>Wire <code>#/blog</code> เข้าเว็บ + ปล่อย 5 บทความ (เก็บ SEO ที่ Giftwise ทิ้ง)</li>
+          <li>ทำ <code>#/express</code> ให้มีคำมั่นเรื่องเวลาส่งชัดเจน</li>
+        </ol>
+      </div>
+      <div class="phase">
+        <h3>60–90 วัน</h3>
+        <ol start="6">
+          <li>เปิดตัว GO PREMIUM Exclusive เป็น landing แยกสำหรับงาน bespoke</li>
+          <li>ระบบ RFQ ตอบเร็ว (เทมเพลต + SLA) — เปลี่ยน "ขอใบเสนอราคา" จากจุดอ่อนเป็นจุดแข็งด้วยความเร็ว</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">5</span> KPI ที่ควรวัด</h2>
+    <table>
+      <tr><th>ด้าน</th><th>ตัวชี้วัด</th><th>เป้าเริ่มต้น</th></tr>
+      <tr><td>ราคาโปร่งใส</td><td>% SKU ที่มีราคาบนเว็บ</td><td>71/245 → 100%</td></tr>
+      <tr><td>SEO</td><td>organic sessions/เดือน · คีย์เวิร์ดติดหน้า 1</td><td>ตั้ง baseline หลัง wire blog</td></tr>
+      <tr><td>Conversion</td><td>RFQ → quote → order · เวลาตอบ RFQ เฉลี่ย</td><td>เวลาตอบ &lt; 4 ชม.</td></tr>
+      <tr><td>Premium mix</td><td>สัดส่วนยอดจาก Exclusive / คอลเลกชัน solution</td><td>ตั้งเป้าหลัง 90 วัน</td></tr>
+    </table>
+  </section>
+
+  <footer>
+    แหล่งข้อมูล: <code>giftwise-scrape/</code> · <code>competitor-scrape/</code> · <code>docs/SEO-CONTENT-PLAN.md</code> · <code>docs/IMAGE-AUDIT-PLAN.md</code><br>
+    <span class="scope">⚖️ ข้อมูลคู่แข่งทั้งหมดเป็นสาธารณะเท่านั้น — ไม่ bypass ระบบป้องกัน ไม่แตะข้อมูลส่วนบุคคล ตาม PDPA + พ.ร.บ.คอมพิวเตอร์</span>
+  </footer>
+
+</div>
+</body>
+</html>
