@@ -310,6 +310,30 @@ input,select,textarea{font-family:var(--body)}
 .afchip .x{cursor:pointer;font-weight:700;opacity:.55}.afchip .x:hover{opacity:1}
 .crumbs{font-size:13.5px;color:var(--grey);margin-bottom:18px}.crumbs a:hover{color:var(--navy)}.crumbs b{color:var(--navy)}
 .count-lbl{font-size:14px;color:var(--grey);margin-bottom:16px}.count-lbl b{color:var(--navy)}
+/* AI Gift Finder hero (catalogue) — full-width, prominent */
+.ai-hero{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--navy),var(--navy-700));border-radius:var(--r-lg);padding:clamp(22px,3.2vw,34px);margin-bottom:18px}
+.ai-hero::before{content:"";position:absolute;right:-60px;top:-90px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(244,178,35,.22),transparent 65%);pointer-events:none}
+.ai-hero .eyebrow2{position:relative;color:var(--mustard);display:inline-flex;align-items:center;gap:7px}
+.ai-hero .eyebrow2 i,.ai-hero .btn i{font-style:normal}
+.ai-hero h2{position:relative;font-family:var(--head);color:#fff;font-size:clamp(20px,2.5vw,28px);font-weight:700;line-height:1.25;margin:8px 0 5px}
+.ai-hero p{position:relative;color:#aebadc;font-size:14px;line-height:1.6;max-width:62ch;margin:0 0 16px}
+.ai-hero-input{position:relative;display:flex;align-items:center;gap:8px;background:#fff;border-radius:var(--pill);padding:6px 6px 6px 16px;box-shadow:0 12px 34px -14px rgba(0,0,0,.45)}
+.ai-hero-input svg{flex:0 0 auto}
+.ai-hero-input input{flex:1;min-width:0;border:none;outline:none;background:none;font-size:15.5px;color:var(--navy);padding:12px 2px}
+.ai-hero-input .btn{flex:0 0 auto;white-space:nowrap}.ai-hero-input .btn i{margin-right:5px}
+.ai-hero-ex{position:relative;display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:13px}
+.ai-hero-ex>span{color:#8aa0c4;font-size:12.5px;font-family:var(--head)}
+.ai-hero-ex .ex{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);color:#e6edf6;border-radius:var(--pill);padding:6px 13px;font-family:var(--head);font-size:12.5px;cursor:pointer;transition:background .15s,border-color .15s,color .15s}
+.ai-hero-ex .ex:hover{background:rgba(244,178,35,.16);border-color:var(--mustard);color:#fff}
+@media(max-width:560px){.ai-hero-input{flex-wrap:wrap}.ai-hero-input .btn{width:100%;justify-content:center}}
+/* sidebar long category list → scroll inside box */
+.flist.scroll{max-height:288px;overflow-y:auto;padding-right:5px;margin-right:-3px}
+.flist.scroll::-webkit-scrollbar{width:6px}
+.flist.scroll::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
+.flist.scroll::-webkit-scrollbar-track{background:transparent}
+/* toolbar (regular search removed → count left, sort right) */
+.toolbar .count-lbl{margin-bottom:0}
+.toolbar .sortsel{margin-left:auto}
 
 /* product detail */
 .pd{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,56px);align-items:start}
@@ -894,21 +918,29 @@ function viewCatalogue(opts){
   const tierBtns=['all','value','smart','premium','executive'].map(t=>`<button data-tier="${t}" class="${t===FILTER.tier?'on':''}"><span class="box"></span><span class="lbl">${t==='all'?'ทุกงบ':esc(TL[t])}</span></button>`).join('');
   const occQuick=OCC_FILTERS.map(x=>`<button class="qpill ${x.k===FILTER.occ?'on':''}" data-occ="${x.k}">${esc(x.label)}</button>`).join('');
   const tierQuick=['value','smart','premium','executive'].map(t=>`<button class="qpill ${t===FILTER.tier?'on':''}" data-tier="${t}">${esc(TL[t])}</button>`).join('');
+  const aiEx=['ของขวัญปีใหม่พนักงาน งบ 150','ของลูกค้า VIP หรู ๆ','ของแจกอีเวนต์ จำนวนมาก','กระบอกน้ำรักษ์โลก'];
   return `<section class="sec" style="padding-top:34px"><div class="wrap">
     <div class="crumbs"><a href="#/">หน้าแรก</a> / <b id="crumbCat">สินค้าทั้งหมด</b></div>
+    <div class="ai-hero">
+      <span class="eyebrow2"><i>✦</i> AI Gift Finder</span>
+      <h2>บอกโจทย์เป็นภาษาคน — ให้ AI จัดของให้ทันที</h2>
+      <p>พิมพ์โอกาส งบ จำนวน หรือชนิดของที่อยากได้ แล้ว AI จะกรองสินค้าที่ตรงใจให้เลย</p>
+      <div class="ai-hero-input">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8A93A2" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4-4"/></svg>
+        <input id="aifq" placeholder="เช่น ของขวัญปีใหม่พนักงาน งบ 200 กระบอกน้ำ" onkeydown="if(event.key==='Enter')aiFilter()">
+        <button class="btn btn-primary" onclick="aiFilter()"><i>✦</i> ค้นหาด้วย AI</button>
+      </div>
+      <div class="ai-hero-ex"><span>ลองพิมพ์:</span>${aiEx.map(x=>`<button class="ex" onclick="aiExample('${x}')">${x}</button>`).join('')}</div>
+    </div>
     <div class="quick-bar" id="quickBar">
       <div class="qrow" id="occQuick"><span class="qlabel">🎁 โอกาส</span>${occQuick}</div>
       <div class="qrow" id="tierQuick"><span class="qlabel">💰 งบ/ชิ้น</span>${tierQuick}</div>
     </div>
     <div class="cat-layout">
-      <aside class="side" id="side"><h4>เลือกตามโอกาส</h4><div class="flist" id="occFilter">${occBtns}</div><h4>หมวดหมู่</h4><div class="flist" id="catFilter">${catBtns}</div><h4>งบประมาณ / ชิ้น</h4><div class="flist" id="tierFilter">${tierBtns}</div></aside>
+      <aside class="side" id="side"><h4>เลือกตามโอกาส</h4><div class="flist" id="occFilter">${occBtns}</div><h4>หมวดหมู่</h4><div class="flist scroll" id="catFilter">${catBtns}</div><h4>งบประมาณ / ชิ้น</h4><div class="flist" id="tierFilter">${tierBtns}</div></aside>
       <div>
-        <div class="aifilter"><div class="cap">✦ AI ช่วยกรอง — พิมพ์โจทย์เป็นภาษาคน เดี๋ยวจัดตัวกรองให้</div><div class="row"><input id="aifq" placeholder="เช่น ของขวัญปีใหม่พนักงาน งบ 200 กระบอกน้ำ"><button class="btn btn-secondary" onclick="aiFilter()">✦ กรองด้วย AI</button></div></div>
         <div class="afchips" id="afchips"></div>
-        <div class="toolbar"><button class="btn btn-ghost btn-sm filter-toggle" id="ftoggle">ตัวกรอง ▾</button>
-          <div class="search"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#8A93A2" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4-4"/></svg><input id="q" placeholder="ค้นหาสินค้า เช่น กระบอกน้ำ, ปากกา, เป้..."></div>
-          <select class="sortsel" id="sort"><option value="pop">เรียง: แนะนำ</option><option value="low">ราคาน้อย→มาก</option><option value="high">ราคามาก→น้อย</option><option value="name">ชื่อ A→Z</option></select></div>
-        <div class="count-lbl" id="countLbl"></div>
+        <div class="toolbar"><button class="btn btn-ghost btn-sm filter-toggle" id="ftoggle">ตัวกรอง ▾</button><div class="count-lbl" id="countLbl"></div><select class="sortsel" id="sort"><option value="pop">เรียง: แนะนำ</option><option value="low">ราคาน้อย→มาก</option><option value="high">ราคามาก→น้อย</option><option value="name">ชื่อ A→Z</option></select></div>
         <div class="pgrid" id="grid"></div>
         <div id="empty" style="display:none;text-align:center;padding:60px 0;color:var(--grey)">ไม่พบสินค้าที่ตรงกับตัวกรอง — ลองล้างตัวกรองหรือค้นหาคำอื่น</div>
       </div></div></div></section>${ctaBand()}`;
@@ -1002,6 +1034,8 @@ function aiFilter(){
   track('ai_search',{query:s,source:'catalogue',cat:FILTER.cat,occ:FILTER.occ,pmax:FILTER.pmax});
   renderGrid();syncControls();
 }
+// คลิกชิปตัวอย่าง → เติมข้อความแล้วกรองด้วย AI ทันที
+function aiExample(s){const i=document.getElementById('aifq');if(i){i.value=s;aiFilter();i.scrollIntoView({behavior:'smooth',block:'center'});}}
 function clearDim(k){
   if(k==='all'){FILTER.occ='all';FILTER.cat='all';FILTER.tier='all';FILTER.pmax=0;FILTER.q='';const a=document.getElementById('aifq');if(a)a.value='';}
   else if(k==='pmax')FILTER.pmax=0;else if(k==='q')FILTER.q='';else FILTER[k]=k==='cat'?'all':'all';
@@ -1017,8 +1051,6 @@ function bindCatalogue(){
   oq.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;FILTER.occ=(FILTER.occ===b.dataset.occ)?'all':b.dataset.occ;FILTER.cat='all';renderGrid();syncControls();});
   tq.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;FILTER.tier=(FILTER.tier===b.dataset.tier)?'all':b.dataset.tier;renderGrid();syncControls();});
   document.getElementById('afchips').addEventListener('click',e=>{const x=e.target.closest('[data-clr]');if(!x)return;clearDim(x.dataset.clr);});
-  document.getElementById('q').addEventListener('input',e=>{FILTER.q=e.target.value;renderGrid();renderChips();});
-  document.getElementById('aifq').addEventListener('keydown',e=>{if(e.key==='Enter')aiFilter();});
   document.getElementById('sort').addEventListener('change',e=>{FILTER.sort=e.target.value;renderGrid();});
   document.getElementById('ftoggle').addEventListener('click',()=>document.getElementById('side').classList.toggle('open'));
 }

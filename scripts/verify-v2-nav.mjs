@@ -107,7 +107,7 @@ ok('6f. occasion=ปีใหม่ narrows results', occCats.length > 0 && occC
 await page.locator('#afchips [data-clr="all"]').click();
 await page.waitForTimeout(80);
 await page.fill('#aifq', 'ของขวัญปีใหม่พนักงาน งบ 100 กระบอกน้ำ');
-await page.locator('.aifilter button').click();
+await page.locator('.ai-hero-input .btn').click();
 await page.waitForTimeout(150);
 const aiChips = await page.locator('#afchips .afchip').allInnerTexts();
 const aiPrices = await page.evaluate(() => [...document.querySelectorAll('#grid .pcard .pprice')].map(e => parseInt(e.textContent.replace(/[^\d]/g, ''), 10)).filter(n => n > 0));
