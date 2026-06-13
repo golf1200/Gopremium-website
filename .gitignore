@@ -20,3 +20,4 @@ scripts/image-pipeline/staged/
 
 # Local review artifact (regenerate with scripts/build-blog-review.mjs)
 content/blog/REVIEW-blog.html
+express-assets/

@@ -9,11 +9,14 @@
 //
 // Run from the website/ folder:  node scripts/build-product-master-xlsx.mjs
 import ExcelJS from 'exceljs';
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 
 const master = JSON.parse(readFileSync('scripts/catalog-master.json', 'utf8'));
 const raw = JSON.parse(readFileSync('src/data/products-raw.json', 'utf8'));
 const gen = JSON.parse(readFileSync('src/data/product-images.generated.json', 'utf8'));
+const express = existsSync('scripts/express-products.json')
+  ? JSON.parse(readFileSync('scripts/express-products.json', 'utf8'))
+  : [];
 
 const rawBy = {};
 raw.forEach((p) => (rawBy[p.sku] = p));
@@ -268,7 +271,86 @@ Object.keys(byCat).sort((a, b) => a.localeCompare(b, 'th')).forEach((cat) => {
 });
 sm.views = [{ state: 'frozen', ySplit: 0 }];
 
-const out = 'PRODUCT-MASTER.xlsx';
+/* ============ Sheet 3: สินค้าส่งด่วน (Express) ============ */
+if (express.length) {
+  const catLabel = (s) => catLabels[s] || s || '—';
+  const TIER = {
+    express:        { label: '🟢 ส่งด่วน (≤14 วัน)', bg: GREEN_BG, tx: GREEN_TX },
+    fast:           { label: '🟡 เร็ว (~2-3 สัปดาห์)', bg: AMBER_BG, tx: AMBER_TX },
+    'made-to-order':{ label: '🟠 สั่งผลิต (30-60 วัน)', bg: AMBER_BG, tx: AMBER_TX },
+    unknown:        { label: '⚪ ยังไม่ระบุ', bg: ZEBRA, tx: 'FF666666' },
+  };
+  const ex = wb.addWorksheet('สินค้าส่งด่วน (Express)', { views: [{ state: 'frozen', ySplit: 3 }] });
+  ex.columns = [
+    { header: 'SKU', key: 'sku', width: 9 },
+    { header: 'ชื่อสินค้า', key: 'name', width: 40 },
+    { header: 'หมวดหมู่', key: 'cat', width: 16 },
+    { header: 'Supplier', key: 'sup', width: 22 },
+    { header: 'ต้นทุน/ชิ้น (฿)', key: 'cost', width: 14 },
+    { header: 'MOQ', key: 'moq', width: 8 },
+    { header: 'ระยะเวลาผลิต', key: 'lead', width: 26 },
+    { header: 'ระดับส่งด่วน', key: 'tier', width: 20 },
+    { header: 'วัสดุ', key: 'material', width: 18 },
+    { header: 'ขนาด', key: 'size', width: 16 },
+    { header: 'วิธีพิมพ์โลโก้', key: 'method', width: 16 },
+    { header: 'ค่าโลโก้/ชิ้น', key: 'logo', width: 14 },
+    { header: 'Packaging', key: 'pkg', width: 18 },
+    { header: 'ค่าส่ง', key: 'ship', width: 18 },
+    { header: 'สถานะรูป', key: 'imgst', width: 14 },
+    { header: 'Drive โฟลเดอร์', key: 'drive', width: 16 },
+    { header: 'หมายเหตุ', key: 'note', width: 40 },
+  ];
+  // title + caption on rows 1-2, header on row 3
+  ex.spliceRows(1, 0, [], []);
+  const nExpress = express.filter((p) => p.is_express).length;
+  ex.getCell('A1').value = `สินค้าส่งด่วน — ${express.length} รายการจาก ${new Set(express.map((p) => p.sup_code)).size} ซัพพลายเออร์ (ที่ส่งได้ภายใน 14 วันจริง ${nExpress} รายการ) · ต้นทุนยังไม่รวมพิมพ์โลโก้`;
+  ex.getCell('A1').font = { bold: true, size: 14, color: { argb: NAVY } };
+  ex.mergeCells('A1:Q1'); ex.getRow(1).height = 24;
+  ex.getCell('A2').value = 'ดึงจากชีต "TH Product" (Supplier Master) · ต้นทุน = ราคาต่ำสุด-สูงสุดตามขั้นบันได MOQ · "ระดับส่งด่วน" คัดจากระยะเวลาผลิตจริง — เฉพาะ 🟢 เท่านั้นที่ควรขึ้นหน้า #/express';
+  ex.getCell('A2').font = { italic: true, size: 10, color: { argb: AMBER_TX } };
+  ex.mergeCells('A2:Q2'); ex.getRow(2).height = 26;
+  ex.getRow(2).alignment = { wrapText: true, vertical: 'middle' };
+  const exHead = ex.getRow(3);
+  exHead.font = { bold: true, color: { argb: 'FFFFFFFF' }, size: 11 };
+  exHead.alignment = { vertical: 'middle', horizontal: 'center', wrapText: true };
+  exHead.height = 26;
+  exHead.eachCell((c) => { c.fill = fill(NAVY); c.border = { bottom: { style: 'medium', color: { argb: GOLD } } }; });
+
+  const costStr = (p) => {
+    if (p.cost_min_thb == null) return '—';
+    return p.cost_min_thb === p.cost_max_thb ? `${p.cost_min_thb}` : `${p.cost_min_thb}–${p.cost_max_thb}`;
+  };
+  express.forEach((p) => {
+    const t = TIER[p.lead_tier] || TIER.unknown;
+    const r = ex.addRow({
+      sku: p.sku, name: p.name, cat: catLabel(p.category_slug), sup: p.sup_name,
+      cost: costStr(p), moq: p.moq ?? '—', lead: p.lead_time_raw || '—', tier: t.label,
+      material: p.material || '—', size: p.size || '—', method: p.custom_method || '—',
+      logo: p.logo_cost || '—', pkg: p.packaging || '—', ship: p.shipping_detail || '—',
+      imgst: p.image_status || 'pending', drive: p.drive_folder_id ? 'มี' : '✗',
+      note: [p.data_warning, p.note || p.limit].filter(Boolean).join(' · ') || '—',
+    });
+    r.alignment = { vertical: 'top', wrapText: true };
+    r.height = 30;
+    r.getCell('sku').font = { bold: true, color: { argb: NAVY } };
+    const tc = r.getCell('tier');
+    tc.fill = fill(t.bg); tc.font = { bold: true, color: { argb: t.tx } };
+    tc.alignment = { vertical: 'middle', wrapText: true };
+    r.getCell('cost').alignment = { horizontal: 'right', vertical: 'top' };
+    r.getCell('moq').alignment = { horizontal: 'center', vertical: 'top' };
+    const dc = r.getCell('drive');
+    dc.alignment = { horizontal: 'center', vertical: 'middle' };
+    dc.font = { bold: true, color: { argb: p.drive_folder_id ? GREEN_TX : RED_TX } };
+  });
+  ex.autoFilter = { from: 'A3', to: 'Q3' };
+  // zebra
+  for (let rr = 4; rr <= ex.rowCount; rr++) {
+    if (rr % 2 === 1) ex.getRow(rr).eachCell((c) => { if (!c.fill || c.fill.type !== 'pattern') c.fill = fill(ZEBRA); });
+  }
+}
+
+const out = process.env.OUT_XLSX || 'PRODUCT-MASTER.xlsx';
 await wb.xlsx.writeFile(out);
 console.log(`Wrote ${out}`);
 console.log(`Total ${total} · live ${live} · withImage ${img} · complete ${complete}`);
+console.log(`Express sheet: ${express.length} SKUs (${express.filter((p) => p.is_express).length} true express)`);
