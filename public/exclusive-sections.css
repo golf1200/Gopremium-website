@@ -23,7 +23,7 @@
 @media(max-width:980px){.nav-links,.nav-phone{display:none}}
 
 /* ===== HERO (shared) ===== */
-.hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;isolation:isolate}
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;overflow:hidden;isolation:isolate}
 .hero-bg{position:absolute;inset:0;z-index:-2;background:
    radial-gradient(120% 90% at 50% -10%,#12305A 0%,var(--navy) 38%,var(--navy-deep) 78%,var(--navy-abyss) 100%)}
 .hero .glow-1{width:60vw;height:60vw;left:-10vw;top:-15vw;background:radial-gradient(circle,rgba(202,161,78,.16),transparent 60%)}
@@ -41,14 +41,14 @@ body[data-hero="c"] .hero-c{display:flex}
 @keyframes cueDrop{0%{top:-50%}60%,100%{top:100%}}
 
 /* — HERO A · Editorial centered — */
-.hero-a{align-items:center;text-align:center}
+.hero-a{flex:1;align-items:center;justify-content:center;text-align:center}
 .hero-a .wrap{display:flex;flex-direction:column;align-items:center;width:100%}
 .hero-a .crest{display:flex;align-items:center;gap:18px;margin-bottom:34px}
 .hero-a .crest .ln{width:60px;height:1px;background:linear-gradient(90deg,transparent,var(--metal))}
 .hero-a .crest .ln.r{background:linear-gradient(90deg,var(--metal),transparent)}
 .hero-a .crest .gp{font-family:var(--f-tier);font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--silver)}
 .hero-word{font-family:var(--f-tier);font-weight:700;text-transform:uppercase;letter-spacing:.3em;
-  font-size:clamp(40px,11vw,168px);line-height:1;text-indent:.3em}
+  font-size:clamp(40px,11vw,168px);line-height:1;text-indent:.03em}
 .hero-a .sub-th{font-family:var(--f-display);font-weight:300;font-size:clamp(20px,3.2vw,42px);color:#fff;margin-top:26px;letter-spacing:.02em}
 .hero-a .sub-th b{font-weight:600}
 .hero-a .lead{max-width:600px;margin:26px auto 0}
