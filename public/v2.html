@@ -84,6 +84,9 @@ input,select,textarea{font-family:var(--body)}
 .nav{display:flex;align-items:center;gap:2px;flex-shrink:0}
 .nav a,.nav button.navlink{font-family:var(--head);padding:9px 11px;font-size:14px;font-weight:400;color:var(--navy);border-radius:var(--pill);background:none;border:none;transition:.15s;white-space:nowrap}
 .nav a:hover,.nav button.navlink:hover{color:var(--mustard-deep);background:var(--cloud)}
+.nav a.nav-ex{color:var(--mustard-deep);font-weight:600;letter-spacing:.04em}
+.nav a.nav-ex .spk{color:var(--mustard)}
+.nav a.nav-ex:hover{color:var(--navy);background:var(--mustard-soft)}
 .hd-cta{display:flex;align-items:center;gap:10px}
 .burger{display:none;background:none;border:none;padding:8px}
 .mega-wrap{position:relative;display:inline-flex;align-items:center}
@@ -525,6 +528,7 @@ input,select,textarea{font-family:var(--body)}
       <a href="#/">หน้าแรก</a>
       <a href="#/express" class="nav-rush"><span class="flash">⚡</span> สินค้าส่งด่วน</a>
       <div class="mega-wrap"><a class="navlink" href="#/all">สินค้าทั้งหมด ▾</a><div class="mega" id="megaMenu"></div></div>
+      <a href="/exclusive" class="nav-ex"><span class="spk">✦</span> Exclusive</a>
       <a href="#/portfolio">ผลงานของเรา</a>
       <a href="/blog">บทความ &amp; ไอเดีย</a>
       <a href="#/about">เกี่ยวกับเรา</a>
@@ -555,6 +559,7 @@ input,select,textarea{font-family:var(--body)}
       <li><a href="#/portfolio">ผลงานของเรา</a></li>
       <li><a href="/blog">บทความ &amp; ไอเดีย</a></li>
       <li><a href="#/all">สินค้าทั้งหมด</a></li>
+      <li><a href="/exclusive">✦ Exclusive</a></li>
       <li><a href="#/express">สินค้าส่งด่วน</a></li>
       <li><a href="#/quote">ขอใบเสนอราคา</a></li>
       <li><a href="https://lin.ee/z1GT1KR" target="_blank" rel="noopener">ปรึกษาทาง LINE</a></li>
@@ -1273,7 +1278,7 @@ window.addEventListener('hashchange',render);
 function buildChrome(){
   document.getElementById('megaMenu').innerHTML=GROUPS.map(g=>`<div><h5>${g.icon} ${esc(g.group)}</h5>${g.cats.filter(c=>byCat[c]).map(c=>`<a href="#/c/${c}">${esc(CL[c])} <span style="color:var(--grey-400);font-size:12px">(${byCat[c].length})</span></a>`).join('')}</div>`).join('');
   document.getElementById('footCats').innerHTML=catList.slice(0,6).map(c=>`<li><a href="#/c/${c}">${esc(CL[c])}</a></li>`).join('');
-  document.getElementById('drawer').innerHTML=`<div class="wrap" style="padding:8px 0 22px"><a href="#/">หน้าแรก</a><a href="#/express">⚡ สินค้าส่งด่วน</a><a href="#/all">สินค้าทั้งหมด (${P.length})</a>${catList.map(c=>`<a href="#/c/${c}">${esc(CL[c])} (${byCat[c].length})</a>`).join('')}<a href="#/portfolio">ผลงานของเรา</a><a href="/blog">บทความ &amp; ไอเดีย</a><a href="#/about">เกี่ยวกับเรา</a><div style="display:flex;flex-direction:column;gap:9px;padding-top:14px"><a class="btn btn-primary" href="#/quote">ขอใบเสนอราคา</a><a class="btn btn-line-ghost" href="https://lin.ee/z1GT1KR" target="_blank" rel="noopener">ทักทาง LINE @gopremium</a></div></div>`;
+  document.getElementById('drawer').innerHTML=`<div class="wrap" style="padding:8px 0 22px"><a href="#/">หน้าแรก</a><a href="#/express">⚡ สินค้าส่งด่วน</a><a href="#/all">สินค้าทั้งหมด (${P.length})</a><a href="/exclusive">✦ Exclusive</a>${catList.map(c=>`<a href="#/c/${c}">${esc(CL[c])} (${byCat[c].length})</a>`).join('')}<a href="#/portfolio">ผลงานของเรา</a><a href="/blog">บทความ &amp; ไอเดีย</a><a href="#/about">เกี่ยวกับเรา</a><div style="display:flex;flex-direction:column;gap:9px;padding-top:14px"><a class="btn btn-primary" href="#/quote">ขอใบเสนอราคา</a><a class="btn btn-line-ghost" href="https://lin.ee/z1GT1KR" target="_blank" rel="noopener">ทักทาง LINE @gopremium</a></div></div>`;
 }
 document.getElementById('burger').addEventListener('click',()=>document.getElementById('drawer').classList.toggle('open'));
 buildChrome();render();

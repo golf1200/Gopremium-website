@@ -2,6 +2,7 @@
   "rewrites": [
     { "source": "/old", "destination": "/old.html" },
     { "source": "/old/(.*)", "destination": "/old.html" },
+    { "source": "/exclusive", "destination": "/exclusive.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [
