@@ -740,21 +740,21 @@ function viewHome(){
   const clientRow=[...CLIENTS,...CLIENTS].map(c=>`<img src="clients/${c}.png" alt="ลูกค้าองค์กรของ GO PREMIUM" loading="lazy">`).join('');
   const cnt=c=>byCat[c]?byCat[c].length+' รุ่น':'';
   const CATS2=[
-    ['drinkware','แก้ว &amp; กระบอกน้ำ','DRINKWARE','images/products/dw003-peak/dw003-peak-hero.jpg'],
-    ['bags','กระเป๋า &amp; ถุงผ้า','BAG','images/products/bg001-classic/bg001-classic-hero.jpg'],
-    ['stationery','เครื่องเขียน &amp; สำนักงาน','STATIONERY','images/products/st002-eco/st002-eco-hero.jpg'],
-    ['fan','พัดลมพกพา &amp; แกดเจ็ต','MINI FAN','images/products/fn003-neko/fn003-neko-hero.jpg'],
-    ['umbrella','ร่มพรีเมียม','UMBRELLA','images/products/um001-automatic-lite/um001-automatic-lite-hero.jpg'],
-    ['giftset','กิฟต์เซ็ต','GIFTSET','images/products/gs003-business-executive/gs003-business-executive-hero.jpg'],
-    ['lifestyle','ไลฟ์สไตล์ &amp; ของใช้','LIFESTYLE','images/products/ls001-card-holder-wave/ls001-card-holder-wave-hero.jpg'],
+    ['drinkware','แก้ว &amp; กระบอกน้ำ','DRINKWARE','images/home/cat-drinkware.jpg'],
+    ['bags','กระเป๋า &amp; ถุงผ้า','BAG','images/home/cat-bags.jpg'],
+    ['stationery','เครื่องเขียน &amp; สำนักงาน','STATIONERY','images/home/cat-stationery.jpg'],
+    ['fan','พัดลมพกพา &amp; แกดเจ็ต','MINI FAN','images/home/cat-fan.jpg'],
+    ['umbrella','ร่มพรีเมียม','UMBRELLA','images/home/cat-umbrella.jpg'],
+    ['giftset','กิฟต์เซ็ต','GIFTSET','images/home/cat-giftset.jpg'],
+    ['lifestyle','ไลฟ์สไตล์ &amp; ของใช้','LIFESTYLE','images/home/cat-lifestyle.jpg'],
   ];
   const OCCS2=[
-    ['newyear','ของขวัญปีใหม่','กิฟต์เซ็ตและของพรีเมียมสำหรับมอบพนักงาน ลูกค้า และคู่ค้าช่วงปลายปี','images/products/gs003-business-executive/gs003-business-executive-hero.jpg','พีคสุด'],
-    ['welcome','ชุดต้อนรับพนักงานใหม่','Welcome kit สร้างความประทับใจวันแรก เสริมภาพลักษณ์องค์กร','images/products/dw001-loopa/dw001-loopa-hero.jpg',null],
-    ['vip','ของขวัญลูกค้า VIP','ของพรีเมียมระดับผู้บริหาร แพ็กเกจหรู สื่อถึงความใส่ใจ','images/products/gs001-business-basic/gs001-business-basic-hero.jpg','Exclusive'],
-    ['event','งานอีเวนต์ &amp; สัมมนา','ของแจกพิมพ์โลโก้ พร้อมส่งทันงาน เหมาะกับงานจำนวนมาก','images/products/bg001-classic/bg001-classic-hero.jpg',null],
-    ['milestone','ครบรอบ &amp; Milestone','ของที่ระลึกพิเศษเฉพาะวาระ ดีไซน์สั่งทำ สะท้อนความสำเร็จ','images/products/dw003-peak/dw003-peak-hero.jpg',null],
-    ['eco','ของขวัญรักษ์โลก','วัสดุคุณภาพ เล่าเรื่อง ESG ขององค์กร เทรนด์ 2026','images/products/st002-eco/st002-eco-hero.jpg','Eco'],
+    ['newyear','ของขวัญปีใหม่','กิฟต์เซ็ตและของพรีเมียมสำหรับมอบพนักงาน ลูกค้า และคู่ค้าช่วงปลายปี','images/home/occ-newyear.jpg','พีคสุด'],
+    ['welcome','ชุดต้อนรับพนักงานใหม่','Welcome kit สร้างความประทับใจวันแรก เสริมภาพลักษณ์องค์กร','images/home/occ-welcome.jpg',null],
+    ['vip','ของขวัญลูกค้า VIP','ของพรีเมียมระดับผู้บริหาร แพ็กเกจหรู สื่อถึงความใส่ใจ','images/home/occ-vip.jpg','Exclusive'],
+    ['event','งานอีเวนต์ &amp; สัมมนา','ของแจกพิมพ์โลโก้ พร้อมส่งทันงาน เหมาะกับงานจำนวนมาก','images/home/occ-event.jpg',null],
+    ['milestone','ครบรอบ &amp; Milestone','ของที่ระลึกพิเศษเฉพาะวาระ ดีไซน์สั่งทำ สะท้อนความสำเร็จ','images/home/occ-milestone.jpg',null],
+    ['eco','ของขวัญรักษ์โลก','วัสดุคุณภาพ เล่าเรื่อง ESG ขององค์กร เทรนด์ 2026','images/home/occ-eco.jpg','Eco'],
   ];
   const TIERS2=[
     ['value','Value · เริ่มต้น','ไม่เกิน ฿60','ของแจกงานอีเวนต์ จำนวนมาก เช่น ปากกา ถุงผ้าสปันบอนด์ พวงกุญแจ ของชำร่วย',0],
@@ -1079,7 +1079,15 @@ function viewExpress(){
     : `<div class="card" style="text-align:center;padding:40px 24px;margin-top:8px"><h4 style="font-size:18px;color:var(--navy);margin-bottom:8px">บอกโจทย์งานด่วนของคุณ เราจัดให้</h4><p class="muted" style="max-width:48ch;margin:0 auto 18px">แจ้งจำนวน กำหนดส่ง และงบ/ชิ้น — ทีมเราจะเสนอรุ่นที่ผลิตได้ทันงานด่วนพร้อมช่วงราคาให้ภายใน 2 ชม.</p><div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a class="btn btn-primary btn-lg" href="#/quote">ขอใบเสนอราคางานด่วน</a><a class="btn btn-line-ghost btn-lg" href="https://lin.ee/z1GT1KR" target="_blank" rel="noopener">ทักด่วนทาง LINE</a></div></div>`;
   return `<section class="sec" style="padding-top:34px"><div class="wrap">
     <div class="crumbs"><a href="#/">หน้าแรก</a> / <b>สินค้าส่งด่วน</b></div>
-    <div class="shead"><span class="eyebrow"><span class="dot"></span>งานด่วน · Rush</span><h2 class="h2">สินค้าส่งด่วน 7–14 วัน</h2><p class="lead">มี deadline กระชั้น? เราวางแผนการผลิตและส่งมอบให้ทันงาน พร้อม Mockup ก่อนผลิตทุกออเดอร์</p></div>
+    <div class="nh" style="margin-bottom:32px"><div class="promo express">
+      <div class="tx">
+        <span class="eyebrow2"><span class="flash">⚡</span> Express Service · งานด่วน</span>
+        <h2 class="h2" style="margin:0">สินค้าส่งด่วน<br>พร้อมผลิต &amp; ส่งมอบใน 7–14 วัน</h2>
+        <p>มี deadline กระชั้น? เราคัดสินค้าพร้อมผลิต พิมพ์โลโก้ และวางแผนส่งมอบให้ทันงาน — พร้อม Mockup ก่อนผลิตทุกออเดอร์ ตอบกลับใน 2 ชม.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:6px"><a class="btn btn-primary" href="#/quote">ขอใบเสนอราคางานด่วน →</a><a class="btn btn-line-ghost" href="https://lin.ee/z1GT1KR" target="_blank" rel="noopener">ทักด่วนทาง LINE</a></div>
+      </div>
+      <div class="im"><img loading="eager" src="banners/banner1.webp" alt="งานด่วนพร้อมส่ง 7–14 วัน — GO PREMIUM"></div>
+    </div></div>
     <div class="g-auto svc-grid">${EXPRESS_POINTS.map(s=>`<div class="card svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1L12 16.8 5.7 21l2.3-7.1-6-4.5h7.6z"/></svg></div><h4>${s[0]}</h4><p>${s[1]}</p></div>`).join('')}</div>
     ${grid}
   </div></section>${ctaBand()}`;
