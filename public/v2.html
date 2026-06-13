@@ -267,7 +267,7 @@ input,select,textarea{font-family:var(--body)}
 .pthumb{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--cloud-2)}
 .pthumb img{width:100%;height:100%;object-fit:cover}
 .pchip{position:absolute;top:11px;left:11px;background:rgba(31,58,95,.92);color:#fff;font-family:var(--head);font-size:11px;font-weight:500;padding:5px 11px;border-radius:var(--pill)}
-.ptier{position:absolute;top:11px;right:11px;background:var(--mustard);color:var(--navy);font-family:var(--head);font-size:10.5px;font-weight:600;padding:4px 9px;border-radius:var(--pill);text-transform:uppercase;letter-spacing:.04em}
+.ptier{position:absolute;bottom:11px;right:11px;background:var(--mustard);color:var(--navy);font-family:var(--head);font-size:10.5px;font-weight:600;padding:4px 9px;border-radius:var(--pill);letter-spacing:.01em;box-shadow:0 2px 8px rgba(19,36,74,.18)}
 .pbody{padding:14px 15px 16px;display:flex;flex-direction:column;gap:4px;flex:1}
 .pname{font-family:var(--head);font-weight:500;font-size:15px;color:var(--navy);line-height:1.3}
 .pfeat{font-size:12.5px;color:var(--grey-400);line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
@@ -636,8 +636,9 @@ function track(ev,params){try{if(window.gtag)gtag('event',ev,params||{});}catch(
 document.addEventListener('click',e=>{const a=e.target.closest&&e.target.closest('a[href*="lin.ee"]');if(a)track('contact_line',{source:(location.hash||'#/').slice(1)});});
 
 /* ===== reusable bits ===== */
+const PTIER={value:'เริ่มต้นคุ้ม',smart:'คุ้มค่าน่าเลือก',premium:'พรีเมียม',executive:'ระดับผู้บริหาร'};
 function card(p){
-  const tier=p.tier?`<span class="ptier">${esc(p.tier)}</span>`:'';
+  const tier=p.tier?`<span class="ptier">${esc(PTIER[p.tier]||p.tier)}</span>`:'';
   return `<a class="pcard" href="#/p/${p.sku}"><div class="pthumb"><span class="pchip">${esc(CL[p.catSlug]||p.cat)}</span>${tier}<img loading="lazy" src="${pimg(p)}" alt="${esc(p.name)}"></div>
     <div class="pbody"><div class="pname">${esc(p.name)}</div><div class="pfeat">${esc(p.features)}</div>
     <div class="pfoot"><div class="pprice">${baht(p.price)} <small>${p.price?'/ชิ้น':''}</small></div><div class="pmoq">MOQ ${p.moq}</div></div></div></a>`;
@@ -918,17 +919,17 @@ function viewCatalogue(opts){
   const tierBtns=['all','value','smart','premium','executive'].map(t=>`<button data-tier="${t}" class="${t===FILTER.tier?'on':''}"><span class="box"></span><span class="lbl">${t==='all'?'ทุกงบ':esc(TL[t])}</span></button>`).join('');
   const occQuick=OCC_FILTERS.map(x=>`<button class="qpill ${x.k===FILTER.occ?'on':''}" data-occ="${x.k}">${esc(x.label)}</button>`).join('');
   const tierQuick=['value','smart','premium','executive'].map(t=>`<button class="qpill ${t===FILTER.tier?'on':''}" data-tier="${t}">${esc(TL[t])}</button>`).join('');
-  const aiEx=['ของขวัญปีใหม่พนักงาน งบ 150','ของลูกค้า VIP หรู ๆ','ของแจกอีเวนต์ จำนวนมาก','กระบอกน้ำรักษ์โลก'];
+  const aiEx=['ของขวัญปีใหม่สำหรับพนักงาน งบ 150 บาท','ของขวัญลูกค้า VIP ดูพรีเมียม','ของแจกอีเวนต์ จำนวนมาก คุมงบได้','ของขวัญรักษ์โลก / ESG'];
   return `<section class="sec" style="padding-top:34px"><div class="wrap">
     <div class="crumbs"><a href="#/">หน้าแรก</a> / <b id="crumbCat">สินค้าทั้งหมด</b></div>
     <div class="ai-hero">
       <span class="eyebrow2"><i>✦</i> AI Gift Finder</span>
-      <h2>บอกโจทย์เป็นภาษาคน — ให้ AI จัดของให้ทันที</h2>
-      <p>พิมพ์โอกาส งบ จำนวน หรือชนิดของที่อยากได้ แล้ว AI จะกรองสินค้าที่ตรงใจให้เลย</p>
+      <h2>บอกโจทย์ของขวัญองค์กร ให้ AI ช่วยคัดเซ็ตที่เหมาะกับคุณ</h2>
+      <p>ระบุโอกาส งบประมาณ จำนวน และสไตล์ที่ต้องการ แล้ว AI จะช่วยคัดสินค้าที่ตรงโจทย์ให้ทันที</p>
       <div class="ai-hero-input">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8A93A2" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4-4"/></svg>
-        <input id="aifq" placeholder="เช่น ของขวัญปีใหม่พนักงาน งบ 200 กระบอกน้ำ" onkeydown="if(event.key==='Enter')aiFilter()">
-        <button class="btn btn-primary" onclick="aiFilter()"><i>✦</i> ค้นหาด้วย AI</button>
+        <input id="aifq" placeholder="ของขวัญปีใหม่สำหรับพนักงาน 300 ชิ้น งบ 150 บาท" onkeydown="if(event.key==='Enter')aiFilter()">
+        <button class="btn btn-primary" onclick="aiFilter()"><i>✦</i> ให้ AI แนะนำสินค้า</button>
       </div>
       <div class="ai-hero-ex"><span>ลองพิมพ์:</span>${aiEx.map(x=>`<button class="ex" onclick="aiExample('${x}')">${x}</button>`).join('')}</div>
     </div>
@@ -968,7 +969,7 @@ function renderChips(){
   if(FILTER.occ&&FILTER.occ!=='all'){const o=OCC_FILTERS.find(x=>x.k===FILTER.occ);c.push(['occ','โอกาส: '+(o?o.label:FILTER.occ)]);}
   if(FILTER.cat!=='all')c.push(['cat','หมวด: '+CL[FILTER.cat]]);
   if(FILTER.tier&&FILTER.tier!=='all')c.push(['tier','งบ: '+TL[FILTER.tier]]);
-  if(FILTER.pmax)c.push(['pmax','งบไม่เกิน ฿'+FILTER.pmax]);
+  if(FILTER.pmax)c.push(['pmax','งบไม่เกิน '+FILTER.pmax+' บาท']);
   if(FILTER.q)c.push(['q','คำค้น: '+FILTER.q]);
   box.innerHTML=c.length?c.map(x=>`<span class="afchip"><b>${esc(x[1])}</b><span class="x" data-clr="${x[0]}">✕</span></span>`).join('')+`<span class="afchip" data-clr="all" style="cursor:pointer;background:var(--cloud);color:var(--navy)">ล้างทั้งหมด</span>`:'';
 }
