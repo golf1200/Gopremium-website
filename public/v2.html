@@ -209,6 +209,35 @@ input,select,textarea{font-family:var(--body)}
 .occ .bd{padding:14px 16px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
 .occ h4{font-size:16px;color:var(--navy)}.occ p{font-size:12.5px;color:var(--grey);line-height:1.55;flex:1}
 .occ .glass{position:absolute;top:10px;left:12px;z-index:2}
+a.occ{text-decoration:none;transition:transform .18s,box-shadow .18s}
+a.occ:hover{transform:translateY(-4px);box-shadow:var(--sh-md)}
+
+/* ===== PORTFOLIO — thank-you hero + logo wall + showcase + video ===== */
+.thanks-hero{background:linear-gradient(160deg,var(--navy),var(--navy-700));color:#fff;border-radius:var(--r-xl);padding:clamp(30px,5vw,66px);position:relative;overflow:hidden}
+.thanks-hero::before{content:"";position:absolute;right:-90px;top:-110px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(244,178,35,.20),transparent 65%);pointer-events:none}
+.thanks-hero .eyebrow{color:var(--mustard)}
+.thanks-hero h1{font-size:clamp(28px,4.4vw,48px);color:#fff;max-width:20ch;margin-top:14px;letter-spacing:-.02em}
+.thanks-hero .lead{color:#CBD7E8;max-width:58ch;margin-top:16px;position:relative}
+.thanks-stats{display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,46px);margin-top:34px;position:relative}
+.thanks-stats .st .n{font-family:var(--head);font-weight:700;font-size:clamp(26px,3.4vw,40px);color:var(--mustard);line-height:1}
+.thanks-stats .st .l{font-size:13px;color:#9FB2CC;margin-top:7px;max-width:18ch}
+
+.logo-wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(176px,1fr));gap:14px}
+.logo-cell{aspect-ratio:3/2;background:#fff;border:1px solid var(--line);border-radius:var(--r);display:flex;align-items:center;justify-content:center;padding:22px;box-shadow:var(--sh-sm);transition:transform .18s,box-shadow .18s,border-color .18s}
+.logo-cell:hover{transform:translateY(-4px);box-shadow:var(--sh-md);border-color:var(--mustard-soft)}
+.logo-cell img{max-width:100%;max-height:60px;width:auto;height:auto;object-fit:contain}
+@media(max-width:560px){.logo-wall{grid-template-columns:repeat(3,1fr);gap:9px}.logo-cell{padding:13px;border-radius:12px}.logo-cell img{max-height:38px}}
+
+.video-wrap{position:relative;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh);background:var(--navy-700);aspect-ratio:16/9;max-width:960px;margin:0 auto}
+.video-wrap video{width:100%;height:100%;object-fit:cover;display:block}
+.video-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;background:linear-gradient(160deg,var(--navy),var(--navy-700));color:#fff;text-align:center;padding:24px;cursor:pointer}
+.video-ph.hide{display:none}
+.video-ph .play{width:80px;height:80px;border-radius:50%;background:var(--mustard);color:var(--navy);display:flex;align-items:center;justify-content:center;box-shadow:0 14px 40px -10px rgba(244,178,35,.6);transition:transform .18s}
+.video-ph:hover .play{transform:scale(1.06)}
+.video-ph.pending{cursor:default}
+.video-ph.pending .play{background:rgba(255,255,255,.12);color:#9FB2CC;box-shadow:none}
+.video-ph .cap{font-family:var(--head);font-weight:600;font-size:19px}
+.video-ph .sub{font-size:13px;color:#9FB2CC;max-width:38ch;line-height:1.6}
 
 /* budget tiers */
 .tier-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
@@ -1093,7 +1122,7 @@ function viewExpress(){
   const list=P.filter(p=>EXPRESS_SKUS.includes(p.sku));
   const grid=list.length
     ? `<div class="shead" style="margin-top:8px"><span class="eyebrow"><span class="dot"></span>พร้อมผลิตด่วน</span><h2 class="h2">รุ่นแนะนำสำหรับงานด่วน</h2><p class="lead">คัดสินค้าที่ผลิตและส่งมอบได้ทันงานด่วน — กดขอใบเสนอราคาเพื่อยืนยันคิวผลิตตามจำนวนของคุณ</p></div><div class="pgrid">${list.map(card).join('')}</div>`
-    : `<div class="card" style="text-align:center;padding:40px 24px;margin-top:8px"><h4 style="font-size:18px;color:var(--navy);margin-bottom:8px">บอกโจทย์งานด่วนของคุณ เราจัดให้</h4><p class="muted" style="max-width:48ch;margin:0 auto 18px">แจ้งจำนวน กำหนดส่ง และงบ/ชิ้น — ทีมเราจะเสนอรุ่นที่ผลิตได้ทันงานด่วนพร้อมช่วงราคาให้ภายใน 2 ชม.</p><div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a class="btn btn-primary btn-lg" href="#/quote">ขอใบเสนอราคางานด่วน</a><a class="btn btn-line-ghost btn-lg" href="https://lin.ee/z1GT1KR" target="_blank" rel="noopener">ทักด่วนทาง LINE</a></div></div>`;
+    : `<div class="card" style="text-align:center;padding:40px 24px;margin-top:8px"><h4 style="font-size:18px;color:var(--navy);margin-bottom:8px">บอกโจทย์งานด่วนของคุณ เราจัดให้</h4><p class="muted" style="max-width:48ch;margin:0 auto 18px">แจ้งจำนวน กำหนดส่ง และงบ/ชิ้น — ทีมเราจะเสนอรุ่นที่ผลิตได้ทันงานด่วนพร้อมช่วงราคาให้ภายใน 2 ชม.</p><div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a class="btn btn-line btn-lg" href="https://lin.ee/z1GT1KR" target="_blank" rel="noopener">ทักด่วนทาง LINE</a><a class="btn btn-ghost btn-lg" style="border-color:rgba(31,58,95,.3);color:var(--navy)" href="#/quote">ขอใบเสนอราคางานด่วน</a></div></div>`;
   return `<section class="sec" style="padding-top:34px"><div class="wrap">
     <div class="crumbs"><a href="#/">หน้าแรก</a> / <b>สินค้าส่งด่วน</b></div>
     <div class="nh" style="margin-bottom:32px"><div class="promo express">
@@ -1101,7 +1130,7 @@ function viewExpress(){
         <span class="eyebrow2"><span class="flash">⚡</span> Express Service · งานด่วน</span>
         <h2 class="h2" style="margin:0">สินค้าส่งด่วน<br>พร้อมผลิต &amp; ส่งมอบใน 7–14 วัน</h2>
         <p>มี deadline กระชั้น? เราคัดสินค้าพร้อมผลิต พิมพ์โลโก้ และวางแผนส่งมอบให้ทันงาน — พร้อม Mockup ก่อนผลิตทุกออเดอร์ ตอบกลับใน 2 ชม.</p>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:6px"><a class="btn btn-primary" href="#/quote">ขอใบเสนอราคางานด่วน →</a><a class="btn btn-line-ghost" href="https://lin.ee/z1GT1KR" target="_blank" rel="noopener">ทักด่วนทาง LINE</a></div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:6px"><a class="btn btn-line" href="https://lin.ee/z1GT1KR" target="_blank" rel="noopener">ทักด่วนทาง LINE →</a><a class="btn btn-ghost" style="border-color:rgba(31,58,95,.3);color:var(--navy)" href="#/quote">ขอใบเสนอราคางานด่วน</a></div>
       </div>
       <div class="im"><img loading="eager" src="banners/banner1.webp" alt="งานด่วนพร้อมส่ง 7–14 วัน — GO PREMIUM"></div>
     </div></div>
@@ -1114,16 +1143,54 @@ function viewExpress(){
    หน้ารวมแนวงาน/ผลงานที่เราออกแบบและผลิตให้องค์กร ใช้ข้อมูลชุดเดียวกับหน้าแรก
    (CASES, OCCS, STEPS, REVS, CLIENTS) — ไม่มีการกล่าวอ้างลูกค้า/ราคาปลอม */
 function viewPortfolio(){
-  const clientRow=[...CLIENTS,...CLIENTS].map(c=>`<img src="clients/${c}.png" alt="ลูกค้าองค์กรของ GO PREMIUM" loading="lazy">`).join('');
+  const logoWall=CLIENTS.map(c=>`<div class="logo-cell"><img src="clients/${c}.png" alt="ลูกค้าองค์กรของ GO PREMIUM" loading="lazy"></div>`).join('');
+  // ตัวอย่างสินค้าจริง — ดึงสินค้าที่มี "รูปถ่ายจริง" 1 ชิ้นต่อหมวด (สูงสุด 8 หมวด)
+  const showcase=catList.map(c=>(byCat[c]||[]).find(p=>p.img)).filter(Boolean).slice(0,8);
+  const showCards=showcase.map(p=>`<a class="occ" href="#/p/${p.sku}"><div class="im" style="aspect-ratio:4/3"><img src="${pimg(p)}" alt="${esc(p.name)}" loading="lazy"><span class="badge badge-glass glass">${esc(CL[p.catSlug]||p.cat)}</span></div><div class="bd"><h4>${esc(p.name)}</h4><p>${esc(p.features||'พิมพ์โลโก้ได้ พร้อม Mockup ก่อนผลิต')}</p></div></a>`).join('');
+  const caseCards=CASES.map(c=>`<div class="occ"><div class="im" style="aspect-ratio:4/3"><img src="${repImg(c[3])}" alt="${esc(c[0])}" loading="lazy"><span class="badge badge-glass glass">${esc(c[1])}</span></div><div class="bd"><h4>${esc(c[0])}</h4><p>${esc(c[2])}</p></div></div>`).join('');
+  const playIcon='<svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
   return `<section class="sec" style="padding-top:34px"><div class="wrap">
     <div class="crumbs"><a href="#/">หน้าแรก</a> / <b>ผลงานของเรา</b></div>
-    <div class="shead"><span class="eyebrow"><span class="dot"></span>ผลงานของเรา · Our Work</span><h2 class="h2">ตัวอย่างผลงานที่เราออกแบบและผลิตให้องค์กร</h2><p class="lead">รวมแนวงานของขวัญองค์กรและของพรีเมียมที่เราดูแลครบ ตั้งแต่คอนเซ็ปต์ ดีไซน์ ผลิต ถึงส่งมอบ — ทุกงานผ่าน Mockup ก่อนผลิตจริง</p></div>
-    <div class="g-auto occ-grid">${CASES.map(c=>`<div class="occ"><div class="im" style="aspect-ratio:4/3"><img src="${repImg(c[3])}" alt="${c[0]}"><span class="badge badge-glass glass">${c[1]}</span></div><div class="bd"><h4>${c[0]}</h4><p>${c[2]}</p></div></div>`).join('')}</div>
+    <div class="thanks-hero">
+      <span class="eyebrow"><span class="dot"></span>ผลงานของเรา · Thank You</span>
+      <h1>ขอบคุณทุกองค์กรที่ไว้วางใจ<br>ให้เราเป็นส่วนหนึ่งของการให้</h1>
+      <p class="lead">ทุกโลโก้บนหน้านี้คือความไว้วางใจที่เรารู้สึกขอบคุณจริง ๆ — ขอบคุณที่ให้ GO PREMIUM ได้ดูแลของขวัญและของพรีเมียมขององค์กรคุณ ตั้งแต่คอนเซ็ปต์ ดีไซน์ ผลิต จนถึงส่งมอบ เราสัญญาว่าจะตั้งใจกับทุกงานเหมือนเป็นงานแรกเสมอ</p>
+      <div class="thanks-stats">
+        <div class="st"><div class="n">${CLIENTS.length}+</div><div class="l">องค์กรชั้นนำที่ไว้วางใจ</div></div>
+        <div class="st"><div class="n">${P.length}+</div><div class="l">รายการสินค้าพร้อมพิมพ์โลโก้</div></div>
+        <div class="st"><div class="n">100%</div><div class="l">ทุกงานผ่าน Mockup ก่อนผลิต</div></div>
+        <div class="st"><div class="n">2 ชม.</div><div class="l">ตอบกลับทุกคำขอ</div></div>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="sec" style="background:#fff;padding-top:clamp(40px,5vw,72px)"><div class="wrap">
+    <div class="shead center"><span class="eyebrow"><span class="dot"></span>ขอบคุณลูกค้าของเรา</span><h2 class="h2">องค์กรที่มอบความไว้วางใจให้เรา</h2><p class="lead" style="text-align:center">ตั้งแต่บริษัทในตลาดหลักทรัพย์ แบรนด์ระดับสากล ไปจนถึงสถาบันการศึกษาชั้นนำ — ขอบคุณที่เลือกเรา</p></div>
+    <div class="logo-wall">${logoWall}</div>
   </div></section>
 
   <section class="sec" style="background:var(--cloud)"><div class="wrap">
-    <div class="shead center"><span class="eyebrow"><span class="dot"></span>แนวงานตามโอกาส</span><h2 class="h2">จัดเซ็ตได้ทุกโอกาสสำคัญ</h2><p class="lead" style="text-align:center">เลือกโอกาสของคุณ — ดูไอเดียสินค้าและดีไซน์ที่เราแนะนำสำหรับงานนั้น ๆ</p></div>
-    <div class="g-auto occ-grid">${OCCS.map(o=>`<div class="occ"><div class="im"><img src="${repImg(o[2])}" alt="${o[0]}">${o[3]?`<span class="badge badge-glass glass">${o[3]}</span>`:''}</div><div class="bd"><h4>${o[0]}</h4><p>${o[1]}</p><div style="display:flex;align-items:center;justify-content:space-between;margin-top:8px"><span style="font-family:var(--head);font-size:12.5px;color:var(--grey)">ปรับตามงบ & จำนวน</span><a class="btn btn-ghost btn-sm" href="#/o/${o[4]}">ดูไอเดีย</a></div></div></div>`).join('')}</div>
+    <div class="shead center"><span class="eyebrow"><span class="dot"></span>ตัวอย่างสินค้าจริง</span><h2 class="h2">งานจริงที่เราออกแบบและผลิต</h2><p class="lead" style="text-align:center">ภาพถ่ายสินค้าจริงจากสตูดิโอของเรา — ทุกชิ้นพิมพ์โลโก้ได้ และเห็น Mockup ก่อนผลิตเสมอ คลิกเพื่อดูรายละเอียดสินค้า</p></div>
+    <div class="g-auto occ-grid">${showCards}</div>
+  </div></section>
+
+  <section class="sec" style="background:#fff"><div class="wrap">
+    <div class="shead center"><span class="eyebrow"><span class="dot"></span>วิดีโอเบื้องหลังการผลิต</span><h2 class="h2">เครื่องพิมพ์ของเรา — ทำงานจริงทุกวัน</h2><p class="lead" style="text-align:center">ชมเบื้องหลังการพิมพ์โลโก้ลงบนสินค้าจริง คุมคุณภาพทุกชิ้นด้วยเครื่องพิมพ์ของเราเอง</p></div>
+    <div class="video-wrap" id="printVideo">
+      <video controls preload="none" playsinline poster="videos/printing-machine-poster.jpg">
+        <source src="videos/printing-machine.mp4" type="video/mp4">
+      </video>
+      <div class="video-ph" id="videoPh">
+        <div class="play">${playIcon}</div>
+        <div class="cap">วิดีโอสาธิตเครื่องพิมพ์</div>
+        <div class="sub" id="videoSub">เบื้องหลังการผลิตและพิมพ์โลโก้ของ GO PREMIUM</div>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="sec" style="background:var(--cloud)"><div class="wrap">
+    <div class="shead center"><span class="eyebrow"><span class="dot"></span>แนวงานยอดนิยม</span><h2 class="h2">ไอเดียจัดเซ็ตตามโอกาสสำคัญ</h2><p class="lead" style="text-align:center">รวมแนวงานที่องค์กรเลือกบ่อย — ปรับดีไซน์ วัสดุ และแพ็กเกจได้ตามแบรนด์และงบของคุณ</p></div>
+    <div class="g-auto occ-grid">${caseCards}</div>
   </div></section>
 
   <section class="sec" style="background:#fff"><div class="wrap">
@@ -1136,10 +1203,20 @@ function viewPortfolio(){
     <div class="g-auto rev-grid">${REVS.map(r=>`<div class="rev ${r[3]?'dk':''}"><div class="stars">${'<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1L12 16.8 5.7 21l2.3-7.1-6-4.5h7.6z"/></svg>'.repeat(5)}</div><q>"${r[0]}"</q><div class="who"><div class="av">${r[2]}</div><div class="r">${r[1]}</div></div></div>`).join('')}</div>
   </div></section>
 
-  <section class="sec" style="background:#fff;padding-top:0"><div class="wrap" style="text-align:center;margin-bottom:24px"><span class="eyebrow" style="justify-content:center"><span class="dot"></span>ไว้วางใจโดยองค์กรชั้นนำ</span></div>
-    <div class="marq"><div class="marq-row">${clientRow}</div></div></section>
-
   ${ctaBand()}${quoteSection()}`;
+}
+
+/* ===== portfolio printing-machine video (graceful placeholder until .mp4 uploaded) ===== */
+function initPortfolioVideo(){
+  const wrap=document.getElementById('printVideo');if(!wrap)return;
+  const v=wrap.querySelector('video'),ph=document.getElementById('videoPh'),sub=document.getElementById('videoSub');
+  if(!v||!ph)return;
+  let ready=false;
+  v.addEventListener('loadeddata',()=>{ready=true;},{once:true});
+  // ไฟล์ยังไม่ถูกอัปโหลด → แสดงสถานะ "เร็ว ๆ นี้" แทนที่จะเป็นกล่องว่าง
+  v.addEventListener('error',()=>{ph.classList.add('pending');if(sub)sub.textContent='🎬 วิดีโอกำลังจะมาเร็ว ๆ นี้';},true);
+  ph.addEventListener('click',()=>{if(ph.classList.contains('pending'))return;if(ready){ph.classList.add('hide');v.play();}else{v.load();v.play().then(()=>ph.classList.add('hide')).catch(()=>{ph.classList.add('pending');if(sub)sub.textContent='🎬 วิดีโอกำลังจะมาเร็ว ๆ นี้';});}});
+  v.load();
 }
 
 /* ===== quote form binding ===== */
@@ -1263,7 +1340,7 @@ function render(){
     if(p){setMeta(p.name+' — '+(CL[p.catSlug]||p.cat)+' พิมพ์โลโก้ | GO PREMIUM',(p.features||p.name)+(p.price?' · ราคา ฿'+p.price.toLocaleString('en-US')+'/ชิ้น (อ้างอิง 300 ชิ้น)':' · สอบถามราคา')+' · MOQ '+p.moq+' ชิ้น · Mockup ก่อนผลิต','/product/'+p.slug);setProductLD(p);track('view_item',{sku:p.sku,item_name:p.name,item_category:p.catSlug,price:p.price||0});}
     else setMeta(DEF_TITLE,DEF_DESC,'/');}
   else if(h==='/about'){app.innerHTML=viewAbout();setMeta('เกี่ยวกับเรา — GO PREMIUM by Passion Grow Trading','GO PREMIUM ผู้ออกแบบและผลิตของพรีเมียมและของขวัญองค์กร เชื่อในการให้ที่มีความหมาย ครบวงจรตั้งแต่ไอเดียถึงส่งมอบ','/about');}
-  else if(h==='/portfolio'){app.innerHTML=viewPortfolio();bindQuote();setMeta('ผลงานของเรา — ตัวอย่างของขวัญองค์กรที่เราออกแบบ | GO PREMIUM','ตัวอย่างผลงานของขวัญองค์กรและของพรีเมียมที่ GO PREMIUM ออกแบบและผลิต ครบทุกโอกาส ทุกงานผ่าน Mockup ก่อนผลิต','/portfolio');}
+  else if(h==='/portfolio'){app.innerHTML=viewPortfolio();bindQuote();initPortfolioVideo();setMeta('ผลงานของเรา — องค์กรที่ไว้วางใจ ตัวอย่างสินค้าจริง + วิดีโอเครื่องพิมพ์ | GO PREMIUM','ขอบคุณองค์กรชั้นนำที่ไว้วางใจ GO PREMIUM รวมโลโก้ลูกค้า ตัวอย่างสินค้าจริงพร้อม Mockup และวิดีโอเบื้องหลังการพิมพ์','/portfolio');}
   else if(h==='/express'){app.innerHTML=viewExpress();setMeta('สินค้าส่งด่วน 7–14 วัน — ของพรีเมียมงานด่วน | GO PREMIUM','ของพรีเมียมและของขวัญองค์กรงานด่วน ผลิตและส่งมอบใน 7–14 วัน ตอบกลับใน 2 ชม. พร้อม Mockup ก่อนผลิต','/express');}
   else if(h==='about'){app.innerHTML=viewHome();bindQuote();initHero();initAIType();setMeta(DEF_TITLE,DEF_DESC,'/');setTimeout(()=>{const a=document.getElementById('about');if(a)a.scrollIntoView();},60);return;}
   else{app.innerHTML=viewHome();bindQuote();setMeta(DEF_TITLE,DEF_DESC,'/');}
