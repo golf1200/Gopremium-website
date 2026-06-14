@@ -311,15 +311,14 @@ a.occ:hover{transform:translateY(-4px);box-shadow:var(--sh-md)}
 .cat-layout{display:grid;grid-template-columns:240px 1fr;gap:32px;align-items:start}
 .side{position:sticky;top:90px;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px;max-height:calc(100vh - 110px);overflow-y:auto}
 .side h4{font-family:var(--head);font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--grey-400);margin:0 0 10px}
-.flist{display:flex;flex-direction:column;gap:1px;margin-bottom:20px}
-.flist button{font-family:var(--head);text-align:left;background:none;border:none;padding:7px 7px;border-radius:8px;font-size:14px;color:var(--grey);display:flex;align-items:center;gap:9px;width:100%}
-.flist button .box{width:17px;height:17px;border-radius:5px;flex:0 0 auto;border:1.6px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;line-height:1;color:#fff;transition:border-color .15s,background .15s}
+.flist{display:flex;flex-direction:column;gap:2px;margin-bottom:20px}
+.flist button{position:relative;font-family:var(--head);text-align:left;background:none;border:none;padding:8px 10px;border-radius:8px;font-size:14px;color:var(--grey);display:flex;align-items:center;gap:8px;width:100%;transition:background .14s,color .14s}
 .flist button .lbl{flex:1;line-height:1.3}
-.flist button:hover{color:var(--navy)}.flist button:hover .box{border-color:var(--navy-soft)}
-.flist button.on{color:var(--navy);font-weight:600}
-.flist button.on .box{border-color:var(--navy);background:var(--navy)}
-.flist button.on .box::after{content:'✓'}
+.flist button:hover{background:var(--cloud);color:var(--navy)}
+.flist button.on{background:var(--cloud-2);color:var(--navy);font-weight:600}
+.flist button.on::before{content:"";position:absolute;left:0;top:7px;bottom:7px;width:3px;border-radius:3px;background:var(--mustard)}
 .flist .n{color:var(--grey-400);font-size:12.5px;font-weight:400;margin-left:auto}
+.flist button.on .n{color:var(--navy)}
 .toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px;flex-wrap:wrap}
 .search{display:flex;align-items:center;gap:8px;background:#fff;border:1.5px solid var(--line);border-radius:var(--pill);padding:9px 16px;min-width:240px;flex:1;max-width:420px}
 .search input{border:none;outline:none;font-size:14.5px;width:100%;background:none}
@@ -334,21 +333,22 @@ a.occ:hover{transform:translateY(-4px);box-shadow:var(--sh-md)}
 .afchip .x{cursor:pointer;font-weight:700;opacity:.55}.afchip .x:hover{opacity:1}
 .crumbs{font-size:13.5px;color:var(--grey);margin-bottom:18px}.crumbs a:hover{color:var(--navy)}.crumbs b{color:var(--navy)}
 .count-lbl{font-size:14px;color:var(--grey);margin-bottom:16px}.count-lbl b{color:var(--navy)}
-/* AI Gift Finder hero (catalogue) — full-width, prominent */
-.ai-hero{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--navy),var(--navy-700));border-radius:var(--r-lg);padding:clamp(22px,3.2vw,34px);margin-bottom:18px}
-.ai-hero::before{content:"";position:absolute;right:-60px;top:-90px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(244,178,35,.22),transparent 65%);pointer-events:none}
-.ai-hero .eyebrow2{position:relative;color:var(--mustard);display:inline-flex;align-items:center;gap:7px}
-.ai-hero .eyebrow2 i,.ai-hero .btn i{font-style:normal}
-.ai-hero h2{position:relative;font-family:var(--head);color:#fff;font-size:clamp(20px,2.5vw,28px);font-weight:700;line-height:1.25;margin:8px 0 5px}
-.ai-hero p{position:relative;color:#aebadc;font-size:14px;line-height:1.6;max-width:62ch;margin:0 0 16px}
-.ai-hero-input{position:relative;display:flex;align-items:center;gap:8px;background:#fff;border-radius:var(--pill);padding:6px 6px 6px 16px;box-shadow:0 12px 34px -14px rgba(0,0,0,.45)}
+/* AI Gift Finder (catalogue) — Clean Light Bar */
+.ai-hero{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:22px 24px;margin-bottom:18px}
+.ai-hero-lead{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.ai-hero-spark{width:42px;height:42px;border-radius:12px;background:var(--navy);color:var(--mustard);display:flex;align-items:center;justify-content:center;flex:0 0 auto;font-size:19px}
+.ai-hero-lead h2{font-family:var(--head);font-size:18px;color:var(--navy);font-weight:700;line-height:1.25}
+.ai-hero-lead p{color:var(--grey);font-size:13px;margin:2px 0 0}
+.ai-hero .btn i{font-style:normal}
+.ai-hero-input{display:flex;align-items:center;gap:8px;background:var(--cloud);border:1.5px solid var(--line);border-radius:var(--pill);padding:5px 5px 5px 16px;transition:border-color .16s}
+.ai-hero-input:focus-within{border-color:var(--navy)}
 .ai-hero-input svg{flex:0 0 auto}
-.ai-hero-input input{flex:1;min-width:0;border:none;outline:none;background:none;font-size:15.5px;color:var(--navy);padding:12px 2px}
+.ai-hero-input input{flex:1;min-width:0;border:none;outline:none;background:none;font-size:15px;color:var(--navy);padding:12px 2px}
 .ai-hero-input .btn{flex:0 0 auto;white-space:nowrap}.ai-hero-input .btn i{margin-right:5px}
-.ai-hero-ex{position:relative;display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:13px}
-.ai-hero-ex>span{color:#8aa0c4;font-size:12.5px;font-family:var(--head)}
-.ai-hero-ex .ex{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);color:#e6edf6;border-radius:var(--pill);padding:6px 13px;font-family:var(--head);font-size:12.5px;cursor:pointer;transition:background .15s,border-color .15s,color .15s}
-.ai-hero-ex .ex:hover{background:rgba(244,178,35,.16);border-color:var(--mustard);color:#fff}
+.ai-hero-ex{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-top:12px}
+.ai-hero-ex>span{color:var(--grey-400);font-size:12.5px;font-family:var(--head)}
+.ai-hero-ex .ex{background:#fff;border:1px solid var(--line);color:var(--grey);border-radius:var(--pill);padding:6px 13px;font-family:var(--head);font-size:12.5px;cursor:pointer;transition:.15s}
+.ai-hero-ex .ex:hover{border-color:var(--mustard);color:var(--navy);background:var(--mustard-soft)}
 @media(max-width:560px){.ai-hero-input{flex-wrap:wrap}.ai-hero-input .btn{width:100%;justify-content:center}}
 /* sidebar long category list → scroll inside box */
 .flist.scroll{max-height:288px;overflow-y:auto;padding-right:5px;margin-right:-3px}
@@ -938,20 +938,21 @@ function viewCatalogue(opts){
   const o=typeof opts==='string'?{cat:opts}:(opts||{});
   FILTER={cat:o.cat||'all',occ:o.occ||'all',tier:o.tier||'all',pmax:0,q:'',sort:'pop'};
   setTimeout(()=>{renderGrid();syncControls();},0);
-  const occBtns=[['all','ทุกโอกาส'],...OCC_FILTERS.map(x=>[x.k,x.label])].map(([k,lab])=>`<button data-occ="${k}" class="${k===FILTER.occ?'on':''}"><span class="box"></span><span class="lbl">${esc(lab)}</span></button>`).join('');
-  const catBtns=['all',...catList].map(c=>`<button data-cat="${c}" class="${c===FILTER.cat?'on':''}"><span class="box"></span><span class="lbl">${c==='all'?'ทั้งหมด':esc(CL[c])}</span><span class="n">${c==='all'?P.length:byCat[c].length}</span></button>`).join('');
-  const tierBtns=['all','value','smart','premium','executive'].map(t=>`<button data-tier="${t}" class="${t===FILTER.tier?'on':''}"><span class="box"></span><span class="lbl">${t==='all'?'ทุกงบ':esc(TL[t])}</span></button>`).join('');
+  const occBtns=[['all','ทุกโอกาส'],...OCC_FILTERS.map(x=>[x.k,x.label])].map(([k,lab])=>`<button data-occ="${k}" class="${k===FILTER.occ?'on':''}"><span class="lbl">${esc(lab)}</span></button>`).join('');
+  const catBtns=['all',...catList].map(c=>`<button data-cat="${c}" class="${c===FILTER.cat?'on':''}"><span class="lbl">${c==='all'?'ทั้งหมด':esc(CL[c])}</span><span class="n">${c==='all'?P.length:byCat[c].length}</span></button>`).join('');
+  const tierBtns=['all','value','smart','premium','executive'].map(t=>`<button data-tier="${t}" class="${t===FILTER.tier?'on':''}"><span class="lbl">${t==='all'?'ทุกงบ':esc(TL[t])}</span></button>`).join('');
   const aiEx=['ของขวัญปีใหม่สำหรับพนักงาน งบ 150 บาท','ของขวัญลูกค้า VIP ดูพรีเมียม','ของแจกอีเวนต์ จำนวนมาก คุมงบได้','ของขวัญรักษ์โลก / ESG'];
   return `<section class="sec" style="padding-top:34px"><div class="wrap">
     <div class="crumbs"><a href="#/">หน้าแรก</a> / <b id="crumbCat">สินค้าทั้งหมด</b></div>
     <div class="ai-hero">
-      <span class="eyebrow2"><i>✦</i> AI Gift Finder</span>
-      <h2>บอกโจทย์ของขวัญองค์กร ให้ AI ช่วยคัดเซ็ตที่เหมาะกับคุณ</h2>
-      <p>ระบุโอกาส งบประมาณ จำนวน และสไตล์ที่ต้องการ แล้ว AI จะช่วยคัดสินค้าที่ตรงโจทย์ให้ทันที</p>
+      <div class="ai-hero-lead">
+        <span class="ai-hero-spark">✦</span>
+        <div><h2>ให้ AI ช่วยคิดเซ็ตของขวัญ</h2><p>บอกโอกาส งบ และจำนวน — AI คัดสินค้าที่ตรงโจทย์ให้ทันที</p></div>
+      </div>
       <div class="ai-hero-input">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8A93A2" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4-4"/></svg>
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#8A93A2" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4-4"/></svg>
         <input id="aifq" placeholder="ของขวัญปีใหม่สำหรับพนักงาน 300 ชิ้น งบ 150 บาท" onkeydown="if(event.key==='Enter')aiFilter()">
-        <button class="btn btn-primary" onclick="aiFilter()"><i>✦</i> ให้ AI แนะนำสินค้า</button>
+        <button class="btn btn-secondary" onclick="aiFilter()"><i>✦</i> แนะนำสินค้า</button>
       </div>
       <div class="ai-hero-ex"><span>ลองพิมพ์:</span>${aiEx.map(x=>`<button class="ex" onclick="aiExample('${x}')">${x}</button>`).join('')}</div>
     </div>
@@ -1156,7 +1157,7 @@ function viewPortfolio(){
       <h1>ขอบคุณทุกองค์กรที่ไว้วางใจ<br>ให้เราเป็นส่วนหนึ่งของการให้</h1>
       <p class="lead">ทุกโลโก้บนหน้านี้คือความไว้วางใจที่เรารู้สึกขอบคุณจริง ๆ — ขอบคุณที่ให้ GO PREMIUM ได้ดูแลของขวัญและของพรีเมียมขององค์กรคุณ ตั้งแต่คอนเซ็ปต์ ดีไซน์ ผลิต จนถึงส่งมอบ เราสัญญาว่าจะตั้งใจกับทุกงานเหมือนเป็นงานแรกเสมอ</p>
       <div class="thanks-stats">
-        <div class="st"><div class="n">${CLIENTS.length}+</div><div class="l">องค์กรชั้นนำที่ไว้วางใจ</div></div>
+        <div class="st"><div class="n">100,000+</div><div class="l">ชิ้นที่ผลิตและส่งมอบแล้ว</div></div>
         <div class="st"><div class="n">${P.length}+</div><div class="l">รายการสินค้าพร้อมพิมพ์โลโก้</div></div>
         <div class="st"><div class="n">100%</div><div class="l">ทุกงานผ่าน Mockup ก่อนผลิต</div></div>
         <div class="st"><div class="n">2 ชม.</div><div class="l">ตอบกลับทุกคำขอ</div></div>
