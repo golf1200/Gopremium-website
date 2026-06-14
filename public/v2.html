@@ -467,6 +467,13 @@ a.occ:hover{transform:translateY(-4px);box-shadow:var(--sh-md)}
 .nh .float-chip .ic{width:38px;height:38px;border-radius:12px;background:var(--mustard-soft);color:var(--mustard-deep);display:flex;align-items:center;justify-content:center;flex:none}
 .nh .float-chip b{display:block;font-family:var(--head);font-weight:600;font-size:13.5px;color:var(--navy);line-height:1.3}
 .nh .float-chip small{font-size:11.5px;color:var(--grey)}
+/* hero2 photo variant — full-bleed brand image, copy over the white-left zone */
+.nh .hero2-photo{position:relative;width:100%}
+.nh .hero2-photo .hero2-bg{position:relative;display:block;width:100%;height:auto;z-index:0}
+.nh .hero2-photo::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(98deg,rgba(255,255,255,.6) 0%,rgba(255,255,255,.15) 14%,rgba(255,255,255,0) 28%)}
+.nh .hero2-in2{position:absolute;inset:0;z-index:2;display:flex;align-items:center}
+.nh .hero2-copy{max-width:min(540px,46%)}
+@media(max-width:920px){.nh .hero2-in2{position:static;display:block;padding:24px 0 6px}.nh .hero2-photo::after{display:none}.nh .hero2-copy{max-width:100%}}
 .nh .chip-1{left:-22px;bottom:30px}.nh .chip-2{left:-22px;top:20px}
 /* trust */
 .nh .trust2{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(44px,6vw,68px) 0;overflow:hidden}
@@ -817,8 +824,9 @@ function viewHome(){
     ['04','ส่งมอบ','ตรงเวลา ทันงาน พร้อมบริการจัดส่งรายคน (kitting) ถ้าต้องการ'],
   ];
   return `<div class="nh">
-  <section class="hero2"><div class="giftbg"></div><div class="wrap hero2-in">
-    <div>
+  <section class="hero2 hero2-photo">
+    <img class="hero2-bg" src="images/home/hero-team.webp" alt="ทีม GO PREMIUM ส่งมอบของขวัญและของพรีเมียมองค์กร" fetchpriority="high">
+    <div class="wrap hero2-in2"><div class="hero2-copy">
       <span class="eyebrow2">Go Beyond The Gift</span>
       <h1>มากกว่าของขวัญ<br>คือ<em>ประสบการณ์</em>ที่น่าจดจำ</h1>
       <p class="sub">ของพรีเมียมและของขวัญองค์กร ครบ จบ ในที่เดียว — ดีไซน์ ผลิต พิมพ์โลโก้ ถึงส่งมอบ พร้อม <b>AI ช่วยคิดเซ็ตของขวัญ</b> ให้ตรงงบและทันเวลา</p>
@@ -828,13 +836,8 @@ function viewHome(){
         <button class="go" onclick="askAI()"><i>✦</i> ให้ AI แนะนำสินค้า</button>
       </div>
       <div class="hero2-actions"><a class="btn btn-primary btn-lg" href="#/quote">ขอใบเสนอราคา <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-ghost btn-lg" href="#/all">ดูแคตตาล็อก ${P.length} รายการ</a></div>
-    </div>
-    <div class="hero2-vis">
-      <div class="hero-slides"><div class="hero-track">${heroSlides}</div><div class="hdots">${heroDots}</div></div>
-      <div class="float-chip chip-2"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span><span><b>ตอบกลับใน 2 ชม.</b><small>พร้อมไอเดียและช่วงราคา</small></span></div>
-      <div class="float-chip chip-1"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18"/></svg></span><span><b>Mockup ก่อนผลิต 100%</b><small>เห็นงานจริงก่อนตัดสินใจ</small></span></div>
-    </div>
-  </div></section>
+    </div></div>
+  </section>
 
   <section class="trust2">
     <div class="wrap">
