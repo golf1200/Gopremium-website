@@ -1,0 +1,884 @@
+[
+  {
+    "sku": "EX001",
+    "cat": "Garment",
+    "name": "เสื้อยืดคอกลม แขนสั้น",
+    "idx": 0,
+    "rel": "/images/products/ex001-garment/ex001-garment-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex001-garment/ex001-garment-square.jpg",
+    "id": 0
+  },
+  {
+    "sku": "EX002",
+    "cat": "Garment",
+    "name": "เสื้อยืดคอกลม แขนยาว",
+    "idx": 0,
+    "rel": "/images/products/ex002-garment/ex002-garment-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex002-garment/ex002-garment-square.jpg",
+    "id": 1
+  },
+  {
+    "sku": "EX003",
+    "cat": "Garment",
+    "name": "เสื้อยืดคอกลม",
+    "idx": 0,
+    "rel": "/images/products/ex003-garment/ex003-garment-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex003-garment/ex003-garment-square.jpg",
+    "id": 2
+  },
+  {
+    "sku": "EX004",
+    "cat": "Drinkware",
+    "name": "กระบอกน้ำพลาสติก",
+    "idx": 0,
+    "rel": "/images/products/ex004-drinkware/ex004-drinkware-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex004-drinkware/ex004-drinkware-square.jpg",
+    "id": 3
+  },
+  {
+    "sku": "EX005",
+    "cat": "Drinkware",
+    "name": "กระบอกน้ำสแตนเลส",
+    "idx": 0,
+    "rel": "/images/products/ex005-drinkware/ex005-drinkware-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex005-drinkware/ex005-drinkware-square.jpg",
+    "id": 4
+  },
+  {
+    "sku": "EX005",
+    "cat": "Drinkware",
+    "name": "กระบอกน้ำสแตนเลส",
+    "idx": 1,
+    "rel": "/images/products/ex005-drinkware/ex005-drinkware-02.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex005-drinkware/ex005-drinkware-02.jpg",
+    "id": 5
+  },
+  {
+    "sku": "EX005",
+    "cat": "Drinkware",
+    "name": "กระบอกน้ำสแตนเลส",
+    "idx": 2,
+    "rel": "/images/products/ex005-drinkware/ex005-drinkware-03.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex005-drinkware/ex005-drinkware-03.jpg",
+    "id": 6
+  },
+  {
+    "sku": "EX006",
+    "cat": "Drinkware",
+    "name": "แก้วพร้อมปลอก",
+    "idx": 0,
+    "rel": "/images/products/ex006-drinkware/ex006-drinkware-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex006-drinkware/ex006-drinkware-square.jpg",
+    "id": 7
+  },
+  {
+    "sku": "EX006",
+    "cat": "Drinkware",
+    "name": "แก้วพร้อมปลอก",
+    "idx": 1,
+    "rel": "/images/products/ex006-drinkware/ex006-drinkware-02.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex006-drinkware/ex006-drinkware-02.jpg",
+    "id": 8
+  },
+  {
+    "sku": "EX006",
+    "cat": "Drinkware",
+    "name": "แก้วพร้อมปลอก",
+    "idx": 2,
+    "rel": "/images/products/ex006-drinkware/ex006-drinkware-03.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex006-drinkware/ex006-drinkware-03.jpg",
+    "id": 9
+  },
+  {
+    "sku": "EX006",
+    "cat": "Drinkware",
+    "name": "แก้วพร้อมปลอก",
+    "idx": 3,
+    "rel": "/images/products/ex006-drinkware/ex006-drinkware-04.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex006-drinkware/ex006-drinkware-04.jpg",
+    "id": 10
+  },
+  {
+    "sku": "EX008",
+    "cat": "Hat",
+    "name": "หมวกบันเดิล 4 ทรง (ตาข่าย/ปีกแข็ง/บักเก็ต/คลุมหน้า)",
+    "idx": 0,
+    "rel": "/images/products/ex008-hat/ex008-hat-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex008-hat/ex008-hat-square.jpg",
+    "id": 11
+  },
+  {
+    "sku": "EX008",
+    "cat": "Hat",
+    "name": "หมวกบันเดิล 4 ทรง (ตาข่าย/ปีกแข็ง/บักเก็ต/คลุมหน้า)",
+    "idx": 1,
+    "rel": "/images/products/ex008-hat/ex008-hat-02.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex008-hat/ex008-hat-02.jpg",
+    "id": 12
+  },
+  {
+    "sku": "EX009",
+    "cat": "Hat",
+    "name": "หมวกแก๊ปผ้าลีวาย (เดนิม/ยีนส์)",
+    "idx": 0,
+    "rel": "/images/products/ex009-hat/ex009-hat-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex009-hat/ex009-hat-square.jpg",
+    "id": 13
+  },
+  {
+    "sku": "EX009",
+    "cat": "Hat",
+    "name": "หมวกแก๊ปผ้าลีวาย (เดนิม/ยีนส์)",
+    "idx": 1,
+    "rel": "/images/products/ex009-hat/ex009-hat-02.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex009-hat/ex009-hat-02.jpg",
+    "id": 14
+  },
+  {
+    "sku": "EX010",
+    "cat": "Umbrella",
+    "name": "ร่มพับ 3 ตอน",
+    "idx": 0,
+    "rel": "/images/products/ex010-umbrella/ex010-umbrella-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex010-umbrella/ex010-umbrella-square.jpg",
+    "id": 15
+  },
+  {
+    "sku": "EX011",
+    "cat": "Umbrella",
+    "name": "ร่มพับ 4 ตอน",
+    "idx": 0,
+    "rel": "/images/products/ex011-umbrella/ex011-umbrella-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex011-umbrella/ex011-umbrella-square.jpg",
+    "id": 16
+  },
+  {
+    "sku": "EX011",
+    "cat": "Umbrella",
+    "name": "ร่มพับ 4 ตอน",
+    "idx": 1,
+    "rel": "/images/products/ex011-umbrella/ex011-umbrella-02.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex011-umbrella/ex011-umbrella-02.jpg",
+    "id": 17
+  },
+  {
+    "sku": "EX012",
+    "cat": "Umbrella",
+    "name": "ร่มพับ 5 ตอน",
+    "idx": 0,
+    "rel": "/images/products/ex012-umbrella/ex012-umbrella-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex012-umbrella/ex012-umbrella-square.jpg",
+    "id": 18
+  },
+  {
+    "sku": "EX013",
+    "cat": "Umbrella",
+    "name": "ร่ม 22 นิ้ว",
+    "idx": 0,
+    "rel": "/images/products/ex013-umbrella/ex013-umbrella-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex013-umbrella/ex013-umbrella-square.jpg",
+    "id": 19
+  },
+  {
+    "sku": "EX014",
+    "cat": "Umbrella",
+    "name": "ร่มแบบใส",
+    "idx": 0,
+    "rel": "/images/products/ex014-umbrella/ex014-umbrella-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex014-umbrella/ex014-umbrella-square.jpg",
+    "id": 20
+  },
+  {
+    "sku": "EX015",
+    "cat": "Umbrella",
+    "name": "ร่มไม้เท้า 16 ก้าน",
+    "idx": 0,
+    "rel": "/images/products/ex015-umbrella/ex015-umbrella-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex015-umbrella/ex015-umbrella-square.jpg",
+    "id": 21
+  },
+  {
+    "sku": "EX016",
+    "cat": "Umbrella",
+    "name": "ร่มกอล์ฟ 28 นิ้ว",
+    "idx": 0,
+    "rel": "/images/products/ex016-umbrella/ex016-umbrella-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex016-umbrella/ex016-umbrella-square.jpg",
+    "id": 22
+  },
+  {
+    "sku": "EX017",
+    "cat": "Umbrella",
+    "name": "ร่มกอล์ฟ 30 นิ้ว",
+    "idx": 0,
+    "rel": "/images/products/ex017-umbrella/ex017-umbrella-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex017-umbrella/ex017-umbrella-square.jpg",
+    "id": 23
+  },
+  {
+    "sku": "EX018",
+    "cat": "Umbrella",
+    "name": "ร่มกลับด้าน",
+    "idx": 0,
+    "rel": "/images/products/ex018-umbrella/ex018-umbrella-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex018-umbrella/ex018-umbrella-square.jpg",
+    "id": 24
+  },
+  {
+    "sku": "EX019",
+    "cat": "Umbrella",
+    "name": "ร่มกอล์ฟ 30 นิ้ว 2 ชั้น (สลับสี 2 โทน)",
+    "idx": 0,
+    "rel": "/images/products/ex019-umbrella/ex019-umbrella-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex019-umbrella/ex019-umbrella-square.jpg",
+    "id": 25
+  },
+  {
+    "sku": "EX019",
+    "cat": "Umbrella",
+    "name": "ร่มกอล์ฟ 30 นิ้ว 2 ชั้น (สลับสี 2 โทน)",
+    "idx": 1,
+    "rel": "/images/products/ex019-umbrella/ex019-umbrella-02.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex019-umbrella/ex019-umbrella-02.jpg",
+    "id": 26
+  },
+  {
+    "sku": "EX020",
+    "cat": "Powerbank",
+    "name": "powerbank",
+    "idx": 0,
+    "rel": "/images/products/ex020-powerbank/ex020-powerbank-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex020-powerbank/ex020-powerbank-square.jpg",
+    "id": 27
+  },
+  {
+    "sku": "EX020",
+    "cat": "Powerbank",
+    "name": "powerbank",
+    "idx": 1,
+    "rel": "/images/products/ex020-powerbank/ex020-powerbank-02.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex020-powerbank/ex020-powerbank-02.jpg",
+    "id": 28
+  },
+  {
+    "sku": "EX020",
+    "cat": "Powerbank",
+    "name": "powerbank",
+    "idx": 2,
+    "rel": "/images/products/ex020-powerbank/ex020-powerbank-03.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex020-powerbank/ex020-powerbank-03.jpg",
+    "id": 29
+  },
+  {
+    "sku": "EX021",
+    "cat": "Powerbank",
+    "name": "powerbank 10000mAh RPP-678 (Silver,N) Wireless - แบตสำรอง REMAX Package เดิม",
+    "idx": 0,
+    "rel": "/images/products/ex021-powerbank/ex021-powerbank-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex021-powerbank/ex021-powerbank-square.jpg",
+    "id": 30
+  },
+  {
+    "sku": "EX022",
+    "cat": "Mini Fan",
+    "name": "Fan High-speed Handheld RS-SF10 (Silver) - พัดลม Remax",
+    "idx": 0,
+    "rel": "/images/products/ex022-fan/ex022-fan-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex022-fan/ex022-fan-square.jpg",
+    "id": 31
+  },
+  {
+    "sku": "EX022",
+    "cat": "Mini Fan",
+    "name": "Fan High-speed Handheld RS-SF10 (Silver) - พัดลม Remax",
+    "idx": 1,
+    "rel": "/images/products/ex022-fan/ex022-fan-02.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex022-fan/ex022-fan-02.jpg",
+    "id": 32
+  },
+  {
+    "sku": "EX023",
+    "cat": "Mini Fan",
+    "name": "Fan High-speed Handheld RS-SF12 (Blue) - พัดลม Remax",
+    "idx": 0,
+    "rel": "/images/products/ex023-fan/ex023-fan-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex023-fan/ex023-fan-square.jpg",
+    "id": 33
+  },
+  {
+    "sku": "EX023",
+    "cat": "Mini Fan",
+    "name": "Fan High-speed Handheld RS-SF12 (Blue) - พัดลม Remax",
+    "idx": 1,
+    "rel": "/images/products/ex023-fan/ex023-fan-02.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex023-fan/ex023-fan-02.jpg",
+    "id": 34
+  },
+  {
+    "sku": "EX024",
+    "cat": "Mini Fan",
+    "name": "Fan mini Handheld RS-SF25 - พัดลม Remax",
+    "idx": 0,
+    "rel": "/images/products/ex024-fan/ex024-fan-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex024-fan/ex024-fan-square.jpg",
+    "id": 35
+  },
+  {
+    "sku": "EX024",
+    "cat": "Mini Fan",
+    "name": "Fan mini Handheld RS-SF25 - พัดลม Remax",
+    "idx": 1,
+    "rel": "/images/products/ex024-fan/ex024-fan-02.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex024-fan/ex024-fan-02.jpg",
+    "id": 36
+  },
+  {
+    "sku": "EX025",
+    "cat": "Drinkware",
+    "name": "แก้วเยติ 20oz · กล่องน้ำตาล (ฟู๊ดเกรด)",
+    "idx": 0,
+    "rel": "/images/products/ex025-drinkware/ex025-drinkware-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex025-drinkware/ex025-drinkware-square.jpg",
+    "id": 37
+  },
+  {
+    "sku": "EX025",
+    "cat": "Drinkware",
+    "name": "แก้วเยติ 20oz · กล่องน้ำตาล (ฟู๊ดเกรด)",
+    "idx": 1,
+    "rel": "/images/products/ex025-drinkware/ex025-drinkware-02.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex025-drinkware/ex025-drinkware-02.jpg",
+    "id": 38
+  },
+  {
+    "sku": "EX026",
+    "cat": "Drinkware",
+    "name": "แก้วเยติ 20oz · กล่องขาว",
+    "idx": 0,
+    "rel": "/images/products/ex026-drinkware/ex026-drinkware-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex026-drinkware/ex026-drinkware-square.jpg",
+    "id": 39
+  },
+  {
+    "sku": "EX026",
+    "cat": "Drinkware",
+    "name": "แก้วเยติ 20oz · กล่องขาว",
+    "idx": 1,
+    "rel": "/images/products/ex026-drinkware/ex026-drinkware-02.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex026-drinkware/ex026-drinkware-02.jpg",
+    "id": 40
+  },
+  {
+    "sku": "EX027",
+    "cat": "Drinkware",
+    "name": "แก้วเยติ 20oz · กล่องขาว YW",
+    "idx": 0,
+    "rel": "/images/products/ex027-drinkware/ex027-drinkware-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex027-drinkware/ex027-drinkware-square.jpg",
+    "id": 41
+  },
+  {
+    "sku": "EX027",
+    "cat": "Drinkware",
+    "name": "แก้วเยติ 20oz · กล่องขาว YW",
+    "idx": 1,
+    "rel": "/images/products/ex027-drinkware/ex027-drinkware-02.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex027-drinkware/ex027-drinkware-02.jpg",
+    "id": 42
+  },
+  {
+    "sku": "EX028",
+    "cat": "Drinkware",
+    "name": "แก้วเยติ 30oz ทรงอ้วน",
+    "idx": 0,
+    "rel": "/images/products/ex028-drinkware/ex028-drinkware-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex028-drinkware/ex028-drinkware-square.jpg",
+    "id": 43
+  },
+  {
+    "sku": "EX028",
+    "cat": "Drinkware",
+    "name": "แก้วเยติ 30oz ทรงอ้วน",
+    "idx": 1,
+    "rel": "/images/products/ex028-drinkware/ex028-drinkware-02.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex028-drinkware/ex028-drinkware-02.jpg",
+    "id": 44
+  },
+  {
+    "sku": "EX029",
+    "cat": "Drinkware",
+    "name": "แก้วเก็บความเย็น 30oz ทรงสูง · ฝาเกลียว",
+    "idx": 0,
+    "rel": "/images/products/ex029-drinkware/ex029-drinkware-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex029-drinkware/ex029-drinkware-square.jpg",
+    "id": 45
+  },
+  {
+    "sku": "EX029",
+    "cat": "Drinkware",
+    "name": "แก้วเก็บความเย็น 30oz ทรงสูง · ฝาเกลียว",
+    "idx": 1,
+    "rel": "/images/products/ex029-drinkware/ex029-drinkware-02.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex029-drinkware/ex029-drinkware-02.jpg",
+    "id": 46
+  },
+  {
+    "sku": "EX030",
+    "cat": "Drinkware",
+    "name": "แก้วเก็บความเย็น 30oz ทรงสูง · หูโค้ง",
+    "idx": 0,
+    "rel": "/images/products/ex030-drinkware/ex030-drinkware-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex030-drinkware/ex030-drinkware-square.jpg",
+    "id": 47
+  },
+  {
+    "sku": "EX030",
+    "cat": "Drinkware",
+    "name": "แก้วเก็บความเย็น 30oz ทรงสูง · หูโค้ง",
+    "idx": 1,
+    "rel": "/images/products/ex030-drinkware/ex030-drinkware-02.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex030-drinkware/ex030-drinkware-02.jpg",
+    "id": 48
+  },
+  {
+    "sku": "EX031",
+    "cat": "Drinkware",
+    "name": "แก้วเก็บความเย็น 30oz ทรงสูง · หูเหลี่ยม",
+    "idx": 0,
+    "rel": "/images/products/ex031-drinkware/ex031-drinkware-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex031-drinkware/ex031-drinkware-square.jpg",
+    "id": 49
+  },
+  {
+    "sku": "EX031",
+    "cat": "Drinkware",
+    "name": "แก้วเก็บความเย็น 30oz ทรงสูง · หูเหลี่ยม",
+    "idx": 1,
+    "rel": "/images/products/ex031-drinkware/ex031-drinkware-02.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex031-drinkware/ex031-drinkware-02.jpg",
+    "id": 50
+  },
+  {
+    "sku": "EX032",
+    "cat": "Drinkware",
+    "name": "แก้วกาแฟ COFFEE (ฝากระดก)",
+    "idx": 0,
+    "rel": "/images/products/ex032-drinkware/ex032-drinkware-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex032-drinkware/ex032-drinkware-square.jpg",
+    "id": 51
+  },
+  {
+    "sku": "EX032",
+    "cat": "Drinkware",
+    "name": "แก้วกาแฟ COFFEE (ฝากระดก)",
+    "idx": 1,
+    "rel": "/images/products/ex032-drinkware/ex032-drinkware-02.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex032-drinkware/ex032-drinkware-02.jpg",
+    "id": 52
+  },
+  {
+    "sku": "EX033",
+    "cat": "Drinkware",
+    "name": "แก้วเยติ 20oz ทรงอ้วน · ฝาเกลียว",
+    "idx": 0,
+    "rel": "/images/products/ex033-drinkware/ex033-drinkware-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex033-drinkware/ex033-drinkware-square.jpg",
+    "id": 53
+  },
+  {
+    "sku": "EX033",
+    "cat": "Drinkware",
+    "name": "แก้วเยติ 20oz ทรงอ้วน · ฝาเกลียว",
+    "idx": 1,
+    "rel": "/images/products/ex033-drinkware/ex033-drinkware-02.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex033-drinkware/ex033-drinkware-02.jpg",
+    "id": 54
+  },
+  {
+    "sku": "EX033",
+    "cat": "Drinkware",
+    "name": "แก้วเยติ 20oz ทรงอ้วน · ฝาเกลียว",
+    "idx": 2,
+    "rel": "/images/products/ex033-drinkware/ex033-drinkware-03.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex033-drinkware/ex033-drinkware-03.jpg",
+    "id": 55
+  },
+  {
+    "sku": "EX033",
+    "cat": "Drinkware",
+    "name": "แก้วเยติ 20oz ทรงอ้วน · ฝาเกลียว",
+    "idx": 3,
+    "rel": "/images/products/ex033-drinkware/ex033-drinkware-04.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex033-drinkware/ex033-drinkware-04.jpg",
+    "id": 56
+  },
+  {
+    "sku": "EX034",
+    "cat": "Drinkware",
+    "name": "แก้วเยติ 20oz ทรงอ้วน · หูเหลี่ยม",
+    "idx": 0,
+    "rel": "/images/products/ex034-drinkware/ex034-drinkware-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex034-drinkware/ex034-drinkware-square.jpg",
+    "id": 57
+  },
+  {
+    "sku": "EX035",
+    "cat": "Drinkware",
+    "name": "แก้ว 20oz ทรงอ้วน · หูโค้ง",
+    "idx": 0,
+    "rel": "/images/products/ex035-drinkware/ex035-drinkware-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex035-drinkware/ex035-drinkware-square.jpg",
+    "id": 58
+  },
+  {
+    "sku": "EX035",
+    "cat": "Drinkware",
+    "name": "แก้ว 20oz ทรงอ้วน · หูโค้ง",
+    "idx": 1,
+    "rel": "/images/products/ex035-drinkware/ex035-drinkware-02.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex035-drinkware/ex035-drinkware-02.jpg",
+    "id": 59
+  },
+  {
+    "sku": "EX036",
+    "cat": "Drinkware",
+    "name": "กระบอกน้ำทรงสปอร์ต ACTIVE",
+    "idx": 0,
+    "rel": "/images/products/ex036-drinkware/ex036-drinkware-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex036-drinkware/ex036-drinkware-square.jpg",
+    "id": 60
+  },
+  {
+    "sku": "EX036",
+    "cat": "Drinkware",
+    "name": "กระบอกน้ำทรงสปอร์ต ACTIVE",
+    "idx": 1,
+    "rel": "/images/products/ex036-drinkware/ex036-drinkware-02.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex036-drinkware/ex036-drinkware-02.jpg",
+    "id": 61
+  },
+  {
+    "sku": "EX037",
+    "cat": "Drinkware",
+    "name": "แก้วกาแฟ มีหูจับข้าง 14oz",
+    "idx": 0,
+    "rel": "/images/products/ex037-drinkware/ex037-drinkware-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex037-drinkware/ex037-drinkware-square.jpg",
+    "id": 62
+  },
+  {
+    "sku": "EX037",
+    "cat": "Drinkware",
+    "name": "แก้วกาแฟ มีหูจับข้าง 14oz",
+    "idx": 1,
+    "rel": "/images/products/ex037-drinkware/ex037-drinkware-02.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex037-drinkware/ex037-drinkware-02.jpg",
+    "id": 63
+  },
+  {
+    "sku": "EX037",
+    "cat": "Drinkware",
+    "name": "แก้วกาแฟ มีหูจับข้าง 14oz",
+    "idx": 2,
+    "rel": "/images/products/ex037-drinkware/ex037-drinkware-03.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex037-drinkware/ex037-drinkware-03.jpg",
+    "id": 64
+  },
+  {
+    "sku": "EX037",
+    "cat": "Drinkware",
+    "name": "แก้วกาแฟ มีหูจับข้าง 14oz",
+    "idx": 3,
+    "rel": "/images/products/ex037-drinkware/ex037-drinkware-04.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex037-drinkware/ex037-drinkware-04.jpg",
+    "id": 65
+  },
+  {
+    "sku": "EX038",
+    "cat": "Drinkware",
+    "name": "แก้วไข่",
+    "idx": 0,
+    "rel": "/images/products/ex038-drinkware/ex038-drinkware-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex038-drinkware/ex038-drinkware-square.jpg",
+    "id": 66
+  },
+  {
+    "sku": "EX038",
+    "cat": "Drinkware",
+    "name": "แก้วไข่",
+    "idx": 1,
+    "rel": "/images/products/ex038-drinkware/ex038-drinkware-02.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex038-drinkware/ex038-drinkware-02.jpg",
+    "id": 67
+  },
+  {
+    "sku": "EX039",
+    "cat": "Drinkware",
+    "name": "แก้วทรงสตาร์บัค · ขอบดำ",
+    "idx": 0,
+    "rel": "/images/products/ex039-drinkware/ex039-drinkware-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex039-drinkware/ex039-drinkware-square.jpg",
+    "id": 68
+  },
+  {
+    "sku": "EX040",
+    "cat": "Drinkware",
+    "name": "แก้วทรงสตาร์บัค · ขอบทอง",
+    "idx": 0,
+    "rel": "/images/products/ex040-drinkware/ex040-drinkware-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex040-drinkware/ex040-drinkware-square.jpg",
+    "id": 69
+  },
+  {
+    "sku": "EX040",
+    "cat": "Drinkware",
+    "name": "แก้วทรงสตาร์บัค · ขอบทอง",
+    "idx": 1,
+    "rel": "/images/products/ex040-drinkware/ex040-drinkware-02.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex040-drinkware/ex040-drinkware-02.jpg",
+    "id": 70
+  },
+  {
+    "sku": "EX041",
+    "cat": "Drinkware",
+    "name": "กระบอกน้ำเก็บอุณหภูมิ (Smart LED)",
+    "idx": 0,
+    "rel": "/images/products/ex041-drinkware/ex041-drinkware-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex041-drinkware/ex041-drinkware-square.jpg",
+    "id": 71
+  },
+  {
+    "sku": "EX041",
+    "cat": "Drinkware",
+    "name": "กระบอกน้ำเก็บอุณหภูมิ (Smart LED)",
+    "idx": 1,
+    "rel": "/images/products/ex041-drinkware/ex041-drinkware-02.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex041-drinkware/ex041-drinkware-02.jpg",
+    "id": 72
+  },
+  {
+    "sku": "EX041",
+    "cat": "Drinkware",
+    "name": "กระบอกน้ำเก็บอุณหภูมิ (Smart LED)",
+    "idx": 2,
+    "rel": "/images/products/ex041-drinkware/ex041-drinkware-03.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex041-drinkware/ex041-drinkware-03.jpg",
+    "id": 73
+  },
+  {
+    "sku": "EX042",
+    "cat": "Garment",
+    "name": "เสื้อแจ็คเก็ต (Smooth Premium Jacket)",
+    "idx": 0,
+    "rel": "/images/products/ex042-garment/ex042-garment-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex042-garment/ex042-garment-square.jpg",
+    "id": 74
+  },
+  {
+    "sku": "EX044",
+    "cat": "Garment",
+    "name": "เสื้อโปโล CoolPlus CA",
+    "idx": 0,
+    "rel": "/images/products/ex044-garment/ex044-garment-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex044-garment/ex044-garment-square.jpg",
+    "id": 75
+  },
+  {
+    "sku": "EX045",
+    "cat": "Garment",
+    "name": "เสื้อโปโล CoolPlus",
+    "idx": 0,
+    "rel": "/images/products/ex045-garment/ex045-garment-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex045-garment/ex045-garment-square.jpg",
+    "id": 76
+  },
+  {
+    "sku": "EX046",
+    "cat": "Garment",
+    "name": "เสื้อโปโล (Micro-Polyester)",
+    "idx": 0,
+    "rel": "/images/products/ex046-garment/ex046-garment-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex046-garment/ex046-garment-square.jpg",
+    "id": 77
+  },
+  {
+    "sku": "EX047",
+    "cat": "Garment",
+    "name": "ผ้ากันเปื้อน COMB-TWILL CLASSIC LOOP",
+    "idx": 0,
+    "rel": "/images/products/ex047-garment/ex047-garment-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex047-garment/ex047-garment-square.jpg",
+    "id": 78
+  },
+  {
+    "sku": "EX048",
+    "cat": "Garment",
+    "name": "ผ้ากันเปื้อน รุ่น SMOOTH SOLON",
+    "idx": 0,
+    "rel": "/images/products/ex048-garment/ex048-garment-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex048-garment/ex048-garment-square.jpg",
+    "id": 79
+  },
+  {
+    "sku": "EX049",
+    "cat": "Garment",
+    "name": "เสื้อช็อปแขนสั้น",
+    "idx": 0,
+    "rel": "/images/products/ex049-garment/ex049-garment-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex049-garment/ex049-garment-square.jpg",
+    "id": 80
+  },
+  {
+    "sku": "EX050",
+    "cat": "Garment",
+    "name": "เสื้อช็อปแขนยาว",
+    "idx": 0,
+    "rel": "/images/products/ex050-garment/ex050-garment-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex050-garment/ex050-garment-square.jpg",
+    "id": 81
+  },
+  {
+    "sku": "EX051",
+    "cat": "Garment",
+    "name": "เสื้อช็อป",
+    "idx": 0,
+    "rel": "/images/products/ex051-garment/ex051-garment-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex051-garment/ex051-garment-square.jpg",
+    "id": 82
+  },
+  {
+    "sku": "EX052",
+    "cat": "Garment",
+    "name": "กางเกงช่าง",
+    "idx": 0,
+    "rel": "/images/products/ex052-garment/ex052-garment-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex052-garment/ex052-garment-square.jpg",
+    "id": 83
+  },
+  {
+    "sku": "EX053",
+    "cat": "Hat",
+    "name": "หมวก พีชพรีเมียม แซนวิช",
+    "idx": 0,
+    "rel": "/images/products/ex053-hat/ex053-hat-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex053-hat/ex053-hat-square.jpg",
+    "id": 84
+  },
+  {
+    "sku": "EX053",
+    "cat": "Hat",
+    "name": "หมวก พีชพรีเมียม แซนวิช",
+    "idx": 1,
+    "rel": "/images/products/ex053-hat/ex053-hat-02.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex053-hat/ex053-hat-02.jpg",
+    "id": 85
+  },
+  {
+    "sku": "EX053",
+    "cat": "Hat",
+    "name": "หมวก พีชพรีเมียม แซนวิช",
+    "idx": 2,
+    "rel": "/images/products/ex053-hat/ex053-hat-03.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex053-hat/ex053-hat-03.jpg",
+    "id": 86
+  },
+  {
+    "sku": "EX054",
+    "cat": "Hat",
+    "name": "หมวก บัคเคิ้ลบี (Buckle-B)",
+    "idx": 0,
+    "rel": "/images/products/ex054-hat/ex054-hat-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex054-hat/ex054-hat-square.jpg",
+    "id": 87
+  },
+  {
+    "sku": "EX055",
+    "cat": "Hat",
+    "name": "หมวก แซนวิช (Sandwich)",
+    "idx": 0,
+    "rel": "/images/products/ex055-hat/ex055-hat-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex055-hat/ex055-hat-square.jpg",
+    "id": 88
+  },
+  {
+    "sku": "EX056",
+    "cat": "Bag",
+    "name": "กระเป๋า FluFFy Puffy",
+    "idx": 0,
+    "rel": "/images/products/ex056-bags/ex056-bags-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex056-bags/ex056-bags-square.jpg",
+    "id": 89
+  },
+  {
+    "sku": "EX056",
+    "cat": "Bag",
+    "name": "กระเป๋า FluFFy Puffy",
+    "idx": 1,
+    "rel": "/images/products/ex056-bags/ex056-bags-02.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex056-bags/ex056-bags-02.jpg",
+    "id": 90
+  },
+  {
+    "sku": "EX057",
+    "cat": "Bag",
+    "name": "กระเป๋า",
+    "idx": 0,
+    "rel": "/images/products/ex057-bags/ex057-bags-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex057-bags/ex057-bags-square.jpg",
+    "id": 91
+  },
+  {
+    "sku": "EX057",
+    "cat": "Bag",
+    "name": "กระเป๋า",
+    "idx": 1,
+    "rel": "/images/products/ex057-bags/ex057-bags-02.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex057-bags/ex057-bags-02.jpg",
+    "id": 92
+  },
+  {
+    "sku": "EX057",
+    "cat": "Bag",
+    "name": "กระเป๋า",
+    "idx": 2,
+    "rel": "/images/products/ex057-bags/ex057-bags-03.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex057-bags/ex057-bags-03.jpg",
+    "id": 93
+  },
+  {
+    "sku": "EX058",
+    "cat": "Umbrella",
+    "name": "ร่มพับ 3 ตอน",
+    "idx": 0,
+    "rel": "/images/products/ex058-umbrella/ex058-umbrella-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex058-umbrella/ex058-umbrella-square.jpg",
+    "id": 94
+  },
+  {
+    "sku": "EX059",
+    "cat": "Umbrella",
+    "name": "ร่มตอนเดียว 22 นิ้ว",
+    "idx": 0,
+    "rel": "/images/products/ex059-umbrella/ex059-umbrella-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex059-umbrella/ex059-umbrella-square.jpg",
+    "id": 95
+  },
+  {
+    "sku": "EX060",
+    "cat": "Umbrella",
+    "name": "ร่มพับ 3 ตอนโครงเหล็ก 8 ช่อง",
+    "idx": 0,
+    "rel": "/images/products/ex060-umbrella/ex060-umbrella-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex060-umbrella/ex060-umbrella-square.jpg",
+    "id": 96
+  },
+  {
+    "sku": "EX061",
+    "cat": "Umbrella",
+    "name": "ร่มยาว 24 นิ้วโครงเหล็ก",
+    "idx": 0,
+    "rel": "/images/products/ex061-umbrella/ex061-umbrella-square.jpg",
+    "abs": "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/public/images/products/ex061-umbrella/ex061-umbrella-square.jpg",
+    "id": 97
+  }
+]
