@@ -3,15 +3,18 @@ import GpImage from './shared/GpImage';
 import { variantSet } from '../utils/images';
 
 // 7 real GO PREMIUM categories. Counts reflect the actual product catalogue.
-// img = base image name (resolved to the 16:9 landscape master).
+// img = base image name. These point at REAL product-photo masters in
+// /images/products/<id>/ (clean studio shots) — NOT the old scraped supplier
+// collage originals (drinkware-milo / bag-moov / ...), which carried Chinese
+// caption overlays and cropped detail shots that read as fake/low-trust.
 const CATS = [
-  { label: 'ขายดี', badgeClass: 'gp-badge-mustard', name: 'แก้ว & กระบอกน้ำ', sub: '10+ รุ่น', img: 'drinkware-milo' },
-  { label: 'พิมพ์โลโก้ได้', badgeClass: 'gp-badge-navy', name: 'กระเป๋า & ถุงผ้า', sub: '16+ รุ่น', img: 'bag-moov' },
-  { label: 'ออฟฟิศ', badgeClass: 'gp-badge-navy', name: 'เครื่องเขียน & สำนักงาน', sub: '15+ รุ่น', img: 'stationery-notebook' },
-  { label: 'ไอที & แกดเจ็ต', badgeClass: 'gp-badge-navy', name: 'พัดลมพกพา & แกดเจ็ต', sub: '11+ รุ่น', img: 'minifan-haru' },
-  { label: 'พิมพ์โลโก้ได้', badgeClass: 'gp-badge-navy', name: 'ร่มพรีเมียม', sub: '6 รุ่น', img: 'umbrella-classic' },
-  { label: 'รักษ์โลก', badgeClass: 'gp-badge-mustard', name: 'ไลฟ์สไตล์ & ของใช้', sub: '16+ รุ่น', img: 'lifestyle-towel' },
-  { label: 'พรีเมียม', badgeClass: 'gp-badge-mustard', name: 'กิฟต์เซ็ต', sub: '5+ เซ็ต', img: 'giftset-aroma' },
+  { label: 'ขายดี', badgeClass: 'gp-badge-mustard', name: 'แก้ว & กระบอกน้ำ', sub: '10+ รุ่น', img: 'dw006-milo' },
+  { label: 'พิมพ์โลโก้ได้', badgeClass: 'gp-badge-navy', name: 'กระเป๋า & ถุงผ้า', sub: '16+ รุ่น', img: 'bg001-classic' },
+  { label: 'ออฟฟิศ', badgeClass: 'gp-badge-navy', name: 'เครื่องเขียน & สำนักงาน', sub: '15+ รุ่น', img: 'st007-folio' },
+  { label: 'ไอที & แกดเจ็ต', badgeClass: 'gp-badge-navy', name: 'พัดลมพกพา & แกดเจ็ต', sub: '11+ รุ่น', img: 'ex022-fan' },
+  { label: 'พิมพ์โลโก้ได้', badgeClass: 'gp-badge-navy', name: 'ร่มพรีเมียม', sub: '6 รุ่น', img: 'ex010-umbrella' },
+  { label: 'รักษ์โลก', badgeClass: 'gp-badge-mustard', name: 'ไลฟ์สไตล์ & ของใช้', sub: '16+ รุ่น', img: 'ls014-deli' },
+  { label: 'พรีเมียม', badgeClass: 'gp-badge-mustard', name: 'กิฟต์เซ็ต', sub: '5+ เซ็ต', img: 'gs003-business-executive' },
 ];
 
 export default function Category({ onQuote }) {
