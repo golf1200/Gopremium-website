@@ -794,16 +794,18 @@ function viewHome(){
   if(feat.length<4)feat=catList.slice(0,4).map(c=>byCat[c][0]);
   const clientRow=[...CLIENTS,...CLIENTS].map(c=>`<img src="clients/${c}.png" alt="ลูกค้าองค์กรของ GO PREMIUM" loading="lazy">`).join('');
   const cnt=c=>byCat[c]?byCat[c].length+' รุ่น':'';
-  // Covers = REAL product studio photos (from /images/products/<id>/), not the
-  // old AI/3D-rendered cat-*.jpg podium mockups which read as "AI-made".
+  // Covers = REAL product studio photos (the brand's own '-square' master set),
+  // not the old AI/3D-rendered cat-*.jpg podium mockups. The -square set shares
+  // ONE warm cream/beige mood & tone + the GO PREMIUM gift-box watermark, so the
+  // whole row reads as a single cohesive photoshoot.
   const CATS2=[
-    ['drinkware','แก้ว &amp; กระบอกน้ำ','DRINKWARE','images/products/dw006-milo/dw006-milo-landscape.jpg'],
-    ['bags','กระเป๋า &amp; ถุงผ้า','BAG','images/products/bg001-classic/bg001-classic-landscape.jpg'],
-    ['stationery','เครื่องเขียน &amp; สำนักงาน','STATIONERY','images/products/st007-folio/st007-folio-landscape.jpg'],
+    ['drinkware','แก้ว &amp; กระบอกน้ำ','DRINKWARE','images/products/dw006-milo/dw006-milo-square.jpg'],
+    ['bags','กระเป๋า &amp; ถุงผ้า','BAG','images/products/bg007-rin/bg007-rin-square.jpg'],
+    ['stationery','เครื่องเขียน &amp; สำนักงาน','STATIONERY','images/products/st007-folio/st007-folio-square.jpg'],
     ['fan','พัดลมพกพา &amp; แกดเจ็ต','MINI FAN','images/products/ex022-fan/ex022-fan-square.jpg'],
     ['umbrella','ร่มพรีเมียม','UMBRELLA','images/products/ex010-umbrella/ex010-umbrella-square.jpg'],
-    ['giftset','กิฟต์เซ็ต','GIFTSET','images/products/gs003-business-executive/gs003-business-executive-landscape.jpg'],
-    ['lifestyle','ไลฟ์สไตล์ &amp; ของใช้','LIFESTYLE','images/products/ls014-deli/ls014-deli-landscape.jpg'],
+    ['giftset','กิฟต์เซ็ต','GIFTSET','images/products/gs003-business-executive/gs003-business-executive-square.jpg'],
+    ['lifestyle','ไลฟ์สไตล์ &amp; ของใช้','LIFESTYLE','images/products/ls012-smart-grip-flex/ls012-smart-grip-flex-square.jpg'],
   ];
   const OCCS2=[
     ['newyear','ของขวัญปีใหม่','กิฟต์เซ็ตและของพรีเมียมสำหรับมอบพนักงาน ลูกค้า และคู่ค้าช่วงปลายปี','images/home/occ-newyear.jpg','พีคสุด'],

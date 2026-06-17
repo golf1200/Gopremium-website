@@ -3,17 +3,17 @@ import GpImage from './shared/GpImage';
 import { variantSet } from '../utils/images';
 
 // 7 real GO PREMIUM categories. Counts reflect the actual product catalogue.
-// img = base image name. These point at REAL product-photo masters in
-// /images/products/<id>/ (clean studio shots) — NOT the old scraped supplier
-// collage originals (drinkware-milo / bag-moov / ...), which carried Chinese
-// caption overlays and cropped detail shots that read as fake/low-trust.
+// img = base image name, rendered at the SQUARE variant so every cover comes
+// from the brand's own '-square' master set — one warm cream/beige mood & tone
+// + GO PREMIUM gift-box watermark — rather than the raw, mixed-background
+// landscape/original shots. (Old scraped collage originals are long gone.)
 const CATS = [
   { label: 'ขายดี', badgeClass: 'gp-badge-mustard', name: 'แก้ว & กระบอกน้ำ', sub: '10+ รุ่น', img: 'dw006-milo' },
-  { label: 'พิมพ์โลโก้ได้', badgeClass: 'gp-badge-navy', name: 'กระเป๋า & ถุงผ้า', sub: '16+ รุ่น', img: 'bg001-classic' },
+  { label: 'พิมพ์โลโก้ได้', badgeClass: 'gp-badge-navy', name: 'กระเป๋า & ถุงผ้า', sub: '16+ รุ่น', img: 'bg007-rin' },
   { label: 'ออฟฟิศ', badgeClass: 'gp-badge-navy', name: 'เครื่องเขียน & สำนักงาน', sub: '15+ รุ่น', img: 'st007-folio' },
   { label: 'ไอที & แกดเจ็ต', badgeClass: 'gp-badge-navy', name: 'พัดลมพกพา & แกดเจ็ต', sub: '11+ รุ่น', img: 'ex022-fan' },
   { label: 'พิมพ์โลโก้ได้', badgeClass: 'gp-badge-navy', name: 'ร่มพรีเมียม', sub: '6 รุ่น', img: 'ex010-umbrella' },
-  { label: 'รักษ์โลก', badgeClass: 'gp-badge-mustard', name: 'ไลฟ์สไตล์ & ของใช้', sub: '16+ รุ่น', img: 'ls014-deli' },
+  { label: 'รักษ์โลก', badgeClass: 'gp-badge-mustard', name: 'ไลฟ์สไตล์ & ของใช้', sub: '16+ รุ่น', img: 'ls012-smart-grip-flex' },
   { label: 'พรีเมียม', badgeClass: 'gp-badge-mustard', name: 'กิฟต์เซ็ต', sub: '5+ เซ็ต', img: 'gs003-business-executive' },
 ];
 
@@ -31,7 +31,7 @@ export default function Category({ onQuote }) {
             <GpReveal key={i} delay={i * 55}>
               <div style={{ background: '#fff', border: '1px solid var(--gp-grey-200)', borderRadius: 'var(--gp-radius)', overflow: 'hidden', boxShadow: 'var(--gp-shadow-sm)', textAlign: 'center', height: '100%', display: 'flex', flexDirection: 'column' }}>
                 <div style={{ height: 150, background: 'var(--gp-cloud-2)', position: 'relative', overflow: 'hidden' }}>
-                  <GpImage images={variantSet(cat.img)} variant="landscape" alt={`${cat.name} ของพรีเมียมองค์กร GO PREMIUM`} loading="lazy"
+                  <GpImage images={variantSet(cat.img)} variant="square" alt={`${cat.name} ของพรีเมียมองค์กร GO PREMIUM`} loading="lazy"
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
                 <div style={{ padding: '12px 14px 16px', display: 'flex', flexDirection: 'column', flex: 1 }}>
