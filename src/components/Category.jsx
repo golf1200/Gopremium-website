@@ -30,7 +30,7 @@ export default function Category({ onQuote }) {
           {CATS.map((cat, i) => (
             <GpReveal key={i} delay={i * 55}>
               <div style={{ background: '#fff', border: '1px solid var(--gp-grey-200)', borderRadius: 'var(--gp-radius)', overflow: 'hidden', boxShadow: 'var(--gp-shadow-sm)', textAlign: 'center', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                <div style={{ height: 150, background: 'var(--gp-cloud-2)', position: 'relative', overflow: 'hidden' }}>
+                <div style={{ aspectRatio: '1 / 1', background: 'var(--gp-cloud-2)', position: 'relative', overflow: 'hidden' }}>
                   <GpImage images={variantSet(cat.img)} variant="square" alt={`${cat.name} ของพรีเมียมองค์กร GO PREMIUM`} loading="lazy"
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
