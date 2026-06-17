@@ -1,0 +1,9 @@
+[
+{"rel":"/images/products/ex022-fan/ex022-fan-square.jpg","place":true,"cx":0.48,"cy":0.55,"w":0.2,"rot":0,"watermark":true,"note":"fan handle body (white -> navy ink) + GP watermark"},
+{"rel":"/images/products/ex010-umbrella/ex010-umbrella-square.jpg","place":true,"cx":0.45,"cy":0.46,"w":0.26,"rot":-10,"watermark":true,"note":"green canopy panel, perspective + GP watermark"},
+{"rel":"/images/products/dw006-milo/dw006-milo-square.jpg","place":true,"cx":0.43,"cy":0.52,"w":0.19,"rot":0,"watermark":false,"note":"black mug body (-> white ink); master keeps baked watermark"},
+{"rel":"/images/products/bg007-rin/bg007-rin-square.jpg","place":true,"cx":0.5,"cy":0.52,"w":0.28,"rot":0,"watermark":false,"note":"jute tote front center (-> navy ink)"},
+{"rel":"/images/products/st007-folio/st007-folio-square.jpg","place":true,"cx":0.36,"cy":0.45,"w":0.18,"rot":0,"watermark":false,"note":"sage notebook cover center"},
+{"rel":"/images/products/gs003-business-executive/gs003-business-executive-square.jpg","place":true,"cx":0.31,"cy":0.41,"w":0.15,"rot":0,"watermark":false,"note":"navy notebook in giftset box, upper clean area (-> white ink)"},
+{"rel":"/images/products/ls012-smart-grip-flex/ls012-smart-grip-flex-square.jpg","place":true,"cx":0.45,"cy":0.4,"w":0.16,"rot":0,"watermark":false,"note":"brown card-holder face center"}
+]
