@@ -164,6 +164,9 @@ async function perspWarp(svgBuf, ow, oh, quad, W, H, alphaScale) {
 
 async function renderOne(c) {
   const abs = path.join(PUBLIC, c.rel);
+  // `out` (optional) = write the result to a DIFFERENT path (a homepage-only copy),
+  // leaving the shared catalogue source `rel` untouched. Without it, writes in-place.
+  const dest = path.join(PUBLIC, c.out || c.rel);
   const backup = path.join(BACKUP_ROOT, c.rel);
   // ensure clean backup exists
   if (!fs.existsSync(backup) && fs.existsSync(abs)) {
@@ -184,7 +187,9 @@ async function renderOne(c) {
   const sw = Math.round(bw * 0.55), sh = Math.round(bhApprox * 0.7);
   const sl = Math.round(c.cx * W - sw / 2), stp = Math.round(c.cy * H - sh / 2);
   const { luma, sat } = await regionStats(source, W, H, sl, stp, sw, sh);
-  const ink = pickInk(luma, sat);
+  // optional per-coord override ("navy" | "white") when auto-pick misjudges a
+  // saturated surface (e.g. bright-yellow tote where white would be low-contrast)
+  const ink = c.ink === 'navy' ? NAVY : c.ink === 'white' ? WHITE : pickInk(luma, sat);
 
   // Solid, opaque print (clear screen-print look, never a faint watermark).
   const blend = 'over';
@@ -220,7 +225,7 @@ async function renderOne(c) {
     wm = true;
   }
   const out = await sharp(source).composite(composites).jpeg({ quality: 90 }).toBuffer();
-  return { abs, source, out, ink: ink === NAVY ? 'navy' : 'white', blend, luma: Math.round(luma), surf: surf.kind, persp: !!surf.persp, wm };
+  return { abs: dest, source, out, ink: ink === NAVY ? 'navy' : 'white', blend, luma: Math.round(luma), surf: surf.kind, persp: !!surf.persp, wm };
 }
 
 (async () => {
@@ -247,6 +252,7 @@ async function renderOne(c) {
         }
         reviewRows.push({ rel: c.rel, beforeName, afterName, ...r, note: c.note });
       } else if (!DRY) {
+        fs.mkdirSync(path.dirname(r.abs), { recursive: true });
         await sharp(r.out).toFile(r.abs);
       }
       console.log('print', c.rel, `ink=${r.ink} blend=${r.blend} luma=${r.luma}${r.persp ? ' persp' : ''}`);

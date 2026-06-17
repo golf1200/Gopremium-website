@@ -8,7 +8,7 @@ const gen = JSON.parse(fs.readFileSync('src/data/product-images.generated.json',
 // /images/* is served immutable for 1 year, so when images are regenerated in
 // place we bump this to force browsers/CDN to fetch the new bytes. Bump on every
 // in-place image refresh. (v2 = 2026-06-08 studio covers + cleaned galleries.)
-const IMG_VER = '4'; // v4 = 2026-06-14 Express photos stamped with "YOUR LOGO" placeholder
+const IMG_VER = '5'; // v5 = 2026-06-17 reverted 5 studio masters to clean (homepage uses /images/home/covers/ copies for the "Your Logo" look)
 const bust = (u) => (u ? u + '?v=' + IMG_VER : u);
 
 // Public fields only (never cost / supplier / 1688)
