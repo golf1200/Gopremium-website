@@ -783,9 +783,9 @@ const CLIENTS=['c1','c2','c3','c4','c5','c6','c7','c8','c9','c10','c11','c12','c
 function viewHome(){
   // ดีไซน์ใหม่ 2026 (อนุมัติจาก mockup v1-warm-linen + พื้นหลังแบบ 4) — CSS namespace .nh
   const slides=[
-    ['images/products/gs003-business-executive/gs003-business-executive-hero.jpg?v=2','เซตของขวัญ Business รุ่น Executive — ของพรีเมียมองค์กร GO PREMIUM'],
-    ['images/products/bg001-classic/bg001-classic-hero.jpg?v=2','กระเป๋าผ้าพิมพ์โลโก้ รุ่น Classic — GO PREMIUM'],
-    ['images/products/dw003-peak/dw003-peak-hero.jpg?v=2','แก้วน้ำสแตนเลสพิมพ์โลโก้ รุ่น Peak — GO PREMIUM'],
+    ['images/products/gs003-business-executive/gs003-business-executive-hero.jpg?v=3','เซตของขวัญ Business รุ่น Executive — ของพรีเมียมองค์กร GO PREMIUM'],
+    ['images/products/bg001-classic/bg001-classic-hero.jpg?v=3','กระเป๋าผ้าพิมพ์โลโก้ รุ่น Classic — GO PREMIUM'],
+    ['images/products/dw003-peak/dw003-peak-hero.jpg?v=3','แก้วน้ำสแตนเลสพิมพ์โลโก้ รุ่น Peak — GO PREMIUM'],
   ];
   const heroSlides=slides.map(([src,alt],i)=>`<img src="${src}" alt="${esc(alt)}" loading="${i?'lazy':'eager'}" ${i?'':'fetchpriority="high"'} decoding="async">`).join('');
   const heroDots=slides.map((_,i)=>`<i data-i="${i}" role="button" tabindex="0" aria-label="ไปสไลด์ที่ ${i+1}"></i>`).join('');
@@ -806,17 +806,17 @@ function viewHome(){
   // product pages. Express fan+umbrella keep their stamped originals (express photos
   // carry the placeholder catalogue-wide by design).
   const CATS2=[
-    ['drinkware','แก้ว &amp; กระบอกน้ำ','DRINKWARE','images/home/covers/dw006-milo-square.jpg?v=1'],
-    ['bags','กระเป๋า &amp; ถุงผ้า','BAG','images/home/covers/bg007-rin-square.jpg?v=1'],
-    ['stationery','เครื่องเขียน &amp; สำนักงาน','STATIONERY','images/home/covers/st007-folio-square.jpg?v=1'],
+    ['drinkware','แก้ว &amp; กระบอกน้ำ','DRINKWARE','images/home/covers/dw006-milo-square.jpg?v=2'],
+    ['bags','กระเป๋า &amp; ถุงผ้า','BAG','images/home/covers/bg007-rin-square.jpg?v=2'],
+    ['stationery','เครื่องเขียน &amp; สำนักงาน','STATIONERY','images/home/covers/st007-folio-square.jpg?v=2'],
     ['fan','พัดลมพกพา &amp; แกดเจ็ต','MINI FAN','images/products/ex022-fan/ex022-fan-square.jpg?v=3'],
     ['umbrella','ร่มพรีเมียม','UMBRELLA','images/products/ex010-umbrella/ex010-umbrella-square.jpg?v=3'],
-    ['giftset','กิฟต์เซ็ต','GIFTSET','images/home/covers/gs003-business-executive-square.jpg?v=1'],
-    ['lifestyle','ไลฟ์สไตล์ &amp; ของใช้','LIFESTYLE','images/home/covers/ls012-smart-grip-flex-square.jpg?v=1'],
+    ['giftset','กิฟต์เซ็ต','GIFTSET','images/home/covers/gs003-business-executive-square.jpg?v=2'],
+    ['lifestyle','ไลฟ์สไตล์ &amp; ของใช้','LIFESTYLE','images/home/covers/ls012-smart-grip-flex-square.jpg?v=2'],
   ];
   // Homepage-only "Your Logo" copies for the featured-product cards (by image base).
   const HOME_COVERS=new Set(['dw006-milo-square','bg007-rin-square','st007-folio-square','gs003-business-executive-square','ls012-smart-grip-flex-square','dw001-loopa-square','bg003-everyday-square','um002-automatic-premium-square']);
-  const homeCover=p=>{const b=(p.img||'').split('?')[0].split('/').pop().replace('.jpg','');return HOME_COVERS.has(b)?`images/home/covers/${b}.jpg?v=1`:pimg(p);};
+  const homeCover=p=>{const b=(p.img||'').split('?')[0].split('/').pop().replace('.jpg','');return HOME_COVERS.has(b)?`images/home/covers/${b}.jpg?v=2`:pimg(p);};
   const OCCS2=[
     ['newyear','ของขวัญปีใหม่','กิฟต์เซ็ตและของพรีเมียมสำหรับมอบพนักงาน ลูกค้า และคู่ค้าช่วงปลายปี','images/home/occ-newyear.jpg','พีคสุด'],
     ['welcome','ชุดต้อนรับพนักงานใหม่','Welcome kit สร้างความประทับใจวันแรก เสริมภาพลักษณ์องค์กร','images/home/occ-welcome.jpg',null],
