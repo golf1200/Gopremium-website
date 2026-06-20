@@ -1,0 +1,47 @@
+{
+  "supplier": "SUP-00002",
+  "final_sku_map": [
+    {
+      "sku": "EX004",
+      "name": "กระบอกน้ำพลาสติก",
+      "primary_group_file": "LINE_ALBUM_รูปขวดไม่มีลาย_250903_5_0.jpg",
+      "colors": ["clear / transparent (ใส) with black lid"],
+      "status": "weak",
+      "needs_supplier": true,
+      "note": "ขวดพลาสติกใส ทรงกระบอกตรง ฝาเกลียวสีดำ ถ่ายบนพื้นสตูดิโอขาว ตรงกับ EX004. มีภาพเดียว ไม่มี group shot และมีแค่สีใส 1 แบบ — ขอ lineup สี + ระบุความจุจากซัพพลายเออร์"
+    },
+    {
+      "sku": "EX005",
+      "name": "กระบอกน้ำสแตนเลส",
+      "primary_group_file": "05-090-RE.jpg",
+      "colors": ["terracotta / brick red (แดงอิฐ)"],
+      "status": "ok",
+      "needs_supplier": true,
+      "note": "Travel Tumbler สแตนเลส 500ml double-wall ฝาเกลียวมีหูหิ้ว พร้อมกล่อง ตรงกับ EX005 (โปรโมท 120฿ สกรีนโลโก้ฟรี). ภาพชัดเจนแต่มีแค่สีแดงอิฐ 1 สี — ขอ lineup สีอื่นเพิ่ม"
+    },
+    {
+      "sku": "EX006",
+      "name": "แก้วพร้อมปลอก",
+      "primary_group_file": "LINE_ALBUM_รูปเก่งถ่าย 3_260327_1.jpg",
+      "colors": [
+        "brown / tan (น้ำตาล)",
+        "navy / dark blue (กรมท่า)",
+        "grey (เทา)",
+        "caramel / light brown (น้ำตาลอ่อน)",
+        "beige / cream (เบจครีม)",
+        "pink (ชมพู)",
+        "tan-brown (น้ำตาลแทน)",
+        "red (แดง)",
+        "pastel yellow (เหลืองพาสเทล)",
+        "off-white / ivory (ขาวงาช้าง)",
+        "mint green (เขียวมิ้นต์)"
+      ],
+      "status": "ok",
+      "needs_supplier": false,
+      "note": "แก้วใสพร้อมปลอกหนัง PU ฝาใส+หลอดสแตนเลส ตรงกับ EX006. Group shot ครบ 11 สีปลอก (บน 4 + กลาง 4 + ล่าง 3) — ยืนยันนับครบ. ครบสมบูรณ์ที่สุดในซัพพลายเออร์นี้"
+    }
+  ],
+  "models_without_sku": [],
+  "non_product_images": [],
+  "completeness_note": "ทั้ง 3 SKU จับคู่ภาพได้ถูกต้องครบ: EX004=ขวดพลาสติกใส, EX005=กระบอกสแตนเลส travel tumbler, EX006=แก้วพร้อมปลอกหนัง. ไม่มีภาพ non-product และไม่มี model ที่หา SKU ไม่เจอ. EX006 แข็งแรง (group shot 11 สีครบ). EX004 และ EX005 มีภาพเดียว/สีเดียว ต้องขอ lineup สี (+ความจุของ EX004) จากซัพพลายเออร์ก่อนทำ mockup เต็มรูปแบบ"
+}

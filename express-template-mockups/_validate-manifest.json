@@ -1,0 +1,571 @@
+[
+ {
+  "sku": "EX001",
+  "name": "เสื้อยืดแขนสั้น",
+  "cat": "Garment",
+  "live_img": "public/images/products/ex001-garment/ex001-garment-square.jpg",
+  "raw": "express-assets/EX001/real/tee-1.jpg",
+  "raw_all": [
+   "express-assets/EX001/real/tee-1.jpg",
+   "express-assets/EX001/real/tee-2.jpg",
+   "express-assets/EX001/real/tee-3.jpg",
+   "express-assets/EX001/real/tee-4.jpg"
+  ],
+  "styled_free": null,
+  "styled": "express-assets/EX001/styled/tee-4.jpg",
+  "gen": "express-assets/EX001/gen/EX001-black.jpg"
+ },
+ {
+  "sku": "EX002",
+  "name": "เสื้อยืดแขนยาว",
+  "cat": "Garment",
+  "live_img": "public/images/products/ex002-garment/ex002-garment-square.jpg",
+  "raw": "express-assets/EX002/real/EX002-grey.jpg",
+  "raw_all": [
+   "express-assets/EX002/real/EX002-black.jpg",
+   "express-assets/EX002/real/EX002-grey.jpg",
+   "express-assets/EX002/real/EX002-white.jpg"
+  ],
+  "styled_free": null,
+  "styled": "express-assets/EX002/styled/EX002-white.jpg",
+  "gen": null
+ },
+ {
+  "sku": "EX003",
+  "name": "เสื้อยืด",
+  "cat": "Garment",
+  "live_img": "public/images/products/ex003-garment/ex003-garment-square.jpg",
+  "raw": "express-assets/EX003/real/EX003-black.jpg",
+  "raw_all": [
+   "express-assets/EX003/real/EX003-black.jpg",
+   "express-assets/EX003/real/EX003-cream.png",
+   "express-assets/EX003/real/EX003-olive.png",
+   "express-assets/EX003/real/EX003-white.png"
+  ],
+  "styled_free": null,
+  "styled": "express-assets/EX003/styled/EX003-white.jpg",
+  "gen": null
+ },
+ {
+  "sku": "EX004",
+  "name": "กระบอกน้ำพลาสติก",
+  "cat": "Drinkware",
+  "live_img": "public/images/products/ex004-drinkware/ex004-drinkware-square.jpg",
+  "raw": "express-assets/EX004/real/bottle-clear.jpg",
+  "raw_all": [
+   "express-assets/EX004/real/bottle-clear.jpg"
+  ],
+  "styled_free": "express-assets/EX004/styled_free/bottle-clear.jpg",
+  "styled": null,
+  "gen": "express-assets/EX004/gen/EX004-brushedsta.jpg"
+ },
+ {
+  "sku": "EX005",
+  "name": "กระบอกน้ำสแตนเลส",
+  "cat": "Drinkware",
+  "live_img": "public/images/products/ex005-drinkware/ex005-drinkware-square.jpg",
+  "raw": "express-assets/EX005/real/EX005-athena-mid.jpg",
+  "raw_all": [
+   "express-assets/EX005/real/EX005-athena-mid.jpg",
+   "express-assets/EX005/real/EX005-athena-plus-single.jpg",
+   "express-assets/EX005/real/EX005-athena-plus-top.jpg",
+   "express-assets/EX005/real/EX005-spot-single.jpg"
+  ],
+  "styled_free": "express-assets/EX005/styled_free/EX005-athena-mid.jpg",
+  "styled": null,
+  "gen": null
+ },
+ {
+  "sku": "EX006",
+  "name": "แก้วพร้อมปลอก",
+  "cat": "Drinkware",
+  "live_img": "public/images/products/ex006-drinkware/ex006-drinkware-square.jpg",
+  "raw": "express-assets/EX006/real/EX006-glass-silicone-lid-blue.jpg",
+  "raw_all": [
+   "express-assets/EX006/real/EX006-glass-silicone-lid-blue.jpg",
+   "express-assets/EX006/real/EX006-glass-silicone-lid-brown.jpg",
+   "express-assets/EX006/real/EX006-glass-silicone-lid-green.jpg",
+   "express-assets/EX006/real/EX006-glass-silicone-lid-purple.jpg"
+  ],
+  "styled_free": "express-assets/EX006/styled_free/EX006-glass-silicone-lid-blue.jpg",
+  "styled": null,
+  "gen": null
+ },
+ {
+  "sku": "EX008",
+  "name": "-หมวกตาข่าย -หมวกปีกแข็ง -หมวกบักเก็ต -หมวกคลุมหน้า",
+  "cat": "Hat",
+  "live_img": "public/images/products/ex008-hat/ex008-hat-square.jpg",
+  "raw": "express-assets/EX008/real/EX008-bucket-1.jpg",
+  "raw_all": [
+   "express-assets/EX008/real/EX008-bucket-1.jpg",
+   "express-assets/EX008/real/EX008-bucket-2.jpg",
+   "express-assets/EX008/real/EX008-trucker-front.jpg",
+   "express-assets/EX008/real/EX008-trucker-side.jpg"
+  ],
+  "styled_free": "express-assets/EX008/styled_free/EX008-bucket-1.jpg",
+  "styled": null,
+  "gen": null
+ },
+ {
+  "sku": "EX009",
+  "name": "หมวกแก๊ปผ้าลีวาย",
+  "cat": "Hat",
+  "live_img": "public/images/products/ex009-hat/ex009-hat-square.jpg",
+  "raw": "express-assets/EX009/real/EX009-denim-navy.jpg",
+  "raw_all": [
+   "express-assets/EX009/real/EX009-denim-back.jpg",
+   "express-assets/EX009/real/EX009-denim-black.jpg",
+   "express-assets/EX009/real/EX009-denim-navy.jpg"
+  ],
+  "styled_free": "express-assets/EX009/styled_free/EX009-denim-navy.jpg",
+  "styled": null,
+  "gen": null
+ },
+ {
+  "sku": "EX019",
+  "name": "ร่มกอล์ฟ 30 นิ้ว 2ชั้น",
+  "cat": "Umbrella",
+  "live_img": "public/images/products/ex019-umbrella/ex019-umbrella-square.jpg",
+  "raw": "express-assets/EX019/real/golf-navy.jpg",
+  "raw_all": [
+   "express-assets/EX019/real/golf-black.jpg",
+   "express-assets/EX019/real/golf-classic.jpg",
+   "express-assets/EX019/real/golf-navy.jpg"
+  ],
+  "styled_free": null,
+  "styled": "express-assets/EX019/styled/golf-navy.jpg",
+  "gen": "express-assets/EX019/gen/EX019-red.jpg"
+ },
+ {
+  "sku": "EX025",
+  "name": "แก้วเยติ 20 oz (กล่องสีนํ้าตาล ฟู๊ดเกรด)",
+  "cat": "Drinkware",
+  "live_img": "public/images/products/ex025-drinkware/ex025-drinkware-square.jpg",
+  "raw": "express-assets/EX025/real/red.jpg",
+  "raw_all": [
+   "express-assets/EX025/real/black.jpg",
+   "express-assets/EX025/real/blue.jpg",
+   "express-assets/EX025/real/red.jpg",
+   "express-assets/EX025/real/steel.jpg",
+   "express-assets/EX025/real/white.jpg"
+  ],
+  "styled_free": "express-assets/EX025/styled_free/red.jpg",
+  "styled": "express-assets/EX025/styled/blue.jpg",
+  "gen": "express-assets/EX025/gen/EX025-brushedsta.jpg"
+ },
+ {
+  "sku": "EX026",
+  "name": "แก้วเยติ 20 oz ( กล่องสีขาว )",
+  "cat": "Drinkware",
+  "live_img": "public/images/products/ex026-drinkware/ex026-drinkware-square.jpg",
+  "raw": "express-assets/EX026/real/EX026-skinny-white.jpg",
+  "raw_all": [
+   "express-assets/EX026/real/EX026-skinny-slidelid.jpg",
+   "express-assets/EX026/real/EX026-skinny-white.jpg"
+  ],
+  "styled_free": "express-assets/EX026/styled_free/EX026-skinny-white.jpg",
+  "styled": null,
+  "gen": null
+ },
+ {
+  "sku": "EX027",
+  "name": "แก้วเยติ 20 oz ( กล่องสีขาว ) YW",
+  "cat": "Drinkware",
+  "live_img": "public/images/products/ex027-drinkware/ex027-drinkware-square.jpg",
+  "raw": "express-assets/EX027/real/EX027-skinny-c.jpg",
+  "raw_all": [
+   "express-assets/EX027/real/EX027-skinny-c.jpg",
+   "express-assets/EX027/real/EX027-white-skinny.jpg"
+  ],
+  "styled_free": "express-assets/EX027/styled_free/EX027-skinny-c.jpg",
+  "styled": null,
+  "gen": null
+ },
+ {
+  "sku": "EX029",
+  "name": "แก้วเก็บความเย็น 30 oz ทรงสูง (ฝาเกลียว)",
+  "cat": "Drinkware",
+  "live_img": "public/images/products/ex029-drinkware/ex029-drinkware-square.jpg",
+  "raw": "express-assets/EX029/real/EX029-tall-30oz-single.jpg",
+  "raw_all": [
+   "express-assets/EX029/real/EX029-tall-30oz-single.jpg",
+   "express-assets/EX029/real/EX029-tall-30oz-strawlid.jpg"
+  ],
+  "styled_free": "express-assets/EX029/styled_free/EX029-tall-30oz-single.jpg",
+  "styled": null,
+  "gen": null
+ },
+ {
+  "sku": "EX030",
+  "name": "แก้วเก็บความเย็น 30 oz ทรงสูง (หูโค้ง)",
+  "cat": "Drinkware",
+  "live_img": "public/images/products/ex030-drinkware/ex030-drinkware-square.jpg",
+  "raw": "express-assets/EX030/real/EX030-curved-handle-group.jpg",
+  "raw_all": [
+   "express-assets/EX030/real/EX030-curved-handle-colors.png",
+   "express-assets/EX030/real/EX030-curved-handle-group.jpg",
+   "express-assets/EX030/real/EX030-curved-handle-single.jpg"
+  ],
+  "styled_free": "express-assets/EX030/styled_free/EX030-curved-handle-group.jpg",
+  "styled": null,
+  "gen": null
+ },
+ {
+  "sku": "EX031",
+  "name": "แก้วเก็บความเย็น 30oz ทรงสูง (หูเหลี่ยม)",
+  "cat": "Drinkware",
+  "live_img": "public/images/products/ex031-drinkware/ex031-drinkware-square.jpg",
+  "raw": "express-assets/EX031/real/EX031-square-handle-white.jpg",
+  "raw_all": [
+   "express-assets/EX031/real/EX031-square-handle-side.jpg",
+   "express-assets/EX031/real/EX031-square-handle-single.jpg",
+   "express-assets/EX031/real/EX031-square-handle-white.jpg"
+  ],
+  "styled_free": "express-assets/EX031/styled_free/EX031-square-handle-white.jpg",
+  "styled": null,
+  "gen": null
+ },
+ {
+  "sku": "EX032",
+  "name": "แก้วกาแฟ coffee",
+  "cat": "Drinkware",
+  "live_img": "public/images/products/ex032-drinkware/ex032-drinkware-square.jpg",
+  "raw": null,
+  "raw_all": [],
+  "styled_free": "express-assets/EX032/styled_free/EX032-coffee-tumbler-white.jpg",
+  "styled": null,
+  "gen": null
+ },
+ {
+  "sku": "EX033",
+  "name": "แก้วเยติ 20 oz ทรงอ้วน (ฝาเกลียว)",
+  "cat": "Drinkware",
+  "live_img": "public/images/products/ex033-drinkware/ex033-drinkware-square.jpg",
+  "raw": "express-assets/EX033/real/EX033-fat-lid.jpg",
+  "raw_all": [
+   "express-assets/EX033/real/EX033-fat-lid.jpg",
+   "express-assets/EX033/real/EX033-fat-white-front.png",
+   "express-assets/EX033/real/EX033-fat-white-lidoff.png",
+   "express-assets/EX033/real/EX033-fat-white-lying.png"
+  ],
+  "styled_free": "express-assets/EX033/styled_free/EX033-fat-lid.jpg",
+  "styled": null,
+  "gen": null
+ },
+ {
+  "sku": "EX034",
+  "name": "แก้วเยติ 20 oz ทรงอ้วน (หูเหลี่ยม)",
+  "cat": "Drinkware",
+  "live_img": "public/images/products/ex034-drinkware/ex034-drinkware-square.jpg",
+  "raw": "express-assets/EX034/real/EX034-handle_2.png",
+  "raw_all": [
+   "express-assets/EX034/real/EX034-handle_2.png"
+  ],
+  "styled_free": "express-assets/EX034/styled_free/EX034-handle_2.jpg",
+  "styled": null,
+  "gen": null
+ },
+ {
+  "sku": "EX035",
+  "name": "แก้ว 20 oz ทรงอ้วน (หูโค้ง)",
+  "cat": "Drinkware",
+  "live_img": "public/images/products/ex035-drinkware/ex035-drinkware-square.jpg",
+  "raw": "express-assets/EX035/real/EX035-curved-mug1.png",
+  "raw_all": [
+   "express-assets/EX035/real/EX035-curved-mug1.png",
+   "express-assets/EX035/real/EX035-curved-mug2.jpg"
+  ],
+  "styled_free": "express-assets/EX035/styled_free/EX035-curved-mug1.jpg",
+  "styled": null,
+  "gen": null
+ },
+ {
+  "sku": "EX036",
+  "name": "กระบอกนํ้าทรงสปอร์ต Active",
+  "cat": "Drinkware",
+  "live_img": "public/images/products/ex036-drinkware/ex036-drinkware-square.jpg",
+  "raw": "express-assets/EX036/real/EX036-carabi-sport.jpg",
+  "raw_all": [
+   "express-assets/EX036/real/EX036-carabi-cap-carabiner.jpg",
+   "express-assets/EX036/real/EX036-carabi-sport.jpg"
+  ],
+  "styled_free": "express-assets/EX036/styled_free/EX036-carabi-sport.jpg",
+  "styled": null,
+  "gen": null
+ },
+ {
+  "sku": "EX037",
+  "name": "แก้วกาแฟ มีหูจับข้าง 14 oz",
+  "cat": "Drinkware",
+  "live_img": "public/images/products/ex037-drinkware/ex037-drinkware-square.jpg",
+  "raw": "express-assets/EX037/real/EX037-mug-angle.jpg",
+  "raw_all": [
+   "express-assets/EX037/real/EX037-mug-angle.jpg",
+   "express-assets/EX037/real/EX037-mug-colors.jpg",
+   "express-assets/EX037/real/EX037-mug-front.jpg"
+  ],
+  "styled_free": "express-assets/EX037/styled_free/EX037-mug-angle.jpg",
+  "styled": null,
+  "gen": null
+ },
+ {
+  "sku": "EX038",
+  "name": "แก้วไข่",
+  "cat": "Drinkware",
+  "live_img": "public/images/products/ex038-drinkware/ex038-drinkware-square.jpg",
+  "raw": "express-assets/EX038/real/EX038-egg-front.jpg",
+  "raw_all": [
+   "express-assets/EX038/real/EX038-egg-front.jpg",
+   "express-assets/EX038/real/EX038-egg-white.jpg"
+  ],
+  "styled_free": "express-assets/EX038/styled_free/EX038-egg-front.jpg",
+  "styled": null,
+  "gen": null
+ },
+ {
+  "sku": "EX039",
+  "name": "แก้วทรงสตาร์บัค ขอบดํา",
+  "cat": "Drinkware",
+  "live_img": "public/images/products/ex039-drinkware/ex039-drinkware-square.jpg",
+  "raw": "express-assets/EX039/real/EX039-coldcup-colors.jpg",
+  "raw_all": [
+   "express-assets/EX039/real/EX039-coldcup-colors.jpg"
+  ],
+  "styled_free": "express-assets/EX039/styled_free/EX039-coldcup-colors.jpg",
+  "styled": null,
+  "gen": null
+ },
+ {
+  "sku": "EX040",
+  "name": "แก้วทรงสตาร์บัค ขอบทอง",
+  "cat": "Drinkware",
+  "live_img": "public/images/products/ex040-drinkware/ex040-drinkware-square.jpg",
+  "raw": "express-assets/EX040/real/EX040-coldcup-colors.jpg",
+  "raw_all": [
+   "express-assets/EX040/real/EX040-coldcup-colors.jpg"
+  ],
+  "styled_free": "express-assets/EX040/styled_free/EX040-coldcup-gold.jpg",
+  "styled": null,
+  "gen": null
+ },
+ {
+  "sku": "EX041",
+  "name": "กระบอกนํ้าเก็บอุณหภูมิ",
+  "cat": "Drinkware",
+  "live_img": "public/images/products/ex041-drinkware/ex041-drinkware-square.jpg",
+  "raw": "express-assets/EX041/real/EX041-emerald.jpg",
+  "raw_all": [
+   "express-assets/EX041/real/EX041-cordle-insulated.jpg",
+   "express-assets/EX041/real/EX041-cordle-side.jpg",
+   "express-assets/EX041/real/EX041-emerald.jpg",
+   "express-assets/EX041/real/EX041-nunavut.jpg"
+  ],
+  "styled_free": "express-assets/EX041/styled_free/EX041-emerald.jpg",
+  "styled": null,
+  "gen": null
+ },
+ {
+  "sku": "EX042",
+  "name": "เสื้อแจ็คเก็ต",
+  "cat": "Garment",
+  "live_img": "public/images/products/ex042-garment/ex042-garment-square.jpg",
+  "raw": "express-assets/EX042/real/EX042-red.jpg",
+  "raw_all": [
+   "express-assets/EX042/real/EX042-black.jpg",
+   "express-assets/EX042/real/EX042-blue.jpg",
+   "express-assets/EX042/real/EX042-red.jpg",
+   "express-assets/EX042/real/EX042-royal.jpg"
+  ],
+  "styled_free": null,
+  "styled": "express-assets/EX042/styled/EX042-royal.jpg",
+  "gen": null
+ },
+ {
+  "sku": "EX044",
+  "name": "เสื้อโปโล CoolPlus CA",
+  "cat": "Garment",
+  "live_img": "public/images/products/ex044-garment/ex044-garment-square.jpg",
+  "raw": "express-assets/EX044/real/EX044-red.jpg",
+  "raw_all": [
+   "express-assets/EX044/real/EX044-black.jpg",
+   "express-assets/EX044/real/EX044-navy.jpg",
+   "express-assets/EX044/real/EX044-red.jpg",
+   "express-assets/EX044/real/EX044-white.jpg"
+  ],
+  "styled_free": null,
+  "styled": "express-assets/EX044/styled/EX044-white.jpg",
+  "gen": null
+ },
+ {
+  "sku": "EX045",
+  "name": "เสื้อโปโล CoolPlus",
+  "cat": "Garment",
+  "live_img": "public/images/products/ex045-garment/ex045-garment-square.jpg",
+  "raw": "express-assets/EX045/real/EX045-black.jpg",
+  "raw_all": [
+   "express-assets/EX045/real/EX045-black.jpg",
+   "express-assets/EX045/real/EX045-green.jpg",
+   "express-assets/EX045/real/EX045-maroon.jpg",
+   "express-assets/EX045/real/EX045-white.jpg"
+  ],
+  "styled_free": null,
+  "styled": "express-assets/EX045/styled/EX045-white.jpg",
+  "gen": null
+ },
+ {
+  "sku": "EX046",
+  "name": "เสื้อโปโล",
+  "cat": "Garment",
+  "live_img": "public/images/products/ex046-garment/ex046-garment-square.jpg",
+  "raw": "express-assets/EX046/real/EX046-navy.png",
+  "raw_all": [
+   "express-assets/EX046/real/EX046-black.png",
+   "express-assets/EX046/real/EX046-green-side.png",
+   "express-assets/EX046/real/EX046-green.png",
+   "express-assets/EX046/real/EX046-navy.png"
+  ],
+  "styled_free": null,
+  "styled": "express-assets/EX046/styled/EX046-navy.jpg",
+  "gen": null
+ },
+ {
+  "sku": "EX047",
+  "name": "ผ้ากันเปื้อน COMB-TWILL CLASSIC LOOP",
+  "cat": "Garment",
+  "live_img": "public/images/products/ex047-garment/ex047-garment-square.jpg",
+  "raw": "express-assets/EX047/real/EX047-bib-navy.jpg",
+  "raw_all": [
+   "express-assets/EX047/real/EX047-bib-black.jpg",
+   "express-assets/EX047/real/EX047-bib-khaki.jpg",
+   "express-assets/EX047/real/EX047-bib-navy.jpg",
+   "express-assets/EX047/real/EX047-bib-white.jpg"
+  ],
+  "styled_free": null,
+  "styled": "express-assets/EX047/styled/EX047-bib-white.jpg",
+  "gen": null
+ },
+ {
+  "sku": "EX048",
+  "name": "ผ้ากันเปื้อน รุ่น SMOOTH SOLON",
+  "cat": "Garment",
+  "live_img": "public/images/products/ex048-garment/ex048-garment-square.jpg",
+  "raw": "express-assets/EX048/real/EX048-waist-black.jpg",
+  "raw_all": [
+   "express-assets/EX048/real/EX048-waist-black.jpg",
+   "express-assets/EX048/real/EX048-waist-natural.jpg",
+   "express-assets/EX048/real/EX048-waist-royal.jpg",
+   "express-assets/EX048/real/EX048-waist-white.jpg"
+  ],
+  "styled_free": null,
+  "styled": "express-assets/EX048/styled/EX048-waist-white.jpg",
+  "gen": null
+ },
+ {
+  "sku": "EX049",
+  "name": "เสื้อช็อปแขนสั้น",
+  "cat": "Garment",
+  "live_img": "public/images/products/ex049-garment/ex049-garment-square.jpg",
+  "raw": "express-assets/EX049/real/EX049-shortsleeve-navy.jpg",
+  "raw_all": [
+   "express-assets/EX049/real/EX049-shortsleeve-charcoal.jpg",
+   "express-assets/EX049/real/EX049-shortsleeve-navy.jpg",
+   "express-assets/EX049/real/EX049-shortsleeve-royal.jpg"
+  ],
+  "styled_free": null,
+  "styled": "express-assets/EX049/styled/EX049-shortsleeve-navy.jpg",
+  "gen": null
+ },
+ {
+  "sku": "EX050",
+  "name": "เสื้อช็อปแขนยาว",
+  "cat": "Garment",
+  "live_img": "public/images/products/ex050-garment/ex050-garment-square.jpg",
+  "raw": "express-assets/EX050/real/EX050-longsleeve-blue.jpg",
+  "raw_all": [
+   "express-assets/EX050/real/EX050-longsleeve-black.jpg",
+   "express-assets/EX050/real/EX050-longsleeve-blue.jpg",
+   "express-assets/EX050/real/EX050-longsleeve-lightblue.jpg"
+  ],
+  "styled_free": null,
+  "styled": "express-assets/EX050/styled/EX050-longsleeve-blue.jpg",
+  "gen": null
+ },
+ {
+  "sku": "EX051",
+  "name": "เสื้อช็อป",
+  "cat": "Garment",
+  "live_img": "public/images/products/ex051-garment/ex051-garment-square.jpg",
+  "raw": "express-assets/EX051/real/EX051-shopshirt-blue.jpg",
+  "raw_all": [
+   "express-assets/EX051/real/EX051-shopshirt-blue.jpg",
+   "express-assets/EX051/real/EX051-shopshirt-charcoal.jpg",
+   "express-assets/EX051/real/EX051-shopshirt-white-ls.png",
+   "express-assets/EX051/real/EX051-shopshirt-white-ss.png"
+  ],
+  "styled_free": null,
+  "styled": "express-assets/EX051/styled/EX051-shopshirt-blue.jpg",
+  "gen": null
+ },
+ {
+  "sku": "EX052",
+  "name": "กางเกงช่าง",
+  "cat": "Garment",
+  "live_img": "public/images/products/ex052-garment/ex052-garment-square.jpg",
+  "raw": "express-assets/EX052/real/EX052-cargo-navy.jpg",
+  "raw_all": [
+   "express-assets/EX052/real/EX052-cargo-charcoal.jpg",
+   "express-assets/EX052/real/EX052-cargo-navy.jpg",
+   "express-assets/EX052/real/EX052-trousers-black.jpg"
+  ],
+  "styled_free": null,
+  "styled": "express-assets/EX052/styled/EX052-trousers-black.jpg",
+  "gen": null
+ },
+ {
+  "sku": "EX053",
+  "name": "หมวก พีชพรีเมียม แซนวิช",
+  "cat": "Hat",
+  "live_img": "public/images/products/ex053-hat/ex053-hat-square.jpg",
+  "raw": "express-assets/EX053/real/EX053-dad-front.jpg",
+  "raw_all": [
+   "express-assets/EX053/real/EX053-dad-front.jpg",
+   "express-assets/EX053/real/EX053-dad-side.jpg",
+   "express-assets/EX053/real/EX053-sandwich-black.jpg",
+   "express-assets/EX053/real/EX053-sandwich-khaki.jpg"
+  ],
+  "styled_free": "express-assets/EX053/styled_free/EX053-dad-front.jpg",
+  "styled": null,
+  "gen": null
+ },
+ {
+  "sku": "EX054",
+  "name": "หมวก บัคเคิ้ลบี (Buckle-B)",
+  "cat": "Hat",
+  "live_img": "public/images/products/ex054-hat/ex054-hat-square.jpg",
+  "raw": "express-assets/EX054/real/EX054-structured-front.jpg",
+  "raw_all": [
+   "express-assets/EX054/real/EX054-buckle-back.jpg",
+   "express-assets/EX054/real/EX054-buckle-side.jpg",
+   "express-assets/EX054/real/EX054-structured-front.jpg",
+   "express-assets/EX054/real/EX054-structured-side.jpg"
+  ],
+  "styled_free": "express-assets/EX054/styled_free/EX054-structured-front.jpg",
+  "styled": null,
+  "gen": null
+ },
+ {
+  "sku": "EX055",
+  "name": "หมวก แซนวิช (Sandwich)",
+  "cat": "Hat",
+  "live_img": "public/images/products/ex055-hat/ex055-hat-square.jpg",
+  "raw": "express-assets/EX055/real/EX055-5panel-front.jpg",
+  "raw_all": [
+   "express-assets/EX055/real/EX055-5panel-front.jpg",
+   "express-assets/EX055/real/EX055-5panel-side.jpg"
+  ],
+  "styled_free": "express-assets/EX055/styled_free/EX055-5panel-front.jpg",
+  "styled": null,
+  "gen": null
+ }
+]

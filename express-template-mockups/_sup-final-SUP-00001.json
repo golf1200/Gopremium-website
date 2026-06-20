@@ -1,0 +1,59 @@
+{
+  "supplier": "SUP-00001",
+  "final_sku_map": [
+    {
+      "sku": "EX001",
+      "name": "เสื้อยืดแขนสั้น",
+      "primary_group_file": "692134(1).jpg",
+      "colors": [
+        "ขาว", "ดำ", "เหลือง", "ชมพูอ่อน", "โอรส", "ม่วงอ่อน", "ส้ม", "เขียวมินต์",
+        "ฟ้า", "เทาหินอ่อน", "ฟ้าน้ำทะเล", "กรม", "แดง", "น้ำตาล", "ชมพูเข้ม",
+        "บานเย็น", "เขียวขี้ม้า", "เทาดิน", "ม่วงเข้ม", "เขียวหยก", "น้ำเงิน",
+        "เลือดหมู", "เขียวไมโล", "เทาท็อป", "เขียวตอง", "ครีม", "ฟ้าอ่อน",
+        "ฟ้าเข้ม", "เทาอวกาศ", "ดำท็อป"
+      ],
+      "status": "ok",
+      "needs_supplier": false,
+      "note": "Short-sleeve crew-neck tee. Verified definitive 30-color master chart (692134, SAMARN GARMENT branded, SM001-SM030). Size/price spec in 692979_0 (excluded as non-product). Strong and complete."
+    },
+    {
+      "sku": "EX002",
+      "name": "เสื้อยืดแขนยาว",
+      "primary_group_file": "S__39190599.jpg",
+      "colors": ["ขาว", "ดำ", "กรมท่า", "เลือดหมู", "เทาท็อป", "ดำท็อป"],
+      "status": "ok",
+      "needs_supplier": false,
+      "note": "Long-sleeve crew-neck tee. Verified 6-color mannequin lineup with size/price table baked in (S 80.- to 2XL 105.-). Caption confirms exactly 6 colors: ขาว ดำ กรมท่า เทาท็อป เลือดหมู ดำท็อป."
+    },
+    {
+      "sku": "EX003",
+      "name": "เสื้อยืด",
+      "primary_group_file": "692134(1).jpg",
+      "colors": [
+        "ขาว", "ดำ", "เหลือง", "ชมพูอ่อน", "โอรส", "ม่วงอ่อน", "ส้ม", "เขียวมินต์",
+        "ฟ้า", "เทาหินอ่อน", "ฟ้าน้ำทะเล", "กรม", "แดง", "น้ำตาล", "ชมพูเข้ม",
+        "บานเย็น", "เขียวขี้ม้า", "เทาดิน", "ม่วงเข้ม", "เขียวหยก", "น้ำเงิน",
+        "เลือดหมู", "เขียวไมโล", "เทาท็อป", "เขียวตอง", "ครีม", "ฟ้าอ่อน",
+        "ฟ้าเข้ม", "เทาอวกาศ", "ดำท็อป"
+      ],
+      "status": "weak",
+      "needs_supplier": true,
+      "note": "Generic 'เสื้อยืด' with no dedicated image — reuses EX001's short-sleeve master chart (692134) as best fit. If EX003 is a distinct cut/style, request a dedicated supplier lineup; otherwise it is a duplicate of EX001."
+    }
+  ],
+  "models_without_sku": [
+    {
+      "desc": "เสื้อยืดคอวี แขนสั้น (V-neck short-sleeve cotton C32) — referenced in price table 692979_0 ('คอกลม-คอวี') but no dedicated V-neck product photo/lineup provided",
+      "files": ["692979_0.jpg"],
+      "colors": ["(no V-neck-specific lineup image; would presumably share the 30-color SM chart if offered)"]
+    }
+  ],
+  "non_product_images": [
+    "692979_0.jpg",
+    "725548.jpg",
+    "S__1966211_0.jpg",
+    "S__1966212_0.jpg",
+    "S__39190613.jpg"
+  ],
+  "completeness_note": "Two genuine product lineups verified: 692134(1).jpg (30-color short-sleeve crew chart for EX001/EX003) and S__39190599.jpg (6-color long-sleeve crew for EX002). Five images are pricing/size/shipping/service sheets and are excluded; EX003 has no distinct photo (reuses EX001) and a V-neck model exists with no SKU."
+}

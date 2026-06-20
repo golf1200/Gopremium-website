@@ -1,0 +1,27 @@
+{
+ "supplier": "SUP-00009",
+ "final_sku_map": [
+  {"sku":"EX025","name":"แก้วเยติ 20oz · กล่องน้ำตาล (ฟู๊ดเกรด)","primary_group_file":"Screenshot 2026-06-05 134140.png","colors":["เขียวเข้ม","เขียวมิ้นต์","เทา","เหลืองมะนาว","เขียวหัวเป็ด","ม่วง","ชมพูบานเย็น","ฟ้าคราม","น้ำเงิน","ส้ม","เงิน","แดง","เหลือง","ดำ","ม่วงอ่อน","ชมพู","เขียว","ฟ้า","กรมท่า","ขาว","น้ำตาล"],"status":"pack","needs_supplier":false,"note":"ใช้รูปร่วมกับ EX026/EX027 — ต่างแค่กล่องบรรจุ"},
+  {"sku":"EX026","name":"แก้วเยติ 20oz · กล่องขาว","primary_group_file":"Screenshot 2026-06-05 134140.png","colors":["(สีชุดเดียวกับ EX025)"],"status":"pack","needs_supplier":false,"note":"ต่างแค่กล่องขาว"},
+  {"sku":"EX027","name":"แก้วเยติ 20oz · กล่องขาว YW","primary_group_file":"Screenshot 2026-06-05 134140.png","colors":["(สีชุดเดียวกับ EX025)"],"status":"pack","needs_supplier":false,"note":"ต่างแค่กล่องขาวแบรนด์ YW"},
+  {"sku":"EX028","name":"แก้วเยติ 30oz ทรงอ้วน","primary_group_file":"Screenshot 2026-06-05 134351.png","colors":["ชมพูบานเย็น","เขียวขี้ม้า","เทา","เหลือง","เทาฟ้า","ส้ม","ม่วง","แดง","น้ำเงิน","เขียว","เขียวมิ้นต์","ดำ","ขาว","ฟ้าอ่อน","ฟ้าคราม","ชมพู","แดงเข้ม"],"status":"ok","needs_supplier":false,"note":""},
+  {"sku":"EX029","name":"แก้วเก็บความเย็น 30oz ทรงสูง · ฝาเกลียว","primary_group_file":"Screenshot 2026-06-05 134251.png","colors":["ฟ้าอมเขียว","น้ำเงิน","ม่วงเลือดหมู","เขียว","เหลือง","แดง","ดำ","ชมพู","ส้ม","เทา","ขาว","กรมท่า"],"status":"weak","needs_supplier":true,"note":"ควรได้รูปคมขึ้นยืนยัน"},
+  {"sku":"EX030","name":"แก้วเก็บความเย็น 30oz ทรงสูง · หูโค้ง","primary_group_file":"Screenshot 2026-06-05 153010.png","colors":["ขาว","ฟ้า","เขียว","ดำ","แดง","ชมพู","เทา","ม่วง","เขียวมะกอก","เหลือง","กรมท่า","น้ำเงิน","เขียวมิ้นต์","ชมพูบานเย็น"],"status":"ok","needs_supplier":false,"note":"หูหิ้วโค้งบนฝา"},
+  {"sku":"EX031","name":"แก้วเก็บความเย็น 30oz ทรงสูง · หูเหลี่ยม","primary_group_file":"Screenshot 2026-06-05 134358.png","colors":["ฟ้า","เขียว","เทา","ดำ","แดง","ชมพู","ม่วง","กรมท่า","น้ำเงิน","ขาว","ส้ม","เหลือง"],"status":"weak","needs_supplier":true,"note":"หูโค้ง vs หูเหลี่ยมแยกยาก — ขอรูปหูชัด"},
+  {"sku":"EX032","name":"แก้วกาแฟ COFFEE (ฝากระดก)","primary_group_file":"Screenshot 2026-06-05 134534.png","colors":["เขียวขี้ม้า","ชมพู","ครีม/ขาว","กรมท่า","ดำ"],"status":"ok","needs_supplier":false,"note":"มีคำว่า COFFEE ไม่มีหู"},
+  {"sku":"EX033","name":"แก้วเยติ 20oz ทรงอ้วน · ฝาเกลียว","primary_group_file":"Screenshot 2026-06-05 134304.png","colors":["แดง","เขียวเข้ม","น้ำเงิน","เขียวมิ้นต์","เทา","กรมท่า","ม่วง","ขาว","ชมพูบานเย็น","ฟ้า","เหลือง","ส้ม","เขียว","น้ำตาล"],"status":"ok","needs_supplier":false,"note":""},
+  {"sku":"EX034","name":"แก้วเยติ 20oz ทรงอ้วน · หูเหลี่ยม","primary_group_file":"","colors":[],"status":"no_image","needs_supplier":true,"note":"ไม่มีรูปอ้วน 20oz ที่มีหู — ต้องขอจากซัพ"},
+  {"sku":"EX035","name":"แก้ว 20oz ทรงอ้วน · หูโค้ง","primary_group_file":"","colors":[],"status":"no_image","needs_supplier":true,"note":"ไม่มีรูปอ้วน 20oz ที่มีหู — ต้องขอจากซัพ"},
+  {"sku":"EX036","name":"กระบอกน้ำทรงสปอร์ต ACTIVE","primary_group_file":"Screenshot 2026-06-05 134559.png","colors":["แทน/น้ำตาลอ่อน","ดำ","แดง","กรมท่า","ครีม","ม่วงมารูน","เขียวขี้ม้า"],"status":"ok","needs_supplier":false,"note":"มีโลโก้ ACTIVE"},
+  {"sku":"EX037","name":"แก้วกาแฟ มีหูจับข้าง 14oz","primary_group_file":"","colors":[],"status":"no_image","needs_supplier":true,"note":"ไม่มีรูปแก้วหูจับ 14oz (รูป COFFEE คือ EX032) — ต้องขอจากซัพ"},
+  {"sku":"EX038","name":"แก้วไข่","primary_group_file":"Screenshot 2026-06-05 153109.png","colors":["ม่วงอ่อน","ชมพู","ฟ้า","เทา","เขียวมิ้นต์","ขาว","เขียวขี้ม้า","แดง","ส้ม","น้ำเงิน","ม่วง","เขียว","ดำ","กรมท่า","เทาเข้ม"],"status":"ok","needs_supplier":false,"note":"ทรงไข่ป่องกลาง"},
+  {"sku":"EX039","name":"แก้วทรงสตาร์บัค · ขอบดำ","primary_group_file":"Screenshot 2026-06-05 153117.png","colors":["ชมพู","ดำ","ม่วงลาเวนเดอร์","ฟ้า","ขาว","เงิน"],"status":"ok","needs_supplier":false,"note":"หลอด/ขอบสีเงิน-ดำ"},
+  {"sku":"EX040","name":"แก้วทรงสตาร์บัค · ขอบทอง","primary_group_file":"Screenshot 2026-06-05 153121.png","colors":["ชมพู","เหลือง","เขียวเซจ","ฟ้าเทอร์ควอยซ์","ดำ","ขาว","ม่วงลาเวนเดอร์"],"status":"ok","needs_supplier":false,"note":"หลอด/ขอบสีทอง"},
+  {"sku":"EX041","name":"กระบอกน้ำเก็บอุณหภูมิ (Smart LED)","primary_group_file":"Screenshot 2026-06-05 153015.png","colors":["ดำ","ทอง","ขาว/เงิน","เงิน","แดง","น้ำเงิน"],"status":"ok","needs_supplier":false,"note":"ทรงสลิม มีจอ LED วัดอุณหภูมิ"}
+ ],
+ "models_without_sku": [
+  {"desc":"แก้วทรงสูงเรียว ฝากระดกดำ มีแถบยางจับกันลื่น (tumbler ฝา press)","files":["Screenshot 2026-06-05 134544.png"],"colors":["ชมพู","ม่วง","ฟ้าอมเขียว","แดง","ขาว","ม่วงบานเย็น","ฟ้า","เขียวมะกอก","เทา","ดำ"]}
+ ],
+ "non_product_images": [],
+ "completeness_note": "9 รุ่นมีรูปรวมสีพร้อม; EX034/EX035/EX037 ไม่มีรูปต้องขอซัพ; EX025/26/27 ต่างแค่กล่อง; EX029/EX031 ควรได้รูปคมขึ้น"
+}

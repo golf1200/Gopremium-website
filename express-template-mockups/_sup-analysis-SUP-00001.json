@@ -1,0 +1,171 @@
+{
+  "supplier": "SUP-00001",
+  "sup_name": "สมานการ์เม้นท์สำเพ็ง",
+  "images": [
+    {
+      "file": "692134(1).jpg",
+      "model_desc_th": "เสื้อยืดคอกลม แขนสั้น COTTON 100% (ตารางสี SM001-SM030)",
+      "garment_type": "t-shirt short sleeve, crew neck",
+      "is_color_lineup": true,
+      "colors": [
+        "ขาว (white, SM001)",
+        "ดำ (black, SM002)",
+        "เหลือง (yellow, SM003)",
+        "ชมพูอ่อน (light pink, SM004)",
+        "โอรส (salmon/coral pink, SM005)",
+        "ม่วงอ่อน (light purple, SM006)",
+        "ส้ม (orange, SM007)",
+        "เขียวมินต์ (mint green, SM008)",
+        "ฟ้า (sky blue, SM009)",
+        "เทาหินมุกรี / เทาหินอ่อน (light marble grey, SM010)",
+        "ฟ้าน้ำทะเล (sea/azure blue, SM011)",
+        "กรม (navy, SM012)",
+        "แดง (red, SM013)",
+        "น้ำตาล (brown, SM014)",
+        "ชมพูเข้ม (dark pink/magenta, SM015)",
+        "บานเย็น (hot pink/fuchsia, SM016)",
+        "เขียวขี้ม้า (olive/army green, SM017)",
+        "เทาดิน (taupe/dark grey-brown, SM018)",
+        "ม่วงเข้ม (dark purple, SM019)",
+        "เขียวหยก (jade green, SM020)",
+        "น้ำเงิน (blue/royal blue, SM021)",
+        "เลือดหมู (maroon/oxblood, SM022)",
+        "เขียวไมโล (milo/dark green, SM023)",
+        "เทาท็อป (top grey/light heather grey, SM024)",
+        "เขียวตอง (banana-leaf green/bright green, SM025)",
+        "ครีม (cream, SM026)",
+        "ฟ้าอ่อน (light blue, SM027)",
+        "ฟ้าเข้ม (dark/strong blue, SM028)",
+        "เทาอวกาศ (space grey/charcoal, SM029)",
+        "ดำท็อป (top black/deep black, SM030)"
+      ],
+      "best_sku": "EX001",
+      "alt_sku": "EX003",
+      "confidence": "high",
+      "note": "Master short-sleeve crew-neck color chart, 30 colors SM001-SM030, SAMARN GARMENT branded. This is the definitive color lineup for the short-sleeve tee (EX001) and generic tee (EX003)."
+    },
+    {
+      "file": "692979_0.jpg",
+      "model_desc_th": "ตารางไซส์/ราคา เสื้อคอกลม-คอวี COTTON 100% C32 (โปรโมชั่นพิเศษ)",
+      "garment_type": "t-shirt short sleeve, crew neck & v-neck (size/price chart, no garment photo)",
+      "is_color_lineup": false,
+      "colors": [],
+      "best_sku": "EX001",
+      "alt_sku": "EX003",
+      "confidence": "high",
+      "note": "Text-only size & price table (S 50.- to 4XL 140.-) for crew-neck/v-neck short-sleeve cotton C32. Reference/spec sheet, not a product image. Mentions both คอกลม (crew) and คอวี (v-neck)."
+    },
+    {
+      "file": "725548.jpg",
+      "model_desc_th": "ตารางค่าจัดส่ง KERRY / NIM / J&T Express (สกรีนช็อตหน้าจอ)",
+      "garment_type": "n/a (shipping rate table screenshot)",
+      "is_color_lineup": false,
+      "colors": [],
+      "best_sku": "UNSURE",
+      "alt_sku": "UNSURE",
+      "confidence": "high",
+      "note": "Not a product image — screenshot of courier shipping rates (Kerry/NiM/J&T) plus a quantity/price spreadsheet. No garment shown. Reference only."
+    },
+    {
+      "file": "S__1966211_0.jpg",
+      "model_desc_th": "ป้ายราคางานสกรีนบล็อก (screen-printing block service info)",
+      "garment_type": "n/a (service price info card)",
+      "is_color_lineup": false,
+      "colors": [],
+      "best_sku": "UNSURE",
+      "alt_sku": "UNSURE",
+      "confidence": "high",
+      "note": "Not a product image — block screen-print service pricing (min 30 pcs, 250฿/block/color, 25-50฿/pc screen, block kept 2 months). Decorative floral card. Reference only."
+    },
+    {
+      "file": "S__1966212_0.jpg",
+      "model_desc_th": "ป้ายราคางานสกรีน DFT/DTF (DTF printing service info)",
+      "garment_type": "n/a (service price info card)",
+      "is_color_lineup": false,
+      "colors": [],
+      "best_sku": "UNSURE",
+      "alt_sku": "UNSURE",
+      "confidence": "high",
+      "note": "Not a product image — DFT/DTF screen-print service pricing (no minimum, from 1 pc, from 200฿/pc, size surcharges for 2XL/3XL/4XL). Decorative floral card. Reference only."
+    },
+    {
+      "file": "S__39190599.jpg",
+      "model_desc_th": "เสื้อยืดคอกลม แขนยาว COTTON 100% มี 6 สี (พร้อมตารางไซส์/ราคา)",
+      "garment_type": "t-shirt long sleeve, crew neck",
+      "is_color_lineup": true,
+      "colors": [
+        "ขาว (white)",
+        "ดำ (black)",
+        "กรมท่า (navy)",
+        "เลือดหมู (maroon/oxblood)",
+        "เทาท็อป (top grey/heather grey)",
+        "ดำท็อป (top black/deep black)"
+      ],
+      "best_sku": "EX002",
+      "alt_sku": "",
+      "confidence": "high",
+      "note": "Definitive long-sleeve crew-neck lineup on mannequins, exactly 6 colors as captioned: ขาว ดำ กรมท่า เทาท็อป เลือดหมู ดำท็อป. Includes size/price table (S 80.- to 2XL 105.-)."
+    },
+    {
+      "file": "S__39190613.jpg",
+      "model_desc_th": "ตารางขนาด/ราคางานสกรีน A6/A4/A3 บนเสื้อยืด (photo of a printed reference sheet)",
+      "garment_type": "t-shirt (illustrated icons, screen-size price guide)",
+      "is_color_lineup": false,
+      "colors": [
+        "ดำ/กรม (dark navy/black illustrated tee icons only — not a real color lineup)"
+      ],
+      "best_sku": "UNSURE",
+      "alt_sku": "EX003",
+      "confidence": "med",
+      "note": "Photo of a printed sheet showing print-area sizing & price (A6=160-180, A4=200, A3=230) using dark tee icons. Background has a stack of real folded tees (white/cream/yellow/orange/red) but only edges visible. Reference/pricing sheet, not a clean product shot."
+    }
+  ],
+  "skus": [
+    {
+      "sku": "EX001",
+      "name": "เสื้อยืดแขนสั้น",
+      "matched_files": ["692134(1).jpg", "692979_0.jpg"],
+      "all_colors": [
+        "ขาว", "ดำ", "เหลือง", "ชมพูอ่อน", "โอรส", "ม่วงอ่อน", "ส้ม", "เขียวมินต์",
+        "ฟ้า", "เทาหินอ่อน", "ฟ้าน้ำทะเล", "กรม", "แดง", "น้ำตาล", "ชมพูเข้ม",
+        "บานเย็น", "เขียวขี้ม้า", "เทาดิน", "ม่วงเข้ม", "เขียวหยก", "น้ำเงิน",
+        "เลือดหมู", "เขียวไมโล", "เทาท็อป", "เขียวตอง", "ครีม", "ฟ้าอ่อน",
+        "ฟ้าเข้ม", "เทาอวกาศ", "ดำท็อป"
+      ],
+      "has_group_shot": true,
+      "status": "ok",
+      "note": "Short-sleeve crew-neck tee. Full 30-color master chart (692134) + size/price spec (692979). Strong, complete. V-neck variant also mentioned in price table if needed."
+    },
+    {
+      "sku": "EX002",
+      "name": "เสื้อยืดแขนยาว",
+      "matched_files": ["S__39190599.jpg"],
+      "all_colors": ["ขาว", "ดำ", "กรมท่า", "เลือดหมู", "เทาท็อป", "ดำท็อป"],
+      "has_group_shot": true,
+      "status": "ok",
+      "note": "Long-sleeve crew-neck tee with mannequin group shot + size/price table. Exactly 6 colors. Complete and clean."
+    },
+    {
+      "sku": "EX003",
+      "name": "เสื้อยืด",
+      "matched_files": ["692134(1).jpg"],
+      "all_colors": [
+        "ขาว", "ดำ", "เหลือง", "ชมพูอ่อน", "โอรส", "ม่วงอ่อน", "ส้ม", "เขียวมินต์",
+        "ฟ้า", "เทาหินอ่อน", "ฟ้าน้ำทะเล", "กรม", "แดง", "น้ำตาล", "ชมพูเข้ม",
+        "บานเย็น", "เขียวขี้ม้า", "เทาดิน", "ม่วงเข้ม", "เขียวหยก", "น้ำเงิน",
+        "เลือดหมู", "เขียวไมโล", "เทาท็อป", "เขียวตอง", "ครีม", "ฟ้าอ่อน",
+        "ฟ้าเข้ม", "เทาอวกาศ", "ดำท็อป"
+      ],
+      "has_group_shot": true,
+      "status": "ok",
+      "note": "Generic 'เสื้อยืด' — shares the short-sleeve crew-neck master chart (692134) as best fit. Same garment family as EX001; colors identical. If EX003 is meant to be a distinct cut, supplier image is reused from short-sleeve lineup."
+    }
+  ],
+  "models_without_sku": [
+    {
+      "model_desc_th": "เสื้อยืดคอวี แขนสั้น (V-neck short-sleeve) — referenced in price table 692979 ('คอกลม-คอวี') but no dedicated V-neck product photo/lineup provided",
+      "files": ["692979_0.jpg"],
+      "colors": ["(no V-neck-specific lineup image; would share the 30-color SM chart if offered)"]
+    }
+  ]
+}

@@ -669,7 +669,8 @@ document.addEventListener('click',e=>{const a=e.target.closest&&e.target.closest
 const PTIER={value:'เริ่มต้นคุ้ม',smart:'คุ้มค่าน่าเลือก',premium:'พรีเมียม',executive:'ระดับผู้บริหาร'};
 function card(p, imgOverride){
   const tier=p.tier?`<span class="ptier">${esc(PTIER[p.tier]||p.tier)}</span>`:'';
-  return `<a class="pcard" href="#/p/${p.sku}"><div class="pthumb"><span class="pchip">${esc(CL[p.catSlug]||p.cat)}</span>${tier}<img loading="lazy" src="${imgOverride||pimg(p)}" alt="${esc(p.name)}"></div>
+  const src=(typeof imgOverride==='string'&&imgOverride)?imgOverride:pimg(p); // guard: .map() passes index as 2nd arg
+  return `<a class="pcard" href="#/p/${p.sku}"><div class="pthumb"><span class="pchip">${esc(CL[p.catSlug]||p.cat)}</span>${tier}<img loading="lazy" src="${src}" alt="${esc(p.name)}"></div>
     <div class="pbody"><div class="pname">${esc(p.name)}</div><div class="pfeat">${esc(p.features)}</div>
     <div class="pfoot"><div class="pprice">${baht(p.price)} <small>${p.price?'/ชิ้น':''}</small></div><div class="pmoq">MOQ ${p.moq}</div></div></div></a>`;
 }
@@ -991,7 +992,7 @@ function renderGrid(){
   if(FILTER.sort==='low')l.sort((a,b)=>(a.price||1e9)-(b.price||1e9));
   else if(FILTER.sort==='high')l.sort((a,b)=>(b.price||0)-(a.price||0));
   else if(FILTER.sort==='name')l.sort((a,b)=>a.name.localeCompare(b.name,'th'));
-  grid.innerHTML=l.map(card).join('');
+  grid.innerHTML=l.map(p=>card(p)).join('');
   document.getElementById('empty').style.display=l.length?'none':'block';
   document.getElementById('countLbl').innerHTML=`พบ <b>${l.length}</b> รายการ`;
   const cc=document.getElementById('crumbCat');if(cc)cc.textContent=FILTER.cat==='all'?'สินค้าทั้งหมด':CL[FILTER.cat];
@@ -1108,7 +1109,7 @@ function viewProduct(sku){
         <div class="pd-cta"><a class="btn btn-primary btn-lg" href="#/quote">ขอใบเสนอราคาสินค้านี้</a><a class="btn btn-line-ghost btn-lg" href="https://lin.ee/z1GT1KR" target="_blank" rel="noopener">สอบถามทาง LINE</a></div>
         <p class="muted" style="font-size:12.5px;margin-top:14px">* ราคาอ้างอิงที่ 300 ชิ้น พิมพ์โลโก้ · ทำ Mockup ให้ดูก่อนผลิตจริงทุกงาน · ตอบกลับใน 2 ชม.</p>
       </div></div>
-    <div class="related"><div class="shead center" style="margin-bottom:26px"><h2 class="h2" style="font-size:26px">สินค้าอื่นในหมวด ${esc(CL[p.catSlug]||p.cat)}</h2></div><div class="pgrid">${rel.map(card).join('')}</div></div>
+    <div class="related"><div class="shead center" style="margin-bottom:26px"><h2 class="h2" style="font-size:26px">สินค้าอื่นในหมวด ${esc(CL[p.catSlug]||p.cat)}</h2></div><div class="pgrid">${rel.map(p=>card(p)).join('')}</div></div>
   </div></section>`;
 }
 function viewQuote(){return `<section class="sec" style="padding-bottom:0"><div class="wrap"><div class="crumbs"><a href="#/">หน้าแรก</a> / <b>ขอใบเสนอราคา</b></div></div></section>${quoteSection()}`;}
@@ -1137,7 +1138,7 @@ const EXPRESS_POINTS=[
 function viewExpress(){
   const list=P.filter(p=>EXPRESS_SKUS.includes(p.sku));
   const grid=list.length
-    ? `<div class="shead" style="margin-top:8px"><span class="eyebrow"><span class="dot"></span>พร้อมผลิตด่วน</span><h2 class="h2">รุ่นแนะนำสำหรับงานด่วน</h2><p class="lead">คัดสินค้าที่ผลิตและส่งมอบได้ทันงานด่วน — กดขอใบเสนอราคาเพื่อยืนยันคิวผลิตตามจำนวนของคุณ</p></div><div class="pgrid">${list.map(card).join('')}</div>`
+    ? `<div class="shead" style="margin-top:8px"><span class="eyebrow"><span class="dot"></span>พร้อมผลิตด่วน</span><h2 class="h2">รุ่นแนะนำสำหรับงานด่วน</h2><p class="lead">คัดสินค้าที่ผลิตและส่งมอบได้ทันงานด่วน — กดขอใบเสนอราคาเพื่อยืนยันคิวผลิตตามจำนวนของคุณ</p></div><div class="pgrid">${list.map(p=>card(p)).join('')}</div>`
     : `<div class="card" style="text-align:center;padding:40px 24px;margin-top:8px"><h4 style="font-size:18px;color:var(--navy);margin-bottom:8px">บอกโจทย์งานด่วนของคุณ เราจัดให้</h4><p class="muted" style="max-width:48ch;margin:0 auto 18px">แจ้งจำนวน กำหนดส่ง และงบ/ชิ้น — ทีมเราจะเสนอรุ่นที่ผลิตได้ทันงานด่วนพร้อมช่วงราคาให้ภายใน 2 ชม.</p><div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a class="btn btn-primary btn-lg" href="https://lin.ee/z1GT1KR" target="_blank" rel="noopener">ทักด่วนทาง LINE</a><a class="btn btn-ghost btn-lg" style="border-color:rgba(31,58,95,.3);color:var(--navy)" href="#/quote">ขอใบเสนอราคางานด่วน</a></div></div>`;
   return `<section class="sec" style="padding-top:34px"><div class="wrap">
     <div class="crumbs"><a href="#/">หน้าแรก</a> / <b>สินค้าส่งด่วน</b></div>

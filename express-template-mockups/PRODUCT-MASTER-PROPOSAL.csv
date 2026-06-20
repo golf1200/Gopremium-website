@@ -1,0 +1,62 @@
+﻿SKU,Supplier,Name,Category,#Colors,Colors,Status,New?
+EX001,SUP-00001,เสื้อยืดคอกลม แขนสั้น,garment,30,ขาว / ดำ / เหลือง / ชมพูอ่อน / โอรส / ม่วงอ่อน / ส้ม / เขียวมินต์ / ฟ้า / เทาหินอ่อน / ฟ้าน้ำทะเล / กรม / แดง / น้ำตาล / ชมพูเข้ม / บานเย็น / เขียวขี้ม้า / เทาดิน / ม่วงเข้ม / เขียวหยก / น้ำเงิน / เลือดหมู / เขียวไมโล / เทาท็อป / เขียวตอง / ครีม / ฟ้าอ่อน / ฟ้าเข้ม / เทาอวกาศ / ดำท็อป,ok,
+EX002,SUP-00001,เสื้อยืดคอกลม แขนยาว,garment,6,ขาว / ดำ / กรมท่า / เลือดหมู / เทาท็อป / ดำท็อป,ok,
+EX003,SUP-00001,เสื้อยืดคอกลม,garment,30,ขาว / ดำ / เหลือง / ชมพูอ่อน / โอรส / ม่วงอ่อน / ส้ม / เขียวมินต์ / ฟ้า / เทาหินอ่อน / ฟ้าน้ำทะเล / กรม / แดง / น้ำตาล / ชมพูเข้ม / บานเย็น / เขียวขี้ม้า / เทาดิน / ม่วงเข้ม / เขียวหยก / น้ำเงิน / เลือดหมู / เขียวไมโล / เทาท็อป / เขียวตอง / ครีม / ฟ้าอ่อน / ฟ้าเข้ม / เทาอวกาศ / ดำท็อป,weak,
+EX007,SUP-00001,เสื้อยืดคอวี แขนสั้น,garment,0,,new,NEW
+EX004,SUP-00002,กระบอกน้ำพลาสติก,drinkware,1,clear / transparent (ใส) with black lid,weak,
+EX005,SUP-00002,กระบอกน้ำสแตนเลส,drinkware,1,terracotta / brick red (แดงอิฐ),ok,
+EX006,SUP-00002,แก้วพร้อมปลอก,drinkware,10,brown / tan (น้ำตาล) / navy / dark blue (กรมท่า) / grey (เทา) / caramel / light brown (น้ำตาลอ่อน) / beige / cream (เบจครีม) / pink (ชมพู) / red (แดง) / pastel yellow (เหลืองพาสเทล) / off-white / ivory (ขาวงาช้าง) / mint green (เขียวมิ้นต์),ok,
+EX008,SUP-00004,หมวกบันเดิล 4 ทรง (ตาข่าย/ปีกแข็ง/บักเก็ต/คลุมหน้า),hat,26,แดง / น้ำตาล / ครีม / ขาว / ดำ / เหลือง / น้ำเงิน / ฟ้า / เขียว-ทหาร / กรม / ลายพราง / ชมพู / เทา / ส้ม / แดงเลือดหมู / เขียว / บานเย็น / ม่วง / เขียวเข้ม / ฟ้าอ่อน / เทาอ่อน / เขียวขี้ม้า / ครีมเข้ม / น้ำตาลเข้ม / กรมท่า / ลายทหาร,pack,
+EX009,SUP-00004,หมวกแก๊ปผ้าลีวาย (เดนิม/ยีนส์),hat,14,ม่วง / เขียวอ่อน / เหลือง / ส้ม / น้ำเงิน / แดง / ฟ้า / กรมท่า / ขาว / ดำ / ชมพู / เขียวเข้ม / บานเย็น / ครีม,weak,
+EX043,SUP-00004,หมวกแก๊ปตาข่าย (ทรัคเกอร์) เกรดพรีเมียม,hat,22,ชมพู / น้ำเงิน / ดำ / แดง / ฟ้า / เหลือง / เทา / ส้ม / แดงเข้ม / เขียว / บานเย็น / ดำ-ขาว / ส้ม-ขาว / ลายพราง / กรม / ม่วง / เขียวเข้ม / ขาว / กรมท่า / เทาเข้ม / เทาอ่อน / น้ำตาล,new,NEW
+EX062,SUP-00004,หมวกปีกแข็ง (บูนนี่/ปีกกว้าง มีสายรัดคาง),hat,6,เขียวขี้ม้า / ครีม / ครีมเข้ม / ดำ / น้ำตาลเข้ม / กรมท่า,new,NEW
+EX063,SUP-00004,หมวกบักเก็ต สีพื้น,hat,10,แดง / น้ำตาล / ครีม / ขาว / ดำ / เหลือง / น้ำเงิน / ฟ้า / เขียว-ทหาร / กรม,new,NEW
+EX064,SUP-00004,หมวกคลุมหน้า/คลุมท้ายทอย พร้อมสกรีน,hat,6,ดำ / ครีม / เขียว / น้ำตาล / กรมท่า / ลายทหาร,new,NEW
+EX065,SUP-00004,หมวกแก๊ปเบสบอล 6 แผง สีพื้น,hat,14,ม่วง / เขียวอ่อน / เหลือง / ส้ม / น้ำเงิน / แดง / ฟ้า / กรมท่า / ขาว / ดำ / ชมพู / เขียวเข้ม / บานเย็น / ครีม,new,NEW
+EX019,SUP-00005,ร่มกอล์ฟ 30 นิ้ว 2 ชั้น (สลับสี 2 โทน),umbrella,6,navy+white / yellow+black / green+white / orange+white / red+white / blue+white,ok,
+EX066,SUP-00005,ร่มพับ 3 ตอน UV สีพื้น,umbrella,17,black / navy / royal blue / sky blue / teal / green / lime green / yellow / orange / red / maroon/burgundy / pink / magenta / purple / grey / white / brown,new,NEW
+EX067,SUP-00005,ร่มพับ 4 ตอน UV ดำ สีพื้น,umbrella,12,grey/silver / navy / royal blue / sky blue / green / yellow / pink / magenta / purple / red / wine/maroon / black,new,NEW
+EX068,SUP-00005,ร่ม 5 ตอน มินิ UV ดำ,umbrella,6,black / white / mint green / light blue / pink / lavender/purple,new,NEW
+EX069,SUP-00005,ร่ม 22 นิ้ว สีพื้น (ออโต้),umbrella,12,red / orange / yellow / green / sky blue / navy / purple / magenta / pink / white / grey / black,new,NEW
+EX070,SUP-00005,ร่มแบบใส (โดมใส + สีใส),umbrella,6,clear/transparent / transparent pink / transparent magenta / transparent yellow/lime / transparent mint/teal / transparent blue,new,NEW
+EX071,SUP-00005,ร่มไม้เท้า 16 ก้าน สีพื้น,umbrella,13,red / orange / yellow / green / teal / blue / sky blue / purple / magenta / pink / brown / black / white/cream,new,NEW
+EX072,SUP-00005,ร่มกอล์ฟ 28 นิ้ว ออโต้ สีพื้น,umbrella,9,red / grey / black / silver/white / navy / dark grey / orange / blue / green,new,NEW
+EX073,SUP-00005,ร่มกอล์ฟ 30 นิ้ว มือเปิด สีพื้น,umbrella,9,teal / navy / sky blue / purple / blue / green / grey / orange / red,new,NEW
+EX074,SUP-00005,ร่มกลับด้าน C-handle (2 ชั้น),umbrella,7,black / purple / grey / wine/burgundy / pink / blue / orange,new,NEW
+EX025,SUP-00009,แก้วเยติ 20oz · กล่องน้ำตาล (ฟู๊ดเกรด),drinkware,21,เขียวเข้ม / เขียวมิ้นต์ / เทา / เหลืองมะนาว / เขียวหัวเป็ด / ม่วง / ชมพูบานเย็น / ฟ้าคราม / น้ำเงิน / ส้ม / เงิน / แดง / เหลือง / ดำ / ม่วงอ่อน / ชมพู / เขียว / ฟ้า / กรมท่า / ขาว / น้ำตาล,pack,
+EX026,SUP-00009,แก้วเยติ 20oz · กล่องขาว,drinkware,21,เขียวเข้ม / เขียวมิ้นต์ / เทา / เหลืองมะนาว / เขียวหัวเป็ด / ม่วง / ชมพูบานเย็น / ฟ้าคราม / น้ำเงิน / ส้ม / เงิน / แดง / เหลือง / ดำ / ม่วงอ่อน / ชมพู / เขียว / ฟ้า / กรมท่า / ขาว / น้ำตาล,pack,
+EX027,SUP-00009,แก้วเยติ 20oz · กล่องขาว YW,drinkware,21,เขียวเข้ม / เขียวมิ้นต์ / เทา / เหลืองมะนาว / เขียวหัวเป็ด / ม่วง / ชมพูบานเย็น / ฟ้าคราม / น้ำเงิน / ส้ม / เงิน / แดง / เหลือง / ดำ / ม่วงอ่อน / ชมพู / เขียว / ฟ้า / กรมท่า / ขาว / น้ำตาล,pack,
+EX028,SUP-00009,แก้วเยติ 30oz ทรงอ้วน,drinkware,17,ชมพูบานเย็น / เขียวขี้ม้า / เทา / เหลือง / เทาฟ้า / ส้ม / ม่วง / แดง / น้ำเงิน / เขียว / เขียวมิ้นต์ / ดำ / ขาว / ฟ้าอ่อน / ฟ้าคราม / ชมพู / แดงเข้ม,ok,
+EX029,SUP-00009,แก้วเก็บความเย็น 30oz ทรงสูง · ฝาเกลียว,drinkware,12,ฟ้าอมเขียว / น้ำเงิน / ม่วงเลือดหมู / เขียว / เหลือง / แดง / ดำ / ชมพู / ส้ม / เทา / ขาว / กรมท่า,weak,
+EX030,SUP-00009,แก้วเก็บความเย็น 30oz ทรงสูง · หูโค้ง,drinkware,14,ขาว / ฟ้า / เขียว / ดำ / แดง / ชมพู / เทา / ม่วง / เขียวมะกอก / เหลือง / กรมท่า / น้ำเงิน / เขียวมิ้นต์ / ชมพูบานเย็น,ok,
+EX031,SUP-00009,แก้วเก็บความเย็น 30oz ทรงสูง · หูเหลี่ยม,drinkware,12,ฟ้า / เขียว / เทา / ดำ / แดง / ชมพู / ม่วง / กรมท่า / น้ำเงิน / ขาว / ส้ม / เหลือง,weak,
+EX032,SUP-00009,แก้วกาแฟ COFFEE (ฝากระดก),drinkware,5,เขียวขี้ม้า / ชมพู / ครีม/ขาว / กรมท่า / ดำ,ok,
+EX033,SUP-00009,แก้วเยติ 20oz ทรงอ้วน · ฝาเกลียว,drinkware,14,แดง / เขียวเข้ม / น้ำเงิน / เขียวมิ้นต์ / เทา / กรมท่า / ม่วง / ขาว / ชมพูบานเย็น / ฟ้า / เหลือง / ส้ม / เขียว / น้ำตาล,ok,
+EX034,SUP-00009,แก้วเยติ 20oz ทรงอ้วน · หูเหลี่ยม,drinkware,0,,no_image,
+EX035,SUP-00009,แก้ว 20oz ทรงอ้วน · หูโค้ง,drinkware,0,,no_image,
+EX036,SUP-00009,กระบอกน้ำทรงสปอร์ต ACTIVE,drinkware,7,แทน/น้ำตาลอ่อน / ดำ / แดง / กรมท่า / ครีม / ม่วงมารูน / เขียวขี้ม้า,ok,
+EX037,SUP-00009,แก้วกาแฟ มีหูจับข้าง 14oz,drinkware,0,,no_image,
+EX038,SUP-00009,แก้วไข่,drinkware,15,ม่วงอ่อน / ชมพู / ฟ้า / เทา / เขียวมิ้นต์ / ขาว / เขียวขี้ม้า / แดง / ส้ม / น้ำเงิน / ม่วง / เขียว / ดำ / กรมท่า / เทาเข้ม,ok,
+EX039,SUP-00009,แก้วทรงสตาร์บัค · ขอบดำ,drinkware,6,ชมพู / ดำ / ม่วงลาเวนเดอร์ / ฟ้า / ขาว / เงิน,ok,
+EX040,SUP-00009,แก้วทรงสตาร์บัค · ขอบทอง,drinkware,7,ชมพู / เหลือง / เขียวเซจ / ฟ้าเทอร์ควอยซ์ / ดำ / ขาว / ม่วงลาเวนเดอร์,ok,
+EX041,SUP-00009,กระบอกน้ำเก็บอุณหภูมิ (Smart LED),drinkware,6,ดำ / ทอง / ขาว/เงิน / เงิน / แดง / น้ำเงิน,ok,
+EX075,SUP-00009,แก้วทรงสูงเรียว ฝากระดกดำ · แถบยางจับกันลื่น,drinkware,10,ชมพู / ม่วง / ฟ้าอมเขียว / แดง / ขาว / ม่วงบานเย็น / ฟ้า / เขียวมะกอก / เทา / ดำ,new,NEW
+EX042,SUP-00011,เสื้อแจ็คเก็ต (Smooth Premium Jacket),garment,7,white / cream / khaki/taupe / olive green / navy / charcoal-blue / black,ok,
+EX044,SUP-00011,เสื้อโปโล CoolPlus CA,garment,9,navy / white / sky blue / black / turquoise/teal / royal blue / yellow / grey / maroon/dark red,ok,
+EX045,SUP-00011,เสื้อโปโล CoolPlus,garment,15,sky blue / white / light green / lime green / purple / violet/dark purple / black / royal blue / pink/magenta / light grey / charcoal / mint green / yellow / cyan/turquoise / blue,ok,
+EX046,SUP-00011,เสื้อโปโล (Micro-Polyester),garment,10,dark green / maroon/dark red / navy / light grey / purple / light blue / white / grey / black w/ blue collar trim / black w/ light-blue trim,ok,
+EX047,SUP-00011,ผ้ากันเปื้อน COMB-TWILL CLASSIC LOOP,garment,0,,no_image,
+EX048,SUP-00011,ผ้ากันเปื้อน รุ่น SMOOTH SOLON,garment,0,,no_image,
+EX049,SUP-00011,เสื้อช็อปแขนสั้น,garment,0,,no_image,
+EX050,SUP-00011,เสื้อช็อปแขนยาว,garment,0,,no_image,
+EX051,SUP-00011,เสื้อช็อป,garment,0,,no_image,
+EX052,SUP-00011,กางเกงช่าง,garment,0,,no_image,
+EX053,SUP-00011,หมวก พีชพรีเมียม แซนวิช,hat,0,,no_image,
+EX054,SUP-00011,หมวก บัคเคิ้ลบี (Buckle-B),hat,0,,no_image,
+EX055,SUP-00011,หมวก แซนวิช (Sandwich),hat,0,,no_image,
+EX076,SUP-00011,เสื้อแจ็คเก็ต Smart Premium (คอเชิ้ต/โค้ช),garment,2,charcoal/dark grey / navy/charcoal-blue,new,NEW
+EX077,SUP-00011,เสื้อแจ็คเก็ต Baseball Premium (วาร์ซิตี้),garment,4,black / navy / cream body + navy sleeves / cream body + green sleeves,new,NEW
+EX078,SUP-00011,เสื้อแจ็คเก็ต Simply (ทรงสลิม คอเชิ้ต/คอจีน),garment,3,black / charcoal/grey / khaki/brown,new,NEW
+EX079,SUP-00011,เสื้อยืดคอกลม Ultra Zoft Cotton,garment,9,off-white/sand / light brown/tan / white / royal blue / dark green / red / grey / black / navy,new,NEW
+EX080,SUP-00011,เสื้อยืดคอกลม UL Ultra Light New Regular,garment,3,white / black / navy,new,NEW
+EX081,SUP-00011,เสื้อโปโลขลิบปก (Micro Polyester),garment,11,white plain / white w/ navy trim / light grey w/ trim / light grey/blue collar / olive/army green w/ orange trim / charcoal w/ orange trim / blue w/ trim / navy plain / navy w/ red trim / black w/ red trim / black plain,new,NEW

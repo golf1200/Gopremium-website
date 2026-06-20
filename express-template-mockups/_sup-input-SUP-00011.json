@@ -1,0 +1,70 @@
+{
+ "supplier": "SUP-00011",
+ "sup_name": "PMK polomaker",
+ "skus": [
+  {
+   "sku": "EX042",
+   "name": "เสื้อแจ็คเก็ต"
+  },
+  {
+   "sku": "EX044",
+   "name": "เสื้อโปโล CoolPlus CA"
+  },
+  {
+   "sku": "EX045",
+   "name": "เสื้อโปโล CoolPlus"
+  },
+  {
+   "sku": "EX046",
+   "name": "เสื้อโปโล"
+  },
+  {
+   "sku": "EX047",
+   "name": "ผ้ากันเปื้อน COMB-TWILL CLASSIC LOOP"
+  },
+  {
+   "sku": "EX048",
+   "name": "ผ้ากันเปื้อน รุ่น SMOOTH SOLON"
+  },
+  {
+   "sku": "EX049",
+   "name": "เสื้อช็อปแขนสั้น"
+  },
+  {
+   "sku": "EX050",
+   "name": "เสื้อช็อปแขนยาว"
+  },
+  {
+   "sku": "EX051",
+   "name": "เสื้อช็อป"
+  },
+  {
+   "sku": "EX052",
+   "name": "กางเกงช่าง"
+  },
+  {
+   "sku": "EX053",
+   "name": "หมวก พีชพรีเมียม แซนวิช"
+  },
+  {
+   "sku": "EX054",
+   "name": "หมวก บัคเคิ้ลบี (Buckle-B)"
+  },
+  {
+   "sku": "EX055",
+   "name": "หมวก แซนวิช (Sandwich)"
+  }
+ ],
+ "drive_images": [
+  "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/express-assets/_source/_drive/SUP-00011 PMK polomaker (เสื้อ หมวก)/617095741021618883.jpg",
+  "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/express-assets/_source/_drive/SUP-00011 PMK polomaker (เสื้อ หมวก)/617095741055172943.jpg",
+  "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/express-assets/_source/_drive/SUP-00011 PMK polomaker (เสื้อ หมวก)/617095741257023490.jpg",
+  "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/express-assets/_source/_drive/SUP-00011 PMK polomaker (เสื้อ หมวก)/617095741306831293.jpg",
+  "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/express-assets/_source/_drive/SUP-00011 PMK polomaker (เสื้อ หมวก)/617095773602971846.jpg",
+  "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/express-assets/_source/_drive/SUP-00011 PMK polomaker (เสื้อ หมวก)/617095773603758561.jpg",
+  "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/express-assets/_source/_drive/SUP-00011 PMK polomaker (เสื้อ หมวก)/617095803450163408.jpg",
+  "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/express-assets/_source/_drive/SUP-00011 PMK polomaker (เสื้อ หมวก)/617095803517534535.jpg",
+  "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/express-assets/_source/_drive/SUP-00011 PMK polomaker (เสื้อ หมวก)/617095803534311767.jpg",
+  "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/express-assets/_source/_drive/SUP-00011 PMK polomaker (เสื้อ หมวก)/617095803685306389.jpg"
+ ]
+}

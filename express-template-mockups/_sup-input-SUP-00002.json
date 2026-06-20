@@ -1,0 +1,23 @@
+{
+ "supplier": "SUP-00002",
+ "sup_name": "Lovelovebottle",
+ "skus": [
+  {
+   "sku": "EX004",
+   "name": "กระบอกน้ำพลาสติก"
+  },
+  {
+   "sku": "EX005",
+   "name": "กระบอกน้ำสแตนเลส"
+  },
+  {
+   "sku": "EX006",
+   "name": "แก้วพร้อมปลอก"
+  }
+ ],
+ "drive_images": [
+  "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/express-assets/_source/_drive/SUP-00002 Lovelovebottle (กระบอกน้ำ)/05-090-RE.jpg",
+  "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/express-assets/_source/_drive/SUP-00002 Lovelovebottle (กระบอกน้ำ)/LINE_ALBUM_รูปขวดไม่มีลาย_250903_5_0.jpg",
+  "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/express-assets/_source/_drive/SUP-00002 Lovelovebottle (กระบอกน้ำ)/LINE_ALBUM_รูปเก่งถ่าย 3_260327_1.jpg"
+ ]
+}

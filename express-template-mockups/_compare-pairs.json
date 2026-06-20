@@ -1,0 +1,306 @@
+[
+ {
+  "sku": "EX001",
+  "name": "เสื้อยืดแขนสั้น",
+  "old_catalog": "express-template-mockups/_backup-live-squares/ex001-garment-square.jpg",
+  "new_raw": "public/images/products/ex001-garment/ex001-garment-square.jpg",
+  "old_ok": true,
+  "new_ok": true
+ },
+ {
+  "sku": "EX002",
+  "name": "เสื้อยืดแขนยาว",
+  "old_catalog": "express-template-mockups/_backup-live-squares/ex002-garment-square.jpg",
+  "new_raw": "public/images/products/ex002-garment/ex002-garment-square.jpg",
+  "old_ok": true,
+  "new_ok": true
+ },
+ {
+  "sku": "EX003",
+  "name": "เสื้อยืด",
+  "old_catalog": "express-template-mockups/_backup-live-squares/ex003-garment-square.jpg",
+  "new_raw": "public/images/products/ex003-garment/ex003-garment-square.jpg",
+  "old_ok": true,
+  "new_ok": true
+ },
+ {
+  "sku": "EX004",
+  "name": "กระบอกน้ำพลาสติก",
+  "old_catalog": "express-template-mockups/_backup-live-squares/ex004-drinkware-square.jpg",
+  "new_raw": "public/images/products/ex004-drinkware/ex004-drinkware-square.jpg",
+  "old_ok": true,
+  "new_ok": true
+ },
+ {
+  "sku": "EX005",
+  "name": "กระบอกน้ำสแตนเลส",
+  "old_catalog": "express-template-mockups/_backup-live-squares/ex005-drinkware-square.jpg",
+  "new_raw": "public/images/products/ex005-drinkware/ex005-drinkware-square.jpg",
+  "old_ok": true,
+  "new_ok": true
+ },
+ {
+  "sku": "EX006",
+  "name": "แก้วพร้อมปลอก",
+  "old_catalog": "express-template-mockups/_backup-live-squares/ex006-drinkware-square.jpg",
+  "new_raw": "public/images/products/ex006-drinkware/ex006-drinkware-square.jpg",
+  "old_ok": true,
+  "new_ok": true
+ },
+ {
+  "sku": "EX008",
+  "name": "-หมวกตาข่าย -หมวกปีกแข็ง -หมวกบักเก็ต -หมวกคลุมหน้า",
+  "old_catalog": "express-template-mockups/_backup-live-squares/ex008-hat-square.jpg",
+  "new_raw": "public/images/products/ex008-hat/ex008-hat-square.jpg",
+  "old_ok": true,
+  "new_ok": true
+ },
+ {
+  "sku": "EX009",
+  "name": "หมวกแก๊ปผ้าลีวาย",
+  "old_catalog": "express-template-mockups/_backup-live-squares/ex009-hat-square.jpg",
+  "new_raw": "public/images/products/ex009-hat/ex009-hat-square.jpg",
+  "old_ok": true,
+  "new_ok": true
+ },
+ {
+  "sku": "EX019",
+  "name": "ร่มกอล์ฟ 30 นิ้ว 2ชั้น",
+  "old_catalog": "express-template-mockups/_backup-live-squares/ex019-umbrella-square.jpg",
+  "new_raw": "public/images/products/ex019-umbrella/ex019-umbrella-square.jpg",
+  "old_ok": true,
+  "new_ok": true
+ },
+ {
+  "sku": "EX025",
+  "name": "แก้วเยติ 20 oz (กล่องสีนํ้าตาล ฟู๊ดเกรด)",
+  "old_catalog": "express-template-mockups/_backup-live-squares/ex025-drinkware-square.jpg",
+  "new_raw": "public/images/products/ex025-drinkware/ex025-drinkware-square.jpg",
+  "old_ok": true,
+  "new_ok": true
+ },
+ {
+  "sku": "EX026",
+  "name": "แก้วเยติ 20 oz ( กล่องสีขาว )",
+  "old_catalog": "express-template-mockups/_backup-live-squares/ex026-drinkware-square.jpg",
+  "new_raw": "public/images/products/ex026-drinkware/ex026-drinkware-square.jpg",
+  "old_ok": true,
+  "new_ok": true
+ },
+ {
+  "sku": "EX027",
+  "name": "แก้วเยติ 20 oz ( กล่องสีขาว ) YW",
+  "old_catalog": "express-template-mockups/_backup-live-squares/ex027-drinkware-square.jpg",
+  "new_raw": "public/images/products/ex027-drinkware/ex027-drinkware-square.jpg",
+  "old_ok": true,
+  "new_ok": true
+ },
+ {
+  "sku": "EX029",
+  "name": "แก้วเก็บความเย็น 30 oz ทรงสูง (ฝาเกลียว)",
+  "old_catalog": "express-template-mockups/_backup-live-squares/ex029-drinkware-square.jpg",
+  "new_raw": "public/images/products/ex029-drinkware/ex029-drinkware-square.jpg",
+  "old_ok": true,
+  "new_ok": true
+ },
+ {
+  "sku": "EX030",
+  "name": "แก้วเก็บความเย็น 30 oz ทรงสูง (หูโค้ง)",
+  "old_catalog": "express-template-mockups/_backup-live-squares/ex030-drinkware-square.jpg",
+  "new_raw": "public/images/products/ex030-drinkware/ex030-drinkware-square.jpg",
+  "old_ok": true,
+  "new_ok": true
+ },
+ {
+  "sku": "EX031",
+  "name": "แก้วเก็บความเย็น 30oz ทรงสูง (หูเหลี่ยม)",
+  "old_catalog": "express-template-mockups/_backup-live-squares/ex031-drinkware-square.jpg",
+  "new_raw": "public/images/products/ex031-drinkware/ex031-drinkware-square.jpg",
+  "old_ok": true,
+  "new_ok": true
+ },
+ {
+  "sku": "EX032",
+  "name": "แก้วกาแฟ coffee",
+  "old_catalog": "express-template-mockups/_backup-live-squares/ex032-drinkware-square.jpg",
+  "new_raw": "public/images/products/ex032-drinkware/ex032-drinkware-square.jpg",
+  "old_ok": true,
+  "new_ok": true
+ },
+ {
+  "sku": "EX033",
+  "name": "แก้วเยติ 20 oz ทรงอ้วน (ฝาเกลียว)",
+  "old_catalog": "express-template-mockups/_backup-live-squares/ex033-drinkware-square.jpg",
+  "new_raw": "public/images/products/ex033-drinkware/ex033-drinkware-square.jpg",
+  "old_ok": true,
+  "new_ok": true
+ },
+ {
+  "sku": "EX034",
+  "name": "แก้วเยติ 20 oz ทรงอ้วน (หูเหลี่ยม)",
+  "old_catalog": "express-template-mockups/_backup-live-squares/ex034-drinkware-square.jpg",
+  "new_raw": "public/images/products/ex034-drinkware/ex034-drinkware-square.jpg",
+  "old_ok": true,
+  "new_ok": true
+ },
+ {
+  "sku": "EX035",
+  "name": "แก้ว 20 oz ทรงอ้วน (หูโค้ง)",
+  "old_catalog": "express-template-mockups/_backup-live-squares/ex035-drinkware-square.jpg",
+  "new_raw": "public/images/products/ex035-drinkware/ex035-drinkware-square.jpg",
+  "old_ok": true,
+  "new_ok": true
+ },
+ {
+  "sku": "EX036",
+  "name": "กระบอกนํ้าทรงสปอร์ต Active",
+  "old_catalog": "express-template-mockups/_backup-live-squares/ex036-drinkware-square.jpg",
+  "new_raw": "public/images/products/ex036-drinkware/ex036-drinkware-square.jpg",
+  "old_ok": true,
+  "new_ok": true
+ },
+ {
+  "sku": "EX037",
+  "name": "แก้วกาแฟ มีหูจับข้าง 14 oz",
+  "old_catalog": "express-template-mockups/_backup-live-squares/ex037-drinkware-square.jpg",
+  "new_raw": "public/images/products/ex037-drinkware/ex037-drinkware-square.jpg",
+  "old_ok": true,
+  "new_ok": true
+ },
+ {
+  "sku": "EX038",
+  "name": "แก้วไข่",
+  "old_catalog": "express-template-mockups/_backup-live-squares/ex038-drinkware-square.jpg",
+  "new_raw": "public/images/products/ex038-drinkware/ex038-drinkware-square.jpg",
+  "old_ok": true,
+  "new_ok": true
+ },
+ {
+  "sku": "EX039",
+  "name": "แก้วทรงสตาร์บัค ขอบดํา",
+  "old_catalog": "express-template-mockups/_backup-live-squares/ex039-drinkware-square.jpg",
+  "new_raw": "public/images/products/ex039-drinkware/ex039-drinkware-square.jpg",
+  "old_ok": true,
+  "new_ok": true
+ },
+ {
+  "sku": "EX040",
+  "name": "แก้วทรงสตาร์บัค ขอบทอง",
+  "old_catalog": "express-template-mockups/_backup-live-squares/ex040-drinkware-square.jpg",
+  "new_raw": "public/images/products/ex040-drinkware/ex040-drinkware-square.jpg",
+  "old_ok": true,
+  "new_ok": true
+ },
+ {
+  "sku": "EX041",
+  "name": "กระบอกนํ้าเก็บอุณหภูมิ",
+  "old_catalog": "express-template-mockups/_backup-live-squares/ex041-drinkware-square.jpg",
+  "new_raw": "public/images/products/ex041-drinkware/ex041-drinkware-square.jpg",
+  "old_ok": true,
+  "new_ok": true
+ },
+ {
+  "sku": "EX042",
+  "name": "เสื้อแจ็คเก็ต",
+  "old_catalog": "express-template-mockups/_backup-live-squares/ex042-garment-square.jpg",
+  "new_raw": "public/images/products/ex042-garment/ex042-garment-square.jpg",
+  "old_ok": true,
+  "new_ok": true
+ },
+ {
+  "sku": "EX044",
+  "name": "เสื้อโปโล CoolPlus CA",
+  "old_catalog": "express-template-mockups/_backup-live-squares/ex044-garment-square.jpg",
+  "new_raw": "public/images/products/ex044-garment/ex044-garment-square.jpg",
+  "old_ok": true,
+  "new_ok": true
+ },
+ {
+  "sku": "EX045",
+  "name": "เสื้อโปโล CoolPlus",
+  "old_catalog": "express-template-mockups/_backup-live-squares/ex045-garment-square.jpg",
+  "new_raw": "public/images/products/ex045-garment/ex045-garment-square.jpg",
+  "old_ok": true,
+  "new_ok": true
+ },
+ {
+  "sku": "EX046",
+  "name": "เสื้อโปโล",
+  "old_catalog": "express-template-mockups/_backup-live-squares/ex046-garment-square.jpg",
+  "new_raw": "public/images/products/ex046-garment/ex046-garment-square.jpg",
+  "old_ok": true,
+  "new_ok": true
+ },
+ {
+  "sku": "EX047",
+  "name": "ผ้ากันเปื้อน COMB-TWILL CLASSIC LOOP",
+  "old_catalog": "express-template-mockups/_backup-live-squares/ex047-garment-square.jpg",
+  "new_raw": "public/images/products/ex047-garment/ex047-garment-square.jpg",
+  "old_ok": true,
+  "new_ok": true
+ },
+ {
+  "sku": "EX048",
+  "name": "ผ้ากันเปื้อน รุ่น SMOOTH SOLON",
+  "old_catalog": "express-template-mockups/_backup-live-squares/ex048-garment-square.jpg",
+  "new_raw": "public/images/products/ex048-garment/ex048-garment-square.jpg",
+  "old_ok": true,
+  "new_ok": true
+ },
+ {
+  "sku": "EX049",
+  "name": "เสื้อช็อปแขนสั้น",
+  "old_catalog": "express-template-mockups/_backup-live-squares/ex049-garment-square.jpg",
+  "new_raw": "public/images/products/ex049-garment/ex049-garment-square.jpg",
+  "old_ok": true,
+  "new_ok": true
+ },
+ {
+  "sku": "EX050",
+  "name": "เสื้อช็อปแขนยาว",
+  "old_catalog": "express-template-mockups/_backup-live-squares/ex050-garment-square.jpg",
+  "new_raw": "public/images/products/ex050-garment/ex050-garment-square.jpg",
+  "old_ok": true,
+  "new_ok": true
+ },
+ {
+  "sku": "EX051",
+  "name": "เสื้อช็อป",
+  "old_catalog": "express-template-mockups/_backup-live-squares/ex051-garment-square.jpg",
+  "new_raw": "public/images/products/ex051-garment/ex051-garment-square.jpg",
+  "old_ok": true,
+  "new_ok": true
+ },
+ {
+  "sku": "EX052",
+  "name": "กางเกงช่าง",
+  "old_catalog": "express-template-mockups/_backup-live-squares/ex052-garment-square.jpg",
+  "new_raw": "public/images/products/ex052-garment/ex052-garment-square.jpg",
+  "old_ok": true,
+  "new_ok": true
+ },
+ {
+  "sku": "EX053",
+  "name": "หมวก พีชพรีเมียม แซนวิช",
+  "old_catalog": "express-template-mockups/_backup-live-squares/ex053-hat-square.jpg",
+  "new_raw": "public/images/products/ex053-hat/ex053-hat-square.jpg",
+  "old_ok": true,
+  "new_ok": true
+ },
+ {
+  "sku": "EX054",
+  "name": "หมวก บัคเคิ้ลบี (Buckle-B)",
+  "old_catalog": "express-template-mockups/_backup-live-squares/ex054-hat-square.jpg",
+  "new_raw": "public/images/products/ex054-hat/ex054-hat-square.jpg",
+  "old_ok": true,
+  "new_ok": true
+ },
+ {
+  "sku": "EX055",
+  "name": "หมวก แซนวิช (Sandwich)",
+  "old_catalog": "express-template-mockups/_backup-live-squares/ex055-hat-square.jpg",
+  "new_raw": "public/images/products/ex055-hat/ex055-hat-square.jpg",
+  "old_ok": true,
+  "new_ok": true
+ }
+]

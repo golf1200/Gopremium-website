@@ -1,0 +1,49 @@
+{
+  "supplier": "SUP-00002",
+  "sup_name": "Lovelovebottle",
+  "existing": [
+    {
+      "sku": "EX004",
+      "name_final": "กระบอกน้ำพลาสติก",
+      "category_slug": "drinkware",
+      "colors": ["clear / transparent (ใส) with black lid"],
+      "status": "weak",
+      "needs_supplier": true,
+      "photo_request": "ขวดพลาสติกใส ทรงกระบอกตรง ฝาเกลียวสีดำ มีภาพเดียว ไม่มี group shot และมีแค่สีใส 1 แบบ — ขอ lineup สีเพิ่ม + ระบุความจุ (ml) จากซัพพลายเออร์ ก่อนทำ mockup เต็มรูปแบบ"
+    },
+    {
+      "sku": "EX005",
+      "name_final": "กระบอกน้ำสแตนเลส",
+      "category_slug": "drinkware",
+      "colors": ["terracotta / brick red (แดงอิฐ)"],
+      "status": "ok",
+      "needs_supplier": true,
+      "photo_request": "Travel Tumbler สแตนเลส 500ml double-wall ฝาเกลียวมีหูหิ้ว พร้อมกล่อง ภาพชัดเจนแต่มีแค่สีแดงอิฐ 1 สี — ขอ lineup สีอื่นเพิ่มจากซัพพลายเออร์"
+    },
+    {
+      "sku": "EX006",
+      "name_final": "แก้วพร้อมปลอก",
+      "category_slug": "drinkware",
+      "colors": [
+        "brown / tan (น้ำตาล)",
+        "navy / dark blue (กรมท่า)",
+        "grey (เทา)",
+        "caramel / light brown (น้ำตาลอ่อน)",
+        "beige / cream (เบจครีม)",
+        "pink (ชมพู)",
+        "red (แดง)",
+        "pastel yellow (เหลืองพาสเทล)",
+        "off-white / ivory (ขาวงาช้าง)",
+        "mint green (เขียวมิ้นต์)"
+      ],
+      "status": "ok",
+      "needs_supplier": false,
+      "photo_request": ""
+    }
+  ],
+  "new_models": [],
+  "photo_requests": [
+    "EX004 กระบอกน้ำพลาสติกใส: ขอ lineup สี + ความจุ (ml) — ปัจจุบันมีภาพเดียว/สีใสเดียว",
+    "EX005 กระบอกน้ำสแตนเลส travel tumbler 500ml: ขอ lineup สีอื่นเพิ่มเติม — ปัจจุบันมีแค่สีแดงอิฐ"
+  ]
+}

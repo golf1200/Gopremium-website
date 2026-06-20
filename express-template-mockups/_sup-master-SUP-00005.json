@@ -1,0 +1,223 @@
+{
+  "supplier": "SUP-00005",
+  "sup_name": "New Fly (ร่ม / Umbrellas)",
+  "existing": [
+    {
+      "sku": "EX019",
+      "name_final": "ร่มกอล์ฟ 30 นิ้ว 2 ชั้น (สลับสี 2 โทน)",
+      "category_slug": "umbrella",
+      "type": "golf",
+      "size_inch": "30",
+      "colors": [
+        "navy+white",
+        "yellow+black",
+        "green+white",
+        "orange+white",
+        "red+white",
+        "blue+white"
+      ],
+      "status": "ok",
+      "needs_supplier": false,
+      "photo_request": ""
+    }
+  ],
+  "new_models": [
+    {
+      "temp_id": "NEW-SUP-00005-1",
+      "proposed_name_th": "ร่มพับ 3 ตอน UV สีพื้น",
+      "category_slug": "umbrella",
+      "type": "3-fold",
+      "size_inch": "",
+      "colors": [
+        "black",
+        "navy",
+        "royal blue",
+        "sky blue",
+        "teal",
+        "green",
+        "lime green",
+        "yellow",
+        "orange",
+        "red",
+        "maroon/burgundy",
+        "pink",
+        "magenta",
+        "purple",
+        "grey",
+        "white",
+        "brown"
+      ],
+      "source_file": "Screenshot 2026-06-05 155149.png",
+      "note": "Compact 3-fold folding umbrella with UV coating; ~17-color solid lineup. Wholesale 55 baht/pc. Watermarked color-sheet source — studio re-shoot recommended."
+    },
+    {
+      "temp_id": "NEW-SUP-00005-2",
+      "proposed_name_th": "ร่มพับ 4 ตอน UV ดำ สีพื้น",
+      "category_slug": "umbrella",
+      "type": "4-fold",
+      "size_inch": "",
+      "colors": [
+        "grey/silver",
+        "navy",
+        "royal blue",
+        "sky blue",
+        "green",
+        "yellow",
+        "pink",
+        "magenta",
+        "purple",
+        "red",
+        "wine/maroon",
+        "black"
+      ],
+      "source_file": "Screenshot 2026-06-05 155159.png",
+      "note": "Compact 4-fold folding umbrella with black UV-coated underside; ~12-color solid lineup. Wholesale 75 baht/pc."
+    },
+    {
+      "temp_id": "NEW-SUP-00005-3",
+      "proposed_name_th": "ร่ม 5 ตอน มินิ UV ดำ",
+      "category_slug": "umbrella",
+      "type": "5-fold",
+      "size_inch": "",
+      "colors": [
+        "black",
+        "white",
+        "mint green",
+        "light blue",
+        "pink",
+        "lavender/purple"
+      ],
+      "source_file": "Screenshot 2026-06-05 155213.png",
+      "note": "Ultra-compact 5-fold mini pocket umbrella with black UV-coated underside; pastel + black tones, ~6 colors. Wholesale 145 baht/pc."
+    },
+    {
+      "temp_id": "NEW-SUP-00005-4",
+      "proposed_name_th": "ร่ม 22 นิ้ว สีพื้น (ออโต้)",
+      "category_slug": "umbrella",
+      "type": "auto",
+      "size_inch": "22",
+      "colors": [
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "sky blue",
+        "navy",
+        "purple",
+        "magenta",
+        "pink",
+        "white",
+        "grey",
+        "black"
+      ],
+      "source_file": "Screenshot 2026-06-05 155430.png",
+      "note": "22-inch straight auto-open umbrella, solid colors, Thai color names labeled in source, ~12 colors. Wholesale 50 baht/pc."
+    },
+    {
+      "temp_id": "NEW-SUP-00005-5",
+      "proposed_name_th": "ร่มแบบใส (โดมใส + สีใส)",
+      "category_slug": "umbrella",
+      "type": "transparent",
+      "size_inch": "",
+      "colors": [
+        "clear/transparent",
+        "transparent pink",
+        "transparent magenta",
+        "transparent yellow/lime",
+        "transparent mint/teal",
+        "transparent blue"
+      ],
+      "source_file": "Screenshot 2026-06-05 155512.png",
+      "note": "Clear dome long-straight umbrella plus 5 tinted-transparent variants. Wholesale 50 baht/pc. Source is a partial banner crop — re-shoot strongly recommended for catalogue."
+    },
+    {
+      "temp_id": "NEW-SUP-00005-6",
+      "proposed_name_th": "ร่มไม้เท้า 16 ก้าน สีพื้น",
+      "category_slug": "umbrella",
+      "type": "cane",
+      "size_inch": "",
+      "colors": [
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "teal",
+        "blue",
+        "sky blue",
+        "purple",
+        "magenta",
+        "pink",
+        "brown",
+        "black",
+        "white/cream"
+      ],
+      "source_file": "Screenshot 2026-06-05 155559.png",
+      "note": "DEDUPED: merges Screenshot 155559 (85 baht, 10 colors) and Screenshot 155632 (80 baht, 10 assorted bright/pastel colors) — same 16-rib cane / walking-stick body with J-handle. Combined color range. Two price points (80/85 baht) in source: confirm with supplier whether this is one SKU or two price/quality tiers."
+    },
+    {
+      "temp_id": "NEW-SUP-00005-7",
+      "proposed_name_th": "ร่มกอล์ฟ 28 นิ้ว ออโต้ สีพื้น",
+      "category_slug": "umbrella",
+      "type": "golf",
+      "size_inch": "28",
+      "colors": [
+        "red",
+        "grey",
+        "black",
+        "silver/white",
+        "navy",
+        "dark grey",
+        "orange",
+        "blue",
+        "green"
+      ],
+      "source_file": "Screenshot 2026-06-05 155733.png",
+      "note": "28-inch AUTO-open golf umbrella, single-layer solid colors, ~9 colors. Wholesale 150 baht/pc. Distinct from EX019 (30in/2-layer two-tone) and from the 30in manual model below."
+    },
+    {
+      "temp_id": "NEW-SUP-00005-8",
+      "proposed_name_th": "ร่มกอล์ฟ 30 นิ้ว มือเปิด สีพื้น",
+      "category_slug": "umbrella",
+      "type": "golf",
+      "size_inch": "30",
+      "colors": [
+        "teal",
+        "navy",
+        "sky blue",
+        "purple",
+        "blue",
+        "green",
+        "grey",
+        "orange",
+        "red"
+      ],
+      "source_file": "Screenshot 2026-06-05 160815.png",
+      "note": "30-inch manual-open SINGLE-layer golf umbrella, solid colors, ~9 colors. Wholesale 130 baht/pc. Shares 30in size with EX019 but is single-layer (vs EX019 '2 ชั้น' two-tone) — kept separate. CONFIRM with supplier whether this should become EX019's solid-color option or a standalone sibling SKU."
+    },
+    {
+      "temp_id": "NEW-SUP-00005-9",
+      "proposed_name_th": "ร่มกลับด้าน C-handle (2 ชั้น)",
+      "category_slug": "umbrella",
+      "type": "reverse",
+      "size_inch": "",
+      "colors": [
+        "black",
+        "purple",
+        "grey",
+        "wine/burgundy",
+        "pink",
+        "blue",
+        "orange"
+      ],
+      "source_file": "Screenshot 2026-06-05 160824.png",
+      "note": "Reverse/inverted double-layer umbrella with hands-free C-shaped handle; black exterior + colored interior, ~7 color combos. Wholesale 160 baht/pc. Clearly distinct model."
+    }
+  ],
+  "photo_requests": [
+    "All 9 new models: request clean studio re-shoots — source images are watermarked New Fly 'ร่มนิวฟลาย' color-lineup banners, not catalogue-ready.",
+    "ร่มแบบใส (NEW-SUP-00005-5): source is only a partial banner crop — full open + folded studio shots required.",
+    "ร่มกลับด้าน (NEW-SUP-00005-9): capture both open exterior (black) and interior (colored) plus the C-handle hands-free pose.",
+    "EX019: already covered by real-photo JPG albums (no new request needed)."
+  ],
+  "completeness_note": "10 distinct umbrella MODELS confirmed from 12 source images (10 banner screenshots + 2 real-photo JPG albums). EX019 is the only existing SKU and is fully covered by its own real-photo JPGs. 9 models need NEW SKUs. DEDUP applied: the two 16-rib cane banners (155559 @85฿, 155632 @80฿) merged into ONE model (same body, flagged for supplier to confirm 1 vs 2 SKUs); the two LINE_ALBUM JPGs both belong to EX019. Open question: whether the 30in manual single-layer (130฿) is EX019's solid variant or a separate SKU."
+}

@@ -1,0 +1,27 @@
+{
+ "supplier": "SUP-00001",
+ "sup_name": "สมานการ์เม้นท์สำเพ็ง",
+ "skus": [
+  {
+   "sku": "EX001",
+   "name": "เสื้อยืดแขนสั้น"
+  },
+  {
+   "sku": "EX002",
+   "name": "เสื้อยืดแขนยาว"
+  },
+  {
+   "sku": "EX003",
+   "name": "เสื้อยืด"
+  }
+ ],
+ "drive_images": [
+  "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/express-assets/_source/_drive/SUP-00001  สมานการ์เม้นท์ (เสื้อยืด)/692134(1).jpg",
+  "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/express-assets/_source/_drive/SUP-00001  สมานการ์เม้นท์ (เสื้อยืด)/692979_0.jpg",
+  "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/express-assets/_source/_drive/SUP-00001  สมานการ์เม้นท์ (เสื้อยืด)/725548.jpg",
+  "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/express-assets/_source/_drive/SUP-00001  สมานการ์เม้นท์ (เสื้อยืด)/S__1966211_0.jpg",
+  "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/express-assets/_source/_drive/SUP-00001  สมานการ์เม้นท์ (เสื้อยืด)/S__1966212_0.jpg",
+  "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/express-assets/_source/_drive/SUP-00001  สมานการ์เม้นท์ (เสื้อยืด)/S__39190599.jpg",
+  "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/express-assets/_source/_drive/SUP-00001  สมานการ์เม้นท์ (เสื้อยืด)/S__39190613.jpg"
+ ]
+}

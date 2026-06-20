@@ -1,0 +1,102 @@
+{
+  "supplier": "SUP-00002",
+  "sup_name": "Lovelovebottle",
+  "images": [
+    {
+      "file": "05-090-RE.jpg",
+      "model_desc_th": "กระบอกน้ำสแตนเลสเก็บความเย็น (Travel Tumbler) ทรงกระบอกตรง ผิวเคลือบด้าน ฝาเกลียวพร้อมหูหิ้วสำหรับพกพา ผนังสองชั้น (double walled) พร้อมกล่องแพ็กเกจ TRAVEL TUMBLER",
+      "shape": "steel-bottle",
+      "capacity": "500ml",
+      "lid": "screw",
+      "is_color_lineup": false,
+      "colors": ["terracotta / brick red (แดงอิฐ)"],
+      "best_sku": "EX005",
+      "alt_sku": "",
+      "confidence": "high",
+      "note": "ภาพโปรโมท ระบุชัด 'กระบอกน้ำ สแตนเลส' 500 ml. ราคา 120฿ สกรีนโลโก้ฟรี. แสดง inset ฝาหูหิ้ว, ในฝา, และปากกระบอกสแตนเลส. แสดงเพียงสีเดียว (แดงอิฐ) — ควรขอสีอื่นจากซัพพลายเออร์เพิ่ม"
+    },
+    {
+      "file": "LINE_ALBUM_รูปขวดไม่มีลาย_250903_5_0.jpg",
+      "model_desc_th": "กระบอกน้ำพลาสติกใส ทรงกระบอกตรง เนื้อใส (Tritan-like) ฝาเกลียวสีดำ ปากกว้าง ไม่มีลาย ถ่ายบนพื้นสตูดิโอสีขาว",
+      "shape": "other",
+      "capacity": "unknown",
+      "lid": "screw",
+      "is_color_lineup": false,
+      "colors": ["clear / transparent (ใส) with black lid"],
+      "best_sku": "EX004",
+      "alt_sku": "",
+      "confidence": "high",
+      "note": "ขวดพลาสติกใสฝาดำ — ตรงกับ EX004 'กระบอกน้ำพลาสติก'. เป็นภาพตัวอย่างเปล่าไม่มีลาย (ไว้สกรีนโลโก้). มีเพียงสีใส 1 แบบในภาพ ควรขอ lineup สีจริงเพิ่ม"
+    },
+    {
+      "file": "LINE_ALBUM_รูปเก่งถ่าย 3_260327_1.jpg",
+      "model_desc_th": "แก้วน้ำแก้วใส (glass cup) พร้อมปลอกหนัง PU หุ้มกลางลำตัว ฝาแก้วใสพร้อมหลอดสแตนเลส กรุ๊ปช็อต 11 ใบ เรียงโชว์หลายสีปลอก",
+      "shape": "glass-cup",
+      "capacity": "unknown",
+      "lid": "straw",
+      "is_color_lineup": true,
+      "colors": [
+        "brown / tan (น้ำตาล)",
+        "navy / dark blue (กรมท่า)",
+        "grey (เทา)",
+        "caramel / light brown (น้ำตาลอ่อน)",
+        "beige / cream (เบจครีม)",
+        "pink (ชมพู)",
+        "tan-brown (น้ำตาลแทน)",
+        "red (แดง)",
+        "pastel yellow (เหลืองพาสเทล)",
+        "off-white / ivory (ขาวงาช้าง)",
+        "mint green (เขียวมิ้นต์)"
+      ],
+      "best_sku": "EX006",
+      "alt_sku": "",
+      "confidence": "high",
+      "note": "แก้วใสพร้อมปลอกหนัง = ตรงกับ EX006 'แก้วพร้อมปลอก'. เป็น group shot โชว์ครบ 11 สีปลอก (แถวบน 4 + แถวกลาง 4 + แถวล่าง 3). ฝาเป็นฝาใสมีหลอดสแตนเลส (straw lid)"
+    }
+  ],
+  "skus": [
+    {
+      "sku": "EX004",
+      "name": "กระบอกน้ำพลาสติก",
+      "matched_files": ["LINE_ALBUM_รูปขวดไม่มีลาย_250903_5_0.jpg"],
+      "all_colors": ["clear / transparent (ใส) with black lid"],
+      "has_group_shot": false,
+      "status": "weak",
+      "needs_supplier": true,
+      "note": "มีภาพเดียว (ขวดใสฝาดำ บนพื้นขาว) ไม่มี group shot และไม่มี lineup สี ควรขอภาพหลายสี + ระบุความจุจากซัพพลายเออร์"
+    },
+    {
+      "sku": "EX005",
+      "name": "กระบอกน้ำสแตนเลส",
+      "matched_files": ["05-090-RE.jpg"],
+      "all_colors": ["terracotta / brick red (แดงอิฐ)"],
+      "has_group_shot": false,
+      "status": "ok",
+      "needs_supplier": true,
+      "note": "ภาพโปรโมทชัดเจน 500ml ฝาหูหิ้ว double-wall สแตนเลส ตรงกับ SKU แต่มีเพียงสีแดงอิฐ ควรขอ lineup สีอื่น"
+    },
+    {
+      "sku": "EX006",
+      "name": "แก้วพร้อมปลอก",
+      "matched_files": ["LINE_ALBUM_รูปเก่งถ่าย 3_260327_1.jpg"],
+      "all_colors": [
+        "brown / tan (น้ำตาล)",
+        "navy / dark blue (กรมท่า)",
+        "grey (เทา)",
+        "caramel / light brown (น้ำตาลอ่อน)",
+        "beige / cream (เบจครีม)",
+        "pink (ชมพู)",
+        "tan-brown (น้ำตาลแทน)",
+        "red (แดง)",
+        "pastel yellow (เหลืองพาสเทล)",
+        "off-white / ivory (ขาวงาช้าง)",
+        "mint green (เขียวมิ้นต์)"
+      ],
+      "has_group_shot": true,
+      "status": "ok",
+      "needs_supplier": false,
+      "note": "Group shot ครบ 11 สีปลอกหนัง พร้อมฝา+หลอดสแตนเลส ตรงกับ SKU สมบูรณ์ที่สุด"
+    }
+  ],
+  "models_without_sku": []
+}

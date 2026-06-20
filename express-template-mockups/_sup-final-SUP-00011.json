@@ -1,0 +1,156 @@
+{
+  "supplier": "SUP-00011",
+  "final_sku_map": [
+    {
+      "sku": "EX042",
+      "name": "เสื้อแจ็คเก็ต",
+      "primary_group_file": "617095741021618883.jpg",
+      "colors": ["white (M05JBSP07)", "cream (M05JBSP04)", "khaki/taupe (M05JBSP05)", "olive green (M05JBSP06)", "navy (M05JBSP03)", "grey-navy/charcoal-blue (M05JBSP02)", "black (M05JBSP01)"],
+      "status": "ok",
+      "needs_supplier": false,
+      "note": "VERIFIED. Primary = SMOOTH PREMIUM JACKET (M05JBSP) bomber, 7 colours. One generic jacket SKU but supplier sent 4 distinct jacket MODELS; the other 3 (Smart coach M05JSMS, Baseball varsity M05JBP, Simply slim M05JSP/JSPC) are listed under models_without_sku as split/new-SKU candidates. User must confirm which model EX042 represents or split."
+    },
+    {
+      "sku": "EX044",
+      "name": "เสื้อโปโล CoolPlus CA",
+      "primary_group_file": "617095803534311767.jpg",
+      "colors": ["navy (01CA008)", "white (01CA001)", "sky blue (01CA006)", "black (01CA009)", "turquoise/teal (01CA014)", "royal blue (01CA020)", "yellow (01CA021)", "grey (01CA033)", "maroon/dark red (01CA036)"],
+      "status": "ok",
+      "needs_supplier": false,
+      "note": "VERIFIED. CoolPlus CA polo (01CA), PIQUE woven collar. 9 colours, full lineup confirmed from image. Clear branded match."
+    },
+    {
+      "sku": "EX045",
+      "name": "เสื้อโปโล CoolPlus",
+      "primary_group_file": "617095803517534535.jpg",
+      "colors": ["sky blue (U01CP0042)", "white (01CP001)", "light green (01CP002)", "lime green (01CP004)", "purple (01CP007)", "violet/dark purple (01CP008)", "black (01CP009)", "royal blue (01CP011)", "pink/magenta (01CP014)", "light grey (01CP015)", "dark grey/charcoal (01CP016)", "mint green (01CP017)", "yellow (01CP029)", "cyan/turquoise (01CP031)", "blue (01CP032)"],
+      "status": "ok",
+      "needs_supplier": false,
+      "note": "VERIFIED. CoolPlus CP polo (01CP) = generic 'เสื้อโปโล CoolPlus'. 15 colours confirmed. Several flagged สินค้าหมด/หายาก (low stock) on the sheet. Clear branded match."
+    },
+    {
+      "sku": "EX046",
+      "name": "เสื้อโปโล",
+      "primary_group_file": "617095803450163408.jpg",
+      "colors": ["dark green (U01KM0002)", "maroon/dark red (U01KM0003)", "navy (U01KM0004)", "light grey (U01KM0005)", "purple (U01KM0006)", "light blue (U01KM0007)", "white (U01KM0008)", "grey (U01KM0009)", "black w/ blue collar trim (U01KM001)", "black w/ light-blue trim (U01KM010)", "white (01KM120)"],
+      "status": "ok",
+      "needs_supplier": false,
+      "note": "VERIFIED. Primary = plain Micro-Polyester polo 01KM, ~11 colourways (incl. 2 contrast-collar black variants). The second contrast-tipped polo family 01PK/01PC (file 617095803685306389.jpg) is a DISTINCT model (tipped collars) and is listed under models_without_sku as a separate-SKU candidate rather than folded into EX046."
+    },
+    {
+      "sku": "EX047",
+      "name": "ผ้ากันเปื้อน COMB-TWILL CLASSIC LOOP",
+      "primary_group_file": "",
+      "colors": [],
+      "status": "no_image",
+      "needs_supplier": true,
+      "note": "VERIFIED no image. Bib apron — no apron photo in the 10 supplied images. Request from supplier."
+    },
+    {
+      "sku": "EX048",
+      "name": "ผ้ากันเปื้อน รุ่น SMOOTH SOLON",
+      "primary_group_file": "",
+      "colors": [],
+      "status": "no_image",
+      "needs_supplier": true,
+      "note": "VERIFIED no image. Apron (Smooth Solon) — no apron photo supplied. Request from supplier."
+    },
+    {
+      "sku": "EX049",
+      "name": "เสื้อช็อปแขนสั้น",
+      "primary_group_file": "",
+      "colors": [],
+      "status": "no_image",
+      "needs_supplier": true,
+      "note": "VERIFIED no image. Short-sleeve work shirt — no work-shirt photo supplied. Request from supplier."
+    },
+    {
+      "sku": "EX050",
+      "name": "เสื้อช็อปแขนยาว",
+      "primary_group_file": "",
+      "colors": [],
+      "status": "no_image",
+      "needs_supplier": true,
+      "note": "VERIFIED no image. Long-sleeve work shirt — no photo supplied. Request from supplier."
+    },
+    {
+      "sku": "EX051",
+      "name": "เสื้อช็อป",
+      "primary_group_file": "",
+      "colors": [],
+      "status": "no_image",
+      "needs_supplier": true,
+      "note": "VERIFIED no image. Generic work shirt — no photo supplied. Request from supplier."
+    },
+    {
+      "sku": "EX052",
+      "name": "กางเกงช่าง",
+      "primary_group_file": "",
+      "colors": [],
+      "status": "no_image",
+      "needs_supplier": true,
+      "note": "VERIFIED no image. Work/cargo trousers — no trouser photo supplied. Request from supplier."
+    },
+    {
+      "sku": "EX053",
+      "name": "หมวก พีชพรีเมียม แซนวิช",
+      "primary_group_file": "",
+      "colors": [],
+      "status": "no_image",
+      "needs_supplier": true,
+      "note": "VERIFIED no image. Peach premium sandwich cap — no cap photo supplied despite folder name 'เสื้อ หมวก'. Request from supplier."
+    },
+    {
+      "sku": "EX054",
+      "name": "หมวก บัคเคิ้ลบี (Buckle-B)",
+      "primary_group_file": "",
+      "colors": [],
+      "status": "no_image",
+      "needs_supplier": true,
+      "note": "VERIFIED no image. Buckle-B cap — no cap photo supplied. Request from supplier."
+    },
+    {
+      "sku": "EX055",
+      "name": "หมวก แซนวิช (Sandwich)",
+      "primary_group_file": "",
+      "colors": [],
+      "status": "no_image",
+      "needs_supplier": true,
+      "note": "VERIFIED no image. Sandwich cap — no cap photo supplied. Request from supplier."
+    }
+  ],
+  "models_without_sku": [
+    {
+      "desc": "SMART PREMIUM JACKET (M05JSMS) — shirt-collar coach jacket, Micro Polyester. Extra jacket model beyond the single EX042 slot.",
+      "files": ["617095741055172943.jpg"],
+      "colors": ["charcoal/dark grey (M05JSMS01)", "navy/charcoal-blue (M05JSMS02)"]
+    },
+    {
+      "desc": "BASEBALL PREMIUM JACKET (M05JBP) — varsity/baseball bomber, Polyester 100%, ribbed contrast collar/cuffs/hem (embroider only, cannot screen-print). Extra jacket model beyond EX042.",
+      "files": ["617095741257023490.jpg"],
+      "colors": ["black (M05JBP001)", "navy (M05JBP002)", "cream body + navy contrast sleeves (M05JBP003)", "cream body + green contrast sleeves (M05JBP004)"]
+    },
+    {
+      "desc": "SIMPLY JACKET (M05JSP / M05JSPC) — slim jacket, shirt-collar (JSP) + mandarin/stand-collar (JSPC) variants. Extra jacket model beyond EX042.",
+      "files": ["617095741306831293.jpg"],
+      "colors": ["shirt-collar black (M05JSP501)", "shirt-collar charcoal/grey (M05JSP502)", "shirt-collar khaki/brown (M05JSP503)", "stand-collar charcoal/grey (M05JSPC01)", "stand-collar black (M05JSPC02)", "stand-collar khaki/brown (M05JSPC03)"]
+    },
+    {
+      "desc": "Ultra Zoft Cotton (02UZ) — round-neck crew T-shirt (NOT a polo). No T-shirt SKU exists in the 13-SKU list. New-SKU candidate.",
+      "files": ["617095773602971846.jpg"],
+      "colors": ["off-white/sand (02UZ028)", "light brown/tan (02UZ037)", "white (02UZ001)", "royal blue (02UZ003)", "dark green (02UZ005)", "red (02UZ008)", "grey (02UZ015)", "black (02UZ016)", "navy (02UZ024)"]
+    },
+    {
+      "desc": "UL Ultra Light New Regular (U02UL) — round-neck crew T-shirt, Cotton 100% No.32, Sulfur Free (NOT a polo). No T-shirt SKU exists. New-SKU candidate.",
+      "files": ["617095773603758561.jpg"],
+      "colors": ["white (U02UL001)", "black (U02UL002)", "navy (U02UL003)"]
+    },
+    {
+      "desc": "Polo 01PK / 01PC (Micro Polyester) — contrast-tipped-collar short-sleeve polo family, distinct from the plain 01KM used for EX046. New-SKU / variant candidate (tipped-collar polo).",
+      "files": ["617095803685306389.jpg"],
+      "colors": ["white plain (01PC059)", "white w/ navy collar trim (01PC096)", "light grey w/ trim (01PC107)", "light grey/blue collar (01PC108)", "olive/army green w/ orange trim (01PK094)", "charcoal/dark grey w/ orange trim (01PK088)", "blue w/ trim (01PK085)", "navy plain (01PK066)", "navy w/ red trim (01PK093)", "black w/ red trim (01PK058)", "black plain (01PK060)"]
+    }
+  ],
+  "non_product_images": [],
+  "completeness_note": "All 10 supplied images are product spec sheets (PMK PoloMaker) covering: 4 jacket models, 2 round-neck T-shirt models, and 4 polo families. NO apron, NO work-shirt (เสื้อช็อป), NO work-trouser (กางเกงช่าง), and NO cap images were supplied — confirmed by re-opening all 10. Therefore 9 of 13 SKUs (EX047-EX055: 2 aprons, 3 work shirts, 1 trouser, 3 caps) have status no_image and need supplier photos. 4 SKUs match cleanly: EX042 jacket (primary Smooth bomber, 7 colours), EX044 CoolPlus CA polo (9 colours), EX045 CoolPlus CP polo (15 colours), EX046 plain polo (01KM, 11 colours). 6 models have no SKU: 3 extra jacket models (Smart/Baseball/Simply), 2 round-neck T-shirts (Ultra Zoft, UL), and the contrast-tipped 01PK/01PC polo family. Folder is named 'เสื้อ หมวก' (shirts + caps) but contains zero cap photos."
+}

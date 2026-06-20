@@ -1,0 +1,251 @@
+{
+  "images": [
+    {
+      "file": "617095741021618883.jpg",
+      "model_desc_th": "SMOOTH PREMIUM JACKET (M05JBSP) — แจ็คเก็ตทรง Bomber เนื้อ Micro Polyester นุ่มลื่น ไม่ยับ กระเป๋าด้านในและนอก จั๊มแขนและจั๊มเอว",
+      "garment_type": "jacket/windbreaker (bomber)",
+      "is_color_lineup": true,
+      "colors": ["white (ขาว M05JBSP07)", "cream (ครีม M05JBSP04)", "khaki/taupe (กากี M05JBSP05)", "olive green (เขียว M05JBSP06)", "navy (น้ำเงิน M05JBSP03)", "grey-navy/charcoal-blue (เทาน้ำเงิน M05JBSP02)", "black (ดำ M05JBSP01)"],
+      "best_sku": "EX042",
+      "alt_sku": "UNSURE",
+      "confidence": 0.6,
+      "note": "One of 4 jacket models for the single generic SKU EX042 'เสื้อแจ็คเก็ต'. Chosen as primary because Bomber/Smooth is the most flagship/generic jacket. Top hero shows olive; lineup adds 6 more colours. 7 colours total."
+    },
+    {
+      "file": "617095741055172943.jpg",
+      "model_desc_th": "SMART PREMIUM JACKET (M05JSMS) — แจ็คเก็ตคอปกเชิ้ต เนื้อ Micro Polyester ดีไซน์ตัดต่อตะเข็บด้านข้าง กระเป๋าด้านใน 2 ด้าน แขนเสื้อติดกระดุม 2 ระดับ",
+      "garment_type": "jacket/windbreaker (shirt-collar coach jacket)",
+      "is_color_lineup": true,
+      "colors": ["charcoal/dark grey (ดำ M05JSMS01)", "grey-navy/charcoal-blue (กรมท่า M05JSMS02)"],
+      "best_sku": "EX042",
+      "alt_sku": "UNSURE",
+      "confidence": 0.45,
+      "note": "Second jacket model for the same single jacket SKU EX042. Only 2 colours (dark grey, dark navy). Shirt-collar style distinct from bomber. EX042 is one SKU but supplier sent 4 jacket models — user must pick which model EX042 represents."
+    },
+    {
+      "file": "617095741257023490.jpg",
+      "model_desc_th": "BASEBALL PREMIUM JACKET (M05JBP) — เสื้อทีมลุคสปอร์ต ทรง Bomber ผ้า Polyester 100% คอ/ปลายแขน/ขอบเอว ถักริบสไตล์เบสบอล ตัดต่อสองสี (ปักได้ สกรีนไม่ได้)",
+      "garment_type": "jacket/windbreaker (varsity/baseball bomber)",
+      "is_color_lineup": true,
+      "colors": ["black (ดำ M05JBP001)", "navy (กรมท่า M05JBP002)", "cream body + navy contrast sleeves (ครีมตัดต่อกรมท่า M05JBP003)", "cream body + green contrast sleeves (ครีมตัดต่อเขียว M05JBP004)"],
+      "best_sku": "EX042",
+      "alt_sku": "UNSURE",
+      "confidence": 0.4,
+      "note": "Third jacket model for EX042. Varsity/baseball style with contrast ribbed collar+sleeves. 4 colourways (2 solid + 2 two-tone). Cannot screen-print, only embroider."
+    },
+    {
+      "file": "617095741306831293.jpg",
+      "model_desc_th": "SIMPLY JACKET (M05JSP / M05JSPC) — แจ็คเก็ตทรงพอดี เนื้อ Micro Polyester ตัดต่อช่วงตะเข็บด้านข้าง มีทั้งคอปก (zip) และคอตั้ง (M05JSPC) กระเป๋าด้านใน",
+      "garment_type": "jacket/windbreaker (slim — shirt-collar + mandarin-collar variants)",
+      "is_color_lineup": true,
+      "colors": ["shirt-collar black (คอปก ดำ M05JSP501)", "shirt-collar charcoal/dark grey (คอปก สีกรมท่า M05JSP502)", "shirt-collar khaki/brown (คอปก น้ำตาล M05JSP503)", "mandarin-collar charcoal/dark grey (คอตั้ง สีกรมท่า M05JSPC01)", "mandarin-collar black (คอตั้ง ดำ M05JSPC02)", "mandarin-collar khaki/brown (คอตั้ง น้ำตาล M05JSPC03)"],
+      "best_sku": "EX042",
+      "alt_sku": "UNSURE",
+      "confidence": 0.4,
+      "note": "Fourth jacket model for EX042. Two collar sub-styles (shirt-collar M05JSP + mandarin/stand-collar M05JSPC), each in black, dark grey, khaki/brown = 6 colourways. Distinguish from Smart by slimmer fit and stand-collar variant."
+    },
+    {
+      "file": "617095773602971846.jpg",
+      "model_desc_th": "Ultra Zoft Cotton (02UZ) — เสื้อยืดคอกลม นุ่มสัมผัสกำมะหยี่ เนื้อนุ่มขั้นสุด",
+      "garment_type": "round-neck T-shirt (NOT polo)",
+      "is_color_lineup": true,
+      "colors": ["off-white/sand (ข้าวโอ๊ต 02UZ028)", "light brown/tan (โอวัลติน 02UZ037)", "white (ขาว 02UZ001)", "royal blue (บาริชบลู 02UZ003)", "dark green (เขียวเข้ม 02UZ005)", "red (โทแมน 02UZ008)", "grey (เทาท็อปดราย 02UZ015)", "black (ดำ 02UZ016)", "navy (กรมท่า 02UZ024)"],
+      "best_sku": "UNSURE",
+      "alt_sku": "UNSURE",
+      "confidence": 0.9,
+      "note": "Round-neck T-SHIRT (crew neck), not a polo and not in the 13-SKU list. No matching SKU — there is no plain T-shirt SKU. 9 colours captured. Belongs to models_without_sku."
+    },
+    {
+      "file": "617095773603758561.jpg",
+      "model_desc_th": "UL Ultra Light New Regular (02UL/U02UL) — เสื้อยืดคอกลม Cotton 100% No.32 เบาบาง Sulfur Free",
+      "garment_type": "round-neck T-shirt (NOT polo)",
+      "is_color_lineup": true,
+      "colors": ["white (ขาว U02UL001)", "black (ดำ U02UL002)", "navy/dark navy (กรมท่า U02UL003)"],
+      "best_sku": "UNSURE",
+      "alt_sku": "UNSURE",
+      "confidence": 0.9,
+      "note": "Round-neck T-SHIRT (crew neck), not a polo and not in the 13-SKU list. 3 colours (white, black, navy). No matching SKU. Belongs to models_without_sku."
+    },
+    {
+      "file": "617095803450163408.jpg",
+      "model_desc_th": "เสื้อโปโล 01KM (Micro Polyester) — ไม่ยับ ไม่ย้วย อยู่ทรงสวย มีทั้งทรง Modern (ชาย) และ New Regular (หญิง); มีรุ่นปกธรรมดาและปกตัดต่อ (contrast collar)",
+      "garment_type": "polo short sleeve",
+      "is_color_lineup": true,
+      "colors": ["dark green (เขียวเข้ม U01KM0002)", "maroon/dark red (แดง U01KM0003)", "navy (กรมท่า U01KM0004)", "light grey (เทาบาง U01KM0005)", "purple (ม่วง U01KM0006)", "light blue (ฟ้า U01KM0007)", "white (ขาว U01KM0008)", "grey (เทา U01KM0009)", "black w/ blue collar trim — contrast (ดำ U01KM001)", "black w/ light-blue trim — contrast (ดำ U01KM010)", "white (ขาว 01KM120)"],
+      "best_sku": "EX046",
+      "alt_sku": "UNSURE",
+      "confidence": 0.65,
+      "note": "Generic short-sleeve POLO (01KM, Micro Polyester) — best fit for plain 'เสื้อโปโล' EX046. ~11 colourways incl. 2 contrast-collar black variants. Distinct from CoolPlus CP/CA (those have their own SKUs EX044/EX045)."
+    },
+    {
+      "file": "617095803517534535.jpg",
+      "model_desc_th": "เสื้อโปโล CoolPlus CP (01CP) — เนื้อนุ่ม เบาสบาย ไม่เป็นขุย, ทอ Microfiber/Jersey ระบายความร้อน; ทรง New Regular (ชาย) + โบเลโร่ (หญิง)",
+      "garment_type": "polo short sleeve",
+      "is_color_lineup": true,
+      "colors": ["sky blue (ฟ้า U01CP0042)", "white (01CP001)", "light green (01CP002)", "lime green (01CP004)", "purple (01CP007)", "violet/dark purple (01CP008)", "black (01CP009)", "royal blue (01CP011)", "pink/magenta (01CP014)", "light grey (01CP015)", "dark grey/charcoal (01CP016)", "mint green (01CP017)", "yellow (01CP029)", "cyan/turquoise (01CP031)", "blue (01CP032)"],
+      "best_sku": "EX045",
+      "alt_sku": "EX046",
+      "confidence": 0.85,
+      "note": "CoolPlus 'CP' polo = EX045 'เสื้อโปโล CoolPlus'. ~15 colourways. Distinguish from CA (EX044) by the 'CP' branding. Many marked 'สินค้าหมด/หายาก' (low stock) on the sheet."
+    },
+    {
+      "file": "617095803534311767.jpg",
+      "model_desc_th": "เสื้อโปโล CoolPlus CA (01CA) — เนื้อผ้านุ่ม ปกอยู่ทรง ระบายอากาศดี ปกทอ PIQUE คอเชิ้ต; ทรงชาย New Regular + หญิงโบเลโร่",
+      "garment_type": "polo short sleeve",
+      "is_color_lineup": true,
+      "colors": ["navy (01CA008)", "white (01CA001)", "sky blue (01CA006)", "black (01CA009)", "turquoise/teal (01CA014)", "royal blue (01CA020)", "yellow (01CA021)", "grey (01CA033)", "maroon/dark red (01CA036)"],
+      "best_sku": "EX044",
+      "alt_sku": "EX046",
+      "confidence": 0.85,
+      "note": "CoolPlus 'CA' polo = EX044 'เสื้อโปโล CoolPlus CA'. 9 colourways. Knit PIQUE collar. Distinguish from CP (EX045) by the 'CA' branding/woven-collar feature."
+    },
+    {
+      "file": "617095803685306389.jpg",
+      "model_desc_th": "เสื้อโปโล 01PK / 01PC (Micro Polyester) — ไม่ยับ ไม่ย้วย อยู่ทรงสวย; รุ่นปกตัดต่อ (contrast tipped collar) + รุ่นปกธรรมดา, ทรง New Regular ชาย/หญิง",
+      "garment_type": "polo short sleeve",
+      "is_color_lineup": true,
+      "colors": ["white plain (01PC059)", "white w/ navy collar trim (01PC096)", "light grey w/ trim (01PC107)", "light grey/blue collar (01PC108)", "olive/army green w/ orange trim (01PK094)", "charcoal/dark grey w/ orange trim (01PK088)", "blue w/ trim (01PK085)", "navy plain (01PK066)", "navy w/ red trim (01PK093)", "black w/ red trim (01PK058)", "black plain (01PK060)"],
+      "best_sku": "EX046",
+      "alt_sku": "UNSURE",
+      "confidence": 0.5,
+      "note": "Second generic short-sleeve POLO family (01PK/01PC, Micro Polyester) with contrast-tipped collars — also a candidate for plain 'เสื้อโปโล' EX046. Hero shows navy with red/white tipped collar. ~11 colourways. Overlaps with the 01KM polo image as EX046 source; user should pick one family."
+    }
+  ],
+  "skus": [
+    {
+      "sku": "EX042",
+      "name": "เสื้อแจ็คเก็ต",
+      "matched_files": ["617095741021618883.jpg", "617095741055172943.jpg", "617095741257023490.jpg", "617095741306831293.jpg"],
+      "all_colors": ["Smooth: white, cream, khaki, olive, navy, charcoal-blue, black", "Smart: charcoal, dark-navy", "Baseball: black, navy, cream+navy, cream+green", "Simply(shirt-collar): black, charcoal, khaki", "Simply(stand-collar): black, charcoal, khaki"],
+      "has_group_shot": true,
+      "status": "ok",
+      "needs_supplier": false,
+      "note": "ONE jacket SKU but supplier sent 4 distinct jacket MODELS (Smooth bomber / Smart coach / Baseball varsity / Simply slim). Primary = Smooth Premium Jacket. User must decide which model EX042 should represent (or split into multiple SKUs). All four models fully colour-mapped above."
+    },
+    {
+      "sku": "EX044",
+      "name": "เสื้อโปโล CoolPlus CA",
+      "matched_files": ["617095803534311767.jpg"],
+      "all_colors": ["navy", "white", "sky blue", "black", "turquoise/teal", "royal blue", "yellow", "grey", "maroon"],
+      "has_group_shot": true,
+      "status": "ok",
+      "needs_supplier": false,
+      "note": "CoolPlus CA polo lineup, 9 colours. Clear branded match."
+    },
+    {
+      "sku": "EX045",
+      "name": "เสื้อโปโล CoolPlus",
+      "matched_files": ["617095803517534535.jpg"],
+      "all_colors": ["sky blue", "white", "light green", "lime green", "purple", "dark purple", "black", "royal blue", "pink", "light grey", "charcoal", "mint", "yellow", "cyan", "blue"],
+      "has_group_shot": true,
+      "status": "ok",
+      "needs_supplier": false,
+      "note": "CoolPlus CP polo lineup, ~15 colours. Clear branded match (CP = generic CoolPlus)."
+    },
+    {
+      "sku": "EX046",
+      "name": "เสื้อโปโล",
+      "matched_files": ["617095803450163408.jpg", "617095803685306389.jpg"],
+      "all_colors": ["KM family: dark green, maroon, navy, light grey, purple, light blue, white, grey, black(contrast x2)", "PK/PC family: white, white+navy trim, grey, grey+blue collar, olive+orange trim, charcoal+orange trim, blue, navy, navy+red trim, black+red trim, black"],
+      "has_group_shot": true,
+      "status": "ok",
+      "needs_supplier": false,
+      "note": "Generic plain polo. TWO candidate Micro-Polyester polo families match (01KM and 01PK/01PC contrast-collar). Both mapped; user should confirm which is EX046 (or whether EX046 = plain-collar KM and the contrast-tipped PK is a separate product)."
+    },
+    {
+      "sku": "EX047",
+      "name": "ผ้ากันเปื้อน COMB-TWILL CLASSIC LOOP",
+      "matched_files": [],
+      "all_colors": [],
+      "has_group_shot": false,
+      "status": "no_image",
+      "needs_supplier": true,
+      "note": "Bib apron (COMB-TWILL Classic Loop). No apron image supplied. Request photo from supplier."
+    },
+    {
+      "sku": "EX048",
+      "name": "ผ้ากันเปื้อน รุ่น SMOOTH SOLON",
+      "matched_files": [],
+      "all_colors": [],
+      "has_group_shot": false,
+      "status": "no_image",
+      "needs_supplier": true,
+      "note": "Apron (Smooth Solon). No apron image supplied. Request photo from supplier."
+    },
+    {
+      "sku": "EX049",
+      "name": "เสื้อช็อปแขนสั้น",
+      "matched_files": [],
+      "all_colors": [],
+      "has_group_shot": false,
+      "status": "no_image",
+      "needs_supplier": true,
+      "note": "Short-sleeve work shirt (เสื้อช็อป). No work-shirt image supplied. Request photo."
+    },
+    {
+      "sku": "EX050",
+      "name": "เสื้อช็อปแขนยาว",
+      "matched_files": [],
+      "all_colors": [],
+      "has_group_shot": false,
+      "status": "no_image",
+      "needs_supplier": true,
+      "note": "Long-sleeve work shirt. No image supplied. Request photo."
+    },
+    {
+      "sku": "EX051",
+      "name": "เสื้อช็อป",
+      "matched_files": [],
+      "all_colors": [],
+      "has_group_shot": false,
+      "status": "no_image",
+      "needs_supplier": true,
+      "note": "Generic work shirt. No image supplied. Request photo."
+    },
+    {
+      "sku": "EX052",
+      "name": "กางเกงช่าง",
+      "matched_files": [],
+      "all_colors": [],
+      "has_group_shot": false,
+      "status": "no_image",
+      "needs_supplier": true,
+      "note": "Cargo / work trousers. No trouser image supplied. Request photo."
+    },
+    {
+      "sku": "EX053",
+      "name": "หมวก พีชพรีเมียม แซนวิช",
+      "matched_files": [],
+      "all_colors": [],
+      "has_group_shot": false,
+      "status": "no_image",
+      "needs_supplier": true,
+      "note": "Peach premium sandwich cap. No cap image supplied. Request photo."
+    },
+    {
+      "sku": "EX054",
+      "name": "หมวก บัคเคิ้ลบี (Buckle-B)",
+      "matched_files": [],
+      "all_colors": [],
+      "has_group_shot": false,
+      "status": "no_image",
+      "needs_supplier": true,
+      "note": "Buckle-B cap. No cap image supplied. Request photo."
+    },
+    {
+      "sku": "EX055",
+      "name": "หมวก แซนวิช (Sandwich)",
+      "matched_files": [],
+      "all_colors": [],
+      "has_group_shot": false,
+      "status": "no_image",
+      "needs_supplier": true,
+      "note": "Sandwich cap. No cap image supplied. Request photo. (Despite supplier folder name 'เสื้อ หมวก', no cap photos were included.)"
+    }
+  ],
+  "models_without_sku": [
+    "Ultra Zoft Cotton round-neck T-shirt (02UZ) — file 617095773602971846.jpg — 9 colours (off-white, tan, white, royal blue, dark green, red, grey, black, navy). No T-shirt SKU exists in the 13-SKU list.",
+    "UL Ultra Light New Regular round-neck T-shirt (02UL/U02UL) — file 617095773603758561.jpg — 3 colours (white, black, navy). No T-shirt SKU exists in the 13-SKU list.",
+    "Extra jacket MODELS beyond the single EX042 slot: Smart Premium coach jacket (M05JSMS), Baseball/varsity jacket (M05JBP), Simply slim jacket (M05JSP/JSPC) — only one of the 4 jacket models can map to EX042 unless EX042 is split into multiple SKUs."
+  ]
+}

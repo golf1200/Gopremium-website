@@ -1,0 +1,209 @@
+{
+  "supplier": "SUP-00005",
+  "sup_name": "New Fly",
+  "category_th": "ร่ม / Umbrellas",
+  "images": [
+    {
+      "file": "Screenshot 2026-06-05 155149.png",
+      "model_desc_th": "ร่มพับ 3 ตอน / UV (ร่มนิวฟลาย) ราคาส่งคันละ 55 บาท",
+      "umbrella_type": "3-fold/compact",
+      "size_inch": null,
+      "is_color_lineup": true,
+      "colors": ["black", "navy blue", "royal blue", "sky blue", "teal", "green", "lime green", "yellow", "orange", "red", "burgundy/maroon", "pink", "magenta", "purple", "grey", "white", "brown"],
+      "best_sku": "UNSURE",
+      "confidence": 0.9,
+      "note": "Solid-color 3-fold UV folding umbrella, ~17 colors in lineup. NOT a golf umbrella — separate model from EX019. Price 55 baht/pc."
+    },
+    {
+      "file": "Screenshot 2026-06-05 155159.png",
+      "model_desc_th": "ร่มพับ 4 ตอน / UV ดำ (ร่มนิวฟลาย) ราคาส่งคันละ 75 บาท",
+      "umbrella_type": "4-fold/compact, UV black coating",
+      "size_inch": null,
+      "is_color_lineup": true,
+      "colors": ["grey/silver", "navy blue", "royal blue", "sky blue", "green", "yellow", "pink", "magenta", "purple", "red", "wine/maroon", "black"],
+      "best_sku": "UNSURE",
+      "confidence": 0.9,
+      "note": "Solid-color 4-fold compact umbrella with black UV-coated underside, ~12 colors. Separate model from EX019. Price 75 baht/pc."
+    },
+    {
+      "file": "Screenshot 2026-06-05 155213.png",
+      "model_desc_th": "ร่ม 5 ตอน UV ดำ (ร่มนิวฟลาย) ราคาส่งคันละ 145 บาท",
+      "umbrella_type": "5-fold/mini-compact, UV black coating",
+      "size_inch": null,
+      "is_color_lineup": true,
+      "colors": ["black", "white", "mint/light green", "light blue", "pink", "lavender/purple"],
+      "best_sku": "UNSURE",
+      "confidence": 0.88,
+      "note": "Ultra-compact 5-fold mini pocket umbrella with black UV underside, pastel + black tones, ~6 colors. Separate model from EX019. Price 145 baht/pc."
+    },
+    {
+      "file": "Screenshot 2026-06-05 155430.png",
+      "model_desc_th": "ร่ม 22 นิ้ว / สีพื้น (ร่มนิวฟลาย) ราคาส่งคันละ 50 บาท",
+      "umbrella_type": "long-straight, solid color",
+      "size_inch": 22,
+      "is_color_lineup": true,
+      "colors": ["red (สีแดง)", "orange (สีส้ม)", "yellow (สีเหลือง)", "green (สีเขียว)", "sky blue (สีฟ้า)", "navy blue (สีน้ำเงิน)", "purple (สีม่วง)", "magenta/dark pink (สีบานเย็น)", "pink (สีชมพู)", "white (สีขาว)", "grey (สีเทา)", "black (สีดำ)"],
+      "best_sku": "UNSURE",
+      "confidence": 0.9,
+      "note": "22-inch long straight auto umbrella, solid colors with Thai color names labeled, ~12 colors. Separate model from EX019 (golf). Price 50 baht/pc."
+    },
+    {
+      "file": "Screenshot 2026-06-05 155512.png",
+      "model_desc_th": "ร่มแบบใส (ร่มนิวฟลาย) ราคาส่งคันละ 50 บาท",
+      "umbrella_type": "transparent dome / clear long-straight + transparent colored tints",
+      "size_inch": null,
+      "is_color_lineup": true,
+      "colors": ["clear/transparent", "transparent pink", "transparent magenta", "transparent yellow/lime", "transparent mint/teal", "transparent blue"],
+      "best_sku": "UNSURE",
+      "confidence": 0.85,
+      "note": "Transparent (clear) umbrella — long-straight clear plus tinted-transparent color variants. Separate model from EX019. Price 50 baht/pc. Partial banner crop."
+    },
+    {
+      "file": "Screenshot 2026-06-05 155559.png",
+      "model_desc_th": "ร่มไม้เท้า 16 ก้าน กลืดสี (ร่มนิวฟลาย) ราคาส่งคันละ 85 บาท",
+      "umbrella_type": "long-straight cane/walking-stick, 16-rib",
+      "size_inch": null,
+      "is_color_lineup": true,
+      "colors": ["red (สีแดง)", "orange (สีส้ม)", "yellow", "green (สีเขียว)", "teal/green (สีเขียวขี้ม้า)", "blue (สีน้ำเงิน)", "grey/dark (สีม่วง?)", "brown", "black (สีดำ)", "white/cream"],
+      "best_sku": "UNSURE",
+      "confidence": 0.82,
+      "note": "16-rib cane/walking-stick long umbrella, solid colors. Separate model from EX019. Price 85 baht/pc. Some color labels partly obscured."
+    },
+    {
+      "file": "Screenshot 2026-06-05 155632.png",
+      "model_desc_th": "ร่มไม้เท้า 16 ก้าน / คละสี (ร่มนิวฟลาย) ราคาส่งคันละ 80 บาท",
+      "umbrella_type": "long-straight cane/walking-stick, 16-rib",
+      "size_inch": null,
+      "is_color_lineup": true,
+      "colors": ["pink (ชมพู)", "magenta/dark pink (บานเย็น?)", "teal (เขียวมินต์)", "sky blue (ฟ้า)", "green (เขียว)", "purple (ม่วง)", "blue (น้ำเงิน)", "red (แดง)", "orange (ส้ม)", "yellow (เหลือง)"],
+      "best_sku": "UNSURE",
+      "confidence": 0.8,
+      "note": "16-rib cane/walking-stick long umbrella, assorted bright/pastel solid colors. Very similar to 155559 but different price (80 vs 85 baht) and color set. Separate model from EX019."
+    },
+    {
+      "file": "Screenshot 2026-06-05 155733.png",
+      "model_desc_th": "ร่มกอล์ฟ 28 นิ้ว / ออโต้ (ร่มนิวฟลาย) ราคาส่งคันละ 150 บาท",
+      "umbrella_type": "golf/long-straight, auto open 28-inch",
+      "size_inch": 28,
+      "is_color_lineup": true,
+      "colors": ["red (สีแดง)", "grey (สีเทา)", "black (สีดำ)", "white/silver (สีเงิน?)", "navy blue (สีกรมท่า)", "dark grey", "orange/red (สีส้มอ่อน?)", "blue (สีน้ำเงิน)", "green (สีเขียว)"],
+      "best_sku": "UNSURE",
+      "confidence": 0.55,
+      "note": "28-inch AUTO-open golf umbrella, solid colors. Could relate to EX019 (golf family) but EX019 is specifically 30-inch 2-layer — this is 28-inch auto, likely a DISTINCT SKU. Price 150 baht/pc."
+    },
+    {
+      "file": "Screenshot 2026-06-05 160815.png",
+      "model_desc_th": "ร่มกอล์ฟ 30 นิ้ว / มือเปิด (ร่มนิวฟลาย) ราคาส่งคันละ 130 บาท",
+      "umbrella_type": "golf/long-straight, 30-inch manual open",
+      "size_inch": 30,
+      "is_color_lineup": true,
+      "colors": ["teal/green (สีเขียว)", "navy blue (สีกรม)", "sky blue (สีฟ้า)", "purple (สีม่วง)", "blue (สีน้ำเงิน)", "green (สีเขียว)", "grey/teal (สีเทา?)", "orange (สีส้ม)", "red (สีแดง)"],
+      "best_sku": "EX019",
+      "confidence": 0.6,
+      "note": "30-inch manual-open golf umbrella, solid colors. Size 30in matches EX019 'ร่มกอล์ฟ 30 นิ้ว' but EX019 is '2 ชั้น' (2-layer/double-canopy); this banner says single-layer manual. Possible color-lineup for EX019 OR a sibling single-layer 30in. Price 130 baht/pc."
+    },
+    {
+      "file": "Screenshot 2026-06-05 160824.png",
+      "model_desc_th": "ร่มกลับด้าน (Reverse/Inverted Umbrella, C-handle) ราคาส่งคันละ 160 บาท",
+      "umbrella_type": "reverse/inverted (กลับด้าน), C-shaped hands-free handle",
+      "size_inch": null,
+      "is_color_lineup": true,
+      "colors": ["black (สีดำ)", "purple (สีม่วง)", "grey (สีเทา)", "wine/burgundy (สีไวน์แดง?)", "pink (สีชมพู)", "blue (สีน้ำเงิน?)", "grey-2 (สีเทา)", "orange (สีส้ม)"],
+      "best_sku": "UNSURE",
+      "confidence": 0.92,
+      "note": "Reverse/inverted double-layer umbrella with C-handle, black exterior + colored interior, ~8 color combos. Distinct model from EX019. Price 160 baht/pc."
+    },
+    {
+      "file": "LINE_ALBUM_2022.11.9_๒๓๐๑๑๗_21.jpg",
+      "model_desc_th": "ร่มกอล์ฟ 30 นิ้ว 2 ชั้น (สลับสี 2 สี / two-tone) — ภาพถ่ายจริงจากซัพพลายเออร์",
+      "umbrella_type": "golf/long-straight, 30-inch double-layer (2 ชั้น), two-tone alternating panels",
+      "size_inch": 30,
+      "is_color_lineup": true,
+      "colors": ["yellow+black", "red+white", "blue+white", "navy+white"],
+      "best_sku": "EX019",
+      "confidence": 0.95,
+      "note": "REAL product photos from EX019's own folder. 30-inch 2-layer (double canopy) golf umbrella, alternating two-tone panels. 4 colorways shown: yellow/black, red/white, blue/white, navy/white. Each shown open-front, top-down, and folded-side. Strong primary-image candidate for EX019."
+    },
+    {
+      "file": "LINE_ALBUM_512024_๒๔๐๑๐๕_17.jpg",
+      "model_desc_th": "ร่มกอล์ฟ 30 นิ้ว 2 ชั้น (สลับสี 2 สี / two-tone) — ภาพถ่ายจริงจากซัพพลายเออร์",
+      "umbrella_type": "golf/long-straight, 30-inch double-layer (2 ชั้น), two-tone alternating panels",
+      "size_inch": 30,
+      "is_color_lineup": true,
+      "colors": ["navy+white", "yellow+black", "green+white", "orange+white"],
+      "best_sku": "EX019",
+      "confidence": 0.95,
+      "note": "REAL product photos from EX019's own folder. 30-inch 2-layer golf umbrella, alternating two-tone panels. 4 colorways: navy/white, yellow/black, green/white, orange/white. Each shown open-front, top-down, and folded-side. Strong primary-image candidate for EX019."
+    }
+  ],
+  "skus": [
+    {
+      "sku": "EX019",
+      "name": "ร่มกอล์ฟ 30 นิ้ว 2ชั้น",
+      "matched_files": [
+        "LINE_ALBUM_2022.11.9_๒๓๐๑๑๗_21.jpg",
+        "LINE_ALBUM_512024_๒๔๐๑๐๕_17.jpg",
+        "Screenshot 2026-06-05 160815.png"
+      ],
+      "all_colors": ["yellow+black", "red+white", "blue+white", "navy+white", "green+white", "orange+white"],
+      "has_group_shot": true,
+      "status": "matched",
+      "needs_supplier": false,
+      "note": "Two real-photo JPG sets (from the SKU's own named folder) are definitive matches: 30-inch 2-layer two-tone golf umbrella, 6 two-tone colorways total. Screenshot 160815 (30in manual single-layer golf) is a POSSIBLE related lineup but says single-layer at 130baht — flag for supplier confirmation whether the solid-color 30in is the same SKU. The two JPGs alone fully cover EX019 with group shots; use them as primary."
+    }
+  ],
+  "models_without_sku": [
+    {
+      "model_desc_th": "ร่มพับ 3 ตอน / UV — สีพื้น (3-fold UV folding umbrella, solid colors) — 55 บาท",
+      "files": ["Screenshot 2026-06-05 155149.png"],
+      "colors": ["black", "navy", "royal blue", "sky blue", "teal", "green", "lime", "yellow", "orange", "red", "maroon", "pink", "magenta", "purple", "grey", "white", "brown"]
+    },
+    {
+      "model_desc_th": "ร่มพับ 4 ตอน / UV ดำ (4-fold compact UV-black folding umbrella) — 75 บาท",
+      "files": ["Screenshot 2026-06-05 155159.png"],
+      "colors": ["grey", "navy", "royal blue", "sky blue", "green", "yellow", "pink", "magenta", "purple", "red", "wine", "black"]
+    },
+    {
+      "model_desc_th": "ร่ม 5 ตอน UV ดำ (5-fold ultra-compact mini pocket umbrella, UV-black) — 145 บาท",
+      "files": ["Screenshot 2026-06-05 155213.png"],
+      "colors": ["black", "white", "mint green", "light blue", "pink", "lavender"]
+    },
+    {
+      "model_desc_th": "ร่ม 22 นิ้ว สีพื้น (22-inch long-straight auto umbrella, solid colors) — 50 บาท",
+      "files": ["Screenshot 2026-06-05 155430.png"],
+      "colors": ["red", "orange", "yellow", "green", "sky blue", "navy", "purple", "magenta", "pink", "white", "grey", "black"]
+    },
+    {
+      "model_desc_th": "ร่มแบบใส (transparent / clear dome umbrella + tinted variants) — 50 บาท",
+      "files": ["Screenshot 2026-06-05 155512.png"],
+      "colors": ["clear", "transparent pink", "transparent magenta", "transparent yellow", "transparent mint", "transparent blue"]
+    },
+    {
+      "model_desc_th": "ร่มไม้เท้า 16 ก้าน (16-rib cane/walking-stick long umbrella, solid colors) — 85 บาท",
+      "files": ["Screenshot 2026-06-05 155559.png"],
+      "colors": ["red", "orange", "yellow", "green", "teal", "blue", "purple/grey", "brown", "black", "white"]
+    },
+    {
+      "model_desc_th": "ร่มไม้เท้า 16 ก้าน คละสี (16-rib cane umbrella, assorted bright/pastel) — 80 บาท",
+      "files": ["Screenshot 2026-06-05 155632.png"],
+      "colors": ["pink", "magenta", "teal", "sky blue", "green", "purple", "blue", "red", "orange", "yellow"],
+      "note": "Likely same body as the 85-baht 16-rib but different color batch/price; confirm with supplier if 1 or 2 SKUs."
+    },
+    {
+      "model_desc_th": "ร่มกอล์ฟ 28 นิ้ว ออโต้ (28-inch AUTO-open golf umbrella, solid colors) — 150 บาท",
+      "files": ["Screenshot 2026-06-05 155733.png"],
+      "colors": ["red", "grey", "black", "silver/white", "navy", "dark grey", "orange", "blue", "green"]
+    },
+    {
+      "model_desc_th": "ร่มกอล์ฟ 30 นิ้ว มือเปิด สีพื้น (30-inch manual-open golf umbrella, SINGLE-layer solid colors) — 130 บาท",
+      "files": ["Screenshot 2026-06-05 160815.png"],
+      "colors": ["teal", "navy", "sky blue", "purple", "blue", "green", "grey", "orange", "red"],
+      "note": "Size matches EX019 (30in golf) but described single-layer manual vs EX019's '2 ชั้น'. Could be a sibling SKU OR EX019's solid-color option — confirm with supplier."
+    },
+    {
+      "model_desc_th": "ร่มกลับด้าน C-handle (reverse/inverted double-layer umbrella, hands-free C-handle) — 160 บาท",
+      "files": ["Screenshot 2026-06-05 160824.png"],
+      "colors": ["black", "purple", "grey", "wine", "pink", "blue", "grey-2", "orange"]
+    }
+  ]
+}

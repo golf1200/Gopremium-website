@@ -1,0 +1,190 @@
+{
+  "supplier": "SUP-00011",
+  "sup_name": "PMK polomaker",
+  "existing": [
+    {
+      "sku": "EX042",
+      "name_final": "เสื้อแจ็คเก็ต (Smooth Premium Jacket)",
+      "category_slug": "garment",
+      "colors": ["white", "cream", "khaki/taupe", "olive green", "navy", "charcoal-blue", "black"],
+      "status": "ok",
+      "needs_supplier": false,
+      "photo_request": ""
+    },
+    {
+      "sku": "EX044",
+      "name_final": "เสื้อโปโล CoolPlus CA",
+      "category_slug": "garment",
+      "colors": ["navy", "white", "sky blue", "black", "turquoise/teal", "royal blue", "yellow", "grey", "maroon/dark red"],
+      "status": "ok",
+      "needs_supplier": false,
+      "photo_request": ""
+    },
+    {
+      "sku": "EX045",
+      "name_final": "เสื้อโปโล CoolPlus",
+      "category_slug": "garment",
+      "colors": ["sky blue", "white", "light green", "lime green", "purple", "violet/dark purple", "black", "royal blue", "pink/magenta", "light grey", "charcoal", "mint green", "yellow", "cyan/turquoise", "blue"],
+      "status": "ok",
+      "needs_supplier": false,
+      "photo_request": ""
+    },
+    {
+      "sku": "EX046",
+      "name_final": "เสื้อโปโล (Micro-Polyester)",
+      "category_slug": "garment",
+      "colors": ["dark green", "maroon/dark red", "navy", "light grey", "purple", "light blue", "white", "grey", "black w/ blue collar trim", "black w/ light-blue trim"],
+      "status": "ok",
+      "needs_supplier": false,
+      "photo_request": ""
+    },
+    {
+      "sku": "EX047",
+      "name_final": "ผ้ากันเปื้อน COMB-TWILL CLASSIC LOOP",
+      "category_slug": "garment",
+      "colors": [],
+      "status": "no_image",
+      "needs_supplier": true,
+      "photo_request": "ขอรูปผ้ากันเปื้อน (bib apron) รุ่น COMB-TWILL CLASSIC LOOP พร้อมตารางสีทั้งหมด"
+    },
+    {
+      "sku": "EX048",
+      "name_final": "ผ้ากันเปื้อน รุ่น SMOOTH SOLON",
+      "category_slug": "garment",
+      "colors": [],
+      "status": "no_image",
+      "needs_supplier": true,
+      "photo_request": "ขอรูปผ้ากันเปื้อน รุ่น SMOOTH SOLON พร้อมสีที่มีให้เลือกทั้งหมด"
+    },
+    {
+      "sku": "EX049",
+      "name_final": "เสื้อช็อปแขนสั้น",
+      "category_slug": "garment",
+      "colors": [],
+      "status": "no_image",
+      "needs_supplier": true,
+      "photo_request": "ขอรูปเสื้อช็อป (work shirt) แบบแขนสั้น พร้อมสีทั้งหมด"
+    },
+    {
+      "sku": "EX050",
+      "name_final": "เสื้อช็อปแขนยาว",
+      "category_slug": "garment",
+      "colors": [],
+      "status": "no_image",
+      "needs_supplier": true,
+      "photo_request": "ขอรูปเสื้อช็อป (work shirt) แบบแขนยาว พร้อมสีทั้งหมด"
+    },
+    {
+      "sku": "EX051",
+      "name_final": "เสื้อช็อป",
+      "category_slug": "garment",
+      "colors": [],
+      "status": "no_image",
+      "needs_supplier": true,
+      "photo_request": "ขอรูปเสื้อช็อป (work shirt) รุ่นมาตรฐาน พร้อมสีทั้งหมด"
+    },
+    {
+      "sku": "EX052",
+      "name_final": "กางเกงช่าง",
+      "category_slug": "garment",
+      "colors": [],
+      "status": "no_image",
+      "needs_supplier": true,
+      "photo_request": "ขอรูปกางเกงช่าง (work/cargo trousers) พร้อมสีทั้งหมด"
+    },
+    {
+      "sku": "EX053",
+      "name_final": "หมวก พีชพรีเมียม แซนวิช",
+      "category_slug": "hat",
+      "colors": [],
+      "status": "no_image",
+      "needs_supplier": true,
+      "photo_request": "ขอรูปหมวกแก๊ป รุ่นพีชพรีเมียม แซนวิช (Peach Premium Sandwich) พร้อมสีทั้งหมด"
+    },
+    {
+      "sku": "EX054",
+      "name_final": "หมวก บัคเคิ้ลบี (Buckle-B)",
+      "category_slug": "hat",
+      "colors": [],
+      "status": "no_image",
+      "needs_supplier": true,
+      "photo_request": "ขอรูปหมวกแก๊ป รุ่น บัคเคิ้ลบี (Buckle-B) พร้อมสีทั้งหมด"
+    },
+    {
+      "sku": "EX055",
+      "name_final": "หมวก แซนวิช (Sandwich)",
+      "category_slug": "hat",
+      "colors": [],
+      "status": "no_image",
+      "needs_supplier": true,
+      "photo_request": "ขอรูปหมวกแก๊ป รุ่น แซนวิช (Sandwich) พร้อมสีทั้งหมด"
+    }
+  ],
+  "new_models": [
+    {
+      "temp_id": "NEW-SUP-00011-1",
+      "proposed_name_th": "เสื้อแจ็คเก็ต Smart Premium (คอเชิ้ต/โค้ช)",
+      "category_slug": "garment",
+      "type": "jacket (coach/shirt-collar, Micro Polyester)",
+      "colors": ["charcoal/dark grey", "navy/charcoal-blue"],
+      "source_file": "617095741055172943.jpg",
+      "note": "SMART PREMIUM JACKET รหัส M05JSMS — แจ็คเก็ตคอเชิ้ต กระเป๋าด้านใน 2 ใบ"
+    },
+    {
+      "temp_id": "NEW-SUP-00011-2",
+      "proposed_name_th": "เสื้อแจ็คเก็ต Baseball Premium (วาร์ซิตี้)",
+      "category_slug": "garment",
+      "type": "jacket (varsity/baseball bomber, Polyester 100%)",
+      "colors": ["black", "navy", "cream body + navy sleeves", "cream body + green sleeves"],
+      "source_file": "617095741257023490.jpg",
+      "note": "BASEBALL PREMIUM JACKET รหัส M05JBP — ทรง bomber ขอบริบสีตัด ปักได้อย่างเดียว สกรีนไม่ได้"
+    },
+    {
+      "temp_id": "NEW-SUP-00011-3",
+      "proposed_name_th": "เสื้อแจ็คเก็ต Simply (ทรงสลิม คอเชิ้ต/คอจีน)",
+      "category_slug": "garment",
+      "type": "jacket (slim, shirt-collar JSP + stand/mandarin-collar JSPC)",
+      "colors": ["black", "charcoal/grey", "khaki/brown"],
+      "source_file": "617095741306831293.jpg",
+      "note": "SIMPLY JACKET รหัส M05JSP (คอเชิ้ต) + M05JSPC (คอตั้ง/คอจีน) — 3 สีต่อแบบ"
+    },
+    {
+      "temp_id": "NEW-SUP-00011-4",
+      "proposed_name_th": "เสื้อยืดคอกลม Ultra Zoft Cotton",
+      "category_slug": "garment",
+      "type": "round-neck crew T-shirt (cotton)",
+      "colors": ["off-white/sand", "light brown/tan", "white", "royal blue", "dark green", "red", "grey", "black", "navy"],
+      "source_file": "617095773602971846.jpg",
+      "note": "Ultra Zoft Cotton รหัส 02UZ — เสื้อยืดคอกลม (ไม่ใช่โปโล) ยังไม่มี SKU เสื้อยืดในลิสต์"
+    },
+    {
+      "temp_id": "NEW-SUP-00011-5",
+      "proposed_name_th": "เสื้อยืดคอกลม UL Ultra Light New Regular",
+      "category_slug": "garment",
+      "type": "round-neck crew T-shirt (Cotton 100% No.32, Sulfur Free)",
+      "colors": ["white", "black", "navy"],
+      "source_file": "617095773603758561.jpg",
+      "note": "UL Ultra Light New Regular รหัส U02UL — เสื้อยืดคอกลม (ไม่ใช่โปโล) ยังไม่มี SKU เสื้อยืด"
+    },
+    {
+      "temp_id": "NEW-SUP-00011-6",
+      "proposed_name_th": "เสื้อโปโลขลิบปก (Micro Polyester)",
+      "category_slug": "garment",
+      "type": "short-sleeve polo, contrast-tipped collar (distinct from plain 01KM EX046)",
+      "colors": ["white plain", "white w/ navy trim", "light grey w/ trim", "light grey/blue collar", "olive/army green w/ orange trim", "charcoal w/ orange trim", "blue w/ trim", "navy plain", "navy w/ red trim", "black w/ red trim", "black plain"],
+      "source_file": "617095803685306389.jpg",
+      "note": "โปโลขลิบปก รหัส 01PK / 01PC — คนละแบบกับ 01KM ของ EX046 (ปกขลิบสีตัด) แยกเป็น SKU/variant ใหม่"
+    }
+  ],
+  "photo_requests": [
+    "EX047 — ขอรูปผ้ากันเปื้อน (bib apron) รุ่น COMB-TWILL CLASSIC LOOP พร้อมตารางสีทั้งหมด",
+    "EX048 — ขอรูปผ้ากันเปื้อน รุ่น SMOOTH SOLON พร้อมสีที่มีให้เลือกทั้งหมด",
+    "EX049 — ขอรูปเสื้อช็อป (work shirt) แบบแขนสั้น พร้อมสีทั้งหมด",
+    "EX050 — ขอรูปเสื้อช็อป (work shirt) แบบแขนยาว พร้อมสีทั้งหมด",
+    "EX051 — ขอรูปเสื้อช็อป (work shirt) รุ่นมาตรฐาน พร้อมสีทั้งหมด",
+    "EX052 — ขอรูปกางเกงช่าง (work/cargo trousers) พร้อมสีทั้งหมด",
+    "EX053 — ขอรูปหมวกแก๊ป รุ่นพีชพรีเมียม แซนวิช (Peach Premium Sandwich) พร้อมสีทั้งหมด",
+    "EX054 — ขอรูปหมวกแก๊ป รุ่น บัคเคิ้ลบี (Buckle-B) พร้อมสีทั้งหมด",
+    "EX055 — ขอรูปหมวกแก๊ป รุ่น แซนวิช (Sandwich) พร้อมสีทั้งหมด"
+  ]
+}

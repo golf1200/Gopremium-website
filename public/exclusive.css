@@ -39,7 +39,7 @@
   /* type */
   --f-display:'Anuphan',sans-serif;
   --f-body:'IBM Plex Sans Thai',sans-serif;
-  --f-tier:'Sora',sans-serif;
+  --f-tier:'Anuphan',sans-serif;          /* was Sora — switched to main brand font (Anuphan) for site-wide consistency */
   --f-serif:'Cormorant Garamond',serif;   /* editorial flair */
 
   /* rhythm */
@@ -99,7 +99,7 @@ section{position:relative}
 @keyframes foilSweep{0%{background-position:0% 50%}100%{background-position:280% 50%}}
 body[data-motion="calm"] .foil,body[data-motion="calm"] .foil-silver{animation:none;background-position:30% 50%}
 
-/* tier descriptor — Sora tracked uppercase (Brand Book 17.2) */
+/* tier descriptor — Anuphan tracked uppercase (main brand font; was Sora per Brand Book 17.2) */
 .tier{
   font-family:var(--f-tier);font-weight:600;text-transform:uppercase;
   letter-spacing:.34em;

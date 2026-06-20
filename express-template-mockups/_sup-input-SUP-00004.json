@@ -1,0 +1,21 @@
+{
+ "supplier": "SUP-00004",
+ "sup_name": "โฮมสกรีน",
+ "skus": [
+  {
+   "sku": "EX008",
+   "name": "-หมวกตาข่าย -หมวกปีกแข็ง -หมวกบักเก็ต -หมวกคลุมหน้า"
+  },
+  {
+   "sku": "EX009",
+   "name": "หมวกแก๊ปผ้าลีวาย"
+  }
+ ],
+ "drive_images": [
+  "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/express-assets/_source/_drive/SUP-00004  โฮมสกรีน (หมวก)/616935662976762232.jpg",
+  "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/express-assets/_source/_drive/SUP-00004  โฮมสกรีน (หมวก)/616935663345860752.jpg",
+  "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/express-assets/_source/_drive/SUP-00004  โฮมสกรีน (หมวก)/616935668027490339.jpg",
+  "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/express-assets/_source/_drive/SUP-00004  โฮมสกรีน (หมวก)/616935671466819878.jpg",
+  "C:/Users/Golf/Documents/Claude/Projects/Gopremium Website LIVE/website/express-assets/_source/_drive/SUP-00004  โฮมสกรีน (หมวก)/616935673563972001.jpg"
+ ]
+}
