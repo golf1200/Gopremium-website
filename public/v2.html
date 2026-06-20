@@ -468,13 +468,13 @@ a.occ:hover{transform:translateY(-4px);box-shadow:var(--sh-md)}
 .nh .float-chip b{display:block;font-family:var(--head);font-weight:600;font-size:13.5px;color:var(--navy);line-height:1.3}
 .nh .float-chip small{font-size:11.5px;color:var(--grey)}
 /* hero2 photo variant — full-bleed brand image, copy over the soft-gray left zone */
-.nh .hero2-photo{position:relative;width:100%;background:var(--cloud-2)}
-.nh .hero2-photo .hero2-bg{position:relative;display:block;width:100%;height:auto;z-index:0}
+.nh .hero2-photo{position:relative;width:100%;background:var(--cloud-2);aspect-ratio:1672/837;overflow:hidden} /* crop empty floor off the bottom */
+.nh .hero2-photo .hero2-bg{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:50% 0;z-index:0}
 /* soft gray wash over the bright left of the photo so it reads as one cohesive image (was white) */
 .nh .hero2-photo::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(98deg,rgba(224,227,233,.86) 0%,rgba(228,231,236,.6) 20%,rgba(233,236,240,.2) 38%,rgba(255,255,255,0) 52%)}
 .nh .hero2-in2{position:absolute;inset:0;z-index:2;display:flex;align-items:center}
-.nh .hero2-copy{max-width:min(540px,46%);transform:translateY(-26px)} /* nudge copy up to the image's optical center */
-@media(max-width:920px){.nh .hero2-in2{position:static;display:block;padding:24px 0 6px}.nh .hero2-photo::after{display:none}.nh .hero2-copy{max-width:100%;transform:none}}
+.nh .hero2-copy{max-width:min(540px,46%);transform:translateY(-8px)} /* align eyebrow to the woman's ear level */
+@media(max-width:920px){.nh .hero2-photo{aspect-ratio:auto}.nh .hero2-photo .hero2-bg{position:relative;height:auto;object-fit:initial}.nh .hero2-in2{position:static;display:block;padding:24px 0 6px}.nh .hero2-photo::after{display:none}.nh .hero2-copy{max-width:100%;transform:none}}
 .nh .chip-1{left:-22px;bottom:30px}.nh .chip-2{left:-22px;top:20px}
 /* trust */
 .nh .trust2{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(44px,6vw,68px) 0;overflow:hidden}
