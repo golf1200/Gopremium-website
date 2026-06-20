@@ -4369,7 +4369,29 @@
   "logo_max_cm": "",
   "occasions": [],
   "express": true,
-  "lead_time": ""
+  "lead_time": "",
+  "colors": [
+   "เขียว",
+   "ส้ม",
+   "ฟ้า",
+   "ชมพูบานเย็น",
+   "ฟ้าอมเขียว",
+   "ชมพูอ่อน",
+   "ม่วง",
+   "เขียวอ่อน",
+   "แดง",
+   "ลายดอกแดง",
+   "ลายพราง (camo)",
+   "ดำ",
+   "ลายเขียว",
+   "น้ำเงิน",
+   "เขียวเข้ม",
+   "ส้มสกรีนโลโก้",
+   "ลายดอกหลากสี",
+   "แดงลายเรขาคณิต",
+   "ลายดอกไม้เขียว",
+   "ดำลายดอก"
+  ]
  },
  {
   "sku": "EX011",
@@ -4389,7 +4411,16 @@
   "logo_max_cm": "",
   "occasions": [],
   "express": true,
-  "lead_time": ""
+  "lead_time": "",
+  "colors": [
+   "กรมท่าลายดอกเดซี่",
+   "เลือดหมูลายดอกเดซี่",
+   "ฟ้าลายโรยสี",
+   "ชมพูลายโรยสี",
+   "ม่วงลายโรยสี",
+   "เขียวเข้มลายโรยสี",
+   "ดำ Hello"
+  ]
  },
  {
   "sku": "EX012",
@@ -4429,7 +4460,18 @@
   "logo_max_cm": "",
   "occasions": [],
   "express": true,
-  "lead_time": ""
+  "lead_time": "",
+  "colors": [
+   "ฟ้า",
+   "ม่วง",
+   "ชมพู",
+   "เขียว",
+   "ส้ม",
+   "น้ำเงิน",
+   "แดง",
+   "น้ำเงินสกรีนโลโก้",
+   "ฟ้าลายกราฟิก"
+  ]
  },
  {
   "sku": "EX014",
@@ -4469,7 +4511,17 @@
   "logo_max_cm": "",
   "occasions": [],
   "express": true,
-  "lead_time": ""
+  "lead_time": "",
+  "colors": [
+   "ชมพู",
+   "ส้ม",
+   "เขียว",
+   "ฟ้า",
+   "ม่วง",
+   "เหลือง",
+   "แดง",
+   "น้ำเงิน"
+  ]
  },
  {
   "sku": "EX016",
@@ -4489,7 +4541,17 @@
   "logo_max_cm": "",
   "occasions": [],
   "express": true,
-  "lead_time": ""
+  "lead_time": "",
+  "colors": [
+   "ฟ้า",
+   "ชมพู",
+   "เขียว",
+   "ม่วง",
+   "เหลือง",
+   "ส้ม",
+   "น้ำเงิน",
+   "แดง"
+  ]
  },
  {
   "sku": "EX017",
@@ -4509,7 +4571,17 @@
   "logo_max_cm": "",
   "occasions": [],
   "express": true,
-  "lead_time": ""
+  "lead_time": "",
+  "colors": [
+   "ม่วง",
+   "ชมพู",
+   "เขียว",
+   "ฟ้า",
+   "เหลือง",
+   "ส้ม",
+   "น้ำเงิน",
+   "แดง"
+  ]
  },
  {
   "sku": "EX018",
@@ -4529,7 +4601,19 @@
   "logo_max_cm": "",
   "occasions": [],
   "express": true,
-  "lead_time": ""
+  "lead_time": "",
+  "colors": [
+   "ดำลายดอกทานตะวันแดง",
+   "ดำลายดอก",
+   "ม่วง",
+   "ชมพู",
+   "ฟ้า",
+   "แดง",
+   "เหลือง",
+   "น้ำเงิน",
+   "ส้ม",
+   "ชมพูบานเย็น"
+  ]
  },
  {
   "sku": "EX019",
@@ -4577,7 +4661,10 @@
   "logo_max_cm": "",
   "occasions": [],
   "express": true,
-  "lead_time": ""
+  "lead_time": "",
+  "colors": [
+   "ดำ/Black"
+  ]
  },
  {
   "sku": "EX021",
@@ -4597,7 +4684,10 @@
   "logo_max_cm": "",
   "occasions": [],
   "express": true,
-  "lead_time": ""
+  "lead_time": "",
+  "colors": [
+   "เงิน/Silver"
+  ]
  },
  {
   "sku": "EX022",
@@ -4617,7 +4707,11 @@
   "logo_max_cm": "",
   "occasions": [],
   "express": true,
-  "lead_time": "-งานสกรีนขนาดของ ด้ามจับค่อนข้างเล็ก"
+  "lead_time": "-งานสกรีนขนาดของ ด้ามจับค่อนข้างเล็ก",
+  "colors": [
+   "เงิน/Silver",
+   "ขาว/White"
+  ]
  },
  {
   "sku": "EX023",
@@ -4637,7 +4731,12 @@
   "logo_max_cm": "",
   "occasions": [],
   "express": true,
-  "lead_time": "-งานสกรีนขนาดของ ด้ามจับค่อนข้างเล็ก"
+  "lead_time": "-งานสกรีนขนาดของ ด้ามจับค่อนข้างเล็ก",
+  "colors": [
+   "ขาว/White",
+   "น้ำเงิน/Blue",
+   "ดำ-ชมพู/Black-Pink"
+  ]
  },
  {
   "sku": "EX024",
@@ -4657,7 +4756,13 @@
   "logo_max_cm": "",
   "occasions": [],
   "express": true,
-  "lead_time": ""
+  "lead_time": "",
+  "colors": [
+   "เงิน/Silver",
+   "ม่วง/Purple",
+   "เขียว/Green",
+   "ส้ม/Orange"
+  ]
  },
  {
   "sku": "EX025",
@@ -5084,7 +5189,14 @@
   "occasions": [],
   "express": true,
   "lead_time": "7-10 วัน",
-  "colors": []
+  "colors": [
+   "ชมพู",
+   "เทา",
+   "ขาว",
+   "ฟ้า",
+   "แดง",
+   "น้ำเงิน"
+  ]
  },
  {
   "sku": "EX038",
@@ -5356,7 +5468,11 @@
   "occasions": [],
   "express": true,
   "lead_time": "14 วัน",
-  "colors": []
+  "colors": [
+   "ดำ",
+   "กากี/ครีม",
+   "แดง"
+  ]
  },
  {
   "sku": "EX048",
@@ -5377,7 +5493,16 @@
   "occasions": [],
   "express": true,
   "lead_time": "14 วัน",
-  "colors": []
+  "colors": [
+   "ดำ",
+   "น้ำเงิน",
+   "น้ำตาล",
+   "เขียว",
+   "แดง",
+   "ส้ม",
+   "สายน้ำตาล",
+   "สายแดง"
+  ]
  },
  {
   "sku": "EX049",
@@ -5398,7 +5523,14 @@
   "occasions": [],
   "express": true,
   "lead_time": "14 วัน",
-  "colors": []
+  "colors": [
+   "ฟ้า-เทา",
+   "กรมท่า-เทา",
+   "กรมท่า-ส้ม",
+   "กรมท่า-เหลือง",
+   "เทาเข้ม",
+   "ดำ-เทา"
+  ]
  },
  {
   "sku": "EX050",
@@ -5419,7 +5551,10 @@
   "occasions": [],
   "express": true,
   "lead_time": "14 วัน",
-  "colors": []
+  "colors": [
+   "กรมท่า/ดำ",
+   "เทาอ่อน"
+  ]
  },
  {
   "sku": "EX051",
@@ -5461,7 +5596,11 @@
   "occasions": [],
   "express": true,
   "lead_time": "14 วัน",
-  "colors": []
+  "colors": [
+   "กรมท่า",
+   "น้ำเงิน",
+   "เทาอ่อน"
+  ]
  },
  {
   "sku": "EX053",
@@ -5482,7 +5621,15 @@
   "occasions": [],
   "express": true,
   "lead_time": "14 วัน",
-  "colors": []
+  "colors": [
+   "navy",
+   "black",
+   "blue",
+   "cream",
+   "orange",
+   "green",
+   "gray"
+  ]
  },
  {
   "sku": "EX054",
@@ -5503,7 +5650,16 @@
   "occasions": [],
   "express": true,
   "lead_time": "14 วัน",
-  "colors": []
+  "colors": [
+   "khaki",
+   "black",
+   "blue",
+   "gray",
+   "navy",
+   "pink",
+   "red",
+   "white"
+  ]
  },
  {
   "sku": "EX055",
@@ -5524,7 +5680,16 @@
   "occasions": [],
   "express": true,
   "lead_time": "14 วัน",
-  "colors": []
+  "colors": [
+   "black",
+   "navy",
+   "white",
+   "blue",
+   "red",
+   "yellow",
+   "gray",
+   "orange"
+  ]
  },
  {
   "sku": "EX056",
@@ -5661,9 +5826,24 @@
   "free_logo": [],
   "logo_max_cm": "",
   "occasions": [],
-  "colors": [],
+  "colors": [
+   "แดง",
+   "ส้ม",
+   "โอรส",
+   "เทา",
+   "ขาว",
+   "ฟ้า",
+   "น้ำเงิน",
+   "เขียว",
+   "เหลือง",
+   "ม่วง",
+   "ชมพู",
+   "ดำ",
+   "น้ำตาล"
+  ],
   "_supplier": "SUP-00001",
-  "_source_drive": "692979_0.jpg"
+  "_source_drive": "692979_0.jpg",
+  "express": true
  },
  {
   "sku": "EX043",
@@ -5705,7 +5885,8 @@
    "น้ำตาล"
   ],
   "_supplier": "SUP-00004",
-  "_source_drive": "616935663345860752.jpg"
+  "_source_drive": "616935663345860752.jpg",
+  "express": true
  },
  {
   "sku": "EX062",
@@ -5731,7 +5912,8 @@
    "กรมท่า"
   ],
   "_supplier": "SUP-00004",
-  "_source_drive": "616935671466819878.jpg"
+  "_source_drive": "616935671466819878.jpg",
+  "express": true
  },
  {
   "sku": "EX063",
@@ -5787,7 +5969,8 @@
    "ลายทหาร"
   ],
   "_supplier": "SUP-00004",
-  "_source_drive": "616935673563972001.jpg"
+  "_source_drive": "616935673563972001.jpg",
+  "express": true
  },
  {
   "sku": "EX065",
@@ -6144,7 +6327,8 @@
    "navy/charcoal-blue"
   ],
   "_supplier": "SUP-00011",
-  "_source_drive": "617095741055172943.jpg"
+  "_source_drive": "617095741055172943.jpg",
+  "express": true
  },
  {
   "sku": "EX077",
@@ -6168,7 +6352,8 @@
    "cream body + green sleeves"
   ],
   "_supplier": "SUP-00011",
-  "_source_drive": "617095741257023490.jpg"
+  "_source_drive": "617095741257023490.jpg",
+  "express": true
  },
  {
   "sku": "EX078",
@@ -6191,7 +6376,8 @@
    "khaki/brown"
   ],
   "_supplier": "SUP-00011",
-  "_source_drive": "617095741306831293.jpg"
+  "_source_drive": "617095741306831293.jpg",
+  "express": true
  },
  {
   "sku": "EX079",
@@ -6220,7 +6406,8 @@
    "navy"
   ],
   "_supplier": "SUP-00011",
-  "_source_drive": "617095773602971846.jpg"
+  "_source_drive": "617095773602971846.jpg",
+  "express": true
  },
  {
   "sku": "EX080",
@@ -6243,7 +6430,8 @@
    "navy"
   ],
   "_supplier": "SUP-00011",
-  "_source_drive": "617095773603758561.jpg"
+  "_source_drive": "617095773603758561.jpg",
+  "express": true
  },
  {
   "sku": "EX081",
@@ -6274,6 +6462,689 @@
    "black plain"
   ],
   "_supplier": "SUP-00011",
-  "_source_drive": "617095803685306389.jpg"
+  "_source_drive": "617095803685306389.jpg",
+  "express": true
+ },
+ {
+  "sku": "EX082",
+  "slug": "ex082-drinkware",
+  "name": "ขวดน้ำพลาสติกเด็ก มีหลอด-หูหิ้ว",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "",
+  "size": "",
+  "material": "",
+  "price_300_thb": null,
+  "budget_tier": "",
+  "moq": 50,
+  "free_logo": [],
+  "logo_max_cm": "",
+  "colors": [
+   "ใส",
+   "เขียว",
+   "ดำ"
+  ],
+  "occasions": [],
+  "lead_time": "7-14 วัน",
+  "express": true
+ },
+ {
+  "sku": "EX083",
+  "slug": "ex083-drinkware",
+  "name": "ขวดน้ำพลาสติกฝาเห็ด/ฝาเพชร มีสาย",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "",
+  "size": "",
+  "material": "",
+  "price_300_thb": null,
+  "budget_tier": "",
+  "moq": 50,
+  "free_logo": [],
+  "logo_max_cm": "",
+  "colors": [
+   "ขุ่น",
+   "ฟ้า",
+   "ชมพู",
+   "เขียว",
+   "ม่วง"
+  ],
+  "occasions": [],
+  "lead_time": "7-14 วัน",
+  "express": true
+ },
+ {
+  "sku": "EX084",
+  "slug": "ex084-drinkware",
+  "name": "ขวดน้ำพลาสติกพร้อมปลอกฟาง/ทรงแก้วกาแฟ",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "",
+  "size": "",
+  "material": "",
+  "price_300_thb": null,
+  "budget_tier": "",
+  "moq": 50,
+  "free_logo": [],
+  "logo_max_cm": "",
+  "colors": [
+   "ขาวครีม",
+   "เทา"
+  ],
+  "occasions": [],
+  "lead_time": "7-14 วัน",
+  "express": true
+ },
+ {
+  "sku": "EX085",
+  "slug": "ex085-drinkware",
+  "name": "กระบอกน้ำสแตนเลสฝาหูหิ้ว/ฝาล็อค",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "",
+  "size": "",
+  "material": "",
+  "price_300_thb": null,
+  "budget_tier": "",
+  "moq": 50,
+  "free_logo": [],
+  "logo_max_cm": "",
+  "colors": [
+   "แดง",
+   "เขียวเข้ม",
+   "ดำ",
+   "ครีม",
+   "ทูโทน"
+  ],
+  "occasions": [],
+  "lead_time": "7-14 วัน",
+  "express": true
+ },
+ {
+  "sku": "EX086",
+  "slug": "ex086-drinkware",
+  "name": "แก้วกาแฟสแตนเลสหุ้มไม้ไผ่ มีหูจับ",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "",
+  "size": "",
+  "material": "",
+  "price_300_thb": null,
+  "budget_tier": "",
+  "moq": 50,
+  "free_logo": [],
+  "logo_max_cm": "",
+  "colors": [
+   "ลายไม้"
+  ],
+  "occasions": [],
+  "lead_time": "7-14 วัน",
+  "express": true
+ },
+ {
+  "sku": "EX087",
+  "slug": "ex087-drinkware",
+  "name": "กระบอกน้ำสแตนเลสไล่เฉดสี ฝาหูหิ้ว",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "",
+  "size": "",
+  "material": "",
+  "price_300_thb": null,
+  "budget_tier": "",
+  "moq": 50,
+  "free_logo": [],
+  "logo_max_cm": "",
+  "colors": [
+   "เหลือง-ส้มไล่เฉด",
+   "พาสเทลไล่เฉด"
+  ],
+  "occasions": [],
+  "lead_time": "7-14 วัน",
+  "express": true
+ },
+ {
+  "sku": "EX088",
+  "slug": "ex088-drinkware",
+  "name": "แก้วแก้วพร้อมปลอก ทรงโหลเตี้ยฝาเกลียว",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "",
+  "size": "",
+  "material": "",
+  "price_300_thb": null,
+  "budget_tier": "",
+  "moq": 50,
+  "free_logo": [],
+  "logo_max_cm": "",
+  "colors": [
+   "ชมพู",
+   "ม่วง",
+   "ฟ้า"
+  ],
+  "occasions": [],
+  "lead_time": "7-14 วัน",
+  "express": true
+ },
+ {
+  "sku": "EX089",
+  "slug": "ex089-drinkware",
+  "name": "แก้วแก้วพร้อมปลอก ทรงโหลใหญ่ฝาไม้ไผ่ + หลอด",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "",
+  "size": "",
+  "material": "",
+  "price_300_thb": null,
+  "budget_tier": "",
+  "moq": 50,
+  "free_logo": [],
+  "logo_max_cm": "",
+  "colors": [
+   "น้ำเงิน",
+   "ครีม",
+   "เขียวมิ้นต์",
+   "เหลือง",
+   "น้ำตาล",
+   "ใส"
+  ],
+  "occasions": [],
+  "lead_time": "7-14 วัน",
+  "express": true
+ },
+ {
+  "sku": "EX090",
+  "slug": "ex090-garment",
+  "name": "ชุดหมีช่าง (เสื้อ+กางเกงติดกัน) แถบสะท้อนแสง",
+  "category": "Garment",
+  "category_slug": "garment",
+  "features": "",
+  "size": "",
+  "material": "",
+  "price_300_thb": null,
+  "budget_tier": "",
+  "moq": 50,
+  "free_logo": [],
+  "logo_max_cm": "",
+  "colors": [
+   "กรมท่า"
+  ],
+  "occasions": [],
+  "lead_time": "7-14 วัน",
+  "express": true
+ },
+ {
+  "sku": "EX091",
+  "slug": "ex091-garment",
+  "name": "เสื้อยืดโอเวอร์ไซส์ Cool-Ease (Oversize)",
+  "category": "Garment",
+  "category_slug": "garment",
+  "features": "",
+  "size": "",
+  "material": "",
+  "price_300_thb": null,
+  "budget_tier": "",
+  "moq": 50,
+  "free_logo": [],
+  "logo_max_cm": "",
+  "colors": [
+   "ขาว",
+   "ดำ",
+   "เทา",
+   "กรมท่า"
+  ],
+  "occasions": [],
+  "lead_time": "7-14 วัน",
+  "express": true
+ },
+ {
+  "sku": "EX092",
+  "slug": "ex092-garment",
+  "name": "เสื้อยืดครอป (Crop Top) PMK",
+  "category": "Garment",
+  "category_slug": "garment",
+  "features": "",
+  "size": "",
+  "material": "",
+  "price_300_thb": null,
+  "budget_tier": "",
+  "moq": 50,
+  "free_logo": [],
+  "logo_max_cm": "",
+  "colors": [
+   "เหลือง",
+   "ฟ้า",
+   "เขียว",
+   "ชมพู",
+   "ม่วง"
+  ],
+  "occasions": [],
+  "lead_time": "7-14 วัน",
+  "express": true
+ },
+ {
+  "sku": "EX093",
+  "slug": "ex093-garment",
+  "name": "เสื้อยืดคอกลม/คอวี ทรงโมเดิร์น",
+  "category": "Garment",
+  "category_slug": "garment",
+  "features": "",
+  "size": "",
+  "material": "",
+  "price_300_thb": null,
+  "budget_tier": "",
+  "moq": 50,
+  "free_logo": [],
+  "logo_max_cm": "",
+  "colors": [
+   "ดำ",
+   "กรมท่า",
+   "ส้ม",
+   "เหลือง",
+   "เขียวมิ้นท์",
+   "โอ๊ต",
+   "โอวัลติน"
+  ],
+  "occasions": [],
+  "lead_time": "7-14 วัน",
+  "express": true
+ },
+ {
+  "sku": "EX094",
+  "slug": "ex094-umbrella",
+  "name": "ร่มยาว 24 นิ้ว ตรง ลายพิมพ์ (rakafactory)",
+  "category": "Umbrella",
+  "category_slug": "umbrella",
+  "features": "",
+  "size": "",
+  "material": "",
+  "price_300_thb": null,
+  "budget_tier": "",
+  "moq": 50,
+  "free_logo": [],
+  "logo_max_cm": "",
+  "colors": [
+   "ฟ้าลายปลา",
+   "น้ำเงินลายกราฟิก"
+  ],
+  "occasions": [],
+  "lead_time": "7-14 วัน",
+  "express": true
+ },
+ {
+  "sku": "EX095",
+  "slug": "ex095-bags",
+  "name": "กระเป๋าผ้าแคนวาส Canvas Tote 14 oz.",
+  "category": "Bag",
+  "category_slug": "bags",
+  "features": "",
+  "size": "",
+  "material": "",
+  "price_300_thb": null,
+  "budget_tier": "",
+  "moq": 50,
+  "free_logo": [],
+  "logo_max_cm": "",
+  "colors": [
+   "ธรรมชาติ/Natural"
+  ],
+  "occasions": [],
+  "lead_time": "7-14 วัน",
+  "express": true
+ },
+ {
+  "sku": "EX096",
+  "slug": "ex096-bags",
+  "name": "กระเป๋าถือนุ่มฟู Dumpling Puffy Bag",
+  "category": "Bag",
+  "category_slug": "bags",
+  "features": "",
+  "size": "",
+  "material": "",
+  "price_300_thb": null,
+  "budget_tier": "",
+  "moq": 50,
+  "free_logo": [],
+  "logo_max_cm": "",
+  "colors": [
+   "หลากสี/Multi (12+ colors)"
+  ],
+  "occasions": [],
+  "lead_time": "7-14 วัน",
+  "express": true
+ },
+ {
+  "sku": "EX097",
+  "slug": "ex097-bags",
+  "name": "กระเป๋านุ่มฟู Fluffy Puffy Bag",
+  "category": "Bag",
+  "category_slug": "bags",
+  "features": "",
+  "size": "",
+  "material": "",
+  "price_300_thb": null,
+  "budget_tier": "",
+  "moq": 50,
+  "free_logo": [],
+  "logo_max_cm": "",
+  "colors": [
+   "หลากสี/Multi"
+  ],
+  "occasions": [],
+  "lead_time": "7-14 วัน",
+  "express": true
+ },
+ {
+  "sku": "EX098",
+  "slug": "ex098-bags",
+  "name": "กระเป๋าระบายจีบ Fluffy Moji Bag",
+  "category": "Bag",
+  "category_slug": "bags",
+  "features": "",
+  "size": "",
+  "material": "",
+  "price_300_thb": null,
+  "budget_tier": "",
+  "moq": 50,
+  "free_logo": [],
+  "logo_max_cm": "",
+  "colors": [
+   "หลากสี/Multi (10+ colors)"
+  ],
+  "occasions": [],
+  "lead_time": "7-14 วัน",
+  "express": true
+ },
+ {
+  "sku": "EX099",
+  "slug": "ex099-bags",
+  "name": "กระเป๋าผ้า Paris Bag (Size L)",
+  "category": "Bag",
+  "category_slug": "bags",
+  "features": "",
+  "size": "",
+  "material": "",
+  "price_300_thb": null,
+  "budget_tier": "",
+  "moq": 50,
+  "free_logo": [],
+  "logo_max_cm": "",
+  "colors": [
+   "ครีม/Cream",
+   "หลากสี/Multi prints"
+  ],
+  "occasions": [],
+  "lead_time": "7-14 วัน",
+  "express": true
+ },
+ {
+  "sku": "EX100",
+  "slug": "ex100-bags",
+  "name": "กระเป๋าผ้าลายทาง Puffy PopLine Bag",
+  "category": "Bag",
+  "category_slug": "bags",
+  "features": "",
+  "size": "",
+  "material": "",
+  "price_300_thb": null,
+  "budget_tier": "",
+  "moq": 50,
+  "free_logo": [],
+  "logo_max_cm": "",
+  "colors": [
+   "ลายทางแดง/Red stripe",
+   "ลายทางน้ำเงิน/Navy stripe",
+   "ลายทางหลากสี/Multi stripe"
+  ],
+  "occasions": [],
+  "lead_time": "7-14 วัน",
+  "express": true
+ },
+ {
+  "sku": "EX101",
+  "slug": "ex101-lifestyle",
+  "name": "ผ้าห่มนาโนเนื้อนุ่ม (Plain Fleece Blanket)",
+  "category": "Lifestyle",
+  "category_slug": "lifestyle",
+  "features": "",
+  "size": "",
+  "material": "",
+  "price_300_thb": null,
+  "budget_tier": "",
+  "moq": 50,
+  "free_logo": [],
+  "logo_max_cm": "",
+  "colors": [
+   "ครีม/Beige (custom colors)"
+  ],
+  "occasions": [],
+  "lead_time": "7-14 วัน",
+  "express": true
+ },
+ {
+  "sku": "EX102",
+  "slug": "ex102-lifestyle",
+  "name": "ผ้าห่มมีฮู้ดสวมใส่ (Hooded Wearable Blanket)",
+  "category": "Lifestyle",
+  "category_slug": "lifestyle",
+  "features": "",
+  "size": "",
+  "material": "",
+  "price_300_thb": null,
+  "budget_tier": "",
+  "moq": 50,
+  "free_logo": [],
+  "logo_max_cm": "",
+  "colors": [
+   "ครีม/Beige",
+   "ชมพู/Pink"
+  ],
+  "occasions": [],
+  "lead_time": "7-14 วัน",
+  "express": true
+ },
+ {
+  "sku": "EX103",
+  "slug": "ex103-lifestyle",
+  "name": "ผ้าห่มหมวกฮู้ดเด็กลายสัตว์ (Kids Hooded Animal Blanket)",
+  "category": "Lifestyle",
+  "category_slug": "lifestyle",
+  "features": "",
+  "size": "",
+  "material": "",
+  "price_300_thb": null,
+  "budget_tier": "",
+  "moq": 50,
+  "free_logo": [],
+  "logo_max_cm": "",
+  "colors": [
+   "สุนัขจิ้งจอก/Fox",
+   "แอปเปิ้ล/Apple",
+   "หมี/Bear"
+  ],
+  "occasions": [],
+  "lead_time": "7-14 วัน",
+  "express": true
+ },
+ {
+  "sku": "EX104",
+  "slug": "ex104-lifestyle",
+  "name": "หมอนผ้าห่ม 2-in-1 ลายการ์ตูน (Cushion-Blanket Combo)",
+  "category": "Lifestyle",
+  "category_slug": "lifestyle",
+  "features": "",
+  "size": "",
+  "material": "",
+  "price_300_thb": null,
+  "budget_tier": "",
+  "moq": 50,
+  "free_logo": [],
+  "logo_max_cm": "",
+  "colors": [
+   "หมี/Bear",
+   "เสือ/Tiger",
+   "เพนกวิน/Penguin",
+   "หมีน้ำตาล/Brown bear"
+  ],
+  "occasions": [],
+  "lead_time": "7-14 วัน",
+  "express": true
+ },
+ {
+  "sku": "EX105",
+  "slug": "ex105-lifestyle",
+  "name": "หมอนอิงตุ๊กตาลายการ์ตูน (Character Cushion Pillow)",
+  "category": "Lifestyle",
+  "category_slug": "lifestyle",
+  "features": "",
+  "size": "",
+  "material": "",
+  "price_300_thb": null,
+  "budget_tier": "",
+  "moq": 50,
+  "free_logo": [],
+  "logo_max_cm": "",
+  "colors": [
+   "ไก่/Chick",
+   "ดาว/Star",
+   "ก้อนเมฆ/Cloud",
+   "หัวใจ/Heart"
+  ],
+  "occasions": [],
+  "lead_time": "7-14 วัน",
+  "express": true
+ },
+ {
+  "sku": "EX106",
+  "slug": "ex106-lifestyle",
+  "name": "หมอนอิงสี่เหลี่ยมสกรีนโลโก้ (Square Logo Cushion)",
+  "category": "Lifestyle",
+  "category_slug": "lifestyle",
+  "features": "",
+  "size": "",
+  "material": "",
+  "price_300_thb": null,
+  "budget_tier": "",
+  "moq": 50,
+  "free_logo": [],
+  "logo_max_cm": "",
+  "colors": [
+   "กรมท่าลายใบไม้/Navy leaf",
+   "ฟ้า/Blue (custom print)"
+  ],
+  "occasions": [],
+  "lead_time": "7-14 วัน",
+  "express": true
+ },
+ {
+  "sku": "EX107",
+  "slug": "ex107-lifestyle",
+  "name": "หมอนรองคอเมมโมรี่/ลายการ์ตูน (Travel Neck Pillow)",
+  "category": "Lifestyle",
+  "category_slug": "lifestyle",
+  "features": "",
+  "size": "",
+  "material": "",
+  "price_300_thb": null,
+  "budget_tier": "",
+  "moq": 50,
+  "free_logo": [],
+  "logo_max_cm": "",
+  "colors": [
+   "หมี/Bear",
+   "เทา/Grey",
+   "การ์ตูน/Character"
+  ],
+  "occasions": [],
+  "lead_time": "7-14 วัน",
+  "express": true
+ },
+ {
+  "sku": "EX108",
+  "slug": "ex108-lifestyle",
+  "name": "หมอนรองคอ Pocky x Glico ช้าง (Pocky Neck Pillow)",
+  "category": "Lifestyle",
+  "category_slug": "lifestyle",
+  "features": "",
+  "size": "",
+  "material": "",
+  "price_300_thb": null,
+  "budget_tier": "",
+  "moq": 50,
+  "free_logo": [],
+  "logo_max_cm": "",
+  "colors": [
+   "เหลือง/Yellow (branded)"
+  ],
+  "occasions": [],
+  "lead_time": "7-14 วัน",
+  "express": true
+ },
+ {
+  "sku": "EX109",
+  "slug": "ex109-lifestyle",
+  "name": "หมอนรองข้อมือ (Wrist Rest Pillow)",
+  "category": "Lifestyle",
+  "category_slug": "lifestyle",
+  "features": "",
+  "size": "",
+  "material": "",
+  "price_300_thb": null,
+  "budget_tier": "",
+  "moq": 50,
+  "free_logo": [],
+  "logo_max_cm": "",
+  "colors": [
+   "กำหนดเอง/Custom"
+  ],
+  "occasions": [],
+  "lead_time": "7-14 วัน",
+  "express": true
+ },
+ {
+  "sku": "EX110",
+  "slug": "ex110-powerbank",
+  "name": "พาวเวอร์แบงค์ไร้สาย Remax RPP-30 10000mAh MagSafe",
+  "category": "Powerbank",
+  "category_slug": "powerbank",
+  "features": "",
+  "size": "",
+  "material": "",
+  "price_300_thb": null,
+  "budget_tier": "",
+  "moq": 50,
+  "free_logo": [],
+  "logo_max_cm": "",
+  "colors": [
+   "ฟ้า/Light Blue"
+  ],
+  "occasions": [],
+  "lead_time": "7-14 วัน",
+  "express": true
+ },
+ {
+  "sku": "EX111",
+  "slug": "ex111-powerbank",
+  "name": "พาวเวอร์แบงค์ Remax RPP-116 10000mAh สายในตัว (หลายสี)",
+  "category": "Powerbank",
+  "category_slug": "powerbank",
+  "features": "",
+  "size": "",
+  "material": "",
+  "price_300_thb": null,
+  "budget_tier": "",
+  "moq": 50,
+  "free_logo": [],
+  "logo_max_cm": "",
+  "colors": [
+   "ดำ/Black",
+   "ฟ้า/Blue",
+   "เขียว/Green",
+   "ส้ม/Orange",
+   "ชมพู/Pink"
+  ],
+  "occasions": [],
+  "lead_time": "7-14 วัน",
+  "express": true
  }
 ]

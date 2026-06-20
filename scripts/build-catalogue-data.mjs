@@ -1,14 +1,31 @@
 import fs from 'node:fs';
 
 const raw = JSON.parse(fs.readFileSync('src/data/products-raw.json', 'utf8'));
-// Real curated product photos (71 SKUs). Un-mapped SKUs fall back to SVG mockup.
+// Real curated product photos. Un-mapped SKUs fall back to SVG mockup.
 const gen = JSON.parse(fs.readFileSync('src/data/product-images.generated.json', 'utf8'));
+
+// Thai colour-name -> hex, for express colour swatches. Longest key wins.
+const colorMap = JSON.parse(fs.readFileSync('src/data/color-map.json', 'utf8'));
+const colorKeys = Object.keys(colorMap).filter(k => k[0] !== '_').sort((a, b) => b.length - a.length);
+const hexOf = (name) => {
+  if (!name) return null;
+  const n = String(name).trim();
+  if (colorMap[n]) return colorMap[n];
+  for (const k of colorKeys) if (n.includes(k)) return colorMap[k];
+  return '#c9c9c9';
+};
+const swatchesOf = (colors) => {            // up to 8 deduped swatch hexes
+  if (!Array.isArray(colors) || !colors.length) return null;
+  const hexes = [];
+  for (const c of colors) { const h = hexOf(c); if (h && !hexes.includes(h)) hexes.push(h); if (hexes.length >= 8) break; }
+  return hexes.length ? hexes : null;
+};
 
 // Cache-busting version for product image URLs. Filenames stay fixed but
 // /images/* is served immutable for 1 year, so when images are regenerated in
 // place we bump this to force browsers/CDN to fetch the new bytes. Bump on every
 // in-place image refresh. (v2 = 2026-06-08 studio covers + cleaned galleries.)
-const IMG_VER = '5'; // v5 = 2026-06-17 reverted 5 studio masters to clean (homepage uses /images/home/covers/ copies for the "Your Logo" look)
+const IMG_VER = '7'; // v7 = 2026-06-20 express brand/logo cleanup — 16 flagged heroes re-die-cut to single clean product
 const bust = (u) => (u ? u + '?v=' + IMG_VER : u);
 
 // Public fields only (never cost / supplier / 1688)
@@ -35,6 +52,9 @@ const products = raw.map(p => {
     logoMax: p.logo_max_cm || '',
     img,        // real photo (square) or null → mockup fallback
     gallery,    // full photo set for product page, or null
+    express: !!p.express,
+    nColors: Array.isArray(p.colors) ? p.colors.length : 0,
+    swatches: swatchesOf(p.colors),   // up to 8 hex chips for the card
   };
 });
 

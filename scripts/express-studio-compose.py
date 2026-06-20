@@ -49,10 +49,17 @@ def studio_bg(w, h):
     _bg_cache[key] = bg
     return bg.copy()
 
-def compose(src_path, size=SIZE, fill=FILL):
+def _precrop(im, crop):
+    # crop = [x0,y0,x1,y1] as fractions of width/height
+    if not crop: return im
+    w, h = im.size
+    x0, y0, x1, y1 = crop
+    return im.crop((int(x0*w), int(y0*h), int(x1*w), int(y1*h)))
+
+def compose(src_path, size=SIZE, fill=FILL, crop=None):
     from rembg import remove
     from PIL import Image, ImageFilter
-    raw = Image.open(src_path).convert("RGBA")
+    raw = _precrop(Image.open(src_path).convert("RGBA"), crop)
     cut = remove(raw, session=_sess())
     # trim to alpha bbox
     bbox = cut.getbbox()
@@ -82,6 +89,18 @@ def compose(src_path, size=SIZE, fill=FILL):
     canvas.alpha_composite(cut, (ox, oy))
     return canvas.convert("RGB")
 
+def contain(src_path, size=SIZE, fill=0.90, crop=None):
+    # group/promo shot: no rembg, just fit the whole image onto the studio backdrop
+    from PIL import Image
+    im = _precrop(Image.open(src_path).convert("RGB"), crop)
+    iw, ih = im.size
+    scale = (size * fill) / max(iw, ih)
+    nw, nh = max(1, int(iw * scale)), max(1, int(ih * scale))
+    im = im.resize((nw, nh), Image.LANCZOS)
+    canvas = studio_bg(size, size)
+    canvas.paste(im, ((size - nw) // 2, (size - nh) // 2))
+    return canvas
+
 def save_jpg(im, path, q=86):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     im.save(path, "JPEG", quality=q, optimize=True, progressive=True)
@@ -94,7 +113,12 @@ def main():
         return
     # manifest mode
     root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    manifest = json.load(open(os.path.join(root, "express-realphoto-2026", "process-manifest.json"), encoding="utf-8"))
+    man_path = os.path.join(root, "express-realphoto-2026", "process-manifest.json")
+    args = list(sys.argv[1:])
+    if "--manifest" in args:
+        i = args.index("--manifest"); man_path = args[i+1]; del args[i:i+2]
+        sys.argv = [sys.argv[0]] + args
+    manifest = json.load(open(man_path, encoding="utf-8"))
     pub = os.path.join(root, "public", "images", "products")
     only = set(a.upper() for a in sys.argv[1:])
     done = 0
@@ -104,17 +128,20 @@ def main():
             continue
         slug = it["slug"]
         outdir = os.path.join(pub, slug)
+        grp = it.get("hero_is_group", False)
+        render = contain if grp else compose
+        crop = it.get("crop")
         # hero -> square
         try:
-            hero = compose(it["hero_abs"])
+            hero = render(it["hero_abs"], crop=crop)
             save_jpg(hero, os.path.join(outdir, f"{slug}-square.jpg"))
         except Exception as e:
             print("HERO FAIL", sku, e); continue
-        # gallery
+        # gallery (always try clean cutout for extra angles; fall back to contain)
         n = 2
         for gp in it.get("gallery_abs", [])[:4]:
             try:
-                g = compose(gp, size=GAL_SIZE)
+                g = (contain if grp else compose)(gp, size=GAL_SIZE)
                 save_jpg(g, os.path.join(outdir, f"{slug}-{n:02d}.jpg"))
                 n += 1
             except Exception as e:
