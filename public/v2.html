@@ -306,6 +306,24 @@ a.occ:hover{transform:translateY(-4px);box-shadow:var(--sh-md)}
 .pfoot{display:flex;align-items:flex-end;justify-content:space-between;margin-top:auto;padding-top:10px}
 .pprice{font-family:var(--head);font-weight:700;font-size:18px;color:var(--navy)}.pprice small{font-weight:400;font-size:11.5px;color:var(--grey)}
 .pmoq{font-size:11.5px;color:var(--grey)}
+/* === Express real-photo redesign (cohesive studio theme) === */
+.ecard .pthumb{background:#f7f6f1}
+.ebadge{position:absolute;top:11px;right:11px;background:var(--mustard);color:var(--navy);font-family:var(--head);font-weight:600;font-size:10.5px;padding:4px 9px;border-radius:var(--pill);box-shadow:0 2px 8px rgba(19,36,74,.18);display:inline-flex;align-items:center;gap:3px}
+.eswatches{display:flex;align-items:center;gap:5px;margin-top:4px;flex-wrap:wrap;min-height:16px}
+.edot{width:14px;height:14px;border-radius:50%;border:1.5px solid #fff;box-shadow:0 0 0 1px rgba(19,36,74,.16);flex:none}
+.emore{font-size:11px;color:var(--grey-400);font-weight:600}
+.encol{font-size:11.5px;color:var(--grey);margin-left:2px}
+.emoq{font-size:11.5px;color:var(--grey)}
+.ecta{font-family:var(--head);font-weight:600;font-size:12.5px;color:var(--navy);white-space:nowrap}
+.ecat{scroll-margin-top:84px}
+.ecat-head{display:flex;align-items:baseline;gap:10px;margin:36px 0 14px;padding-bottom:9px;border-bottom:1px solid var(--cloud-2)}
+.ecat-head h3{font-family:var(--head);font-weight:600;font-size:21px;color:var(--navy);margin:0}
+.ecat-n{font-size:12.5px;color:var(--grey-400)}
+.echips{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 4px}
+.echip{font-family:var(--head);font-size:13px;font-weight:500;color:var(--navy);background:var(--cloud);border:1px solid var(--cloud-2);padding:7px 15px;border-radius:var(--pill);text-decoration:none;transition:.15s}
+.echip:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.ecount{display:inline-flex;align-items:center;gap:7px;font-size:13px;color:var(--grey);margin-top:4px}
+.ecount b{color:var(--navy);font-family:var(--head)}
 
 /* catalogue layout */
 .cat-layout{display:grid;grid-template-columns:240px 1fr;gap:32px;align-items:start}
@@ -1137,17 +1155,32 @@ function viewAbout(){return `<section class="sec about" style="padding-top:34px"
 /* ===== EXPRESS (สินค้าส่งด่วน) =====
    รายการ SKU ที่ส่งด่วน — เติม sku ของสินค้าที่ผลิต/ส่งทันงานด่วนได้ที่นี่ เช่น ['DW001','BG002']
    ถ้าปล่อยว่าง หน้าจะแสดงเฉพาะข้อมูลบริการ + CTA (ไม่แสดงสินค้าปลอม) */
-const EXPRESS_SKUS=['EX001','EX002','EX003','EX004','EX005','EX006','EX008','EX009','EX019','EX025','EX026','EX027','EX029','EX030','EX031','EX032','EX033','EX034','EX035','EX036','EX037','EX038','EX039','EX040','EX041','EX042','EX044','EX045','EX046','EX047','EX048','EX049','EX050','EX051','EX052','EX053','EX054','EX055'];
+const EXPRESS_SKUS=["EX004","EX005","EX006","EX025","EX026","EX027","EX028","EX029","EX030","EX031","EX032","EX033","EX034","EX035","EX036","EX037","EX038","EX039","EX040","EX041","EX082","EX083","EX084","EX085","EX086","EX087","EX088","EX089","EX001","EX002","EX003","EX007","EX042","EX044","EX045","EX046","EX047","EX048","EX049","EX050","EX051","EX052","EX076","EX077","EX078","EX079","EX080","EX081","EX090","EX091","EX092","EX093","EX008","EX009","EX043","EX053","EX054","EX055","EX062","EX064","EX010","EX011","EX012","EX013","EX014","EX015","EX016","EX017","EX018","EX019","EX094","EX095","EX096","EX097","EX098","EX099","EX100","EX020","EX021","EX110","EX111","EX022","EX023","EX024","EX101","EX102","EX103","EX104","EX105","EX106","EX107","EX108","EX109"];
+const EXPRESS_CAT_ORDER=['drinkware','garment','hat','umbrella','bags','powerbank','fan','lifestyle'];
+function ecard(p){
+  const sw=(p.swatches||[]);
+  const dots=sw.map(h=>`<span class="edot" style="background:${h}"></span>`).join('');
+  const extra=(p.nColors||0)-sw.length;
+  const more=extra>0?`<span class="emore">+${extra}</span>`:'';
+  const colorRow=(p.nColors>1)?`<div class="eswatches">${dots}${more}<span class="encol">${p.nColors} สี</span></div>`:`<div class="eswatches"></div>`;
+  return `<a class="pcard ecard" href="#/p/${p.sku}"><div class="pthumb"><span class="pchip">${esc(CL[p.catSlug]||p.cat)}</span><span class="ebadge"><span class="flash">⚡</span> 7–14 วัน</span><img loading="lazy" src="${pimg(p)}" alt="${esc(p.name)}"></div>
+    <div class="pbody"><div class="pname">${esc(p.name)}</div>${colorRow}
+    <div class="pfoot"><span class="emoq">MOQ ${p.moq}</span><span class="ecta">ขอราคา →</span></div></div></a>`;
+}
 const EXPRESS_POINTS=[
   ['ผลิต + ส่งมอบ 7–14 วัน','สำหรับองค์กรที่มี deadline ชัด เราวางแผนการผลิตให้ทันงาน'],
   ['ตอบกลับ + เสนอราคาใน 2 ชม.','แจ้งจำนวนและกำหนดรับงาน เราเช็กคิวผลิตและยืนยันให้ไว'],
   ['Mockup ก่อนผลิตเสมอ','แม้งานด่วนก็ยังเห็นแบบก่อนผลิตจริง ลดความเสี่ยงงานพลาด'],
 ];
 function viewExpress(){
-  const list=P.filter(p=>EXPRESS_SKUS.includes(p.sku));
-  const grid=list.length
-    ? `<div class="shead" style="margin-top:8px"><span class="eyebrow"><span class="dot"></span>พร้อมผลิตด่วน</span><h2 class="h2">รุ่นแนะนำสำหรับงานด่วน</h2><p class="lead">คัดสินค้าที่ผลิตและส่งมอบได้ทันงานด่วน — กดขอใบเสนอราคาเพื่อยืนยันคิวผลิตตามจำนวนของคุณ</p></div><div class="pgrid">${list.map(p=>card(p)).join('')}</div>`
-    : `<div class="card" style="text-align:center;padding:40px 24px;margin-top:8px"><h4 style="font-size:18px;color:var(--navy);margin-bottom:8px">บอกโจทย์งานด่วนของคุณ เราจัดให้</h4><p class="muted" style="max-width:48ch;margin:0 auto 18px">แจ้งจำนวน กำหนดส่ง และงบ/ชิ้น — ทีมเราจะเสนอรุ่นที่ผลิตได้ทันงานด่วนพร้อมช่วงราคาให้ภายใน 2 ชม.</p><div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a class="btn btn-primary btn-lg" href="https://lin.ee/z1GT1KR" target="_blank" rel="noopener">ทักด่วนทาง LINE</a><a class="btn btn-ghost btn-lg" style="border-color:rgba(31,58,95,.3);color:var(--navy)" href="#/quote">ขอใบเสนอราคางานด่วน</a></div></div>`;
+  const list=P.filter(p=>EXPRESS_SKUS.includes(p.sku)&&p.img);
+  const groups={};list.forEach(p=>{(groups[p.catSlug]=groups[p.catSlug]||[]).push(p);});
+  const cats=EXPRESS_CAT_ORDER.filter(c=>groups[c]).concat(Object.keys(groups).filter(c=>!EXPRESS_CAT_ORDER.includes(c)));
+  const chips=cats.map(c=>`<a class="echip" href="#ecat-${c}">${esc(CL[c]||c)} (${groups[c].length})</a>`).join('');
+  const sections=cats.map(c=>`<div class="ecat" id="ecat-${c}"><div class="ecat-head"><h3>${esc(CL[c]||c)}</h3><span class="ecat-n">${groups[c].length} รายการ · พร้อมผลิต</span></div><div class="pgrid">${groups[c].map(ecard).join('')}</div></div>`).join('');
+  const body=list.length
+    ? `<div class="shead" style="margin-top:6px"><span class="eyebrow"><span class="dot"></span>พร้อมผลิตด่วน</span><h2 class="h2">สินค้าพร้อมส่ง · ภาพสินค้าจริงทุกชิ้น</h2><p class="lead">คัดเฉพาะรุ่นที่ผลิตและส่งมอบได้ทันงานด่วน ${list.length} รายการ — เลือกสีได้หลากหลาย พิมพ์โลโก้ และยืนยันคิวผลิตตามจำนวนของคุณ</p><div class="ecount">⚡ <b>${list.length}</b> รุ่นพร้อมผลิต · ตอบกลับใน 2 ชม.</div></div><div class="echips">${chips}</div>${sections}`
+    : `<div class="card" style="text-align:center;padding:40px 24px;margin-top:8px"><h4 style="font-size:18px;color:var(--navy);margin-bottom:8px">บอกโจทย์งานด่วนของคุณ เราจัดให้</h4><p class="muted" style="max-width:48ch;margin:0 auto 18px">แจ้งจำนวน กำหนดส่ง และงบ/ชิ้น — ทีมเราจะเสนอรุ่นที่ผลิตได้ทันงานด่วนพร้อมช่วงราคาให้ภายใน 2 ชม.</p></div>`;
   return `<section class="sec" style="padding-top:34px"><div class="wrap">
     <div class="crumbs"><a href="#/">หน้าแรก</a> / <b>สินค้าส่งด่วน</b></div>
     <div class="nh" style="margin-bottom:32px"><div class="promo express">
@@ -1160,7 +1193,7 @@ function viewExpress(){
       <div class="im"><img loading="eager" src="banners/banner1.webp" alt="งานด่วนพร้อมส่ง 7–14 วัน — GO PREMIUM"></div>
     </div></div>
     <div class="g-auto svc-grid">${EXPRESS_POINTS.map(s=>`<div class="card svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1L12 16.8 5.7 21l2.3-7.1-6-4.5h7.6z"/></svg></div><h4>${s[0]}</h4><p>${s[1]}</p></div>`).join('')}</div>
-    ${grid}
+    ${body}
   </div></section>${ctaBand()}`;
 }
 
@@ -1168,67 +1201,250 @@ function viewExpress(){
    หน้ารวมแนวงาน/ผลงานที่เราออกแบบและผลิตให้องค์กร ใช้ข้อมูลชุดเดียวกับหน้าแรก
    (CASES, OCCS, STEPS, REVS, CLIENTS) — ไม่มีการกล่าวอ้างลูกค้า/ราคาปลอม */
 function viewPortfolio(){
-  const logoWall=CLIENTS.map(c=>`<div class="logo-cell"><img src="clients/${c}.png" alt="ลูกค้าองค์กรของ GO PREMIUM" loading="lazy"></div>`).join('');
-  // ตัวอย่างสินค้าจริง — ดึงสินค้าที่มี "รูปถ่ายจริง" 1 ชิ้นต่อหมวด (สูงสุด 8 หมวด)
-  const showcase=catList.map(c=>(byCat[c]||[]).find(p=>p.img)).filter(Boolean).slice(0,8);
-  const showCards=showcase.map(p=>`<a class="occ" href="#/p/${p.sku}"><div class="im" style="aspect-ratio:4/3"><img src="${pimg(p)}" alt="${esc(p.name)}" loading="lazy"><span class="badge badge-glass glass">${esc(CL[p.catSlug]||p.cat)}</span></div><div class="bd"><h4>${esc(p.name)}</h4><p>${esc(p.features||'พิมพ์โลโก้ได้ พร้อม Mockup ก่อนผลิต')}</p></div></a>`).join('');
-  const caseCards=CASES.map(c=>`<div class="occ"><div class="im" style="aspect-ratio:4/3"><img src="${repImg(c[3])}" alt="${esc(c[0])}" loading="lazy"><span class="badge badge-glass glass">${esc(c[1])}</span></div><div class="bd"><h4>${esc(c[0])}</h4><p>${esc(c[2])}</p></div></div>`).join('');
+  const P_IMG='images/portfolio/';
   const playIcon='<svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
-  return `<section class="sec" style="padding-top:34px"><div class="wrap">
-    <div class="crumbs"><a href="#/">หน้าแรก</a> / <b>ผลงานของเรา</b></div>
-    <div class="thanks-hero">
-      <span class="eyebrow"><span class="dot"></span>ผลงานของเรา · Thank You</span>
-      <h1>ขอบคุณทุกองค์กรที่ไว้วางใจ<br>ให้เราเป็นส่วนหนึ่งของการให้</h1>
-      <p class="lead">ทุกโลโก้บนหน้านี้คือความไว้วางใจที่เรารู้สึกขอบคุณจริง ๆ — ขอบคุณที่ให้ GO PREMIUM ได้ดูแลของขวัญและของพรีเมียมขององค์กรคุณ ตั้งแต่คอนเซ็ปต์ ดีไซน์ ผลิต จนถึงส่งมอบ เราสัญญาว่าจะตั้งใจกับทุกงานเหมือนเป็นงานแรกเสมอ</p>
-      <div class="thanks-stats">
-        <div class="st"><div class="n">100,000+</div><div class="l">ชิ้นที่ผลิตและส่งมอบแล้ว</div></div>
-        <div class="st"><div class="n">${P.length}+</div><div class="l">รายการสินค้าพร้อมพิมพ์โลโก้</div></div>
-        <div class="st"><div class="n">100%</div><div class="l">ทุกงานผ่าน Mockup ก่อนผลิต</div></div>
-        <div class="st"><div class="n">2 ชม.</div><div class="l">ตอบกลับทุกคำขอ</div></div>
+  const CATL={drinkware:'แก้ว & ขวดน้ำ',cap:'หมวก',bag:'กระเป๋า',umbrella:'ร่ม',stationery:'เครื่องเขียน',lifestyle:'ไลฟ์สไตล์',giftset:'กิฟต์เซ็ต'};
+  const ITM=[
+    {s:'drink-chococrm-gold',cat:'drinkware',t:'กระบอกน้ำเก็บอุณหภูมิ สกรีนโลโก้',b:'ChocoCRM',f:1},
+    {s:'drink-tumbler-copper',cat:'drinkware',t:'แก้วทัมเบลอร์สแตนเลส โทนทองแดง',b:'ChocoCRM',f:0},
+    {s:'drink-bottle-gift',cat:'drinkware',t:'ขวดน้ำพร้อมกล่องของขวัญ',b:'jobsdb',f:0},
+    {s:'drink-tumbler-white',cat:'drinkware',t:'แก้วทัมเบลอร์ฝาหลอด มินิมอล',b:'NSC PR',f:0},
+    {s:'drink-bottles-pair',cat:'drinkware',t:'ขวดน้ำแก้วใสสกรีนโลโก้',b:'',f:0},
+    {s:'cap-lenso',cat:'cap',t:'หมวกแก๊ปปักโลโก้',b:'LENSO',f:0},
+    {s:'cap-duo',cat:'cap',t:'หมวกแก๊ปทรงพรีเมียม',b:'LENSO · LION',f:0},
+    {s:'bag-phoenix',cat:'bag',t:'กระเป๋าผ้าดีไซน์เฉพาะแบรนด์',b:'Phoenix',f:0},
+    {s:'bag-lingoace',cat:'bag',t:'กระเป๋าหูรูดดีไซน์สนุก',b:'LingoAce Zoo',f:1},
+    {s:'bag-duffel',cat:'bag',t:'กระเป๋า Duffel พร้อมเซ็ตของขวัญ',b:'PBL',f:1},
+    {s:'umb-vora-red',cat:'umbrella',t:'ร่มพับสกรีนโลโก้รอบปลอก',b:'Toyota วรจักร',f:1},
+    {s:'umb-folded',cat:'umbrella',t:'ร่มพับทรงพรีเมียม',b:'KYONT',f:0},
+    {s:'note-choco',cat:'stationery',t:'สมุดโน้ตปกสกรีนโลโก้',b:'ChocoCRM',f:0},
+    {s:'pen-teal',cat:'stationery',t:'ปากกาโลหะสลักโลโก้',b:'GO PREMIUM',f:0},
+    {s:'pillow-grey',cat:'lifestyle',t:'หมอนอิงสกรีนโลโก้แบรนด์',b:'OMODA · JAECOO',f:0},
+    {s:'pillow-cream',cat:'lifestyle',t:'หมอนอิงปักโลโก้',b:'OMODA · JAECOO',f:0},
+    {s:'gift-baankhanyt',cat:'giftset',t:'ชุดของขวัญงานหนังในกล่องไม้',b:'BAANKHANYT',f:1},
+    {s:'gift-jobsdb',cat:'giftset',t:'เซ็ตของขวัญพรีเมียมเพื่อการเข้าถึงลูกค้า',b:'jobsdb',f:1},
+  ];
+  const HS=[
+    {img:'hero.jpg',b:'ChocoCRM'},
+    {img:'gift-jobsdb-lg.jpg',b:'jobsdb'},
+    {img:'bag-lingoace-lg.jpg',b:'LingoAce Zoo'},
+    {img:'gift-baankhanyt-lg.jpg',b:'BAANKHANYT'},
+    {img:'umb-vora-red-lg.jpg',b:'Toyota วรจักร'},
+  ];
+  const FE=[
+    {s:'gift-jobsdb',num:'01',t:'เซ็ตของขวัญพรีเมียมเพื่อการเข้าถึงลูกค้า',b:'jobsdb',k:['โจทย์','สิ่งที่เราทำ','ผลลัพธ์'],v:['อยากเข้าถึงและสร้างความสัมพันธ์กับลูกค้ากลุ่มใหม่ให้กว้างขึ้น','จัดเซ็ตของพรีเมียมครบชุด (เสื้อ ขวดน้ำ พัดลม ปากกา) โทนแบรนด์ พร้อมกล่อง','ของพรีเมียมที่ส่งถึงมือลูกค้า ช่วยให้แบรนด์เข้าถึงและถูกจดจำในวงกว้าง']},
+    {s:'gift-baankhanyt',num:'02',t:'ชุดของขวัญงานหนังในกล่องไม้',b:'BAANKHANYT',k:['โจทย์','สิ่งที่เราทำ','ผลลัพธ์'],v:['ของขวัญลูกค้าคนสำคัญที่ต้องดูมีระดับ','งานหนังแท้สลักโลโก้ จัดวางในกล่องไม้พรีเมียม','ของขวัญที่สื่อถึงคุณค่าของแบรนด์ตั้งแต่แกะกล่อง']},
+    {s:'drink-chococrm-gold',num:'03',t:'กระบอกน้ำเก็บอุณหภูมิ สกรีนโลโก้',b:'ChocoCRM',k:['โจทย์','สิ่งที่เราทำ','ผลลัพธ์'],v:['ของพรีเมียมประจำแบรนด์ที่ใช้ได้จริงทุกวัน','กระบอกน้ำเก็บอุณหภูมิ โทนทอง สกรีนโลโก้คมชัด','ของที่ลูกค้าถือใช้ = แบรนด์ถูกเห็นซ้ำทุกวัน']},
+    {s:'bag-lingoace',num:'04',t:'กระเป๋าหูรูดดีไซน์สนุก',b:'LingoAce Zoo',k:['โจทย์','สิ่งที่เราทำ','ผลลัพธ์'],v:['ของพรีเมียมสำหรับกลุ่มเด็กและครอบครัว ต้องสดใสสะดุดตา','กระเป๋าหูรูดพิมพ์ลายเฉพาะแบรนด์เต็มใบ','ของแจกที่เด็กชอบ ใช้ต่อได้จริง แบรนด์จำง่าย']},
+  ];
+  const heroSlides=HS.map((s,i)=>`<div class="pf-slide${i?'':' on'}"><img src="${P_IMG}${s.img}" alt="งานจริงโดย GO PREMIUM — ${s.b}"${i?' loading="lazy"':''}><span class="pf-chip">งานจริง · <b>${s.b}</b></span></div>`).join('');
+  const heroDots=HS.map((_,i)=>`<i class="${i?'':'on'}"></i>`).join('');
+  const marq=[...CLIENTS,...CLIENTS].map(c=>`<img src="clients/${c}.png" alt="โลโก้ลูกค้าองค์กรของ GO PREMIUM" loading="lazy">`).join('');
+  const featRows=FE.map((c,i)=>`<div class="pf-feat ${i%2?'rev':''} pf-rv"><div class="pf-media"><span class="bdg">${c.b}</span><img src="${P_IMG}${c.s}-lg.jpg" alt="${c.t} — งานจริงโดย GO PREMIUM" loading="lazy"></div><div><div class="pf-num">CASE ${c.num}</div><h3>${c.t}</h3><div class="pf-brand">ลูกค้า: ${c.b}</div><div class="pf-story">${c.k.map((k,j)=>`<div class="it"><div class="k">${k}</div><div class="v">${c.v[j]}</div></div>`).join('')}</div></div></div>`).join('');
+  const cats=['all',...Object.keys(CATL)];
+  const filters=cats.map((c,i)=>`<button class="pf-chipf${i?'':' on'}" data-c="${c}">${c==='all'?'ทั้งหมด':CATL[c]}</button>`).join('');
+  const cards=ITM.map(it=>`<div class="pf-card pf-rv" data-c="${it.cat}" data-img="${P_IMG}${it.f?it.s+'-lg':it.s}.jpg" data-t="${esc(it.t)}" data-b="${esc(it.b)}"><div class="im"><img src="${P_IMG}${it.s}.jpg" alt="${esc(it.t)}${it.b?' — '+esc(it.b):''} โดย GO PREMIUM" loading="lazy"></div><div class="tg">${CATL[it.cat]}</div><div class="ov"><div class="t">${esc(it.t)}</div>${it.b?`<div class="b">${esc(it.b)}</div>`:''}</div></div>`).join('');
+  const steps=STEPS.map(s=>`<div class="pf-step pf-rv"><div class="nn">${s[0]}</div><div class="ic"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${s[4]}</svg></div><h4>${s[1]}${s[3]?'<span class="pf-aibadge">✦ AI</span>':''}</h4><p>${s[2]}</p></div>`).join('');
+  const star='<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1L12 16.8 5.7 21l2.3-7.1-6-4.5h7.6z"/></svg>';
+  const revs=REVS.map(r=>`<div class="pf-rev ${r[3]?'dk':''} pf-rv"><div class="pf-stars">${star.repeat(5)}</div><q>"${r[0]}"</q><div class="who"><div class="av">${r[2]}</div><div class="r">${r[1]}</div></div></div>`).join('');
+  return `<style>
+.pf-wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gut)}
+.pf-sec{padding:clamp(48px,6.5vw,88px) 0}
+.pf-eye{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--mustard-deep)}
+.pf-eye .d{width:7px;height:7px;border-radius:50%;background:var(--mustard)}
+.pf-h2{font-family:var(--head);font-weight:600;font-size:clamp(24px,3.3vw,38px);line-height:1.16;letter-spacing:-.01em;margin:11px 0 0}
+.pf-lead{color:var(--grey);font-size:clamp(15px,1.6vw,17.5px);max-width:62ch;margin:0}
+.pf-head{margin-bottom:clamp(26px,3.2vw,44px)}
+.pf-head.c{text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px}
+.pf-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--body);font-weight:600;font-size:15px;padding:13px 24px;border-radius:var(--pill);transition:.2s;cursor:pointer}
+.pf-btn.p{background:var(--mustard);color:var(--navy)}
+.pf-btn.p:hover{background:var(--mustard-deep);color:#fff}
+.pf-btn.o{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.4)}
+.pf-btn.o:hover{background:rgba(255,255,255,.12)}
+.pf-rv{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}
+.pf-rv.in{opacity:1;transform:none}
+.pf-hero{background:linear-gradient(157deg,var(--navy),var(--navy-700));color:#fff;position:relative;overflow:hidden}
+.pf-hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:24px 24px;opacity:.55}
+.pf-hero .pf-wrap{position:relative;z-index:1;display:grid;grid-template-columns:1fr;gap:clamp(26px,4vw,54px);align-items:center;padding-top:clamp(40px,5.5vw,72px);padding-bottom:clamp(40px,5.5vw,72px)}
+@media(min-width:900px){.pf-hero .pf-wrap{grid-template-columns:1.05fr .95fr}}
+.pf-hero .pf-eye{color:var(--mustard-soft)}
+.pf-hero h1{font-family:var(--head);font-weight:700;font-size:clamp(30px,4.8vw,52px);line-height:1.12;margin:16px 0 0}
+.pf-hsub{margin-top:18px;color:#cdd6e6;font-size:clamp(15px,1.7vw,18px);max-width:54ch}
+.pf-hcta{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
+.pf-stats{margin-top:30px;display:grid;grid-template-columns:repeat(2,1fr);gap:18px 26px;max-width:460px}
+@media(min-width:520px){.pf-stats{grid-template-columns:repeat(4,auto)}}
+.pf-stats>div{align-self:start}
+.pf-stats .n{font-family:var(--en);font-weight:800;font-size:clamp(22px,3vw,30px);color:var(--mustard);white-space:nowrap}
+.pf-stats .l{font-size:12.5px;color:#aebbd2;margin-top:2px;line-height:1.4}
+.pf-art{position:relative;aspect-ratio:4/5;border-radius:var(--r-xl);overflow:hidden;box-shadow:0 30px 70px -20px rgba(0,0,0,.5)}
+.pf-slide{position:absolute;inset:0;opacity:0;transition:opacity 1s ease}
+.pf-slide.on{opacity:1}
+.pf-slide img{width:100%;height:100%;object-fit:cover}
+.pf-chip{position:absolute;left:18px;bottom:18px;z-index:3;background:rgba(13,26,54,.72);backdrop-filter:blur(6px);color:#fff;font-size:13px;padding:9px 15px;border-radius:var(--pill)}
+.pf-chip b{color:var(--mustard)}
+.pf-dots{position:absolute;right:16px;bottom:20px;z-index:4;display:flex;gap:7px}
+.pf-dots i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.5);cursor:pointer;transition:.3s}
+.pf-dots i.on{background:var(--mustard);width:22px;border-radius:5px}
+.pf-trust{background:#fff}
+.pf-marq{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.pf-mtrack{display:flex;gap:58px;width:max-content;animation:pf-scroll 42s linear infinite}
+.pf-trust:hover .pf-mtrack{animation-play-state:paused}
+.pf-mtrack img{height:48px;width:auto;object-fit:contain;transition:transform .3s}
+.pf-mtrack img:hover{transform:scale(1.08)}
+@keyframes pf-scroll{to{transform:translateX(-50%)}}
+.pf-feat{display:grid;grid-template-columns:1fr;gap:clamp(20px,3vw,38px);align-items:center;margin-bottom:clamp(38px,5vw,70px)}
+.pf-feat:last-child{margin-bottom:0}
+@media(min-width:860px){.pf-feat{grid-template-columns:1.08fr .92fr}.pf-feat.rev .pf-media{order:2}}
+.pf-media{position:relative;border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--sh)}
+.pf-media img{width:100%;aspect-ratio:3/2;object-fit:cover;transition:transform .6s}
+.pf-media:hover img{transform:scale(1.04)}
+.pf-media .bdg{position:absolute;top:16px;left:16px;background:rgba(13,26,54,.82);backdrop-filter:blur(6px);color:#fff;font-family:var(--en);font-weight:600;font-size:12px;letter-spacing:.04em;padding:7px 13px;border-radius:var(--pill)}
+.pf-num{font-family:var(--en);font-weight:800;font-size:14px;color:var(--mustard-deep);letter-spacing:.1em}
+.pf-feat h3{font-family:var(--head);font-weight:600;font-size:clamp(21px,2.5vw,29px);margin:9px 0 5px}
+.pf-brand{display:inline-block;font-size:13px;color:var(--navy-soft);background:var(--cloud-2);padding:5px 12px;border-radius:var(--pill);margin-bottom:15px}
+.pf-story{display:flex;flex-direction:column;gap:11px}
+.pf-story .it{display:flex;gap:13px}
+.pf-story .k{flex:none;width:78px;font-size:12.5px;font-weight:600;color:var(--mustard-deep);padding-top:2px}
+.pf-story .v{font-size:14.5px;color:var(--ink)}
+.pf-filters{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin-bottom:28px}
+.pf-chipf{font-family:var(--body);font-size:14px;font-weight:500;color:var(--navy);background:#fff;border:1px solid var(--line);padding:9px 17px;border-radius:var(--pill);cursor:pointer;transition:.2s}
+.pf-chipf:hover{border-color:var(--mustard)}
+.pf-chipf.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.pf-gal{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(12px,1.6vw,20px)}
+@media(min-width:620px){.pf-gal{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:980px){.pf-gal{grid-template-columns:repeat(4,1fr)}}
+.pf-card{position:relative;border-radius:var(--r);overflow:hidden;background:#fff;box-shadow:var(--sh-sm);cursor:pointer;transition:transform .3s,box-shadow .3s}
+.pf-card:hover{transform:translateY(-5px);box-shadow:var(--sh-md)}
+.pf-card.pf-hide{display:none}
+.pf-card .im{aspect-ratio:4/3;overflow:hidden}
+.pf-card .im img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.pf-card:hover .im img{transform:scale(1.06)}
+.pf-card .ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,26,54,.86),rgba(13,26,54,.08) 46%,transparent 70%);display:flex;flex-direction:column;justify-content:flex-end;padding:15px;opacity:0;transition:.3s}
+.pf-card:hover .ov{opacity:1}
+.pf-card .ov .t{color:#fff;font-family:var(--head);font-weight:600;font-size:14.5px;line-height:1.3}
+.pf-card .ov .b{color:var(--mustard-soft);font-size:12px;margin-top:3px}
+.pf-card .tg{position:absolute;top:11px;left:11px;background:rgba(255,255,255,.92);color:var(--navy);font-size:11.5px;font-weight:600;padding:5px 11px;border-radius:var(--pill)}
+.pf-steps{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:680px){.pf-steps{grid-template-columns:repeat(4,1fr)}}
+.pf-step{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:24px 22px}
+.pf-step .nn{font-family:var(--en);font-weight:800;font-size:14px;color:var(--mustard-deep)}
+.pf-step .ic{width:46px;height:46px;border-radius:13px;background:var(--cloud);display:flex;align-items:center;justify-content:center;color:var(--navy);margin:13px 0}
+.pf-step h4{font-family:var(--head);font-weight:600;font-size:18px}
+.pf-step p{font-size:14px;color:var(--grey);margin-top:7px}
+.pf-aibadge{display:inline-block;font-size:11px;font-weight:700;color:var(--navy);background:var(--mustard);padding:2px 9px;border-radius:var(--pill);margin-left:6px}
+.pf-revs{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:760px){.pf-revs{grid-template-columns:repeat(3,1fr)}}
+.pf-rev{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:26px}
+.pf-rev.dk{background:var(--navy);color:#fff;border-color:var(--navy)}
+.pf-stars{display:flex;gap:3px;color:var(--mustard);margin-bottom:13px}
+.pf-rev q{font-size:15.5px;line-height:1.6;quotes:none;display:block}
+.pf-rev .who{display:flex;align-items:center;gap:12px;margin-top:18px}
+.pf-rev .av{width:42px;height:42px;border-radius:50%;background:var(--mustard-soft);color:var(--navy);display:flex;align-items:center;justify-content:center;font-family:var(--en);font-weight:700}
+.pf-rev.dk .av{background:var(--navy-soft);color:#fff}
+.pf-rev .r{font-size:12.5px;color:var(--grey)}
+.pf-rev.dk .r{color:#aebbd2}
+.pf-band{border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--sh)}
+.pf-band img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}
+.pf-vals{display:grid;grid-template-columns:1fr;gap:16px;margin-top:24px}
+@media(min-width:720px){.pf-vals{grid-template-columns:repeat(3,1fr)}}
+.pf-tv{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:22px 24px}
+.pf-tv .k{font-family:var(--head);font-weight:600;font-size:18px;color:var(--navy)}
+.pf-tv .k::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--mustard);margin-right:9px;vertical-align:middle}
+.pf-tv p{font-size:14px;color:var(--grey);margin-top:7px}
+.pf-lb{position:fixed;inset:0;z-index:200;background:rgba(8,15,30,.92);display:none;align-items:center;justify-content:center;padding:28px}
+.pf-lb.on{display:flex}
+.pf-lb img{max-width:92vw;max-height:82vh;border-radius:var(--r);box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.pf-lb .cap{position:absolute;bottom:26px;left:0;right:0;text-align:center;color:#fff;font-size:14.5px}
+.pf-lb .cap b{color:var(--mustard)}
+.pf-lb .x{position:absolute;top:20px;right:24px;color:#fff;font-size:30px;line-height:1;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.12);cursor:pointer;display:flex;align-items:center;justify-content:center}
+</style>
+<div class="pf">
+  <div class="pf-wrap" style="padding-top:18px"><div class="crumbs"><a href="#/">หน้าแรก</a> / <b>ผลงานของเรา</b></div></div>
+  <section class="pf-hero">
+    <div class="pf-wrap">
+      <div>
+        <span class="pf-eye"><span class="d"></span>ผลงานของเรา · Selected Work</span>
+        <h1>งานจริงที่เราออกแบบ<br>ผลิต และส่งมอบ</h1>
+        <p class="pf-hsub">ทุกชิ้นบนหน้านี้คือของพรีเมียมที่เราทำให้องค์กรจริง — ตั้งแต่คอนเซ็ปต์ ดีไซน์ สกรีนโลโก้ ผลิต จนถึงจัดเซ็ตพร้อมมอบ</p>
+        <div class="pf-hcta"><a class="pf-btn p" href="#pfGallery">ดูแกลเลอรีงานจริง</a><a class="pf-btn o" href="#pfFeat">ดูผลงานเด่น</a></div>
+        <div class="pf-stats">
+          <div><div class="n" data-count="100000" data-suffix="+">100,000+</div><div class="l">ชิ้นที่ผลิต<br>และส่งมอบแล้ว</div></div>
+          <div><div class="n" data-count="${P.length}" data-suffix="+">${P.length}+</div><div class="l">รายการพร้อม<br>พิมพ์โลโก้</div></div>
+          <div><div class="n">100%</div><div class="l">ผ่าน Mockup<br>ก่อนผลิต</div></div>
+          <div><div class="n">2 ชม.</div><div class="l">ตอบกลับ<br>ทุกคำขอ</div></div>
+        </div>
       </div>
+      <div class="pf-art pf-rv" id="pfCar">${heroSlides}<div class="pf-dots">${heroDots}</div></div>
     </div>
+  </section>
+
+  <section class="pf-trust pf-sec" id="pfClients">
+    <div class="pf-wrap pf-head c"><span class="pf-eye"><span class="d"></span>ลูกค้าของเรา</span><h2 class="pf-h2">องค์กรที่มอบความไว้วางใจให้เรา</h2><p class="pf-lead" style="text-align:center">ตั้งแต่บริษัทในตลาดหลักทรัพย์ แบรนด์ระดับสากล ไปจนถึงสถาบันการศึกษาชั้นนำ — ขอบคุณที่เลือกเรา</p></div>
+    <div class="pf-marq"><div class="pf-mtrack">${marq}</div></div>
+  </section>
+
+  <section class="pf-sec" id="pfFeat"><div class="pf-wrap">
+    <div class="pf-head c"><span class="pf-eye"><span class="d"></span>ผลงานเด่น</span><h2 class="pf-h2">เลือกบางงานที่เราภูมิใจ</h2><p class="pf-lead" style="text-align:center">งานจริงที่เล่าได้ตั้งแต่โจทย์ของลูกค้า สิ่งที่เราออกแบบและผลิต จนถึงผลลัพธ์</p></div>
+    ${featRows}
   </div></section>
 
-  <section class="sec" style="background:#fff;padding-top:clamp(40px,5vw,72px)"><div class="wrap">
-    <div class="shead center"><span class="eyebrow"><span class="dot"></span>ขอบคุณลูกค้าของเรา</span><h2 class="h2">องค์กรที่มอบความไว้วางใจให้เรา</h2><p class="lead" style="text-align:center">ตั้งแต่บริษัทในตลาดหลักทรัพย์ แบรนด์ระดับสากล ไปจนถึงสถาบันการศึกษาชั้นนำ — ขอบคุณที่เลือกเรา</p></div>
-    <div class="logo-wall">${logoWall}</div>
+  <section class="pf-sec" id="pfGallery" style="background:var(--cloud)"><div class="pf-wrap">
+    <div class="pf-head c"><span class="pf-eye"><span class="d"></span>แกลเลอรีงานจริง</span><h2 class="pf-h2">ภาพถ่ายสินค้าจริงจากงานของเรา</h2><p class="pf-lead" style="text-align:center">ทุกชิ้นสกรีน/ปักโลโก้ได้ และเห็น Mockup ก่อนผลิตเสมอ — กรองดูตามหมวดที่สนใจได้เลย</p></div>
+    <div class="pf-filters" id="pfFilters">${filters}</div>
+    <div class="pf-gal" id="pfGal">${cards}</div>
   </div></section>
 
-  <section class="sec" style="background:var(--cloud)"><div class="wrap">
-    <div class="shead center"><span class="eyebrow"><span class="dot"></span>ตัวอย่างสินค้าจริง</span><h2 class="h2">งานจริงที่เราออกแบบและผลิต</h2><p class="lead" style="text-align:center">ภาพถ่ายสินค้าจริงจากสตูดิโอของเรา — ทุกชิ้นพิมพ์โลโก้ได้ และเห็น Mockup ก่อนผลิตเสมอ คลิกเพื่อดูรายละเอียดสินค้า</p></div>
-    <div class="g-auto occ-grid">${showCards}</div>
-  </div></section>
-
-  <section class="sec" style="background:#fff"><div class="wrap">
-    <div class="shead center"><span class="eyebrow"><span class="dot"></span>วิดีโอเบื้องหลังการผลิต</span><h2 class="h2">เครื่องพิมพ์ของเรา — ทำงานจริงทุกวัน</h2><p class="lead" style="text-align:center">ชมเบื้องหลังการพิมพ์โลโก้ลงบนสินค้าจริง คุมคุณภาพทุกชิ้นด้วยเครื่องพิมพ์ของเราเอง</p></div>
+  <section class="pf-sec"><div class="pf-wrap">
+    <div class="pf-head c"><span class="pf-eye"><span class="d"></span>เบื้องหลังการผลิต</span><h2 class="pf-h2">เครื่องพิมพ์ของเรา — ทำงานจริงทุกวัน</h2><p class="pf-lead" style="text-align:center">ชมเบื้องหลังการพิมพ์โลโก้ลงบนสินค้าจริง คุมคุณภาพทุกชิ้นด้วยเครื่องพิมพ์ของเราเอง</p></div>
     <div class="video-wrap" id="printVideo">
-      <video controls preload="none" playsinline poster="videos/printing-machine-poster.jpg">
-        <source src="videos/printing-machine.mp4" type="video/mp4">
-      </video>
-      <div class="video-ph" id="videoPh">
-        <div class="play">${playIcon}</div>
-        <div class="cap">วิดีโอสาธิตเครื่องพิมพ์</div>
-        <div class="sub" id="videoSub">เบื้องหลังการผลิตและพิมพ์โลโก้ของ GO PREMIUM</div>
-      </div>
+      <video controls preload="none" playsinline poster="videos/printing-machine-poster.jpg"><source src="videos/printing-machine.mp4" type="video/mp4"></video>
+      <div class="video-ph" id="videoPh"><div class="play">${playIcon}</div><div class="cap">วิดีโอสาธิตเครื่องพิมพ์</div><div class="sub" id="videoSub">เบื้องหลังการผลิตและพิมพ์โลโก้ของ GO PREMIUM</div></div>
     </div>
   </div></section>
 
-  <section class="sec" style="background:var(--cloud)"><div class="wrap">
-    <div class="shead center"><span class="eyebrow"><span class="dot"></span>แนวงานยอดนิยม</span><h2 class="h2">ไอเดียจัดเซ็ตตามโอกาสสำคัญ</h2><p class="lead" style="text-align:center">รวมแนวงานที่องค์กรเลือกบ่อย — ปรับดีไซน์ วัสดุ และแพ็กเกจได้ตามแบรนด์และงบของคุณ</p></div>
-    <div class="g-auto occ-grid">${caseCards}</div>
+  <section class="pf-sec" style="background:var(--cloud)"><div class="pf-wrap">
+    <div class="pf-head c"><span class="pf-eye"><span class="d"></span>ขั้นตอนการทำงาน</span><h2 class="pf-h2">เบื้องหลังทุกผลงาน — ครบ จบในที่เดียว</h2></div>
+    <div class="pf-steps">${steps}</div>
   </div></section>
 
-  <section class="sec" style="background:#fff"><div class="wrap">
-    <div class="shead center"><span class="eyebrow"><span class="dot"></span>ขั้นตอนการทำงาน</span><h2 class="h2" style="max-width:20ch">เบื้องหลังทุกผลงาน — ครบ จบในที่เดียว</h2></div>
-    <div class="g-auto step-grid">${STEPS.map(s=>`<div class="step ${s[3]?'ai':''}"><div class="top"><div class="ic"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${s[4]}</svg></div><span class="nn">${s[0]}</span></div><h4>${s[1]}${s[3]?' <span class="badge badge-ai">✦ AI</span>':''}</h4><p>${s[2]}</p></div>`).join('')}</div>
+  <section class="pf-sec"><div class="pf-wrap">
+    <div class="pf-head c"><span class="pf-eye"><span class="d"></span>เสียงจากลูกค้า</span><h2 class="pf-h2">องค์กรที่ไว้ใจให้เราดูแล</h2></div>
+    <div class="pf-revs">${revs}</div>
   </div></section>
 
-  <section class="sec" style="background:var(--cloud)"><div class="wrap">
-    <div class="shead center"><span class="eyebrow"><span class="dot"></span>เสียงจากลูกค้า</span><h2 class="h2">องค์กรที่ไว้ใจให้เราดูแล</h2></div>
-    <div class="g-auto rev-grid">${REVS.map(r=>`<div class="rev ${r[3]?'dk':''}"><div class="stars">${'<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1L12 16.8 5.7 21l2.3-7.1-6-4.5h7.6z"/></svg>'.repeat(5)}</div><q>"${r[0]}"</q><div class="who"><div class="av">${r[2]}</div><div class="r">${r[1]}</div></div></div>`).join('')}</div>
+  <section class="pf-sec" style="background:var(--cloud)"><div class="pf-wrap">
+    <div class="pf-head c"><span class="pf-eye"><span class="d"></span>ทีมเบื้องหลัง</span><h2 class="pf-h2">คนที่อยู่เบื้องหลังทุกผลงาน</h2><p class="pf-lead" style="text-align:center">ตั้งแต่ทีมดีไซน์ ทีมผลิต ไปจนถึงทีมจัดส่ง — เราดูแลทุกขั้นตอนด้วยความใส่ใจ เชื่อถือได้ และรวดเร็ว</p></div>
+    <div class="pf-band pf-rv"><img src="${P_IMG}story-team.jpg" alt="ทีมงาน GO PREMIUM — ใส่ใจ เชื่อถือได้ รวดเร็ว" loading="lazy"></div>
+    <div class="pf-vals"><div class="pf-tv pf-rv"><div class="k">ใส่ใจทุกดีเทล</div><p>ออกแบบและคุมงานเหมือนเป็นของขวัญของเราเอง</p></div><div class="pf-tv pf-rv"><div class="k">เชื่อถือได้</div><p>เห็น Mockup ก่อนผลิตทุกครั้ง ไม่มีเซอร์ไพรส์หน้างาน</p></div><div class="pf-tv pf-rv"><div class="k">รวดเร็ว</div><p>ตอบกลับใน 2 ชม. และส่งมอบตรงเวลาทุกงาน</p></div></div>
   </div></section>
 
-  ${ctaBand()}${quoteSection()}`;
+  <div class="pf-lb" id="pfLb"><span class="x">&times;</span><img src="" alt=""><div class="cap"></div></div>
+</div>
+${ctaBand()}${quoteSection()}`;
+}
+
+/* ===== portfolio interactions (hero carousel, gallery filter, lightbox, count-up, reveal) ===== */
+function initPortfolio(){
+  const car=document.getElementById('pfCar');
+  if(car){const sl=car.querySelectorAll('.pf-slide'),dt=car.querySelectorAll('.pf-dots i');
+    if(sl.length>1){let i=0;const go=k=>{i=(k+sl.length)%sl.length;sl.forEach((s,j)=>s.classList.toggle('on',j===i));dt.forEach((d,j)=>d.classList.toggle('on',j===i));};
+      let t=setInterval(()=>go(i+1),3800);
+      const dots=car.querySelector('.pf-dots');
+      if(dots)dots.addEventListener('click',e=>{const d=e.target.closest('i');if(!d)return;clearInterval(t);go([...dt].indexOf(d));t=setInterval(()=>go(i+1),3800);});
+    }}
+  const fil=document.getElementById('pfFilters');
+  if(fil)fil.addEventListener('click',e=>{const b=e.target.closest('.pf-chipf');if(!b)return;fil.querySelectorAll('.pf-chipf').forEach(c=>c.classList.toggle('on',c===b));const c=b.dataset.c;document.querySelectorAll('#pfGal .pf-card').forEach(card=>card.classList.toggle('pf-hide',!(c==='all'||card.dataset.c===c)));});
+  const lb=document.getElementById('pfLb'),gal=document.getElementById('pfGal');
+  if(lb&&gal){const im=lb.querySelector('img'),cap=lb.querySelector('.cap');
+    gal.addEventListener('click',e=>{const card=e.target.closest('.pf-card');if(!card)return;im.src=card.dataset.img;cap.innerHTML=card.dataset.t+(card.dataset.b?' · <b>'+card.dataset.b+'</b>':'');lb.classList.add('on');});
+    const close=()=>lb.classList.remove('on');
+    lb.addEventListener('click',e=>{if(e.target===lb||e.target.classList.contains('x'))close();});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
+  }
+  const cup=new IntersectionObserver(es=>es.forEach(en=>{if(!en.isIntersecting)return;const el=en.target,tg=+el.dataset.count,suf=el.dataset.suffix||'';let c=0,inc=tg/46;const tk=()=>{c+=inc;if(c>=tg){el.textContent=tg.toLocaleString('en-US')+suf;}else{el.textContent=Math.floor(c).toLocaleString('en-US')+suf;requestAnimationFrame(tk);}};tk();cup.unobserve(el);}),{threshold:.5});
+  document.querySelectorAll('.pf [data-count]').forEach(el=>cup.observe(el));
+  const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}}),{threshold:.12});
+  document.querySelectorAll('.pf-rv').forEach(el=>io.observe(el));
 }
 
 /* ===== portfolio printing-machine video (graceful placeholder until .mp4 uploaded) ===== */
@@ -1365,7 +1581,7 @@ function render(){
     if(p){setMeta(p.name+' — '+(CL[p.catSlug]||p.cat)+' พิมพ์โลโก้ | GO PREMIUM',(p.features||p.name)+(p.price?' · ราคา ฿'+p.price.toLocaleString('en-US')+'/ชิ้น (อ้างอิง 300 ชิ้น)':' · สอบถามราคา')+' · MOQ '+p.moq+' ชิ้น · Mockup ก่อนผลิต','/product/'+p.slug);setProductLD(p);track('view_item',{sku:p.sku,item_name:p.name,item_category:p.catSlug,price:p.price||0});}
     else setMeta(DEF_TITLE,DEF_DESC,'/');}
   else if(h==='/about'){app.innerHTML=viewAbout();setMeta('เกี่ยวกับเรา — GO PREMIUM by Passion Grow Trading','GO PREMIUM ผู้ออกแบบและผลิตของพรีเมียมและของขวัญองค์กร เชื่อในการให้ที่มีความหมาย ครบวงจรตั้งแต่ไอเดียถึงส่งมอบ','/about');}
-  else if(h==='/portfolio'){app.innerHTML=viewPortfolio();bindQuote();initPortfolioVideo();setMeta('ผลงานของเรา — องค์กรที่ไว้วางใจ ตัวอย่างสินค้าจริง + วิดีโอเครื่องพิมพ์ | GO PREMIUM','ขอบคุณองค์กรชั้นนำที่ไว้วางใจ GO PREMIUM รวมโลโก้ลูกค้า ตัวอย่างสินค้าจริงพร้อม Mockup และวิดีโอเบื้องหลังการพิมพ์','/portfolio');}
+  else if(h==='/portfolio'){app.innerHTML=viewPortfolio();bindQuote();initPortfolioVideo();initPortfolio();setMeta('ผลงานของเรา — องค์กรที่ไว้วางใจ ตัวอย่างสินค้าจริง + วิดีโอเครื่องพิมพ์ | GO PREMIUM','ขอบคุณองค์กรชั้นนำที่ไว้วางใจ GO PREMIUM รวมโลโก้ลูกค้า ตัวอย่างสินค้าจริงพร้อม Mockup และวิดีโอเบื้องหลังการพิมพ์','/portfolio');}
   else if(h==='/express'){app.innerHTML=viewExpress();setMeta('สินค้าส่งด่วน 7–14 วัน — ของพรีเมียมงานด่วน | GO PREMIUM','ของพรีเมียมและของขวัญองค์กรงานด่วน ผลิตและส่งมอบใน 7–14 วัน ตอบกลับใน 2 ชม. พร้อม Mockup ก่อนผลิต','/express');}
   else if(h==='about'){app.innerHTML=viewHome();bindQuote();initHero();initAIType();setMeta(DEF_TITLE,DEF_DESC,'/');setTimeout(()=>{const a=document.getElementById('about');if(a)a.scrollIntoView();},60);return;}
   else{app.innerHTML=viewHome();bindQuote();setMeta(DEF_TITLE,DEF_DESC,'/');}
