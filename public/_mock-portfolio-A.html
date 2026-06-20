@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ผลงานของเรา · GO PREMIUM — ขอบคุณทุกองค์กรที่ไว้วางใจ</title>
+<meta name="description" content="ขอบคุณทุกองค์กรที่ไว้วางใจให้ GO PREMIUM ดูแลของขวัญองค์กร พิมพ์โลโก้ครบวงจร ตั้งแต่คอนเซ็ปต์ ดีไซน์ ผลิต จนถึงส่งมอบ">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#13244a; --navy-700:#0d1a36; --navy-soft:#2e4470;
+  --mustard:#f4b223; --mustard-deep:#c98f0a; --mustard-soft:#fbe7b5;
+  --ink:#1A2230; --grey:#5B6472; --grey-400:#8A93A2; --line:#E3E7ED;
+  --cloud:#F5F6F8; --cloud-2:#EEF1F5;
+  --r:16px; --r-lg:24px; --r-xl:32px; --r-sm:10px; --pill:999px;
+  --sh:0 18px 50px -18px rgba(31,58,95,.30); --sh-md:0 12px 34px -14px rgba(31,58,95,.22); --sh-sm:0 4px 16px -6px rgba(31,58,95,.16);
+  --maxw:1240px; --gut:clamp(24px,5vw,64px);
+  --head:'Anuphan',sans-serif; --body:'IBM Plex Sans Thai',sans-serif; --en:'Sora',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:#fff;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--head);line-height:1.18;color:var(--navy);font-weight:700;letter-spacing:-.01em}
+.en{font-family:var(--en)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-left:var(--gut);padding-right:var(--gut)}
+section{padding:clamp(64px,9vw,120px) 0}
+
+/* ===== TOP BAR ===== */
+.topbar{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);transition:box-shadow .3s}
+.topbar.scrolled{box-shadow:var(--sh-sm)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;padding-top:0;padding-bottom:0}
+.brand{font-family:var(--en);font-weight:800;letter-spacing:.04em;font-size:1.18rem;color:var(--navy)}
+.brand b{color:var(--mustard-deep)}
+.btn{display:inline-flex;align-items:center;gap:.5em;font-family:var(--head);font-weight:600;border-radius:var(--pill);padding:.72em 1.5em;font-size:.98rem;border:1.5px solid transparent;cursor:pointer;transition:transform .2s,box-shadow .25s,background .2s,color .2s;white-space:nowrap}
+.btn-gold{background:var(--mustard);color:var(--navy-700);box-shadow:0 8px 22px -10px rgba(244,178,35,.85)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 14px 30px -10px rgba(244,178,35,.95);background:#ffc23d}
+.btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+.btn-ghost:hover{background:rgba(255,255,255,.12);border-color:#fff}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{transform:translateY(-2px);background:var(--navy-700)}
+.btn-lg{padding:.92em 1.9em;font-size:1.05rem}
+
+/* ===== HERO ===== */
+.hero{position:relative;background:radial-gradient(120% 120% at 80% 0%,#1c3262 0%,var(--navy) 45%,var(--navy-700) 100%);color:#fff;overflow:hidden;padding-top:clamp(64px,8vw,96px);padding-bottom:clamp(56px,7vw,90px)}
+.hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.07) 1.4px,transparent 1.4px);background-size:22px 22px;opacity:.6;pointer-events:none}
+.hero-photo{position:absolute;top:0;right:0;width:46%;height:100%;object-fit:cover;object-position:center;opacity:.20;mix-blend-mode:luminosity;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 55%);mask-image:linear-gradient(90deg,transparent 0,#000 55%);pointer-events:none}
+.hero .wrap{position:relative;z-index:2;max-width:1080px}
+.eyebrow{display:inline-flex;align-items:center;gap:.6em;font-family:var(--head);font-weight:600;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mustard);background:rgba(244,178,35,.1);border:1px solid rgba(244,178,35,.3);padding:.5em 1.1em;border-radius:var(--pill)}
+.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--mustard);display:inline-block}
+.hero h1{color:#fff;font-size:clamp(2.1rem,5.4vw,3.7rem);font-weight:700;margin:1.1rem 0 1.2rem;max-width:18ch}
+.hero h1 .hl{color:var(--mustard)}
+.hero-lead{font-size:clamp(1.02rem,1.8vw,1.22rem);color:#d6def0;max-width:60ch;font-weight:300}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2rem}
+/* stat row */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,2vw,28px);margin-top:clamp(40px,5vw,64px);position:relative;z-index:2}
+.stat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:1.4rem 1.2rem;backdrop-filter:blur(6px)}
+.stat .num{font-family:var(--en);font-weight:800;font-size:clamp(1.6rem,3.6vw,2.5rem);color:var(--mustard);line-height:1.1}
+.stat .lbl{font-size:.92rem;color:#cdd6e8;margin-top:.35rem;font-weight:300}
+
+/* ===== SECTION HEADERS ===== */
+.sec-head{text-align:center;max-width:62ch;margin:0 auto clamp(40px,5vw,60px)}
+.sec-kicker{font-family:var(--head);font-weight:600;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mustard-deep);margin-bottom:.7rem}
+.sec-head h2{font-size:clamp(1.7rem,3.6vw,2.6rem)}
+.sec-head p{color:var(--grey);margin-top:.9rem;font-size:clamp(1rem,1.5vw,1.1rem)}
+
+/* ===== LOGO WALL (centerpiece) ===== */
+.logowall{background:#fff;position:relative}
+.logowall::after{content:"";position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:min(900px,80%);height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent)}
+.wall-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:clamp(14px,1.6vw,22px);max-width:1180px;margin:0 auto}
+.logo-cell{aspect-ratio:1.5/1;display:flex;align-items:center;justify-content:center;padding:1.4rem;background:#fff;border:1px solid var(--line);border-radius:var(--r);box-shadow:0 1px 0 rgba(31,58,95,.02);transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .35s}
+.logo-cell img{max-height:62px;max-width:84%;width:auto;object-fit:contain;filter:grayscale(1);opacity:.62;transition:filter .4s,opacity .4s,transform .4s}
+.logo-cell:hover{transform:translateY(-5px);box-shadow:var(--sh-md);border-color:transparent}
+.logo-cell:hover img{filter:grayscale(0);opacity:1;transform:scale(1.04)}
+.wall-foot{text-align:center;margin-top:clamp(34px,4vw,52px);color:var(--grey);font-size:1rem}
+.wall-foot b{font-family:var(--en);color:var(--navy);font-weight:700}
+
+/* ===== SHOWCASE ===== */
+.showcase{background:var(--cloud)}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:clamp(18px,2.2vw,28px)}
+.case{background:#fff;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-sm);transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s;display:flex;flex-direction:column}
+.case:hover{transform:translateY(-7px);box-shadow:var(--sh)}
+.case-img{position:relative;aspect-ratio:4/3;overflow:hidden}
+.case-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.case:hover .case-img img{transform:scale(1.07)}
+.case-tag{position:absolute;top:14px;left:14px;font-family:var(--en);font-weight:600;font-size:.74rem;letter-spacing:.03em;color:var(--navy);background:rgba(255,255,255,.92);backdrop-filter:blur(4px);padding:.42em .9em;border-radius:var(--pill);box-shadow:var(--sh-sm)}
+.case-body{padding:1.5rem 1.5rem 1.7rem}
+.case-body h3{font-size:1.22rem;margin-bottom:.5rem}
+.case-body p{color:var(--grey);font-size:.98rem;font-weight:300}
+
+/* ===== PROCESS ===== */
+.process{background:#fff}
+.proc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:clamp(18px,2vw,26px)}
+.step{position:relative;background:var(--cloud);border:1px solid var(--line);border-radius:var(--r-lg);padding:2rem 1.6rem 1.8rem;transition:transform .35s,box-shadow .35s,background .35s}
+.step:hover{transform:translateY(-6px);box-shadow:var(--sh-md);background:#fff}
+.step .no{font-family:var(--en);font-weight:800;font-size:1rem;color:var(--mustard-deep);letter-spacing:.05em}
+.step .ic{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:var(--navy);color:var(--mustard);margin:.7rem 0 1.1rem;box-shadow:var(--sh-sm)}
+.step .ic svg{width:26px;height:26px;stroke:currentColor;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.step h3{font-size:1.18rem;display:flex;align-items:center;gap:.5em;flex-wrap:wrap}
+.step p{color:var(--grey);font-size:.96rem;margin-top:.5rem;font-weight:300}
+.ai-badge{font-family:var(--en);font-weight:700;font-size:.68rem;letter-spacing:.04em;color:var(--navy-700);background:var(--mustard);padding:.25em .65em;border-radius:var(--pill)}
+.step.feat{background:linear-gradient(180deg,#fff,#fffaf0);border-color:var(--mustard-soft)}
+
+/* ===== VIDEO PLACEHOLDER ===== */
+.videosec{background:var(--cloud)}
+.video-card{position:relative;background:radial-gradient(120% 140% at 30% 10%,#1c3262,var(--navy) 55%,var(--navy-700));border-radius:var(--r-xl);min-height:clamp(280px,42vw,440px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden;box-shadow:var(--sh)}
+.video-card::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.06) 1.3px,transparent 1.3px);background-size:24px 24px;opacity:.6}
+.play{position:relative;width:84px;height:84px;border-radius:50%;background:var(--mustard);display:flex;align-items:center;justify-content:center;box-shadow:0 16px 40px -12px rgba(244,178,35,.7);margin-bottom:1.4rem}
+.play::after{content:"";display:block;width:0;height:0;border-left:24px solid var(--navy-700);border-top:15px solid transparent;border-bottom:15px solid transparent;margin-left:6px}
+.play .pulse{position:absolute;inset:0;border-radius:50%;border:2px solid rgba(244,178,35,.5);animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.7);opacity:0}}
+.video-card .soon{position:relative;font-family:var(--head);font-weight:600;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mustard);background:rgba(244,178,35,.12);border:1px solid rgba(244,178,35,.3);padding:.4em 1em;border-radius:var(--pill);margin-bottom:1rem}
+.video-card h3{position:relative;color:#fff;font-size:clamp(1.3rem,2.6vw,1.9rem)}
+.video-card p{position:relative;color:#c9d3e8;margin-top:.6rem;font-weight:300}
+
+/* ===== TESTIMONIALS ===== */
+.testi{background:#fff}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(18px,2vw,26px)}
+.quote{background:var(--cloud);border:1px solid var(--line);border-radius:var(--r-lg);padding:2rem 1.8rem;display:flex;flex-direction:column;transition:transform .35s,box-shadow .35s}
+.quote:hover{transform:translateY(-5px);box-shadow:var(--sh-md)}
+.stars{display:flex;gap:3px;margin-bottom:1rem}
+.stars svg{width:19px;height:19px;fill:var(--mustard)}
+.quote p{font-size:1.04rem;color:var(--ink);flex:1;font-weight:300;line-height:1.7}
+.who{display:flex;align-items:center;gap:.85rem;margin-top:1.5rem}
+.avatar{width:46px;height:46px;border-radius:50%;background:var(--navy);color:var(--mustard);display:flex;align-items:center;justify-content:center;font-family:var(--en);font-weight:700;font-size:1.05rem;flex-shrink:0}
+.who .nm{font-family:var(--head);font-weight:600;color:var(--navy);font-size:.98rem}
+.who .meta{color:var(--grey-400);font-size:.85rem}
+
+/* ===== CTA BAND ===== */
+.ctaband{background:radial-gradient(120% 160% at 20% 0%,#1c3262,var(--navy) 50%,var(--navy-700));color:#fff;text-align:center;position:relative;overflow:hidden}
+.ctaband::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.06) 1.3px,transparent 1.3px);background-size:24px 24px;opacity:.5}
+.ctaband .wrap{position:relative;z-index:2}
+.ctaband h2{color:#fff;font-size:clamp(1.8rem,4vw,2.8rem);max-width:20ch;margin:0 auto}
+.ctaband p{color:#cdd6e8;margin:1rem auto 2rem;max-width:54ch;font-weight:300;font-size:clamp(1rem,1.6vw,1.15rem)}
+.ctaband .row{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center}
+
+/* ===== FOOTER ===== */
+footer{background:var(--navy-700);color:#aebbd4;padding:2.4rem 0;font-size:.9rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between}
+footer .brand{color:#fff;font-size:1.05rem}
+footer a:hover{color:#fff}
+
+/* ===== SCROLL REVEAL ===== */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.logo-cell.reveal{transform:translateY(20px) scale(.97)}
+.logo-cell.reveal.in{transform:none}
+
+@media (max-width:640px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .topbar .brand{font-size:1.02rem}
+  .hero-photo{width:60%;opacity:.14}
+  footer .wrap{flex-direction:column;text-align:center}
+}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .play .pulse{animation:none}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<header class="topbar" id="topbar">
+  <div class="wrap">
+    <a href="#" class="brand">GO <b>PREMIUM</b></a>
+    <a href="#cta" class="btn btn-gold">ขอใบเสนอราคา</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <img class="hero-photo" src="images/home/hero-team.webp" alt="ทีมงาน GO PREMIUM">
+  <div class="wrap">
+    <span class="eyebrow"><span class="dot"></span> ผลงานของเรา · <span class="en">Thank You</span></span>
+    <h1>ขอบคุณทุกองค์กรที่ไว้วางใจ<br>ให้เราเป็น<span class="hl">ส่วนหนึ่งของการให้</span></h1>
+    <p class="hero-lead">ตลอดเส้นทางที่ผ่านมา เราได้รับความไว้วางใจจากองค์กรชั้นนำมากมายในการดูแลของขวัญและของพรีเมียมพิมพ์โลโก้ ตั้งแต่ <b>คอนเซ็ปต์ → ดีไซน์ → ผลิต → ส่งมอบ</b> ครบจบในที่เดียว ทุกชิ้นงานคือความตั้งใจที่จะทำให้ "การให้" ของคุณดูดีและน่าจดจำ</p>
+    <div class="hero-cta">
+      <a href="#wall" class="btn btn-gold btn-lg">ดูองค์กรที่ไว้วางใจเรา</a>
+      <a href="#cta" class="btn btn-ghost btn-lg">เริ่มงานของคุณ</a>
+    </div>
+    <div class="stats">
+      <div class="stat reveal"><div class="num">100,000<span style="font-size:.7em">+</span></div><div class="lbl">ชิ้นที่ผลิตและส่งมอบแล้ว</div></div>
+      <div class="stat reveal"><div class="num">240<span style="font-size:.7em">+</span></div><div class="lbl">รายการสินค้าพร้อมพิมพ์โลโก้</div></div>
+      <div class="stat reveal"><div class="num">100<span style="font-size:.7em">%</span></div><div class="lbl">ทุกงานผ่าน Mockup ก่อนผลิต</div></div>
+      <div class="stat reveal"><div class="num">2 <span style="font-size:.55em">ชม.</span></div><div class="lbl">ตอบกลับทุกคำขอ</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGO WALL (CENTERPIECE) -->
+<section class="logowall" id="wall">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-kicker">Trusted by</div>
+      <h2>องค์กรที่มอบความไว้วางใจให้เรา</h2>
+      <p>ขอบคุณทุกแบรนด์และทุกองค์กรที่เลือกเดินเส้นทางการให้ไปกับ GO PREMIUM</p>
+    </div>
+    <div class="wall-grid" id="wallGrid"></div>
+    <p class="wall-foot reveal">และอีกหลายองค์กรที่เราภูมิใจได้ร่วมงานด้วย — <b>กว่า 100,000 ชิ้น</b> ส่งมอบแล้วด้วยความตั้งใจ</p>
+  </div>
+</section>
+
+<!-- SHOWCASE -->
+<section class="showcase">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-kicker">Real Work</div>
+      <h2>ตัวอย่างผลงานจริงที่เราภูมิใจ</h2>
+      <p>เซ็ตของขวัญและของพรีเมียมที่ออกแบบเฉพาะแต่ละแบรนด์ ทุกชิ้นผ่าน Mockup ก่อนผลิตจริง</p>
+    </div>
+    <div class="card-grid" id="caseGrid"></div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-kicker">How we work</div>
+      <h2>ทำงานกับเราง่าย ใน 4 ขั้นตอน</h2>
+      <p>โปร่งใสทุกขั้น เห็นภาพงานจริงก่อนตัดสินใจ และส่งมอบตรงเวลาเสมอ</p>
+    </div>
+    <div class="proc-grid" id="procGrid"></div>
+  </div>
+</section>
+
+<!-- VIDEO PLACEHOLDER -->
+<section class="videosec">
+  <div class="wrap">
+    <div class="video-card reveal">
+      <span class="soon">Coming soon · เร็ว ๆ นี้</span>
+      <div class="play"><span class="pulse"></span></div>
+      <h3>วิดีโอเบื้องหลังการผลิต</h3>
+      <p>พาชมทุกขั้นตอนของเรา ตั้งแต่ดีไซน์จนถึงแพ็กส่งมอบ — เร็ว ๆ นี้</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-kicker">Voices</div>
+      <h2>เสียงจากลูกค้าที่ไว้วางใจเรา</h2>
+      <p>คำพูดเล็ก ๆ ที่ทำให้เราตั้งใจทำงานทุกชิ้นให้ดีที่สุด</p>
+    </div>
+    <div class="testi-grid" id="testiGrid"></div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="ctaband" id="cta">
+  <div class="wrap">
+    <h2>พร้อมให้เราเป็นส่วนหนึ่งของการให้ครั้งต่อไปของคุณ</h2>
+    <p>บอกโจทย์ โอกาส งบ และจำนวน แล้วเราจะกลับมาพร้อมไอเดียและใบเสนอราคาภายใน 2 ชั่วโมง</p>
+    <div class="row">
+      <a href="#" class="btn btn-gold btn-lg">ขอใบเสนอราคา</a>
+      <a href="#" class="btn btn-ghost btn-lg">ทักไลน์ @gopremium</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <span class="brand en">GO PREMIUM</span>
+    <span>© <span class="en">GO PREMIUM</span> · ของพรีเมียม ของขวัญองค์กร พิมพ์โลโก้ครบวงจร โดย Passion Grow Trading</span>
+  </div>
+</footer>
+
+<script>
+// ---- DATA ----
+var cases = [
+  {t:"เซ็ตปีใหม่องค์กร", tag:"New Year", d:"กล่อง + การ์ดเฉพาะแบรนด์ จัดเป็นเซ็ตพร้อมมอบ", img:"images/home/occ-newyear.jpg"},
+  {t:"Welcome Kit พนักงานใหม่", tag:"Onboarding", d:"ชุดต้อนรับสาย minimal โทนสีแบรนด์", img:"images/home/occ-welcome.jpg"},
+  {t:"Eco Lifestyle Set", tag:"รักษ์โลก", d:"ของใช้คุณภาพ เล่าเรื่องความยั่งยืนขององค์กร", img:"images/home/occ-eco.jpg"},
+  {t:"VIP Gift Box", tag:"Client gift", d:"กล่องของขวัญพรีเมียมสำหรับลูกค้าคนสำคัญ", img:"images/home/occ-vip.jpg"},
+  {t:"Event Giveaway", tag:"Event", d:"ของแจกพิมพ์โลโก้ ถ่ายรูปสวย พร้อมส่งทันงาน", img:"images/home/occ-event.jpg"},
+  {t:"Custom Drinkware", tag:"Milestone", d:"กระบอกน้ำดีไซน์เฉพาะวาระ สลักโลโก้แบรนด์", img:"images/home/occ-milestone.jpg"}
+];
+var IC = {
+  chat:'<path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>',
+  design:'<path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/>',
+  produce:'<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>',
+  deliver:'<rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>'
+};
+var steps = [
+  {no:"01", ic:IC.chat, t:"ปรึกษา", d:"บอกโจทย์ โอกาส งบ จำนวน — ตอบไวใน 2 ชม.", ai:false},
+  {no:"02", ic:IC.design, t:"ดีไซน์ + AI Mockup", d:"เห็นภาพงานจริงก่อนตัดสินใจ", ai:true},
+  {no:"03", ic:IC.produce, t:"ผลิต", d:"คุมคุณภาพทุกชิ้น วัสดุพรีเมียม", ai:false},
+  {no:"04", ic:IC.deliver, t:"ส่งมอบ", d:"ตรงเวลา พร้อม kitting รายคน", ai:false}
+];
+var testi = [
+  {q:"งานดีไซน์เนี้ยบ ส่งตรงเวลา คุยง่าย ทำให้มั่นใจที่จะสั่งต่อในปีถัดไป", n:"ผู้จัดการฝ่าย HR", m:"องค์กรเอกชน · Q4 2025", a:"H"},
+  {q:"AI ช่วยร่นเวลาเลือกของได้เยอะ ได้ไอเดียเซ็ตที่ตรงโจทย์เร็วขึ้นมาก", n:"ฝ่ายการตลาด", m:"เอเจนซีโฆษณา · Q1 2026", a:"M"},
+  {q:"เห็น Mockup ก่อนผลิตทำให้ตัดสินใจได้สบายใจ ไม่ต้องลุ้นว่างานจะพลาด", n:"ฝ่ายจัดซื้อ", m:"บริษัทในตลาดหลักทรัพย์ · Q4 2025", a:"P"}
+];
+var STAR='<svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>';
+
+// ---- RENDER ----
+var wall = document.getElementById('wallGrid');
+for(var i=1;i<=20;i++){
+  var c=document.createElement('div');
+  c.className='logo-cell reveal';
+  c.style.transitionDelay=((i-1)%5*0.05)+'s';
+  c.innerHTML='<img src="clients/c'+i+'.png" alt="โลโก้ลูกค้า '+i+'" loading="lazy">';
+  wall.appendChild(c);
+}
+var cg=document.getElementById('caseGrid');
+cases.forEach(function(x){
+  var el=document.createElement('article');
+  el.className='case reveal';
+  el.innerHTML='<div class="case-img"><span class="case-tag en">'+x.tag+'</span><img src="'+x.img+'" alt="'+x.t+'" loading="lazy"></div><div class="case-body"><h3>'+x.t+'</h3><p>'+x.d+'</p></div>';
+  cg.appendChild(el);
+});
+var pg=document.getElementById('procGrid');
+steps.forEach(function(s){
+  var el=document.createElement('div');
+  el.className='step reveal'+(s.ai?' feat':'');
+  el.innerHTML='<div class="no en">'+s.no+'</div><div class="ic"><svg viewBox="0 0 24 24">'+s.ic+'</svg></div><h3>'+s.t+(s.ai?' <span class="ai-badge en">✦ AI</span>':'')+'</h3><p>'+s.d+'</p>';
+  pg.appendChild(el);
+});
+var tg=document.getElementById('testiGrid');
+testi.forEach(function(t){
+  var el=document.createElement('div');
+  el.className='quote reveal';
+  el.innerHTML='<div class="stars">'+STAR+STAR+STAR+STAR+STAR+'</div><p>“'+t.q+'”</p><div class="who"><div class="avatar en">'+t.a+'</div><div><div class="nm">'+t.n+'</div><div class="meta">'+t.m+'</div></div></div>';
+  tg.appendChild(el);
+});
+
+// ---- SCROLL REVEAL ----
+var io=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+
+// ---- TOPBAR SHADOW ----
+var tb=document.getElementById('topbar');
+window.addEventListener('scroll',function(){ tb.classList.toggle('scrolled',window.scrollY>8); },{passive:true});
+</script>
+</body>
+</html>

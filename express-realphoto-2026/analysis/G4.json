@@ -1,0 +1,89 @@
+{
+  "group": "G4",
+  "skus": [
+    {
+      "ex_id": "EX054",
+      "proposed_name": "หมวก บัคเคิ้ลบี (Buckle-B)",
+      "category": "hat",
+      "folder": "ชุด หมวก PMK/หมวก/buckle b",
+      "hero": { "index": 4, "file": "peach-buckle-b-navy-01.jpg" },
+      "hero_is_group": false,
+      "gallery": [1, 6, 0, 7],
+      "color_charts": [],
+      "colors": ["khaki", "black", "blue", "gray", "navy", "pink", "red", "white"],
+      "n_colors": 8,
+      "confidence": 0.95,
+      "notes": "Folder 'buckle b' = EX054. All 8 are clean single-hat studio shots of the same 6-panel curved-brim baseball cap; PMK logo. Hero #4 navy = crisp single cap on plain light bg, ideal for bg-removal. No color grids."
+    },
+    {
+      "ex_id": "EX055",
+      "proposed_name": "หมวก แซนวิช (Sandwich)",
+      "category": "hat",
+      "folder": "ชุด หมวก PMK/หมวก/sandwich",
+      "hero": { "index": 1, "file": "DY-Sandwich-Cap-04.jpg" },
+      "hero_is_group": false,
+      "gallery": [0, 4, 3, 5],
+      "color_charts": [],
+      "colors": ["black", "navy", "white", "blue", "red", "yellow", "gray", "orange"],
+      "n_colors": 8,
+      "confidence": 0.93,
+      "notes": "Folder 'sandwich' = EX055. 5-panel cap with contrast sandwich-trim on visor edge. All single-hat studio shots, various colors. Hero #1 navy = clean single cap on plain bg. No grids."
+    },
+    {
+      "ex_id": "EX053",
+      "proposed_name": "หมวก พีชพรีเมียม แซนวิช",
+      "category": "hat",
+      "folder": "ชุด หมวก PMK/หมวก/พีช พรีเมี่ยม",
+      "hero": { "index": 0, "file": "04CL0023U000F-กรมข้าง.jpg" },
+      "hero_is_group": false,
+      "gallery": [1, 2, 4, 5],
+      "color_charts": [],
+      "colors": ["navy", "black", "blue", "cream", "orange", "green", "gray"],
+      "n_colors": 7,
+      "confidence": 0.9,
+      "notes": "Folder 'พีช พรีเมี่ยม' = EX053. 6-panel structured cap, single-hat 3/4 shots on white bg (POLO MAKER watermark). #07 has contrast white side sport-panel but same base model -> kept as gallery color, not separate SKU. Hero #0 navy = clean single cap. No grids."
+    },
+    {
+      "ex_id": "EX064",
+      "proposed_name": "หมวกคลุมหน้า (โฮมสกีน)",
+      "category": "hat",
+      "folder": "หมวก โฮมสกีน",
+      "hero": { "index": 0, "file": "หมวกคลุมหน้า.jpg" },
+      "hero_is_group": true,
+      "gallery": [0],
+      "color_charts": [],
+      "colors": ["olive-green"],
+      "n_colors": 1,
+      "confidence": 0.78,
+      "notes": "โฮมสกีน supplier face-cover hat = EX064. #00 is a front/back promo infographic of the neck-flap face-cover hat (only image of this shape). hero_is_group=true (promo layout, not a clean single). Olive shown."
+    },
+    {
+      "ex_id": "EX043",
+      "proposed_name": "หมวกแก๊ปตาข่าย ทรัคเกอร์ (โฮมสกีน)",
+      "category": "hat",
+      "folder": "หมวก โฮมสกีน",
+      "hero": { "index": 1, "file": "หมวกตาข่าย.jpg" },
+      "hero_is_group": true,
+      "gallery": [1, 4],
+      "color_charts": [4],
+      "colors": ["red", "white", "camo", "purple", "green", "navy", "yellow"],
+      "n_colors": 7,
+      "confidence": 0.75,
+      "notes": "โฮมสกีน trucker cap (foam front + mesh back) = EX043. #01 promo card shows red trucker + 3 color samples; #04 is a multi-color pile (color chart). hero_is_group=true; no isolated single available. Cap shape clearest in #01/#04."
+    },
+    {
+      "ex_id": "EX062",
+      "proposed_name": "หมวกปีกแข็งบูนนี่ (โฮมสกีน)",
+      "category": "hat",
+      "folder": "หมวก โฮมสกีน",
+      "hero": { "index": 2, "file": "หมวกปีกแข็ง.jpg" },
+      "hero_is_group": true,
+      "gallery": [2],
+      "color_charts": [],
+      "colors": ["khaki"],
+      "n_colors": 1,
+      "confidence": 0.72,
+      "notes": "โฮมสกีน stiff-brim bucket/boonie hat with chin-strap = EX062 (ปีกแข็งบูนนี่). #02 is front/back promo of the stiff-brim hat (only image). hero_is_group=true. Khaki shown. NOTE: #03 is a mixed promo grid (t-shirt/trucker/bucket) — not assigned, low value."
+    }
+  ]
+}

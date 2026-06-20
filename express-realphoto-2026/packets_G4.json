@@ -1,0 +1,62 @@
+{
+ "group": "G4",
+ "folders": [
+  {
+   "folder": "ชุด หมวก PMK/หมวก/buckle b",
+   "montage_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\express-realphoto-2026\\montages\\ชุด_หมวก_PMK__หมวก__buckle_b.jpg",
+   "src_dir_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ชุด หมวก PMK\\หมวก\\buckle b",
+   "index_to_file": {
+    "0": "PMK-peach-buckle-b-khaki-04.jpg",
+    "1": "peach-buckle-b-black-01.jpg",
+    "2": "peach-buckle-b-blue-01.jpg",
+    "3": "peach-buckle-b-gray-01.jpg",
+    "4": "peach-buckle-b-navy-01.jpg",
+    "5": "peach-buckle-b-pink-04.jpg",
+    "6": "peach-buckle-b-red-01.jpg",
+    "7": "peach-buckle-b-white-01.jpg"
+   }
+  },
+  {
+   "folder": "ชุด หมวก PMK/หมวก/sandwich",
+   "montage_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\express-realphoto-2026\\montages\\ชุด_หมวก_PMK__หมวก__sandwich.jpg",
+   "src_dir_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ชุด หมวก PMK\\หมวก\\sandwich",
+   "index_to_file": {
+    "0": "DY-Sandwich-Cap-02.jpg",
+    "1": "DY-Sandwich-Cap-04.jpg",
+    "2": "DY-Sandwich-Cap-08-600x752.jpg",
+    "3": "DY-Sandwich-Cap-11-600x752.jpg",
+    "4": "DY-Sandwich-Cap-14-scaled-600x752.jpg",
+    "5": "DY-Sandwich-Cap-20-scaled-600x752.jpg",
+    "6": "PMK-DY-Sandwich-Gray-white-01.jpg",
+    "7": "PMK-DY-Sandwich-Orange-01.jpg"
+   }
+  },
+  {
+   "folder": "ชุด หมวก PMK/หมวก/พีช พรีเมี่ยม",
+   "montage_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\express-realphoto-2026\\montages\\ชุด_หมวก_PMK__หมวก__พีช_พรีเมี่ยม.jpg",
+   "src_dir_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ชุด หมวก PMK\\หมวก\\พีช พรีเมี่ยม",
+   "index_to_file": {
+    "0": "04CL0023U000F-กรมข้าง.jpg",
+    "1": "04CL0033U000F-ดำข้าง.jpg",
+    "2": "04CL0033U000F-ฟ้าข้าง.jpg",
+    "3": "04PP0001.jpeg",
+    "4": "04PP0008-1.jpg",
+    "5": "04PP0026-1.jpg",
+    "6": "04PP0048-2.jpg",
+    "7": "หมวกพีช พรีเมี่ยม.jpg"
+   }
+  },
+  {
+   "folder": "หมวก โฮมสกีน",
+   "montage_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\express-realphoto-2026\\montages\\หมวก_โฮมสกีน.jpg",
+   "src_dir_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\หมวก โฮมสกีน",
+   "index_to_file": {
+    "0": "หมวกคลุมหน้า.jpg",
+    "1": "หมวกตาข่าย.jpg",
+    "2": "หมวกปีกแข็ง.jpg",
+    "3": "หมวกรูปแบบต่าง ๆ .jpg",
+    "4": "หมวกแก๊บ.jpg"
+   }
+  }
+ ]
+}

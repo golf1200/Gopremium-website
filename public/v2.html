@@ -474,7 +474,14 @@ a.occ:hover{transform:translateY(-4px);box-shadow:var(--sh-md)}
 .nh .hero2-photo::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(98deg,rgba(224,227,233,.86) 0%,rgba(228,231,236,.6) 20%,rgba(233,236,240,.2) 38%,rgba(255,255,255,0) 52%)}
 .nh .hero2-in2{position:absolute;inset:0;z-index:2;display:flex;align-items:center}
 .nh .hero2-copy{max-width:min(540px,46%);transform:translateY(-8px)} /* align eyebrow to the woman's ear level */
-@media(max-width:920px){.nh .hero2-photo{aspect-ratio:auto}.nh .hero2-photo .hero2-bg{position:relative;height:auto;object-fit:initial}.nh .hero2-in2{position:static;display:block;padding:24px 0 6px}.nh .hero2-photo::after{display:none}.nh .hero2-copy{max-width:100%;transform:none}}
+/* mobile: keep the web first-impression — full-bleed photo with copy overlaid (was stacked) */
+@media(max-width:920px){
+  .nh .hero2-photo{aspect-ratio:auto;min-height:90vh}
+  .nh .hero2-photo .hero2-bg{object-position:69% 44%} /* frame the delivery scene below the copy */
+  .nh .hero2-photo::after{display:block;background:linear-gradient(180deg,var(--cloud-2) 3%,rgba(238,241,245,.96) 32%,rgba(238,241,245,.66) 52%,rgba(238,241,245,0) 74%)} /* light scrim top → photo shows below */
+  .nh .hero2-in2{align-items:flex-start;padding:22px 0 0}
+  .nh .hero2-copy{max-width:100%;transform:none}
+}
 .nh .chip-1{left:-22px;bottom:30px}.nh .chip-2{left:-22px;top:20px}
 /* trust */
 .nh .trust2{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(44px,6vw,68px) 0;overflow:hidden}

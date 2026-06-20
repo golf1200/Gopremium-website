@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>เลือกดีไซน์ "ผลงานของเรา" — GO PREMIUM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#13244a; --navy-700:#0d1a36; --navy-soft:#2e4470;
+  --mustard:#f4b223; --mustard-deep:#c98f0a; --mustard-soft:#fbe7b5;
+  --ink:#1A2230; --grey:#5B6472; --grey-400:#8A93A2; --line:#E3E7ED;
+  --cloud:#F5F6F8; --cloud-2:#EEF1F5;
+  --r:16px; --r-lg:24px; --r-xl:32px; --pill:999px;
+  --sh:0 18px 50px -18px rgba(31,58,95,.30); --sh-md:0 12px 34px -14px rgba(31,58,95,.22);
+  --head:'Anuphan',sans-serif; --body:'IBM Plex Sans Thai',sans-serif; --en:'Sora',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;font-family:var(--body);color:var(--ink);background:var(--cloud);line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--head);margin:0;line-height:1.16;letter-spacing:-.01em}
+.en{font-family:var(--en)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,56px)}
+header{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-700) 100%);color:#fff;padding:clamp(40px,6vw,72px) 0 clamp(56px,8vw,92px);position:relative;overflow:hidden}
+header::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);background-size:22px 22px;opacity:.5}
+header .wrap{position:relative;z-index:1}
+.brand{font-family:var(--en);font-weight:800;letter-spacing:.14em;font-size:14px;color:var(--mustard)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;margin:22px 0 14px;font-size:13px;font-weight:600;color:var(--mustard-soft);background:rgba(255,255,255,.08);padding:7px 14px;border-radius:var(--pill)}
+.eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--mustard)}
+header h1{font-size:clamp(28px,4.6vw,46px);font-weight:700;max-width:18ch}
+header p{margin-top:16px;max-width:60ch;color:#cdd6e6;font-size:clamp(15px,1.6vw,18px)}
+.note{margin-top:22px;display:inline-flex;align-items:center;gap:9px;font-size:13.5px;color:#aebbd2;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);padding:9px 15px;border-radius:12px}
+main{margin-top:-48px;position:relative;z-index:2;padding-bottom:80px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.4vw,28px)}
+@media(max-width:880px){.grid{grid-template-columns:1fr}}
+.card{background:#fff;border-radius:var(--r-lg);box-shadow:var(--sh-md);overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--line);transition:transform .25s ease,box-shadow .25s ease}
+.card:hover{transform:translateY(-6px);box-shadow:var(--sh)}
+.thumb{height:172px;position:relative;display:flex;align-items:flex-end;padding:18px;color:#fff;overflow:hidden}
+.thumb .tag{position:relative;z-index:2;font-family:var(--en);font-weight:700;font-size:13px;letter-spacing:.08em;background:rgba(255,255,255,.16);backdrop-filter:blur(4px);padding:6px 12px;border-radius:var(--pill)}
+.thumb::before{content:"";position:absolute;inset:0;z-index:1;opacity:.92}
+.tA::before{background:linear-gradient(140deg,#1b3160,#13244a)}
+.tB::before{background:linear-gradient(140deg,#244272,#0d1a36)}
+.tC::before{background:linear-gradient(140deg,#0d1a36,#1b3160 60%,var(--mustard-deep))}
+.thumb .big{position:absolute;right:-6px;top:-14px;z-index:1;font-family:var(--en);font-weight:800;font-size:120px;line-height:1;color:rgba(244,178,35,.16)}
+.bd{padding:24px 24px 26px;display:flex;flex-direction:column;flex:1}
+.bd h3{font-size:21px;font-weight:600}
+.bd .sub{font-family:var(--en);font-size:12.5px;font-weight:600;letter-spacing:.06em;color:var(--mustard-deep);text-transform:uppercase;margin-top:4px}
+.bd p{color:var(--grey);font-size:14.5px;margin-top:12px}
+.bd ul{margin:14px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px}
+.bd li{font-size:13.5px;color:var(--ink);display:flex;gap:9px;align-items:flex-start}
+.bd li svg{flex:none;margin-top:3px;color:var(--mustard-deep)}
+.bd .best{margin-top:14px;font-size:12.5px;color:var(--navy-soft);background:var(--cloud);border-radius:10px;padding:9px 12px}
+.bd .best b{color:var(--navy)}
+.btns{margin-top:auto;padding-top:20px;display:flex;gap:10px}
+.btn{flex:1;text-align:center;font-family:var(--body);font-weight:600;font-size:14.5px;padding:12px 14px;border-radius:var(--pill);text-decoration:none;transition:.2s}
+.btn-p{background:var(--mustard);color:var(--navy)}
+.btn-p:hover{background:var(--mustard-deep);color:#fff}
+.btn-s{background:var(--cloud-2);color:var(--navy)}
+.btn-s:hover{background:var(--line)}
+.foot{margin-top:46px;text-align:center;color:var(--grey);font-size:13.5px}
+.foot b{color:var(--ink)}
+.openall{display:inline-block;margin-top:18px;font-family:var(--body);font-weight:600;font-size:14px;color:var(--navy);background:#fff;border:1px solid var(--line);padding:11px 20px;border-radius:var(--pill);cursor:pointer;text-decoration:none}
+.openall:hover{box-shadow:var(--sh-md)}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">GO&nbsp;PREMIUM</div>
+    <div class="eyebrow"><span class="dot"></span>Mockup · ยังไม่ขึ้นจริง</div>
+    <h1>เลือกแบบหน้า “ผลงานของเรา”</h1>
+    <p>ผมจัดวาง 3 คอนเซ็ปต์ที่แนวทางต่างกันจริง ใช้โลโก้ลูกค้า 20 ราย + รูปงานจริงทั้งหมด เปิดดูแล้วเลือกได้เลย — บอกผมว่าชอบเลขไหน (หรือผสมส่วนไหนของแต่ละแบบ) เดี๋ยวผมเอาไปรวมใส่หน้าจริงให้</p>
+    <div class="note">🔒 ทั้งหมดเป็นไฟล์ทดลองใน <span class="en">&nbsp;public/_mock-portfolio-*.html&nbsp;</span> — ไม่ได้แตะ v2.html และยังไม่ deploy</div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="grid">
+
+      <article class="card">
+        <div class="thumb tA"><span class="big en">A</span><span class="tag en">CONCEPT A</span></div>
+        <div class="bd">
+          <h3>Thank-You Wall</h3>
+          <div class="sub">ขอบคุณลูกค้า · อบอุ่น</div>
+          <p>ต่อยอดแนว “ขอบคุณที่ไว้วางใจ” แบบเดิมแต่หรูขึ้น พระเอกคือกำแพงโลโก้ลูกค้าขนาดใหญ่ที่จัดวางพรีเมียม</p>
+          <ul>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>เน้นความสัมพันธ์ + ความน่าเชื่อถือ</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>กำแพงโลโก้ 20 ราย เป็นจุดเด่น</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>โทนนุ่ม อ่านสบาย เล่าเรื่อง</li>
+          </ul>
+          <div class="best">เหมาะถ้า: <b>อยากให้ลูกค้าเก่ารู้สึกดี + สร้าง trust</b></div>
+          <div class="btns">
+            <a class="btn btn-p" href="_mock-portfolio-A.html" target="_blank" rel="noopener">เปิดดูแบบ A</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="thumb tB"><span class="big en">B</span><span class="tag en">CONCEPT B</span></div>
+        <div class="bd">
+          <h3>Case-Study Editorial</h3>
+          <div class="sub">ผลงานจริง · แนวเอเจนซี</div>
+          <p>นำด้วยผลงานจริงเป็นเคสใหญ่สลับซ้าย-ขวา เล่า โจทย์ → สิ่งที่เราทำ → ผลลัพธ์ โลโก้ลูกค้าวิ่งเป็นแถบ trust</p>
+          <ul>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>โชว์ฝีมือ/ความสามารถชัดที่สุด</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>เคสสตัดดี้ 6 งาน รูปใหญ่ editorial</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>ดูมืออาชีพ พรีเมียม</li>
+          </ul>
+          <div class="best">เหมาะถ้า: <b>อยากให้ลูกค้าใหม่เชื่อว่าเราทำงานเก่ง</b></div>
+          <div class="btns">
+            <a class="btn btn-p" href="_mock-portfolio-B.html" target="_blank" rel="noopener">เปิดดูแบบ B</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="thumb tC"><span class="big en">C</span><span class="tag en">CONCEPT C</span></div>
+        <div class="bd">
+          <h3>Proof &amp; Metrics</h3>
+          <div class="sub">ตัวเลข · อินเทอร์แอกทีฟ</div>
+          <p>ไดนามิกสุด ฮีโร่นาวีตัวเลขใหญ่นับเลขได้ โลโก้วิ่ง 2 แถว + แกลเลอรีงานที่กรองตามโอกาส/หมวดสินค้าได้</p>
+          <ul>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>ตัวเลขพิสูจน์ผลงานเด่น</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>แกลเลอรีกรองได้ ลื่นไหล</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>โมเดิร์น มีลูกเล่นเยอะสุด</li>
+          </ul>
+          <div class="best">เหมาะถ้า: <b>อยากดูทันสมัย + ให้คนเล่นกับงานได้</b></div>
+          <div class="btns">
+            <a class="btn btn-p" href="_mock-portfolio-C.html" target="_blank" rel="noopener">เปิดดูแบบ C</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="foot">
+      <a class="openall" onclick="['_mock-portfolio-A.html','_mock-portfolio-B.html','_mock-portfolio-C.html'].forEach(u=>window.open(u,'_blank'));return false;" href="#">↗ เปิดทั้ง 3 แบบพร้อมกัน</a>
+      <p style="margin-top:22px">เลือกได้เลยว่าชอบแบบไหน — หรือบอกว่า “เอา hero ของ B + กำแพงโลโก้ของ A + แกลเลอรีของ C” ก็ได้ <b>ผมจะเอาไปรวมใส่ v2.html ให้ตอนพร้อม deploy</b></p>
+    </div>
+  </div>
+</main>
+</body>
+</html>

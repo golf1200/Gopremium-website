@@ -1,0 +1,295 @@
+{
+  "group": "G2",
+  "skus": [
+    {
+      "ex_id": "EX004",
+      "proposed_name": "กระบอกน้ำพลาสติกใส ทรงสปอร์ต",
+      "category": "drinkware",
+      "folder": "ขวด love bottle/ขวดพลาสติก",
+      "hero": { "index": 3, "file": "BT06-004-BK-1-1.png" },
+      "hero_is_group": false,
+      "gallery": [
+        { "index": 4, "file": "BT06-004-PK.png" },
+        { "index": 5, "file": "BT06-049.png" },
+        { "index": 7, "file": "BT06-063.png" },
+        { "index": 20, "file": "ขวดใส-ฝาเงิน.png" }
+      ],
+      "color_charts": [
+        { "index": 8, "file": "ขวด-สีทึบ.png" },
+        { "index": 13, "file": "ขวดทรงนีออน-3-ขนาด.png" }
+      ],
+      "colors": ["ใส", "ดำ", "ชมพู", "ฟ้า", "เขียว", "ม่วง"],
+      "n_colors": 6,
+      "confidence": "high",
+      "notes": "Clear/frosted plastic sport bottles, slim cylindrical body with screw lid. Core EX004 plastic-bottle model. Many color & lid variants (silicone, wood, silver, gold) treated as same base shape."
+    },
+    {
+      "ex_id": "NEW",
+      "proposed_name": "ขวดน้ำพลาสติกเด็ก มีหลอด-หูหิ้ว",
+      "category": "drinkware",
+      "folder": "ขวด love bottle/ขวดพลาสติก",
+      "hero": { "index": 0, "file": "5-2.png" },
+      "hero_is_group": true,
+      "gallery": [
+        { "index": 9, "file": "ขวดกลมหูหิ้ว.png" }
+      ],
+      "color_charts": [],
+      "colors": ["ใส", "เขียว", "ดำ"],
+      "n_colors": 3,
+      "confidence": "med",
+      "notes": "Tritan kids/straw bottle with carry handle and built-in straw — distinct shape from plain sport bottle. Only group shot available."
+    },
+    {
+      "ex_id": "NEW",
+      "proposed_name": "ขวดน้ำพลาสติกฝาเห็ด/ฝาเพชร มีสาย",
+      "category": "drinkware",
+      "folder": "ขวด love bottle/ขวดพลาสติก",
+      "hero": { "index": 16, "file": "ขวดฝาเห็ด.png" },
+      "hero_is_group": false,
+      "gallery": [
+        { "index": 15, "file": "ขวดฝาเพชร.png" },
+        { "index": 11, "file": "ขวดขุ่นทรงเตี้ยฝาขาว.png" },
+        { "index": 12, "file": "ขวดขุ่นฝาขาว.png" },
+        { "index": 14, "file": "ขวดฝาซิลิโคลน.png" }
+      ],
+      "color_charts": [
+        { "index": 15, "file": "ขวดฝาเพชร.png" }
+      ],
+      "colors": ["ขุ่น", "ฟ้า", "ชมพู", "เขียว", "ม่วง"],
+      "n_colors": 5,
+      "confidence": "med",
+      "notes": "Frosted wide-body bottle with rounded mushroom/dome lid + wrist strap. Distinct from slim sport bottle."
+    },
+    {
+      "ex_id": "NEW",
+      "proposed_name": "ขวดน้ำพลาสติกพร้อมปลอกฟาง/ทรงแก้วกาแฟ",
+      "category": "drinkware",
+      "folder": "ขวด love bottle/ขวดพลาสติก",
+      "hero": { "index": 23, "file": "สินค้าใหม่-17.png" },
+      "hero_is_group": false,
+      "gallery": [
+        { "index": 24, "file": "สินค้าใหม่-18.png" },
+        { "index": 25, "file": "สินค้าใหม่-19.png" }
+      ],
+      "color_charts": [
+        { "index": 26, "file": "โคแคบ-แก้วใย-5.png" }
+      ],
+      "colors": ["ขาวครีม", "เทา"],
+      "n_colors": 2,
+      "confidence": "low",
+      "notes": "Wheat-straw/coffee-cup style tumblers (#23-26) shown mostly as in-hand/group shots. Best-effort separate model."
+    },
+    {
+      "ex_id": "EX006",
+      "proposed_name": "แก้วพร้อมปลอก แก้วตวง 300/400/500ml",
+      "category": "drinkware",
+      "folder": "ขวด love bottle/ขวดพลาสติก",
+      "hero": { "index": 18, "file": "ขวดใส ฝาแสตนเลสหูหิ้ว.png" },
+      "hero_is_group": false,
+      "gallery": [
+        { "index": 19, "file": "ขวดใส-ฝาทอง.png" },
+        { "index": 21, "file": "ขวดใสฝาไม้.png" },
+        { "index": 6, "file": "BT06-057-NOLOGO.png" }
+      ],
+      "color_charts": [],
+      "colors": ["ใส"],
+      "n_colors": 1,
+      "confidence": "med",
+      "notes": "Clear graduated sport bottles (300/400/500ml) with stainless/wood/gold lid + carry loop. Maps to EX006-style sleeve/cup family; could also be EX004 variant."
+    },
+    {
+      "ex_id": "EX005",
+      "proposed_name": "กระบอกน้ำสแตนเลสเก็บอุณหภูมิ ทรงสลิม",
+      "category": "drinkware",
+      "folder": "ขวด love bottle/ขวดแสตนเลส",
+      "hero": { "index": 5, "file": "BT05-099.png" },
+      "hero_is_group": false,
+      "gallery": [
+        { "index": 4, "file": "BT05-091-1.png" },
+        { "index": 3, "file": "BT05-090.png" },
+        { "index": 8, "file": "ขวดสแตนเลส-ทอง.png" },
+        { "index": 7, "file": "ขวดสแตนเลส-ดำ.png" }
+      ],
+      "color_charts": [
+        { "index": 2, "file": "BT05-090 (1).png" }
+      ],
+      "colors": ["ทอง", "ดำ", "ขาว", "เงิน"],
+      "n_colors": 4,
+      "confidence": "high",
+      "notes": "Core EX005 slim stainless vacuum bottle. #05/#08/#09 are single clean cut-open shots — good for bg removal."
+    },
+    {
+      "ex_id": "NEW",
+      "proposed_name": "กระบอกน้ำสแตนเลสฝาหูหิ้ว/ฝาล็อค",
+      "category": "drinkware",
+      "folder": "ขวด love bottle/ขวดแสตนเลส",
+      "hero": { "index": 4, "file": "BT05-091-1.png" },
+      "hero_is_group": false,
+      "gallery": [
+        { "index": 9, "file": "ขวดสแตนเลส-ฝาล็อค.png" },
+        { "index": 12, "file": "สแตนเลส-ฝาหมุนล้อค.png" },
+        { "index": 13, "file": "สแตนเลส-ฝาหูหิ้ว-1.png" },
+        { "index": 14, "file": "สแตนเลส-หูหิ้ว-ทูโทน.png" }
+      ],
+      "color_charts": [
+        { "index": 3, "file": "BT05-090.png" }
+      ],
+      "colors": ["แดง", "เขียวเข้ม", "ดำ", "ครีม", "ทูโทน"],
+      "n_colors": 5,
+      "confidence": "med",
+      "notes": "Stainless bottle with top carry-handle/loop lid and twist-lock cap. Distinct lid from the slim screw-cap EX005."
+    },
+    {
+      "ex_id": "EX041",
+      "proposed_name": "กระบอกน้ำเก็บอุณหภูมิ Smart LED แสดงอุณหภูมิ",
+      "category": "drinkware",
+      "folder": "ขวด love bottle/ขวดแสตนเลส",
+      "hero": { "index": 7, "file": "ขวดสแตนเลส-ดำ.png" },
+      "hero_is_group": false,
+      "gallery": [],
+      "color_charts": [],
+      "colors": ["ดำ"],
+      "n_colors": 1,
+      "confidence": "high",
+      "notes": "#07 explicitly shows LED temperature-display lid (ฝาวัดอุณหภูมิ) — matches EX041 Smart LED bottle."
+    },
+    {
+      "ex_id": "EX037",
+      "proposed_name": "แก้วกาแฟสแตนเลสมีหูจับ 14oz",
+      "category": "drinkware",
+      "folder": "ขวด love bottle/ขวดแสตนเลส",
+      "hero": { "index": 17, "file": "สแตนเลส-แก้วหูจับ.png" },
+      "hero_is_group": false,
+      "gallery": [
+        { "index": 15, "file": "สแตนเลส-แก้วหูจับ-ทรงสูง.png" },
+        { "index": 16, "file": "สแตนเลส-แก้วหูจับ-มินิ.png" }
+      ],
+      "color_charts": [],
+      "colors": ["ชมพู", "เทา", "ขาว", "ฟ้า", "แดง", "น้ำเงิน"],
+      "n_colors": 6,
+      "confidence": "high",
+      "notes": "Stainless mug WITH HANDLE + sliding lid — matches EX037 handle coffee mug. #15 tall, #16 mini are size variants of same handle-mug family."
+    },
+    {
+      "ex_id": "EX028",
+      "proposed_name": "แก้วเยติสแตนเลส ทรงอ้วน (20/30oz)",
+      "category": "drinkware",
+      "folder": "ขวด love bottle/ขวดแสตนเลส",
+      "hero": { "index": 19, "file": "แก้วสแตนเลส.png" },
+      "hero_is_group": false,
+      "gallery": [
+        { "index": 0, "file": "300-z.png" },
+        { "index": 18, "file": "แก้วสแตนเลส-สี.png" }
+      ],
+      "color_charts": [
+        { "index": 1, "file": "BT.png" },
+        { "index": 18, "file": "แก้วสแตนเลส-สี.png" }
+      ],
+      "colors": ["เงิน", "ส้ม", "ฟ้า", "ชมพู", "ม่วง", "ดำ"],
+      "n_colors": 6,
+      "confidence": "high",
+      "notes": "Classic fat 'yeti' tumbler with clear slide lid — EX028 (30oz)/EX033 (20oz). #01/#18 are full color line-ups. #19 single = clean hero."
+    },
+    {
+      "ex_id": "EX036",
+      "proposed_name": "กระบอกน้ำสแตนเลสทรงสปอร์ต ACTIVE หูหิ้ว",
+      "category": "drinkware",
+      "folder": "ขวด love bottle/ขวดแสตนเลส",
+      "hero": { "index": 10, "file": "สินค้าใหม่-2.png" },
+      "hero_is_group": false,
+      "gallery": [
+        { "index": 11, "file": "สินค้าใหม่-3.png" }
+      ],
+      "color_charts": [
+        { "index": 12, "file": "ผ-tall sport set (group)" }
+      ],
+      "colors": ["ขาว", "ฟ้า", "ชมพู", "เขียว", "เทา"],
+      "n_colors": 5,
+      "confidence": "med",
+      "notes": "Tall slim sport tumblers with sip-lid/handle (#10-13) — maps to EX036 ACTIVE sport family. NOTE: color_charts #12 placeholder; valid grid indices are #12/#13 group shots in same folder."
+    },
+    {
+      "ex_id": "EX037",
+      "proposed_name": "แก้วกาแฟสแตนเลสหุ้มไม้ไผ่ มีหูจับ",
+      "category": "drinkware",
+      "folder": "ขวด love bottle/ขวดแสตนเลส",
+      "hero": { "index": 10, "file": "สินค้าใหม่-2.png" },
+      "hero_is_group": false,
+      "gallery": [
+        { "index": 11, "file": "สินค้าใหม่-3.png" }
+      ],
+      "color_charts": [],
+      "colors": ["ลายไม้"],
+      "n_colors": 1,
+      "confidence": "low",
+      "notes": "Bamboo-wrapped mug (#10 with handle) and bamboo tumbler (#11) — wood-finish variant. Hero should be montage #10 bamboo mug; kept separate from painted handle-mug. (#10/#11 in montage are bamboo items.)"
+    },
+    {
+      "ex_id": "NEW",
+      "proposed_name": "กระบอกน้ำสแตนเลสไล่เฉดสี ฝาหูหิ้ว",
+      "category": "drinkware",
+      "folder": "ขวด love bottle/ขวดแสตนเลส",
+      "hero": { "index": 6, "file": "New-1-1-1.png" },
+      "hero_is_group": false,
+      "gallery": [],
+      "color_charts": [],
+      "colors": ["เหลือง-ส้มไล่เฉด", "พาสเทลไล่เฉด"],
+      "n_colors": 2,
+      "confidence": "med",
+      "notes": "#14 gradient-color tall bottle with top carry handle — distinct ombre finish model."
+    },
+    {
+      "ex_id": "EX006",
+      "proposed_name": "แก้วแก้วพร้อมปลอกซิลิโคน + หลอด ทรงทัมเบลอร์",
+      "category": "drinkware",
+      "folder": "ขวด love bottle/ขวดพร้อมปลอก",
+      "hero": { "index": 0, "file": "BT05-089-2.png" },
+      "hero_is_group": true,
+      "gallery": [
+        { "index": 4, "file": "สินค้าใหม่-2 (1).png" }
+      ],
+      "color_charts": [
+        { "index": 0, "file": "BT05-089-2.png" },
+        { "index": 4, "file": "สินค้าใหม่-2 (1).png" }
+      ],
+      "colors": ["ชมพู", "เขียว", "เหลือง", "ครีม", "ฟ้า", "แดง"],
+      "n_colors": 6,
+      "confidence": "high",
+      "notes": "Core EX006 glass tumbler with silicone sleeve + glass straw. #00/#04 are color line-ups. Mostly group shots — no clean single available, so hero_is_group."
+    },
+    {
+      "ex_id": "NEW",
+      "proposed_name": "แก้วแก้วพร้อมปลอก ทรงโหลเตี้ยฝาเกลียว",
+      "category": "drinkware",
+      "folder": "ขวด love bottle/ขวดพร้อมปลอก",
+      "hero": { "index": 1, "file": "BT05-102.png" },
+      "hero_is_group": false,
+      "gallery": [
+        { "index": 5, "file": "สินค้าใหม่-3 (1).png" }
+      ],
+      "color_charts": [],
+      "colors": ["ชมพู", "ม่วง", "ฟ้า"],
+      "n_colors": 3,
+      "confidence": "med",
+      "notes": "Short squat glass jar with silicone sleeve + screw/loop lid (#01, #05) — distinct from tall straw tumbler."
+    },
+    {
+      "ex_id": "NEW",
+      "proposed_name": "แก้วแก้วพร้อมปลอก ทรงโหลใหญ่ฝาไม้ไผ่ + หลอด",
+      "category": "drinkware",
+      "folder": "ขวด love bottle/ขวดพร้อมปลอก",
+      "hero": { "index": 3, "file": "New-3.png" },
+      "hero_is_group": false,
+      "gallery": [
+        { "index": 6, "file": "สินค้าใหม่-5.png" }
+      ],
+      "color_charts": [
+        { "index": 2, "file": "BT05-103.png" }
+      ],
+      "colors": ["น้ำเงิน", "ครีม", "เขียวมิ้นต์", "เหลือง", "น้ำตาล", "ใส"],
+      "n_colors": 6,
+      "confidence": "high",
+      "notes": "Large mason/ring glass jar (can shape) with bamboo or silicone lid + glass straw + sleeve. #02 is full color line-up; #03 clean pair single; #06 single pair."
+    }
+  ]
+}

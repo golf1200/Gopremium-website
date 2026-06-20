@@ -1,0 +1,49 @@
+{
+ "group": "G1",
+ "skus": [
+  {
+   "ex_id": "EX001",
+   "proposed_name": "เสื้อยืดคอกลม แขนสั้น",
+   "category": "garment",
+   "folder": "เสื้อ สมานการ์เม้นท์/เซฟสีเสื้อเพิ่มเติม",
+   "hero": {"index": 11, "file": "649062184_1394564732684441_2091547982868173364_n.jpg"},
+   "hero_is_group": false,
+   "gallery": [
+    {"index": 13, "file": "649558282_1394564712684443_3387660067819753922_n.jpg"},
+    {"index": 12, "file": "649180026_1394564716017776_4709121476274975959_n.jpg"},
+    {"index": 14, "file": "649657750_1394564736017774_9044190152110841176_n.jpg"},
+    {"index": 7, "file": "640396666_1379972614143653_3247144945685890250_n.jpg"}
+   ],
+   "color_charts": [
+    {"index": 3, "file": "3 เฉดสี.jpg"},
+    {"index": 2, "file": "2 เฉดสี.jpg"}
+   ],
+   "colors": ["ขาว", "ดำ", "เทาท็อปไดร์", "เทาเมลานจ์", "เทาควันบุหรี่", "แดง", "ชมพูอ่อน", "ชมพูเข้ม", "ฟ้า", "ฟ้าอ่อน", "ฟ้าน้ำทะเล", "ฟ้าเข้ม", "น้ำเงิน", "เขียวขวด", "เขียวมิ้น", "เขียวหยวก", "เขียวไม้ไผ่", "เหลือง", "ส้ม", "โอรส", "น้ำตาล", "ม่วง", "ครีม", "กรม"],
+   "n_colors": 30,
+   "confidence": "high",
+   "notes": "Crew-neck short-sleeve cotton 100% (COTTON 100% คอกลม). Supplier SAMARN GARMENT (สมานการ์เม้นท์), model SM-series. Same garment offered in both crew (คอกลม) and V-neck (คอวี) per labels. Hero = clean single blue (ฟ้า) tee on mannequin, white bg, ideal for bg-removal. Gallery adds ฟ้าน้ำทะเล/ฟ้าอ่อน/ฟ้าเข้ม + a folded multi-color blue lay. color_charts index 2 & 3 are the full SM-code color matrices (SM001-SM025). Sizes S-4XL (rounds 32-54in) per size chart (folder1 #01)."
+  },
+  {
+   "ex_id": "EX007",
+   "proposed_name": "เสื้อยืดคอวี แขนสั้น",
+   "category": "garment",
+   "folder": "เสื้อ สมานการ์เม้นท์/เซฟสีเสื้อเพิ่มเติม",
+   "hero": {"index": 0, "file": "603897118_1329519362522312_5553110177346545688_n.jpg"},
+   "hero_is_group": false,
+   "gallery": [
+    {"index": 9, "file": "646380922_1391968149610766_7661468157067397786_n.jpg"},
+    {"index": 8, "file": "646377011_1391968172944097_5310144181068046958_n.jpg"},
+    {"index": 4, "file": "606357284_1334653392008909_8713946277106988635_n.jpg"},
+    {"index": 1, "file": "605123539_1334653372008911_2479283679596362456_n.jpg"}
+   ],
+   "color_charts": [
+    {"index": 3, "file": "3 เฉดสี.jpg"},
+    {"index": 2, "file": "2 เฉดสี.jpg"}
+   ],
+   "colors": ["แดง", "ส้ม", "โอรส", "เทา", "ขาว", "ฟ้า", "น้ำเงิน", "เขียว", "เหลือง", "ม่วง", "ชมพู", "ดำ", "น้ำตาล"],
+   "n_colors": 24,
+   "confidence": "high",
+   "notes": "V-neck short-sleeve cotton 100% (COTTON 100% คอวี). Same SAMARN GARMENT model as EX001 but V-neck cut — all single mannequin shots in folder2 are clearly V-neck. Hero = clean single red (แดง) V-neck on mannequin, white bg. Gallery: orange (ส้ม) #09, coral (โอรส) #08, gray V-neck mannequin #04, paired gray V-necks #01. Shares the same color matrix charts (index 2 & 3) — labeled 'คอกลม/คอวี' so available colors mirror EX001. Maps to candidate EX007 (V-neck NEW)."
+  }
+ ]
+}

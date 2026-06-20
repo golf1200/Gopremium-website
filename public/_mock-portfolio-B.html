@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ผลงานของเรา · GO PREMIUM — Selected Work</title>
+<meta name="description" content="ผลงานจริงที่ GO PREMIUM ออกแบบ ผลิต และส่งมอบ — เซ็ตของขวัญองค์กร พิมพ์โลโก้ครบวงจร โดย Passion Grow Trading">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#13244a; --navy-700:#0d1a36; --navy-soft:#2e4470;
+  --mustard:#f4b223; --mustard-deep:#c98f0a; --mustard-soft:#fbe7b5;
+  --ink:#1A2230; --grey:#5B6472; --grey-400:#8A93A2; --line:#E3E7ED;
+  --cloud:#F5F6F8; --cloud-2:#EEF1F5;
+  --r:16px; --r-lg:24px; --r-xl:32px; --r-sm:10px; --pill:999px;
+  --sh:0 18px 50px -18px rgba(31,58,95,.30); --sh-md:0 12px 34px -14px rgba(31,58,95,.22); --sh-sm:0 4px 16px -6px rgba(31,58,95,.16);
+  --maxw:1240px; --gut:clamp(24px,5vw,64px);
+  --head:'Anuphan',sans-serif; --body:'IBM Plex Sans Thai',sans-serif; --en:'Sora',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--head);line-height:1.18;color:var(--navy);font-weight:600;letter-spacing:-.01em}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.en{font-family:var(--en)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut)}
+.eyebrow{font-family:var(--en);font-size:.78rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--mustard-deep);display:inline-flex;align-items:center;gap:.55rem}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--mustard);border-radius:2px}
+
+/* ===== TOP BAR ===== */
+.topbar{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);transition:box-shadow .3s}
+.topbar.scrolled{box-shadow:var(--sh-sm)}
+.topbar .inner{max-width:var(--maxw);margin:0 auto;padding:14px var(--gut);display:flex;align-items:center;justify-content:space-between}
+.wordmark{font-family:var(--en);font-weight:800;letter-spacing:.02em;font-size:1.18rem;color:var(--navy)}
+.wordmark span{color:var(--mustard-deep)}
+.cta-pill{font-family:var(--head);font-weight:600;font-size:.95rem;background:var(--mustard);color:var(--navy-700);padding:.62rem 1.35rem;border-radius:var(--pill);box-shadow:var(--sh-sm);transition:transform .25s,box-shadow .25s;white-space:nowrap}
+.cta-pill:hover{transform:translateY(-2px);box-shadow:var(--sh-md)}
+
+/* ===== HERO ===== */
+.hero{position:relative;background:linear-gradient(180deg,#fff 0%,var(--cloud) 100%);overflow:hidden}
+.hero .wrap{padding-top:clamp(48px,7vw,88px);padding-bottom:clamp(40px,6vw,72px)}
+.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(32px,5vw,64px);align-items:center}
+.hero h1{font-size:clamp(2.1rem,5.2vw,3.7rem);font-weight:700;margin:1.1rem 0 1.1rem;letter-spacing:-.02em}
+.hero h1 em{font-style:normal;color:var(--mustard-deep);position:relative}
+.hero .lead{font-size:clamp(1.04rem,1.9vw,1.22rem);color:var(--grey);max-width:34ch;font-weight:300}
+.hero-actions{display:flex;gap:.85rem;flex-wrap:wrap;margin-top:1.9rem}
+.btn{font-family:var(--head);font-weight:600;font-size:1rem;padding:.85rem 1.7rem;border-radius:var(--pill);transition:transform .25s,box-shadow .25s,background .25s;display:inline-flex;align-items:center;gap:.5rem;cursor:pointer;border:none}
+.btn-primary{background:var(--mustard);color:var(--navy-700);box-shadow:var(--sh-sm)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:var(--sh-md)}
+.btn-ghost{background:#fff;color:var(--navy);border:1.5px solid var(--line)}
+.btn-ghost:hover{border-color:var(--navy);transform:translateY(-2px)}
+.hero-media{position:relative}
+.hero-media img{width:100%;height:clamp(320px,42vw,520px);object-fit:cover;border-radius:var(--r-xl);box-shadow:var(--sh)}
+.hero-media .badge{position:absolute;left:-14px;bottom:26px;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:.85rem 1.1rem;box-shadow:var(--sh-md);display:flex;align-items:center;gap:.65rem;font-size:.9rem}
+.hero-media .badge b{font-family:var(--en);color:var(--navy);font-size:1.05rem}
+.hero-media .badge .dot{width:9px;height:9px;border-radius:50%;background:#27c285;box-shadow:0 0 0 4px rgba(39,194,133,.18)}
+
+/* ===== STATS ===== */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;margin-top:clamp(36px,5vw,56px)}
+.stat{background:#fff;padding:clamp(1.2rem,2.4vw,1.8rem) 1.2rem;text-align:center}
+.stat b{display:block;font-family:var(--en);font-weight:800;font-size:clamp(1.6rem,3.4vw,2.3rem);color:var(--navy);letter-spacing:-.02em}
+.stat span{display:block;font-size:.86rem;color:var(--grey);margin-top:.3rem;font-weight:300}
+
+/* ===== TRUST MARQUEE ===== */
+.trust{background:var(--navy);color:#fff;padding:clamp(2.2rem,4vw,3rem) 0;position:relative}
+.trust .label{text-align:center;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;font-family:var(--en);font-weight:600;color:rgba(255,255,255,.62);margin-bottom:1.6rem}
+.marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.marquee-track{display:flex;gap:clamp(2.4rem,5vw,4rem);width:max-content;animation:scroll 48s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-track img{height:clamp(32px,4vw,46px);width:auto;object-fit:contain;filter:grayscale(1) brightness(0) invert(1);opacity:.62;transition:opacity .3s,filter .3s}
+.marquee-track img:hover{filter:grayscale(0);opacity:1}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ===== SECTION HEADING ===== */
+.sec{padding:clamp(56px,8vw,104px) 0}
+.sec-head{max-width:62ch;margin-bottom:clamp(40px,5vw,64px)}
+.sec-head h2{font-size:clamp(1.8rem,4vw,2.7rem);font-weight:700;margin:.9rem 0 .8rem}
+.sec-head p{color:var(--grey);font-size:1.08rem;font-weight:300}
+
+/* ===== CASE STUDIES ===== */
+.cases{display:flex;flex-direction:column;gap:clamp(56px,8vw,108px)}
+.case{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(32px,5vw,72px);align-items:center}
+.case:nth-child(even) .case-media{order:2}
+.case-media{position:relative}
+.case-media img{width:100%;height:clamp(300px,38vw,480px);object-fit:cover;border-radius:var(--r-xl);box-shadow:var(--sh)}
+.case-media .num{position:absolute;top:-22px;left:-14px;font-family:var(--en);font-weight:800;font-size:clamp(3rem,7vw,5.2rem);color:var(--mustard);-webkit-text-stroke:1.5px var(--mustard);opacity:.9;line-height:1;text-shadow:0 8px 24px rgba(244,178,35,.25)}
+.chip{display:inline-flex;align-items:center;gap:.45rem;font-family:var(--en);font-size:.74rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);background:var(--mustard-soft);border:1px solid var(--mustard);padding:.4rem .85rem;border-radius:var(--pill)}
+.case-body h3{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:700;margin:1rem 0 1.3rem}
+.case-rows{display:flex;flex-direction:column;gap:.95rem}
+.case-row{display:grid;grid-template-columns:auto 1fr;gap:.9rem;align-items:start}
+.case-row .tag{font-family:var(--head);font-weight:600;font-size:.82rem;color:var(--navy);background:var(--cloud-2);border-radius:var(--r-sm);padding:.32rem .7rem;white-space:nowrap;min-width:86px;text-align:center;border:1px solid var(--line)}
+.case-row.result .tag{background:var(--navy);color:#fff;border-color:var(--navy)}
+.case-row p{color:var(--grey);font-weight:300;padding-top:.18rem}
+.case-row p b{color:var(--ink);font-weight:500}
+
+/* ===== PROCESS ===== */
+.process{background:var(--cloud)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,2.5vw,28px);position:relative}
+.step{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(1.5rem,2.5vw,2rem);position:relative;transition:transform .3s,box-shadow .3s}
+.step:hover{transform:translateY(-6px);box-shadow:var(--sh-md)}
+.step .n{font-family:var(--en);font-weight:800;font-size:1.05rem;color:var(--mustard-deep);letter-spacing:.05em}
+.step h4{font-size:1.18rem;margin:.7rem 0 .55rem;font-weight:600;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+.step p{font-size:.92rem;color:var(--grey);font-weight:300}
+.ai-badge{font-family:var(--en);font-size:.68rem;font-weight:700;letter-spacing:.05em;background:linear-gradient(120deg,var(--navy),var(--navy-soft));color:var(--mustard);padding:.22rem .55rem;border-radius:var(--pill)}
+.step-line{position:absolute;top:50%;left:0;right:0;height:2px;background:repeating-linear-gradient(90deg,var(--line) 0 8px,transparent 8px 16px);z-index:-1}
+
+/* ===== VIDEO PLACEHOLDER ===== */
+.video-ph{position:relative;border-radius:var(--r-xl);overflow:hidden;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-700) 100%);min-height:clamp(280px,40vw,440px);display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;box-shadow:var(--sh)}
+.video-ph::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(244,178,35,.16),transparent 55%),radial-gradient(circle at 80% 90%,rgba(46,68,112,.5),transparent 50%)}
+.video-ph .inner{position:relative;z-index:2;padding:2rem}
+.play{width:74px;height:74px;border-radius:50%;background:rgba(244,178,35,.16);border:2px solid var(--mustard);display:grid;place-items:center;margin:0 auto 1.4rem;transition:transform .3s}
+.video-ph:hover .play{transform:scale(1.07)}
+.play svg{margin-left:5px}
+.video-ph h3{color:#fff;font-size:clamp(1.4rem,3vw,2rem);font-weight:700}
+.video-ph .soon{display:inline-block;font-family:var(--en);font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mustard);border:1px solid rgba(244,178,35,.5);border-radius:var(--pill);padding:.35rem .9rem;margin-bottom:1.1rem}
+.video-ph p{color:rgba(255,255,255,.72);font-weight:300;max-width:44ch;margin:.8rem auto 0}
+
+/* ===== TESTIMONIALS ===== */
+.tcards{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,2.5vw,28px)}
+.tcard{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(1.6rem,2.5vw,2.2rem);display:flex;flex-direction:column;gap:1.1rem;transition:transform .3s,box-shadow .3s}
+.tcard:hover{transform:translateY(-5px);box-shadow:var(--sh-md)}
+.stars{display:flex;gap:3px;color:var(--mustard)}
+.tcard q{font-size:1.05rem;line-height:1.65;color:var(--ink);font-weight:400;quotes:none}
+.tcard q::before{content:"“";color:var(--mustard);font-family:var(--en);font-weight:800;font-size:1.3rem;margin-right:.1rem}
+.tcard .who{margin-top:auto;font-size:.9rem;color:var(--grey);border-top:1px solid var(--line);padding-top:1rem}
+.tcard .who b{display:block;color:var(--navy);font-family:var(--head);font-weight:600;font-size:.98rem}
+
+/* ===== CTA BAND ===== */
+.ctaband{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-700) 100%);color:#fff;position:relative;overflow:hidden}
+.ctaband::before{content:"";position:absolute;top:-40%;right:-10%;width:520px;height:520px;background:radial-gradient(circle,rgba(244,178,35,.16),transparent 65%)}
+.ctaband .wrap{padding:clamp(56px,8vw,96px) var(--gut);position:relative;z-index:2;text-align:center}
+.ctaband .eyebrow{color:var(--mustard);justify-content:center}
+.ctaband h2{color:#fff;font-size:clamp(1.9rem,4.5vw,3rem);font-weight:700;margin:1rem auto 1rem;max-width:20ch}
+.ctaband p{color:rgba(255,255,255,.74);font-weight:300;max-width:46ch;margin:0 auto 2rem;font-size:1.08rem}
+.cta-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-line{background:#fff;color:var(--navy)}
+.btn-line:hover{transform:translateY(-2px);box-shadow:var(--sh-md)}
+
+/* ===== FOOTER ===== */
+footer{background:var(--navy-700);color:rgba(255,255,255,.6);padding:2.4rem 0;font-size:.88rem}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+footer .wordmark{color:#fff;font-size:1rem}
+footer a:hover{color:var(--mustard)}
+
+/* ===== REVEAL ===== */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:920px){
+  .hero-grid{grid-template-columns:1fr;gap:2.2rem}
+  .hero-media .badge{left:12px}
+  .case{grid-template-columns:1fr;gap:1.8rem}
+  .case:nth-child(even) .case-media{order:0}
+  .case-media .num{left:0}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .step-line{display:none}
+  .tcards{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:1fr}
+  .hero-media img{height:300px}
+}
+@media(prefers-reduced-motion:reduce){
+  .marquee-track{animation:none}
+  .reveal{opacity:1;transform:none;transition:none}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<header class="topbar" id="topbar">
+  <div class="inner">
+    <a href="#" class="wordmark">GO <span>PREMIUM</span></a>
+    <a href="#cta" class="cta-pill">ขอใบเสนอราคา</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy reveal">
+        <span class="eyebrow">ผลงานของเรา · Selected Work</span>
+        <h1>งานจริงที่เรา<br><em>ออกแบบ ผลิต</em> และส่งมอบ</h1>
+        <p class="lead">พาร์ตเนอร์ของขวัญองค์กรแบบครบวงจร ตั้งแต่คิดคอนเซ็ปต์ ดีไซน์ พิมพ์โลโก้ ไปจนถึงส่งมอบถึงมือ — ดูตัวอย่างงานที่เราภูมิใจด้านล่าง</p>
+        <div class="hero-actions">
+          <a href="#cases" class="btn btn-primary">ดูผลงานทั้งหมด</a>
+          <a href="#cta" class="btn btn-ghost">ขอใบเสนอราคา</a>
+        </div>
+      </div>
+      <div class="hero-media reveal">
+        <img src="images/home/hero-team.webp" alt="ทีมงาน GO PREMIUM" loading="eager">
+        <div class="badge"><span class="dot"></span><div><b>2 ชม.</b><br><span style="font-size:.78rem;color:var(--grey)">ตอบกลับเฉลี่ย</span></div></div>
+      </div>
+    </div>
+    <!-- STATS -->
+    <div class="stats reveal">
+      <div class="stat"><b class="en">100,000+</b><span>ชิ้นส่งมอบแล้ว</span></div>
+      <div class="stat"><b class="en">240+</b><span>รายการพร้อมพิมพ์โลโก้</span></div>
+      <div class="stat"><b class="en">100%</b><span>ผ่าน Mockup ก่อนผลิต</span></div>
+      <div class="stat"><b class="en">2 ชม.</b><span>ตอบกลับเฉลี่ย</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST MARQUEE -->
+<section class="trust">
+  <div class="label">ได้รับความไว้วางใจจากองค์กรชั้นนำ</div>
+  <div class="marquee">
+    <div class="marquee-track" id="mtrack"></div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section class="sec" id="cases">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Case Studies</span>
+      <h2>เลือกชมตัวอย่างงานที่เราทำจริง</h2>
+      <p>ทุกงานเริ่มจากโจทย์ของลูกค้า เราออกแบบทางออก แล้วลงมือผลิตและส่งมอบให้ตรงเวลา ดูวิธีคิดเบื้องหลังแต่ละโปรเจกต์</p>
+    </div>
+    <div class="cases" id="caselist"></div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="sec process">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">How We Work</span>
+      <h2>4 ขั้นตอน จากโจทย์สู่การส่งมอบ</h2>
+      <p>ขั้นตอนการทำงานที่โปร่งใส ทุกโปรเจกต์เห็นภาพชัดก่อนผลิตจริง</p>
+    </div>
+    <div class="steps reveal">
+      <div class="step-line" aria-hidden="true"></div>
+      <div class="step"><div class="n">01</div><h4>ปรึกษา</h4><p>คุยโจทย์ งบประมาณ และจำนวน เราช่วยคัดของที่ใช่ภายในกรอบของคุณ</p></div>
+      <div class="step"><div class="n">02</div><h4>ดีไซน์ + AI Mockup <span class="ai-badge">✦ AI</span></h4><p>ออกแบบลายโลโก้และจัดเซ็ต พร้อม Mockup เสมือนจริงให้อนุมัติก่อนผลิต</p></div>
+      <div class="step"><div class="n">03</div><h4>ผลิต</h4><p>พิมพ์ สกรีน หรือสลักโลโก้ด้วยมาตรฐานคุณภาพ คุมทุกชิ้นก่อนแพ็ก</p></div>
+      <div class="step"><div class="n">04</div><h4>ส่งมอบ</h4><p>จัดเซ็ต แพ็กพร้อมมอบ และจัดส่งถึงปลายทางตรงตามกำหนด</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO PLACEHOLDER -->
+<section class="sec">
+  <div class="wrap">
+    <div class="video-ph reveal">
+      <div class="inner">
+        <div class="play"><svg width="22" height="26" viewBox="0 0 22 26" fill="none"><path d="M21 11.27a2 2 0 0 1 0 3.46L3 25.07a2 2 0 0 1-3-1.73V2.66a2 2 0 0 1 3-1.73l18 10.34Z" fill="#f4b223"/></svg></div>
+        <span class="soon">Coming Soon · เร็ว ๆ นี้</span>
+        <h3>เบื้องหลังโรงงานและกระบวนการผลิต</h3>
+        <p>เรากำลังถ่ายทำวิดีโอเบื้องหลัง ตั้งแต่งานพิมพ์ไปจนถึงการแพ็กเซ็ต เพื่อให้คุณเห็นทุกขั้นตอนอย่างใกล้ชิด</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="sec process">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Testimonials</span>
+      <h2>เสียงจากลูกค้าองค์กร</h2>
+    </div>
+    <div class="tcards" id="tlist"></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="ctaband" id="cta">
+  <div class="wrap reveal">
+    <span class="eyebrow">เริ่มโปรเจกต์ของคุณ</span>
+    <h2>พร้อมทำของขวัญองค์กรที่ดูดีและส่งทันงาน</h2>
+    <p>ส่งโจทย์มาได้เลย ทีมเราตอบกลับภายใน 2 ชั่วโมง พร้อม Mockup ให้ดูก่อนตัดสินใจ</p>
+    <div class="cta-actions">
+      <a href="#" class="btn btn-primary">ขอใบเสนอราคา</a>
+      <a href="#" class="btn btn-line">ทักไลน์ @gopremium</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="wordmark">GO <span style="color:var(--mustard)">PREMIUM</span></div>
+    <div>ของขวัญองค์กร พิมพ์โลโก้ครบวงจร โดย Passion Grow Trading · © 2026</div>
+  </div>
+</footer>
+
+<script>
+// ---- Client logos marquee (20, duplicated for seamless loop) ----
+(function(){
+  const track=document.getElementById('mtrack');
+  let html='';
+  for(let i=1;i<=20;i++){html+=`<img src="clients/c${i}.png" alt="ลูกค้า ${i}" loading="lazy">`;}
+  track.innerHTML=html+html; // duplicate for -50% loop
+})();
+
+// ---- Case studies data ----
+const cases=[
+  {tag:'New Year Set',img:'images/home/occ-newyear.jpg',title:'เซ็ตปีใหม่องค์กร',
+   brief:'ของขวัญปีใหม่ให้พนักงานหลักพันคน งบจำกัด แต่อยากให้ดูพรีเมียม',
+   work:'ออกแบบกล่องและการ์ดเฉพาะแบรนด์ จัดเป็นเซ็ตพร้อมมอบในชิ้นเดียว',
+   result:'ส่งทันก่อนปีใหม่ คุมงบได้ตามเป้า'},
+  {tag:'Onboarding Kit',img:'images/home/occ-welcome.jpg',title:'Welcome Kit พนักงานใหม่',
+   brief:'สร้าง first impression ที่ดีให้พนักงานใหม่ในวันแรก',
+   work:'ชุดต้อนรับสไตล์ minimal คุมโทนสีแบรนด์ตลอดทั้งเซ็ต',
+   result:'เป็นเทมเพลตที่นำกลับมาใช้ซ้ำได้ทุกเดือน'},
+  {tag:'Eco Lifestyle',img:'images/home/occ-eco.jpg',title:'Eco Lifestyle Set (รักษ์โลก)',
+   brief:'สื่อสารความยั่งยืนขององค์กรผ่านของขวัญอย่างจริงใจ',
+   work:'คัดของใช้คุณภาพที่เล่าเรื่อง ESG ได้ในตัว',
+   result:'สอดคล้องกับภาพลักษณ์แบรนด์ที่ใส่ใจสิ่งแวดล้อม'},
+  {tag:'VIP Client Gift',img:'images/home/occ-vip.jpg',title:'VIP Gift Box',
+   brief:'ขอบคุณลูกค้าคนสำคัญให้สมเกียรติและน่าจดจำ',
+   work:'กล่องของขวัญพรีเมียม จัดวางองค์ประกอบอย่างประณีต',
+   result:'สร้างความประทับใจระดับ VIP ตั้งแต่แกะกล่อง'},
+  {tag:'Event Giveaway',img:'images/home/occ-event.jpg',title:'Event Giveaway',
+   brief:'ของแจกงานอีเวนต์ที่ถ่ายรูปสวยและต้องพร้อมทันงาน',
+   work:'ออกแบบของแจกพิมพ์โลโก้ให้ดีไซน์ขึ้นกล้อง',
+   result:'ส่งทันงาน สต๊อกพอ ไม่มีสะดุด'},
+  {tag:'Milestone Drinkware',img:'images/home/occ-milestone.jpg',title:'Custom Drinkware',
+   brief:'ของที่ระลึกสำหรับวาระพิเศษขององค์กร',
+   work:'กระบอกน้ำดีไซน์เฉพาะวาระ สลักโลโก้ลงบนเนื้องาน',
+   result:'เป็นของที่ระลึกที่เก็บไว้ใช้จริงในชีวิตประจำวัน'},
+];
+const cl=document.getElementById('caselist');
+cl.innerHTML=cases.map((c,i)=>`
+  <article class="case reveal">
+    <div class="case-media">
+      <span class="num en">${String(i+1).padStart(2,'0')}</span>
+      <img src="${c.img}" alt="${c.title}" loading="lazy">
+    </div>
+    <div class="case-body">
+      <span class="chip">${c.tag}</span>
+      <h3>${c.title}</h3>
+      <div class="case-rows">
+        <div class="case-row"><span class="tag">โจทย์</span><p>${c.brief}</p></div>
+        <div class="case-row"><span class="tag">สิ่งที่เราทำ</span><p>${c.work}</p></div>
+        <div class="case-row result"><span class="tag">ผลลัพธ์</span><p><b>${c.result}</b></p></div>
+      </div>
+    </div>
+  </article>`).join('');
+
+// ---- Testimonials ----
+const stars='<div class="stars">'+Array(5).fill('<svg width="17" height="17" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.27 5.82.85-4.21 4.1.99 5.8L10 14.77l-5.2 2.75.99-5.8L1.58 7.62l5.82-.85L10 1.5z"/></svg>').join('')+'</div>';
+const testi=[
+  {q:'งานดีไซน์เนี้ยบ ส่งตรงเวลา คุยง่าย ทำให้มั่นใจที่จะสั่งต่อในปีถัดไป',name:'ผู้จัดการฝ่าย HR',meta:'องค์กรเอกชน · Q4 2025'},
+  {q:'AI ช่วยร่นเวลาเลือกของได้เยอะ ได้ไอเดียเซ็ตที่ตรงโจทย์เร็วขึ้น',name:'ฝ่ายการตลาด',meta:'เอเจนซีโฆษณา · Q1 2026'},
+  {q:'เห็น Mockup ก่อนผลิตทำให้ตัดสินใจได้สบายใจ',name:'ฝ่ายจัดซื้อ',meta:'บริษัทในตลาดหลักทรัพย์ · Q4 2025'},
+];
+document.getElementById('tlist').innerHTML=testi.map(t=>`
+  <div class="tcard">
+    ${stars}
+    <q>${t.q}</q>
+    <div class="who"><b>${t.name}</b>${t.meta}</div>
+  </div>`).join('');
+
+// ---- Sticky bar shadow ----
+const tb=document.getElementById('topbar');
+addEventListener('scroll',()=>tb.classList.toggle('scrolled',scrollY>10),{passive:true});
+
+// ---- Scroll reveal ----
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
