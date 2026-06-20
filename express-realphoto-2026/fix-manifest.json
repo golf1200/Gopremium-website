@@ -1,0 +1,200 @@
+[
+ {
+  "sku": "EX005",
+  "slug": "ex005-drinkware",
+  "category": "drinkware",
+  "name": "กระบอกน้ำสแตนเลส",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดแสตนเลส\\แก้วสแตนเลส-เงิน.png",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX006",
+  "slug": "ex006-drinkware",
+  "category": "drinkware",
+  "name": "แก้วพร้อมปลอก",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดพลาสติก\\ขวดกลมหูหิ้ว.png",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX028",
+  "slug": "ex028-drinkware",
+  "category": "drinkware",
+  "name": "แก้วเยติ 30oz ทรงอ้วน",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดแสตนเลส\\BT05-099.png",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX037",
+  "slug": "ex037-drinkware",
+  "category": "drinkware",
+  "name": "แก้วกาแฟ มีหูจับข้าง 14oz",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดแสตนเลส\\สแตนเลส-แก้วหูจับ.png",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX041",
+  "slug": "ex041-drinkware",
+  "category": "drinkware",
+  "name": "กระบอกน้ำเก็บอุณหภูมิ (Smart LED)",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดแสตนเลส\\ขวดสแตนเลส-ฝาล็อค.png",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX082",
+  "slug": "ex082-drinkware",
+  "category": "drinkware",
+  "name": "ขวดน้ำพลาสติกเด็ก มีหลอด-หูหิ้ว",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดพลาสติก\\ขวดสีทึบ-ทรงขวดเบียร์.png",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX053",
+  "slug": "ex053-hat",
+  "category": "hat",
+  "name": "หมวก พีชพรีเมียม แซนวิช",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ชุด หมวก PMK\\หมวก\\พีช พรีเมี่ยม\\04PP0001.jpeg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX013",
+  "slug": "ex013-umbrella",
+  "category": "umbrella",
+  "name": "ร่ม 22 นิ้ว",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ร่ม new fly\\ร่มไม้เท้า\\ร่มตอนเดียว 22 นิ้ว 2.jpg",
+  "hero_is_group": false,
+  "gallery_abs": [],
+  "crop": [
+   0.345,
+   0.02,
+   0.66,
+   0.33
+  ]
+ },
+ {
+  "sku": "EX015",
+  "slug": "ex015-umbrella",
+  "category": "umbrella",
+  "name": "ร่มไม้เท้า 16 ก้าน",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ร่ม new fly\\ร่มไม้เท้า\\ร่มไม้เท้า16 นิ้ว 2.jpg",
+  "hero_is_group": false,
+  "gallery_abs": [],
+  "crop": [
+   0.345,
+   0.015,
+   0.655,
+   0.34
+  ]
+ },
+ {
+  "sku": "EX016",
+  "slug": "ex016-umbrella",
+  "category": "umbrella",
+  "name": "ร่มกอล์ฟ 28 นิ้ว",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ร่ม new fly\\ร่มกอล์ฟ\\ร่มกอล์ฟ 28 นิ้ว.jpg",
+  "hero_is_group": false,
+  "gallery_abs": [],
+  "crop": [
+   0.24,
+   0.03,
+   0.73,
+   0.4
+  ]
+ },
+ {
+  "sku": "EX017",
+  "slug": "ex017-umbrella",
+  "category": "umbrella",
+  "name": "ร่มกอล์ฟ 30 นิ้ว",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ร่ม new fly\\ร่มกอล์ฟ\\ร่มกอล์ฟ 30 นิ้ว .jpg",
+  "hero_is_group": false,
+  "gallery_abs": [],
+  "crop": [
+   0.21,
+   0.07,
+   0.66,
+   0.41
+  ]
+ },
+ {
+  "sku": "EX096",
+  "slug": "ex096-bags",
+  "category": "bags",
+  "name": "กระเป๋าถือนุ่มฟู Dumpling Puffy Bag",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\กระเป๋า mpkj\\dumpling 1.jpg",
+  "hero_is_group": false,
+  "gallery_abs": [],
+  "crop": [
+   0.65,
+   0.4,
+   0.93,
+   0.7
+  ]
+ },
+ {
+  "sku": "EX022",
+  "slug": "ex022-fan",
+  "category": "fan",
+  "name": "Fan High-speed Handheld RS-SF10 (Silver) - พัดลม Remax",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\พาวเวอร์แบงค์ พัดลม Remax\\พัดลม\\Fan High-speed Handheld RS-SF10 (Silver) - พัดลม Remax.jpg",
+  "hero_is_group": false,
+  "gallery_abs": [],
+  "crop": [
+   0.04,
+   0.06,
+   0.46,
+   0.68
+  ]
+ },
+ {
+  "sku": "EX023",
+  "slug": "ex023-fan",
+  "category": "fan",
+  "name": "Fan High-speed Handheld RS-SF12 (Blue) - พัดลม Remax",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\พาวเวอร์แบงค์ พัดลม Remax\\พัดลม\\Fan High-speed Handheld RS-SF12 (Blue) - พัดลม Remax.jpg",
+  "hero_is_group": false,
+  "gallery_abs": [],
+  "crop": [
+   0.33,
+   0.16,
+   0.63,
+   0.87
+  ]
+ },
+ {
+  "sku": "EX024",
+  "slug": "ex024-fan",
+  "category": "fan",
+  "name": "Fan mini Handheld RS-SF25 - พัดลม Remax",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\พาวเวอร์แบงค์ พัดลม Remax\\พัดลม\\Fan mini Handheld RS-SF25 (Blue) - พัดลม Remax.jpg",
+  "hero_is_group": false,
+  "gallery_abs": [],
+  "crop": [
+   0.53,
+   0.27,
+   0.99,
+   0.93
+  ]
+ },
+ {
+  "sku": "EX105",
+  "slug": "ex105-lifestyle",
+  "category": "lifestyle",
+  "name": "หมอนอิงตุ๊กตาลายการ์ตูน (Character Cushion Pillow)",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\หมอน ผ้าห่ม pamatoy\\หมอน\\รวม-หมอนพิเศษ00-04.jpg",
+  "hero_is_group": false,
+  "gallery_abs": [],
+  "crop": [
+   0.17,
+   0.03,
+   0.79,
+   0.88
+  ]
+ }
+]

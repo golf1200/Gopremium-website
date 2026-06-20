@@ -1,0 +1,170 @@
+{
+  "group": "A4",
+  "flags": [
+    {
+      "sku": "EX095",
+      "issues": ["brand-text", "lifestyle-model", "hands", "floating-photo-card", "ghost-duplicate"],
+      "severity": "high",
+      "live_problem": "Live is a tilted lifestyle photo-card of a model holding a 'NEWYORK' printed canvas tote (face/torso/hand in frame), plus a faded ghost duplicate on the left. Not a clean product-only shot.",
+      "fix": "needs-new-photo",
+      "source_index": 0,
+      "source_file": "canvas 1.jpg",
+      "crop_note": "Source #00 (canvas 1) is itself a collage of a lifestyle shot + a flat tote with 'NEWYORK' print; no clean prop-free single cell. Needs a fresh plain-canvas tote shot on studio bg.",
+      "notes": "Printed 'NEWYORK' is the bag's own decorative print, but the model/hands/photo-card framing is the real contamination."
+    },
+    {
+      "sku": "EX096",
+      "issues": ["promo-collage", "marketing-copy", "brand-text", "spec-callouts", "line-id", "multi-product"],
+      "severity": "high",
+      "live_problem": "Live is a pink marketing poster: 'คุ้มมากกกกก!! คละสี คละรุ่นได้ ออกแบบฟรี!', 'MPKJ GROUP', 'LINE: @mahasamoot.42', dimension callouts, and bag prints GSB2/LONDON/DAILY DAISY across 3 products.",
+      "fix": "crop",
+      "source_index": 2,
+      "source_file": "dumpling 1.jpg",
+      "crop_note": "Source #02 (dumpling 1) is a clean color-grid of dumpling bags on plain bg — crop ONE single dumpling bag cell with no text/logo. If a logo-free cell can't be isolated, treat as needs-new-photo.",
+      "notes": "Hero_is_group=true. Current live image is a full infographic poster."
+    },
+    {
+      "sku": "EX097",
+      "issues": ["spec-sheet", "price-list", "marketing-copy", "brand-text", "copyright-text", "multi-product"],
+      "severity": "high",
+      "live_problem": "Live is a full 'Fluffy-Puffy' spec sheet: 4 bag sizes with dimension labels, a QTY price-list table, color swatches, LINE id and 'COPYRIGHT@ URBAN ASSET SERVICE, MPKJ GROUP'.",
+      "fix": "needs-new-photo",
+      "source_index": 4,
+      "source_file": "fluffy puffy.jpg",
+      "crop_note": "Source #04 is the SAME spec sheet — no clean cell. Needs a fresh single Fluffy-Puffy bag on studio bg.",
+      "notes": "Hero_is_group=true."
+    },
+    {
+      "sku": "EX098",
+      "issues": ["spec-callouts", "dimension-text", "brand-text", "multi-product"],
+      "severity": "high",
+      "live_problem": "Live shows two black drawstring bags with dimension callouts (42cm / 25.5cm / 19.5cm / 30cm), a 'VICHY' print on the smaller bag, and 'MPKJ GROUP' text on a reflective base.",
+      "fix": "crop",
+      "source_index": 5,
+      "source_file": "moji 1.jpg",
+      "crop_note": "Source #05 (moji 1) is a color-grid of Fluffy Moji bags on plain bg — crop ONE single bag cell free of text/print. If every cell carries a print word, mark needs-new-photo.",
+      "notes": "Live is the Moji-style bag presented as a 2-up dimension diagram, not a clean single."
+    },
+    {
+      "sku": "EX099",
+      "issues": ["lifestyle-model", "hands", "brand-text", "ghost-panels", "multi-panel"],
+      "severity": "high",
+      "live_problem": "Live is a model (sunglasses, face/arms) holding a 'HOLIDAY GARDEN' tote, with ghosted 'Spring' marketing panels and a faded duplicate floating on the right.",
+      "fix": "needs-new-photo",
+      "source_index": 7,
+      "source_file": "paris 1.jpg",
+      "crop_note": "Sources #07 (paris collage with Sprint/Vogue/Profit/Film Fest prints) and #08 (paris lifestyle) are both contaminated; no clean single. Needs a fresh plain Paris tote on studio bg.",
+      "notes": "Model/hands + multi-panel collage are the core contamination."
+    },
+    {
+      "sku": "EX100",
+      "issues": ["promo-collage", "brand-text", "color-codes", "dimension-text", "multi-product"],
+      "severity": "high",
+      "live_problem": "Live is a 4-bag grid 'Puffy PopLine SIZE-M' with color codes (PM-R/PM-B/PM-BL/PM-G), color names, dimension labels (38/35cm), bag prints (Rally/Bon Voyage/MPKJ heart) and 'MPKJ GROUP / URBAN ASSET SERVICE'.",
+      "fix": "crop",
+      "source_index": 9,
+      "source_file": "popline 1.jpg",
+      "crop_note": "Source #09 (popline 1) shows the stripe bags on plain bg — crop ONE single PopLine bag cell with no codes/dimension text. Some cells still carry a print word (Rally/Bon Voyage); if none are clean, mark needs-new-photo.",
+      "notes": "Hero_is_group=true. Current live is an infographic group."
+    },
+    {
+      "sku": "EX021",
+      "issues": ["brand-text", "spec-callouts", "certification-logos", "wattage-badge", "multi-view"],
+      "severity": "high",
+      "live_problem": "Live shows the Remax MagSafe powerbank front+back: prominent 'REMAX' wordmark, '20W' badge, dense spec/manufacturer text on the back panel and CE/FCC/RoHS certification logos — reads like a marketplace listing image.",
+      "fix": "needs-new-photo",
+      "source_index": 2,
+      "source_file": "Power Bank 10000mAh RPP-678 (Silver,N) Wireless - แบตสำรอง REMAX.jpg",
+      "crop_note": "Source #02 is the same dual-view spec image; the back-panel text and REMAX/cert marks can't be cropped away while keeping a usable front view. Needs a clean single front-3/4 shot with no spec back panel.",
+      "notes": "Remax device is allowed bare, but the listing-style spec text + cert logos are the flag."
+    },
+    {
+      "sku": "EX110",
+      "issues": ["brand-logo", "spec-text", "multi-view"],
+      "severity": "med",
+      "live_problem": "Live shows the blue powerbank front+back: 'REMAX' molded wordmark and small spec/cert text on the back panel (icons + fine print near the top).",
+      "fix": "needs-new-photo",
+      "source_index": 1,
+      "source_file": "Power Bank 10000mAh RPP-30 (Blue,N) Wireless - แบตสำรอง REMAX.jpg",
+      "crop_note": "Source #01 is the same front+back pair. Crop to the FRONT unit only to drop the spec-text back panel; the molded 'REMAX' on the front remains (no logo-free source exists).",
+      "notes": "Lower severity than EX021 — main issue is the spec-text back view; molded REMAX is unavoidable for this device."
+    },
+    {
+      "sku": "EX111",
+      "issues": ["multi-product", "brand-text", "spec-callouts", "qr-code", "wattage-badge"],
+      "severity": "high",
+      "live_problem": "Live is a fanned group of 6 colored Remax RPP-116 powerbanks with lanyards, each showing '22.5W' badges, 'Remax POWER BANK' text and QR codes on the back — a listing/group shot, not a single clean product.",
+      "fix": "needs-new-photo",
+      "source_index": 3,
+      "source_file": "RPP-116.jpg",
+      "crop_note": "Source #03 is the same 6-unit group; every unit shows back-panel spec text + QR. No clean single-unit cell. Needs a fresh single RPP-116 front shot.",
+      "notes": "Hero_is_group=true. Both multi-product and brand/spec text apply."
+    },
+    {
+      "sku": "EX022",
+      "issues": ["multi-product", "brand-logo"],
+      "severity": "med",
+      "live_problem": "Live shows TWO handheld fans (a grey + a white) when the SKU is a single SF10 Silver; both carry the molded 'REMAX' logo on the fan hub and '100%' display.",
+      "fix": "crop",
+      "source_index": 0,
+      "source_file": "Fan High-speed Handheld RS-SF10 (Silver) - พัดลม Remax.jpg",
+      "crop_note": "Source #00 is the same 2-fan image — crop to the single silver/grey fan only. The molded REMAX logo on the hub is inherent to the product and cannot be removed without a new photo.",
+      "notes": "Remax device allowed bare; flag is the 2-up group. Logo is unavoidable across all fan sources."
+    },
+    {
+      "sku": "EX023",
+      "issues": ["multi-product", "brand-logo"],
+      "severity": "med",
+      "live_problem": "Live shows THREE handheld fans (white/blue-grey/pink-accent) when the SKU is a single SF12 Blue; each carries the molded 'REMAX' wordmark on the handle and '200' display.",
+      "fix": "crop",
+      "source_index": 1,
+      "source_file": "Fan High-speed Handheld RS-SF12 (Blue) - พัดลม Remax.jpg",
+      "crop_note": "Source #01 is the same 3-fan lineup — crop to the single blue-accent fan. Molded REMAX on the handle is inherent and cannot be removed without a new photo.",
+      "notes": "Flag is the 3-up group; logo unavoidable across sources."
+    },
+    {
+      "sku": "EX024",
+      "issues": ["multi-product", "brand-logo", "spec-display"],
+      "severity": "med",
+      "live_problem": "Live shows FOUR colored fans (clear/purple/green/orange) floating over a blue gradient when the SKU is a single SF25; each shows the molded 'REMAX' logo and a battery '99%' display.",
+      "fix": "crop",
+      "source_index": 2,
+      "source_file": "Fan mini Handheld RS-SF25 (Blue) - พัดลม Remax.jpg",
+      "crop_note": "Source #02 is the same 4-fan group — crop to ONE single SF25 unit. Molded REMAX is inherent and cannot be removed without a new photo.",
+      "notes": "Flag is the 4-up group shot; logo unavoidable."
+    },
+    {
+      "sku": "EX020",
+      "issues": ["brand-logo"],
+      "severity": "low",
+      "live_problem": "Clean single retractable-cable powerbank on studio bg, but a faint molded 'REMAX' wordmark is visible on the right side of the device.",
+      "fix": "needs-new-photo",
+      "source_index": 3,
+      "source_file": "RPP-116.jpg",
+      "crop_note": "All powerbank sources are Remax with molded marks; no logo-free source. Image is otherwise clean and single — acceptable to keep if a bare Remax device is allowed; only flagged for completeness.",
+      "notes": "Borderline. No box/listing text — just the molded brand wordmark. Lowest priority."
+    },
+    {
+      "sku": "EX105",
+      "issues": ["other-brand-tag"],
+      "severity": "low",
+      "live_problem": "Clean single yellow chick cushion on studio bg, but a small purple 'AEON' brand care-tag is visible on the bottom-right edge.",
+      "fix": "crop",
+      "source_index": 3,
+      "source_file": "รวม-หมอนพิเศษ00-04.jpg",
+      "crop_note": "The product itself is clean — tighten the crop / clone-out the small AEON tag in the bottom-right corner. Source #03 chick cell is the same shot with the tag.",
+      "notes": "Tiny corner label only; product is GO-PREMIUM-blank otherwise."
+    },
+    {
+      "sku": "EX101",
+      "issues": ["prop", "ghost-duplicate"],
+      "severity": "low",
+      "live_problem": "Plain cream fleece blanket draped over a grey SOFA prop (couch/cushion visible behind), with a faded ghost blanket on the left.",
+      "fix": "needs-new-photo",
+      "source_index": 0,
+      "source_file": "ผ้าห่ม.jpg",
+      "crop_note": "Source #00 is the same sofa-draped shot; it's the only plain (non-printed) fleece source. Either clone-out the couch or shoot a folded plain blanket on studio bg.",
+      "notes": "Low severity — no logo/text, just a furniture prop + faint ghost. Other blanket sources (#06 'Sweet Dream' graphic) are MORE contaminated, so avoid them."
+    }
+  ]
+}

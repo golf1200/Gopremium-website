@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ผลงานของเรา — GO PREMIUM (Final)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#13244a; --navy-700:#0d1a36; --navy-soft:#2e4470;
+  --mustard:#f4b223; --mustard-deep:#c98f0a; --mustard-soft:#fbe7b5;
+  --ink:#1A2230; --grey:#5B6472; --grey-400:#8A93A2; --line:#E3E7ED;
+  --cloud:#F5F6F8; --cloud-2:#EEF1F5;
+  --r:16px; --r-lg:24px; --r-xl:32px; --r-sm:10px; --pill:999px;
+  --sh:0 18px 50px -18px rgba(31,58,95,.30); --sh-md:0 12px 34px -14px rgba(31,58,95,.22); --sh-sm:0 4px 16px -6px rgba(31,58,95,.16);
+  --maxw:1240px; --gut:clamp(22px,5vw,64px);
+  --head:'Anuphan',sans-serif; --body:'IBM Plex Sans Thai',sans-serif; --en:'Sora',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--body);color:var(--ink);background:#fff;line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--head);font-weight:600;line-height:1.14;margin:0;letter-spacing:-.01em}
+h1{font-weight:700}
+p{margin:0}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}button{font-family:inherit;cursor:pointer;border:0;background:none}
+.en{font-family:var(--en)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gut)}
+.sec{padding:clamp(54px,7vw,96px) 0}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--mustard-deep)}
+.eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--mustard)}
+.h2{font-size:clamp(25px,3.4vw,40px)}
+.lead{color:var(--grey);font-size:clamp(15px,1.7vw,18px);max-width:62ch}
+.shead{margin-bottom:clamp(28px,3.4vw,46px)}
+.shead.center{text-align:center;display:flex;flex-direction:column;align-items:center;gap:13px}
+.shead .h2{margin-top:11px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:600;font-size:15px;padding:13px 24px;border-radius:var(--pill);transition:.2s;white-space:nowrap}
+.btn-p{background:var(--mustard);color:var(--navy)}
+.btn-p:hover{background:var(--mustard-deep);color:#fff;transform:translateY(-2px)}
+.btn-g{background:#fff;color:var(--navy);border:1px solid var(--line)}
+.btn-g:hover{box-shadow:var(--sh-md)}
+.btn-o{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.4)}
+.btn-o:hover{background:rgba(255,255,255,.12)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+
+/* ===== header ===== */
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav .row{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-family:var(--en);font-weight:800;letter-spacing:.13em;font-size:17px;color:var(--navy)}
+.brand b{color:var(--mustard-deep)}
+.nav .lnk{display:none;gap:26px;font-size:14.5px;color:var(--ink)}
+.nav .lnk a:hover{color:var(--mustard-deep)}
+@media(min-width:820px){.nav .lnk{display:flex}}
+
+/* ===== hero ===== */
+.hero{background:linear-gradient(157deg,var(--navy) 0%,var(--navy-700) 100%);color:#fff;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:24px 24px;opacity:.6}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1fr;gap:clamp(28px,4vw,56px);padding-top:clamp(46px,6vw,78px);padding-bottom:clamp(46px,6vw,78px);align-items:center}
+@media(min-width:900px){.hero .wrap{grid-template-columns:1.05fr .95fr}}
+.hero .eyebrow{color:var(--mustard-soft)}
+.hero h1{font-size:clamp(31px,5vw,54px);margin:18px 0 0}
+.hero .sub{margin-top:18px;color:#cdd6e6;font-size:clamp(15px,1.7vw,18.5px);max-width:54ch}
+.hero .cta{margin-top:28px;display:flex;gap:13px;flex-wrap:wrap}
+.hero-stats{margin-top:32px;display:grid;grid-template-columns:repeat(2,1fr);gap:18px 26px;max-width:460px}
+@media(min-width:520px){.hero-stats{grid-template-columns:repeat(4,auto)}}
+.hero-stats>div{align-self:start}
+.hero-stats .n{font-family:var(--en);font-weight:800;font-size:clamp(22px,3vw,30px);color:var(--mustard);white-space:nowrap}
+.hero-stats .l{font-size:12.5px;color:#aebbd2;margin-top:2px;line-height:1.4}
+.hero-art{position:relative;aspect-ratio:4/5;border-radius:var(--r-xl);overflow:hidden;box-shadow:0 30px 70px -20px rgba(0,0,0,.5)}
+.hero-art .slide{position:absolute;inset:0;opacity:0;transition:opacity 1s ease}
+.hero-art .slide.on{opacity:1}
+.hero-art .slide img{width:100%;height:100%;object-fit:cover}
+.hero-art .chip{position:absolute;left:18px;bottom:18px;z-index:3;background:rgba(13,26,54,.72);backdrop-filter:blur(6px);color:#fff;font-size:13px;padding:9px 15px;border-radius:var(--pill);display:flex;align-items:center;gap:8px}
+.hero-art .chip b{color:var(--mustard)}
+.hero-art .dots{position:absolute;right:16px;bottom:20px;z-index:3;display:flex;gap:7px}
+.hero-art .dots i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.5);cursor:pointer;transition:.3s}
+.hero-art .dots i.on{background:var(--mustard);width:22px;border-radius:5px}
+
+/* ===== logo strip (marquee) ===== */
+.trust{background:#fff;padding:clamp(46px,6vw,80px) 0}
+.marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.mtrack{display:flex;gap:58px;width:max-content;animation:scroll 42s linear infinite}
+.trust:hover .mtrack{animation-play-state:paused}
+.mtrack img{height:48px;width:auto;object-fit:contain;opacity:1;transition:transform .3s}
+.mtrack img:hover{transform:scale(1.08)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* ===== featured cases ===== */
+.feat{display:grid;grid-template-columns:1fr;gap:clamp(20px,3vw,38px);align-items:center;margin-bottom:clamp(40px,5vw,74px)}
+.feat:last-child{margin-bottom:0}
+@media(min-width:860px){.feat{grid-template-columns:1.08fr .92fr}.feat.rev .media{order:2}}
+.feat .media{position:relative;border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--sh)}
+.feat .media img{width:100%;aspect-ratio:3/2;object-fit:cover;transition:transform .6s ease}
+.feat .media:hover img{transform:scale(1.04)}
+.feat .media .badge{position:absolute;top:16px;left:16px;background:rgba(13,26,54,.82);backdrop-filter:blur(6px);color:#fff;font-family:var(--en);font-weight:600;font-size:12px;letter-spacing:.05em;padding:7px 13px;border-radius:var(--pill)}
+.feat .num{font-family:var(--en);font-weight:800;font-size:15px;color:var(--mustard-deep);letter-spacing:.1em}
+.feat h3{font-size:clamp(21px,2.6vw,30px);margin:10px 0 6px}
+.feat .brand{display:inline-block;font-size:13px;color:var(--navy-soft);background:var(--cloud-2);padding:5px 12px;border-radius:var(--pill);margin-bottom:16px}
+.story{display:flex;flex-direction:column;gap:12px;margin-top:6px}
+.story .it{display:flex;gap:13px;align-items:flex-start}
+.story .k{flex:none;width:62px;font-size:12.5px;font-weight:600;color:var(--mustard-deep);padding-top:2px}
+.story .v{font-size:14.5px;color:var(--ink)}
+
+/* ===== gallery ===== */
+.filters{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin-bottom:30px}
+.chip{font-size:14px;font-weight:500;color:var(--navy);background:var(--cloud);border:1px solid var(--line);padding:9px 17px;border-radius:var(--pill);transition:.2s}
+.chip:hover{border-color:var(--mustard)}
+.chip.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(12px,1.6vw,20px)}
+@media(min-width:620px){.gal{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:980px){.gal{grid-template-columns:repeat(4,1fr)}}
+.card{position:relative;border-radius:var(--r);overflow:hidden;background:var(--cloud);box-shadow:var(--sh-sm);cursor:pointer;transition:transform .3s ease,box-shadow .3s ease;opacity:1}
+.card:hover{transform:translateY(-5px);box-shadow:var(--sh-md)}
+.card.hide{display:none}
+.card .im{aspect-ratio:4/3;overflow:hidden}
+.card .im img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.card:hover .im img{transform:scale(1.06)}
+.card .ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,26,54,.86) 0%,rgba(13,26,54,.1) 46%,transparent 70%);display:flex;flex-direction:column;justify-content:flex-end;padding:15px;opacity:0;transition:opacity .3s ease}
+.card:hover .ov{opacity:1}
+.card .ov .ct{color:#fff;font-family:var(--head);font-weight:600;font-size:14.5px;line-height:1.3}
+.card .ov .cb{color:var(--mustard-soft);font-size:12px;margin-top:3px}
+.card .tag{position:absolute;top:11px;left:11px;background:rgba(255,255,255,.9);color:var(--navy);font-size:11.5px;font-weight:600;padding:5px 11px;border-radius:var(--pill)}
+
+/* ===== logo wall ===== */
+.logo-wall{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(min-width:560px){.logo-wall{grid-template-columns:repeat(4,1fr)}}
+@media(min-width:900px){.logo-wall{grid-template-columns:repeat(5,1fr)}}
+.lc{background:#fff;border:1px solid var(--line);border-radius:var(--r);aspect-ratio:5/3;display:flex;align-items:center;justify-content:center;padding:20px;transition:.3s}
+.lc:hover{box-shadow:var(--sh-md);transform:translateY(-3px)}
+.lc img{max-height:54px;max-width:78%;object-fit:contain;filter:grayscale(1);opacity:.66;transition:.3s}
+.lc:hover img{filter:none;opacity:1}
+
+/* ===== process ===== */
+.steps{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:680px){.steps{grid-template-columns:repeat(4,1fr)}}
+.step{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:24px 22px;position:relative}
+.step .nn{font-family:var(--en);font-weight:800;font-size:14px;color:var(--mustard-deep)}
+.step .ic{width:46px;height:46px;border-radius:13px;background:var(--cloud);display:flex;align-items:center;justify-content:center;color:var(--navy);margin:14px 0}
+.step h4{font-size:18px}
+.step p{font-size:14px;color:var(--grey);margin-top:7px}
+.bdg{display:inline-block;font-size:11px;font-weight:700;color:var(--navy);background:var(--mustard);padding:2px 9px;border-radius:var(--pill);margin-left:6px;vertical-align:middle}
+
+/* ===== video placeholder ===== */
+.video-ph{position:relative;border-radius:var(--r-xl);overflow:hidden;background:linear-gradient(150deg,var(--navy),var(--navy-700));aspect-ratio:16/7;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;border:1px solid rgba(255,255,255,.08)}
+.video-ph::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:22px 22px;opacity:.6}
+.video-ph .play{position:relative;z-index:1;width:70px;height:70px;border-radius:50%;background:var(--mustard);color:var(--navy);display:flex;align-items:center;justify-content:center}
+.video-ph .cap{position:relative;z-index:1;margin-top:16px;font-family:var(--head);font-weight:600;font-size:18px}
+.video-ph .sub{position:relative;z-index:1;margin-top:5px;font-size:13.5px;color:#aebbd2}
+
+/* ===== reviews ===== */
+.revs{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:760px){.revs{grid-template-columns:repeat(3,1fr)}}
+.rev{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:26px}
+.rev.dk{background:var(--navy);color:#fff;border-color:var(--navy)}
+.stars{display:flex;gap:3px;color:var(--mustard);margin-bottom:13px}
+.rev q{font-size:15.5px;line-height:1.6;quotes:none;display:block}
+.rev .who{display:flex;align-items:center;gap:12px;margin-top:18px}
+.rev .av{width:42px;height:42px;border-radius:50%;background:var(--mustard-soft);color:var(--navy);display:flex;align-items:center;justify-content:center;font-family:var(--en);font-weight:700}
+.rev.dk .av{background:var(--navy-soft);color:#fff}
+.rev .r{font-size:12.5px;color:var(--grey)}
+.rev.dk .r{color:#aebbd2}
+
+/* ===== team / story ===== */
+.team-band{border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--sh)}
+.team-band img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}
+.team-vals{display:grid;grid-template-columns:1fr;gap:16px;margin-top:24px}
+@media(min-width:720px){.team-vals{grid-template-columns:repeat(3,1fr)}}
+.tv{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:22px 24px}
+.tv .tvk{font-family:var(--head);font-weight:600;font-size:18px;color:var(--navy)}
+.tv .tvk::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--mustard);margin-right:9px;vertical-align:middle}
+.tv p{font-size:14px;color:var(--grey);margin-top:7px}
+
+/* ===== CTA ===== */
+.cta-band{background:linear-gradient(157deg,var(--navy),var(--navy-700));color:#fff;border-radius:var(--r-xl);padding:clamp(34px,5vw,60px);text-align:center;position:relative;overflow:hidden}
+.cta-band::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:22px 22px;opacity:.6}
+.cta-band .in{position:relative;z-index:1}
+.cta-band h2{font-size:clamp(24px,3.4vw,38px)}
+.cta-band p{color:#cdd6e6;margin:14px auto 0;max-width:50ch}
+.cta-band .b{margin-top:26px;display:flex;gap:13px;justify-content:center;flex-wrap:wrap}
+
+/* footer */
+.foot{background:var(--navy-700);color:#aebbd2;text-align:center;padding:30px 0;font-size:13px}
+.foot .brand{color:#fff;margin-bottom:6px}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(8,15,30,.92);display:none;align-items:center;justify-content:center;padding:28px}
+.lb.on{display:flex}
+.lb img{max-width:92vw;max-height:82vh;border-radius:var(--r);box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.lb .cap{position:absolute;bottom:26px;left:0;right:0;text-align:center;color:#fff;font-size:14.5px}
+.lb .cap b{color:var(--mustard)}
+.lb .x{position:absolute;top:20px;right:24px;color:#fff;font-size:30px;line-height:1;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.12)}
+
+.note{background:var(--mustard-soft);color:#6b4e08;text-align:center;font-size:13.5px;padding:9px 16px}
+</style>
+</head>
+<body>
+
+<div class="note">🔒 หน้านี้เป็น <b>Mockup</b> — ใส่รูปงานจริงจากโฟลเดอร์ของคุณแล้ว · ยังไม่ขึ้นจริง · ยังไม่แตะ v2.html</div>
+
+<header class="nav">
+  <div class="wrap row">
+    <div class="brand">GO&nbsp;<b>PREMIUM</b></div>
+    <nav class="lnk">
+      <a href="#feat">ผลงานเด่น</a>
+      <a href="#gallery">แกลเลอรีงานจริง</a>
+      <a href="#clients">ลูกค้าของเรา</a>
+      <a href="#process">ขั้นตอน</a>
+    </nav>
+    <a class="btn btn-p" href="#cta">ขอใบเสนอราคา</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow"><span class="dot"></span>ผลงานของเรา · Selected Work</span>
+      <h1>งานจริงที่เราออกแบบ<br>ผลิต และส่งมอบ</h1>
+      <p class="sub">ทุกชิ้นบนหน้านี้คือของพรีเมียมที่เราทำให้องค์กรจริง — ตั้งแต่คอนเซ็ปต์ ดีไซน์ สกรีนโลโก้ ผลิต จนถึงจัดเซ็ตพร้อมมอบ ดูภาพถ่ายจากงานจริงของเราได้เลย</p>
+      <div class="cta">
+        <a class="btn btn-p" href="#gallery">ดูแกลเลอรีงานจริง</a>
+        <a class="btn btn-o" href="#feat">ดูผลงานเด่น</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="n" data-count="100000" data-suffix="+">100,000+</div><div class="l">ชิ้นที่ผลิต<br>และส่งมอบแล้ว</div></div>
+        <div><div class="n" data-count="240" data-suffix="+">240+</div><div class="l">รายการพร้อม<br>พิมพ์โลโก้</div></div>
+        <div><div class="n">100%</div><div class="l">ผ่าน Mockup<br>ก่อนผลิต</div></div>
+        <div><div class="n">2 ชม.</div><div class="l">ตอบกลับ<br>ทุกคำขอ</div></div>
+      </div>
+    </div>
+    <div class="hero-art rv" id="heroCar">
+      <div class="chip" id="heroChip">งานจริง · <b>ChocoCRM</b></div>
+      <div class="dots" id="heroDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS (single section, color, sliding) -->
+<section class="trust" id="clients">
+  <div class="wrap shead center" style="margin-bottom:clamp(26px,3vw,40px)">
+    <span class="eyebrow"><span class="dot"></span>ลูกค้าของเรา</span>
+    <h2 class="h2">องค์กรที่มอบความไว้วางใจให้เรา</h2>
+    <p class="lead" style="text-align:center">ตั้งแต่บริษัทในตลาดหลักทรัพย์ แบรนด์ระดับสากล ไปจนถึงสถาบันการศึกษาชั้นนำ — ขอบคุณที่เลือกเรา</p>
+  </div>
+  <div class="marquee"><div class="mtrack" id="mtrack"></div></div>
+</section>
+
+<!-- FEATURED CASES -->
+<section class="sec" id="feat">
+  <div class="wrap">
+    <div class="shead center">
+      <span class="eyebrow"><span class="dot"></span>ผลงานเด่น</span>
+      <h2 class="h2">เลือกบางงานที่เราภูมิใจ</h2>
+      <p class="lead" style="text-align:center">งานจริงที่เล่าได้ตั้งแต่โจทย์ของลูกค้า สิ่งที่เราออกแบบและผลิต จนถึงผลลัพธ์ที่ได้</p>
+    </div>
+    <div id="featWrap"></div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="sec" id="gallery" style="background:var(--cloud)">
+  <div class="wrap">
+    <div class="shead center">
+      <span class="eyebrow"><span class="dot"></span>แกลเลอรีงานจริง</span>
+      <h2 class="h2">ภาพถ่ายสินค้าจริงจากงานของเรา</h2>
+      <p class="lead" style="text-align:center">ทุกชิ้นสกรีน/ปักโลโก้ได้ และเห็น Mockup ก่อนผลิตเสมอ — กรองดูตามหมวดที่สนใจได้เลย</p>
+    </div>
+    <div class="filters" id="filters"></div>
+    <div class="gal" id="gal"></div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section class="sec" style="background:var(--cloud)">
+  <div class="wrap">
+    <div class="shead center">
+      <span class="eyebrow"><span class="dot"></span>เบื้องหลังการผลิต</span>
+      <h2 class="h2">เครื่องพิมพ์ของเรา — ทำงานจริงทุกวัน</h2>
+    </div>
+    <div class="video-ph rv">
+      <div class="play"><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+      <div class="cap">วิดีโอเบื้องหลังการผลิต</div>
+      <div class="sub">🎬 เร็ว ๆ นี้ — พร้อมเล่นทันทีเมื่ออัปโหลด printing-machine.mp4</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="sec" id="process">
+  <div class="wrap">
+    <div class="shead center">
+      <span class="eyebrow"><span class="dot"></span>ขั้นตอนการทำงาน</span>
+      <h2 class="h2">เบื้องหลังทุกผลงาน — ครบ จบในที่เดียว</h2>
+    </div>
+    <div class="steps" id="steps"></div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="sec" style="background:var(--cloud)">
+  <div class="wrap">
+    <div class="shead center">
+      <span class="eyebrow"><span class="dot"></span>เสียงจากลูกค้า</span>
+      <h2 class="h2">องค์กรที่ไว้ใจให้เราดูแล</h2>
+    </div>
+    <div class="revs" id="revs"></div>
+  </div>
+</section>
+
+<!-- TEAM / STORY -->
+<section class="sec" id="team">
+  <div class="wrap">
+    <div class="shead center">
+      <span class="eyebrow"><span class="dot"></span>ทีมเบื้องหลัง</span>
+      <h2 class="h2">คนที่อยู่เบื้องหลังทุกผลงาน</h2>
+      <p class="lead" style="text-align:center">ตั้งแต่ทีมดีไซน์ ทีมผลิต ไปจนถึงทีมจัดส่ง — เราดูแลทุกขั้นตอนด้วยความใส่ใจ เชื่อถือได้ และรวดเร็ว เพื่อให้ของขวัญของคุณถึงมือผู้รับอย่างสมบูรณ์แบบ</p>
+    </div>
+    <div class="team-band rv"><img src="images/portfolio/story-team.jpg" alt="ทีมงาน GO PREMIUM — ใส่ใจ เชื่อถือได้ รวดเร็ว"></div>
+    <div class="team-vals">
+      <div class="tv rv"><div class="tvk">ใส่ใจทุกดีเทล</div><p>ออกแบบและคุมงานเหมือนเป็นของขวัญของเราเอง</p></div>
+      <div class="tv rv"><div class="tvk">เชื่อถือได้</div><p>เห็น Mockup ก่อนผลิตทุกครั้ง ไม่มีเซอร์ไพรส์หน้างาน</p></div>
+      <div class="tv rv"><div class="tvk">รวดเร็ว</div><p>ตอบกลับใน 2 ชม. และส่งมอบตรงเวลาทุกงาน</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="sec" id="cta">
+  <div class="wrap">
+    <div class="cta-band">
+      <div class="in">
+        <h2>มีโจทย์ของพรีเมียมในใจแล้วใช่ไหม?</h2>
+        <p>บอกเราว่าโอกาส งบ และจำนวนเท่าไหร่ — ทีมเราตอบกลับพร้อมไอเดียและ Mockup ภายใน 2 ชั่วโมง</p>
+        <div class="b">
+          <a class="btn btn-p" href="#">ขอใบเสนอราคา</a>
+          <a class="btn btn-o" href="#">ทักไลน์ @gopremium</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="brand en">GO PREMIUM</div>
+    <div>ของพรีเมียม ของขวัญองค์กร พิมพ์โลโก้ ครบวงจร · โดย Passion Grow Trading Co., Ltd.</div>
+  </div>
+</footer>
+
+<div class="lb" id="lb"><button class="x" id="lbx">&times;</button><img id="lbimg" src="" alt=""><div class="cap" id="lbcap"></div></div>
+
+<script>
+const CATS={drinkware:'แก้ว & ขวดน้ำ',cap:'หมวก',bag:'กระเป๋า',umbrella:'ร่ม',stationery:'เครื่องเขียน',lifestyle:'ไลฟ์สไตล์',giftset:'กิฟต์เซ็ต'};
+const P='images/portfolio/';
+const ITEMS=[
+ {s:'drink-chococrm-gold',cat:'drinkware',t:'กระบอกน้ำเก็บอุณหภูมิ สกรีนโลโก้',b:'ChocoCRM',f:1},
+ {s:'drink-tumbler-copper',cat:'drinkware',t:'แก้วทัมเบลอร์สแตนเลส โทนทองแดง',b:'ChocoCRM'},
+ {s:'drink-bottle-gift',cat:'drinkware',t:'ขวดน้ำพร้อมกล่องของขวัญ',b:'jobsdb'},
+ {s:'drink-tumbler-white',cat:'drinkware',t:'แก้วทัมเบลอร์ฝาหลอด มินิมอล',b:'NSC PR'},
+ {s:'drink-bottles-pair',cat:'drinkware',t:'ขวดน้ำแก้วใสสกรีนโลโก้',b:''},
+ {s:'cap-lenso',cat:'cap',t:'หมวกแก๊ปปักโลโก้',b:'LENSO'},
+ {s:'cap-duo',cat:'cap',t:'หมวกแก๊ปทรงพรีเมียม',b:'LENSO · LION'},
+ {s:'bag-phoenix',cat:'bag',t:'กระเป๋าผ้าดีไซน์เฉพาะแบรนด์',b:'Phoenix'},
+ {s:'bag-lingoace',cat:'bag',t:'กระเป๋าหูรูดดีไซน์สนุก',b:'LingoAce Zoo',f:1},
+ {s:'bag-duffel',cat:'bag',t:'กระเป๋า Duffel พร้อมเซ็ตของขวัญ',b:'PBL'},
+ {s:'umb-vora-red',cat:'umbrella',t:'ร่มพับสกรีนโลโก้รอบปลอก',b:'Toyota วรจักร'},
+ {s:'umb-folded',cat:'umbrella',t:'ร่มพับทรงพรีเมียม',b:'KYONT'},
+ {s:'note-choco',cat:'stationery',t:'สมุดโน้ตปกสกรีนโลโก้',b:'ChocoCRM'},
+ {s:'pen-teal',cat:'stationery',t:'ปากกาโลหะสลักโลโก้',b:'GO PREMIUM'},
+ {s:'pillow-grey',cat:'lifestyle',t:'หมอนอิงสกรีนโลโก้แบรนด์',b:'OMODA · JAECOO'},
+ {s:'pillow-cream',cat:'lifestyle',t:'หมอนอิงปักโลโก้',b:'OMODA · JAECOO'},
+ {s:'gift-baankhanyt',cat:'giftset',t:'ชุดของขวัญงานหนังในกล่องไม้',b:'BAANKHANYT',f:1},
+ {s:'gift-jobsdb',cat:'giftset',t:'เซ็ตของขวัญพรีเมียมเพื่อการเข้าถึงลูกค้า',b:'jobsdb',f:1},
+];
+// featured stories (alternating)
+const FEAT=[
+ {s:'gift-jobsdb',num:'01',t:'เซ็ตของขวัญพรีเมียมเพื่อการเข้าถึงลูกค้า',b:'jobsdb',
+  k:['โจทย์','สิ่งที่เราทำ','ผลลัพธ์'],
+  v:['อยากเข้าถึงและสร้างความสัมพันธ์กับลูกค้ากลุ่มใหม่ให้กว้างขึ้น','จัดเซ็ตของพรีเมียมครบชุด (เสื้อ ขวดน้ำ พัดลม ปากกา) โทนแบรนด์ พร้อมกล่อง','ของพรีเมียมที่ส่งถึงมือลูกค้า ช่วยให้แบรนด์เข้าถึงและถูกจดจำในวงกว้าง']},
+ {s:'gift-baankhanyt',num:'02',t:'ชุดของขวัญงานหนังในกล่องไม้',b:'BAANKHANYT',
+  k:['โจทย์','สิ่งที่เราทำ','ผลลัพธ์'],
+  v:['ของขวัญลูกค้าคนสำคัญที่ต้องดูมีระดับ','งานหนังแท้สลักโลโก้ จัดวางในกล่องไม้พรีเมียม','ของขวัญที่สื่อถึงคุณค่าของแบรนด์ตั้งแต่แกะกล่อง']},
+ {s:'drink-chococrm-gold',num:'03',t:'กระบอกน้ำเก็บอุณหภูมิ สกรีนโลโก้',b:'ChocoCRM',
+  k:['โจทย์','สิ่งที่เราทำ','ผลลัพธ์'],
+  v:['ของพรีเมียมประจำแบรนด์ที่ใช้ได้จริงทุกวัน','กระบอกน้ำเก็บอุณหภูมิ โทนทอง สกรีนโลโก้คมชัด','ของที่ลูกค้าถือใช้ = แบรนด์ถูกเห็นซ้ำทุกวัน']},
+ {s:'bag-lingoace',num:'04',t:'กระเป๋าหูรูดดีไซน์สนุก',b:'LingoAce Zoo',
+  k:['โจทย์','สิ่งที่เราทำ','ผลลัพธ์'],
+  v:['ของพรีเมียมสำหรับกลุ่มเด็กและครอบครัว ต้องสดใสสะดุดตา','กระเป๋าหูรูดพิมพ์ลายเฉพาะแบรนด์เต็มใบ','ของแจกที่เด็กชอบ ใช้ต่อได้จริง แบรนด์จำง่าย']},
+];
+const STEPS=[
+ ['01','ปรึกษา','บอกโจทย์ โอกาส งบ และจำนวน ทีมเราตอบไวภายใน 2 ชม.',0,'<path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 9.1 9.1 0 0 1-3.1-.5L3 21l1.5-4.4A8.38 8.38 0 0 1 4 11.5 8.5 8.5 0 0 1 21 11.5z"/>'],
+ ['02','ดีไซน์ + AI Mockup','เห็นภาพงานจริงก่อนตัดสินใจ ใช้ AI ขึ้น Mockup โลโก้บนสินค้าให้ดูทันที',1,'<circle cx="12" cy="12" r="9"/><path d="M12 7v10M7 12h10"/>'],
+ ['03','ผลิต','ควบคุมคุณภาพทุกชิ้น วัสดุที่สัมผัสได้ถึงความพรีเมียม',0,'<path d="M3 8l9-5 9 5-9 5z"/><path d="M3 8v8l9 5 9-5V8"/>'],
+ ['04','ส่งมอบ','ตรงเวลา ทันงาน พร้อมบริการจัดเซ็ตรายคน (kitting) ถ้าต้องการ',0,'<rect x="1" y="6" width="15" height="11" rx="1.5"/><path d="M16 10h4l3 3v4h-7"/>'],
+];
+const REVS=[
+ ['งานดีไซน์เนี้ยบ ส่งตรงเวลา คุยง่าย ทำให้มั่นใจที่จะสั่งต่อในปีถัดไป','ผู้จัดการฝ่าย HR · องค์กรเอกชน · Q4 2025','H',0],
+ ['AI ช่วยร่นเวลาเลือกของได้เยอะ ได้ไอเดียเซ็ตที่ตรงโจทย์เร็วขึ้นมาก','ฝ่ายการตลาด · เอเจนซีโฆษณา · Q1 2026','M',1],
+ ['เห็น Mockup ก่อนผลิตทำให้ตัดสินใจได้สบายใจ ไม่ต้องลุ้นว่างานจะพลาด','ฝ่ายจัดซื้อ · บริษัทในตลาดหลักทรัพย์ · Q4 2025','P',0],
+];
+
+// marquee logos (x2 for seamless loop)
+const logos=Array.from({length:20},(_,i)=>`clients/c${i+1}.png`);
+document.getElementById('mtrack').innerHTML=[...logos,...logos].map(l=>`<img src="${l}" alt="โลโก้ลูกค้าองค์กรของ GO PREMIUM" loading="lazy">`).join('');
+
+// hero carousel (auto-slide)
+const HSLIDES=[
+ {img:'images/portfolio/hero.jpg',b:'ChocoCRM'},
+ {img:'images/portfolio/gift-jobsdb-lg.jpg',b:'jobsdb'},
+ {img:'images/portfolio/bag-lingoace-lg.jpg',b:'LingoAce Zoo'},
+ {img:'images/portfolio/gift-baankhanyt-lg.jpg',b:'BAANKHANYT'},
+ {img:'images/portfolio/umb-vora-red-lg.jpg',b:'Toyota วรจักร'},
+];
+const car=document.getElementById('heroCar'),hchip=document.getElementById('heroChip'),hdots=document.getElementById('heroDots');
+HSLIDES.forEach((s,i)=>{const d=document.createElement('div');d.className='slide'+(i?'':' on');d.innerHTML=`<img src="${s.img}" alt="งานจริงโดย GO PREMIUM — ${s.b}"${i?' loading="lazy"':''}>`;car.insertBefore(d,hchip);});
+hdots.innerHTML=HSLIDES.map((_,i)=>`<i class="${i?'':'on'}" data-i="${i}"></i>`).join('');
+let hi=0;
+const goH=k=>{hi=(k+HSLIDES.length)%HSLIDES.length;car.querySelectorAll('.slide').forEach((s,j)=>s.classList.toggle('on',j===hi));hdots.querySelectorAll('i').forEach((d,j)=>d.classList.toggle('on',j===hi));hchip.innerHTML=`งานจริง · <b>${HSLIDES[hi].b}</b>`;};
+let hT=setInterval(()=>goH(hi+1),3800);
+hdots.addEventListener('click',e=>{const d=e.target.closest('i');if(!d)return;clearInterval(hT);goH(+d.dataset.i);hT=setInterval(()=>goH(hi+1),3800);});
+
+// featured
+document.getElementById('featWrap').innerHTML=FEAT.map((c,i)=>`
+ <div class="feat ${i%2?'rev':''} rv">
+   <div class="media"><span class="badge en">${c.b}</span><img src="${P}${c.s}-lg.jpg" alt="${c.t} — งานจริงโดย GO PREMIUM" loading="lazy"></div>
+   <div>
+     <div class="num en">CASE ${c.num}</div>
+     <h3>${c.t}</h3>
+     <div class="brand">ลูกค้า: ${c.b}</div>
+     <div class="story">${c.k.map((k,j)=>`<div class="it"><div class="k">${k}</div><div class="v">${c.v[j]}</div></div>`).join('')}</div>
+   </div>
+ </div>`).join('');
+
+// filters + gallery
+const cats=['all',...Object.keys(CATS)];
+document.getElementById('filters').innerHTML=cats.map((c,i)=>`<button class="chip ${i?'':'on'}" data-c="${c}">${c==='all'?'ทั้งหมด':CATS[c]}</button>`).join('');
+document.getElementById('gal').innerHTML=ITEMS.map(it=>`
+ <div class="card rv" data-c="${it.cat}" data-img="${P}${it.f?it.s+'-lg':it.s}.jpg" data-t="${it.t}" data-b="${it.b}">
+   <div class="im"><img src="${P}${it.s}.jpg" alt="${it.t}${it.b?' — '+it.b:''} โดย GO PREMIUM" loading="lazy"></div>
+   <div class="tag">${CATS[it.cat]}</div>
+   <div class="ov"><div class="ct">${it.t}</div>${it.b?`<div class="cb">${it.b}</div>`:''}</div>
+ </div>`).join('');
+
+document.getElementById('filters').addEventListener('click',e=>{
+ const btn=e.target.closest('.chip');if(!btn)return;
+ document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('on',c===btn));
+ const c=btn.dataset.c;
+ document.querySelectorAll('#gal .card').forEach(card=>{
+   card.classList.toggle('hide',!(c==='all'||card.dataset.c===c));
+ });
+});
+
+// steps
+document.getElementById('steps').innerHTML=STEPS.map(s=>`
+ <div class="step rv"><div class="nn en">${s[0]}</div>
+ <div class="ic"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${s[4]}</svg></div>
+ <h4>${s[1]}${s[3]?'<span class="bdg">✦ AI</span>':''}</h4><p>${s[2]}</p></div>`).join('');
+
+// reviews
+const star='<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1L12 16.8 5.7 21l2.3-7.1-6-4.5h7.6z"/></svg>';
+document.getElementById('revs').innerHTML=REVS.map(r=>`
+ <div class="rev ${r[3]?'dk':''} rv"><div class="stars">${star.repeat(5)}</div><q>"${r[0]}"</q>
+ <div class="who"><div class="av en">${r[2]}</div><div class="r">${r[1]}</div></div></div>`).join('');
+
+// lightbox
+const lb=document.getElementById('lb'),lbimg=document.getElementById('lbimg'),lbcap=document.getElementById('lbcap');
+document.getElementById('gal').addEventListener('click',e=>{
+ const card=e.target.closest('.card');if(!card)return;
+ lbimg.src=card.dataset.img;lbcap.innerHTML=card.dataset.t+(card.dataset.b?` · <b>${card.dataset.b}</b>`:'');lb.classList.add('on');
+});
+const closeLb=()=>lb.classList.remove('on');
+document.getElementById('lbx').addEventListener('click',closeLb);
+lb.addEventListener('click',e=>{if(e.target===lb)closeLb();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();});
+
+// scroll reveal
+const io=new IntersectionObserver((es)=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+// count-up
+const fmt=n=>n>=1000?n.toLocaleString('en-US'):n;
+const cup=new IntersectionObserver((es)=>es.forEach(en=>{
+ if(!en.isIntersecting)return;const el=en.target,target=+el.dataset.count,suf=el.dataset.suffix||'';
+ let cur=0,steps=46,inc=target/steps;
+ const tick=()=>{cur+=inc;if(cur>=target){el.textContent=fmt(target)+suf;}else{el.textContent=fmt(Math.floor(cur))+suf;requestAnimationFrame(tick);}};
+ tick();cup.unobserve(el);
+}),{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el=>cup.observe(el));
+</script>
+</body>
+</html>

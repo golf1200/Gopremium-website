@@ -1,0 +1,226 @@
+{
+  "group": "A1",
+  "note": "EVERY source montage cell carries a supplier 'LOVE BOTTLE' / 'LOVE' watermark stamp in the corner, so any replace-source crop MUST exclude that corner. The 'YOUR LOGO / โลโก้คุณตรงนี้' SKUs are GO PREMIUM mockup placeholders pasted over an otherwise-clean blank product; flagged per spec (placeholder text). source_index/source_file are from source_index_to_file.",
+  "flags": [
+    {
+      "sku": "EX005",
+      "issues": ["multi-product-group-shot"],
+      "severity": "med",
+      "live_problem": "Group of 5 tumblers (black/red/blue/magenta + a clear one lying open) — should be ONE product.",
+      "fix": "replace-source",
+      "source_index": 19,
+      "source_file": "แก้วสแตนเลส-เงิน.png",
+      "crop_note": "Single silver tumbler, tilted; crop out the 'LOVE' watermark in bottom-right corner.",
+      "notes": "Stainless montage is mostly group shots; #19 and #09 are the only clean single-bottle cells. Prefer an upright single if a new shot is sourced."
+    },
+    {
+      "sku": "EX006",
+      "issues": ["multi-product-group-shot"],
+      "severity": "low",
+      "live_problem": "Three clear bottles of different sizes shown together (same model, 3 sizes) — should be ONE.",
+      "fix": "replace-source",
+      "source_index": 9,
+      "source_file": "ขวดกลมหูหิ้ว.png",
+      "crop_note": "Single clear bottle with handle lid; exclude 'LOVE' corner watermark.",
+      "notes": "Plastic montage. #09 is a clean single clear bottle. #20/#21 also single clear bottles if a different shape is wanted."
+    },
+    {
+      "sku": "EX025",
+      "issues": ["your-logo-placeholder"],
+      "severity": "high",
+      "live_problem": "Red tumbler with large 'YOUR LOGO / โลโก้คุณตรงนี้' navy placeholder stamp across the body.",
+      "fix": "needs-new-photo",
+      "source_index": null,
+      "source_file": null,
+      "crop_note": "",
+      "notes": "No source_montage for EX025 (source_dir is null). Remove/re-stamp the placeholder over the existing clean red tumbler, or supply a clean red tumbler photo."
+    },
+    {
+      "sku": "EX026",
+      "issues": ["your-logo-placeholder"],
+      "severity": "high",
+      "live_problem": "Silver skinny tumbler with 'YOUR LOGO / โลโก้คุณตรงนี้' placeholder stamp.",
+      "fix": "needs-new-photo",
+      "source_index": null,
+      "source_file": null,
+      "crop_note": "",
+      "notes": "No source_montage (source_dir null). Underlying product is clean; remove placeholder overlay or supply clean silver skinny tumbler."
+    },
+    {
+      "sku": "EX027",
+      "issues": ["multi-product-group-shot"],
+      "severity": "med",
+      "live_problem": "Three identical white skinny tumblers shown together — should be ONE.",
+      "fix": "needs-new-photo",
+      "source_index": null,
+      "source_file": null,
+      "crop_note": "Could crop the centre tumbler from the live group, but it overlaps the side ones; a clean single is preferable.",
+      "notes": "No source_montage (source_dir null). Supply / crop a single white skinny tumbler."
+    },
+    {
+      "sku": "EX028",
+      "issues": ["brand-text", "packaging-box-hero", "multi-product-group-shot", "product-image-mismatch"],
+      "severity": "high",
+      "live_problem": "Seven vacuum-bottle giftset BOXES laid out as the hero, each printed 'VACUUM BOTTLE 500ml' / 'Hot&Cold' brand text. SKU name is 'แก้วเยติ 30oz ทรงอ้วน' — image does not even match the product.",
+      "fix": "replace-source",
+      "source_index": 5,
+      "source_file": "BT05-099.png",
+      "crop_note": "Pick a single fat/tall stainless tumbler; exclude 'LOVE' corner watermark. Verify the cell has no model-code text (BT05-099 filename is just the source name, check the pixels).",
+      "notes": "Stainless montage. This is the worst-contaminated item in the group. If a true 30oz fat yeti single exists it should be sourced; #18/#19 cells show fat tumblers. Also fix the name/image mismatch."
+    },
+    {
+      "sku": "EX029",
+      "issues": ["your-logo-placeholder"],
+      "severity": "high",
+      "live_problem": "Silver curvy tumbler with 'YOUR LOGO / โลโก้คุณตรงนี้' placeholder stamp.",
+      "fix": "needs-new-photo",
+      "source_index": null,
+      "source_file": null,
+      "crop_note": "",
+      "notes": "No source_montage (source_dir null). Remove placeholder or supply clean silver tumbler."
+    },
+    {
+      "sku": "EX030",
+      "issues": ["multi-product-group-shot"],
+      "severity": "med",
+      "live_problem": "Eight tumblers with handles in many colours + two loose lids — group shot, should be ONE.",
+      "fix": "needs-new-photo",
+      "source_index": null,
+      "source_file": null,
+      "crop_note": "Front-left black handled tumbler could be cropped, but lids/other cups overlap.",
+      "notes": "No source_montage (source_dir null). Supply / crop a single handled tumbler."
+    },
+    {
+      "sku": "EX031",
+      "issues": ["your-logo-placeholder"],
+      "severity": "high",
+      "live_problem": "White skinny tumbler w/ handle + straw, 'YOUR LOGO / โลโก้คุณตรงนี้' placeholder stamp.",
+      "fix": "needs-new-photo",
+      "source_index": null,
+      "source_file": null,
+      "crop_note": "",
+      "notes": "No source_montage (source_dir null). Remove placeholder over clean white product."
+    },
+    {
+      "sku": "EX032",
+      "issues": ["your-logo-placeholder"],
+      "severity": "high",
+      "live_problem": "White COFFEE tumbler, black flip lid, 'YOUR LOGO / โลโก้คุณตรงนี้' placeholder stamp.",
+      "fix": "needs-new-photo",
+      "source_index": null,
+      "source_file": null,
+      "crop_note": "",
+      "notes": "No source_montage (source_dir null). Remove placeholder over clean white tumbler."
+    },
+    {
+      "sku": "EX033",
+      "issues": ["multi-product-group-shot"],
+      "severity": "med",
+      "live_problem": "Two white straw-lid tumblers shown together with hanging straps — should be ONE.",
+      "fix": "needs-new-photo",
+      "source_index": null,
+      "source_file": null,
+      "crop_note": "The larger rear tumbler could be cropped from the pair.",
+      "notes": "No source_montage (source_dir null). Supply / crop a single white tumbler."
+    },
+    {
+      "sku": "EX034",
+      "issues": ["your-logo-placeholder"],
+      "severity": "high",
+      "live_problem": "White skinny tumbler w/ black handle + straw, 'YOUR LOGO / โลโก้คุณตรงนี้' placeholder stamp.",
+      "fix": "needs-new-photo",
+      "source_index": null,
+      "source_file": null,
+      "crop_note": "",
+      "notes": "No source_montage (source_dir null). Remove placeholder over clean white product."
+    },
+    {
+      "sku": "EX035",
+      "issues": ["your-logo-placeholder"],
+      "severity": "high",
+      "live_problem": "White handled mug with 'YOUR LOGO / โลโก้คุณตรงนี้' placeholder stamp.",
+      "fix": "needs-new-photo",
+      "source_index": null,
+      "source_file": null,
+      "crop_note": "",
+      "notes": "No source_montage (source_dir null). Remove placeholder over clean white mug."
+    },
+    {
+      "sku": "EX037",
+      "issues": ["multi-product-group-shot"],
+      "severity": "med",
+      "live_problem": "Red mug (tipped, showing inside) + blue mug shown together — should be ONE.",
+      "fix": "replace-source",
+      "source_index": 17,
+      "source_file": "สแตนเลส-แก้วหูจับ.png",
+      "crop_note": "Single handled stainless mug; exclude 'LOVE' corner watermark.",
+      "notes": "Stainless montage #17 is a clean single handled mug. #15/#16 are also handled-mug cells (some are pairs)."
+    },
+    {
+      "sku": "EX038",
+      "issues": ["multi-product-group-shot"],
+      "severity": "low",
+      "live_problem": "Two identical white egg-shaped cups side by side — should be ONE.",
+      "fix": "needs-new-photo",
+      "source_index": null,
+      "source_file": null,
+      "crop_note": "Either cup can be cropped (they don't overlap) to make a clean single.",
+      "notes": "No source_montage (source_dir null). Simple crop of one egg cup will do."
+    },
+    {
+      "sku": "EX039",
+      "issues": ["multi-product-group-shot"],
+      "severity": "med",
+      "live_problem": "Five tall straw tumblers (blue/green/gold/black + one lying down) — group, should be ONE.",
+      "fix": "needs-new-photo",
+      "source_index": null,
+      "source_file": null,
+      "crop_note": "Front-left blue tumbler could be cropped but others overlap behind it.",
+      "notes": "No source_montage (source_dir null). Supply / crop a single straw tumbler (black-rim variant)."
+    },
+    {
+      "sku": "EX040",
+      "issues": ["multi-product-group-shot"],
+      "severity": "med",
+      "live_problem": "Four gold straw cups of varying shapes arranged as a collage — group, should be ONE.",
+      "fix": "needs-new-photo",
+      "source_index": null,
+      "source_file": null,
+      "crop_note": "Top-left tall gold cup is the cleanest to crop.",
+      "notes": "No source_montage (source_dir null). Supply / crop a single gold-rim straw cup."
+    },
+    {
+      "sku": "EX041",
+      "issues": ["brand-text", "infographic-collage"],
+      "severity": "med",
+      "live_problem": "Smart-LED bottle shown disassembled (body + lid + filter) with a floating circular '36°C' LED-display callout panel — feature-collage, not a clean single hero.",
+      "fix": "replace-source",
+      "source_index": 9,
+      "source_file": "ขวดสแตนเลส-ฝาล็อค.png",
+      "crop_note": "Use a clean upright single stainless bottle; exclude 'LOVE' corner watermark. (#07 in the montage is the same LED-display collage as the live image.)",
+      "notes": "If the LED temperature feature must be shown, keep it as a secondary/gallery image, not the square hero. Montage #09 is the closest clean single stainless bottle."
+    },
+    {
+      "sku": "EX082",
+      "issues": ["brand-text", "supplier-watermark", "multi-product-group-shot"],
+      "severity": "high",
+      "live_problem": "Three kids' bottles printed with 'ICE BOTTLE' text on the bands and bodies, PLUS a prominent 'LOVE BOTTLE' logo watermark in the bottom-right — group of 3.",
+      "fix": "replace-source",
+      "source_index": 16,
+      "source_file": "ขวดสีทึบ-ทรงขวดเบียร์.png",
+      "crop_note": "Single pink-lid kids bottle; exclude 'LOVE' corner watermark. NOTE the chosen product itself should be checked for printed 'ICE BOTTLE' text and avoided if present.",
+      "notes": "Plastic montage #16 is a clean single pink-handle/kids bottle (matches EX082's kids-with-strap category) and has no body text. #04 (clear + pink lid) is an alternative single. Hero is a group per packet (hero_is_group true)."
+    },
+    {
+      "sku": "EX088",
+      "issues": ["multi-product-group-shot"],
+      "severity": "low",
+      "live_problem": "Two white sleeve cups (different sizes) shown together with straps — should be ONE.",
+      "fix": "needs-new-photo",
+      "source_index": null,
+      "source_file": null,
+      "crop_note": "Sleeve montage cells are nearly all multi-cup group shots; no clean single sleeve cup exists. Crop one cup from the live pair or source a new single shot.",
+      "notes": "Reviewed sleeve montage (ขวดพร้อมปลอก): #00-#06 are all groups/pairs with 'LOVE BOTTLE' watermark; no clean single-product cell available."
+    }
+  ]
+}

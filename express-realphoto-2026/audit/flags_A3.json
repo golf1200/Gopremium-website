@@ -1,0 +1,159 @@
+{
+  "group": "A3",
+  "flags": [
+    {
+      "sku": "EX008",
+      "issues": ["your-logo-placeholder"],
+      "severity": "med",
+      "live_problem": "black trucker cap has a 'YOUR LOGO / โลโก้คุณตรงนี้' placeholder patch stamped on the front panel",
+      "fix": "needs-new-photo",
+      "source_index": null,
+      "source_file": null,
+      "crop_note": "",
+      "notes": "No source montage in packet (source_dir null). Re-export the clean cap without the YOUR LOGO overlay, or re-stamp on a clean base."
+    },
+    {
+      "sku": "EX009",
+      "issues": ["your-logo-placeholder"],
+      "severity": "med",
+      "live_problem": "blue denim cap has a 'YOUR LOGO / โลโก้คุณตรงนี้' placeholder patch on the front",
+      "fix": "needs-new-photo",
+      "source_index": null,
+      "source_file": null,
+      "crop_note": "",
+      "notes": "No source montage in packet. Use clean base cap without overlay."
+    },
+    {
+      "sku": "EX043",
+      "issues": ["client-logo", "promo-collage", "brand-text", "qr-code", "multi-product"],
+      "severity": "high",
+      "live_problem": "full โฮมสกีน (homescreen) marketing infographic: HS client logo + QR code + Thai promo copy + 4 caps panel collage on a red trucker cap",
+      "fix": "needs-new-photo",
+      "source_index": null,
+      "source_file": null,
+      "crop_note": "",
+      "notes": "Every montage cell (#00-#04) is a โฮมสกีน promo image with the HS logo screened on the product; no plain cap exists. Must source a clean trucker-cap photo."
+    },
+    {
+      "sku": "EX053",
+      "issues": ["brand-watermark"],
+      "severity": "low",
+      "live_problem": "faint 'POLO MAKER' supplier watermark across the navy cap crown",
+      "fix": "replace-source",
+      "source_index": 3,
+      "source_file": "04PP0001.jpeg",
+      "crop_note": "Use a clean PP-series peach-premium cap cell without the POLO MAKER watermark.",
+      "notes": "Montage not re-inspected per-cell; pick any clean 04PP* cell. Low severity (watermark is faint) but should be cleaned."
+    },
+    {
+      "sku": "EX062",
+      "issues": ["client-logo", "promo-collage", "brand-text", "multi-product"],
+      "severity": "high",
+      "live_problem": "โฮมสกีน infographic of a bucket/boonie hat: HS client logo screened front+back, 'ฟรี!!' promo copy, LINE/phone/FB contact bar, front/back panels",
+      "fix": "needs-new-photo",
+      "source_index": null,
+      "source_file": null,
+      "crop_note": "",
+      "notes": "All โฮมสกีน montage cells carry the HS client logo; no plain boonie hat available. Needs a clean source photo."
+    },
+    {
+      "sku": "EX064",
+      "issues": ["client-logo", "promo-collage", "brand-text", "multi-product"],
+      "severity": "high",
+      "live_problem": "โฮมสกีน infographic of a face/neck-cover hat: HS client logo on cap+flap, 'ฟรี!' promo copy, LINE/phone/FB contact bar, front/back panels",
+      "fix": "needs-new-photo",
+      "source_index": null,
+      "source_file": null,
+      "crop_note": "",
+      "notes": "All โฮมสกีน montage cells carry the HS client logo; no plain version. Needs a clean source photo."
+    },
+    {
+      "sku": "EX012",
+      "issues": ["your-logo-placeholder"],
+      "severity": "med",
+      "live_problem": "green folding umbrella canopy has a 'YOUR LOGO / โลโก้คุณตรงนี้' placeholder patch",
+      "fix": "needs-new-photo",
+      "source_index": null,
+      "source_file": null,
+      "crop_note": "",
+      "notes": "No source montage in packet (source_dir null). Re-export clean canopy without YOUR LOGO overlay."
+    },
+    {
+      "sku": "EX013",
+      "issues": ["multi-product", "promo-button", "brand-watermark", "irrelevant-prop"],
+      "severity": "high",
+      "live_problem": "ghosted/faded group shot of ~10 cane umbrellas in a row, red 'CLICK HERE' button, 'NEWFLY umbrella' watermark, stray flower bouquet prop",
+      "fix": "crop",
+      "source_index": 1,
+      "source_file": "ร่มตอนเดียว 22 นิ้ว 2.jpg",
+      "crop_note": "Montage cell #01 is a clean 3x3 grid of single solid-colour cane umbrellas on white; crop ONE umbrella (e.g. the blue) — no logo/text on canopies.",
+      "notes": "22-inch cane umbrella. Montage cells #01/#02/#04/#05 are clean grids; isolate a single plain umbrella. Avoid #00/#03 (NEWFLY promo collages)."
+    },
+    {
+      "sku": "EX015",
+      "issues": ["multi-product", "promo-button", "brand-watermark"],
+      "severity": "high",
+      "live_problem": "faded group shot of ~11 closed cane umbrellas, red 'CLICK HERE' button, 'ร่มนิวฟลาย.com' watermark",
+      "fix": "crop",
+      "source_index": 4,
+      "source_file": "ร่มไม้เท้า16 นิ้ว 2.jpg",
+      "crop_note": "Use a clean single-colour umbrella cell from the ร่มไม้เท้า grids (#01/#02/#04/#05); crop one solid umbrella, no text.",
+      "notes": "16-inch cane umbrella. source_index 4 = a 16-นิ้ว file; pick its cleanest solid-colour single canopy."
+    },
+    {
+      "sku": "EX016",
+      "issues": ["spec-callout", "brand-watermark", "near-blank"],
+      "severity": "high",
+      "live_problem": "almost-blank washed-out frame with only a 'ปุ่มเปิด ออโต้' auto-button callout bubble and faint NEWFLY watermark; product barely visible",
+      "fix": "crop",
+      "source_index": 0,
+      "source_file": "ร่มกอล์ฟ 28 นิ้ว.jpg",
+      "crop_note": "Montage #00 shows a single clean blue 28-inch golf umbrella; crop the umbrella, exclude the 'ปุ่มเปิด ออโต้' callout, the bottom row of mini umbrellas and the NEWFLY/CLICK-HERE marks.",
+      "notes": "28-inch golf umbrella. Clean blue canopy is present; crop tight to it."
+    },
+    {
+      "sku": "EX017",
+      "issues": ["promo-button", "brand-watermark", "irrelevant-prop", "spec-callout"],
+      "severity": "high",
+      "live_problem": "purple golf umbrella over a faded mini-umbrella row, red 'CLICK HERE' button, '@NEWFLY' text, flower prop on the handle",
+      "fix": "crop",
+      "source_index": 1,
+      "source_file": "ร่มกอล์ฟ 30 นิ้ว .jpg",
+      "crop_note": "Montage #01 has a clean single purple 30-inch golf umbrella; crop the canopy, exclude the bottom mini-umbrella row, the free-gift callout, flower prop and CLICK HERE.",
+      "notes": "30-inch golf umbrella. Canopy itself is plain solid purple, no client logo."
+    },
+    {
+      "sku": "EX018",
+      "issues": [],
+      "severity": "low",
+      "live_problem": "live square is a clean red-daisy reversed umbrella with no logo/text/watermark (daisy is the product's own print) — borderline CLEAN",
+      "fix": "replace-source",
+      "source_index": 4,
+      "source_file": "ร่มกลับด้าน สีพื้น 2.jpg",
+      "crop_note": "OPTIONAL: montage #04 has a clean single pink solid reversed umbrella if a plain solid-colour version is preferred over the daisy print.",
+      "notes": "Flagged only as a precaution/low priority; the current daisy image has no contamination. Leave as-is unless a solid-colour swap is wanted."
+    },
+    {
+      "sku": "EX019",
+      "issues": ["client-logo", "brand-text", "brand-watermark"],
+      "severity": "high",
+      "live_problem": "yellow/black 2-tone golf umbrella SCREENED with client logos: 'MG' car-brand logo + 'AG MG / Ayutthaya... Tel 035-9...' client name/phone on multiple panels, plus 'ร่มนิวฟลาย.com' watermark",
+      "fix": "needs-new-photo",
+      "source_index": null,
+      "source_file": null,
+      "crop_note": "",
+      "notes": "Both 2-tone montage cells (#02 'ร่มสกรีน รถยนต์ MG', #03) carry the MG client logo and 'ร่มสกรีน รถยนต์ MG' header. No plain 2-tone version exists; needs a clean source photo of a blank 2-tone golf umbrella."
+    },
+    {
+      "sku": "EX094",
+      "issues": ["client-logo", "client-artwork", "brand-text", "brand-watermark", "phone-number"],
+      "severity": "high",
+      "live_problem": "umbrella canopy printed with client artwork 'chwst jello BOOM' + cartoon characters; 'LP / LUCKY PAINT CO.,LTD' watermark on the canopy",
+      "fix": "needs-new-photo",
+      "source_index": null,
+      "source_file": null,
+      "crop_note": "",
+      "notes": "Both rakafactory montage cells (#00 jello BOOM, #01 other client art) are LUCKY PAINT promo layouts with hotline/website/QR and fully client-printed canopies. No plain version; needs a clean source photo of a blank/solid 24-inch straight umbrella."
+    }
+  ]
+}

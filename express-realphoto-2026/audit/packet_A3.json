@@ -1,0 +1,289 @@
+{
+ "EX008": {
+  "sku": "EX008",
+  "name": "หมวกบันเดิล 4 ทรง (ตาข่าย/ปีกแข็ง/บักเก็ต/คลุมหน้า)",
+  "cat": "hat",
+  "live_square_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\public\\images\\products\\ex008-hat\\ex008-hat-square.jpg",
+  "source_dir_abs": null,
+  "source_montage_abs": null,
+  "source_index_to_file": null,
+  "hero_is_group": false
+ },
+ "EX009": {
+  "sku": "EX009",
+  "name": "หมวกแก๊ปผ้าลีวาย (เดนิม/ยีนส์)",
+  "cat": "hat",
+  "live_square_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\public\\images\\products\\ex009-hat\\ex009-hat-square.jpg",
+  "source_dir_abs": null,
+  "source_montage_abs": null,
+  "source_index_to_file": null,
+  "hero_is_group": false
+ },
+ "EX043": {
+  "sku": "EX043",
+  "name": "หมวกแก๊ปตาข่าย (ทรัคเกอร์) เกรดพรีเมียม",
+  "cat": "hat",
+  "live_square_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\public\\images\\products\\ex043-hat\\ex043-hat-square.jpg",
+  "source_dir_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\หมวก โฮมสกีน",
+  "source_montage_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\express-realphoto-2026\\montages\\หมวก_โฮมสกีน.jpg",
+  "source_index_to_file": {
+   "0": "หมวกคลุมหน้า.jpg",
+   "1": "หมวกตาข่าย.jpg",
+   "2": "หมวกปีกแข็ง.jpg",
+   "3": "หมวกรูปแบบต่าง ๆ .jpg",
+   "4": "หมวกแก๊บ.jpg"
+  },
+  "hero_is_group": true
+ },
+ "EX053": {
+  "sku": "EX053",
+  "name": "หมวก พีชพรีเมียม แซนวิช",
+  "cat": "hat",
+  "live_square_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\public\\images\\products\\ex053-hat\\ex053-hat-square.jpg",
+  "source_dir_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ชุด หมวก PMK\\หมวก\\พีช พรีเมี่ยม",
+  "source_montage_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\express-realphoto-2026\\montages\\ชุด_หมวก_PMK__หมวก__พีช_พรีเมี่ยม.jpg",
+  "source_index_to_file": {
+   "0": "04CL0023U000F-กรมข้าง.jpg",
+   "1": "04CL0033U000F-ดำข้าง.jpg",
+   "2": "04CL0033U000F-ฟ้าข้าง.jpg",
+   "3": "04PP0001.jpeg",
+   "4": "04PP0008-1.jpg",
+   "5": "04PP0026-1.jpg",
+   "6": "04PP0048-2.jpg",
+   "7": "หมวกพีช พรีเมี่ยม.jpg"
+  },
+  "hero_is_group": false
+ },
+ "EX054": {
+  "sku": "EX054",
+  "name": "หมวก บัคเคิ้ลบี (Buckle-B)",
+  "cat": "hat",
+  "live_square_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\public\\images\\products\\ex054-hat\\ex054-hat-square.jpg",
+  "source_dir_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ชุด หมวก PMK\\หมวก\\buckle b",
+  "source_montage_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\express-realphoto-2026\\montages\\ชุด_หมวก_PMK__หมวก__buckle_b.jpg",
+  "source_index_to_file": {
+   "0": "PMK-peach-buckle-b-khaki-04.jpg",
+   "1": "peach-buckle-b-black-01.jpg",
+   "2": "peach-buckle-b-blue-01.jpg",
+   "3": "peach-buckle-b-gray-01.jpg",
+   "4": "peach-buckle-b-navy-01.jpg",
+   "5": "peach-buckle-b-pink-04.jpg",
+   "6": "peach-buckle-b-red-01.jpg",
+   "7": "peach-buckle-b-white-01.jpg"
+  },
+  "hero_is_group": false
+ },
+ "EX055": {
+  "sku": "EX055",
+  "name": "หมวก แซนวิช (Sandwich)",
+  "cat": "hat",
+  "live_square_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\public\\images\\products\\ex055-hat\\ex055-hat-square.jpg",
+  "source_dir_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ชุด หมวก PMK\\หมวก\\sandwich",
+  "source_montage_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\express-realphoto-2026\\montages\\ชุด_หมวก_PMK__หมวก__sandwich.jpg",
+  "source_index_to_file": {
+   "0": "DY-Sandwich-Cap-02.jpg",
+   "1": "DY-Sandwich-Cap-04.jpg",
+   "2": "DY-Sandwich-Cap-08-600x752.jpg",
+   "3": "DY-Sandwich-Cap-11-600x752.jpg",
+   "4": "DY-Sandwich-Cap-14-scaled-600x752.jpg",
+   "5": "DY-Sandwich-Cap-20-scaled-600x752.jpg",
+   "6": "PMK-DY-Sandwich-Gray-white-01.jpg",
+   "7": "PMK-DY-Sandwich-Orange-01.jpg"
+  },
+  "hero_is_group": false
+ },
+ "EX062": {
+  "sku": "EX062",
+  "name": "หมวกปีกแข็ง (บูนนี่/ปีกกว้าง มีสายรัดคาง)",
+  "cat": "hat",
+  "live_square_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\public\\images\\products\\ex062-hat\\ex062-hat-square.jpg",
+  "source_dir_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\หมวก โฮมสกีน",
+  "source_montage_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\express-realphoto-2026\\montages\\หมวก_โฮมสกีน.jpg",
+  "source_index_to_file": {
+   "0": "หมวกคลุมหน้า.jpg",
+   "1": "หมวกตาข่าย.jpg",
+   "2": "หมวกปีกแข็ง.jpg",
+   "3": "หมวกรูปแบบต่าง ๆ .jpg",
+   "4": "หมวกแก๊บ.jpg"
+  },
+  "hero_is_group": true
+ },
+ "EX064": {
+  "sku": "EX064",
+  "name": "หมวกคลุมหน้า/คลุมท้ายทอย พร้อมสกรีน",
+  "cat": "hat",
+  "live_square_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\public\\images\\products\\ex064-hat\\ex064-hat-square.jpg",
+  "source_dir_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\หมวก โฮมสกีน",
+  "source_montage_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\express-realphoto-2026\\montages\\หมวก_โฮมสกีน.jpg",
+  "source_index_to_file": {
+   "0": "หมวกคลุมหน้า.jpg",
+   "1": "หมวกตาข่าย.jpg",
+   "2": "หมวกปีกแข็ง.jpg",
+   "3": "หมวกรูปแบบต่าง ๆ .jpg",
+   "4": "หมวกแก๊บ.jpg"
+  },
+  "hero_is_group": true
+ },
+ "EX010": {
+  "sku": "EX010",
+  "name": "ร่มพับ 3 ตอน",
+  "cat": "umbrella",
+  "live_square_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\public\\images\\products\\ex010-umbrella\\ex010-umbrella-square.jpg",
+  "source_dir_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ร่ม new fly\\ร่มพับ\\ร่มพับ 3 ตอน",
+  "source_montage_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\express-realphoto-2026\\montages\\ร่ม_new_fly__ร่มพับ__ร่มพับ_3_ตอน.jpg",
+  "source_index_to_file": {
+   "0": "5d2424239335f5375bd1a457_ร่มพับ 3 ตอน 3.jpg",
+   "1": "5d24242e320185d250b18baa_ร่มพับ 3 ตอน 4.jpg",
+   "2": "ร่มพับ 3 ตอน.jpg"
+  },
+  "hero_is_group": false
+ },
+ "EX011": {
+  "sku": "EX011",
+  "name": "ร่มพับ 4 ตอน",
+  "cat": "umbrella",
+  "live_square_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\public\\images\\products\\ex011-umbrella\\ex011-umbrella-square.jpg",
+  "source_dir_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ร่ม new fly\\ร่มพับ\\ร่มพับ 4 ตอน",
+  "source_montage_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\express-realphoto-2026\\montages\\ร่ม_new_fly__ร่มพับ__ร่มพับ_4_ตอน.jpg",
+  "source_index_to_file": {
+   "0": "5d16b068cd70e93a3c9bb3e6_ร่มแฟชั่น ร่มพับ ร่มสั้น ร่มราคาส่ง  ถูก 3.jpg",
+   "1": "5d16b078fb36c16f13fa87ed_ร่มแฟชั่น ร่มพับ ร่มสั้น ร่มราคาส่ง  ถูก 6.jpg",
+   "2": "5d178af8e02bd4fdb9419439_ร่มแฟชั่น ร่มพับ ร่มสั้น ร่มราคาส่งถูก 2-p-500.jpeg",
+   "3": "5d178afdd230e336e8a0a753_ร่มแฟชั่น ร่มพับ ร่มสั้น ร่มราคาส่งถูก 4-p-1080.jpeg",
+   "4": "5d178b03d230e3566aa0a7dd_ร่มแฟชั่น ร่มพับ ร่มสั้น ร่มราคาส่งถูก 5-p-1080.jpeg",
+   "5": "5d178b04cd70e9c673d6ff4c_ร่มแฟชั่น ร่มพับ ร่มสั้น ร่มราคาส่งถูก 6-p-1080.jpeg",
+   "6": "ร่มพับ 4 ตอน 1.jpg",
+   "7": "ร่มพับ 4 ตอน 2.jpg"
+  },
+  "hero_is_group": false
+ },
+ "EX012": {
+  "sku": "EX012",
+  "name": "ร่มพับ 5 ตอน",
+  "cat": "umbrella",
+  "live_square_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\public\\images\\products\\ex012-umbrella\\ex012-umbrella-square.jpg",
+  "source_dir_abs": null,
+  "source_montage_abs": null,
+  "source_index_to_file": null,
+  "hero_is_group": false
+ },
+ "EX013": {
+  "sku": "EX013",
+  "name": "ร่ม 22 นิ้ว",
+  "cat": "umbrella",
+  "live_square_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\public\\images\\products\\ex013-umbrella\\ex013-umbrella-square.jpg",
+  "source_dir_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ร่ม new fly\\ร่มไม้เท้า",
+  "source_montage_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\express-realphoto-2026\\montages\\ร่ม_new_fly__ร่มไม้เท้า.jpg",
+  "source_index_to_file": {
+   "0": "ร่มตอนเดียว 22 นิ้ว 1.jpg",
+   "1": "ร่มตอนเดียว 22 นิ้ว 2.jpg",
+   "2": "ร่มตอนเดียว 22 นิ้ว 3.jpg",
+   "3": "ร่มไม้เท้า16 นิ้ว 1.jpg",
+   "4": "ร่มไม้เท้า16 นิ้ว 2.jpg",
+   "5": "ร่มไม้เท้า16 นิ้ว 3.jpg"
+  },
+  "hero_is_group": false
+ },
+ "EX014": {
+  "sku": "EX014",
+  "name": "ร่มแบบใส",
+  "cat": "umbrella",
+  "live_square_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\public\\images\\products\\ex014-umbrella\\ex014-umbrella-square.jpg",
+  "source_dir_abs": null,
+  "source_montage_abs": null,
+  "source_index_to_file": null,
+  "hero_is_group": false
+ },
+ "EX015": {
+  "sku": "EX015",
+  "name": "ร่มไม้เท้า 16 ก้าน",
+  "cat": "umbrella",
+  "live_square_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\public\\images\\products\\ex015-umbrella\\ex015-umbrella-square.jpg",
+  "source_dir_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ร่ม new fly\\ร่มไม้เท้า",
+  "source_montage_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\express-realphoto-2026\\montages\\ร่ม_new_fly__ร่มไม้เท้า.jpg",
+  "source_index_to_file": {
+   "0": "ร่มตอนเดียว 22 นิ้ว 1.jpg",
+   "1": "ร่มตอนเดียว 22 นิ้ว 2.jpg",
+   "2": "ร่มตอนเดียว 22 นิ้ว 3.jpg",
+   "3": "ร่มไม้เท้า16 นิ้ว 1.jpg",
+   "4": "ร่มไม้เท้า16 นิ้ว 2.jpg",
+   "5": "ร่มไม้เท้า16 นิ้ว 3.jpg"
+  },
+  "hero_is_group": false
+ },
+ "EX016": {
+  "sku": "EX016",
+  "name": "ร่มกอล์ฟ 28 นิ้ว",
+  "cat": "umbrella",
+  "live_square_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\public\\images\\products\\ex016-umbrella\\ex016-umbrella-square.jpg",
+  "source_dir_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ร่ม new fly\\ร่มกอล์ฟ",
+  "source_montage_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\express-realphoto-2026\\montages\\ร่ม_new_fly__ร่มกอล์ฟ.jpg",
+  "source_index_to_file": {
+   "0": "ร่มกอล์ฟ 28 นิ้ว.jpg",
+   "1": "ร่มกอล์ฟ 30 นิ้ว .jpg",
+   "2": "ร่มกอล์ฟ 30 นิ้ว 2 ชั้น 1.jpg",
+   "3": "ร่มกอล์ฟ 30 นิ้ว 2 ชั้น 2.jpg"
+  },
+  "hero_is_group": false
+ },
+ "EX017": {
+  "sku": "EX017",
+  "name": "ร่มกอล์ฟ 30 นิ้ว",
+  "cat": "umbrella",
+  "live_square_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\public\\images\\products\\ex017-umbrella\\ex017-umbrella-square.jpg",
+  "source_dir_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ร่ม new fly\\ร่มกอล์ฟ",
+  "source_montage_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\express-realphoto-2026\\montages\\ร่ม_new_fly__ร่มกอล์ฟ.jpg",
+  "source_index_to_file": {
+   "0": "ร่มกอล์ฟ 28 นิ้ว.jpg",
+   "1": "ร่มกอล์ฟ 30 นิ้ว .jpg",
+   "2": "ร่มกอล์ฟ 30 นิ้ว 2 ชั้น 1.jpg",
+   "3": "ร่มกอล์ฟ 30 นิ้ว 2 ชั้น 2.jpg"
+  },
+  "hero_is_group": false
+ },
+ "EX018": {
+  "sku": "EX018",
+  "name": "ร่มกลับด้าน",
+  "cat": "umbrella",
+  "live_square_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\public\\images\\products\\ex018-umbrella\\ex018-umbrella-square.jpg",
+  "source_dir_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ร่ม new fly\\ร่มกลับด้าน",
+  "source_montage_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\express-realphoto-2026\\montages\\ร่ม_new_fly__ร่มกลับด้าน.jpg",
+  "source_index_to_file": {
+   "0": "ร่มกลับด้าน ลาย 1.jpg",
+   "1": "ร่มกลับด้าน ลาย 2.jpg",
+   "2": "ร่มกลับด้าน ลาย 3.jpg",
+   "3": "ร่มกลับด้าน สีพื้น 1.jpg",
+   "4": "ร่มกลับด้าน สีพื้น 2.jpg",
+   "5": "ร่มกลับด้าน สีพื้น 3.jpg"
+  },
+  "hero_is_group": false
+ },
+ "EX019": {
+  "sku": "EX019",
+  "name": "ร่มกอล์ฟ 30 นิ้ว 2 ชั้น (สลับสี 2 โทน)",
+  "cat": "umbrella",
+  "live_square_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\public\\images\\products\\ex019-umbrella\\ex019-umbrella-square.jpg",
+  "source_dir_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ร่ม new fly\\ร่มกอล์ฟ",
+  "source_montage_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\express-realphoto-2026\\montages\\ร่ม_new_fly__ร่มกอล์ฟ.jpg",
+  "source_index_to_file": {
+   "0": "ร่มกอล์ฟ 28 นิ้ว.jpg",
+   "1": "ร่มกอล์ฟ 30 นิ้ว .jpg",
+   "2": "ร่มกอล์ฟ 30 นิ้ว 2 ชั้น 1.jpg",
+   "3": "ร่มกอล์ฟ 30 นิ้ว 2 ชั้น 2.jpg"
+  },
+  "hero_is_group": false
+ },
+ "EX094": {
+  "sku": "EX094",
+  "name": "ร่มยาว 24 นิ้ว ตรง ลายพิมพ์ (rakafactory)",
+  "cat": "umbrella",
+  "live_square_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\public\\images\\products\\ex094-umbrella\\ex094-umbrella-square.jpg",
+  "source_dir_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ร่ม rakafactory\\ร่มยาว 24 นิ้ว",
+  "source_montage_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\express-realphoto-2026\\montages\\ร่ม_rakafactory__ร่มยาว_24_นิ้ว.jpg",
+  "source_index_to_file": {
+   "0": "281007_0 (1).jpg",
+   "1": "281008_0 (1).jpg"
+  },
+  "hero_is_group": false
+ }
+}

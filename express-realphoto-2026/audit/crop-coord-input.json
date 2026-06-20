@@ -1,0 +1,79 @@
+[
+ {
+  "sku": "EX013",
+  "name": "ร่ม 22 นิ้ว",
+  "source_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ร่ม new fly\\ร่มไม้เท้า\\ร่มตอนเดียว 22 นิ้ว 2.jpg",
+  "issue": "multi-product;promo-button;brand-watermark;irrelevant-prop",
+  "crop_note": "Montage cell #01 is a clean 3x3 grid of single solid-colour cane umbrellas on white; crop ONE umbrella (e.g. the blue) — no logo/text on canopies."
+ },
+ {
+  "sku": "EX015",
+  "name": "ร่มไม้เท้า 16 ก้าน",
+  "source_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ร่ม new fly\\ร่มไม้เท้า\\ร่มไม้เท้า16 นิ้ว 2.jpg",
+  "issue": "multi-product;promo-button;brand-watermark",
+  "crop_note": "Use a clean single-colour umbrella cell from the ร่มไม้เท้า grids (#01/#02/#04/#05); crop one solid umbrella, no text."
+ },
+ {
+  "sku": "EX016",
+  "name": "ร่มกอล์ฟ 28 นิ้ว",
+  "source_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ร่ม new fly\\ร่มกอล์ฟ\\ร่มกอล์ฟ 28 นิ้ว.jpg",
+  "issue": "spec-callout;brand-watermark;near-blank",
+  "crop_note": "Montage #00 shows a single clean blue 28-inch golf umbrella; crop the umbrella, exclude the 'ปุ่มเปิด ออโต้' callout, the bottom row of mini umbrellas and the NEWFLY/CLICK-HERE marks."
+ },
+ {
+  "sku": "EX017",
+  "name": "ร่มกอล์ฟ 30 นิ้ว",
+  "source_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ร่ม new fly\\ร่มกอล์ฟ\\ร่มกอล์ฟ 30 นิ้ว .jpg",
+  "issue": "promo-button;brand-watermark;irrelevant-prop;spec-callout",
+  "crop_note": "Montage #01 has a clean single purple 30-inch golf umbrella; crop the canopy, exclude the bottom mini-umbrella row, the free-gift callout, flower prop and CLICK HERE."
+ },
+ {
+  "sku": "EX096",
+  "name": "กระเป๋าถือนุ่มฟู Dumpling Puffy Bag",
+  "source_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\กระเป๋า mpkj\\dumpling 1.jpg",
+  "issue": "promo-collage;marketing-copy;brand-text;spec-callouts;line-id;multi-product",
+  "crop_note": "Source #02 (dumpling 1) is a clean color-grid of dumpling bags on plain bg — crop ONE single dumpling bag cell with no text/logo. If a logo-free cell can't be isolated, treat as needs-new-photo."
+ },
+ {
+  "sku": "EX098",
+  "name": "กระเป๋าระบายจีบ Fluffy Moji Bag",
+  "source_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\กระเป๋า mpkj\\moji 1.jpg",
+  "issue": "spec-callouts;dimension-text;brand-text;multi-product",
+  "crop_note": "Source #05 (moji 1) is a color-grid of Fluffy Moji bags on plain bg — crop ONE single bag cell free of text/print. If every cell carries a print word, mark needs-new-photo."
+ },
+ {
+  "sku": "EX100",
+  "name": "กระเป๋าผ้าลายทาง Puffy PopLine Bag",
+  "source_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\กระเป๋า mpkj\\popline 1.jpg",
+  "issue": "promo-collage;brand-text;color-codes;dimension-text;multi-product",
+  "crop_note": "Source #09 (popline 1) shows the stripe bags on plain bg — crop ONE single PopLine bag cell with no codes/dimension text. Some cells still carry a print word (Rally/Bon Voyage); if none are clean, mark needs-new-photo."
+ },
+ {
+  "sku": "EX022",
+  "name": "Fan High-speed Handheld RS-SF10 (Silver) - พัดลม Remax",
+  "source_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\พาวเวอร์แบงค์ พัดลม Remax\\พัดลม\\Fan High-speed Handheld RS-SF10 (Silver) - พัดลม Remax.jpg",
+  "issue": "multi-product;brand-logo",
+  "crop_note": "Source #00 is the same 2-fan image — crop to the single silver/grey fan only. The molded REMAX logo on the hub is inherent to the product and cannot be removed without a new photo."
+ },
+ {
+  "sku": "EX023",
+  "name": "Fan High-speed Handheld RS-SF12 (Blue) - พัดลม Remax",
+  "source_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\พาวเวอร์แบงค์ พัดลม Remax\\พัดลม\\Fan High-speed Handheld RS-SF12 (Blue) - พัดลม Remax.jpg",
+  "issue": "multi-product;brand-logo",
+  "crop_note": "Source #01 is the same 3-fan lineup — crop to the single blue-accent fan. Molded REMAX on the handle is inherent and cannot be removed without a new photo."
+ },
+ {
+  "sku": "EX024",
+  "name": "Fan mini Handheld RS-SF25 - พัดลม Remax",
+  "source_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\พาวเวอร์แบงค์ พัดลม Remax\\พัดลม\\Fan mini Handheld RS-SF25 (Blue) - พัดลม Remax.jpg",
+  "issue": "multi-product;brand-logo;spec-display",
+  "crop_note": "Source #02 is the same 4-fan group — crop to ONE single SF25 unit. Molded REMAX is inherent and cannot be removed without a new photo."
+ },
+ {
+  "sku": "EX105",
+  "name": "หมอนอิงตุ๊กตาลายการ์ตูน (Character Cushion Pillow)",
+  "source_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\หมอน ผ้าห่ม pamatoy\\หมอน\\รวม-หมอนพิเศษ00-04.jpg",
+  "issue": "other-brand-tag",
+  "crop_note": "The product itself is clean — tighten the crop / clone-out the small AEON tag in the bottom-right corner. Source #03 chick cell is the same shot with the tag."
+ }
+]

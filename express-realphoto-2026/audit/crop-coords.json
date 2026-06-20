@@ -1,0 +1,15 @@
+{
+  "crops": [
+    {"sku": "EX013", "crop_frac": [0.345, 0.02, 0.66, 0.33], "note": "top-center solid blue cane umbrella from 3x3 grid; clean canopy, no flower prop, watermark band sits below crop"},
+    {"sku": "EX015", "crop_frac": [0.345, 0.015, 0.655, 0.34], "note": "top-center solid red ร่มไม้เท้า from 3x3 grid; clean single canopy, no text/prop in crop"},
+    {"sku": "EX016", "crop_frac": [0.24, 0.03, 0.73, 0.40], "note": "single open blue 28in golf umbrella, upper area; excludes NEWFLY logo, auto-button callout, bottom mini-umbrella row and contact bar"},
+    {"sku": "EX017", "crop_frac": [0.21, 0.07, 0.66, 0.41], "note": "single open purple 30in golf umbrella; excludes NEWFLY logo, title, free-gift callout, flower prop and bottom mini-umbrella row"},
+    {"sku": "EX096", "crop_frac": [0.65, 0.40, 0.93, 0.70], "note": "single teal Dumpling Puffy bag (row2 col3), no printed brand word; excludes title/MPKJ/LINE text and neighbours"},
+    {"sku": "EX098", "crop_frac": [0.0, 0.0, 1.0, 1.0], "note": "needs-new-photo: every Fluffy Moji bag in the circle carries a print word (LONDON/Good day); no clean logo-free cell isolable"},
+    {"sku": "EX100", "crop_frac": [0.0, 0.0, 1.0, 1.0], "note": "needs-new-photo: overlapping PopLine stripe bags all carry Bon Voyage/heart print + Material/MPKJ copy; no clean single cell"},
+    {"sku": "EX022", "crop_frac": [0.04, 0.06, 0.46, 0.68], "note": "single silver/grey SF10 fan on the left; molded REMAX on hub is inherent; excludes the white fan on the right"},
+    {"sku": "EX023", "crop_frac": [0.33, 0.16, 0.63, 0.87], "note": "single blue-accent SF12 fan (center of 3); molded REMAX on handle inherent; excludes gold and pink units"},
+    {"sku": "EX024", "crop_frac": [0.53, 0.27, 0.99, 0.93], "note": "single orange SF25 mini fan (front-right, fully visible); molded REMAX inherent; excludes the 3 overlapping units behind"},
+    {"sku": "EX105", "crop_frac": [0.17, 0.03, 0.79, 0.88], "note": "single yellow chick cushion; x1 trimmed to 0.79 to exclude the small AEON tag on the bottom-right edge"}
+  ]
+}

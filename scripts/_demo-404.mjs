@@ -1,0 +1,11 @@
+import { chromium } from 'playwright';
+import http from 'node:http'; import fs from 'node:fs'; import path from 'node:path';
+const ROOT=path.resolve('dist');
+const MIME={'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.jpg':'image/jpeg','.png':'image/png','.webp':'image/webp','.svg':'image/svg+xml','.xml':'application/xml','.txt':'text/plain','.mp4':'video/mp4'};
+const server=http.createServer((req,res)=>{let p=decodeURIComponent(req.url.split('?')[0]);if(p==='/')p='/index.html';const fp=path.join(ROOT,p);if(!fp.startsWith(ROOT)||!fs.existsSync(fp)||fs.statSync(fp).isDirectory()){res.statusCode=404;return res.end('404');}res.setHeader('Content-Type',MIME[path.extname(fp)]||'application/octet-stream');fs.createReadStream(fp).pipe(res);});
+await new Promise(r=>server.listen(0,r));const BASE=`http://localhost:${server.address().port}`;
+const br=await chromium.launch();const page=await(await br.newContext()).newPage();
+const f=[];page.on('response',r=>{if(r.status()>=400)f.push(r.status()+' '+r.url().replace(BASE,''));});
+await page.goto(BASE+'/#/portfolio',{waitUntil:'networkidle'});await page.waitForTimeout(1000);
+await br.close();server.close();
+console.log(f.length?f.join('\n'):'no 4xx/5xx');

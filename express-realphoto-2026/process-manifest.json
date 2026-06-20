@@ -1,0 +1,704 @@
+[
+ {
+  "sku": "EX001",
+  "slug": "ex001-garment",
+  "category": "garment",
+  "name": "เสื้อยืดคอกลม แขนสั้น",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\เสื้อ สมานการ์เม้นท์\\เซฟสีเสื้อเพิ่มเติม\\649062184_1394564732684441_2091547982868173364_n.jpg",
+  "hero_is_group": false,
+  "gallery_abs": [
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\เสื้อ สมานการ์เม้นท์\\เซฟสีเสื้อเพิ่มเติม\\649558282_1394564712684443_3387660067819753922_n.jpg",
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\เสื้อ สมานการ์เม้นท์\\เซฟสีเสื้อเพิ่มเติม\\649180026_1394564716017776_4709121476274975959_n.jpg",
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\เสื้อ สมานการ์เม้นท์\\เซฟสีเสื้อเพิ่มเติม\\649657750_1394564736017774_9044190152110841176_n.jpg",
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\เสื้อ สมานการ์เม้นท์\\เซฟสีเสื้อเพิ่มเติม\\640396666_1379972614143653_3247144945685890250_n.jpg"
+  ]
+ },
+ {
+  "sku": "EX004",
+  "slug": "ex004-drinkware",
+  "category": "drinkware",
+  "name": "กระบอกน้ำพลาสติกใส ทรงสปอร์ต",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดพลาสติก\\BT06-004-BK-1-1.png",
+  "hero_is_group": false,
+  "gallery_abs": [
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดพลาสติก\\BT06-004-PK.png",
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดพลาสติก\\BT06-049.png",
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดพลาสติก\\BT06-063.png",
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดพลาสติก\\ขวดใส-ฝาเงิน.png"
+  ]
+ },
+ {
+  "sku": "EX005",
+  "slug": "ex005-drinkware",
+  "category": "drinkware",
+  "name": "กระบอกน้ำสแตนเลสเก็บอุณหภูมิ ทรงสลิม",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดแสตนเลส\\BT05-099.png",
+  "hero_is_group": false,
+  "gallery_abs": [
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดแสตนเลส\\BT05-091-1.png",
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดแสตนเลส\\BT05-090.png",
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดแสตนเลส\\ขวดสแตนเลส-ทอง.png",
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดแสตนเลส\\ขวดสแตนเลส-ดำ.png"
+  ]
+ },
+ {
+  "sku": "EX006",
+  "slug": "ex006-drinkware",
+  "category": "drinkware",
+  "name": "แก้วพร้อมปลอก แก้วตวง 300/400/500ml",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดพลาสติก\\ขวดใส ฝาแสตนเลสหูหิ้ว.png",
+  "hero_is_group": false,
+  "gallery_abs": [
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดพลาสติก\\ขวดใส-ฝาทอง.png",
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดพลาสติก\\ขวดใสฝาไม้.png",
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดพลาสติก\\BT06-057-NOLOGO.png",
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดพร้อมปลอก\\BT05-089-2.png"
+  ]
+ },
+ {
+  "sku": "EX007",
+  "slug": "ex007-garment",
+  "category": "garment",
+  "name": "เสื้อยืดคอวี แขนสั้น",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\เสื้อ สมานการ์เม้นท์\\เซฟสีเสื้อเพิ่มเติม\\603897118_1329519362522312_5553110177346545688_n.jpg",
+  "hero_is_group": false,
+  "gallery_abs": [
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\เสื้อ สมานการ์เม้นท์\\เซฟสีเสื้อเพิ่มเติม\\646380922_1391968149610766_7661468157067397786_n.jpg",
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\เสื้อ สมานการ์เม้นท์\\เซฟสีเสื้อเพิ่มเติม\\646377011_1391968172944097_5310144181068046958_n.jpg",
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\เสื้อ สมานการ์เม้นท์\\เซฟสีเสื้อเพิ่มเติม\\606357284_1334653392008909_8713946277106988635_n.jpg",
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\เสื้อ สมานการ์เม้นท์\\เซฟสีเสื้อเพิ่มเติม\\605123539_1334653372008911_2479283679596362456_n.jpg"
+  ]
+ },
+ {
+  "sku": "EX010",
+  "slug": "ex010-umbrella",
+  "category": "umbrella",
+  "name": "ร่มพับ 3 ตอน 8 ก้าน",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ร่ม new fly\\ร่มพับ\\ร่มพับ 3 ตอน\\ร่มพับ 3 ตอน.jpg",
+  "hero_is_group": false,
+  "gallery_abs": [
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ร่ม สิริบัวทอง\\ร่มพับ 3 ตอน\\ร่มพับ-3-ตอน-สกรีน-หยกสด 1.jpg",
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ร่ม rakafactory\\ร่มพับ 3 ตอน โครงเหล็ก 8 ช่อง\\280068_0 (1).jpg"
+  ]
+ },
+ {
+  "sku": "EX011",
+  "slug": "ex011-umbrella",
+  "category": "umbrella",
+  "name": "ร่มพับ 4 ตอน ลายพิมพ์",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ร่ม new fly\\ร่มพับ\\ร่มพับ 4 ตอน\\5d178af8e02bd4fdb9419439_ร่มแฟชั่น ร่มพับ ร่มสั้น ร่มราคาส่งถูก 2-p-500.jpeg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX013",
+  "slug": "ex013-umbrella",
+  "category": "umbrella",
+  "name": "ร่มตอนเดียว 22 นิ้ว ออโต้",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ร่ม new fly\\ร่มไม้เท้า\\ร่มตอนเดียว 22 นิ้ว 1.jpg",
+  "hero_is_group": false,
+  "gallery_abs": [
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ร่ม สิริบัวทอง\\ร่มตอนเดียว 22 นิ้ว\\ร่มตอนเดียว-22-นิ้ว-BANGKOK-HOSPITAL-KHON-KAEN-01.jpg"
+  ]
+ },
+ {
+  "sku": "EX015",
+  "slug": "ex015-umbrella",
+  "category": "umbrella",
+  "name": "ร่มไม้เท้า 16 นิ้ว (เด็ก)",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ร่ม new fly\\ร่มไม้เท้า\\ร่มไม้เท้า16 นิ้ว 1.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX016",
+  "slug": "ex016-umbrella",
+  "category": "umbrella",
+  "name": "ร่มกอล์ฟ 28 นิ้ว เปิดออโต้",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ร่ม new fly\\ร่มกอล์ฟ\\ร่มกอล์ฟ 28 นิ้ว.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX017",
+  "slug": "ex017-umbrella",
+  "category": "umbrella",
+  "name": "ร่มกอล์ฟ 30 นิ้ว",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ร่ม new fly\\ร่มกอล์ฟ\\ร่มกอล์ฟ 30 นิ้ว .jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX018",
+  "slug": "ex018-umbrella",
+  "category": "umbrella",
+  "name": "ร่มกลับด้าน 24 นิ้ว ด้ามจับ C-handle",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ร่ม new fly\\ร่มกลับด้าน\\ร่มกลับด้าน ลาย 2.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX019",
+  "slug": "ex019-umbrella",
+  "category": "umbrella",
+  "name": "ร่มกอล์ฟ 30 นิ้ว 2 ชั้น",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ร่ม new fly\\ร่มกอล์ฟ\\ร่มกอล์ฟ 30 นิ้ว 2 ชั้น 2.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX020",
+  "slug": "ex020-powerbank",
+  "category": "powerbank",
+  "name": "พาวเวอร์แบงค์ Remax RPP-120 10000mAh สายในตัว",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\พาวเวอร์แบงค์ พัดลม Remax\\พาวเวอร์แบงค์\\Power Bank 10000mAh (RPP-120,Black) - แบตสำรอง REMAX.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX021",
+  "slug": "ex021-powerbank",
+  "category": "powerbank",
+  "name": "พาวเวอร์แบงค์ไร้สาย Remax RPP-678 10000mAh MagSafe",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\พาวเวอร์แบงค์ พัดลม Remax\\พาวเวอร์แบงค์\\Power Bank 10000mAh RPP-678 (Silver,N) Wireless - แบตสำรอง REMAX.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX022",
+  "slug": "ex022-fan",
+  "category": "fan",
+  "name": "พัดลมพกพา Remax RS-SF10 มอเตอร์ความเร็วสูง",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\พาวเวอร์แบงค์ พัดลม Remax\\พัดลม\\Fan High-speed Handheld RS-SF10 (Silver) - พัดลม Remax.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX023",
+  "slug": "ex023-fan",
+  "category": "fan",
+  "name": "พัดลมพกพา Remax RS-SF12 จอแสดงผล",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\พาวเวอร์แบงค์ พัดลม Remax\\พัดลม\\Fan High-speed Handheld RS-SF12 (Blue) - พัดลม Remax.jpg",
+  "hero_is_group": true,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX024",
+  "slug": "ex024-fan",
+  "category": "fan",
+  "name": "พัดลมพกพามินิ Remax RS-SF25",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\พาวเวอร์แบงค์ พัดลม Remax\\พัดลม\\Fan mini Handheld RS-SF25 (Blue) - พัดลม Remax.jpg",
+  "hero_is_group": true,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX028",
+  "slug": "ex028-drinkware",
+  "category": "drinkware",
+  "name": "แก้วเยติสแตนเลส ทรงอ้วน (20/30oz)",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดแสตนเลส\\แก้วสแตนเลส.png",
+  "hero_is_group": false,
+  "gallery_abs": [
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดแสตนเลส\\300-z.png",
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดแสตนเลส\\แก้วสแตนเลส-สี.png"
+  ]
+ },
+ {
+  "sku": "EX036",
+  "slug": "ex036-drinkware",
+  "category": "drinkware",
+  "name": "กระบอกน้ำสแตนเลสทรงสปอร์ต ACTIVE หูหิ้ว",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดแสตนเลส\\สินค้าใหม่-2.png",
+  "hero_is_group": false,
+  "gallery_abs": [
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดแสตนเลส\\สินค้าใหม่-3.png"
+  ]
+ },
+ {
+  "sku": "EX037",
+  "slug": "ex037-drinkware",
+  "category": "drinkware",
+  "name": "แก้วกาแฟสแตนเลสมีหูจับ 14oz",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดแสตนเลส\\สแตนเลส-แก้วหูจับ.png",
+  "hero_is_group": false,
+  "gallery_abs": [
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดแสตนเลส\\สแตนเลส-แก้วหูจับ-ทรงสูง.png",
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดแสตนเลส\\สแตนเลส-แก้วหูจับ-มินิ.png"
+  ]
+ },
+ {
+  "sku": "EX041",
+  "slug": "ex041-drinkware",
+  "category": "drinkware",
+  "name": "กระบอกน้ำเก็บอุณหภูมิ Smart LED แสดงอุณหภูมิ",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดแสตนเลส\\ขวดสแตนเลส-ดำ.png",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX042",
+  "slug": "ex042-garment",
+  "category": "garment",
+  "name": "เสื้อแจ็คเก็ต Smooth Premium / Ripstop Premium",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ชุด หมวก PMK\\เสื้อแจ็กเก็ต\\ripstop-premium-navy-03.jpg",
+  "hero_is_group": false,
+  "gallery_abs": [
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ชุด หมวก PMK\\เสื้อแจ็กเก็ต\\smooth light\\PMK-Smooth-Light-Navy-18.jpg"
+  ]
+ },
+ {
+  "sku": "EX043",
+  "slug": "ex043-hat",
+  "category": "hat",
+  "name": "หมวกแก๊ปตาข่าย ทรัคเกอร์ (โฮมสกีน)",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\หมวก โฮมสกีน\\หมวกตาข่าย.jpg",
+  "hero_is_group": true,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX044",
+  "slug": "ex044-garment",
+  "category": "garment",
+  "name": "เสื้อโปโล CoolPlus CA",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ชุด หมวก PMK\\เสื้อโปโล\\ca coolplus\\CA33-01.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX047",
+  "slug": "ex047-garment",
+  "category": "garment",
+  "name": "ผ้ากันเปื้อน COMB-TWILL",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ชุด หมวก PMK\\ผ้ากันเปื้อน\\combtwill\\PMK-Apron-Combtwill-Black-01.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX048",
+  "slug": "ex048-garment",
+  "category": "garment",
+  "name": "ผ้ากันเปื้อน SMOOTH SOLON",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ชุด หมวก PMK\\ผ้ากันเปื้อน\\smooth solon\\Smooth-Solon-Black-01.jpg",
+  "hero_is_group": false,
+  "gallery_abs": [
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ชุด หมวก PMK\\ผ้ากันเปื้อน\\สายหลายสี\\PMK-Solon-Apron-Brown-01.jpg"
+  ]
+ },
+ {
+  "sku": "EX049",
+  "slug": "ex049-garment",
+  "category": "garment",
+  "name": "เสื้อช็อปแขนสั้น",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ชุด หมวก PMK\\ชุดช็อป\\เสื้อช็อปแขนสั้น\\shot-shop-navy.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX050",
+  "slug": "ex050-garment",
+  "category": "garment",
+  "name": "เสื้อช็อปแขนยาว",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ชุด หมวก PMK\\ชุดช็อป\\เสื้อช็อปแขนยาว\\กรมท่า.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX052",
+  "slug": "ex052-garment",
+  "category": "garment",
+  "name": "กางเกงช่าง",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ชุด หมวก PMK\\ชุดช็อป\\กางเกงช็อป\\เทาอ่อน.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX053",
+  "slug": "ex053-hat",
+  "category": "hat",
+  "name": "หมวก พีชพรีเมียม แซนวิช",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ชุด หมวก PMK\\หมวก\\พีช พรีเมี่ยม\\04CL0023U000F-กรมข้าง.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX054",
+  "slug": "ex054-hat",
+  "category": "hat",
+  "name": "หมวก บัคเคิ้ลบี (Buckle-B)",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ชุด หมวก PMK\\หมวก\\buckle b\\peach-buckle-b-navy-01.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX055",
+  "slug": "ex055-hat",
+  "category": "hat",
+  "name": "หมวก แซนวิช (Sandwich)",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ชุด หมวก PMK\\หมวก\\sandwich\\DY-Sandwich-Cap-04.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX062",
+  "slug": "ex062-hat",
+  "category": "hat",
+  "name": "หมวกปีกแข็งบูนนี่ (โฮมสกีน)",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\หมวก โฮมสกีน\\หมวกปีกแข็ง.jpg",
+  "hero_is_group": true,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX064",
+  "slug": "ex064-hat",
+  "category": "hat",
+  "name": "หมวกคลุมหน้า (โฮมสกีน)",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\หมวก โฮมสกีน\\หมวกคลุมหน้า.jpg",
+  "hero_is_group": true,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX076",
+  "slug": "ex076-garment",
+  "category": "garment",
+  "name": "แจ็คเก็ต Smart Premium",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ชุด หมวก PMK\\เสื้อแจ็กเก็ต\\smart premium\\PMK-Smart-Premium-Navy-02.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX077",
+  "slug": "ex077-garment",
+  "category": "garment",
+  "name": "แจ็คเก็ต Baseball Premium (วาร์ซิตี้)",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ชุด หมวก PMK\\เสื้อแจ็กเก็ต\\baseball\\PMK-Jacket-Baseball-Premium-Navy-01.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX078",
+  "slug": "ex078-garment",
+  "category": "garment",
+  "name": "แจ็คเก็ต Simply",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ชุด หมวก PMK\\เสื้อแจ็กเก็ต\\simply\\PMK-Simply-Jacket-Navy-09.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX079",
+  "slug": "ex079-garment",
+  "category": "garment",
+  "name": "เสื้อยืดคอกลม Ultra Zoft (ทรง New Regular)",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ชุด หมวก PMK\\เสื้อยืด\\New-Regular-White-01.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX080",
+  "slug": "ex080-garment",
+  "category": "garment",
+  "name": "เสื้อยืด UL Ultra Light",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ชุด หมวก PMK\\เสื้อยืด\\PMK-T-Shirt-UL-White-02-600x752.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX081",
+  "slug": "ex081-garment",
+  "category": "garment",
+  "name": "เสื้อโปโลซิป CA (Zipper)",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ชุด หมวก PMK\\เสื้อโปโล\\zipper\\PMK-CA-Zipper-Navy-05.jpg",
+  "hero_is_group": true,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX082",
+  "slug": "ex082-drinkware",
+  "category": "drinkware",
+  "name": "ขวดน้ำพลาสติกเด็ก มีหลอด-หูหิ้ว",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดพลาสติก\\5-2.png",
+  "hero_is_group": true,
+  "gallery_abs": [
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดพลาสติก\\ขวดกลมหูหิ้ว.png"
+  ]
+ },
+ {
+  "sku": "EX083",
+  "slug": "ex083-drinkware",
+  "category": "drinkware",
+  "name": "ขวดน้ำพลาสติกฝาเห็ด/ฝาเพชร มีสาย",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดพลาสติก\\ขวดฝาเห็ด.png",
+  "hero_is_group": false,
+  "gallery_abs": [
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดพลาสติก\\ขวดฝาเพชร.png",
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดพลาสติก\\ขวดขุ่นทรงเตี้ยฝาขาว.png",
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดพลาสติก\\ขวดขุ่นฝาขาว.png",
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดพลาสติก\\ขวดฝาซิลิโคลน.png"
+  ]
+ },
+ {
+  "sku": "EX084",
+  "slug": "ex084-drinkware",
+  "category": "drinkware",
+  "name": "ขวดน้ำพลาสติกพร้อมปลอกฟาง/ทรงแก้วกาแฟ",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดพลาสติก\\สินค้าใหม่-17.png",
+  "hero_is_group": false,
+  "gallery_abs": [
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดพลาสติก\\สินค้าใหม่-18.png",
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดพลาสติก\\สินค้าใหม่-19.png"
+  ]
+ },
+ {
+  "sku": "EX085",
+  "slug": "ex085-drinkware",
+  "category": "drinkware",
+  "name": "กระบอกน้ำสแตนเลสฝาหูหิ้ว/ฝาล็อค",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดแสตนเลส\\BT05-091-1.png",
+  "hero_is_group": false,
+  "gallery_abs": [
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดแสตนเลส\\ขวดสแตนเลส-ฝาล็อค.png",
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดแสตนเลส\\สแตนเลส-ฝาหมุนล้อค.png",
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดแสตนเลส\\สแตนเลส-ฝาหูหิ้ว-1.png",
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดแสตนเลส\\สแตนเลส-หูหิ้ว-ทูโทน.png"
+  ]
+ },
+ {
+  "sku": "EX086",
+  "slug": "ex086-drinkware",
+  "category": "drinkware",
+  "name": "แก้วกาแฟสแตนเลสหุ้มไม้ไผ่ มีหูจับ",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดแสตนเลส\\สินค้าใหม่-2.png",
+  "hero_is_group": false,
+  "gallery_abs": [
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดแสตนเลส\\สินค้าใหม่-3.png"
+  ]
+ },
+ {
+  "sku": "EX087",
+  "slug": "ex087-drinkware",
+  "category": "drinkware",
+  "name": "กระบอกน้ำสแตนเลสไล่เฉดสี ฝาหูหิ้ว",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดแสตนเลส\\New-1-1-1.png",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX088",
+  "slug": "ex088-drinkware",
+  "category": "drinkware",
+  "name": "แก้วแก้วพร้อมปลอก ทรงโหลเตี้ยฝาเกลียว",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดพร้อมปลอก\\BT05-102.png",
+  "hero_is_group": false,
+  "gallery_abs": [
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดพร้อมปลอก\\สินค้าใหม่-3 (1).png"
+  ]
+ },
+ {
+  "sku": "EX089",
+  "slug": "ex089-drinkware",
+  "category": "drinkware",
+  "name": "แก้วแก้วพร้อมปลอก ทรงโหลใหญ่ฝาไม้ไผ่ + หลอด",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดพร้อมปลอก\\New-3.png",
+  "hero_is_group": false,
+  "gallery_abs": [
+   "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ขวด love bottle\\ขวดพร้อมปลอก\\สินค้าใหม่-5.png"
+  ]
+ },
+ {
+  "sku": "EX090",
+  "slug": "ex090-garment",
+  "category": "garment",
+  "name": "ชุดหมีช่าง (เสื้อ+กางเกงติดกัน) แถบสะท้อนแสง",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ชุด หมวก PMK\\ชุดช็อป\\ชุดหมี 1.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX091",
+  "slug": "ex091-garment",
+  "category": "garment",
+  "name": "เสื้อยืดโอเวอร์ไซส์ Cool-Ease (Oversize)",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ชุด หมวก PMK\\เสื้อยืด\\PMK-Oversize-Cool-Ease-White-05-1-600x752.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX092",
+  "slug": "ex092-garment",
+  "category": "garment",
+  "name": "เสื้อยืดครอป (Crop Top) PMK",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ชุด หมวก PMK\\เสื้อยืด\\PMK-T-Shirt-Crop-Yellow-07.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX093",
+  "slug": "ex093-garment",
+  "category": "garment",
+  "name": "เสื้อยืดคอกลม/คอวี ทรงโมเดิร์น",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ชุด หมวก PMK\\เสื้อยืด\\เสื้อยืดคอวีทรงโมเดิร์น-สีดำ.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX094",
+  "slug": "ex094-umbrella",
+  "category": "umbrella",
+  "name": "ร่มยาว 24 นิ้ว ตรง ลายพิมพ์ (rakafactory)",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\ร่ม rakafactory\\ร่มยาว 24 นิ้ว\\281007_0 (1).jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX095",
+  "slug": "ex095-bag",
+  "category": "bag",
+  "name": "กระเป๋าผ้าแคนวาส Canvas Tote 14 oz.",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\กระเป๋า mpkj\\canvas 1.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX096",
+  "slug": "ex096-bag",
+  "category": "bag",
+  "name": "กระเป๋าถือนุ่มฟู Dumpling Puffy Bag",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\กระเป๋า mpkj\\dumpling 2.jpg",
+  "hero_is_group": true,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX097",
+  "slug": "ex097-bag",
+  "category": "bag",
+  "name": "กระเป๋านุ่มฟู Fluffy Puffy Bag",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\กระเป๋า mpkj\\fluffy puffy.jpg",
+  "hero_is_group": true,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX098",
+  "slug": "ex098-bag",
+  "category": "bag",
+  "name": "กระเป๋าระบายจีบ Fluffy Moji Bag",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\กระเป๋า mpkj\\moji 2.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX099",
+  "slug": "ex099-bag",
+  "category": "bag",
+  "name": "กระเป๋าผ้า Paris Bag (Size L)",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\กระเป๋า mpkj\\paris 2.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX100",
+  "slug": "ex100-bag",
+  "category": "bag",
+  "name": "กระเป๋าผ้าลายทาง Puffy PopLine Bag",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\กระเป๋า mpkj\\popline 2.jpg",
+  "hero_is_group": true,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX101",
+  "slug": "ex101-lifestyle",
+  "category": "lifestyle",
+  "name": "ผ้าห่มนาโนเนื้อนุ่ม (Plain Fleece Blanket)",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\หมอน ผ้าห่ม pamatoy\\ผ้าห่ม\\ผ้าห่ม.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX102",
+  "slug": "ex102-lifestyle",
+  "category": "lifestyle",
+  "name": "ผ้าห่มมีฮู้ดสวมใส่ (Hooded Wearable Blanket)",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\หมอน ผ้าห่ม pamatoy\\ผ้าห่ม\\ผ้าห่มมีฮู๊ด.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX103",
+  "slug": "ex103-lifestyle",
+  "category": "lifestyle",
+  "name": "ผ้าห่มหมวกฮู้ดเด็กลายสัตว์ (Kids Hooded Animal Blanket)",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\หมอน ผ้าห่ม pamatoy\\ผ้าห่ม\\รวม-ผ้าห่ม-04.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX104",
+  "slug": "ex104-lifestyle",
+  "category": "lifestyle",
+  "name": "หมอนผ้าห่ม 2-in-1 ลายการ์ตูน (Cushion-Blanket Combo)",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\หมอน ผ้าห่ม pamatoy\\หมอน\\รวม-หมอนพิเศษ-05.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX105",
+  "slug": "ex105-lifestyle",
+  "category": "lifestyle",
+  "name": "หมอนอิงตุ๊กตาลายการ์ตูน (Character Cushion Pillow)",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\หมอน ผ้าห่ม pamatoy\\หมอน\\รวม-หมอนพิเศษ00-04.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX106",
+  "slug": "ex106-lifestyle",
+  "category": "lifestyle",
+  "name": "หมอนอิงสี่เหลี่ยมสกรีนโลโก้ (Square Logo Cushion)",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\หมอน ผ้าห่ม pamatoy\\หมอน\\รวม-หมอนอิง-09.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX107",
+  "slug": "ex107-lifestyle",
+  "category": "lifestyle",
+  "name": "หมอนรองคอเมมโมรี่/ลายการ์ตูน (Travel Neck Pillow)",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\หมอน ผ้าห่ม pamatoy\\หมอน\\หมอนรองคอ.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX108",
+  "slug": "ex108-lifestyle",
+  "category": "lifestyle",
+  "name": "หมอนรองคอ Pocky x Glico ช้าง (Pocky Neck Pillow)",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\หมอน ผ้าห่ม pamatoy\\หมอน\\หมอนรองคอลายสัตว์-02.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX109",
+  "slug": "ex109-lifestyle",
+  "category": "lifestyle",
+  "name": "หมอนรองข้อมือ (Wrist Rest Pillow)",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\หมอน ผ้าห่ม pamatoy\\หมอน\\หมอนรองข้อมือ.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX110",
+  "slug": "ex110-powerbank",
+  "category": "powerbank",
+  "name": "พาวเวอร์แบงค์ไร้สาย Remax RPP-30 10000mAh MagSafe",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\พาวเวอร์แบงค์ พัดลม Remax\\พาวเวอร์แบงค์\\Power Bank 10000mAh RPP-30 (Blue,N) Wireless - แบตสำรอง REMAX.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX111",
+  "slug": "ex111-powerbank",
+  "category": "powerbank",
+  "name": "พาวเวอร์แบงค์ Remax RPP-116 10000mAh สายในตัว (หลายสี)",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\Demo\\สินค้าพร้อมส่ง\\สินค้าพร้อมส่ง\\พาวเวอร์แบงค์ พัดลม Remax\\พาวเวอร์แบงค์\\RPP-116.jpg",
+  "hero_is_group": true,
+  "gallery_abs": []
+ }
+]

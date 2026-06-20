@@ -1,0 +1,200 @@
+[
+ {
+  "sku": "EX002",
+  "slug": "ex002-garment",
+  "category": "garment",
+  "name": "เสื้อยืดคอกลม แขนยาว",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\public\\images\\products\\ex002-garment\\ex002-garment-square.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX003",
+  "slug": "ex003-garment",
+  "category": "garment",
+  "name": "เสื้อยืดคอกลม",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\public\\images\\products\\ex003-garment\\ex003-garment-square.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX008",
+  "slug": "ex008-hat",
+  "category": "hat",
+  "name": "หมวกบันเดิล 4 ทรง (ตาข่าย/ปีกแข็ง/บักเก็ต/คลุมหน้า)",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\public\\images\\products\\ex008-hat\\ex008-hat-square.jpg",
+  "hero_is_group": true,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX009",
+  "slug": "ex009-hat",
+  "category": "hat",
+  "name": "หมวกแก๊ปผ้าลีวาย (เดนิม/ยีนส์)",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\public\\images\\products\\ex009-hat\\ex009-hat-square.jpg",
+  "hero_is_group": true,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX012",
+  "slug": "ex012-umbrella",
+  "category": "umbrella",
+  "name": "ร่มพับ 5 ตอน",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\public\\images\\products\\ex012-umbrella\\ex012-umbrella-square.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX014",
+  "slug": "ex014-umbrella",
+  "category": "umbrella",
+  "name": "ร่มแบบใส",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\public\\images\\products\\ex014-umbrella\\ex014-umbrella-square.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX025",
+  "slug": "ex025-drinkware",
+  "category": "drinkware",
+  "name": "แก้วเยติ 20oz · กล่องน้ำตาล (ฟู๊ดเกรด)",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\public\\images\\products\\ex025-drinkware\\ex025-drinkware-square.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX026",
+  "slug": "ex026-drinkware",
+  "category": "drinkware",
+  "name": "แก้วเยติ 20oz · กล่องขาว",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\public\\images\\products\\ex026-drinkware\\ex026-drinkware-square.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX027",
+  "slug": "ex027-drinkware",
+  "category": "drinkware",
+  "name": "แก้วเยติ 20oz · กล่องขาว YW",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\public\\images\\products\\ex027-drinkware\\ex027-drinkware-square.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX029",
+  "slug": "ex029-drinkware",
+  "category": "drinkware",
+  "name": "แก้วเก็บความเย็น 30oz ทรงสูง · ฝาเกลียว",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\public\\images\\products\\ex029-drinkware\\ex029-drinkware-square.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX030",
+  "slug": "ex030-drinkware",
+  "category": "drinkware",
+  "name": "แก้วเก็บความเย็น 30oz ทรงสูง · หูโค้ง",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\public\\images\\products\\ex030-drinkware\\ex030-drinkware-square.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX031",
+  "slug": "ex031-drinkware",
+  "category": "drinkware",
+  "name": "แก้วเก็บความเย็น 30oz ทรงสูง · หูเหลี่ยม",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\public\\images\\products\\ex031-drinkware\\ex031-drinkware-square.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX032",
+  "slug": "ex032-drinkware",
+  "category": "drinkware",
+  "name": "แก้วกาแฟ COFFEE (ฝากระดก)",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\public\\images\\products\\ex032-drinkware\\ex032-drinkware-square.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX033",
+  "slug": "ex033-drinkware",
+  "category": "drinkware",
+  "name": "แก้วเยติ 20oz ทรงอ้วน · ฝาเกลียว",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\public\\images\\products\\ex033-drinkware\\ex033-drinkware-square.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX034",
+  "slug": "ex034-drinkware",
+  "category": "drinkware",
+  "name": "แก้วเยติ 20oz ทรงอ้วน · หูเหลี่ยม",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\public\\images\\products\\ex034-drinkware\\ex034-drinkware-square.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX035",
+  "slug": "ex035-drinkware",
+  "category": "drinkware",
+  "name": "แก้ว 20oz ทรงอ้วน · หูโค้ง",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\public\\images\\products\\ex035-drinkware\\ex035-drinkware-square.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX038",
+  "slug": "ex038-drinkware",
+  "category": "drinkware",
+  "name": "แก้วไข่",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\public\\images\\products\\ex038-drinkware\\ex038-drinkware-square.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX039",
+  "slug": "ex039-drinkware",
+  "category": "drinkware",
+  "name": "แก้วทรงสตาร์บัค · ขอบดำ",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\public\\images\\products\\ex039-drinkware\\ex039-drinkware-square.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX040",
+  "slug": "ex040-drinkware",
+  "category": "drinkware",
+  "name": "แก้วทรงสตาร์บัค · ขอบทอง",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\public\\images\\products\\ex040-drinkware\\ex040-drinkware-square.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX045",
+  "slug": "ex045-garment",
+  "category": "garment",
+  "name": "เสื้อโปโล CoolPlus",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\public\\images\\products\\ex045-garment\\ex045-garment-square.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX046",
+  "slug": "ex046-garment",
+  "category": "garment",
+  "name": "เสื้อโปโล (Micro-Polyester)",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\public\\images\\products\\ex046-garment\\ex046-garment-square.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ },
+ {
+  "sku": "EX051",
+  "slug": "ex051-garment",
+  "category": "garment",
+  "name": "เสื้อช็อป",
+  "hero_abs": "C:\\Users\\Golf\\Documents\\Claude\\Projects\\Gopremium Website LIVE\\website\\public\\images\\products\\ex051-garment\\ex051-garment-square.jpg",
+  "hero_is_group": false,
+  "gallery_abs": []
+ }
+]

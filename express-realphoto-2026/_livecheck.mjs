@@ -1,0 +1,12 @@
+import { chromium } from 'playwright';
+const b = await chromium.launch();
+const pg = await b.newPage({viewport:{width:1280,height:900}});
+const errs=[]; pg.on('pageerror',e=>errs.push(e.message));
+await pg.goto('https://gopremium-website.vercel.app/v2.html#/express',{waitUntil:'networkidle',timeout:45000});
+await pg.waitForTimeout(2000);
+const cards=await pg.$$eval('.ecard',e=>e.length);
+const chips=await pg.$$eval('.echip',e=>e.length);
+const swat=await pg.$$eval('.edot',e=>e.length);
+const imgOK=await pg.$$eval('.ecard img',imgs=>imgs.filter(i=>i.naturalWidth>0).length);
+console.log(`LIVE express -> ecards:${cards} chips:${chips} swatches:${swat} imgsLoaded:${imgOK}/${cards} | newPageErrs:${errs.filter(e=>!e.includes("Unexpected token")).length}`);
+await b.close();

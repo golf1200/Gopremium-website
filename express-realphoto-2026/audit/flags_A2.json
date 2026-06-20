@@ -1,0 +1,104 @@
+{
+  "group": "A2",
+  "flags": [
+    {
+      "sku": "EX001",
+      "issues": ["spec-callout-text", "color-label", "cotton-spec", "old-low-quality"],
+      "severity": "high",
+      "live_problem": "Baked-in spec panel on the right: color label 'ฟ้า' + 'COTTON 100% คอกลม/คอวี'. Old supplier catalog tile, not a clean studio shot.",
+      "fix": "needs-new-photo",
+      "source_index": null,
+      "source_file": null,
+      "crop_note": "",
+      "notes": "All montage cells for this dir are either text-panel catalog tiles (#11 ฟ้า etc.) or multi-shirt flatlays; no clean single blue tee without baked text exists."
+    },
+    {
+      "sku": "EX007",
+      "issues": ["spec-callout-text", "color-label", "cotton-spec", "old-low-quality"],
+      "severity": "high",
+      "live_problem": "Baked-in spec panel: color label 'แดง' + 'COTTON 100% คอกลม/คอวี'. Old supplier catalog tile on mannequin.",
+      "fix": "needs-new-photo",
+      "source_index": null,
+      "source_file": null,
+      "crop_note": "",
+      "notes": "Same dir as EX001; every red-tee cell (#00, #10) carries the same baked text panel. No clean single red V-neck available."
+    },
+    {
+      "sku": "EX002",
+      "issues": ["your-logo-placeholder", "thai-placeholder-text"],
+      "severity": "high",
+      "live_problem": "'YOUR LOGO / โลโก้คุณตรงนี้' placeholder stamped on the back of the long-sleeve tee.",
+      "fix": "needs-new-photo",
+      "source_index": null,
+      "source_file": null,
+      "crop_note": "",
+      "notes": "No source_dir in packet; cannot crop a clean version from a montage."
+    },
+    {
+      "sku": "EX045",
+      "issues": ["your-logo-placeholder", "thai-placeholder-text"],
+      "severity": "high",
+      "live_problem": "'YOUR LOGO / โลโก้คุณตรงนี้' placeholder stamped on the black polo chest.",
+      "fix": "needs-new-photo",
+      "source_index": null,
+      "source_file": null,
+      "crop_note": "",
+      "notes": "No source_dir in packet."
+    },
+    {
+      "sku": "EX046",
+      "issues": ["your-logo-placeholder", "thai-placeholder-text"],
+      "severity": "high",
+      "live_problem": "'YOUR LOGO / โลโก้คุณตรงนี้' placeholder stamped on the navy polo chest.",
+      "fix": "needs-new-photo",
+      "source_index": null,
+      "source_file": null,
+      "crop_note": "",
+      "notes": "No source_dir in packet."
+    },
+    {
+      "sku": "EX051",
+      "issues": ["your-logo-placeholder", "thai-placeholder-text"],
+      "severity": "high",
+      "live_problem": "'YOUR LOGO / โลโก้คุณตรงนี้' placeholder stamped on the blue dress-shirt chest.",
+      "fix": "needs-new-photo",
+      "source_index": null,
+      "source_file": null,
+      "crop_note": "",
+      "notes": "No source_dir in packet."
+    },
+    {
+      "sku": "EX049",
+      "issues": ["other-brand-watermark", "other-brand-logo"],
+      "severity": "high",
+      "live_problem": "Large 'POLO MAKER' watermark across the chest, plus a faint reflective-tape prop bottom-left. Other-brand mark contamination.",
+      "fix": "needs-new-photo",
+      "source_index": null,
+      "source_file": null,
+      "crop_note": "",
+      "notes": "Every cell in the short-sleeve shop-shirt montage is contaminated: #00-#04 carry a baked 'PMK' red logo top-left; #05-#08 carry the 'POLO MAKER' watermark. No clean cell of the matching navy/gray model exists."
+    },
+    {
+      "sku": "EX050",
+      "issues": ["other-brand-watermark", "other-brand-logo", "spec-prop"],
+      "severity": "high",
+      "live_problem": "Large 'POLO MAKER' watermark across the chest of the long-sleeve shop jacket; reflective-tape prop held bottom-left.",
+      "fix": "needs-new-photo",
+      "source_index": null,
+      "source_file": null,
+      "crop_note": "",
+      "notes": "Both source cells (#00, #01) carry the 'POLO MAKER' watermark. No clean source."
+    },
+    {
+      "sku": "EX081",
+      "issues": ["other-brand-logo", "multi-model-group"],
+      "severity": "high",
+      "live_problem": "Red 'PMK' brand logo baked top-left; two-model group shot (male+female) on the zipper polo.",
+      "fix": "needs-new-photo",
+      "source_index": null,
+      "source_file": null,
+      "crop_note": "",
+      "notes": "hero_is_group=true. All 4 montage cells (#00-#03) are 2-model group shots each carrying the red 'PMK' logo. No single clean garment cell exists; recommend a fresh single-product shot."
+    }
+  ]
+}
