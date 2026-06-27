@@ -11,7 +11,11 @@ const server = http.createServer((req, res) => {
   let p = decodeURIComponent(req.url.split('?')[0]);
   if (p === '/') p = '/index.html';
   const fp = path.join(ROOT, p);
-  if (!fp.startsWith(ROOT) || !fs.existsSync(fp) || fs.statSync(fp).isDirectory()) { res.statusCode = 404; return res.end('404'); }
+  if (!fp.startsWith(ROOT) || !fs.existsSync(fp) || fs.statSync(fp).isDirectory()) {
+    // SPA fallback (mirrors vercel.json rewrite): extension-less routes → index.html
+    if (!path.extname(p)) { res.setHeader('Content-Type', 'text/html'); return fs.createReadStream(path.join(ROOT, 'index.html')).pipe(res); }
+    res.statusCode = 404; return res.end('404');
+  }
   res.setHeader('Content-Type', MIME[path.extname(fp)] || 'application/octet-stream');
   fs.createReadStream(fp).pipe(res);
 });
@@ -23,6 +27,9 @@ const ok = (n, pass, d = '') => { results.push({ n, pass, d }); };
 
 const browser = await chromium.launch();
 const ctx = await browser.newContext();
+// Vercel injects these at runtime on the platform; the local static server can't serve them.
+// Stub to 200 so their (expected) 404s don't masquerade as real console errors.
+await ctx.route('**/_vercel/**', (r) => r.fulfill({ status: 200, contentType: 'text/javascript', body: '' }));
 const page = await ctx.newPage();
 const consoleErrors = [];
 page.on('console', m => { if (m.type() === 'error') consoleErrors.push(m.text()); });
@@ -37,11 +44,11 @@ ok('1b. nav item #2 is ⚡ สินค้าส่งด่วน', order[1]?.i
 ok('1c. nav item #3 is the สินค้าทั้งหมด dropdown', order[2]?.includes('สินค้าทั้งหมด'), `got=${order[2]}`);
 ok('1d. only ONE "สินค้าทั้งหมด" in nav (no duplicate)', order.filter(t => t.includes('สินค้าทั้งหมด')).length === 1, `count=${order.filter(t => t.includes('สินค้าทั้งหมด')).length}`);
 const expHref = await page.locator('nav.nav > a', { hasText: 'สินค้าส่งด่วน' }).getAttribute('href');
-ok('1e. สินค้าส่งด่วน links to #/express', expHref === '#/express', `href=${expHref}`);
+ok('1e. สินค้าส่งด่วน links to /express (clean path)', expHref === '/express', `href=${expHref}`);
 const dropHref = await page.locator('.mega-wrap a.navlink').getAttribute('href');
-ok('1f. สินค้าทั้งหมด dropdown trigger is clickable → #/all', dropHref === '#/all', `href=${dropHref}`);
-const aboutHref = await page.locator('nav.nav > a', { hasText: 'เกี่ยวกับเรา' }).getAttribute('href');
-ok('1g. เกี่ยวกับเรา links to #/about', aboutHref === '#/about', `href=${aboutHref}`);
+ok('1f. สินค้าทั้งหมด dropdown trigger is clickable → /products (clean path)', dropHref === '/products', `href=${dropHref}`);
+const aboutHref = await page.locator('a[href="/about"]').first().getAttribute('href');
+ok('1g. "เรื่องราวแบรนด์" (footer) links to /about (clean path)', aboutHref === '/about', `href=${aboutHref}`);
 
 // 5. Mega menu: opens on hover, stays interactive, category click navigates
 const megaVis = async () => page.evaluate(() => {
@@ -60,8 +67,8 @@ await page.waitForTimeout(60);
 ok('5c. mega still visible after moving into it', await megaVis());
 await firstCat.click();
 await page.waitForTimeout(120);
-const hashAfter = await page.evaluate(() => location.hash);
-ok('5d. clicking a category navigates to it', hashAfter.startsWith('#/c/'), `hash=${hashAfter} target=${catHref}`);
+const pathAfter = await page.evaluate(() => location.pathname);
+ok('5d. clicking a category navigates to /category/... (pushState, no reload)', pathAfter.startsWith('/category/'), `path=${pathAfter} target=${catHref}`);
 
 // 2. About is its own page (top of page, has crumbs, story heading, NOT the home hero)
 await page.goto(`${BASE}/#/about`, { waitUntil: 'networkidle' });
@@ -118,14 +125,34 @@ ok('6i. AI filter no console errors', consoleErrors.length === 0);
 // 7. Home occasion tiles deep-link into the filtered catalogue (#/o/<key>)
 await page.goto(`${BASE}/`, { waitUntil: 'networkidle' });
 await page.waitForTimeout(120);
-const occLinks = await page.evaluate(() => [...document.querySelectorAll('a')].map(a => a.getAttribute('href')).filter(h => h && h.startsWith('#/o/')));
-ok('7a. home has occasion deep-links (#/o/...)', occLinks.length >= 6, `n=${occLinks.length}`);
-await page.goto(`${BASE}/#/o/newyear`, { waitUntil: 'networkidle' });
+const occLinks = await page.evaluate(() => [...document.querySelectorAll('a')].map(a => a.getAttribute('href')).filter(h => h && h.startsWith('/occasion/')));
+ok('7a. home has occasion deep-links (/occasion/...)', occLinks.length >= 6, `n=${occLinks.length}`);
+await page.goto(`${BASE}/occasion/newyear`, { waitUntil: 'networkidle' });
 await page.waitForTimeout(150);
 const occChip = await page.locator('#afchips .afchip').allInnerTexts();
-ok('7b. #/o/newyear opens catalogue with occasion chip active', occChip.some(c => c.includes('โอกาส')), occChip.join(' / '));
+ok('7b. /occasion/newyear (direct clean-path load) opens catalogue with occasion chip active', occChip.some(c => c.includes('โอกาส')), occChip.join(' / '));
 const occBtnOn = await page.locator('#occFilter button[data-occ="newyear"].on').count();
 ok('7c. occasion sidebar button reflects the route', occBtnOn === 1);
+
+// 8. SEO additions — h1 on landing pages, breadcrumb/FAQ schema, canonical, legacy-hash compat
+await page.goto(`${BASE}/category/drinkware`, { waitUntil: 'networkidle' });
+await page.waitForTimeout(150);
+const h1count = await page.locator('#app h1').count();
+ok('8a. category page (direct clean-path) has exactly one <h1>', h1count === 1, `count=${h1count}`);
+const canon = await page.evaluate(() => document.getElementById('canon')?.getAttribute('href'));
+ok('8b. canonical updates to clean /category path', /\/category\/drinkware$/.test(canon || ''), `canon=${canon}`);
+const crumbLd = await page.evaluate(() => (document.getElementById('ldRoute')?.textContent || '').includes('BreadcrumbList'));
+ok('8c. BreadcrumbList JSON-LD present on category', crumbLd);
+await page.goto(`${BASE}/`, { waitUntil: 'networkidle' });
+await page.waitForTimeout(150);
+const faqLd = await page.evaluate(() => (document.getElementById('ldRoute')?.textContent || '').includes('FAQPage'));
+ok('8d. FAQPage JSON-LD present on home', faqLd);
+ok('8e. visible FAQ accordion rendered (>=6 items)', (await page.locator('.faq details').count()) >= 6);
+const orgLd = await page.evaluate(() => [...document.querySelectorAll('script[type="application/ld+json"]')].map(s => s.textContent).join('').includes('PostalAddress'));
+ok('8f. Organization has PostalAddress (LocalBusiness signal)', orgLd);
+await page.goto(`${BASE}/#/c/drinkware`, { waitUntil: 'networkidle' });
+await page.waitForTimeout(150);
+ok('8g. legacy #/c/ hash URL still renders (backward compat)', (await page.evaluate(() => (document.querySelector('#crumbCat')?.textContent || '') !== '')));
 
 // 4. No console errors anywhere
 ok('4. no console/page errors', consoleErrors.length === 0, consoleErrors.slice(0, 3).join(' | '));
