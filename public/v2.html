@@ -865,7 +865,7 @@ function viewHome(){
     ['lifestyle','ไลฟ์สไตล์ &amp; ของใช้','LIFESTYLE','images/home/covers/ls012-smart-grip-flex-square.jpg?v=4'],
   ];
   // Homepage-only "Your Logo" copies for the featured-product cards (by image base).
-  const HOME_COVERS=new Set(['dw006-milo-square','bg007-rin-square','st007-folio-square','gs003-business-executive-square','ls012-smart-grip-flex-square','dw001-loopa-square','bg003-everyday-square','um002-automatic-premium-square']);
+  const HOME_COVERS=new Set(['dw006-milo-square','bg007-rin-square','st007-folio-square','gs003-business-executive-square','ls012-smart-grip-flex-square','dw001-loopa-square','bg003-everyday-square']);
   const homeCover=p=>{const b=(p.img||'').split('?')[0].split('/').pop().replace('.jpg','');return HOME_COVERS.has(b)?`images/home/covers/${b}.jpg?v=4`:pimg(p);};
   const OCCS2=[
     ['newyear','ของขวัญปีใหม่','กิฟต์เซ็ตและของพรีเมียมสำหรับมอบพนักงาน ลูกค้า และคู่ค้าช่วงปลายปี','images/home/occ-newyear.jpg','พีคสุด'],

@@ -39,6 +39,9 @@ const WATERMARK = path.join(__dirname, '_giftbox-navy.png');
 
 // ---- surface model per category (parsed from path ex###-CATEGORY) ----
 function surfaceOf(rel) {
+  // umbrella canopy tilts away from the camera -> always perspective-warp, regardless of
+  // SKU prefix (ex###-umbrella OR catalogue um###-… which the ex-regex would miss).
+  if (/umbrella/i.test(rel)) return { kind: 'fabric', persp: true };
   const cat = (rel.match(/ex\d+-([a-z]+)/) || [, ''])[1];
   switch (cat) {
     case 'drinkware': return { kind: 'hard', persp: false };   // glossy cylinder, crisp screen/UV print
@@ -58,11 +61,16 @@ function surfaceOf(rel) {
 // stays legible on busy fabric. The svg width == w (the requested wordmark width) and the
 // font size is derived from w so "Your Logo" always fits exactly.
 function logoSvg(w, ink, shadow) {
-  const fsMain = Math.round(w * 0.205);            // "Your Logo" single line spans ~w
+  const fsMain = Math.round(w * 0.175);            // "Your Logo" single line
   const padY = Math.round(fsMain * 0.45);
+  const padX = Math.round(w * 0.06);               // side padding so glyphs+shadow never touch the edge
   const h = fsMain + padY * 2;
   const yMain = Math.round(h / 2);
   const sd = Math.max(2, Math.round(fsMain * 0.11));
+  // FIX (2026-06-27): the text used to render slightly WIDER than the svg viewport (width=w),
+  // so the centred "Your Logo" got clipped at both edges — the trailing "o" most visibly.
+  // Lock the rendered advance to (w - 2*padX) with textLength so it always fits with margin.
+  const tl = w - padX * 2;
 
   return Buffer.from(
 `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}">
@@ -71,7 +79,7 @@ function logoSvg(w, ink, shadow) {
   </filter></defs>
   <text x="50%" y="${yMain}" dominant-baseline="middle" text-anchor="middle" filter="url(#g)"
         font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="${fsMain}"
-        letter-spacing="${Math.round(fsMain * 0.02)}" fill="${ink}">Your Logo</text>
+        textLength="${tl}" lengthAdjust="spacingAndGlyphs" fill="${ink}">Your Logo</text>
 </svg>`);
 }
 
