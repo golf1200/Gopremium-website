@@ -2229,7 +2229,8 @@
  "EX047": {
   "base": "ex047-garment",
   "gallery": [
-   "/images/products/ex047-garment/ex047-garment-square.jpg"
+   "/images/products/ex047-garment/ex047-garment-square.jpg",
+   "/images/products/ex047-garment/ex047-garment-2.jpg"
   ]
  },
  "EX048": {
@@ -2363,19 +2364,22 @@
  "EX076": {
   "base": "ex076-garment",
   "gallery": [
-   "/images/products/ex076-garment/ex076-garment-square.jpg"
+   "/images/products/ex076-garment/ex076-garment-square.jpg",
+   "/images/products/ex076-garment/ex076-garment-2.jpg"
   ]
  },
  "EX077": {
   "base": "ex077-garment",
   "gallery": [
-   "/images/products/ex077-garment/ex077-garment-square.jpg"
+   "/images/products/ex077-garment/ex077-garment-square.jpg",
+   "/images/products/ex077-garment/ex077-garment-2.jpg"
   ]
  },
  "EX078": {
   "base": "ex078-garment",
   "gallery": [
-   "/images/products/ex078-garment/ex078-garment-square.jpg"
+   "/images/products/ex078-garment/ex078-garment-square.jpg",
+   "/images/products/ex078-garment/ex078-garment-2.jpg"
   ]
  },
  "EX079": {
@@ -2486,7 +2490,8 @@
  "EX093": {
   "base": "ex093-garment",
   "gallery": [
-   "/images/products/ex093-garment/ex093-garment-square.jpg"
+   "/images/products/ex093-garment/ex093-garment-square.jpg",
+   "/images/products/ex093-garment/ex093-garment-2.jpg"
   ]
  },
  "EX094": {
