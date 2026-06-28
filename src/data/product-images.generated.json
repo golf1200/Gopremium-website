@@ -1895,6 +1895,7 @@
   "base": "ex001-garment",
   "gallery": [
    "/images/products/ex001-garment/ex001-garment-square.jpg",
+   "/images/products/ex001-garment/ex001-garment-square.pre-restyle.jpg",
    "/images/products/ex001-garment/ex001-garment-02.jpg",
    "/images/products/ex001-garment/ex001-garment-03.jpg",
    "/images/products/ex001-garment/ex001-garment-04.jpg",
@@ -1904,19 +1905,23 @@
  "EX002": {
   "base": "ex002-garment",
   "gallery": [
-   "/images/products/ex002-garment/ex002-garment-square.jpg"
+   "/images/products/ex002-garment/ex002-garment-square.jpg",
+   "/images/products/ex002-garment/ex002-garment-3.jpg"
   ]
  },
  "EX003": {
   "base": "ex003-garment",
   "gallery": [
-   "/images/products/ex003-garment/ex003-garment-square.jpg"
+   "/images/products/ex003-garment/ex003-garment-square.jpg",
+   "/images/products/ex003-garment/ex003-garment-4.jpg",
+   "/images/products/ex003-garment/ex003-garment-5.jpg"
   ]
  },
  "EX004": {
   "base": "ex004-drinkware",
   "gallery": [
    "/images/products/ex004-drinkware/ex004-drinkware-square.jpg",
+   "/images/products/ex004-drinkware/ex004-drinkware-square.pre-restyle.jpg",
    "/images/products/ex004-drinkware/ex004-drinkware-02.jpg",
    "/images/products/ex004-drinkware/ex004-drinkware-03.jpg",
    "/images/products/ex004-drinkware/ex004-drinkware-04.jpg",
@@ -1947,6 +1952,7 @@
   "base": "ex008-hat",
   "gallery": [
    "/images/products/ex008-hat/ex008-hat-square.jpg",
+   "/images/products/ex008-hat/ex008-hat-square.pre-restyle.jpg",
    "/images/products/ex008-hat/ex008-hat-02.jpg"
   ]
  },
@@ -1961,6 +1967,7 @@
   "base": "ex010-umbrella",
   "gallery": [
    "/images/products/ex010-umbrella/ex010-umbrella-square.jpg",
+   "/images/products/ex010-umbrella/ex010-umbrella-square.pre-restyle.jpg",
    "/images/products/ex010-umbrella/ex010-umbrella-02.jpg",
    "/images/products/ex010-umbrella/ex010-umbrella-03.jpg"
   ]
@@ -1994,7 +2001,9 @@
  "EX015": {
   "base": "ex015-umbrella",
   "gallery": [
-   "/images/products/ex015-umbrella/ex015-umbrella-square.jpg"
+   "/images/products/ex015-umbrella/ex015-umbrella-square.jpg",
+   "/images/products/ex015-umbrella/ex015-umbrella-3.jpg",
+   "/images/products/ex015-umbrella/ex015-umbrella-4.jpg"
   ]
  },
  "EX016": {
@@ -2012,7 +2021,8 @@
  "EX018": {
   "base": "ex018-umbrella",
   "gallery": [
-   "/images/products/ex018-umbrella/ex018-umbrella-square.jpg"
+   "/images/products/ex018-umbrella/ex018-umbrella-square.jpg",
+   "/images/products/ex018-umbrella/ex018-umbrella-5.jpg"
   ]
  },
  "EX019": {
@@ -2026,6 +2036,7 @@
   "base": "ex020-powerbank",
   "gallery": [
    "/images/products/ex020-powerbank/ex020-powerbank-square.jpg",
+   "/images/products/ex020-powerbank/ex020-powerbank-square.pre-restyle.jpg",
    "/images/products/ex020-powerbank/ex020-powerbank-02.jpg",
    "/images/products/ex020-powerbank/ex020-powerbank-03.jpg"
   ]
@@ -2040,6 +2051,7 @@
   "base": "ex022-fan",
   "gallery": [
    "/images/products/ex022-fan/ex022-fan-square.jpg",
+   "/images/products/ex022-fan/ex022-fan-square.pre-restyle.jpg",
    "/images/products/ex022-fan/ex022-fan-02.jpg"
   ]
  },
@@ -2190,19 +2202,28 @@
  "EX044": {
   "base": "ex044-garment",
   "gallery": [
-   "/images/products/ex044-garment/ex044-garment-square.jpg"
+   "/images/products/ex044-garment/ex044-garment-square.jpg",
+   "/images/products/ex044-garment/ex044-garment-2.jpg",
+   "/images/products/ex044-garment/ex044-garment-3.jpg",
+   "/images/products/ex044-garment/ex044-garment-4.jpg"
   ]
  },
  "EX045": {
   "base": "ex045-garment",
   "gallery": [
-   "/images/products/ex045-garment/ex045-garment-square.jpg"
+   "/images/products/ex045-garment/ex045-garment-square.jpg",
+   "/images/products/ex045-garment/ex045-garment-2.jpg",
+   "/images/products/ex045-garment/ex045-garment-3.jpg",
+   "/images/products/ex045-garment/ex045-garment-4.jpg",
+   "/images/products/ex045-garment/ex045-garment-5.jpg"
   ]
  },
  "EX046": {
   "base": "ex046-garment",
   "gallery": [
-   "/images/products/ex046-garment/ex046-garment-square.jpg"
+   "/images/products/ex046-garment/ex046-garment-square.jpg",
+   "/images/products/ex046-garment/ex046-garment-2.jpg",
+   "/images/products/ex046-garment/ex046-garment-3.jpg"
   ]
  },
  "EX047": {
@@ -2221,7 +2242,8 @@
  "EX049": {
   "base": "ex049-garment",
   "gallery": [
-   "/images/products/ex049-garment/ex049-garment-square.jpg"
+   "/images/products/ex049-garment/ex049-garment-square.jpg",
+   "/images/products/ex049-garment/ex049-garment-5.jpg"
   ]
  },
  "EX050": {
@@ -2239,7 +2261,10 @@
  "EX052": {
   "base": "ex052-garment",
   "gallery": [
-   "/images/products/ex052-garment/ex052-garment-square.jpg"
+   "/images/products/ex052-garment/ex052-garment-square.jpg",
+   "/images/products/ex052-garment/ex052-garment-3.jpg",
+   "/images/products/ex052-garment/ex052-garment-4.jpg",
+   "/images/products/ex052-garment/ex052-garment-5.jpg"
   ]
  },
  "EX053": {
@@ -2253,13 +2278,19 @@
  "EX054": {
   "base": "ex054-hat",
   "gallery": [
-   "/images/products/ex054-hat/ex054-hat-square.jpg"
+   "/images/products/ex054-hat/ex054-hat-square.jpg",
+   "/images/products/ex054-hat/ex054-hat-2.jpg",
+   "/images/products/ex054-hat/ex054-hat-4.jpg",
+   "/images/products/ex054-hat/ex054-hat-5.jpg"
   ]
  },
  "EX055": {
   "base": "ex055-hat",
   "gallery": [
-   "/images/products/ex055-hat/ex055-hat-square.jpg"
+   "/images/products/ex055-hat/ex055-hat-square.jpg",
+   "/images/products/ex055-hat/ex055-hat-3.jpg",
+   "/images/products/ex055-hat/ex055-hat-4.jpg",
+   "/images/products/ex055-hat/ex055-hat-5.jpg"
   ]
  },
  "EX056": {
@@ -2350,7 +2381,11 @@
  "EX079": {
   "base": "ex079-garment",
   "gallery": [
-   "/images/products/ex079-garment/ex079-garment-square.jpg"
+   "/images/products/ex079-garment/ex079-garment-square.jpg",
+   "/images/products/ex079-garment/ex079-garment-2.jpg",
+   "/images/products/ex079-garment/ex079-garment-3.jpg",
+   "/images/products/ex079-garment/ex079-garment-4.jpg",
+   "/images/products/ex079-garment/ex079-garment-5.jpg"
   ]
  },
  "EX080": {
@@ -2362,7 +2397,10 @@
  "EX081": {
   "base": "ex081-garment",
   "gallery": [
-   "/images/products/ex081-garment/ex081-garment-square.jpg"
+   "/images/products/ex081-garment/ex081-garment-square.jpg",
+   "/images/products/ex081-garment/ex081-garment-3.jpg",
+   "/images/products/ex081-garment/ex081-garment-4.jpg",
+   "/images/products/ex081-garment/ex081-garment-5.jpg"
   ]
  },
  "EX082": {
@@ -2460,37 +2498,48 @@
  "EX101": {
   "base": "ex101-lifestyle",
   "gallery": [
-   "/images/products/ex101-lifestyle/ex101-lifestyle-square.jpg"
+   "/images/products/ex101-lifestyle/ex101-lifestyle-square.jpg",
+   "/images/products/ex101-lifestyle/ex101-lifestyle-2.jpg",
+   "/images/products/ex101-lifestyle/ex101-lifestyle-3.jpg"
   ]
  },
  "EX102": {
   "base": "ex102-lifestyle",
   "gallery": [
-   "/images/products/ex102-lifestyle/ex102-lifestyle-square.jpg"
+   "/images/products/ex102-lifestyle/ex102-lifestyle-square.jpg",
+   "/images/products/ex102-lifestyle/ex102-lifestyle-2.jpg",
+   "/images/products/ex102-lifestyle/ex102-lifestyle-3.jpg"
   ]
  },
  "EX103": {
   "base": "ex103-lifestyle",
   "gallery": [
-   "/images/products/ex103-lifestyle/ex103-lifestyle-square.jpg"
+   "/images/products/ex103-lifestyle/ex103-lifestyle-square.jpg",
+   "/images/products/ex103-lifestyle/ex103-lifestyle-2.jpg",
+   "/images/products/ex103-lifestyle/ex103-lifestyle-3.jpg"
   ]
  },
  "EX104": {
   "base": "ex104-lifestyle",
   "gallery": [
-   "/images/products/ex104-lifestyle/ex104-lifestyle-square.jpg"
+   "/images/products/ex104-lifestyle/ex104-lifestyle-square.jpg",
+   "/images/products/ex104-lifestyle/ex104-lifestyle-2.jpg",
+   "/images/products/ex104-lifestyle/ex104-lifestyle-3.jpg"
   ]
  },
  "EX105": {
   "base": "ex105-lifestyle",
   "gallery": [
-   "/images/products/ex105-lifestyle/ex105-lifestyle-square.jpg"
+   "/images/products/ex105-lifestyle/ex105-lifestyle-square.jpg",
+   "/images/products/ex105-lifestyle/ex105-lifestyle-2.jpg",
+   "/images/products/ex105-lifestyle/ex105-lifestyle-3.jpg"
   ]
  },
  "EX106": {
   "base": "ex106-lifestyle",
   "gallery": [
-   "/images/products/ex106-lifestyle/ex106-lifestyle-square.jpg"
+   "/images/products/ex106-lifestyle/ex106-lifestyle-square.jpg",
+   "/images/products/ex106-lifestyle/ex106-lifestyle-3.jpg"
   ]
  },
  "EX107": {
