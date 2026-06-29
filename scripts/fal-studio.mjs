@@ -72,7 +72,10 @@ const PROMPT =
   `apparent age, the body build, and the POSE so there is NO resemblance to the original ` +
   `person. Do NOT copy or lightly retouch the original face — regenerate it from scratch. ` +
   `The new model must be clearly recognisable as a different person side-by-side with the ` +
-  `input. Do NOT strip the garment off and show it empty. Show it worn naturally.\n` +
+  `input. Do NOT strip the garment off and show it empty. Show it worn naturally. ` +
+  `FRAMING: show the model's FULL HEAD and hair with comfortable empty headroom ABOVE the ` +
+  `head — NEVER crop or cut off the top of the head, forehead or hair at the top edge; the ` +
+  `whole head must sit inside the frame with space above it.\n` +
   `• CLIENT ARTWORK: if the product carries a CUSTOMER's printed logo/graphic/branded ` +
   `pattern (printed umbrella canopy, logo cushion), do NOT reproduce it. Replace with a ` +
   `SUBTLE NEUTRAL generic pattern (soft abstract/geometric, no real brand), keeping the ` +
