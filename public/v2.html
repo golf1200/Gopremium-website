@@ -396,6 +396,9 @@ a.occ:hover{transform:translateY(-4px);box-shadow:var(--sh-md)}
 .spec{border-top:1px solid var(--line);margin-top:22px;padding-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:14px 20px}
 .spec .k{font-family:var(--head);font-size:12px;color:var(--grey-400);text-transform:uppercase;letter-spacing:.05em}
 .spec .v{font-size:15px;color:var(--navy);font-weight:600;margin-top:2px}
+.colorlist{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px}
+.cchip{display:inline-flex;align-items:center;gap:5px;font-size:12.5px;background:var(--cloud-2,#f4f1ea);border-radius:20px;padding:3px 10px 3px 4px;color:var(--navy)}
+.cchip i{width:13px;height:13px;border-radius:50%;border:1px solid rgba(19,36,74,.18);flex:0 0 auto}
 .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:6px}
 .chips span{background:var(--cloud-2);color:var(--navy);font-family:var(--head);font-size:12.5px;font-weight:500;padding:5px 11px;border-radius:var(--pill)}
 .pd-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
@@ -1161,6 +1164,7 @@ function viewProduct(sku){
         <div class="spec">
           ${p.size?`<div><div class="k">ขนาด</div><div class="v">${esc(p.size)}</div></div>`:''}
           ${p.material?`<div><div class="k">วัสดุ</div><div class="v">${esc(p.material)}</div></div>`:''}
+          ${(p.colorNames&&p.colorNames.length)?`<div style="grid-column:1/-1"><div class="k">สีที่มี (${p.colorNames.length} สี)</div><div class="colorlist">${p.colorNames.map((c,i)=>`<span class="cchip"><i style="background:${(p.colorHexes&&p.colorHexes[i])||'#ccc'}"></i>${esc(c)}</span>`).join('')}</div></div>`:''}
           <div><div class="k">ขั้นต่ำ (MOQ)</div><div class="v">${p.moq} ชิ้น</div></div>
           ${p.tier?`<div><div class="k">ระดับงบ</div><div class="v">${esc(TL[p.tier]||p.tier)}</div></div>`:''}
           ${p.logoMax?`<div><div class="k">พื้นที่โลโก้สูงสุด</div><div class="v">${esc(p.logoMax)} ซม.</div></div>`:''}
@@ -1213,7 +1217,7 @@ function viewExpress(){
   const chips=cats.map(c=>`<a class="echip" href="#ecat-${c}">${esc(CL[c]||c)} (${groups[c].length})</a>`).join('');
   const sections=cats.map(c=>`<div class="ecat" id="ecat-${c}"><div class="ecat-head"><h3>${esc(CL[c]||c)}</h3><span class="ecat-n">${groups[c].length} รายการ · พร้อมผลิต</span></div><div class="pgrid">${groups[c].map(ecard).join('')}</div></div>`).join('');
   const body=list.length
-    ? `<div class="shead" style="margin-top:6px"><span class="eyebrow"><span class="dot"></span>พร้อมผลิตด่วน</span><h2 class="h2">สินค้าพร้อมส่ง · ภาพสินค้าจริงทุกชิ้น</h2><p class="lead">คัดเฉพาะรุ่นที่ผลิตและส่งมอบได้ทันงานด่วน ${list.length} รายการ — เลือกสีได้หลากหลาย พิมพ์โลโก้ และยืนยันคิวผลิตตามจำนวนของคุณ</p><div class="ecount">⚡ <b>${list.length}</b> รุ่นพร้อมผลิต · ตอบกลับใน 2 ชม.</div></div><div class="echips">${chips}</div>${sections}`
+    ? `<div class="shead" style="margin-top:6px"><span class="eyebrow"><span class="dot"></span>พร้อมผลิตด่วน</span><h2 class="h2">สินค้าพร้อมส่ง · พร้อมผลิตทันงานด่วน</h2><p class="lead">คัดเฉพาะรุ่นที่ผลิตและส่งมอบได้ทันงานด่วน ${list.length} รายการ — เลือกสีได้หลากหลาย พิมพ์โลโก้ และยืนยันคิวผลิตตามจำนวนของคุณ</p><div class="ecount">⚡ <b>${list.length}</b> รุ่นพร้อมผลิต · ตอบกลับใน 2 ชม.</div></div><div class="echips">${chips}</div>${sections}`
     : `<div class="card" style="text-align:center;padding:40px 24px;margin-top:8px"><h4 style="font-size:18px;color:var(--navy);margin-bottom:8px">บอกโจทย์งานด่วนของคุณ เราจัดให้</h4><p class="muted" style="max-width:48ch;margin:0 auto 18px">แจ้งจำนวน กำหนดส่ง และงบ/ชิ้น — ทีมเราจะเสนอรุ่นที่ผลิตได้ทันงานด่วนพร้อมช่วงราคาให้ภายใน 2 ชม.</p></div>`;
   return `<section class="sec" style="padding-top:34px"><div class="wrap">
     <div class="crumbs"><a href="/">หน้าแรก</a> / <b>สินค้าส่งด่วน</b></div>

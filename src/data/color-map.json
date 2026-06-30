@@ -12,5 +12,24 @@
   "ม่วงลาเวนเดอร์": "#b9a7e0", "ม่วงอ่อน": "#c9b6e6", "ม่วงเข้ม": "#5b2d8a", "ม่วง": "#7e3fb0", "ลาเวนเดอร์": "#b9a7e0",
   "น้ำตาลอ่อน": "#c9a36f", "น้ำตาลเข้ม": "#5e3f23", "น้ำตาล": "#7a4f2a", "แทน": "#c9a36f", "คาราเมล": "#a96b32", "แคมล": "#a96b32",
   "ทอง": "#caa14e",
-  "ลายพราง": "#5a5a3a", "ลายทหาร": "#5a5a3a", "คละสี": "#cccccc", "หลายสี": "#cccccc", "ใส": "#dfe7ec", "โปร่งใส": "#dfe7ec"
+  "ลายพราง": "#5a5a3a", "ลายทหาร": "#5a5a3a", "คละสี": "#cccccc", "หลายสี": "#cccccc", "ใส": "#dfe7ec", "โปร่งใส": "#dfe7ec",
+
+  "_en": "English colour names from supplier sheets (exact match, checked before substring).",
+  "white": "#ffffff", "black": "#16181d", "grey": "#8a8d92", "gray": "#8a8d92", "light grey": "#c2c3c5", "light gray": "#c2c3c5", "charcoal": "#3a3f47", "charcoal/grey": "#54585f", "charcoal/dark grey": "#3a3f47", "charcoal-blue": "#36404f", "navy/charcoal-blue": "#283447",
+  "navy": "#1f2d50", "blue": "#2f6bb0", "royal blue": "#1f49a6", "sky blue": "#7fbfe6", "light blue": "#acd4ec", "cyan/turquoise": "#1fb3c4", "turquoise/teal": "#2fa3a3",
+  "green": "#2f9e44", "dark green": "#1f5d3a", "light green": "#bfe6a0", "lime green": "#acd32f", "mint green": "#a7e0c8", "olive green": "#6b7a3a",
+  "yellow": "#f5c518", "orange": "#f4801f", "red": "#d12f2f", "maroon/dark red": "#6e2233",
+  "pink": "#f48fb1", "pink/magenta": "#e0408f", "purple": "#7e3fb0", "violet/dark purple": "#5b2d8a",
+  "cream": "#efe6cf", "off-white/sand": "#ece3cf", "khaki": "#b8a888", "khaki/taupe": "#b8a888", "khaki/brown": "#a78a5a", "light brown/tan": "#c9a36f",
+
+  "_gar": "Garment base+trim descriptions -> base colour.",
+  "navy+white": "#1f2d50", "yellow+black": "#f5c518", "green+white": "#2f9e44", "orange+white": "#f4801f", "red+white": "#d12f2f", "blue+white": "#2f6bb0",
+  "navy plain": "#1f2d50", "navy w/ red trim": "#1f2d50", "white plain": "#ffffff", "white w/ navy trim": "#ffffff", "black plain": "#16181d", "black w/ red trim": "#16181d", "black w/ blue collar trim": "#16181d", "black w/ light-blue trim": "#16181d", "blue w/ trim": "#2f6bb0",
+  "light grey w/ trim": "#c2c3c5", "light grey/blue collar": "#c2c3c5", "olive/army green w/ orange trim": "#6b7a3a", "charcoal w/ orange trim": "#3a3f47",
+  "cream body + navy sleeves": "#efe6cf", "cream body + green sleeves": "#efe6cf",
+
+  "_th2": "Thai material/finish + multi/pattern + shaped (kids) names.",
+  "ขุ่น": "#e3e7e9", "ทูโทน": "#9aa7b4", "ลายไม้": "#a9794a", "พาสเทลไล่เฉด": "#f4d4e0", "โอ๊ต": "#e3d6b8", "โอวัลติน": "#6b4a2f", "ธรรมชาติ/Natural": "#d8c7a0",
+  "หลากสี": "#cccccc", "Multi": "#cccccc",
+  "สุนัขจิ้งจอก/Fox": "#d98841", "แอปเปิ้ล/Apple": "#d12f2f", "หมี/Bear": "#a9794a", "เสือ/Tiger": "#e08a2f", "เพนกวิน/Penguin": "#2b2b2b", "ไก่/Chick": "#f5c518", "ดาว/Star": "#f5c518", "ก้อนเมฆ/Cloud": "#dfe7ec", "หัวใจ/Heart": "#e0408f", "การ์ตูน/Character": "#cccccc", "กำหนดเอง/Custom": "#cccccc"
 }
