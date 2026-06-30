@@ -24,14 +24,14 @@ const PICK = {
   EX096:'gemini-1.jpg', EX098:'gemini-1.jpg', EX100:'gemini-1.jpg', EX009:'gemini-1.jpg',
   EX062:'gemini-1.jpg', EX064:'gemini-1.jpg', EX044:'gemini-1.jpg', EX049:'gemini-1.jpg',
   EX027:'kontext-pro-1.jpg', EX028:'gemini-1.jpg', EX030:'kontext-pro-1.jpg', EX033:'kontext-pro-1.jpg',
-  EX037:'kontext-pro-1.jpg', EX038:'kontext-pro-1.jpg', EX039:'gemini-1.jpg', EX040:'kontext-pro-1.jpg',
-  EX041:'kontext-pro-1.jpg', EX082:'gemini-1.jpg', EX085:'kontext-pro-1.jpg', EX087:'kontext-pro-1.jpg',
+  EX037:'gemini-1.jpg', EX038:'kontext-pro-1.jpg', EX039:'gemini-1.jpg', EX040:'kontext-pro-1.jpg',
+  EX041:'kontext-pro-1.jpg', EX082:'gemini-1.jpg', EX085:'gemini-1.jpg', EX087:'kontext-pro-1.jpg',
   EX088:'kontext-pro-1.jpg',
   // D garments (Gemini)
   EX042:'gemini-1.jpg', EX048:'gemini-1.jpg', EX079:'gemini-1.jpg', EX080:'gemini-1.jpg',
   EX091:'gemini-1.jpg', EX092:'gemini-1.jpg',
   // D product-only (Flux kontext-pro)
-  EX002:'kontext-pro-1.jpg', EX003:'kontext-pro-1.jpg', EX005:'kontext-pro-1.jpg', EX006:'kontext-pro-1.jpg',
+  EX002:'kontext-pro-1.jpg', EX003:'kontext-pro-1.jpg', EX005:'gemini-1.jpg', EX006:'kontext-pro-1.jpg',
   EX011:'kontext-pro-1.jpg', EX012:'kontext-pro-1.jpg', EX013:'kontext-pro-1.jpg', EX014:'kontext-pro-1.jpg',
   EX015:'kontext-pro-1.jpg', EX017:'kontext-pro-1.jpg', EX018:'kontext-pro-1.jpg', EX021:'kontext-pro-1.jpg',
   EX023:'kontext-pro-1.jpg', EX024:'kontext-pro-1.jpg', EX026:'kontext-pro-1.jpg', EX029:'kontext-pro-1.jpg',

@@ -89,7 +89,13 @@ const PROMPT =
   `printed/embossed words on the product itself (incl. generic words like "thank you", ` +
   `"Size S/L", size codes, measurements), foreign/Chinese/Thai overlay text, price tags, ` +
   `stickers, mannequins, stands, stray hands, background clutter — keep ONLY the bare ` +
-  `product. Photorealistic, sharp focus, absolutely no text or watermark anywhere.`;
+  `product.\n` +
+  `• UPRIGHT ORIENTATION: show the product STANDING in its natural upright display ` +
+  `orientation. Bottles, tumblers, flasks, cups, mugs and jars must stand VERTICAL on ` +
+  `their base — NEVER lying on their side, tipped over, fallen, floating or horizontal ` +
+  `(unless the item genuinely has no upright form). If the source shows it lying down, ` +
+  `re-orient it to stand upright like a normal e-commerce product hero.\n` +
+  `Photorealistic, sharp focus, absolutely no text or watermark anywhere.`;
 
 const OUT = join(REPO, 'scripts', 'image-pipeline', 'staged', 'studio-ab');
 const IMGMAP = JSON.parse(readFileSync(join(REPO, 'src', 'data', 'product-images.generated.json'), 'utf8'));
