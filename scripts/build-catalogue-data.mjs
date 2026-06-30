@@ -25,7 +25,7 @@ const swatchesOf = (colors) => {            // up to 8 deduped swatch hexes
 // /images/* is served immutable for 1 year, so when images are regenerated in
 // place we bump this to force browsers/CDN to fetch the new bytes. Bump on every
 // in-place image refresh. (v2 = 2026-06-08 studio covers + cleaned galleries.)
-const IMG_VER = '13'; // v13 = 2026-06-30 express upright-orientation fix — EX005/037/082/085 re-gen standing vertical (were lying/tipped)
+const IMG_VER = '14'; // v14 = 2026-06-30 express — removed "YOUR LOGO" placeholder sticker from 16 SKUs (bare product), re-gen via Gemini
 const bust = (u) => (u ? u + '?v=' + IMG_VER : u);
 
 // Public fields only (never cost / supplier / 1688)
