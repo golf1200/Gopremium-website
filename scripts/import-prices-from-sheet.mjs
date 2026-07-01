@@ -1,7 +1,8 @@
-// Import prices the user typed into the LIVE Google Sheet "Gopremium Dev Master",
-// tab "ราคาที่ต้องเติม" (column E "ราคา/ชิ้น ฿"), into the real data files.
-// This replaces the older xlsx-based import-prices-from-master.mjs — the sheet is
-// now the single source the user edits.
+// Import sell prices from the LIVE Google Sheet "Gopremium Dev Master",
+// tab "🗂️ PRODUCT MASTER (รวม)" column "ราคาขาย/ชิ้น(฿)" — the single SSOT the
+// team edits (in the sheet, or via the internal platform's Product Master editor).
+// This replaces the older xlsx-based import-prices-from-master.mjs and the earlier
+// throwaway "ราคาที่ต้องเติม" tab (removed 2026-07-01 during the sheet cleanup).
 //
 //   src/data/products-raw.json   → price_300_thb + budget_tier (what the live site reads)
 //   scripts/catalog-master.json  → price300                    (master record)
@@ -15,7 +16,8 @@ import { fileURLToPath } from 'node:url';
 
 const dir = path.dirname(fileURLToPath(import.meta.url));
 const cfg = JSON.parse(readFileSync(path.join(dir, '.sheet-config.json'), 'utf8'));
-const SHEET = 'ราคาที่ต้องเติม';
+const SHEET = '🗂️ PRODUCT MASTER (รวม)';
+const PRICE_COL = 'ราคาขาย/ชิ้น(฿)';
 // ช่วงงบเดียวกับ priceTier() ใน public/v2.html
 const tierOf = (n) => (n <= 60 ? 'value' : n <= 150 ? 'smart' : n <= 300 ? 'premium' : 'executive');
 
@@ -28,12 +30,16 @@ async function readSheet(sheet) {
 }
 
 const rows = await readSheet(SHEET);
-// SKU in col A (0), price in col E (4); skip title/category/blank rows
+const head = (rows[0] || []).map((x) => String(x).trim());
+const iSku = head.indexOf('SKU');
+const iPrice = head.indexOf(PRICE_COL);
+if (iSku < 0 || iPrice < 0) { console.error(`ไม่พบคอลัมน์ SKU/${PRICE_COL} ในชีต "${SHEET}"`); process.exit(1); }
+// build SKU → sell price (skip blank prices)
 const entered = {};
-for (const r of rows) {
-  const sku = String(r[0] || '').trim();
+for (const r of rows.slice(1)) {
+  const sku = String(r[iSku] || '').trim();
   if (!/^[A-Z]{2,3}\d{3}$/.test(sku)) continue;
-  const v = r[4];
+  const v = r[iPrice];
   const n = typeof v === 'number' ? v : parseFloat(String(v ?? '').replace(/[^\d.]/g, ''));
   if (Number.isFinite(n) && n > 0) entered[sku] = Math.round(n);
 }
