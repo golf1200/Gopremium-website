@@ -155,6 +155,24 @@ export default function ProductDetail() {
             </p>
           )}
 
+          {product.colors && product.colors.length > 0 && (
+            <div style={{ marginBottom: 20 }}>
+              <p style={{ fontSize: 13, color: 'var(--gp-grey)', fontWeight: 500, marginBottom: 8 }}>
+                สีที่มี <span style={{ color: 'var(--gp-navy)', fontWeight: 600 }}>({product.colors.length} สี)</span>
+              </p>
+              <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+                {product.colors.map((c, i) => (
+                  <span key={i} title={c.name}
+                    style={{
+                      width: 28, height: 28, borderRadius: '50%', background: c.hex,
+                      border: '1px solid var(--gp-grey-200)', boxShadow: 'inset 0 0 0 2px #fff',
+                      display: 'inline-block', cursor: 'default',
+                    }} />
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* Price block */}
           <div style={{ background: 'var(--gp-cloud)', borderRadius: 14, padding: '18px 20px', marginBottom: 20 }}>
             {priceDisplay ? (

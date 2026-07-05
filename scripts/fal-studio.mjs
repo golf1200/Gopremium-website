@@ -101,7 +101,20 @@ const OUT = join(REPO, 'scripts', 'image-pipeline', 'staged', 'studio-ab');
 const IMGMAP = JSON.parse(readFileSync(join(REPO, 'src', 'data', 'product-images.generated.json'), 'utf8'));
 const FROM_CURATE = has('--from-curate');   // source = curated Drive hero in staged-curate/<SKU>/
 const CURATE_DIR = join(REPO, 'express-realphoto-2026', 'staged-curate');
+const FROM_RAW = has('--from-raw');          // source = scraped raw in scripts/raw-1688/<SKU>/
+const RAW_DIR = join(REPO, 'scripts', 'raw-1688');
+// --pick "BG017=BG017-03.jpg,DW012=DW012-05.jpg" : choose the exact raw file per SKU
+const PICKMAP = Object.fromEntries((arg('--pick', '') || '').split(',').map(s => s.trim()).filter(Boolean)
+  .map(s => s.includes('=') ? s.split('=').map(x => x.trim()) : [SKUS[0], s]));
 const realSquare = (sku) => {
+  if (FROM_RAW) {
+    const d = join(RAW_DIR, sku);
+    if (!existsSync(d)) return null;
+    const files = readdirSync(d).filter(x => /\.(jpg|jpeg|png|webp)$/i.test(x)).sort();
+    if (!files.length) return null;
+    const f = (PICKMAP[sku] && files.includes(PICKMAP[sku])) ? PICKMAP[sku] : files[0]; // default: first gallery image (usually the clean product hero)
+    return join(d, f);
+  }
   if (FROM_CURATE) {
     const d = join(CURATE_DIR, sku);
     if (!existsSync(d)) return null;

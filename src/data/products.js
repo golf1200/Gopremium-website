@@ -7,6 +7,10 @@
 import rawProducts from './products-raw.json';
 import { variantSet, seoImage } from '../utils/images';
 import generatedImages from './product-images.generated.json';
+import generatedColors from './product-colors.generated.json';
+
+// bump when product photos are replaced (files are served immutable, max-age=1yr)
+const IMG_VER = '20260705';
 
 // ---------------------------------------------------------------------------
 // Occasion taxonomy (10 tags)
@@ -214,11 +218,12 @@ function buildCatalog(raw) {
       let images;
       if (gen) {
         const dir = `/images/products/${gen.base}`;
+        const v = (u) => `${u}?v=${IMG_VER}`; // cache-bust restyled photos (files served immutable 1yr)
         images = {
-          square:    `${dir}/${gen.base}-square.jpg`,
-          landscape: `${dir}/${gen.base}-landscape.jpg`,
-          hero:      `${dir}/${gen.base}-hero.jpg`,
-          gallery:   gen.gallery,
+          square:    v(`${dir}/${gen.base}-square.jpg`),
+          landscape: v(`${dir}/${gen.base}-landscape.jpg`),
+          hero:      v(`${dir}/${gen.base}-hero.jpg`),
+          gallery:   (gen.gallery || []).map(v),
         };
       } else {
         images = variantSet(IMAGE_MAP[p.sku] || null); // null -> placeholder
@@ -227,6 +232,8 @@ function buildCatalog(raw) {
         ...p,
         images,                  // { square, landscape, hero, gallery?, original? } | null
         image: seoImage(images), // real-file URL for SEO / JSON-LD (back-compat)
+        colors: generatedColors[p.sku] || null, // [{hex,name}] swatch chips, derived from gallery
+
         occasions: p.occasions && p.occasions.length > 0
           ? p.occasions   // honour pre-tagged data if present
           : autoOccasions(p),

@@ -25,5 +25,15 @@ express-assets/
 # sheet-sync secret (local only)
 scripts/.sheet-config.json
 
+# social auto-publish secret (local only — Facebook/LINE tokens)
+scripts/social/.social-config.json
+
 # pricing scratch
 _pricing/
+
+# 1688 raw scrape + restyle work files (large / local only)
+scripts/raw-1688/
+scripts/_picks/
+scripts/_*.json
+scripts/_*.txt
+scripts/__pycache__/

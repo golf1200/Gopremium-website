@@ -1,0 +1,1538 @@
+{
+  "BG017": {
+    "slug": "bg017-urban",
+    "model": "gemini",
+    "note": "กระเป๋า Urban — hero เหลือง + 4 สี (ดำ/ชมพู/น้ำเงิน/ครีม)",
+    "picks": {
+      "square": "BG017-05.jpg",
+      "02": "BG017-06.jpg",
+      "03": "BG017-07.jpg",
+      "04": "BG017-09.jpg",
+      "05": "BG017-10.jpg"
+    }
+  },
+  "BG018": {
+    "slug": "bg018-drawstring",
+    "model": "gemini",
+    "note": "กระเป๋าผ้าหูรูด รุ่น Drawstring",
+    "picks": {
+      "square": "BG018-03.jpg",
+      "02": "BG018-04.jpg",
+      "03": "BG018-08.jpg",
+      "04": "BG018-07.jpg",
+      "05": "BG018-10.jpg"
+    }
+  },
+  "BG019": {
+    "slug": "bg019-felt-bag",
+    "model": "gemini",
+    "note": "กระเป๋าผ้าสักหลาด รุ่น Felt Bag",
+    "picks": {
+      "square": "BG019-10.jpg",
+      "02": "BG019-04.jpg",
+      "03": "BG019-05.jpg",
+      "04": "BG019-09.jpg",
+      "05": "BG019-07.jpg"
+    }
+  },
+  "BG020": {
+    "slug": "bg020-cloud",
+    "model": "gemini",
+    "note": "กระเป๋า Puffy รุ่น Cloud",
+    "picks": {
+      "square": "BG020-07.jpg",
+      "02": "BG020-08.jpg",
+      "03": "BG020-06.jpg",
+      "04": "BG020-09.jpg",
+      "05": "BG020-02.jpg"
+    }
+  },
+  "BG021": {
+    "slug": "bg021-vera",
+    "model": "gemini",
+    "note": "กระเป๋า Puffy รุ่น Vera",
+    "picks": {
+      "square": "BG021-07.jpg",
+      "02": "BG021-08.jpg",
+      "03": "BG021-09.jpg",
+      "04": "BG021-10.jpg",
+      "05": "BG021-05.jpg"
+    }
+  },
+  "BG022": {
+    "slug": "bg022-ivy",
+    "model": "gemini",
+    "note": "กระเป๋า รุ่น Ivy",
+    "picks": {
+      "square": "BG022-07.jpg",
+      "02": "BG022-05.jpg",
+      "03": "BG022-08.jpg",
+      "04": "BG022-06.jpg",
+      "05": "BG022-09.jpg"
+    }
+  },
+  "BG024": {
+    "slug": "bg024-airzip",
+    "model": "gemini",
+    "note": "กระเป๋า รุ่น Airzip",
+    "picks": {
+      "square": "BG024-05.jpg",
+      "02": "BG024-06.jpg",
+      "03": "BG024-08.jpg",
+      "04": "BG024-09.jpg",
+      "05": "BG024-07.jpg"
+    }
+  },
+  "BG025": {
+    "slug": "bg025-power",
+    "model": "gemini",
+    "note": "กระเป๋ารุ่น Power",
+    "picks": {
+      "square": "BG025-07.jpg",
+      "02": "BG025-06.jpg",
+      "03": "BG025-08.jpg",
+      "04": "BG025-10.jpg",
+      "05": "BG025-09.jpg"
+    }
+  },
+  "BG026": {
+    "slug": "bg026",
+    "model": "gemini",
+    "note": "กระเป๋าผ้ากระสอบ Light",
+    "picks": {
+      "square": "BG026-02.jpg",
+      "02": "BG026-05.jpg",
+      "03": "BG026-03.jpg",
+      "04": "BG026-04.jpg"
+    }
+  },
+  "BG028": {
+    "slug": "bg028-axis",
+    "model": "gemini",
+    "note": "กระเป๋า รุ่น Axis",
+    "picks": {
+      "square": "BG028-05.jpg",
+      "02": "BG028-06.jpg",
+      "03": "BG028-01.jpg"
+    }
+  },
+  "BG029": {
+    "slug": "bg029-vector",
+    "model": "gemini",
+    "note": "กระเป๋า รุ่น Vector",
+    "picks": {
+      "square": "BG029-05.jpg",
+      "02": "BG029-06.jpg",
+      "03": "BG029-01.jpg"
+    }
+  },
+  "BG030": {
+    "slug": "bg030-neo",
+    "model": "gemini",
+    "note": "กระเป๋า รุ่น Neo",
+    "picks": {
+      "square": "BG030-05.jpg",
+      "02": "BG030-06.jpg",
+      "03": "BG030-02.jpg",
+      "04": "BG030-03.jpg",
+      "05": "BG030-01.jpg"
+    }
+  },
+  "BG031": {
+    "slug": "bg031-nilo",
+    "model": "gemini",
+    "note": "กระเป๋าผ้า รุ่น Nilo",
+    "picks": {
+      "square": "BG031-01.jpg",
+      "02": "BG031-02.jpg",
+      "03": "BG031-03.jpg"
+    }
+  },
+  "BG033": {
+    "slug": "bg033-zuno",
+    "model": "gemini",
+    "note": "กระเป๋าเครื่องสำอาง รุ่น Zuno",
+    "picks": {
+      "square": "BG033-05.jpg",
+      "02": "BG033-06.jpg",
+      "03": "BG033-07.jpg",
+      "04": "BG033-04.jpg",
+      "05": "BG033-02.jpg"
+    }
+  },
+  "BG034": {
+    "slug": "bg034-luma",
+    "model": "gemini",
+    "note": "กระเป๋าพับได้ รุ่น Luma",
+    "picks": {
+      "square": "BG034-07.jpg",
+      "02": "BG034-08.jpg",
+      "03": "BG034-09.jpg",
+      "04": "BG034-10.jpg",
+      "05": "BG034-04.jpg"
+    }
+  },
+  "BG035": {
+    "slug": "bg035-horey",
+    "model": "gemini",
+    "note": "กระเป๋าพับได้ รุ่น Horey",
+    "picks": {
+      "square": "BG035-06.jpg",
+      "02": "BG035-05.jpg",
+      "03": "BG035-07.jpg",
+      "04": "BG035-02.jpg",
+      "05": "BG035-03.jpg"
+    }
+  },
+  "BG036": {
+    "slug": "bg036-longee",
+    "model": "gemini",
+    "note": "กระเป๋าพับได้ รุ่น Longee",
+    "picks": {
+      "square": "BG036-05.jpg",
+      "02": "BG036-06.jpg",
+      "03": "BG036-07.jpg",
+      "04": "BG036-08.jpg",
+      "05": "BG036-09.jpg"
+    }
+  },
+  "BG037": {
+    "slug": "bg037-shu",
+    "model": "gemini",
+    "note": "กระเป๋า รุ่น Shu",
+    "picks": {
+      "square": "BG037-05.jpg",
+      "02": "BG037-08.jpg",
+      "03": "BG037-09.jpg",
+      "04": "BG037-06.jpg",
+      "05": "BG037-10.jpg"
+    }
+  },
+  "BG038": {
+    "slug": "bg038-honey",
+    "model": "gemini",
+    "note": "กระเป๋าเครื่องสำอาง รุ่น Honey",
+    "picks": {
+      "square": "BG038-05.jpg",
+      "02": "BG038-08.jpg",
+      "03": "BG038-09.jpg",
+      "04": "BG038-10.jpg",
+      "05": "BG038-06.jpg"
+    }
+  },
+  "BG039": {
+    "slug": "bg039",
+    "model": "gemini",
+    "note": "กระเป๋าเครื่องสำอาง รุ่น Charm",
+    "picks": {
+      "square": "BG039-06.jpg",
+      "02": "BG039-08.jpg",
+      "03": "BG039-10.jpg",
+      "04": "BG039-07.jpg",
+      "05": "BG039-09.jpg"
+    }
+  },
+  "BG040": {
+    "slug": "bg040-glow",
+    "model": "gemini",
+    "note": "กระเป๋าเครื่องสำอาง รุ่น Glow",
+    "picks": {
+      "square": "BG040-05.jpg",
+      "02": "BG040-07.jpg",
+      "03": "BG040-08.jpg",
+      "04": "BG040-09.jpg",
+      "05": "BG040-10.jpg"
+    }
+  },
+  "BG041": {
+    "slug": "bg041-flora",
+    "model": "gemini",
+    "note": "กระเป๋าผ้า รุ่น Flora",
+    "picks": {
+      "square": "BG041-05.jpg",
+      "02": "BG041-07.jpg",
+      "03": "BG041-08.jpg",
+      "04": "BG041-09.jpg",
+      "05": "BG041-10.jpg"
+    }
+  },
+  "BG042": {
+    "slug": "bg042-nilo",
+    "model": "gemini",
+    "note": "กระเป๋า รุ่น Nilo",
+    "picks": {
+      "square": "BG042-05.jpg",
+      "02": "BG042-08.jpg",
+      "03": "BG042-07.jpg",
+      "04": "BG042-10.jpg",
+      "05": "BG042-04.jpg"
+    }
+  },
+  "BG044": {
+    "slug": "bg044-fresh-keep",
+    "model": "gemini",
+    "note": "ถุงเก็บความเย็น รุ่น Fresh Keep",
+    "picks": {
+      "square": "BG044-05.jpg",
+      "02": "BG044-07.jpg",
+      "03": "BG044-08.jpg",
+      "04": "BG044-09.jpg",
+      "05": "BG044-10.jpg"
+    }
+  },
+  "BG045": {
+    "slug": "bg045-chill-keep",
+    "model": "gemini",
+    "note": "กระเป๋าเก็บความเย็น รุ่น Chill Keep",
+    "picks": {
+      "square": "BG045-02.jpg",
+      "02": "BG045-01.jpg",
+      "03": "BG045-05.jpg"
+    }
+  },
+  "BG047": {
+    "slug": "bg047",
+    "model": "gemini",
+    "note": "กระเป๋าเครื่องสำอาง รุุ่่น ฺ Bunny",
+    "picks": {
+      "square": "BG047-05.jpg",
+      "02": "BG047-04.jpg",
+      "03": "BG047-10.jpg",
+      "04": "BG047-08.jpg",
+      "05": "BG047-02.jpg"
+    }
+  },
+  "BG048": {
+    "slug": "bg048",
+    "model": "gemini",
+    "note": "กระเป๋าเครื่องสำอาง รุ่น Berry",
+    "picks": {
+      "square": "BG048-05.jpg",
+      "02": "BG048-04.jpg",
+      "03": "BG048-10.jpg",
+      "04": "BG048-08.jpg",
+      "05": "BG048-02.jpg"
+    }
+  },
+  "BG050": {
+    "slug": "bg050-loom",
+    "model": "gemini",
+    "note": "กระเป๋าผ้า รุ่น Loom",
+    "picks": {
+      "square": "BG050-05.jpg",
+      "02": "BG050-02.jpg",
+      "03": "BG050-06.jpg",
+      "04": "BG050-07.jpg"
+    }
+  },
+  "BG051": {
+    "slug": "bg051-petal",
+    "model": "gemini",
+    "note": "กระเป๋าผ้า รุ่น Petal",
+    "picks": {
+      "square": "BG051-03.jpg",
+      "02": "BG051-04.jpg",
+      "03": "BG051-01.jpg",
+      "04": "BG051-02.jpg"
+    }
+  },
+  "BG052": {
+    "slug": "bg052-meadow",
+    "model": "gemini",
+    "note": "กระเป๋าผ้า รุ่น Meadow",
+    "picks": {
+      "square": "BG052-05.jpg",
+      "02": "BG052-08.jpg",
+      "03": "BG052-09.jpg",
+      "04": "BG052-10.jpg",
+      "05": "BG052-07.jpg"
+    }
+  },
+  "BK002": {
+    "slug": "bk002-munch",
+    "model": "gemini",
+    "note": "แก้วหัดดื่มเด็ก รุ่น Munch",
+    "picks": {
+      "square": "BK002-05.jpg",
+      "02": "BK002-06.jpg",
+      "03": "BK002-07.jpg",
+      "04": "BK002-09.jpg"
+    }
+  },
+  "SC007": {
+    "slug": "sc007-fresher",
+    "model": "gemini",
+    "note": "แผ่นน้ำหอมปรับอาากาศ รุ่น Fresher",
+    "picks": {
+      "square": "SC007-05.jpg",
+      "02": "SC007-04.jpg"
+    }
+  },
+  "ST011": {
+    "slug": "st011",
+    "model": "gemini",
+    "note": "สมุดบันทึก รุ่น Moon",
+    "picks": {
+      "square": "ST011-06.jpg",
+      "02": "ST011-05.jpg"
+    }
+  },
+  "ST012": {
+    "slug": "st012",
+    "model": "gemini",
+    "note": "สมุด รุ่น Bloom",
+    "picks": {
+      "square": "ST012-07.jpg",
+      "02": "ST012-09.jpg",
+      "03": "ST012-10.jpg",
+      "04": "ST012-05.jpg"
+    }
+  },
+  "ST013": {
+    "slug": "st013-tone",
+    "model": "gemini",
+    "note": "สมุด รุ่น Tone",
+    "picks": {
+      "square": "ST013-06.jpg",
+      "02": "ST013-09.jpg",
+      "03": "ST013-10.jpg",
+      "04": "ST013-07.jpg",
+      "05": "ST013-08.jpg"
+    }
+  },
+  "ST014": {
+    "slug": "st014-scope",
+    "model": "gemini",
+    "note": "ปากกา รุ่น Scope",
+    "picks": {
+      "square": "ST014-07.jpg",
+      "02": "ST014-09.jpg",
+      "03": "ST014-08.jpg",
+      "04": "ST014-06.jpg",
+      "05": "ST014-10.jpg"
+    }
+  },
+  "ST015": {
+    "slug": "st015-writey",
+    "model": "gemini",
+    "note": "ปากกา รุ่น Writey",
+    "picks": {
+      "square": "ST015-06.jpg",
+      "02": "ST015-10.jpg",
+      "03": "ST015-08.jpg",
+      "04": "ST015-07.jpg",
+      "05": "ST015-09.jpg"
+    }
+  },
+  "ST016": {
+    "slug": "st016-touch",
+    "model": "gemini",
+    "note": "ปากกา รุ่น Touch",
+    "picks": {
+      "square": "ST016-09.jpg",
+      "02": "ST016-08.jpg",
+      "03": "ST016-10.jpg",
+      "04": "ST016-06.jpg",
+      "05": "ST016-07.jpg"
+    }
+  },
+  "ST017": {
+    "slug": "st017-liner",
+    "model": "gemini",
+    "note": "ปากกา รุ่น liner",
+    "picks": {
+      "square": "ST017-06.jpg",
+      "02": "ST017-08.jpg",
+      "03": "ST017-09.jpg",
+      "04": "ST017-07.jpg",
+      "05": "ST017-10.jpg"
+    }
+  },
+  "ST018": {
+    "slug": "st018-bamboo",
+    "model": "gemini",
+    "note": "ปากกา รุ่น Bamboo",
+    "picks": {
+      "square": "ST018-06.jpg",
+      "02": "ST018-01.jpg",
+      "03": "ST018-03.jpg",
+      "04": "ST018-04.jpg"
+    }
+  },
+  "ST019": {
+    "slug": "st019",
+    "model": "gemini",
+    "note": "แฟ้มหนัง รุ่น Soft",
+    "picks": {
+      "square": "ST019-05.jpg",
+      "02": "ST019-06.jpg",
+      "03": "ST019-08.jpg",
+      "04": "ST019-09.jpg",
+      "05": "ST019-10.jpg"
+    }
+  },
+  "ST020": {
+    "slug": "st020",
+    "model": "gemini",
+    "note": "แฟ้มหนัง รุ่น Skin",
+    "picks": {
+      "square": "ST020-05.jpg",
+      "02": "ST020-06.jpg",
+      "03": "ST020-08.jpg",
+      "04": "ST020-09.jpg",
+      "05": "ST020-10.jpg"
+    }
+  },
+  "ST021": {
+    "slug": "st021",
+    "model": "gemini",
+    "note": "แฟ้ม รุ่น Felt",
+    "picks": {
+      "square": "ST021-05.jpg",
+      "02": "ST021-03.jpg",
+      "03": "ST021-02.jpg",
+      "04": "ST021-04.jpg"
+    }
+  },
+  "ST022": {
+    "slug": "st022",
+    "model": "gemini",
+    "note": "แฟ้ม รุ่น Zippy",
+    "picks": {
+      "square": "ST022-05.jpg",
+      "02": "ST022-01.jpg",
+      "03": "ST022-03.jpg"
+    }
+  },
+  "ST023": {
+    "slug": "st023",
+    "model": "gemini",
+    "note": "แฟ้ม รุ่น Pock",
+    "picks": {
+      "square": "ST023-05.jpg",
+      "02": "ST023-08.jpg",
+      "03": "ST023-07.jpg",
+      "04": "ST023-06.jpg",
+      "05": "ST023-10.jpg"
+    }
+  },
+  "SV001": {
+    "slug": "sv001",
+    "model": "gemini",
+    "note": "Magnetic Snaps",
+    "picks": {
+      "square": "SV001-04.jpg"
+    }
+  },
+  "SV002": {
+    "slug": "sv002-create",
+    "model": "gemini",
+    "note": "Figure รุ่น Create",
+    "picks": {
+      "square": "SV002-05.jpg"
+    }
+  },
+  "SV003": {
+    "slug": "sv003-craft",
+    "model": "gemini",
+    "note": "Figure รุ่น Craft",
+    "picks": {
+      "square": "SV003-02.jpg",
+      "02": "SV003-03.jpg",
+      "03": "SV003-04.jpg",
+      "04": "SV003-05.jpg"
+    }
+  },
+  "SV004": {
+    "slug": "sv004",
+    "model": "gemini",
+    "note": "ตุ๊กตา รุ่น Tiny",
+    "picks": {
+      "square": "SV004-02.jpg",
+      "02": "SV004-03.jpg",
+      "03": "SV004-04.jpg",
+      "04": "SV004-05.jpg"
+    }
+  },
+  "SV005": {
+    "slug": "sv005-teddy",
+    "model": "gemini",
+    "note": "ตุ๊กตาหมี รุ่น Teddy",
+    "picks": {
+      "square": "SV005-05.jpg",
+      "02": "SV005-06.jpg",
+      "03": "SV005-07.jpg",
+      "04": "SV005-08.jpg"
+    }
+  },
+  "SV006": {
+    "slug": "sv006-hoppy",
+    "model": "gemini",
+    "note": "ตุ๊กตาหมี รุ่น  Hoppy",
+    "picks": {
+      "square": "SV006-05.jpg",
+      "02": "SV006-08.jpg",
+      "03": "SV006-09.jpg",
+      "04": "SV006-10.jpg"
+    }
+  },
+  "SV007": {
+    "slug": "sv007-twin-glow",
+    "model": "gemini",
+    "note": "พวงกุญแจอะคริลิค รุ่น Twin Glow",
+    "picks": {
+      "square": "SV007-05.jpg",
+      "02": "SV007-01.jpg",
+      "03": "SV007-02.jpg"
+    }
+  },
+  "UM008": {
+    "slug": "um008-hugie",
+    "model": "gemini",
+    "note": "ร่มยาว AUTOMATIC รุ่น Hugie",
+    "picks": {
+      "square": "UM008-07.jpg",
+      "02": "UM008-08.jpg",
+      "03": "UM008-09.jpg",
+      "04": "UM008-06.jpg",
+      "05": "UM008-05.jpg"
+    }
+  },
+  "UM009": {
+    "slug": "um009",
+    "model": "gemini",
+    "note": "ร่ม Automatic รุ่น Go",
+    "picks": {
+      "square": "UM009-07.jpg",
+      "02": "UM009-08.jpg",
+      "03": "UM009-09.jpg",
+      "04": "UM009-06.jpg",
+      "05": "UM009-05.jpg"
+    }
+  },
+  "UM010": {
+    "slug": "um010-baggy",
+    "model": "gemini",
+    "note": "ร่ม Automatic รุ่น Baggy",
+    "picks": {
+      "square": "UM010-03.jpg",
+      "02": "UM010-06.jpg",
+      "03": "UM010-07.jpg",
+      "04": "UM010-09.jpg",
+      "05": "UM010-05.jpg"
+    }
+  },
+  "UM011": {
+    "slug": "um011-capsule",
+    "model": "gemini",
+    "note": "ร่ม Automatic รุ่น Capsule",
+    "picks": {
+      "square": "UM011-09.jpg",
+      "02": "UM011-07.jpg",
+      "03": "UM011-08.jpg",
+      "04": "UM011-05.jpg",
+      "05": "UM011-10.jpg"
+    }
+  },
+  "BK003": {
+    "slug": "bk003-bibsy",
+    "model": "gemini",
+    "note": "ผ้ากันเปื้อนเด็ก รุ่น Bibsy",
+    "picks": {
+      "square": "BK003-09.jpg",
+      "02": "BK003-07.jpg",
+      "03": "BK003-08.jpg",
+      "04": "BK003-10.jpg",
+      "05": "BK003-06.jpg"
+    }
+  },
+  "BK004": {
+    "slug": "bk004-yum",
+    "model": "gemini",
+    "note": "จานซิลิโคนเด็ก รุ่น Yum",
+    "picks": {
+      "square": "BK004-05.jpg",
+      "02": "BK004-06.jpg",
+      "03": "BK004-09.jpg",
+      "04": "BK004-08.jpg",
+      "05": "BK004-10.jpg"
+    }
+  },
+  "BK005": {
+    "slug": "bk005-go",
+    "model": "gemini",
+    "note": "กระบอกน้ำสแตนเลสเด็ก รุ่น Go",
+    "picks": {
+      "square": "BK005-05.jpg",
+      "02": "BK005-06.jpg",
+      "03": "BK005-07.jpg",
+      "04": "BK005-08.jpg",
+      "05": "BK005-09.jpg"
+    }
+  },
+  "DW012": {
+    "slug": "dw012-degree",
+    "model": "gemini",
+    "note": "กระบอกน้ำสแตนเลส รุ่น Degree",
+    "picks": {
+      "square": "DW012-05.jpg",
+      "02": "DW012-08.jpg",
+      "03": "DW012-07.jpg",
+      "04": "DW012-09.jpg",
+      "05": "DW012-10.jpg"
+    }
+  },
+  "DW013": {
+    "slug": "dw013-cord",
+    "model": "gemini",
+    "note": "กระบอกน้ำสแตน รุ่น Cord",
+    "picks": {
+      "square": "DW013-05.jpg",
+      "02": "DW013-06.jpg",
+      "03": "DW013-07.jpg",
+      "04": "DW013-08.jpg",
+      "05": "DW013-09.jpg"
+    }
+  },
+  "DW014": {
+    "slug": "dw014-snag",
+    "model": "gemini",
+    "note": "กระบอกน้ำพลาสติก รุ่น Snag",
+    "picks": {
+      "square": "DW014-05.jpg",
+      "02": "DW014-08.jpg",
+      "03": "DW014-09.jpg",
+      "04": "DW014-03.jpg"
+    }
+  },
+  "DW015": {
+    "slug": "dw015-ring",
+    "model": "gemini",
+    "note": "กระบอกน้ำสแตนเลส รุ่น Ring",
+    "picks": {
+      "square": "DW015-05.jpg",
+      "02": "DW015-06.jpg",
+      "03": "DW015-07.jpg",
+      "04": "DW015-08.jpg",
+      "05": "DW015-02.jpg"
+    }
+  },
+  "DW016": {
+    "slug": "dw016-jewel",
+    "model": "gemini",
+    "note": "แก้วน้ำสแตนเลส รุ่น Jewel",
+    "picks": {
+      "square": "DW016-06.jpg",
+      "02": "DW016-08.jpg",
+      "03": "DW016-07.jpg",
+      "04": "DW016-09.jpg",
+      "05": "DW016-05.jpg"
+    }
+  },
+  "DW017": {
+    "slug": "dw017-shaky",
+    "model": "gemini",
+    "note": "แก้วเชค รุ่น Shaky",
+    "picks": {
+      "square": "DW017-05.jpg",
+      "02": "DW017-07.jpg",
+      "03": "DW017-09.jpg",
+      "04": "DW017-10.jpg",
+      "05": "DW017-06.jpg"
+    }
+  },
+  "DW018": {
+    "slug": "dw018-steel",
+    "model": "gemini",
+    "note": "กระบอกน้ำสแตนเลส รุ่น Steel",
+    "picks": {
+      "square": "DW018-05.jpg",
+      "02": "DW018-02.jpg",
+      "03": "DW018-07.jpg",
+      "04": "DW018-09.jpg",
+      "05": "DW018-03.jpg"
+    }
+  },
+  "DW019": {
+    "slug": "dw019-swift",
+    "model": "gemini",
+    "note": "แก้วน้ำสแตนเลส รุ่น Swift",
+    "picks": {
+      "square": "DW019-05.jpg",
+      "02": "DW019-07.jpg",
+      "03": "DW019-08.jpg",
+      "04": "DW019-10.jpg",
+      "05": "DW019-06.jpg"
+    }
+  },
+  "DW020": {
+    "slug": "dw020",
+    "model": "gemini",
+    "note": "แก้วน้ำ รุ่่น Aura",
+    "picks": {
+      "square": "DW020-05.jpg",
+      "02": "DW020-07.jpg",
+      "03": "DW020-08.jpg",
+      "04": "DW020-10.jpg",
+      "05": "DW020-09.jpg"
+    }
+  },
+  "DW021": {
+    "slug": "dw021-noon",
+    "model": "gemini",
+    "note": "กระบอกน้ำสแตนเลส รุ่น Noon",
+    "picks": {
+      "square": "DW021-05.jpg",
+      "02": "DW021-08.jpg",
+      "03": "DW021-09.jpg",
+      "04": "DW021-10.jpg",
+      "05": "DW021-06.jpg"
+    }
+  },
+  "DW022": {
+    "slug": "dw022",
+    "model": "gemini",
+    "note": "กระบอกน้ำสแตนเลส รุ่น Sento",
+    "picks": {
+      "square": "DW022-05.jpg",
+      "02": "DW022-08.jpg",
+      "03": "DW022-09.jpg",
+      "04": "DW022-10.jpg",
+      "05": "DW022-06.jpg"
+    }
+  },
+  "DW023": {
+    "slug": "dw023-sora",
+    "model": "gemini",
+    "note": "กระบอกน้ำสแตนเลส รุ่น SORA",
+    "picks": {
+      "square": "DW023-05.jpg",
+      "02": "DW023-06.jpg",
+      "03": "DW023-08.jpg",
+      "04": "DW023-10.jpg",
+      "05": "DW023-07.jpg"
+    }
+  },
+  "DW024": {
+    "slug": "dw024-brewy-mate",
+    "model": "gemini",
+    "note": "แก้วน้ำสแตนเลส รุ่น Brewy mate",
+    "picks": {
+      "square": "DW024-05.jpg",
+      "02": "DW024-06.jpg",
+      "03": "DW024-07.jpg",
+      "04": "DW024-08.jpg",
+      "05": "DW024-10.jpg"
+    }
+  },
+  "DW025": {
+    "slug": "dw025-booster",
+    "model": "gemini",
+    "note": "แก้วเชค รุ่น Booster",
+    "picks": {
+      "square": "DW025-05.jpg",
+      "02": "DW025-09.jpg",
+      "03": "DW025-10.jpg",
+      "04": "DW025-08.jpg",
+      "05": "DW025-06.jpg"
+    }
+  },
+  "DW026": {
+    "slug": "dw026-clear",
+    "model": "gemini",
+    "note": "กระบอกน้ำพลาสติก รุ่น Clear",
+    "picks": {
+      "square": "DW026-05.jpg",
+      "02": "DW026-02.jpg",
+      "03": "DW026-01.jpg",
+      "04": "DW026-07.jpg",
+      "05": "DW026-04.jpg"
+    }
+  },
+  "DW027": {
+    "slug": "dw027",
+    "model": "gemini",
+    "note": "กระบอกน้ำพลาสติก รุ่น",
+    "picks": {
+      "square": "DW027-05.jpg",
+      "02": "DW027-07.jpg",
+      "03": "DW027-08.jpg",
+      "04": "DW027-09.jpg",
+      "05": "DW027-10.jpg"
+    }
+  },
+  "DW028": {
+    "slug": "dw028",
+    "model": "gemini",
+    "note": "แก้วเซรามิก รุ่น",
+    "picks": {
+      "square": "DW028-01.jpg",
+      "02": "DW028-06.jpg",
+      "03": "DW028-02.jpg",
+      "04": "DW028-09.jpg"
+    }
+  },
+  "DW029": {
+    "slug": "dw029-daily",
+    "model": "gemini",
+    "note": "แก้วน้ำพลาสติก รุ่น Daily",
+    "picks": {
+      "square": "DW029-05.jpg",
+      "02": "DW029-03.jpg",
+      "03": "DW029-08.jpg",
+      "04": "DW029-04.jpg",
+      "05": "DW029-09.jpg"
+    }
+  },
+  "FN012": {
+    "slug": "fn012-glacier",
+    "model": "gemini",
+    "note": "พัดลมพกพา รุ่น Glacier",
+    "picks": {
+      "square": "FN012-05.jpg",
+      "02": "FN012-06.jpg",
+      "03": "FN012-08.jpg",
+      "04": "FN012-09.jpg"
+    }
+  },
+  "FN013": {
+    "slug": "fn013",
+    "model": "gemini",
+    "note": "พัดลมพกพา รุ่น Glacier Pro",
+    "picks": {
+      "square": "FN013-05.jpg",
+      "02": "FN013-06.jpg",
+      "03": "FN013-08.jpg",
+      "04": "FN013-09.jpg"
+    }
+  },
+  "FN014": {
+    "slug": "fn014-airy",
+    "model": "gemini",
+    "note": "พัดลมพกพา รุ่น Airy",
+    "picks": {
+      "square": "FN014-05.jpg",
+      "02": "FN014-09.jpg",
+      "03": "FN014-07.jpg",
+      "04": "FN014-08.jpg",
+      "05": "FN014-06.jpg"
+    }
+  },
+  "FN015": {
+    "slug": "fn015-joint",
+    "model": "gemini",
+    "note": "พัดลมพกพา รุ่น Joint",
+    "picks": {
+      "square": "FN015-05.jpg",
+      "02": "FN015-07.jpg",
+      "03": "FN015-08.jpg",
+      "04": "FN015-06.jpg"
+    }
+  },
+  "FN016": {
+    "slug": "fn016-ever",
+    "model": "gemini",
+    "note": "พัดลมพกพา รุ่น Ever",
+    "picks": {
+      "square": "FN016-05.jpg",
+      "02": "FN016-08.jpg",
+      "03": "FN016-07.jpg",
+      "04": "FN016-06.jpg"
+    }
+  },
+  "FN017": {
+    "slug": "fn017",
+    "model": "gemini",
+    "note": "พัดลมพกพา รุ่น Stage",
+    "picks": {
+      "square": "FN017-05.jpg",
+      "02": "FN017-08.jpg",
+      "03": "FN017-07.jpg",
+      "04": "FN017-06.jpg"
+    }
+  },
+  "FN018": {
+    "slug": "fn018",
+    "model": "gemini",
+    "note": "พัดลมพกพา รุ่น K801",
+    "picks": {
+      "square": "FN018-07.jpg",
+      "02": "FN018-08.jpg",
+      "03": "FN018-01.jpg"
+    }
+  },
+  "FN019": {
+    "slug": "fn019",
+    "model": "gemini",
+    "note": "พัดสปริง รุ่น",
+    "picks": {
+      "square": "FN019-05.jpg",
+      "02": "FN019-03.jpg",
+      "03": "FN019-04.jpg",
+      "04": "FN019-02.jpg"
+    }
+  },
+  "GD001": {
+    "slug": "gd001-curvy",
+    "model": "gemini",
+    "note": "รีโมทพรีเซนต์ รุ่น Curvy",
+    "picks": {
+      "square": "GD001-05.jpg",
+      "02": "GD001-04.jpg",
+      "03": "GD001-01.jpg",
+      "04": "GD001-03.jpg"
+    }
+  },
+  "GD004": {
+    "slug": "gd004-zen",
+    "model": "gemini",
+    "note": "เครื่องชั่งน้ำหนักแบบพกพา รุ่น Zen",
+    "picks": {
+      "square": "GD004-05.jpg",
+      "02": "GD004-02.jpg",
+      "03": "GD004-03.jpg",
+      "04": "GD004-04.jpg"
+    }
+  },
+  "GD005": {
+    "slug": "gd005-cube",
+    "model": "gemini",
+    "note": "ปลั๊กอเนกประสงค์  รุ่น Cube",
+    "picks": {
+      "square": "GD005-04.jpg",
+      "02": "GD005-05.jpg",
+      "03": "GD005-01.jpg",
+      "04": "GD005-02.jpg"
+    }
+  },
+  "GD006": {
+    "slug": "gd006-much",
+    "model": "gemini",
+    "note": "ปลั๊กอเนกประสงค์  รุ่น Much",
+    "picks": {
+      "square": "GD006-02.jpg",
+      "02": "GD006-04.jpg",
+      "03": "GD006-05.jpg",
+      "04": "GD006-03.jpg"
+    }
+  },
+  "GD007": {
+    "slug": "gd007-much",
+    "model": "gemini",
+    "note": "ปลั๊กอเนกประสงค์  รุ่น Much",
+    "picks": {
+      "square": "GD007-03.jpg",
+      "02": "GD007-04.jpg",
+      "03": "GD007-05.jpg",
+      "04": "GD007-06.jpg"
+    }
+  },
+  "GM001": {
+    "slug": "gm001-pilot",
+    "model": "gemini",
+    "note": "Jacket รุ่น Pilot",
+    "picks": {
+      "square": "GM001-08.jpg",
+      "02": "GM001-10.jpg",
+      "03": "GM001-07.jpg",
+      "04": "GM001-09.jpg",
+      "05": "GM001-06.jpg"
+    }
+  },
+  "GM002": {
+    "slug": "gm002-baseball",
+    "model": "gemini",
+    "note": "Jacket รุ่น Baseball",
+    "picks": {
+      "square": "GM002-08.jpg",
+      "02": "GM002-09.jpg",
+      "03": "GM002-06.jpg",
+      "04": "GM002-07.jpg",
+      "05": "GM002-10.jpg"
+    }
+  },
+  "GM003": {
+    "slug": "gm003",
+    "model": "gemini",
+    "note": "Jacket รุ่น Casual",
+    "picks": {
+      "square": "GM003-08.jpg",
+      "02": "GM003-09.jpg",
+      "03": "GM003-06.jpg",
+      "04": "GM003-07.jpg",
+      "05": "GM003-10.jpg"
+    }
+  },
+  "GM004": {
+    "slug": "gm004-move-it",
+    "model": "gemini",
+    "note": "เสื้อโปโล รุ่น Move it",
+    "picks": {
+      "square": "GM004-02.jpg",
+      "02": "GM004-03.jpg",
+      "03": "GM004-05.jpg",
+      "04": "GM004-04.jpg"
+    }
+  },
+  "GM005": {
+    "slug": "gm005-gooding",
+    "model": "gemini",
+    "note": "เสื้อสูทผู้หญิง รุ่น Gooding",
+    "picks": {
+      "square": "GM005-05.jpg",
+      "02": "GM005-01.jpg",
+      "03": "GM005-04.jpg",
+      "04": "GM005-02.jpg",
+      "05": "GM005-03.jpg"
+    }
+  },
+  "GP001": {
+    "slug": "gp001",
+    "model": "gemini",
+    "note": "หมวก​ Gap Active",
+    "picks": {
+      "square": "GP001-08.jpg",
+      "02": "GP001-06.jpg",
+      "03": "GP001-07.jpg",
+      "04": "GP001-09.jpg",
+      "05": "GP001-10.jpg"
+    }
+  },
+  "GP002": {
+    "slug": "gp002",
+    "model": "gemini",
+    "note": "หมวก​ Gap Dryrun",
+    "picks": {
+      "square": "GP002-06.jpg",
+      "02": "GP002-10.jpg",
+      "03": "GP002-09.jpg",
+      "04": "GP002-07.jpg",
+      "05": "GP002-08.jpg"
+    }
+  },
+  "GS004": {
+    "slug": "gs004-bouquet",
+    "model": "gemini",
+    "note": "เซตของขวัญ Aroma รุ่น Bouquet",
+    "picks": {
+      "square": "GS004-01.jpg",
+      "02": "GS004-02.jpg",
+      "03": "GS004-03.jpg",
+      "04": "GS004-07.jpg",
+      "05": "GS004-05.jpg"
+    }
+  },
+  "GS006": {
+    "slug": "gs006",
+    "model": "gemini",
+    "note": "เซตของขวัญ Drinkware รุ่น Stainless",
+    "picks": {
+      "square": "GS006-01.jpg",
+      "02": "GS006-02.jpg",
+      "03": "GS006-03.jpg",
+      "04": "GS006-07.jpg",
+      "05": "GS006-05.jpg"
+    }
+  },
+  "GS008": {
+    "slug": "gs008",
+    "model": "gemini",
+    "note": "เซตของขวัญ Aroma รุ่น Bouquet",
+    "picks": {
+      "square": "GS008-01.jpg",
+      "02": "GS008-02.jpg",
+      "03": "GS008-03.jpg",
+      "04": "GS008-07.jpg",
+      "05": "GS008-05.jpg"
+    }
+  },
+  "GS009": {
+    "slug": "gs009",
+    "model": "gemini",
+    "note": "เซตของขวัญ Aroma รุ่น Bouquet Plus",
+    "picks": {
+      "square": "GS009-01.jpg",
+      "02": "GS009-02.jpg",
+      "03": "GS009-03.jpg",
+      "04": "GS009-07.jpg",
+      "05": "GS009-05.jpg"
+    }
+  },
+  "GS010": {
+    "slug": "gs010-finley",
+    "model": "gemini",
+    "note": "เซตเทียนหอม รุ่น Finley",
+    "picks": {
+      "square": "GS010-01.jpg",
+      "02": "GS010-05.jpg",
+      "03": "GS010-04.jpg",
+      "04": "GS010-06.jpg",
+      "05": "GS010-08.jpg"
+    }
+  },
+  "KC001": {
+    "slug": "kc001-fresh",
+    "model": "gemini",
+    "note": "กล่องอาหารพลาสติก รุ่น Fresh",
+    "picks": {
+      "square": "KC001-02.jpg",
+      "02": "KC001-05.jpg",
+      "03": "KC001-08.jpg",
+      "04": "KC001-09.jpg",
+      "05": "KC001-10.jpg"
+    }
+  },
+  "KC002": {
+    "slug": "kc002-crisp",
+    "model": "gemini",
+    "note": "ถ้วยสลัด รุ่น Crisp",
+    "picks": {
+      "square": "KC002-04.jpg",
+      "02": "KC002-06.jpg",
+      "03": "KC002-07.jpg",
+      "04": "KC002-09.jpg",
+      "05": "KC002-02.jpg"
+    }
+  },
+  "LG001": {
+    "slug": "lg001-lumo",
+    "model": "gemini",
+    "note": "กระเป๋าเดินทาง รุ่น Lumo",
+    "picks": {
+      "square": "LG001-06.jpg",
+      "02": "LG001-07.jpg",
+      "03": "LG001-08.jpg",
+      "04": "LG001-09.jpg",
+      "05": "LG001-10.jpg"
+    }
+  },
+  "LS017": {
+    "slug": "ls017",
+    "model": "gemini",
+    "note": "เซตหมอนรองคอและหลัง Sooty",
+    "picks": {
+      "square": "LS017-05.jpg",
+      "02": "LS017-06.jpg",
+      "03": "LS017-07.jpg",
+      "04": "LS017-09.jpg",
+      "05": "LS017-10.jpg"
+    }
+  },
+  "LS018": {
+    "slug": "ls018",
+    "model": "gemini",
+    "note": "กล่องหนังใส่ทิชชู่",
+    "picks": {
+      "square": "LS018-05.jpg",
+      "02": "LS018-03.jpg",
+      "03": "LS018-07.jpg",
+      "04": "LS018-08.jpg",
+      "05": "LS018-09.jpg"
+    }
+  },
+  "LS019": {
+    "slug": "ls019",
+    "model": "gemini",
+    "note": "กระเป๋าใส่ทิชชู่ในรถยนต์ NOVA",
+    "picks": {
+      "square": "LS019-05.jpg",
+      "02": "LS019-01.jpg",
+      "03": "LS019-07.jpg",
+      "04": "LS019-08.jpg"
+    }
+  },
+  "LS020": {
+    "slug": "ls020",
+    "model": "gemini",
+    "note": "ผ้าไมโครไฟเบอร์เช็ดรถ SHINEPRO",
+    "picks": {
+      "square": "LS020-05.jpg",
+      "02": "LS020-06.jpg",
+      "03": "LS020-07.jpg",
+      "04": "LS020-01.jpg"
+    }
+  },
+  "LS022": {
+    "slug": "ls022",
+    "model": "gemini",
+    "note": "กรอบรูป CASA",
+    "picks": {
+      "square": "LS022-06.jpg",
+      "02": "LS022-09.jpg",
+      "03": "LS022-10.jpg",
+      "04": "LS022-05.jpg",
+      "05": "LS022-08.jpg"
+    }
+  },
+  "LS023": {
+    "slug": "ls023",
+    "model": "gemini",
+    "note": "นาฬิกาแขวนผนัง Haven",
+    "picks": {
+      "square": "LS023-03.jpg",
+      "02": "LS023-05.jpg",
+      "03": "LS023-02.jpg"
+    }
+  },
+  "LS025": {
+    "slug": "ls025",
+    "model": "gemini",
+    "note": "",
+    "picks": {
+      "square": "LS025-05.jpg",
+      "02": "LS025-04.jpg"
+    }
+  },
+  "LS029": {
+    "slug": "ls029-arctic-tank",
+    "model": "gemini",
+    "note": "ถังเก็บความเย็น รุ่น Arctic Tank",
+    "picks": {
+      "square": "LS029-07.jpg",
+      "02": "LS029-08.jpg",
+      "03": "LS029-06.jpg",
+      "04": "LS029-09.jpg",
+      "05": "LS029-10.jpg"
+    }
+  },
+  "LS030": {
+    "slug": "ls030-grip-it",
+    "model": "gemini",
+    "note": "GRIPTOK รุ่น Grip it",
+    "picks": {
+      "square": "LS030-05.jpg",
+      "02": "LS030-07.jpg",
+      "03": "LS030-08.jpg",
+      "04": "LS030-10.jpg"
+    }
+  },
+  "LS031": {
+    "slug": "ls031-hold",
+    "model": "gemini",
+    "note": "ที่วางโทรศัพท์ รุ่น Hold",
+    "picks": {
+      "square": "LS031-05.jpg",
+      "02": "LS031-01.jpg",
+      "03": "LS031-06.jpg",
+      "04": "LS031-07.jpg"
+    }
+  },
+  "LS032": {
+    "slug": "ls032-lock",
+    "model": "gemini",
+    "note": "ที่วางโทรศัพท์ รุ่น Lock",
+    "picks": {
+      "square": "LS032-06.jpg",
+      "02": "LS032-07.jpg",
+      "03": "LS032-05.jpg",
+      "04": "LS032-01.jpg"
+    }
+  },
+  "LS033": {
+    "slug": "ls033-grip",
+    "model": "gemini",
+    "note": "ที่วางโทรศัพท์ รุ่น Grip",
+    "picks": {
+      "square": "LS033-07.jpg",
+      "02": "LS033-06.jpg",
+      "03": "LS033-08.jpg",
+      "04": "LS033-09.jpg",
+      "05": "LS033-05.jpg"
+    }
+  },
+  "LS034": {
+    "slug": "ls034-ventx",
+    "model": "gemini",
+    "note": "ที่วางโทรศัพท์ รุ่น VentX",
+    "picks": {
+      "square": "LS034-05.jpg",
+      "02": "LS034-06.jpg",
+      "03": "LS034-07.jpg",
+      "04": "LS034-08.jpg",
+      "05": "LS034-09.jpg"
+    }
+  },
+  "LS035": {
+    "slug": "ls035-glint",
+    "model": "gemini",
+    "note": "กล่องเก็บความเย็น รุ่น Glint",
+    "picks": {
+      "square": "LS035-05.jpg",
+      "02": "LS035-03.jpg",
+      "03": "LS035-04.jpg",
+      "04": "LS035-01.jpg"
+    }
+  },
+  "LS036": {
+    "slug": "ls036-polar",
+    "model": "gemini",
+    "note": "กล่องเก็บความเย็น รุ่น Polar",
+    "picks": {
+      "square": "LS036-05.jpg",
+      "02": "LS036-08.jpg",
+      "03": "LS036-09.jpg",
+      "04": "LS036-10.jpg",
+      "05": "LS036-06.jpg"
+    }
+  },
+  "LS037": {
+    "slug": "ls037",
+    "model": "gemini",
+    "note": "ผ้าพันคอ รุ่น",
+    "picks": {
+      "square": "LS037-05.jpg",
+      "02": "LS037-10.jpg",
+      "03": "LS037-07.jpg",
+      "04": "LS037-08.jpg",
+      "05": "LS037-09.jpg"
+    }
+  },
+  "LS038": {
+    "slug": "ls038",
+    "model": "gemini",
+    "note": "กระเป๋าหนัง รุ่น",
+    "picks": {
+      "square": "LS038-07.jpg",
+      "02": "LS038-09.jpg",
+      "03": "LS038-08.jpg",
+      "04": "LS038-06.jpg",
+      "05": "LS038-05.jpg"
+    }
+  },
+  "LS039": {
+    "slug": "ls039",
+    "model": "gemini",
+    "note": "ผ้าคลุมโต๊ะ รุ่น FreeFall",
+    "picks": {
+      "square": "LS039-03.jpg",
+      "02": "LS039-06.jpg",
+      "03": "LS039-07.jpg",
+      "04": "LS039-08.jpg"
+    }
+  },
+  "LS040": {
+    "slug": "ls040-flexback",
+    "model": "gemini",
+    "note": "ผ้าคลุมโต๊ะ รุ่น FlexBack",
+    "picks": {
+      "square": "LS040-04.jpg",
+      "02": "LS040-09.jpg",
+      "03": "LS040-10.jpg",
+      "04": "LS040-07.jpg",
+      "05": "LS040-08.jpg"
+    }
+  },
+  "LS043": {
+    "slug": "ls043",
+    "model": "gemini",
+    "note": "ถังน้ำแข็ง รุ่น",
+    "picks": {
+      "square": "LS043-04.jpg",
+      "02": "LS043-05.jpg",
+      "03": "LS043-02.jpg",
+      "04": "LS043-03.jpg"
+    }
+  },
+  "LS045": {
+    "slug": "ls045-seaty",
+    "model": "gemini",
+    "note": "เก้าอี้แคมปิ้ง รุ่น Seaty",
+    "picks": {
+      "square": "LS045-05.jpg",
+      "02": "LS045-07.jpg",
+      "03": "LS045-10.jpg",
+      "04": "LS045-01.jpg",
+      "05": "LS045-09.jpg"
+    }
+  },
+  "LS046": {
+    "slug": "ls046-fluffy",
+    "model": "gemini",
+    "note": "ผ้าห่ม รุ่น Fluffy",
+    "picks": {
+      "square": "LS046-05.jpg",
+      "02": "LS046-01.jpg"
+    }
+  },
+  "LS047": {
+    "slug": "ls047-cozy",
+    "model": "gemini",
+    "note": "หมอนผ้าห่ม รุ่น cozy",
+    "picks": {
+      "square": "LS047-05.jpg",
+      "02": "LS047-02.jpg",
+      "03": "LS047-01.jpg",
+      "04": "LS047-06.jpg"
+    }
+  },
+  "PK001": {
+    "slug": "pk001",
+    "model": "gemini",
+    "note": "ถุงสปันบอนด์ A",
+    "picks": {
+      "square": "PK001-08.jpg",
+      "02": "PK001-05.jpg",
+      "03": "PK001-07.jpg",
+      "04": "PK001-10.jpg",
+      "05": "PK001-09.jpg"
+    }
+  },
+  "PK002": {
+    "slug": "pk002",
+    "model": "gemini",
+    "note": "ถุงสปันบอนด์ B",
+    "picks": {
+      "square": "PK002-08.jpg",
+      "02": "PK002-05.jpg",
+      "03": "PK002-09.jpg",
+      "04": "PK002-10.jpg",
+      "05": "PK002-06.jpg"
+    }
+  },
+  "PK003": {
+    "slug": "pk003",
+    "model": "gemini",
+    "note": "ถุงสปันบอนด์ C",
+    "picks": {
+      "square": "PK003-06.jpg",
+      "02": "PK003-05.jpg",
+      "03": "PK003-09.jpg",
+      "04": "PK003-07.jpg",
+      "05": "PK003-08.jpg"
+    }
+  },
+  "PK004": {
+    "slug": "pk004",
+    "model": "gemini",
+    "note": "ถุงสปันบอนด์ D",
+    "picks": {
+      "square": "PK004-06.jpg",
+      "02": "PK004-05.jpg",
+      "03": "PK004-09.jpg",
+      "04": "PK004-07.jpg",
+      "05": "PK004-08.jpg"
+    }
+  },
+  "PT001": {
+    "slug": "pt001",
+    "model": "gemini",
+    "note": "กระบอกน้ำพกพาสำหรับสัตว์เลี้ยง",
+    "picks": {
+      "square": "PT001-04.jpg",
+      "02": "PT001-01.jpg",
+      "03": "PT001-02.jpg"
+    }
+  },
+  "PT002": {
+    "slug": "pt002",
+    "model": "gemini",
+    "note": "ชามข้าวอเนกประสงค์ พับได้",
+    "picks": {
+      "square": "PT002-05.jpg",
+      "02": "PT002-06.jpg",
+      "03": "PT002-07.jpg",
+      "04": "PT002-09.jpg",
+      "05": "PT002-10.jpg"
+    }
+  }
+}
