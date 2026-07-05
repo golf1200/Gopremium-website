@@ -187,10 +187,23 @@ async function download(url, dest, referer) {
 }
 
 // ---- main ------------------------------------------------------------------
-const browser = await chromium.connectOverCDP('http://localhost:9222');
-const ctx = browser.contexts()[0];
-if (!ctx) { log('No Chrome context on :9222 — open Chrome with --remote-debugging-port=9222 first.'); process.exit(1); }
-const page = ctx.pages()[0] || await ctx.newPage();
+// --standalone: launch our own chromium (for public supplier sites with no login/captcha).
+// default: attach to the user's logged-in Chrome over CDP (needed for 1688/Shopee).
+const STANDALONE = has('--standalone');
+let browser, ctx, page;
+if (STANDALONE) {
+  browser = await chromium.launch({ headless: true });
+  ctx = await browser.newContext({
+    userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36',
+    viewport: { width: 1280, height: 1600 }, locale: 'th-TH',
+  });
+  page = await ctx.newPage();
+} else {
+  browser = await chromium.connectOverCDP('http://localhost:9222');
+  ctx = browser.contexts()[0];
+  if (!ctx) { log('No Chrome context on :9222 — open Chrome with --remote-debugging-port=9222 first (or use --standalone for public supplier sites).'); process.exit(1); }
+  page = ctx.pages()[0] || await ctx.newPage();
+}
 
 let done = 0, imgTotal = 0, skipped = 0, seen = 0;
 for (const p of list) {

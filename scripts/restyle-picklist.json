@@ -1534,5 +1534,43 @@
       "04": "PT002-09.jpg",
       "05": "PT002-10.jpg"
     }
+  },
+  "PK005": {
+    "slug": "pk005",
+    "model": "gemini",
+    "note": "ถุงกระดาษ E",
+    "picks": {
+      "square": "PK005-07.jpg",
+      "02": "PK005-05.jpg",
+      "03": "PK005-09.jpg"
+    }
+  },
+  "GS007": {
+    "slug": "gs007-muckie",
+    "model": "gemini",
+    "note": "เซตของขวัญ Drinkware รุ่น Muckie",
+    "picks": {
+      "square": "GS007-05.jpg",
+      "02": "GS007-09.jpg",
+      "03": "GS007-07.jpg",
+      "04": "GS007-01.jpg"
+    }
+  },
+  "PB001": {
+    "slug": "pb001-pocket",
+    "model": "gemini",
+    "note": "Power Bank รุ่น Pocket",
+    "picks": {
+      "square": "PB001-01.jpg"
+    }
+  },
+  "PB003": {
+    "slug": "pb003-evo",
+    "model": "gemini",
+    "note": "Power Bank รุ่น EVO",
+    "picks": {
+      "square": "PB003-01.jpg",
+      "02": "PB003-02.jpg"
+    }
   }
 }

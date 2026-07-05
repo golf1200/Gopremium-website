@@ -2166,5 +2166,49 @@
    "hex": "#ad897a",
    "name": "khaki/brown"
   }
+ ],
+ "PK005": [
+  {
+   "hex": "#e3403e",
+   "name": "แดง"
+  },
+  {
+   "hex": "#a4a8a7",
+   "name": "เทาฟ้า"
+  },
+  {
+   "hex": "#a48d57",
+   "name": "khaki/brown"
+  }
+ ],
+ "GS007": [
+  {
+   "hex": "#4e556d",
+   "name": "เทาเข้ม"
+  },
+  {
+   "hex": "#4b453f",
+   "name": "charcoal"
+  },
+  {
+   "hex": "#d4b89e",
+   "name": "ธรรมชาติ/Natural"
+  },
+  {
+   "hex": "#bab8af",
+   "name": "เทาอ่อน"
+  }
+ ],
+ "PB001": [
+  {
+   "hex": "#ada1b8",
+   "name": "เทาฟ้า"
+  }
+ ],
+ "PB003": [
+  {
+   "hex": "#eae4dd",
+   "name": "ขาวงาช้าง"
+  }
  ]
 }

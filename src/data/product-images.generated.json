@@ -1532,9 +1532,7 @@
     "gallery": [
       "/images/products/pk005/pk005-square.jpg",
       "/images/products/pk005/pk005-02.jpg",
-      "/images/products/pk005/pk005-03.jpg",
-      "/images/products/pk005/pk005-04.jpg",
-      "/images/products/pk005/pk005-05.jpg"
+      "/images/products/pk005/pk005-03.jpg"
     ]
   },
   "SC001": {
@@ -1557,10 +1555,7 @@
   "PB001": {
     "base": "pb001-pocket",
     "gallery": [
-      "/images/products/pb001-pocket/pb001-pocket-02.jpg",
-      "/images/products/pb001-pocket/pb001-pocket-03.jpg",
-      "/images/products/pb001-pocket/pb001-pocket-04.jpg",
-      "/images/products/pb001-pocket/pb001-pocket-05.jpg"
+      "/images/products/pb001-pocket/pb001-pocket-square.jpg"
     ]
   },
   "PB002": {
@@ -1577,8 +1572,7 @@
     "base": "pb003-evo",
     "gallery": [
       "/images/products/pb003-evo/pb003-evo-square.jpg",
-      "/images/products/pb003-evo/pb003-evo-02.jpg",
-      "/images/products/pb003-evo/pb003-evo-03.jpg"
+      "/images/products/pb003-evo/pb003-evo-02.jpg"
     ]
   },
   "PB004": {
