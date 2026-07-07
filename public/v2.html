@@ -1245,13 +1245,13 @@ function viewExpress(){
 function viewPortfolio(){
   const P_IMG='images/portfolio/';
   const playIcon='<svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
-  const CATL={drinkware:'แก้ว & ขวดน้ำ',cap:'หมวก',bag:'กระเป๋า',umbrella:'ร่ม',stationery:'เครื่องเขียน',lifestyle:'ไลฟ์สไตล์',giftset:'กิฟต์เซ็ต'};
+  const CATL={drinkware:'แก้ว & ขวดน้ำ',cap:'หมวก',bag:'กระเป๋า',umbrella:'ร่ม',fan:'พัดลมมือถือ',stationery:'เครื่องเขียน',lifestyle:'ไลฟ์สไตล์',giftset:'กิฟต์เซ็ต'};
   const ITM=[
     {s:'drink-chococrm-gold',cat:'drinkware',t:'กระบอกน้ำเก็บอุณหภูมิ สกรีนโลโก้',b:'ChocoCRM',f:1},
     {s:'drink-tumbler-copper',cat:'drinkware',t:'แก้วทัมเบลอร์สแตนเลส โทนทองแดง',b:'ChocoCRM',f:0},
     {s:'drink-bottle-gift',cat:'drinkware',t:'ขวดน้ำพร้อมกล่องของขวัญ',b:'jobsdb',f:0},
     {s:'drink-tumbler-white',cat:'drinkware',t:'แก้วทัมเบลอร์ฝาหลอด มินิมอล',b:'NSC PR',f:0},
-    {s:'drink-bottles-pair',cat:'drinkware',t:'ขวดน้ำแก้วใสสกรีนโลโก้',b:'',f:0},
+    {s:'drink-bottles-pair',cat:'drinkware',t:'ขวดน้ำแก้วใสสกรีนโลโก้',b:'jobsdb',f:0},
     {s:'cap-lenso',cat:'cap',t:'หมวกแก๊ปปักโลโก้',b:'LENSO',f:0},
     {s:'cap-duo',cat:'cap',t:'หมวกแก๊ปทรงพรีเมียม',b:'LENSO · LION',f:0},
     {s:'bag-phoenix',cat:'bag',t:'กระเป๋าผ้าดีไซน์เฉพาะแบรนด์',b:'Phoenix',f:0},
@@ -1259,8 +1259,10 @@ function viewPortfolio(){
     {s:'bag-duffel',cat:'bag',t:'กระเป๋า Duffel พร้อมเซ็ตของขวัญ',b:'PBL',f:1},
     {s:'umb-vora-red',cat:'umbrella',t:'ร่มพับสกรีนโลโก้รอบปลอก',b:'Toyota วรจักร',f:1},
     {s:'umb-folded',cat:'umbrella',t:'ร่มพับทรงพรีเมียม',b:'KYONT',f:0},
+    {s:'fan-jobsdb',cat:'fan',t:'พัดลมพกพาสกรีนโลโก้ พร้อมกล่อง',b:'jobsdb',f:0},
     {s:'note-choco',cat:'stationery',t:'สมุดโน้ตปกสกรีนโลโก้',b:'ChocoCRM',f:0},
     {s:'pen-teal',cat:'stationery',t:'ปากกาโลหะสลักโลโก้',b:'GO PREMIUM',f:0},
+    {s:'pen-jobsdb',cat:'stationery',t:'ปากกาสกรีนโลโก้ สีประจำแบรนด์',b:'jobsdb',f:0},
     {s:'pillow-grey',cat:'lifestyle',t:'หมอนอิงสกรีนโลโก้แบรนด์',b:'OMODA · JAECOO',f:0},
     {s:'pillow-cream',cat:'lifestyle',t:'หมอนอิงปักโลโก้',b:'OMODA · JAECOO',f:0},
     {s:'gift-baankhanyt',cat:'giftset',t:'ชุดของขวัญงานหนังในกล่องไม้',b:'BAANKHANYT',f:1},

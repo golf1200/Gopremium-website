@@ -33,7 +33,7 @@
     "slug": "drink-bottles-pair",
     "cat": "drinkware",
     "title": "ขวดน้ำแก้วใสสกรีนโลโก้",
-    "brand": ""
+    "brand": "jobsdb"
   },
   {
     "f": "IMG_6005",
@@ -88,6 +88,20 @@
     "brand": "KYONT"
   },
   {
+    "f": "IMG_6630",
+    "slug": "fan-jobsdb",
+    "cat": "fan",
+    "title": "พัดลมพกพาสกรีนโลโก้ พร้อมกล่อง",
+    "brand": "jobsdb"
+  },
+  {
+    "f": "IMG_6659",
+    "slug": "pen-jobsdb",
+    "cat": "stationery",
+    "title": "ปากกาสกรีนโลโก้ สีประจำแบรนด์",
+    "brand": "jobsdb"
+  },
+  {
     "f": "IMG_6267",
     "slug": "note-choco",
     "cat": "stationery",
@@ -127,7 +141,7 @@
     "f": "IMG_6675",
     "slug": "gift-jobsdb",
     "cat": "giftset",
-    "title": "เซ็ตของขวัญต้อนรับพนักงาน",
+    "title": "เซ็ตของขวัญพรีเมียมเพื่อการเข้าถึงลูกค้า",
     "brand": "jobsdb",
     "feature": true
   }
