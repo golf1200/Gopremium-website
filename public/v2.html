@@ -722,6 +722,7 @@ function ctaBand(){return `<section class="sec" style="background:var(--cloud)">
 
 /* ===== quote form (shared) ===== */
 function quoteForm(){return `<form class="qcard" id="quoteForm" novalidate>
+  <input type="hidden" name="source_auto" id="qf-source-auto">
   <div id="qbody">
     <h3>แบบฟอร์มขอใบเสนอราคา</h3>
     <p style="font-size:12.5px;color:var(--grey);margin-bottom:18px">ใช้เวลาไม่ถึง 1 นาที · <span class="req">*</span> จำเป็น</p>
@@ -733,6 +734,8 @@ function quoteForm(){return `<form class="qcard" id="quoteForm" novalidate>
       <div class="field"><label class="label" for="qf-qty">จำนวน (ชิ้น)</label><input class="input" id="qf-qty" name="qty" inputmode="numeric" placeholder="เช่น 200"></div>
       <div class="field"><label class="label" for="qf-date">ต้องการรับงาน</label><input class="input" id="qf-date" name="date" type="date"></div>
       <div class="field"><label class="label" for="qf-budget">งบ/ชิ้น (฿)</label><input class="input" id="qf-budget" name="budget" inputmode="numeric" placeholder="เช่น 300"></div>
+      <div class="field full"><label class="label" for="qf-source">รู้จักเราจากไหน</label><select class="select" id="qf-source" name="source">
+        <option value="">— เลือกช่องทาง —</option><option>Google ค้นหา</option><option>Facebook</option><option>LINE</option><option>เพื่อนแนะนำ / บอกต่อ</option><option>เคยสั่งกับเรามาก่อน</option><option>อีเวนต์ / งานแสดงสินค้า</option><option>อื่น ๆ</option></select></div>
       <div class="field full"><label class="label" for="qf-details">รายละเอียดเพิ่มเติม</label><textarea class="textarea" id="qf-details" name="details" placeholder="บอกคอนเซ็ปต์ สินค้าที่สนใจ ตำแหน่งโลโก้ สี แพ็กเกจ..."></textarea></div>
     </div>
     <button type="submit" class="btn btn-primary btn-lg" style="width:100%;margin-top:18px">ส่งขอใบเสนอราคา
@@ -1501,6 +1504,23 @@ function initPortfolioVideo(){
 /* ===== quote form binding ===== */
 function bindQuote(){
   const f=document.getElementById('quoteForm');if(!f)return;
+  // ตรวจช่องทางเข้าเว็บอัตโนมัติ (Ads/UTM/referrer) → เก็บลง hidden field ให้ทีมขายกรอก Pipedrive ถูกช่อง
+  try{
+    const sp=new URLSearchParams(location.search);const auto=f.elements.source_auto;const sel=f.elements.source;
+    let det='';
+    if(sp.has('gclid'))det='google_ads (gclid)';
+    else if(sp.get('utm_source'))det='utm: '+sp.get('utm_source')+(sp.get('utm_medium')?'/'+sp.get('utm_medium'):'');
+    else if(/google\./i.test(document.referrer))det='google_organic';
+    else if(/facebook\.|fb\.me|l\.facebook/i.test(document.referrer))det='facebook';
+    else if(/line\.me|liff\./i.test(document.referrer))det='line';
+    else if(document.referrer)det='referrer: '+document.referrer.split('/')[2];
+    if(auto)auto.value=det;
+    if(sel&&!sel.value){
+      if(/google/i.test(det))sel.value='Google ค้นหา';
+      else if(/facebook/i.test(det))sel.value='Facebook';
+      else if(/line/i.test(det))sel.value='LINE';
+    }
+  }catch(e){}
   f.addEventListener('submit',e=>{e.preventDefault();const el=f.elements;let ok=true;
     const ck={name:el.name.value.trim()!=='',contact:/^[\d\s+\-()]{8,}$/.test(el.contact.value.trim())||/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(el.contact.value.trim())};
     for(const k in ck){const i=el[k],m=f.querySelector('[data-e="'+k+'"]');if(!ck[k]){ok=false;i.classList.add('err');i.setAttribute('aria-invalid','true');if(m)m.style.display='block';}else{i.classList.remove('err');i.removeAttribute('aria-invalid');if(m)m.style.display='none';}}
@@ -1509,7 +1529,7 @@ function bindQuote(){
     // ส่งเข้า Formspree (→ info@passiongrow.co.th) — ID เดียวกับ src/config.js
     fetch('https://formspree.io/f/xbdejbyr',{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}})
       .then(r=>{if(!r.ok)throw new Error('formspree '+r.status);
-        track('generate_lead',{source:'v2_quote_form',occasion:el.occasion.value||'',qty:el.qty.value||'',budget:el.budget.value||''});
+        track('generate_lead',{source:'v2_quote_form',occasion:el.occasion.value||'',qty:el.qty.value||'',budget:el.budget.value||'',lead_source:el.source.value||'',lead_source_auto:el.source_auto.value||''});
         document.getElementById('qbody').style.display='none';document.getElementById('qok').classList.add('show');
         const q=document.getElementById('quote');if(q)q.scrollIntoView({behavior:'smooth'});})
       .catch(()=>{alert('ส่งคำขอไม่สำเร็จ กรุณาลองใหม่อีกครั้ง หรือทักทาง LINE @gopremium ได้เลยค่ะ');})
