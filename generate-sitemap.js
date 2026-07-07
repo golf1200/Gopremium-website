@@ -22,6 +22,7 @@ const BLOG_SLUGS = [
   'ของพรีเมียมรักษ์โลก',
   'ของชำร่วยงานอีเวนต์องค์กร',
   'ของขวัญองค์กรด่วน',
+  'ของขวัญปีใหม่บริษัท-2027',
 ];
 const CATEGORIES = [...new Set(products.map((p) => p.category_slug).filter(Boolean))];
 const VALID_PRODUCTS = products.filter((p) => p.name && p.name.trim() && p.slug);
