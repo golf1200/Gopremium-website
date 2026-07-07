@@ -1,0 +1,3441 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing v3 — ตรวจราคาสินค้าบนเว็บไซต์</title>
+  <style>
+    :root {
+      --navy: #13244a;
+      --gold: #f4b223;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    @font-face {
+      font-family: 'Anuphan';
+      src: local('Anuphan'), local('IBM Plex Sans Thai'), system-ui;
+    }
+
+    body {
+      font-family: 'Anuphan', 'IBM Plex Sans Thai', system-ui, sans-serif;
+      background: #f3f4f6;
+      color: #1f2937;
+      padding: 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .header {
+      background: linear-gradient(135deg, var(--navy) 0%, #0f1d2d 100%);
+      color: white;
+      padding: 40px 30px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 12px rgba(19, 36, 74, 0.15);
+    }
+
+    .header h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+
+    .header .subtext {
+      font-size: 14px;
+      opacity: 0.9;
+      display: flex;
+      gap: 20px;
+      margin-top: 10px;
+    }
+
+    .header .date {
+      opacity: 0.8;
+      font-size: 13px;
+    }
+
+    .kpi-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+
+    .kpi-card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+      border-left: 4px solid var(--gold);
+    }
+
+    .kpi-label {
+      font-size: 12px;
+      color: #6b7280;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .kpi-value {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .kpi-meta {
+      font-size: 11px;
+      color: #9ca3af;
+      margin-top: 4px;
+    }
+
+    .explainer-box {
+      background: white;
+      border-radius: 10px;
+      padding: 24px;
+      margin-bottom: 30px;
+      border-left: 4px solid var(--gold);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    }
+
+    .explainer-box h2 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .explainer-box p {
+      font-size: 13px;
+      line-height: 1.6;
+      color: #4b5563;
+      margin-bottom: 8px;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--gold);
+    }
+
+    .section-title h2 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .section-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    thead {
+      background: var(--navy);
+      color: white;
+      position: sticky;
+      top: 0;
+    }
+
+    th {
+      padding: 14px 12px;
+      text-align: left;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.3px;
+    }
+
+    td {
+      padding: 12px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #f9fafb;
+    }
+
+    tbody tr:hover {
+      background: #f3f4f6;
+    }
+
+    .collapse-section {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    }
+
+    details {
+      cursor: pointer;
+    }
+
+    summary {
+      padding: 16px;
+      background: #f3f4f6;
+      font-weight: 600;
+      color: var(--navy);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    summary:hover {
+      background: #e5e7eb;
+    }
+
+    summary::marker {
+      color: var(--gold);
+    }
+
+    .details-content {
+      padding: 16px;
+    }
+
+    .no-cost-item, .no-price-item {
+      padding: 10px 0;
+      border-bottom: 1px solid #e5e7eb;
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .no-cost-item:last-child, .no-price-item:last-child {
+      border-bottom: none;
+    }
+
+    .sku-label {
+      background: #f3f4f6;
+      color: var(--navy);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 11px;
+      min-width: 60px;
+      text-align: center;
+    }
+
+    .footnote {
+      background: #fef3c7;
+      border-left: 4px solid var(--gold);
+      padding: 16px;
+      margin-top: 40px;
+      border-radius: 8px;
+      font-size: 12px;
+      line-height: 1.6;
+      color: #65390f;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 30px;
+      color: #9ca3af;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Pricing v3 — ตรวจราคาสินค้าบนเว็บไซต์เทียบต้นทุน</h1>
+    <div class="subtext">
+      <span>แบบประเมิน ราคา vs ต้นทุน vs เป้า v3 ที่ qty 300 ชิ้น</span>
+      <span class="date">7 ก.ค. 2026</span>
+    </div>
+  </div>
+
+  <div class="kpi-row">
+    <div class="kpi-card">
+      <div class="kpi-label">ทั้งหมด (บนเว็บ)</div>
+      <div class="kpi-value">356</div>
+      <div class="kpi-meta">SKU ทั้งหมด</div>
+    </div>
+    <div class="kpi-card" style="border-left-color: #16a34a;">
+      <div class="kpi-label">✔ โอเค</div>
+      <div class="kpi-value" style="color: #16a34a;">60</div>
+      <div class="kpi-meta">17% ที่ดี</div>
+    </div>
+    <div class="kpi-card" style="border-left-color: #dc2626;">
+      <div class="kpi-label">✖ ต่ำกว่า Floor</div>
+      <div class="kpi-value" style="color: #dc2626;">43</div>
+      <div class="kpi-meta">12% ขาดทุน</div>
+    </div>
+    <div class="kpi-card" style="border-left-color: #d97706;">
+      <div class="kpi-label">▼ ต่ำกว่าเป้า v3</div>
+      <div class="kpi-value" style="color: #d97706;">31</div>
+      <div class="kpi-meta">9% ต่ำไป</div>
+    </div>
+    <div class="kpi-card" style="border-left-color: #2563eb;">
+      <div class="kpi-label">▲ สูงกว่าเป้า +25%</div>
+      <div class="kpi-value" style="color: #2563eb;">65</div>
+      <div class="kpi-meta">18% สูงกว่า</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">ไม่มีราคา/ต้นทุน</div>
+      <div class="kpi-value">157</div>
+      <div class="kpi-meta">116 ไม่มีราคา + 41 ไม่มีต้นทุน</div>
+    </div>
+  </div>
+
+  <div class="explainer-box">
+    <h2>เกณฑ์การประเมิน — Pricing Model v3 (Deploy 7 ก.ค. 2026)</h2>
+    <p><strong>Markup ตามชั้นต้นทุน:</strong> ต่ำกว่า 20฿ → 4× | 20–50฿ → 2.5× | 50–300฿ → 1.75× | 300–500฿ → 1.6× | 500–800฿ → 1.5× | 800–1,000฿ → 1.4× | มากกว่า 1,000฿ → 1.35×</p>
+    <p><strong>Margin Floor = 18%:</strong> Net margin หลังจากหักค่า Overhead 6% (commissions 3% + defects 3%)</p>
+    <p><strong>สถานะ OK:</strong> ราคาเว็บ ±10% ถึง +25% ของราคา v3@300 AND margin ≥ 18%</p>
+    <p><strong>ราคาบนเว็บ:</strong> แสดงว่า ราคาต่อชิ้นที่ qty 300 ชิ้น (ได้รับส่วนลด)</p>
+  </div>
+
+  
+  <div class="section">
+    <div class="section-title">
+      <h2>✖ ต่ำกว่า Floor 18% — ขายแล้วขาดทุน/ต่ำกว่าขั้นต่ำ (ต้องแก้ด่วน)</h2>
+      <span class="section-badge">43 SKU</span>
+    </div>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>SKU</th>
+            <th>ชื่อสินค้า</th>
+            <th>หมวด</th>
+            <th>ต้นทุน/ชิ้น</th>
+            <th>ราคา@300</th>
+            <th>v3 เป้า@300</th>
+            <th>ส่วนต่าง%</th>
+            <th>Margin%</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+    <tr>
+      <td>LS043</td>
+      <td>ถังน้ำแข็ง รุ่น</td>
+      <td>Lifestyle</td>
+      <td style="text-align: right;">฿1,247.5</td>
+      <td style="text-align: right;">฿250</td>
+      <td style="text-align: right;">฿1,650</td>
+      <td style="text-align: right;">-84.8%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">-405%</td>
+      
+    </tr>
+    <tr>
+      <td>GM002</td>
+      <td>Jacket รุ่น Baseball</td>
+      <td>Garment</td>
+      <td style="text-align: right;">฿300</td>
+      <td style="text-align: right;">฿80</td>
+      <td style="text-align: right;">฿451</td>
+      <td style="text-align: right;">-82.3%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">-281%</td>
+      
+    </tr>
+    <tr>
+      <td>GM003</td>
+      <td>Jacket รุ่น Casual</td>
+      <td>Garment</td>
+      <td style="text-align: right;">฿300</td>
+      <td style="text-align: right;">฿80</td>
+      <td style="text-align: right;">฿451</td>
+      <td style="text-align: right;">-82.3%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">-281%</td>
+      
+    </tr>
+    <tr>
+      <td>BG030</td>
+      <td>กระเป๋า รุ่น Neo</td>
+      <td>Bag</td>
+      <td style="text-align: right;">฿410</td>
+      <td style="text-align: right;">฿110</td>
+      <td style="text-align: right;">฿617</td>
+      <td style="text-align: right;">-82.2%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">-278.7%</td>
+      
+    </tr>
+    <tr>
+      <td>GM001</td>
+      <td>Jacket รุ่น Pilot</td>
+      <td>Garment</td>
+      <td style="text-align: right;">฿280</td>
+      <td style="text-align: right;">฿80</td>
+      <td style="text-align: right;">฿456</td>
+      <td style="text-align: right;">-82.5%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">-256%</td>
+      
+    </tr>
+    <tr>
+      <td>BG023</td>
+      <td>กระเป๋า รุ่น Drift</td>
+      <td>Bag</td>
+      <td style="text-align: right;">฿310</td>
+      <td style="text-align: right;">฿110</td>
+      <td style="text-align: right;">฿466</td>
+      <td style="text-align: right;">-76.4%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">-187.8%</td>
+      
+    </tr>
+    <tr>
+      <td>LG001</td>
+      <td>กระเป๋าเดินทาง รุ่น Lumo</td>
+      <td>Luggage</td>
+      <td style="text-align: right;">฿845</td>
+      <td style="text-align: right;">฿310</td>
+      <td style="text-align: right;">฿1,148</td>
+      <td style="text-align: right;">-73%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">-178.6%</td>
+      
+    </tr>
+    <tr>
+      <td>BG029</td>
+      <td>กระเป๋า รุ่น Vector</td>
+      <td>Bag</td>
+      <td style="text-align: right;">฿275</td>
+      <td style="text-align: right;">฿110</td>
+      <td style="text-align: right;">฿448</td>
+      <td style="text-align: right;">-75.4%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">-156%</td>
+      
+    </tr>
+    <tr>
+      <td>ST012</td>
+      <td>สมุด รุ่น Bloom</td>
+      <td>Stationery</td>
+      <td style="text-align: right;">฿94</td>
+      <td style="text-align: right;">฿45</td>
+      <td style="text-align: right;">฿153</td>
+      <td style="text-align: right;">-70.6%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">-114.9%</td>
+      
+    </tr>
+    <tr>
+      <td>BG025</td>
+      <td>กระเป๋ารุ่น Power</td>
+      <td>Bag</td>
+      <td style="text-align: right;">฿220</td>
+      <td style="text-align: right;">฿110</td>
+      <td style="text-align: right;">฿358</td>
+      <td style="text-align: right;">-69.3%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">-106%</td>
+      
+    </tr>
+    <tr>
+      <td>ST023</td>
+      <td>แฟ้ม รุ่น Pock</td>
+      <td>Stationery</td>
+      <td style="text-align: right;">฿87.5</td>
+      <td style="text-align: right;">฿45</td>
+      <td style="text-align: right;">฿142</td>
+      <td style="text-align: right;">-68.3%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">-100.4%</td>
+      
+    </tr>
+    <tr>
+      <td>BG028</td>
+      <td>กระเป๋า รุ่น Axis</td>
+      <td>Bag</td>
+      <td style="text-align: right;">฿205</td>
+      <td style="text-align: right;">฿110</td>
+      <td style="text-align: right;">฿334</td>
+      <td style="text-align: right;">-67.1%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">-92.4%</td>
+      
+    </tr>
+    <tr>
+      <td>PT001</td>
+      <td>กระบอกน้ำพกพาสำหรับสัตว์เลี้ยง</td>
+      <td>Pet</td>
+      <td style="text-align: right;">฿118</td>
+      <td style="text-align: right;">฿70</td>
+      <td style="text-align: right;">฿192</td>
+      <td style="text-align: right;">-63.5%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">-74.6%</td>
+      
+    </tr>
+    <tr>
+      <td>SV003</td>
+      <td>Figure รุ่น Craft</td>
+      <td>Souvenir</td>
+      <td style="text-align: right;">฿150</td>
+      <td style="text-align: right;">฿90</td>
+      <td style="text-align: right;">฿244</td>
+      <td style="text-align: right;">-63.1%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">-72.7%</td>
+      
+    </tr>
+    <tr>
+      <td>SV004</td>
+      <td>ตุ๊กตา รุ่น Tiny</td>
+      <td>Souvenir</td>
+      <td style="text-align: right;">฿150</td>
+      <td style="text-align: right;">฿90</td>
+      <td style="text-align: right;">฿244</td>
+      <td style="text-align: right;">-63.1%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">-72.7%</td>
+      
+    </tr>
+    <tr>
+      <td>ST011</td>
+      <td>สมุดบันทึก รุ่น Moon</td>
+      <td>Stationery</td>
+      <td style="text-align: right;">฿74</td>
+      <td style="text-align: right;">฿45</td>
+      <td style="text-align: right;">฿120</td>
+      <td style="text-align: right;">-62.5%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">-70.4%</td>
+      
+    </tr>
+    <tr>
+      <td>BG033</td>
+      <td>กระเป๋าเครื่องสำอาง รุ่น Zuno</td>
+      <td>Bag</td>
+      <td style="text-align: right;">฿152</td>
+      <td style="text-align: right;">฿110</td>
+      <td style="text-align: right;">฿247</td>
+      <td style="text-align: right;">-55.5%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">-44.2%</td>
+      
+    </tr>
+    <tr>
+      <td>LS016</td>
+      <td>ผ้าเช็ดตัว รุ่น Raku</td>
+      <td>Lifestyle</td>
+      <td style="text-align: right;">฿143.5</td>
+      <td style="text-align: right;">฿110</td>
+      <td style="text-align: right;">฿234</td>
+      <td style="text-align: right;">-53%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">-36.5%</td>
+      
+    </tr>
+    <tr>
+      <td>FN013</td>
+      <td>พัดลมพกพา รุ่น Glacier Pro</td>
+      <td>Fan</td>
+      <td style="text-align: right;">฿148</td>
+      <td style="text-align: right;">฿120</td>
+      <td style="text-align: right;">฿241</td>
+      <td style="text-align: right;">-50.2%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">-29.3%</td>
+      
+    </tr>
+    <tr>
+      <td>FN018</td>
+      <td>พัดลมพกพา รุ่น K801</td>
+      <td>Fan</td>
+      <td style="text-align: right;">฿145</td>
+      <td style="text-align: right;">฿120</td>
+      <td style="text-align: right;">฿236</td>
+      <td style="text-align: right;">-49.2%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">-26.8%</td>
+      
+    </tr>
+    <tr>
+      <td>SV002</td>
+      <td>Figure รุ่น Create</td>
+      <td>Souvenir</td>
+      <td style="text-align: right;">฿107.032</td>
+      <td style="text-align: right;">฿90</td>
+      <td style="text-align: right;">฿174</td>
+      <td style="text-align: right;">-48.3%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">-24.9%</td>
+      
+    </tr>
+    <tr>
+      <td>DW016</td>
+      <td>แก้วน้ำสแตนเลส รุ่น Jewel</td>
+      <td>Drinkware</td>
+      <td style="text-align: right;">฿205.5</td>
+      <td style="text-align: right;">฿180</td>
+      <td style="text-align: right;">฿334</td>
+      <td style="text-align: right;">-46.1%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">-20.2%</td>
+      
+    </tr>
+    <tr>
+      <td>SV006</td>
+      <td>ตุ๊กตาหมี รุ่น  Hoppy</td>
+      <td>Souvenir</td>
+      <td style="text-align: right;">฿102.5</td>
+      <td style="text-align: right;">฿90</td>
+      <td style="text-align: right;">฿167</td>
+      <td style="text-align: right;">-46.1%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">-19.9%</td>
+      
+    </tr>
+    <tr>
+      <td>BG024</td>
+      <td>กระเป๋า รุ่น Airzip</td>
+      <td>Bag</td>
+      <td style="text-align: right;">฿125</td>
+      <td style="text-align: right;">฿110</td>
+      <td style="text-align: right;">฿203</td>
+      <td style="text-align: right;">-45.8%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">-19.6%</td>
+      
+    </tr>
+    <tr>
+      <td>GS010</td>
+      <td>เซตเทียนหอม รุ่น Finley</td>
+      <td>Giftset</td>
+      <td style="text-align: right;">฿242.5</td>
+      <td style="text-align: right;">฿230</td>
+      <td style="text-align: right;">฿395</td>
+      <td style="text-align: right;">-41.8%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">-11.4%</td>
+      
+    </tr>
+    <tr>
+      <td>BG050</td>
+      <td>กระเป๋าผ้า รุ่น Loom</td>
+      <td>Bag</td>
+      <td style="text-align: right;">฿113</td>
+      <td style="text-align: right;">฿110</td>
+      <td style="text-align: right;">฿184</td>
+      <td style="text-align: right;">-40.2%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">-8.7%</td>
+      
+    </tr>
+    <tr>
+      <td>BG047</td>
+      <td>กระเป๋าเครื่องสำอาง รุุ่่น ฺ Bunny</td>
+      <td>Bag</td>
+      <td style="text-align: right;">฿111.153</td>
+      <td style="text-align: right;">฿110</td>
+      <td style="text-align: right;">฿181</td>
+      <td style="text-align: right;">-39.2%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">-7%</td>
+      
+    </tr>
+    <tr>
+      <td>BG048</td>
+      <td>กระเป๋าเครื่องสำอาง รุ่น Berry</td>
+      <td>Bag</td>
+      <td style="text-align: right;">฿111.153</td>
+      <td style="text-align: right;">฿110</td>
+      <td style="text-align: right;">฿181</td>
+      <td style="text-align: right;">-39.2%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">-7%</td>
+      
+    </tr>
+    <tr>
+      <td>FN012</td>
+      <td>พัดลมพกพา รุ่น Glacier</td>
+      <td>Fan</td>
+      <td style="text-align: right;">฿118</td>
+      <td style="text-align: right;">฿120</td>
+      <td style="text-align: right;">฿192</td>
+      <td style="text-align: right;">-37.5%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">-4.3%</td>
+      
+    </tr>
+    <tr>
+      <td>FN016</td>
+      <td>พัดลมพกพา รุ่น Ever</td>
+      <td>Fan</td>
+      <td style="text-align: right;">฿115</td>
+      <td style="text-align: right;">฿120</td>
+      <td style="text-align: right;">฿187</td>
+      <td style="text-align: right;">-35.8%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">-1.8%</td>
+      
+    </tr>
+    <tr>
+      <td>FN017</td>
+      <td>พัดลมพกพา รุ่น Stage</td>
+      <td>Fan</td>
+      <td style="text-align: right;">฿115</td>
+      <td style="text-align: right;">฿120</td>
+      <td style="text-align: right;">฿187</td>
+      <td style="text-align: right;">-35.8%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">-1.8%</td>
+      
+    </tr>
+    <tr>
+      <td>GP002</td>
+      <td>หมวก​ Gap Dryrun</td>
+      <td>GAP</td>
+      <td style="text-align: right;">฿91.5</td>
+      <td style="text-align: right;">฿100</td>
+      <td style="text-align: right;">฿149</td>
+      <td style="text-align: right;">-32.9%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">2.5%</td>
+      
+    </tr>
+    <tr>
+      <td>GP001</td>
+      <td>หมวก​ Gap Active</td>
+      <td>GAP</td>
+      <td style="text-align: right;">฿80.5</td>
+      <td style="text-align: right;">฿100</td>
+      <td style="text-align: right;">฿131</td>
+      <td style="text-align: right;">-23.7%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">13.5%</td>
+      
+    </tr>
+    <tr>
+      <td>DW018</td>
+      <td>กระบอกน้ำสแตนเลส รุ่น Steel</td>
+      <td>Drinkware</td>
+      <td style="text-align: right;">฿140</td>
+      <td style="text-align: right;">฿175</td>
+      <td style="text-align: right;">฿228</td>
+      <td style="text-align: right;">-23.2%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">14%</td>
+      
+    </tr>
+    <tr>
+      <td>BG020</td>
+      <td>กระเป๋า Puffy รุ่น Cloud</td>
+      <td>Bag</td>
+      <td style="text-align: right;">฿78</td>
+      <td style="text-align: right;">฿99</td>
+      <td style="text-align: right;">฿127</td>
+      <td style="text-align: right;">-22%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">15.2%</td>
+      
+    </tr>
+    <tr>
+      <td>LS045</td>
+      <td>เก้าอี้แคมปิ้ง รุ่น Seaty</td>
+      <td>Lifestyle</td>
+      <td style="text-align: right;">฿195</td>
+      <td style="text-align: right;">฿250</td>
+      <td style="text-align: right;">฿317</td>
+      <td style="text-align: right;">-21.1%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">16%</td>
+      
+    </tr>
+    <tr>
+      <td>BG041</td>
+      <td>กระเป๋าผ้า รุ่น Flora</td>
+      <td>Bag</td>
+      <td style="text-align: right;">฿85.5</td>
+      <td style="text-align: right;">฿110</td>
+      <td style="text-align: right;">฿139</td>
+      <td style="text-align: right;">-20.9%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">16.3%</td>
+      
+    </tr>
+    <tr>
+      <td>DW023</td>
+      <td>กระบอกน้ำสแตนเลส รุ่น SORA</td>
+      <td>Drinkware</td>
+      <td style="text-align: right;">฿135</td>
+      <td style="text-align: right;">฿175</td>
+      <td style="text-align: right;">฿220</td>
+      <td style="text-align: right;">-20.5%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">16.9%</td>
+      
+    </tr>
+    <tr>
+      <td>LS029</td>
+      <td>ถังเก็บความเย็น รุ่น Arctic Tank</td>
+      <td>Lifestyle</td>
+      <td style="text-align: right;">฿192.5</td>
+      <td style="text-align: right;">฿250</td>
+      <td style="text-align: right;">฿313</td>
+      <td style="text-align: right;">-20.1%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">17%</td>
+      
+    </tr>
+    <tr>
+      <td>GS004</td>
+      <td>เซตของขวัญ Aroma รุ่น Bouquet</td>
+      <td>Giftset</td>
+      <td style="text-align: right;">฿176</td>
+      <td style="text-align: right;">฿230</td>
+      <td style="text-align: right;">฿286</td>
+      <td style="text-align: right;">-19.6%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">17.5%</td>
+      
+    </tr>
+    <tr>
+      <td>GS006</td>
+      <td>เซตของขวัญ Drinkware รุ่น Stainless</td>
+      <td>Giftset</td>
+      <td style="text-align: right;">฿176</td>
+      <td style="text-align: right;">฿230</td>
+      <td style="text-align: right;">฿286</td>
+      <td style="text-align: right;">-19.6%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">17.5%</td>
+      
+    </tr>
+    <tr>
+      <td>GS008</td>
+      <td>เซตของขวัญ Aroma รุ่น Bouquet</td>
+      <td>Giftset</td>
+      <td style="text-align: right;">฿176</td>
+      <td style="text-align: right;">฿230</td>
+      <td style="text-align: right;">฿286</td>
+      <td style="text-align: right;">-19.6%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">17.5%</td>
+      
+    </tr>
+    <tr>
+      <td>GS009</td>
+      <td>เซตของขวัญ Aroma รุ่น Bouquet Plus</td>
+      <td>Giftset</td>
+      <td style="text-align: right;">฿176</td>
+      <td style="text-align: right;">฿230</td>
+      <td style="text-align: right;">฿286</td>
+      <td style="text-align: right;">-19.6%</td>
+      <td style="text-align: right; color: #dc2626; font-weight: bold;">17.5%</td>
+      
+    </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+
+  
+  <div class="section">
+    <div class="section-title">
+      <h2>▼ ต่ำกว่าเป้า v3 — ยังกำไร ≥18% แต่ตั้งต่ำไป</h2>
+      <span class="section-badge">31 SKU</span>
+    </div>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>SKU</th>
+            <th>ชื่อสินค้า</th>
+            <th>หมวด</th>
+            <th>ต้นทุน/ชิ้น</th>
+            <th>ราคา@300</th>
+            <th>v3 เป้า@300</th>
+            <th>ส่วนต่าง%</th>
+            <th>Margin%</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+    <tr>
+      <td>ST002</td>
+      <td>ปากกา รุ่น eco</td>
+      <td>Stationery</td>
+      <td style="text-align: right;">฿7.2</td>
+      <td style="text-align: right;">฿15</td>
+      <td style="text-align: right;">฿25</td>
+      <td style="text-align: right;">-40%</td>
+      <td style="text-align: right; color: #16a34a;">46%</td>
+      
+    </tr>
+    <tr>
+      <td>ST004</td>
+      <td>ปากกา รุ่น Mira</td>
+      <td>Stationery</td>
+      <td style="text-align: right;">฿10.25</td>
+      <td style="text-align: right;">฿22</td>
+      <td style="text-align: right;">฿36</td>
+      <td style="text-align: right;">-38.9%</td>
+      <td style="text-align: right; color: #16a34a;">47.4%</td>
+      
+    </tr>
+    <tr>
+      <td>LS009</td>
+      <td>Key Cover รุ่น Kino</td>
+      <td>Lifestyle</td>
+      <td style="text-align: right;">฿14</td>
+      <td style="text-align: right;">฿30</td>
+      <td style="text-align: right;">฿49</td>
+      <td style="text-align: right;">-38.8%</td>
+      <td style="text-align: right; color: #16a34a;">47.3%</td>
+      
+    </tr>
+    <tr>
+      <td>ST001</td>
+      <td>ปากกา รุ่น oxygen</td>
+      <td>Stationery</td>
+      <td style="text-align: right;">฿7.4</td>
+      <td style="text-align: right;">฿16</td>
+      <td style="text-align: right;">฿26</td>
+      <td style="text-align: right;">-38.5%</td>
+      <td style="text-align: right; color: #16a34a;">47.8%</td>
+      
+    </tr>
+    <tr>
+      <td>LS001</td>
+      <td>Card Holder รุ่น Wave</td>
+      <td>Lifestyle</td>
+      <td style="text-align: right;">฿18</td>
+      <td style="text-align: right;">฿39</td>
+      <td style="text-align: right;">฿63</td>
+      <td style="text-align: right;">-38.1%</td>
+      <td style="text-align: right; color: #16a34a;">47.8%</td>
+      
+    </tr>
+    <tr>
+      <td>KC001</td>
+      <td>กล่องอาหารพลาสติก รุ่น Fresh</td>
+      <td>Kitchen</td>
+      <td style="text-align: right;">฿18</td>
+      <td style="text-align: right;">฿39</td>
+      <td style="text-align: right;">฿63</td>
+      <td style="text-align: right;">-38.1%</td>
+      <td style="text-align: right; color: #16a34a;">47.8%</td>
+      
+    </tr>
+    <tr>
+      <td>ST005</td>
+      <td>ปากกา รุ่น Tekt</td>
+      <td>Stationery</td>
+      <td style="text-align: right;">฿12.9</td>
+      <td style="text-align: right;">฿28</td>
+      <td style="text-align: right;">฿45</td>
+      <td style="text-align: right;">-37.8%</td>
+      <td style="text-align: right; color: #16a34a;">47.9%</td>
+      
+    </tr>
+    <tr>
+      <td>ST013</td>
+      <td>สมุด รุ่น Tone</td>
+      <td>Stationery</td>
+      <td style="text-align: right;">฿32.5</td>
+      <td style="text-align: right;">฿45</td>
+      <td style="text-align: right;">฿72</td>
+      <td style="text-align: right;">-37.5%</td>
+      <td style="text-align: right; color: #16a34a;">21.8%</td>
+      
+    </tr>
+    <tr>
+      <td>BG013</td>
+      <td>กระเป๋าพับได้ รุ่น Pico</td>
+      <td>Bag</td>
+      <td style="text-align: right;">฿14.5</td>
+      <td style="text-align: right;">฿32</td>
+      <td style="text-align: right;">฿51</td>
+      <td style="text-align: right;">-37.3%</td>
+      <td style="text-align: right; color: #16a34a;">48.7%</td>
+      
+    </tr>
+    <tr>
+      <td>LS002</td>
+      <td>Card Holder รุ่น Slim</td>
+      <td>Lifestyle</td>
+      <td style="text-align: right;">฿17.5</td>
+      <td style="text-align: right;">฿39</td>
+      <td style="text-align: right;">฿62</td>
+      <td style="text-align: right;">-37.1%</td>
+      <td style="text-align: right; color: #16a34a;">49.1%</td>
+      
+    </tr>
+    <tr>
+      <td>LS003</td>
+      <td>Card Holder รุ่น Mini</td>
+      <td>Lifestyle</td>
+      <td style="text-align: right;">฿17</td>
+      <td style="text-align: right;">฿38</td>
+      <td style="text-align: right;">฿60</td>
+      <td style="text-align: right;">-36.7%</td>
+      <td style="text-align: right; color: #16a34a;">49.3%</td>
+      
+    </tr>
+    <tr>
+      <td>LS006</td>
+      <td>Luggage Tag รุ่น Lugo</td>
+      <td>Lifestyle</td>
+      <td style="text-align: right;">฿16</td>
+      <td style="text-align: right;">฿36</td>
+      <td style="text-align: right;">฿56</td>
+      <td style="text-align: right;">-35.7%</td>
+      <td style="text-align: right; color: #16a34a;">49.6%</td>
+      
+    </tr>
+    <tr>
+      <td>BG012</td>
+      <td>กระเป๋าพับได้ รุ่น Snap</td>
+      <td>Bag</td>
+      <td style="text-align: right;">฿13</td>
+      <td style="text-align: right;">฿30</td>
+      <td style="text-align: right;">฿46</td>
+      <td style="text-align: right;">-34.8%</td>
+      <td style="text-align: right; color: #16a34a;">50.7%</td>
+      
+    </tr>
+    <tr>
+      <td>LS008</td>
+      <td>Luggage Tag รุ่น Aero</td>
+      <td>Lifestyle</td>
+      <td style="text-align: right;">฿14</td>
+      <td style="text-align: right;">฿32</td>
+      <td style="text-align: right;">฿49</td>
+      <td style="text-align: right;">-34.7%</td>
+      <td style="text-align: right; color: #16a34a;">50.2%</td>
+      
+    </tr>
+    <tr>
+      <td>LS010</td>
+      <td>Key Cover รุ่น Kino Cover</td>
+      <td>Lifestyle</td>
+      <td style="text-align: right;">฿14</td>
+      <td style="text-align: right;">฿32</td>
+      <td style="text-align: right;">฿49</td>
+      <td style="text-align: right;">-34.7%</td>
+      <td style="text-align: right; color: #16a34a;">50.2%</td>
+      
+    </tr>
+    <tr>
+      <td>ST003</td>
+      <td>ปากกา รุ่น Luxe</td>
+      <td>Stationery</td>
+      <td style="text-align: right;">฿7.65</td>
+      <td style="text-align: right;">฿18</td>
+      <td style="text-align: right;">฿27</td>
+      <td style="text-align: right;">-33.3%</td>
+      <td style="text-align: right; color: #16a34a;">51.5%</td>
+      
+    </tr>
+    <tr>
+      <td>LS007</td>
+      <td>Luggage Tag รุ่น Lugo Cover</td>
+      <td>Lifestyle</td>
+      <td style="text-align: right;">฿16</td>
+      <td style="text-align: right;">฿38</td>
+      <td style="text-align: right;">฿56</td>
+      <td style="text-align: right;">-32.1%</td>
+      <td style="text-align: right; color: #16a34a;">51.9%</td>
+      
+    </tr>
+    <tr>
+      <td>BG014</td>
+      <td>กระเป๋าพับได้ รุ่น Viva</td>
+      <td>Bag</td>
+      <td style="text-align: right;">฿24.5</td>
+      <td style="text-align: right;">฿37</td>
+      <td style="text-align: right;">฿54</td>
+      <td style="text-align: right;">-31.5%</td>
+      <td style="text-align: right; color: #16a34a;">27.8%</td>
+      
+    </tr>
+    <tr>
+      <td>BG018</td>
+      <td>กระเป๋าผ้าหูรูด รุ่น Drawstring</td>
+      <td>Bag</td>
+      <td style="text-align: right;">฿19.5</td>
+      <td style="text-align: right;">฿49</td>
+      <td style="text-align: right;">฿69</td>
+      <td style="text-align: right;">-29%</td>
+      <td style="text-align: right; color: #16a34a;">54.2%</td>
+      
+    </tr>
+    <tr>
+      <td>LS004</td>
+      <td>Card Holder รุ่น Vario</td>
+      <td>Lifestyle</td>
+      <td style="text-align: right;">฿18</td>
+      <td style="text-align: right;">฿45</td>
+      <td style="text-align: right;">฿63</td>
+      <td style="text-align: right;">-28.6%</td>
+      <td style="text-align: right; color: #16a34a;">54%</td>
+      
+    </tr>
+    <tr>
+      <td>BG011</td>
+      <td>กระเป๋าพับได้ รุ่น Uno</td>
+      <td>Bag</td>
+      <td style="text-align: right;">฿21</td>
+      <td style="text-align: right;">฿35</td>
+      <td style="text-align: right;">฿46</td>
+      <td style="text-align: right;">-23.9%</td>
+      <td style="text-align: right; color: #16a34a;">34%</td>
+      
+    </tr>
+    <tr>
+      <td>SC007</td>
+      <td>แผ่นน้ำหอมปรับอาากาศ รุ่น Fresher</td>
+      <td>Scent/candle</td>
+      <td style="text-align: right;">฿14</td>
+      <td style="text-align: right;">฿40</td>
+      <td style="text-align: right;">฿49</td>
+      <td style="text-align: right;">-18.4%</td>
+      <td style="text-align: right; color: #16a34a;">59%</td>
+      
+    </tr>
+    <tr>
+      <td>LS040</td>
+      <td>ผ้าคลุมโต๊ะ รุ่น FlexBack</td>
+      <td>Lifestyle</td>
+      <td style="text-align: right;">฿183.171</td>
+      <td style="text-align: right;">฿250</td>
+      <td style="text-align: right;">฿298</td>
+      <td style="text-align: right;">-16.1%</td>
+      <td style="text-align: right; color: #16a34a;">20.7%</td>
+      
+    </tr>
+    <tr>
+      <td>FN015</td>
+      <td>พัดลมพกพา รุ่น Joint</td>
+      <td>Fan</td>
+      <td style="text-align: right;">฿87.5</td>
+      <td style="text-align: right;">฿120</td>
+      <td style="text-align: right;">฿142</td>
+      <td style="text-align: right;">-15.5%</td>
+      <td style="text-align: right; color: #16a34a;">21.1%</td>
+      
+    </tr>
+    <tr>
+      <td>ST021</td>
+      <td>แฟ้ม รุ่น Felt</td>
+      <td>Stationery</td>
+      <td style="text-align: right;">฿15.1</td>
+      <td style="text-align: right;">฿45</td>
+      <td style="text-align: right;">฿53</td>
+      <td style="text-align: right;">-15.1%</td>
+      <td style="text-align: right; color: #16a34a;">60.4%</td>
+      
+    </tr>
+    <tr>
+      <td>GM005</td>
+      <td>เสื้อสูทผู้หญิง รุ่น Gooding</td>
+      <td>Garment</td>
+      <td style="text-align: right;">฿187.5</td>
+      <td style="text-align: right;">฿260</td>
+      <td style="text-align: right;">฿305</td>
+      <td style="text-align: right;">-14.8%</td>
+      <td style="text-align: right; color: #16a34a;">21.9%</td>
+      
+    </tr>
+    <tr>
+      <td>GM004</td>
+      <td>เสื้อโปโล รุ่น Move it</td>
+      <td>Garment</td>
+      <td style="text-align: right;">฿185</td>
+      <td style="text-align: right;">฿260</td>
+      <td style="text-align: right;">฿301</td>
+      <td style="text-align: right;">-13.6%</td>
+      <td style="text-align: right; color: #16a34a;">22.8%</td>
+      
+    </tr>
+    <tr>
+      <td>DW020</td>
+      <td>แก้วน้ำ รุ่่น Aura</td>
+      <td>Drinkware</td>
+      <td style="text-align: right;">฿113.906</td>
+      <td style="text-align: right;">฿160</td>
+      <td style="text-align: right;">฿185</td>
+      <td style="text-align: right;">-13.5%</td>
+      <td style="text-align: right; color: #16a34a;">22.8%</td>
+      
+    </tr>
+    <tr>
+      <td>BG051</td>
+      <td>กระเป๋าผ้า รุ่น Petal</td>
+      <td>Bag</td>
+      <td style="text-align: right;">฿78</td>
+      <td style="text-align: right;">฿110</td>
+      <td style="text-align: right;">฿127</td>
+      <td style="text-align: right;">-13.4%</td>
+      <td style="text-align: right; color: #16a34a;">23.1%</td>
+      
+    </tr>
+    <tr>
+      <td>ST019</td>
+      <td>แฟ้มหนัง รุ่น Soft</td>
+      <td>Stationery</td>
+      <td style="text-align: right;">฿23.125</td>
+      <td style="text-align: right;">฿45</td>
+      <td style="text-align: right;">฿51</td>
+      <td style="text-align: right;">-11.8%</td>
+      <td style="text-align: right; color: #16a34a;">42.6%</td>
+      
+    </tr>
+    <tr>
+      <td>ST020</td>
+      <td>แฟ้มหนัง รุ่น Skin</td>
+      <td>Stationery</td>
+      <td style="text-align: right;">฿23.125</td>
+      <td style="text-align: right;">฿45</td>
+      <td style="text-align: right;">฿51</td>
+      <td style="text-align: right;">-11.8%</td>
+      <td style="text-align: right; color: #16a34a;">42.6%</td>
+      
+    </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+
+  
+  <div class="section">
+    <div class="section-title">
+      <h2>▲ สูงกว่าเป้า v3 เกิน +25% — อาจแพงเกินแข่งขัน</h2>
+      <span class="section-badge">65 SKU</span>
+    </div>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>SKU</th>
+            <th>ชื่อสินค้า</th>
+            <th>หมวด</th>
+            <th>ต้นทุน/ชิ้น</th>
+            <th>ราคา@300</th>
+            <th>v3 เป้า@300</th>
+            <th>ส่วนต่าง%</th>
+            <th>Margin%</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+    <tr>
+      <td>LS020</td>
+      <td>ผ้าไมโครไฟเบอร์เช็ดรถ SHINEPRO</td>
+      <td>Lifestyle</td>
+      <td style="text-align: right;">฿5.95</td>
+      <td style="text-align: right;">฿250</td>
+      <td style="text-align: right;">฿21</td>
+      <td style="text-align: right;">1090.5%</td>
+      <td style="text-align: right; color: #16a34a;">91.6%</td>
+      
+    </tr>
+    <tr>
+      <td>LS036</td>
+      <td>กล่องเก็บความเย็น รุ่น Polar</td>
+      <td>Lifestyle</td>
+      <td style="text-align: right;">฿11</td>
+      <td style="text-align: right;">฿250</td>
+      <td style="text-align: right;">฿39</td>
+      <td style="text-align: right;">541%</td>
+      <td style="text-align: right; color: #16a34a;">89.6%</td>
+      
+    </tr>
+    <tr>
+      <td>BG044</td>
+      <td>ถุงเก็บความเย็น รุ่น Fresh Keep</td>
+      <td>Bag</td>
+      <td style="text-align: right;">฿5.25</td>
+      <td style="text-align: right;">฿110</td>
+      <td style="text-align: right;">฿18</td>
+      <td style="text-align: right;">511.1%</td>
+      <td style="text-align: right; color: #16a34a;">89.2%</td>
+      
+    </tr>
+    <tr>
+      <td>LS035</td>
+      <td>กล่องเก็บความเย็น รุ่น Glint</td>
+      <td>Lifestyle</td>
+      <td style="text-align: right;">฿14.5</td>
+      <td style="text-align: right;">฿250</td>
+      <td style="text-align: right;">฿51</td>
+      <td style="text-align: right;">390.2%</td>
+      <td style="text-align: right; color: #16a34a;">88.2%</td>
+      
+    </tr>
+    <tr>
+      <td>LS030</td>
+      <td>GRIPTOK รุ่น Grip it</td>
+      <td>Lifestyle</td>
+      <td style="text-align: right;">฿24.6</td>
+      <td style="text-align: right;">฿250</td>
+      <td style="text-align: right;">฿54</td>
+      <td style="text-align: right;">363%</td>
+      <td style="text-align: right; color: #16a34a;">84.2%</td>
+      
+    </tr>
+    <tr>
+      <td>PK001</td>
+      <td>ถุงสปันบอนด์ A</td>
+      <td>Packaging</td>
+      <td style="text-align: right;">฿4.75</td>
+      <td style="text-align: right;">฿70</td>
+      <td style="text-align: right;">฿17</td>
+      <td style="text-align: right;">311.8%</td>
+      <td style="text-align: right; color: #16a34a;">87.2%</td>
+      
+    </tr>
+    <tr>
+      <td>PK002</td>
+      <td>ถุงสปันบอนด์ B</td>
+      <td>Packaging</td>
+      <td style="text-align: right;">฿4.75</td>
+      <td style="text-align: right;">฿70</td>
+      <td style="text-align: right;">฿17</td>
+      <td style="text-align: right;">311.8%</td>
+      <td style="text-align: right; color: #16a34a;">87.2%</td>
+      
+    </tr>
+    <tr>
+      <td>GD004</td>
+      <td>เครื่องชั่งน้ำหนักแบบพกพา รุ่น Zen</td>
+      <td>Gadget</td>
+      <td style="text-align: right;">฿43.397</td>
+      <td style="text-align: right;">฿390</td>
+      <td style="text-align: right;">฿95</td>
+      <td style="text-align: right;">310.5%</td>
+      <td style="text-align: right; color: #16a34a;">82.9%</td>
+      
+    </tr>
+    <tr>
+      <td>BK004</td>
+      <td>จานซิลิโคนเด็ก รุ่น Yum</td>
+      <td>Baby & kid</td>
+      <td style="text-align: right;">฿38.5</td>
+      <td style="text-align: right;">฿330</td>
+      <td style="text-align: right;">฿85</td>
+      <td style="text-align: right;">288.2%</td>
+      <td style="text-align: right; color: #16a34a;">82.3%</td>
+      
+    </tr>
+    <tr>
+      <td>DW029</td>
+      <td>แก้วน้ำพลาสติก รุ่น Daily</td>
+      <td>Drinkware</td>
+      <td style="text-align: right;">฿7.5</td>
+      <td style="text-align: right;">฿100</td>
+      <td style="text-align: right;">฿26</td>
+      <td style="text-align: right;">284.6%</td>
+      <td style="text-align: right; color: #16a34a;">86.5%</td>
+      
+    </tr>
+    <tr>
+      <td>GD006</td>
+      <td>ปลั๊กอเนกประสงค์  รุ่น Much</td>
+      <td>Gadget</td>
+      <td style="text-align: right;">฿47</td>
+      <td style="text-align: right;">฿390</td>
+      <td style="text-align: right;">฿103</td>
+      <td style="text-align: right;">278.6%</td>
+      <td style="text-align: right; color: #16a34a;">81.9%</td>
+      
+    </tr>
+    <tr>
+      <td>LS044</td>
+      <td>แผ่นยางรองแก้ว รุ่น Bove</td>
+      <td>Lifestyle</td>
+      <td style="text-align: right;">฿30.25</td>
+      <td style="text-align: right;">฿250</td>
+      <td style="text-align: right;">฿67</td>
+      <td style="text-align: right;">273.1%</td>
+      <td style="text-align: right; color: #16a34a;">81.9%</td>
+      
+    </tr>
+    <tr>
+      <td>BK001</td>
+      <td>แก้วหัดดื่มเด็ก รุ่น Milk</td>
+      <td>Baby & kid</td>
+      <td style="text-align: right;">฿42.5</td>
+      <td style="text-align: right;">฿330</td>
+      <td style="text-align: right;">฿94</td>
+      <td style="text-align: right;">251.1%</td>
+      <td style="text-align: right; color: #16a34a;">81.1%</td>
+      
+    </tr>
+    <tr>
+      <td>PK003</td>
+      <td>ถุงสปันบอนด์ C</td>
+      <td>Packaging</td>
+      <td style="text-align: right;">฿5.65</td>
+      <td style="text-align: right;">฿70</td>
+      <td style="text-align: right;">฿20</td>
+      <td style="text-align: right;">250%</td>
+      <td style="text-align: right; color: #16a34a;">85.9%</td>
+      
+    </tr>
+    <tr>
+      <td>PK004</td>
+      <td>ถุงสปันบอนด์ D</td>
+      <td>Packaging</td>
+      <td style="text-align: right;">฿5.65</td>
+      <td style="text-align: right;">฿70</td>
+      <td style="text-align: right;">฿20</td>
+      <td style="text-align: right;">250%</td>
+      <td style="text-align: right; color: #16a34a;">85.9%</td>
+      
+    </tr>
+    <tr>
+      <td>LS046</td>
+      <td>ผ้าห่ม รุ่น Fluffy</td>
+      <td>Lifestyle</td>
+      <td style="text-align: right;">฿62.5</td>
+      <td style="text-align: right;">฿350</td>
+      <td style="text-align: right;">฿102</td>
+      <td style="text-align: right;">243.1%</td>
+      <td style="text-align: right; color: #16a34a;">76.1%</td>
+      
+    </tr>
+    <tr>
+      <td>DW027</td>
+      <td>กระบอกน้ำพลาสติก รุ่น</td>
+      <td>Drinkware</td>
+      <td style="text-align: right;">฿21.5</td>
+      <td style="text-align: right;">฿160</td>
+      <td style="text-align: right;">฿47</td>
+      <td style="text-align: right;">240.4%</td>
+      <td style="text-align: right; color: #16a34a;">80.6%</td>
+      
+    </tr>
+    <tr>
+      <td>BK002</td>
+      <td>แก้วหัดดื่มเด็ก รุ่น Munch</td>
+      <td>Baby & kid</td>
+      <td style="text-align: right;">฿44.5</td>
+      <td style="text-align: right;">฿330</td>
+      <td style="text-align: right;">฿98</td>
+      <td style="text-align: right;">236.7%</td>
+      <td style="text-align: right; color: #16a34a;">80.5%</td>
+      
+    </tr>
+    <tr>
+      <td>LS031</td>
+      <td>ที่วางโทรศัพท์ รุ่น Hold</td>
+      <td>Lifestyle</td>
+      <td style="text-align: right;">฿50</td>
+      <td style="text-align: right;">฿250</td>
+      <td style="text-align: right;">฿81</td>
+      <td style="text-align: right;">208.6%</td>
+      <td style="text-align: right; color: #16a34a;">74%</td>
+      
+    </tr>
+    <tr>
+      <td>BG021</td>
+      <td>กระเป๋า Puffy รุ่น Vera</td>
+      <td>Bag</td>
+      <td style="text-align: right;">฿57.5</td>
+      <td style="text-align: right;">฿290</td>
+      <td style="text-align: right;">฿94</td>
+      <td style="text-align: right;">208.5%</td>
+      <td style="text-align: right; color: #16a34a;">74.2%</td>
+      
+    </tr>
+    <tr>
+      <td>LS022</td>
+      <td>กรอบรูป CASA</td>
+      <td>Lifestyle</td>
+      <td style="text-align: right;">฿37.5</td>
+      <td style="text-align: right;">฿250</td>
+      <td style="text-align: right;">฿83</td>
+      <td style="text-align: right;">201.2%</td>
+      <td style="text-align: right; color: #16a34a;">79%</td>
+      
+    </tr>
+    <tr>
+      <td>LS038</td>
+      <td>กระเป๋าหนัง รุ่น</td>
+      <td>Lifestyle</td>
+      <td style="text-align: right;">฿37.5</td>
+      <td style="text-align: right;">฿250</td>
+      <td style="text-align: right;">฿83</td>
+      <td style="text-align: right;">201.2%</td>
+      <td style="text-align: right; color: #16a34a;">79%</td>
+      
+    </tr>
+    <tr>
+      <td>LS019</td>
+      <td>กระเป๋าใส่ทิชชู่ในรถยนต์ NOVA</td>
+      <td>Lifestyle</td>
+      <td style="text-align: right;">฿38</td>
+      <td style="text-align: right;">฿250</td>
+      <td style="text-align: right;">฿84</td>
+      <td style="text-align: right;">197.6%</td>
+      <td style="text-align: right; color: #16a34a;">78.8%</td>
+      
+    </tr>
+    <tr>
+      <td>LS032</td>
+      <td>ที่วางโทรศัพท์ รุ่น Lock</td>
+      <td>Lifestyle</td>
+      <td style="text-align: right;">฿55</td>
+      <td style="text-align: right;">฿250</td>
+      <td style="text-align: right;">฿90</td>
+      <td style="text-align: right;">177.8%</td>
+      <td style="text-align: right; color: #16a34a;">72%</td>
+      
+    </tr>
+    <tr>
+      <td>SV007</td>
+      <td>พวงกุญแจอะคริลิค รุ่น Twin Glow</td>
+      <td>Souvenir</td>
+      <td style="text-align: right;">฿9.5</td>
+      <td style="text-align: right;">฿90</td>
+      <td style="text-align: right;">฿33</td>
+      <td style="text-align: right;">172.7%</td>
+      <td style="text-align: right; color: #16a34a;">83.4%</td>
+      
+    </tr>
+    <tr>
+      <td>DW026</td>
+      <td>กระบอกน้ำพลาสติก รุ่น Clear</td>
+      <td>Drinkware</td>
+      <td style="text-align: right;">฿28</td>
+      <td style="text-align: right;">฿160</td>
+      <td style="text-align: right;">฿62</td>
+      <td style="text-align: right;">158.1%</td>
+      <td style="text-align: right; color: #16a34a;">76.5%</td>
+      
+    </tr>
+    <tr>
+      <td>LS018</td>
+      <td>กล่องหนังใส่ทิชชู่</td>
+      <td>Lifestyle</td>
+      <td style="text-align: right;">฿45</td>
+      <td style="text-align: right;">฿250</td>
+      <td style="text-align: right;">฿99</td>
+      <td style="text-align: right;">152.5%</td>
+      <td style="text-align: right; color: #16a34a;">76%</td>
+      
+    </tr>
+    <tr>
+      <td>LS033</td>
+      <td>ที่วางโทรศัพท์ รุ่น Grip</td>
+      <td>Lifestyle</td>
+      <td style="text-align: right;">฿61</td>
+      <td style="text-align: right;">฿250</td>
+      <td style="text-align: right;">฿99</td>
+      <td style="text-align: right;">152.5%</td>
+      <td style="text-align: right; color: #16a34a;">69.6%</td>
+      
+    </tr>
+    <tr>
+      <td>LS037</td>
+      <td>ผ้าพันคอ รุ่น</td>
+      <td>Lifestyle</td>
+      <td style="text-align: right;">฿61.5</td>
+      <td style="text-align: right;">฿250</td>
+      <td style="text-align: right;">฿100</td>
+      <td style="text-align: right;">150%</td>
+      <td style="text-align: right; color: #16a34a;">69.4%</td>
+      
+    </tr>
+    <tr>
+      <td>LS017</td>
+      <td>เซตหมอนรองคอและหลัง Sooty</td>
+      <td>Lifestyle</td>
+      <td style="text-align: right;">฿85</td>
+      <td style="text-align: right;">฿320</td>
+      <td style="text-align: right;">฿138</td>
+      <td style="text-align: right;">131.9%</td>
+      <td style="text-align: right; color: #16a34a;">67.4%</td>
+      
+    </tr>
+    <tr>
+      <td>DW025</td>
+      <td>แก้วเชค รุ่น Booster</td>
+      <td>Drinkware</td>
+      <td style="text-align: right;">฿31.5</td>
+      <td style="text-align: right;">฿160</td>
+      <td style="text-align: right;">฿69</td>
+      <td style="text-align: right;">131.9%</td>
+      <td style="text-align: right; color: #16a34a;">74.3%</td>
+      
+    </tr>
+    <tr>
+      <td>DW019</td>
+      <td>แก้วน้ำสแตนเลส รุ่น Swift</td>
+      <td>Drinkware</td>
+      <td style="text-align: right;">฿50.5</td>
+      <td style="text-align: right;">฿180</td>
+      <td style="text-align: right;">฿82</td>
+      <td style="text-align: right;">119.5%</td>
+      <td style="text-align: right; color: #16a34a;">65.9%</td>
+      
+    </tr>
+    <tr>
+      <td>GD001</td>
+      <td>รีโมทพรีเซนต์ รุ่น Curvy</td>
+      <td>Gadget</td>
+      <td style="text-align: right;">฿110</td>
+      <td style="text-align: right;">฿390</td>
+      <td style="text-align: right;">฿179</td>
+      <td style="text-align: right;">117.9%</td>
+      <td style="text-align: right; color: #16a34a;">65.8%</td>
+      
+    </tr>
+    <tr>
+      <td>FN019</td>
+      <td>พัดสปริง รุ่น</td>
+      <td>Fan</td>
+      <td style="text-align: right;">฿16</td>
+      <td style="text-align: right;">฿120</td>
+      <td style="text-align: right;">฿56</td>
+      <td style="text-align: right;">114.3%</td>
+      <td style="text-align: right; color: #16a34a;">80.7%</td>
+      
+    </tr>
+    <tr>
+      <td>BG026</td>
+      <td>กระเป๋าผ้ากระสอบ Light</td>
+      <td>Bag</td>
+      <td style="text-align: right;">฿23.46</td>
+      <td style="text-align: right;">฿110</td>
+      <td style="text-align: right;">฿52</td>
+      <td style="text-align: right;">111.5%</td>
+      <td style="text-align: right; color: #16a34a;">72.7%</td>
+      
+    </tr>
+    <tr>
+      <td>LS023</td>
+      <td>นาฬิกาแขวนผนัง Haven</td>
+      <td>Lifestyle</td>
+      <td style="text-align: right;">฿73.5</td>
+      <td style="text-align: right;">฿250</td>
+      <td style="text-align: right;">฿120</td>
+      <td style="text-align: right;">108.3%</td>
+      <td style="text-align: right; color: #16a34a;">64.6%</td>
+      
+    </tr>
+    <tr>
+      <td>BG034</td>
+      <td>กระเป๋าพับได้ รุ่น Luma</td>
+      <td>Bag</td>
+      <td style="text-align: right;">฿25.75</td>
+      <td style="text-align: right;">฿110</td>
+      <td style="text-align: right;">฿57</td>
+      <td style="text-align: right;">93%</td>
+      <td style="text-align: right; color: #16a34a;">70.6%</td>
+      
+    </tr>
+    <tr>
+      <td>BG045</td>
+      <td>กระเป๋าเก็บความเย็น รุ่น Chill Keep</td>
+      <td>Bag</td>
+      <td style="text-align: right;">฿26.5</td>
+      <td style="text-align: right;">฿110</td>
+      <td style="text-align: right;">฿58</td>
+      <td style="text-align: right;">89.7%</td>
+      <td style="text-align: right; color: #16a34a;">69.9%</td>
+      
+    </tr>
+    <tr>
+      <td>KC002</td>
+      <td>ถ้วยสลัด รุ่น Crisp</td>
+      <td>Kitchen</td>
+      <td style="text-align: right;">฿29.5</td>
+      <td style="text-align: right;">฿120</td>
+      <td style="text-align: right;">฿65</td>
+      <td style="text-align: right;">84.6%</td>
+      <td style="text-align: right; color: #16a34a;">69.4%</td>
+      
+    </tr>
+    <tr>
+      <td>BG019</td>
+      <td>กระเป๋าผ้าสักหลาด รุ่น Felt Bag</td>
+      <td>Bag</td>
+      <td style="text-align: right;">฿20.2</td>
+      <td style="text-align: right;">฿80</td>
+      <td style="text-align: right;">฿44</td>
+      <td style="text-align: right;">81.8%</td>
+      <td style="text-align: right; color: #16a34a;">68.8%</td>
+      
+    </tr>
+    <tr>
+      <td>ST017</td>
+      <td>ปากกา รุ่น liner</td>
+      <td>Stationery</td>
+      <td style="text-align: right;">฿7</td>
+      <td style="text-align: right;">฿45</td>
+      <td style="text-align: right;">฿25</td>
+      <td style="text-align: right;">80%</td>
+      <td style="text-align: right; color: #16a34a;">78.4%</td>
+      
+    </tr>
+    <tr>
+      <td>LS047</td>
+      <td>หมอนผ้าห่ม รุ่น cozy</td>
+      <td>Lifestyle</td>
+      <td style="text-align: right;">฿114</td>
+      <td style="text-align: right;">฿330</td>
+      <td style="text-align: right;">฿186</td>
+      <td style="text-align: right;">77.4%</td>
+      <td style="text-align: right; color: #16a34a;">59.5%</td>
+      
+    </tr>
+    <tr>
+      <td>GD007</td>
+      <td>ปลั๊กอเนกประสงค์  รุ่น Much</td>
+      <td>Gadget</td>
+      <td style="text-align: right;">฿145</td>
+      <td style="text-align: right;">฿390</td>
+      <td style="text-align: right;">฿236</td>
+      <td style="text-align: right;">65.3%</td>
+      <td style="text-align: right; color: #16a34a;">56.8%</td>
+      
+    </tr>
+    <tr>
+      <td>LS015</td>
+      <td>เซตหมอนรองคอและหลัง ERGOREST</td>
+      <td>Lifestyle</td>
+      <td style="text-align: right;">฿120</td>
+      <td style="text-align: right;">฿320</td>
+      <td style="text-align: right;">฿195</td>
+      <td style="text-align: right;">64.1%</td>
+      <td style="text-align: right; color: #16a34a;">56.5%</td>
+      
+    </tr>
+    <tr>
+      <td>UM011</td>
+      <td>ร่ม Automatic รุ่น Capsule</td>
+      <td>Umbrella</td>
+      <td style="text-align: right;">฿71.5</td>
+      <td style="text-align: right;">฿190</td>
+      <td style="text-align: right;">฿116</td>
+      <td style="text-align: right;">63.8%</td>
+      <td style="text-align: right; color: #16a34a;">56.4%</td>
+      
+    </tr>
+    <tr>
+      <td>ST016</td>
+      <td>ปากกา รุ่น Touch</td>
+      <td>Stationery</td>
+      <td style="text-align: right;">฿7.95</td>
+      <td style="text-align: right;">฿45</td>
+      <td style="text-align: right;">฿28</td>
+      <td style="text-align: right;">60.7%</td>
+      <td style="text-align: right; color: #16a34a;">76.3%</td>
+      
+    </tr>
+    <tr>
+      <td>BG022</td>
+      <td>กระเป๋า รุ่น Ivy</td>
+      <td>Bag</td>
+      <td style="text-align: right;">฿185</td>
+      <td style="text-align: right;">฿483</td>
+      <td style="text-align: right;">฿301</td>
+      <td style="text-align: right;">60.5%</td>
+      <td style="text-align: right; color: #16a34a;">55.7%</td>
+      
+    </tr>
+    <tr>
+      <td>GS005</td>
+      <td>เซตของขวัญ Living รุ่น Grain 6 pack</td>
+      <td>Giftset</td>
+      <td style="text-align: right;">฿90.5</td>
+      <td style="text-align: right;">฿230</td>
+      <td style="text-align: right;">฿147</td>
+      <td style="text-align: right;">56.5%</td>
+      <td style="text-align: right; color: #16a34a;">54.7%</td>
+      
+    </tr>
+    <tr>
+      <td>ST015</td>
+      <td>ปากกา รุ่น Writey</td>
+      <td>Stationery</td>
+      <td style="text-align: right;">฿8.25</td>
+      <td style="text-align: right;">฿45</td>
+      <td style="text-align: right;">฿29</td>
+      <td style="text-align: right;">55.2%</td>
+      <td style="text-align: right; color: #16a34a;">75.7%</td>
+      
+    </tr>
+    <tr>
+      <td>ST022</td>
+      <td>แฟ้ม รุ่น Zippy</td>
+      <td>Stationery</td>
+      <td style="text-align: right;">฿8.5</td>
+      <td style="text-align: right;">฿45</td>
+      <td style="text-align: right;">฿30</td>
+      <td style="text-align: right;">50%</td>
+      <td style="text-align: right; color: #16a34a;">75.1%</td>
+      
+    </tr>
+    <tr>
+      <td>DW024</td>
+      <td>แก้วน้ำสแตนเลส รุ่น Brewy mate</td>
+      <td>Drinkware</td>
+      <td style="text-align: right;">฿75</td>
+      <td style="text-align: right;">฿180</td>
+      <td style="text-align: right;">฿122</td>
+      <td style="text-align: right;">47.5%</td>
+      <td style="text-align: right; color: #16a34a;">52.3%</td>
+      
+    </tr>
+    <tr>
+      <td>UM010</td>
+      <td>ร่ม Automatic รุ่น Baggy</td>
+      <td>Umbrella</td>
+      <td style="text-align: right;">฿79</td>
+      <td style="text-align: right;">฿190</td>
+      <td style="text-align: right;">฿129</td>
+      <td style="text-align: right;">47.3%</td>
+      <td style="text-align: right; color: #16a34a;">52.4%</td>
+      
+    </tr>
+    <tr>
+      <td>DW013</td>
+      <td>กระบอกน้ำสแตน รุ่น Cord</td>
+      <td>Drinkware</td>
+      <td style="text-align: right;">฿75.45</td>
+      <td style="text-align: right;">฿175</td>
+      <td style="text-align: right;">฿123</td>
+      <td style="text-align: right;">42.3%</td>
+      <td style="text-align: right; color: #16a34a;">50.9%</td>
+      
+    </tr>
+    <tr>
+      <td>DW012</td>
+      <td>กระบอกน้ำสแตนเลส รุ่น Degree</td>
+      <td>Drinkware</td>
+      <td style="text-align: right;">฿77</td>
+      <td style="text-align: right;">฿175</td>
+      <td style="text-align: right;">฿125</td>
+      <td style="text-align: right;">40%</td>
+      <td style="text-align: right; color: #16a34a;">50%</td>
+      
+    </tr>
+    <tr>
+      <td>LS034</td>
+      <td>ที่วางโทรศัพท์ รุ่น VentX</td>
+      <td>Lifestyle</td>
+      <td style="text-align: right;">฿111</td>
+      <td style="text-align: right;">฿250</td>
+      <td style="text-align: right;">฿181</td>
+      <td style="text-align: right;">38.1%</td>
+      <td style="text-align: right; color: #16a34a;">49.6%</td>
+      
+    </tr>
+    <tr>
+      <td>ST014</td>
+      <td>ปากกา รุ่น Scope</td>
+      <td>Stationery</td>
+      <td style="text-align: right;">฿9.5</td>
+      <td style="text-align: right;">฿45</td>
+      <td style="text-align: right;">฿33</td>
+      <td style="text-align: right;">36.4%</td>
+      <td style="text-align: right; color: #16a34a;">72.9%</td>
+      
+    </tr>
+    <tr>
+      <td>BG035</td>
+      <td>กระเป๋าพับได้ รุ่น Horey</td>
+      <td>Bag</td>
+      <td style="text-align: right;">฿50</td>
+      <td style="text-align: right;">฿110</td>
+      <td style="text-align: right;">฿81</td>
+      <td style="text-align: right;">35.8%</td>
+      <td style="text-align: right; color: #16a34a;">48.5%</td>
+      
+    </tr>
+    <tr>
+      <td>LS014</td>
+      <td>กล่องจัดระเบียบ DRIVEBOX</td>
+      <td>Lifestyle</td>
+      <td style="text-align: right;">฿113.5</td>
+      <td style="text-align: right;">฿250</td>
+      <td style="text-align: right;">฿185</td>
+      <td style="text-align: right;">35.1%</td>
+      <td style="text-align: right; color: #16a34a;">48.6%</td>
+      
+    </tr>
+    <tr>
+      <td>UM008</td>
+      <td>ร่มยาว AUTOMATIC รุ่น Hugie</td>
+      <td>Umbrella</td>
+      <td style="text-align: right;">฿87.5</td>
+      <td style="text-align: right;">฿190</td>
+      <td style="text-align: right;">฿142</td>
+      <td style="text-align: right;">33.8%</td>
+      <td style="text-align: right; color: #16a34a;">47.9%</td>
+      
+    </tr>
+    <tr>
+      <td>UM009</td>
+      <td>ร่ม Automatic รุ่น Go</td>
+      <td>Umbrella</td>
+      <td style="text-align: right;">฿87.5</td>
+      <td style="text-align: right;">฿190</td>
+      <td style="text-align: right;">฿142</td>
+      <td style="text-align: right;">33.8%</td>
+      <td style="text-align: right; color: #16a34a;">47.9%</td>
+      
+    </tr>
+    <tr>
+      <td>DW028</td>
+      <td>แก้วเซรามิก รุ่น</td>
+      <td>Drinkware</td>
+      <td style="text-align: right;">฿32.75</td>
+      <td style="text-align: right;">฿95</td>
+      <td style="text-align: right;">฿72</td>
+      <td style="text-align: right;">31.9%</td>
+      <td style="text-align: right; color: #16a34a;">59.5%</td>
+      
+    </tr>
+    <tr>
+      <td>FN011</td>
+      <td>พัดลมพกพา รุ่น Kiri</td>
+      <td>Fan</td>
+      <td style="text-align: right;">฿53</td>
+      <td style="text-align: right;">฿110</td>
+      <td style="text-align: right;">฿86</td>
+      <td style="text-align: right;">27.9%</td>
+      <td style="text-align: right; color: #16a34a;">45.8%</td>
+      
+    </tr>
+    <tr>
+      <td>PT002</td>
+      <td>ชามข้าวอเนกประสงค์ พับได้</td>
+      <td>Pet</td>
+      <td style="text-align: right;">฿24.833</td>
+      <td style="text-align: right;">฿70</td>
+      <td style="text-align: right;">฿55</td>
+      <td style="text-align: right;">27.3%</td>
+      <td style="text-align: right; color: #16a34a;">58.5%</td>
+      
+    </tr>
+    <tr>
+      <td>DW021</td>
+      <td>กระบอกน้ำสแตนเลส รุ่น Noon</td>
+      <td>Drinkware</td>
+      <td style="text-align: right;">฿85.5</td>
+      <td style="text-align: right;">฿175</td>
+      <td style="text-align: right;">฿139</td>
+      <td style="text-align: right;">25.9%</td>
+      <td style="text-align: right; color: #16a34a;">45.1%</td>
+      
+    </tr>
+    <tr>
+      <td>DW022</td>
+      <td>กระบอกน้ำสแตนเลส รุ่น Sento</td>
+      <td>Drinkware</td>
+      <td style="text-align: right;">฿85.5</td>
+      <td style="text-align: right;">฿175</td>
+      <td style="text-align: right;">฿139</td>
+      <td style="text-align: right;">25.9%</td>
+      <td style="text-align: right; color: #16a34a;">45.1%</td>
+      
+    </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+
+  
+  <div class="section">
+    <div class="section-title">
+      <h2>✔ โอเคแล้ว — อยู่ในช่วงเป้า</h2>
+      <span class="section-badge">60 SKU</span>
+    </div>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>SKU</th>
+            <th>ชื่อสินค้า</th>
+            <th>หมวด</th>
+            <th>ต้นทุน/ชิ้น</th>
+            <th>ราคา@300</th>
+            <th>v3 เป้า@300</th>
+            <th>ส่วนต่าง%</th>
+            <th>Margin%</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+    <tr>
+      <td>BG004</td>
+      <td>กระเป๋าผ้า รุ่น Stripe</td>
+      <td>Bag</td>
+      <td style="text-align: right;">฿35.5</td>
+      <td style="text-align: right;">฿79</td>
+      <td style="text-align: right;">฿78</td>
+      <td style="text-align: right;">1.3%</td>
+      <td style="text-align: right; color: #16a34a;">49.1%</td>
+      
+    </tr>
+    <tr>
+      <td>BG005</td>
+      <td>กระเป๋าผ้า รุ่น Fold</td>
+      <td>Bag</td>
+      <td style="text-align: right;">฿48</td>
+      <td style="text-align: right;">฿107</td>
+      <td style="text-align: right;">฿106</td>
+      <td style="text-align: right;">0.9%</td>
+      <td style="text-align: right; color: #16a34a;">49.1%</td>
+      
+    </tr>
+    <tr>
+      <td>BG006</td>
+      <td>กระเป๋าผ้า รุ่น Essential</td>
+      <td>Bag</td>
+      <td style="text-align: right;">฿73</td>
+      <td style="text-align: right;">฿135</td>
+      <td style="text-align: right;">฿119</td>
+      <td style="text-align: right;">13.4%</td>
+      <td style="text-align: right; color: #16a34a;">39.9%</td>
+      
+    </tr>
+    <tr>
+      <td>BG009</td>
+      <td>กระเป๋ากันน้ำ รุ่น Bucket</td>
+      <td>Bag</td>
+      <td style="text-align: right;">฿80.5</td>
+      <td style="text-align: right;">฿125</td>
+      <td style="text-align: right;">฿131</td>
+      <td style="text-align: right;">-4.6%</td>
+      <td style="text-align: right; color: #16a34a;">29.6%</td>
+      
+    </tr>
+    <tr>
+      <td>BG010</td>
+      <td>กระเป๋ากันน้ำ รุ่น Cross body</td>
+      <td>Bag</td>
+      <td style="text-align: right;">฿89.5</td>
+      <td style="text-align: right;">฿140</td>
+      <td style="text-align: right;">฿146</td>
+      <td style="text-align: right;">-4.1%</td>
+      <td style="text-align: right; color: #16a34a;">30.1%</td>
+      
+    </tr>
+    <tr>
+      <td>BG015</td>
+      <td>กระเป๋าพับได้ รุ่น Noma</td>
+      <td>Bag</td>
+      <td style="text-align: right;">฿24</td>
+      <td style="text-align: right;">฿54</td>
+      <td style="text-align: right;">฿53</td>
+      <td style="text-align: right;">1.9%</td>
+      <td style="text-align: right; color: #16a34a;">49.6%</td>
+      
+    </tr>
+    <tr>
+      <td>BG016</td>
+      <td>กระเป๋าพับได้ รุ่น Noma Edition</td>
+      <td>Bag</td>
+      <td style="text-align: right;">฿26</td>
+      <td style="text-align: right;">฿59</td>
+      <td style="text-align: right;">฿57</td>
+      <td style="text-align: right;">3.5%</td>
+      <td style="text-align: right; color: #16a34a;">49.9%</td>
+      
+    </tr>
+    <tr>
+      <td>BG017</td>
+      <td>กระเป๋า รุ่น Urban</td>
+      <td>Bag</td>
+      <td style="text-align: right;">฿162</td>
+      <td style="text-align: right;">฿253</td>
+      <td style="text-align: right;">฿264</td>
+      <td style="text-align: right;">-4.2%</td>
+      <td style="text-align: right; color: #16a34a;">30%</td>
+      
+    </tr>
+    <tr>
+      <td>BG036</td>
+      <td>กระเป๋าพับได้ รุ่น Longee</td>
+      <td>Bag</td>
+      <td style="text-align: right;">฿67.5</td>
+      <td style="text-align: right;">฿110</td>
+      <td style="text-align: right;">฿110</td>
+      <td style="text-align: right;">0%</td>
+      <td style="text-align: right; color: #16a34a;">32.6%</td>
+      
+    </tr>
+    <tr>
+      <td>BG037</td>
+      <td>กระเป๋า รุ่น Shu</td>
+      <td>Bag</td>
+      <td style="text-align: right;">฿75</td>
+      <td style="text-align: right;">฿110</td>
+      <td style="text-align: right;">฿122</td>
+      <td style="text-align: right;">-9.8%</td>
+      <td style="text-align: right; color: #16a34a;">25.8%</td>
+      
+    </tr>
+    <tr>
+      <td>BG038</td>
+      <td>กระเป๋าเครื่องสำอาง รุ่น Honey</td>
+      <td>Bag</td>
+      <td style="text-align: right;">฿46</td>
+      <td style="text-align: right;">฿110</td>
+      <td style="text-align: right;">฿101</td>
+      <td style="text-align: right;">8.9%</td>
+      <td style="text-align: right; color: #16a34a;">52.2%</td>
+      
+    </tr>
+    <tr>
+      <td>BG039</td>
+      <td>กระเป๋าเครื่องสำอาง รุ่น Charm</td>
+      <td>Bag</td>
+      <td style="text-align: right;">฿70</td>
+      <td style="text-align: right;">฿110</td>
+      <td style="text-align: right;">฿114</td>
+      <td style="text-align: right;">-3.5%</td>
+      <td style="text-align: right; color: #16a34a;">30.4%</td>
+      
+    </tr>
+    <tr>
+      <td>BG040</td>
+      <td>กระเป๋าเครื่องสำอาง รุ่น Glow</td>
+      <td>Bag</td>
+      <td style="text-align: right;">฿47.5</td>
+      <td style="text-align: right;">฿110</td>
+      <td style="text-align: right;">฿105</td>
+      <td style="text-align: right;">4.8%</td>
+      <td style="text-align: right; color: #16a34a;">50.8%</td>
+      
+    </tr>
+    <tr>
+      <td>BG052</td>
+      <td>กระเป๋าผ้า รุ่น Meadow</td>
+      <td>Bag</td>
+      <td style="text-align: right;">฿47</td>
+      <td style="text-align: right;">฿110</td>
+      <td style="text-align: right;">฿103</td>
+      <td style="text-align: right;">6.8%</td>
+      <td style="text-align: right; color: #16a34a;">51.3%</td>
+      
+    </tr>
+    <tr>
+      <td>BK003</td>
+      <td>ผ้ากันเปื้อนเด็ก รุ่น Bibsy</td>
+      <td>Baby & kid</td>
+      <td style="text-align: right;">฿29.5</td>
+      <td style="text-align: right;">฿65</td>
+      <td style="text-align: right;">฿65</td>
+      <td style="text-align: right;">0%</td>
+      <td style="text-align: right; color: #16a34a;">48.6%</td>
+      
+    </tr>
+    <tr>
+      <td>BK005</td>
+      <td>กระบอกน้ำสแตนเลสเด็ก รุ่น Go</td>
+      <td>Baby & kid</td>
+      <td style="text-align: right;">฿112.5</td>
+      <td style="text-align: right;">฿175</td>
+      <td style="text-align: right;">฿183</td>
+      <td style="text-align: right;">-4.4%</td>
+      <td style="text-align: right; color: #16a34a;">29.7%</td>
+      
+    </tr>
+    <tr>
+      <td>DW001</td>
+      <td>กระบอกน้ำสแตนเลส รุ่น Loopa</td>
+      <td>Drinkware</td>
+      <td style="text-align: right;">฿108</td>
+      <td style="text-align: right;">฿170</td>
+      <td style="text-align: right;">฿176</td>
+      <td style="text-align: right;">-3.4%</td>
+      <td style="text-align: right; color: #16a34a;">30.5%</td>
+      
+    </tr>
+    <tr>
+      <td>DW002</td>
+      <td>แก้วน้ำสแตนเลส  รุ่น Brewy</td>
+      <td>Drinkware</td>
+      <td style="text-align: right;">฿98</td>
+      <td style="text-align: right;">฿155</td>
+      <td style="text-align: right;">฿159</td>
+      <td style="text-align: right;">-2.5%</td>
+      <td style="text-align: right; color: #16a34a;">30.8%</td>
+      
+    </tr>
+    <tr>
+      <td>DW003</td>
+      <td>แก้วน้ำสแตนเลส  รุ่น Peak</td>
+      <td>Drinkware</td>
+      <td style="text-align: right;">฿88</td>
+      <td style="text-align: right;">฿135</td>
+      <td style="text-align: right;">฿143</td>
+      <td style="text-align: right;">-5.6%</td>
+      <td style="text-align: right; color: #16a34a;">28.8%</td>
+      
+    </tr>
+    <tr>
+      <td>DW004</td>
+      <td>แก้วน้ำสแตนเลส  รุ่น Cupsy</td>
+      <td>Drinkware</td>
+      <td style="text-align: right;">฿65.5</td>
+      <td style="text-align: right;">฿117</td>
+      <td style="text-align: right;">฿107</td>
+      <td style="text-align: right;">9.3%</td>
+      <td style="text-align: right; color: #16a34a;">38%</td>
+      
+    </tr>
+    <tr>
+      <td>DW005</td>
+      <td>แก้วน้ำสแตนเลส  รุ่น Sip</td>
+      <td>Drinkware</td>
+      <td style="text-align: right;">฿65</td>
+      <td style="text-align: right;">฿126</td>
+      <td style="text-align: right;">฿106</td>
+      <td style="text-align: right;">18.9%</td>
+      <td style="text-align: right; color: #16a34a;">42.4%</td>
+      
+    </tr>
+    <tr>
+      <td>DW006</td>
+      <td>แก้วน้ำสแตนเลส รุ่น Milo</td>
+      <td>Drinkware</td>
+      <td style="text-align: right;">฿90.5</td>
+      <td style="text-align: right;">฿140</td>
+      <td style="text-align: right;">฿147</td>
+      <td style="text-align: right;">-4.8%</td>
+      <td style="text-align: right; color: #16a34a;">29.4%</td>
+      
+    </tr>
+    <tr>
+      <td>DW007</td>
+      <td>กระบอกน้ำสแตนเลส รุ่น Chill</td>
+      <td>Drinkware</td>
+      <td style="text-align: right;">฿113</td>
+      <td style="text-align: right;">฿175</td>
+      <td style="text-align: right;">฿184</td>
+      <td style="text-align: right;">-4.9%</td>
+      <td style="text-align: right; color: #16a34a;">29.4%</td>
+      
+    </tr>
+    <tr>
+      <td>DW008</td>
+      <td>แก้วน้ำสแตนเลส รุ่น Flow</td>
+      <td>Drinkware</td>
+      <td style="text-align: right;">฿75.5</td>
+      <td style="text-align: right;">฿135</td>
+      <td style="text-align: right;">฿123</td>
+      <td style="text-align: right;">9.8%</td>
+      <td style="text-align: right; color: #16a34a;">38.1%</td>
+      
+    </tr>
+    <tr>
+      <td>DW009</td>
+      <td>กระบอกน้ำสแตนเลส รุ่น Trekka</td>
+      <td>Drinkware</td>
+      <td style="text-align: right;">฿85.5</td>
+      <td style="text-align: right;">฿155</td>
+      <td style="text-align: right;">฿139</td>
+      <td style="text-align: right;">11.5%</td>
+      <td style="text-align: right; color: #16a34a;">38.8%</td>
+      
+    </tr>
+    <tr>
+      <td>DW010</td>
+      <td>แก้วน้ำสแตนเลส รุ่น Roam</td>
+      <td>Drinkware</td>
+      <td style="text-align: right;">฿128</td>
+      <td style="text-align: right;">฿200</td>
+      <td style="text-align: right;">฿208</td>
+      <td style="text-align: right;">-3.8%</td>
+      <td style="text-align: right; color: #16a34a;">30%</td>
+      
+    </tr>
+    <tr>
+      <td>DW015</td>
+      <td>กระบอกน้ำสแตนเลส รุ่น Ring</td>
+      <td>Drinkware</td>
+      <td style="text-align: right;">฿93</td>
+      <td style="text-align: right;">฿175</td>
+      <td style="text-align: right;">฿151</td>
+      <td style="text-align: right;">15.9%</td>
+      <td style="text-align: right; color: #16a34a;">40.9%</td>
+      
+    </tr>
+    <tr>
+      <td>DW017</td>
+      <td>แก้วเชค รุ่น Shaky</td>
+      <td>Drinkware</td>
+      <td style="text-align: right;">฿49.5</td>
+      <td style="text-align: right;">฿100</td>
+      <td style="text-align: right;">฿109</td>
+      <td style="text-align: right;">-8.3%</td>
+      <td style="text-align: right; color: #16a34a;">44.5%</td>
+      
+    </tr>
+    <tr>
+      <td>FN001</td>
+      <td>พัดลมพกพา รุ่น Mini</td>
+      <td>Fan</td>
+      <td style="text-align: right;">฿27.705</td>
+      <td style="text-align: right;">฿70</td>
+      <td style="text-align: right;">฿61</td>
+      <td style="text-align: right;">14.8%</td>
+      <td style="text-align: right; color: #16a34a;">54.4%</td>
+      
+    </tr>
+    <tr>
+      <td>FN002</td>
+      <td>พัดลมพกพา รุ่น Beezy</td>
+      <td>Fan</td>
+      <td style="text-align: right;">฿46.25</td>
+      <td style="text-align: right;">฿103</td>
+      <td style="text-align: right;">฿102</td>
+      <td style="text-align: right;">1%</td>
+      <td style="text-align: right; color: #16a34a;">49.1%</td>
+      
+    </tr>
+    <tr>
+      <td>FN003</td>
+      <td>พัดลมพกพา รุ่น Neko</td>
+      <td>Fan</td>
+      <td style="text-align: right;">฿48</td>
+      <td style="text-align: right;">฿107</td>
+      <td style="text-align: right;">฿106</td>
+      <td style="text-align: right;">0.9%</td>
+      <td style="text-align: right; color: #16a34a;">49.1%</td>
+      
+    </tr>
+    <tr>
+      <td>FN004</td>
+      <td>พัดลมพกพา รุ่น Kuma</td>
+      <td>Fan</td>
+      <td style="text-align: right;">฿57.5</td>
+      <td style="text-align: right;">฿107</td>
+      <td style="text-align: right;">฿94</td>
+      <td style="text-align: right;">13.8%</td>
+      <td style="text-align: right; color: #16a34a;">40.3%</td>
+      
+    </tr>
+    <tr>
+      <td>FN005</td>
+      <td>พัดลมพกพา รุ่น Poco</td>
+      <td>Fan</td>
+      <td style="text-align: right;">฿38</td>
+      <td style="text-align: right;">฿85</td>
+      <td style="text-align: right;">฿84</td>
+      <td style="text-align: right;">1.2%</td>
+      <td style="text-align: right; color: #16a34a;">49.3%</td>
+      
+    </tr>
+    <tr>
+      <td>FN006</td>
+      <td>พัดลมพกพา รุ่น Mino</td>
+      <td>Fan</td>
+      <td style="text-align: right;">฿40.5</td>
+      <td style="text-align: right;">฿90</td>
+      <td style="text-align: right;">฿89</td>
+      <td style="text-align: right;">1.1%</td>
+      <td style="text-align: right; color: #16a34a;">49%</td>
+      
+    </tr>
+    <tr>
+      <td>FN007</td>
+      <td>พัดลมพกพา รุ่น Sola</td>
+      <td>Fan</td>
+      <td style="text-align: right;">฿42</td>
+      <td style="text-align: right;">฿94</td>
+      <td style="text-align: right;">฿92</td>
+      <td style="text-align: right;">2.2%</td>
+      <td style="text-align: right; color: #16a34a;">49.3%</td>
+      
+    </tr>
+    <tr>
+      <td>FN008</td>
+      <td>พัดลมพกพา รุ่น Haru</td>
+      <td>Fan</td>
+      <td style="text-align: right;">฿43</td>
+      <td style="text-align: right;">฿96</td>
+      <td style="text-align: right;">฿95</td>
+      <td style="text-align: right;">1.1%</td>
+      <td style="text-align: right; color: #16a34a;">49.2%</td>
+      
+    </tr>
+    <tr>
+      <td>FN009</td>
+      <td>พัดลมพกพา รุ่น Airo</td>
+      <td>Fan</td>
+      <td style="text-align: right;">฿48</td>
+      <td style="text-align: right;">฿107</td>
+      <td style="text-align: right;">฿106</td>
+      <td style="text-align: right;">0.9%</td>
+      <td style="text-align: right; color: #16a34a;">49.1%</td>
+      
+    </tr>
+    <tr>
+      <td>FN010</td>
+      <td>พัดลมพกพา รุ่น Nero</td>
+      <td>Fan</td>
+      <td style="text-align: right;">฿57</td>
+      <td style="text-align: right;">฿102</td>
+      <td style="text-align: right;">฿93</td>
+      <td style="text-align: right;">9.7%</td>
+      <td style="text-align: right; color: #16a34a;">38.1%</td>
+      
+    </tr>
+    <tr>
+      <td>FN014</td>
+      <td>พัดลมพกพา รุ่น Airy</td>
+      <td>Fan</td>
+      <td style="text-align: right;">฿79.125</td>
+      <td style="text-align: right;">฿120</td>
+      <td style="text-align: right;">฿129</td>
+      <td style="text-align: right;">-7%</td>
+      <td style="text-align: right; color: #16a34a;">28.1%</td>
+      
+    </tr>
+    <tr>
+      <td>GD005</td>
+      <td>ปลั๊กอเนกประสงค์  รุ่น Cube</td>
+      <td>Gadget</td>
+      <td style="text-align: right;">฿195</td>
+      <td style="text-align: right;">฿390</td>
+      <td style="text-align: right;">฿317</td>
+      <td style="text-align: right;">23%</td>
+      <td style="text-align: right; color: #16a34a;">44%</td>
+      
+    </tr>
+    <tr>
+      <td>GS001</td>
+      <td>เซตของขวัญ Business รุ่น Basic</td>
+      <td>Giftset</td>
+      <td style="text-align: right;">฿120.5</td>
+      <td style="text-align: right;">฿190</td>
+      <td style="text-align: right;">฿196</td>
+      <td style="text-align: right;">-3.1%</td>
+      <td style="text-align: right; color: #16a34a;">30.6%</td>
+      
+    </tr>
+    <tr>
+      <td>GS002</td>
+      <td>เซตของขวัญ Business รุ่น Smart</td>
+      <td>Giftset</td>
+      <td style="text-align: right;">฿227</td>
+      <td style="text-align: right;">฿350</td>
+      <td style="text-align: right;">฿369</td>
+      <td style="text-align: right;">-5.1%</td>
+      <td style="text-align: right; color: #16a34a;">29.1%</td>
+      
+    </tr>
+    <tr>
+      <td>GS003</td>
+      <td>เซตของขวัญ Business รุ่น Executive</td>
+      <td>Giftset</td>
+      <td style="text-align: right;">฿257</td>
+      <td style="text-align: right;">฿420</td>
+      <td style="text-align: right;">฿418</td>
+      <td style="text-align: right;">0.5%</td>
+      <td style="text-align: right; color: #16a34a;">32.8%</td>
+      
+    </tr>
+    <tr>
+      <td>LS005</td>
+      <td>Card Holder รุ่น Pullo</td>
+      <td>Lifestyle</td>
+      <td style="text-align: right;">฿27</td>
+      <td style="text-align: right;">฿60</td>
+      <td style="text-align: right;">฿59</td>
+      <td style="text-align: right;">1.7%</td>
+      <td style="text-align: right; color: #16a34a;">49%</td>
+      
+    </tr>
+    <tr>
+      <td>LS011</td>
+      <td>ซองใส่พาสปอร์ต Passport Cover</td>
+      <td>Lifestyle</td>
+      <td style="text-align: right;">฿25.5</td>
+      <td style="text-align: right;">฿59</td>
+      <td style="text-align: right;">฿56</td>
+      <td style="text-align: right;">5.4%</td>
+      <td style="text-align: right; color: #16a34a;">50.8%</td>
+      
+    </tr>
+    <tr>
+      <td>LS012</td>
+      <td>Smart Grip รุ่น Flex</td>
+      <td>Lifestyle</td>
+      <td style="text-align: right;">฿60.5</td>
+      <td style="text-align: right;">฿105</td>
+      <td style="text-align: right;">฿98</td>
+      <td style="text-align: right;">7.1%</td>
+      <td style="text-align: right; color: #16a34a;">36.4%</td>
+      
+    </tr>
+    <tr>
+      <td>LS013</td>
+      <td>Smart Grip รุ่น Tri-fold</td>
+      <td>Lifestyle</td>
+      <td style="text-align: right;">฿73</td>
+      <td style="text-align: right;">฿125</td>
+      <td style="text-align: right;">฿119</td>
+      <td style="text-align: right;">5%</td>
+      <td style="text-align: right; color: #16a34a;">35.6%</td>
+      
+    </tr>
+    <tr>
+      <td>ST006</td>
+      <td>สมุดบันทึก รุ่น Idea</td>
+      <td>Stationery</td>
+      <td style="text-align: right;">฿53.3</td>
+      <td style="text-align: right;">฿95</td>
+      <td style="text-align: right;">฿87</td>
+      <td style="text-align: right;">9.2%</td>
+      <td style="text-align: right; color: #16a34a;">37.9%</td>
+      
+    </tr>
+    <tr>
+      <td>ST007</td>
+      <td>สมุดบันทึก รุ่น Folio</td>
+      <td>Stationery</td>
+      <td style="text-align: right;">฿58.85</td>
+      <td style="text-align: right;">฿105</td>
+      <td style="text-align: right;">฿96</td>
+      <td style="text-align: right;">9.4%</td>
+      <td style="text-align: right; color: #16a34a;">38%</td>
+      
+    </tr>
+    <tr>
+      <td>ST008</td>
+      <td>สมุดบันทึก รุ่น Muse</td>
+      <td>Stationery</td>
+      <td style="text-align: right;">฿74</td>
+      <td style="text-align: right;">฿135</td>
+      <td style="text-align: right;">฿120</td>
+      <td style="text-align: right;">12.5%</td>
+      <td style="text-align: right; color: #16a34a;">39.2%</td>
+      
+    </tr>
+    <tr>
+      <td>ST009</td>
+      <td>Sticky Note รุ่น Cube</td>
+      <td>Stationery</td>
+      <td style="text-align: right;">฿60.5</td>
+      <td style="text-align: right;">฿99</td>
+      <td style="text-align: right;">฿98</td>
+      <td style="text-align: right;">1%</td>
+      <td style="text-align: right; color: #16a34a;">32.9%</td>
+      
+    </tr>
+    <tr>
+      <td>ST010</td>
+      <td>Sticky Note รุ่น Memo</td>
+      <td>Stationery</td>
+      <td style="text-align: right;">฿23</td>
+      <td style="text-align: right;">฿49</td>
+      <td style="text-align: right;">฿51</td>
+      <td style="text-align: right;">-3.9%</td>
+      <td style="text-align: right; color: #16a34a;">47.1%</td>
+      
+    </tr>
+    <tr>
+      <td>ST018</td>
+      <td>ปากกา รุ่น Bamboo</td>
+      <td>Stationery</td>
+      <td style="text-align: right;">฿12.5</td>
+      <td style="text-align: right;">฿45</td>
+      <td style="text-align: right;">฿44</td>
+      <td style="text-align: right;">2.3%</td>
+      <td style="text-align: right; color: #16a34a;">66.2%</td>
+      
+    </tr>
+    <tr>
+      <td>SV001</td>
+      <td>Magnetic Snaps</td>
+      <td>Souvenir</td>
+      <td style="text-align: right;">฿54</td>
+      <td style="text-align: right;">฿90</td>
+      <td style="text-align: right;">฿88</td>
+      <td style="text-align: right;">2.3%</td>
+      <td style="text-align: right; color: #16a34a;">34%</td>
+      
+    </tr>
+    <tr>
+      <td>SV005</td>
+      <td>ตุ๊กตาหมี รุ่น Teddy</td>
+      <td>Souvenir</td>
+      <td style="text-align: right;">฿58.5</td>
+      <td style="text-align: right;">฿90</td>
+      <td style="text-align: right;">฿95</td>
+      <td style="text-align: right;">-5.3%</td>
+      <td style="text-align: right; color: #16a34a;">29%</td>
+      
+    </tr>
+    <tr>
+      <td>UM001</td>
+      <td>ร่ม Automatic รุ่น Lite</td>
+      <td>Umbrella</td>
+      <td style="text-align: right;">฿67.5</td>
+      <td style="text-align: right;">฿120</td>
+      <td style="text-align: right;">฿110</td>
+      <td style="text-align: right;">9.1%</td>
+      <td style="text-align: right; color: #16a34a;">37.8%</td>
+      
+    </tr>
+    <tr>
+      <td>UM002</td>
+      <td>ร่ม Automatic รุ่น Premium</td>
+      <td>Umbrella</td>
+      <td style="text-align: right;">฿87.5</td>
+      <td style="text-align: right;">฿160</td>
+      <td style="text-align: right;">฿142</td>
+      <td style="text-align: right;">12.7%</td>
+      <td style="text-align: right; color: #16a34a;">39.3%</td>
+      
+    </tr>
+    <tr>
+      <td>UM003</td>
+      <td>ร่ม Automatic รุ่น Elite</td>
+      <td>Umbrella</td>
+      <td style="text-align: right;">฿112.5</td>
+      <td style="text-align: right;">฿190</td>
+      <td style="text-align: right;">฿183</td>
+      <td style="text-align: right;">3.8%</td>
+      <td style="text-align: right; color: #16a34a;">34.8%</td>
+      
+    </tr>
+    <tr>
+      <td>UM004</td>
+      <td>ร่ม Automatic รุ่น Signature</td>
+      <td>Umbrella</td>
+      <td style="text-align: right;">฿147.5</td>
+      <td style="text-align: right;">฿230</td>
+      <td style="text-align: right;">฿240</td>
+      <td style="text-align: right;">-4.2%</td>
+      <td style="text-align: right; color: #16a34a;">29.9%</td>
+      
+    </tr>
+    <tr>
+      <td>UM005</td>
+      <td>ร่ม Automatic รุ่น Luxury</td>
+      <td>Umbrella</td>
+      <td style="text-align: right;">฿164.5</td>
+      <td style="text-align: right;">฿260</td>
+      <td style="text-align: right;">฿268</td>
+      <td style="text-align: right;">-3%</td>
+      <td style="text-align: right; color: #16a34a;">30.7%</td>
+      
+    </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+
+  
+  <div class="section">
+    <div class="collapse-section">
+      <details>
+        <summary>
+          <span>📋 ไม่มีต้นทุนในระบบ (41 SKU)</span>
+          <span style="font-size: 12px; color: #9ca3af;">คลิกเพื่อขยาย</span>
+        </summary>
+        <div class="details-content">
+          
+            <div class="no-cost-item">
+              <span><span class="sku-label">BG001</span> กระเป๋าผ้า รุ่น Classic</span>
+              <span style="color: #6b7280;">ราคา: ฿57</span>
+            </div>
+          
+            <div class="no-cost-item">
+              <span><span class="sku-label">BG002</span> กระเป๋าผ้า รุ่น Classic Wide</span>
+              <span style="color: #6b7280;">ราคา: ฿68</span>
+            </div>
+          
+            <div class="no-cost-item">
+              <span><span class="sku-label">BG003</span> กระเป๋าผ้า รุ่น Everyday</span>
+              <span style="color: #6b7280;">ราคา: ฿96</span>
+            </div>
+          
+            <div class="no-cost-item">
+              <span><span class="sku-label">BG007</span> กระเป๋าผ้า รุ่น Rin</span>
+              <span style="color: #6b7280;">ราคา: ฿94</span>
+            </div>
+          
+            <div class="no-cost-item">
+              <span><span class="sku-label">BG008</span> กระเป๋าผ้า รุ่น Rin Soft</span>
+              <span style="color: #6b7280;">ราคา: ฿94</span>
+            </div>
+          
+            <div class="no-cost-item">
+              <span><span class="sku-label">BG027</span> กระเป๋ากระสอบ Malee</span>
+              <span style="color: #6b7280;">ราคา: ฿110</span>
+            </div>
+          
+            <div class="no-cost-item">
+              <span><span class="sku-label">BG031</span> กระเป๋าผ้า รุ่น Nilo</span>
+              <span style="color: #6b7280;">ราคา: ฿110</span>
+            </div>
+          
+            <div class="no-cost-item">
+              <span><span class="sku-label">BG032</span> กระเป๋า รุ่น Puffy</span>
+              <span style="color: #6b7280;">ราคา: ฿110</span>
+            </div>
+          
+            <div class="no-cost-item">
+              <span><span class="sku-label">BG042</span> กระเป๋า รุ่น Nilo</span>
+              <span style="color: #6b7280;">ราคา: ฿110</span>
+            </div>
+          
+            <div class="no-cost-item">
+              <span><span class="sku-label">BG046</span> กระเป๋าเก็บความเย็น รุุ่่น Temp Mate</span>
+              <span style="color: #6b7280;">ราคา: ฿110</span>
+            </div>
+          
+            <div class="no-cost-item">
+              <span><span class="sku-label">BG049</span> กระเป๋าเก็บความเย็น รุ่น Chill Keep</span>
+              <span style="color: #6b7280;">ราคา: ฿140</span>
+            </div>
+          
+            <div class="no-cost-item">
+              <span><span class="sku-label">DW011</span> แก้วน้ำ รุ่น Ocean</span>
+              <span style="color: #6b7280;">ราคา: ฿160</span>
+            </div>
+          
+            <div class="no-cost-item">
+              <span><span class="sku-label">DW014</span> กระบอกน้ำพลาสติก รุ่น Snag</span>
+              <span style="color: #6b7280;">ราคา: ฿160</span>
+            </div>
+          
+            <div class="no-cost-item">
+              <span><span class="sku-label">GD002</span> ปลั๊กอเนกประสงค์ รุ่น Prime</span>
+              <span style="color: #6b7280;">ราคา: ฿390</span>
+            </div>
+          
+            <div class="no-cost-item">
+              <span><span class="sku-label">GD003</span> หัวปลั๊กพับไม่ได้</span>
+              <span style="color: #6b7280;">ราคา: ฿390</span>
+            </div>
+          
+            <div class="no-cost-item">
+              <span><span class="sku-label">GS007</span> เซตของขวัญ Drinkware รุ่น Muckie</span>
+              <span style="color: #6b7280;">ราคา: ฿230</span>
+            </div>
+          
+            <div class="no-cost-item">
+              <span><span class="sku-label">KC003</span> กล่องอาหาร รุ่น Deli</span>
+              <span style="color: #6b7280;">ราคา: ฿175</span>
+            </div>
+          
+            <div class="no-cost-item">
+              <span><span class="sku-label">KC004</span> กล่องอาหาร รุ่น Deli+</span>
+              <span style="color: #6b7280;">ราคา: ฿189</span>
+            </div>
+          
+            <div class="no-cost-item">
+              <span><span class="sku-label">KC005</span> กล่องอาหาร รุ่น Grain</span>
+              <span style="color: #6b7280;">ราคา: ฿120</span>
+            </div>
+          
+            <div class="no-cost-item">
+              <span><span class="sku-label">KC006</span> กล่องอาหาร รุ่น Mori</span>
+              <span style="color: #6b7280;">ราคา: ฿120</span>
+            </div>
+          
+            <div class="no-cost-item">
+              <span><span class="sku-label">LG000</span> กระเป๋าเดินทาง รุ่น VOYAGER</span>
+              <span style="color: #6b7280;">ราคา: ฿310</span>
+            </div>
+          
+            <div class="no-cost-item">
+              <span><span class="sku-label">LS021</span> หมอนอิง Super soft</span>
+              <span style="color: #6b7280;">ราคา: ฿320</span>
+            </div>
+          
+            <div class="no-cost-item">
+              <span><span class="sku-label">LS024</span> กระเป๋าใส่อุปกรณ์ NEATDY</span>
+              <span style="color: #6b7280;">ราคา: ฿250</span>
+            </div>
+          
+            <div class="no-cost-item">
+              <span><span class="sku-label">LS026</span> ผ้าห่ม</span>
+              <span style="color: #6b7280;">ราคา: ฿350</span>
+            </div>
+          
+            <div class="no-cost-item">
+              <span><span class="sku-label">LS028</span> ผ้ากันเปื้อน รุ่น Chef</span>
+              <span style="color: #6b7280;">ราคา: ฿250</span>
+            </div>
+          
+            <div class="no-cost-item">
+              <span><span class="sku-label">LS039</span> ผ้าคลุมโต๊ะ รุ่น FreeFall</span>
+              <span style="color: #6b7280;">ราคา: ฿250</span>
+            </div>
+          
+            <div class="no-cost-item">
+              <span><span class="sku-label">LS041</span> ถังน้ำแข็ง รุ่น</span>
+              <span style="color: #6b7280;">ราคา: ฿250</span>
+            </div>
+          
+            <div class="no-cost-item">
+              <span><span class="sku-label">LS042</span> ถังน้ำแข็ง รุ่น</span>
+              <span style="color: #6b7280;">ราคา: ฿250</span>
+            </div>
+          
+            <div class="no-cost-item">
+              <span><span class="sku-label">PB001</span> Power Bank รุ่น Pocket</span>
+              <span style="color: #6b7280;">ราคา: ฿390</span>
+            </div>
+          
+            <div class="no-cost-item">
+              <span><span class="sku-label">PB002</span> Power Bank รุ่น Dualslim</span>
+              <span style="color: #6b7280;">ราคา: ฿390</span>
+            </div>
+          
+            <div class="no-cost-item">
+              <span><span class="sku-label">PB003</span> Power Bank รุ่น EVO</span>
+              <span style="color: #6b7280;">ราคา: ฿390</span>
+            </div>
+          
+            <div class="no-cost-item">
+              <span><span class="sku-label">PB004</span> Power Bank รุ่น HyperMag</span>
+              <span style="color: #6b7280;">ราคา: ฿390</span>
+            </div>
+          
+            <div class="no-cost-item">
+              <span><span class="sku-label">PK005</span> ถุงกระดาษ E</span>
+              <span style="color: #6b7280;">ราคา: ฿25</span>
+            </div>
+          
+            <div class="no-cost-item">
+              <span><span class="sku-label">SC001</span> ยาดมสมุนไพร รุ่น Herb Fresh</span>
+              <span style="color: #6b7280;">ราคา: ฿40</span>
+            </div>
+          
+            <div class="no-cost-item">
+              <span><span class="sku-label">SC002</span> ยาดมสมุนไพร รุ่น FreshUp</span>
+              <span style="color: #6b7280;">ราคา: ฿40</span>
+            </div>
+          
+            <div class="no-cost-item">
+              <span><span class="sku-label">SC003</span> สเปรย์แอลกอฮอล์ รุ่น Cleanie</span>
+              <span style="color: #6b7280;">ราคา: ฿40</span>
+            </div>
+          
+            <div class="no-cost-item">
+              <span><span class="sku-label">SC004</span> แฮนด์ครีม รุ่น Softie</span>
+              <span style="color: #6b7280;">ราคา: ฿40</span>
+            </div>
+          
+            <div class="no-cost-item">
+              <span><span class="sku-label">SC005</span> Balm Aroma รุ่น Balmy</span>
+              <span style="color: #6b7280;">ราคา: ฿40</span>
+            </div>
+          
+            <div class="no-cost-item">
+              <span><span class="sku-label">SC006</span> ยาดมสมุนไพร รุ่น Herbie</span>
+              <span style="color: #6b7280;">ราคา: ฿40</span>
+            </div>
+          
+            <div class="no-cost-item">
+              <span><span class="sku-label">UM006</span> ร่มยาว AUTOMATIC รุ่น Essential</span>
+              <span style="color: #6b7280;">ราคา: ฿190</span>
+            </div>
+          
+            <div class="no-cost-item">
+              <span><span class="sku-label">UM007</span> ร่มยาว AUTOMATIC รุ่น Essential Plus</span>
+              <span style="color: #6b7280;">ราคา: ฿190</span>
+            </div>
+          
+        </div>
+      </details>
+    </div>
+  </div>
+  
+
+  
+  <div class="section">
+    <div class="collapse-section">
+      <details>
+        <summary>
+          <span>📋 ไม่มีราคาบนเว็บไซต์ (116 SKU)</span>
+          <span style="font-size: 12px; color: #9ca3af;">คลิกเพื่อขยาย</span>
+        </summary>
+        <div class="details-content">
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">BG043</span> (ไม่มีชื่อ)</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">DW030</span> (ไม่มีชื่อ)</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">DW031</span> (ไม่มีชื่อ)</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX001</span> เสื้อยืดคอกลม แขนสั้น</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿46</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX002</span> เสื้อยืดคอกลม แขนยาว</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿80</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX003</span> เสื้อยืดคอกลม</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿160</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX004</span> กระบอกน้ำพลาสติก</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿32</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX005</span> กระบอกน้ำสแตนเลส</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿120</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX006</span> แก้วพร้อมปลอก</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿35</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX007</span> เสื้อยืดคอวี แขนสั้น</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿275</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX008</span> หมวกบันเดิล 4 ทรง (ตาข่าย/ปีกแข็ง/บักเก็ต/คลุมหน้า)</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿80</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX009</span> หมวกแก๊ปผ้าลีวาย (เดนิม/ยีนส์)</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿60</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX010</span> ร่มพับ 3 ตอน</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿60</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX011</span> ร่มพับ 4 ตอน</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿60</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX012</span> ร่มพับ 5 ตอน</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿60</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX013</span> ร่ม 22 นิ้ว</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿60</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX014</span> ร่มแบบใส</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿60</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX015</span> ร่มไม้เท้า 16 ก้าน</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿60</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX016</span> ร่มกอล์ฟ 28 นิ้ว</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿60</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX017</span> ร่มกอล์ฟ 30 นิ้ว</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿60</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX018</span> ร่มกลับด้าน</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿60</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX019</span> ร่มกอล์ฟ 30 นิ้ว 2 ชั้น (สลับสี 2 โทน)</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿180</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX020</span> powerbank</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿100</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX021</span> powerbank 10000mAh RPP-678 (Silver,N) Wireless - แบตสำรอง REMAX Package เดิม</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿100</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX022</span> Fan High-speed Handheld RS-SF10 (Silver) - พัดลม Remax</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿100</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX023</span> Fan High-speed Handheld RS-SF12 (Blue) - พัดลม Remax</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿100</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX024</span> Fan mini Handheld RS-SF25 - พัดลม Remax</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿100</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX025</span> แก้วเยติ 20oz · กล่องน้ำตาล (ฟู๊ดเกรด)</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿58</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX026</span> แก้วเยติ 20oz · กล่องขาว</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿58</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX027</span> แก้วเยติ 20oz · กล่องขาว YW</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿70</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX028</span> แก้วเยติ 30oz ทรงอ้วน</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿62</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX029</span> แก้วเก็บความเย็น 30oz ทรงสูง · ฝาเกลียว</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿62</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX030</span> แก้วเก็บความเย็น 30oz ทรงสูง · หูโค้ง</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿82</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX031</span> แก้วเก็บความเย็น 30oz ทรงสูง · หูเหลี่ยม</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿72</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX032</span> แก้วกาแฟ COFFEE (ฝากระดก)</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿60</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX033</span> แก้วเยติ 20oz ทรงอ้วน · ฝาเกลียว</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿62</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX034</span> แก้วเยติ 20oz ทรงอ้วน · หูเหลี่ยม</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿67</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX035</span> แก้ว 20oz ทรงอ้วน · หูโค้ง</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿78</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX036</span> กระบอกน้ำทรงสปอร์ต ACTIVE</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿82</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX037</span> แก้วกาแฟ มีหูจับข้าง 14oz</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿85</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX038</span> แก้วไข่</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿60</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX039</span> แก้วทรงสตาร์บัค · ขอบดำ</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿100</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX040</span> แก้วทรงสตาร์บัค · ขอบทอง</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿115</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX041</span> กระบอกน้ำเก็บอุณหภูมิ (Smart LED)</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿55</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX042</span> เสื้อแจ็คเก็ต (Smooth Premium Jacket)</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿310</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX043</span> หมวกแก๊ปตาข่าย (ทรัคเกอร์) เกรดพรีเมียม</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿110</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX044</span> เสื้อโปโล CoolPlus CA</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿255</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX045</span> เสื้อโปโล CoolPlus</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿255</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX046</span> เสื้อโปโล (Micro-Polyester)</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿150</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX047</span> ผ้ากันเปื้อน COMB-TWILL CLASSIC LOOP</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿100</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX048</span> ผ้ากันเปื้อน รุ่น SMOOTH SOLON</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿100</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX049</span> เสื้อช็อปแขนสั้น</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿415</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX050</span> เสื้อช็อปแขนยาว</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿560</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX051</span> เสื้อช็อป</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿475</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX052</span> กางเกงช่าง</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿195</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX053</span> หมวก พีชพรีเมียม แซนวิช</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿105</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX054</span> หมวก บัคเคิ้ลบี (Buckle-B)</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿105</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX055</span> หมวก แซนวิช (Sandwich)</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿50</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX056</span> กระเป๋า FluFFy Puffy</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿178</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX057</span> กระเป๋า</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿178</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX058</span> ร่มพับ 3 ตอน</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿245</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX059</span> ร่มตอนเดียว 22 นิ้ว</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿230</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX060</span> ร่มพับ 3 ตอนโครงเหล็ก 8 ช่อง</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿165</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX061</span> ร่มยาว 24 นิ้วโครงเหล็ก</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿160</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX062</span> หมวกปีกแข็ง (บูนนี่/ปีกกว้าง มีสายรัดคาง)</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX063</span> หมวกบักเก็ต สีพื้น</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX064</span> หมวกคลุมหน้า/คลุมท้ายทอย พร้อมสกรีน</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX065</span> หมวกแก๊ปเบสบอล 6 แผง สีพื้น</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX066</span> ร่มพับ 3 ตอน UV สีพื้น</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX067</span> ร่มพับ 4 ตอน UV ดำ สีพื้น</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX068</span> ร่ม 5 ตอน มินิ UV ดำ</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX069</span> ร่ม 22 นิ้ว สีพื้น (ออโต้)</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX070</span> ร่มแบบใส (โดมใส + สีใส)</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX071</span> ร่มไม้เท้า 16 ก้าน สีพื้น</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX072</span> ร่มกอล์ฟ 28 นิ้ว ออโต้ สีพื้น</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX073</span> ร่มกอล์ฟ 30 นิ้ว มือเปิด สีพื้น</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX074</span> ร่มกลับด้าน C-handle (2 ชั้น)</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX075</span> แก้วทรงสูงเรียว ฝากระดกดำ · แถบยางจับกันลื่น</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX076</span> เสื้อแจ็คเก็ต Smart Premium (คอเชิ้ต/โค้ช)</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX077</span> เสื้อแจ็คเก็ต Baseball Premium (วาร์ซิตี้)</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX078</span> เสื้อแจ็คเก็ต Simply (ทรงสลิม คอเชิ้ต/คอจีน)</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX079</span> เสื้อยืดคอกลม Ultra Zoft Cotton</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX080</span> เสื้อยืดคอกลม UL Ultra Light New Regular</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX081</span> เสื้อโปโลขลิบปก (Micro Polyester)</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX082</span> ขวดน้ำพลาสติกเด็ก มีหลอด-หูหิ้ว</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX083</span> ขวดน้ำพลาสติกฝาเห็ด/ฝาเพชร มีสาย</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX084</span> ขวดน้ำพลาสติกพร้อมปลอกฟาง/ทรงแก้วกาแฟ</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX085</span> กระบอกน้ำสแตนเลสฝาหูหิ้ว/ฝาล็อค</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX086</span> แก้วกาแฟสแตนเลสหุ้มไม้ไผ่ มีหูจับ</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX087</span> กระบอกน้ำสแตนเลสไล่เฉดสี ฝาหูหิ้ว</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX088</span> แก้วแก้วพร้อมปลอก ทรงโหลเตี้ยฝาเกลียว</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX089</span> แก้วแก้วพร้อมปลอก ทรงโหลใหญ่ฝาไม้ไผ่ + หลอด</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX090</span> ชุดหมีช่าง (เสื้อ+กางเกงติดกัน) แถบสะท้อนแสง</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX091</span> เสื้อยืดโอเวอร์ไซส์ Cool-Ease (Oversize)</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX092</span> เสื้อยืดครอป (Crop Top) PMK</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX093</span> เสื้อยืดคอกลม/คอวี ทรงโมเดิร์น</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX094</span> ร่มยาว 24 นิ้ว ตรง ลายพิมพ์ (rakafactory)</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX095</span> กระเป๋าผ้าแคนวาส Canvas Tote 14 oz.</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX096</span> กระเป๋าถือนุ่มฟู Dumpling Puffy Bag</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX097</span> กระเป๋านุ่มฟู Fluffy Puffy Bag</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX098</span> กระเป๋าระบายจีบ Fluffy Moji Bag</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX099</span> กระเป๋าผ้า Paris Bag (Size L)</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX100</span> กระเป๋าผ้าลายทาง Puffy PopLine Bag</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX101</span> ผ้าห่มนาโนเนื้อนุ่ม (Plain Fleece Blanket)</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX102</span> ผ้าห่มมีฮู้ดสวมใส่ (Hooded Wearable Blanket)</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX103</span> ผ้าห่มหมวกฮู้ดเด็กลายสัตว์ (Kids Hooded Animal Blanket)</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX104</span> หมอนผ้าห่ม 2-in-1 ลายการ์ตูน (Cushion-Blanket Combo)</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX105</span> หมอนอิงตุ๊กตาลายการ์ตูน (Character Cushion Pillow)</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX106</span> หมอนอิงสี่เหลี่ยมสกรีนโลโก้ (Square Logo Cushion)</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX107</span> หมอนรองคอเมมโมรี่/ลายการ์ตูน (Travel Neck Pillow)</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX108</span> หมอนรองคอ Pocky x Glico ช้าง (Pocky Neck Pillow)</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX109</span> หมอนรองข้อมือ (Wrist Rest Pillow)</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX110</span> พาวเวอร์แบงค์ไร้สาย Remax RPP-30 10000mAh MagSafe</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">EX111</span> พาวเวอร์แบงค์ Remax RPP-116 10000mAh สายในตัว (หลายสี)</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">LS025</span> (ไม่มีชื่อ)</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ฿61.9</span>
+            </div>
+          
+            <div class="no-price-item">
+              <span><span class="sku-label">LS027</span> (ไม่มีชื่อ)</span>
+              <span style="color: #9ca3af; font-size: 11px;">ต้นทุน: ไม่มี</span>
+            </div>
+          
+        </div>
+      </details>
+    </div>
+  </div>
+  
+
+  <div class="footnote">
+    <strong>หมายเหตุ:</strong> ราคาบนเว็บไซต์ส่วนใหญ่ตั้งมาจาก AI benchmark เทียบคู่แข่ง (ไม่ได้อิงต้นทุนโดยตรง) จึงมีกลุ่ม SKU ที่ต่ำกว่าต้นทุนหรือต่ำกว่าเป้า v3 | แหล่งข้อมูล: products-raw.json (ราคาเว็บ) + Google Sheet PRODUCT MASTER สด 481 SKU (7 ก.ค. 2026) + PR_TIERS ใน PLATFORM-clickup.html
+  </div>
+</body>
+</html>
