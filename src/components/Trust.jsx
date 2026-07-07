@@ -1,5 +1,5 @@
 // Real GO PREMIUM client logos (transparent-bg), shown in an auto-scrolling trust bar.
-const LOGOS = ['c1.png','c10.png','c11.png','c12.png','c13.png','c14.png','c15.png','c16.png','c17.png','c18.png','c19.png','c2.png','c20.png','c3.png','c4.png','c5.png','c6.png','c7.png','c8.png','c9.png'];
+const LOGOS = ['c1.png','c10.png','c11.png','c12.png','c14.png','c15.png','c16.png','c17.png','c18.png','c19.png','c2.png','c20.png','c3.png','c4.png','c5.png','c6.png','c7.png','c8.png','c9.png'];
 
 export default function Trust() {
   const row = [...LOGOS, ...LOGOS];
