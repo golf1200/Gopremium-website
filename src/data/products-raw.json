@@ -6137,5 +6137,1561 @@
   "occasions": [],
   "lead_time": "20-25 วัน",
   "express": true
+ },
+ {
+  "sku": "EX114",
+  "slug": "ex114-drinkware",
+  "name": "กระบอกน้ำพลาสติก รุ่น Spring",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "กระบอกน้ำพลาสติกใส ดีไซน์มินิมอล พร้อมเชือกถือ",
+  "size": "400 ml",
+  "material": "พลาสติกใส",
+  "price_300_thb": 88,
+  "budget_tier": "smart",
+  "moq": 100,
+  "free_logo": [
+   "Silk Screen"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "10-14 วัน",
+  "colors": [
+   "ฝา เงิน"
+  ]
+ },
+ {
+  "sku": "EX115",
+  "slug": "ex115-garment",
+  "name": "หมวกแก๊ปตาข่าย",
+  "category": "Garment",
+  "category_slug": "garment",
+  "features": "หมวกแก๊ปตาข่าย ปีกโค้ง ช่วยป้องกันแสงแดด ระบายอากาศได้ดี",
+  "size": "Free size",
+  "material": "Cotton polyester",
+  "price_300_thb": 130,
+  "budget_tier": "smart",
+  "moq": 100,
+  "free_logo": [
+   "สกรีน DFT"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "15-20 วัน",
+  "colors": [
+   "32 สี"
+  ]
+ },
+ {
+  "sku": "EX116",
+  "slug": "ex116-garment",
+  "name": "หมวกปีกแข็ง",
+  "category": "Garment",
+  "category_slug": "garment",
+  "features": "หมวกปีกแข็งกว้าง สายรัดคาง ปรับกระชับได้ ช่วยป้องกันแสงแดดได้รอบด้าน",
+  "size": "Free Size",
+  "material": "Cotton polyester",
+  "price_300_thb": 130,
+  "budget_tier": "smart",
+  "moq": 100,
+  "free_logo": [
+   "สกรีน DFT"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "15-20 วัน",
+  "colors": [
+   "6 สี"
+  ]
+ },
+ {
+  "sku": "EX117",
+  "slug": "ex117-garment",
+  "name": "หมวกบักเก็ต",
+  "category": "Garment",
+  "category_slug": "garment",
+  "features": "หมวกบักเก็ต  ทรงสวย ใส่ได้ทั้งผู้ชายและผู้หญิง",
+  "size": "Free Size",
+  "material": "Cotton",
+  "price_300_thb": 130,
+  "budget_tier": "smart",
+  "moq": 100,
+  "free_logo": [
+   "สกรีน DFT"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "15-20 วัน",
+  "colors": [
+   "เขียวทหาร",
+   "ครีม",
+   "น้ำตาล",
+   "ดำ",
+   "กรมท่า",
+   "ขาว",
+   "น้ำเงิน",
+   "ฟ้า",
+   "แดง",
+   "เหลือง"
+  ]
+ },
+ {
+  "sku": "EX118",
+  "slug": "ex118-garment",
+  "name": "หมวกคลุมหน้า",
+  "category": "Garment",
+  "category_slug": "garment",
+  "features": "หมวกคลุมหน้า พร้อมผ้าคลุมคอและใบหน้า",
+  "size": "Free Size",
+  "material": "Cotton",
+  "price_300_thb": 130,
+  "budget_tier": "smart",
+  "moq": 100,
+  "free_logo": [
+   "สกรีน DFT"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "15-20 วัน",
+  "colors": [
+   "เขียว",
+   "ทหาร",
+   "ครีม",
+   "น้ำตาล",
+   "ดำ",
+   "กรมท่า"
+  ]
+ },
+ {
+  "sku": "EX112",
+  "slug": "ex112-powerbank",
+  "name": "powerbank  รุ่น Lumi",
+  "category": "Powerbank",
+  "category_slug": "powerbank",
+  "features": "Power Bank 10000mAh\n PD Charger ไร้สาย Wireless Charging",
+  "size": "ขนาดสินค้า 6.9x10.5x2 cm. \n\nน้ำหนัก 213 กรัม",
+  "material": "ABS และ Polycarbonate",
+  "price_300_thb": 748,
+  "budget_tier": "executive",
+  "moq": 100,
+  "free_logo": [
+   "พิมพ์ UV printing"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "20-25 วัน",
+  "colors": [
+   "ดำ",
+   "ขาว",
+   "ฟ้า"
+  ]
+ },
+ {
+  "sku": "EX119",
+  "slug": "ex119-powerbank",
+  "name": "powerbank รุ่น EDGE",
+  "category": "Powerbank",
+  "category_slug": "powerbank",
+  "features": "Power Bank 10000mAh\nPD Charger  ไร้สาย Wireless Charging ใช้กับ smart watch ได้",
+  "size": "ขนาดสินค้า 6.8x10.9x2.3 cm. \n\nน้ำหนัก 209 กรัม",
+  "material": "ABS และ Polycarbonate",
+  "price_300_thb": 798,
+  "budget_tier": "executive",
+  "moq": 100,
+  "free_logo": [
+   "พิมพ์ UV printing"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "20-25 วัน",
+  "colors": [
+   "เทา"
+  ]
+ },
+ {
+  "sku": "EX120",
+  "slug": "ex120-powerbank",
+  "name": "powerbank รุ่น Air",
+  "category": "Powerbank",
+  "category_slug": "powerbank",
+  "features": "Power Bank 10000mAh\nWireless Charge มีขาปลั๊กในตัวสามารถพับเก็บได้",
+  "size": "ขนาดสินค้า 6.3x9x2.8 cm. \n\nน้ำหนัก 230 กรัม",
+  "material": "ABS และ Polycarbonate",
+  "price_300_thb": 848,
+  "budget_tier": "executive",
+  "moq": 100,
+  "free_logo": [
+   "พิมพ์ UV printing"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "20-25 วัน",
+  "colors": [
+   "ดำ",
+   "ขาว",
+   "ฟ้า",
+   "ขาวส้ม"
+  ]
+ },
+ {
+  "sku": "EX121",
+  "slug": "ex121-powerbank",
+  "name": "powerbank รุ่น Air",
+  "category": "Powerbank",
+  "category_slug": "powerbank",
+  "features": "Power Bank 10000mAh\nWireless Charge มีขาปลั๊กในตัวสามารถพับเก็บได้",
+  "size": "ขนาดสินค้า 6.3x9x2.8 cm. \n\nน้ำหนัก 230 กรัม",
+  "material": "ABS และ Polycarbonate",
+  "price_300_thb": 834,
+  "budget_tier": "executive",
+  "moq": 100,
+  "free_logo": [
+   "พิมพ์ UV printing"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "20-25 วัน",
+  "colors": [
+   "ดำ",
+   "ขาว",
+   "ฟ้า",
+   "ขาวส้ม"
+  ]
+ },
+ {
+  "sku": "EX113",
+  "slug": "ex113-powerbank",
+  "name": "powerbank รุ่น Air",
+  "category": "Powerbank",
+  "category_slug": "powerbank",
+  "features": "Power Bank 10000mAh\nWireless Charge มีขาปลั๊กในตัวสามารถพับเก็บได้",
+  "size": "ขนาดสินค้า 6.3x9x2.8 cm. \n\nน้ำหนัก 230 กรัม",
+  "material": "ABS และ Polycarbonate",
+  "price_300_thb": 819,
+  "budget_tier": "executive",
+  "moq": 100,
+  "free_logo": [
+   "พิมพ์ UV printing"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "20-25 วัน",
+  "colors": [
+   "ดำ",
+   "ขาว",
+   "ฟ้า",
+   "ขาวส้ม"
+  ]
+ },
+ {
+  "sku": "EX122",
+  "slug": "ex122-fan",
+  "name": "พัดลมพกพา Flow",
+  "category": "Fan",
+  "category_slug": "fan",
+  "features": "พัดลมพกพา 1800 mAh\nปรับระดับความแรง สูงสุด 120 ระดับ",
+  "size": "ขนาดสินค้า 5.8x16x5.6 cm. \n\nน้ำหนัก 142 กรัม",
+  "material": "ABS",
+  "price_300_thb": 326,
+  "budget_tier": "executive",
+  "moq": 100,
+  "free_logo": [
+   "Pad printing"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "20-25 วัน",
+  "colors": [
+   "เทา",
+   "ขาว"
+  ]
+ },
+ {
+  "sku": "EX123",
+  "slug": "ex123-drinkware",
+  "name": "กระบอกนํ้าเก็บอุณหภูมิ",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "เก็บอุณหภูมิได้นาน ดีไซน์มินิมอล",
+  "size": "500 ml",
+  "material": "สแตนเลส 304",
+  "price_300_thb": 122,
+  "budget_tier": "smart",
+  "moq": 100,
+  "free_logo": [
+   "เลเซอร์ Laser Engraving"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "14-20 วัน",
+  "colors": [
+   "6 สี"
+  ]
+ },
+ {
+  "sku": "EX124",
+  "slug": "ex124-drinkware",
+  "name": "กระบอกนํ้าทรงสปอร์ต",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "คล่องตัว กระชับมือ พกพาสะดวก",
+  "size": "750 ml",
+  "material": "สแตนเลส 316",
+  "price_300_thb": 212,
+  "budget_tier": "premium",
+  "moq": 100,
+  "free_logo": [
+   "เลเซอร์ Laser Engraving"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "14-20 วัน",
+  "colors": [
+   "8 สี"
+  ]
+ },
+ {
+  "sku": "EX125",
+  "slug": "ex125-drinkware",
+  "name": "แก้วกาแฟ รุ่นพรีเมี่ยม",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "เก็บอุณหภูมิได้นาน ดีไซน์มินิมอล",
+  "size": "890 ml",
+  "material": "สแตนเลส 304",
+  "price_300_thb": 146,
+  "budget_tier": "smart",
+  "moq": 100,
+  "free_logo": [
+   "เลเซอร์ Laser Engraving"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "14-20 วัน",
+  "colors": [
+   "6 สี"
+  ]
+ },
+ {
+  "sku": "EX126",
+  "slug": "ex126-drinkware",
+  "name": "แก้วเก็บความเย็น รุ่นคลาสสิก",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "ทนทาน เก็บอุณหภูมิได้ดี ใช้งานง่าย",
+  "size": "1200 ml",
+  "material": "สแตนเลส 316",
+  "price_300_thb": 260,
+  "budget_tier": "premium",
+  "moq": 100,
+  "free_logo": [
+   "เลเซอร์ Laser Engraving"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "14-20 วัน",
+  "colors": [
+   "6 สี"
+  ]
+ },
+ {
+  "sku": "EX127",
+  "slug": "ex127-drinkware",
+  "name": "แก้วทรงกระป๋องโค้ก",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "รูปทรงสวย เป็นเอกลักษณ์",
+  "size": "500 ml",
+  "material": "สแตนเลส 304",
+  "price_300_thb": 171,
+  "budget_tier": "premium",
+  "moq": 100,
+  "free_logo": [
+   "เลเซอร์ Laser Engraving"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "14-20 วัน",
+  "colors": [
+   "8 สี"
+  ]
+ },
+ {
+  "sku": "EX128",
+  "slug": "ex128-drinkware",
+  "name": "แก้วกาแฟ รุ่นมีนิมอล",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "เรียบง่าย ใช้งานสะดวก มินิมอล",
+  "size": "500 ml",
+  "material": "สแตนเลส 304",
+  "price_300_thb": 133,
+  "budget_tier": "smart",
+  "moq": 100,
+  "free_logo": [
+   "เลเซอร์ Laser Engraving"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "14-20 วัน",
+  "colors": [
+   "3 สี"
+  ]
+ },
+ {
+  "sku": "EX129",
+  "slug": "ex129-drinkware",
+  "name": "แก้วเก็บความเย็น 40oz",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "ทนทาน เก็บอุณหภูมิได้ดี สีสวย",
+  "size": "1200 ml",
+  "material": "สแตนเลส 304",
+  "price_300_thb": 252,
+  "budget_tier": "premium",
+  "moq": 100,
+  "free_logo": [
+   "เลเซอร์ Laser Engraving"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "14-20 วัน",
+  "colors": [
+   "4 สี"
+  ]
+ },
+ {
+  "sku": "EX130",
+  "slug": "ex130-drinkware",
+  "name": "แก้วใส 12 oz",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "ทนทาน มีเอกลักษณ์ ปลอกกันลื่น",
+  "size": "12 oz",
+  "material": "แก้ว",
+  "price_300_thb": 77,
+  "budget_tier": "smart",
+  "moq": 100,
+  "free_logo": [
+   "เลเซอร์ Laser Engraving"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "14-20 วัน",
+  "colors": [
+   "10 สี"
+  ]
+ },
+ {
+  "sku": "EX131",
+  "slug": "ex131-drinkware",
+  "name": "แก้วชุดเซต",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "คุ้มค่า เหมาะสำหรับให้ของขวัญ",
+  "size": "500 ml",
+  "material": "สแตนเลส 304",
+  "price_300_thb": 130,
+  "budget_tier": "smart",
+  "moq": 100,
+  "free_logo": [
+   "เลเซอร์ Laser Engraving"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "14-20 วัน",
+  "colors": [
+   "6 สี"
+  ]
+ },
+ {
+  "sku": "EX132",
+  "slug": "ex132-drinkware",
+  "name": "แก้วมาการอง",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "สีสวย ทนทาน เก็บอุณหภูมิได้ดี",
+  "size": "750 ml",
+  "material": "สแตนเลส 304",
+  "price_300_thb": 187,
+  "budget_tier": "premium",
+  "moq": 100,
+  "free_logo": [
+   "เลเซอร์ Laser Engraving"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "14-20 วัน",
+  "colors": [
+   "8 สี"
+  ]
+ },
+ {
+  "sku": "EX133",
+  "slug": "ex133-drinkware",
+  "name": "แก้วกาแฟขอบทอง",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "สีสวย พกพาสะดวก",
+  "size": "500 ml",
+  "material": "สแตนเลส 304",
+  "price_300_thb": 187,
+  "budget_tier": "premium",
+  "moq": 100,
+  "free_logo": [
+   "เลเซอร์ Laser Engraving"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "14-20 วัน",
+  "colors": [
+   "7 สี"
+  ]
+ },
+ {
+  "sku": "EX134",
+  "slug": "ex134-drinkware",
+  "name": "แก้วเก็บความเย็น มินิมอล",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "สีสวย ทนทาน เก็บอุณหภูมิได้ดี",
+  "size": "410 ml",
+  "material": "สแตนเลส 304",
+  "price_300_thb": 212,
+  "budget_tier": "premium",
+  "moq": 100,
+  "free_logo": [
+   "เลเซอร์ Laser Engraving"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "14-20 วัน",
+  "colors": [
+   "6 สี"
+  ]
+ },
+ {
+  "sku": "EX135",
+  "slug": "ex135-drinkware",
+  "name": "แก้วเก็บความเย็น รุ่นซิลิโคน 16 oz",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "ทนทาน เก็บอุณหภูมิได้ดี ใช้งานง่าย",
+  "size": "550 ml",
+  "material": "สแตนเลส 304",
+  "price_300_thb": 187,
+  "budget_tier": "premium",
+  "moq": 100,
+  "free_logo": [
+   "เลเซอร์ Laser Engraving"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "14-20 วัน",
+  "colors": [
+   "5 สี"
+  ]
+ },
+ {
+  "sku": "EX136",
+  "slug": "ex136-drinkware",
+  "name": "แก้วเก็บความเย็น รุ่นซิลิโคน 24 oz",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "ทนทาน เก็บอุณหภูมิได้ดี ใช้งานง่าย",
+  "size": "710 ml",
+  "material": "สแตนเลส 304",
+  "price_300_thb": 195,
+  "budget_tier": "premium",
+  "moq": 100,
+  "free_logo": [
+   "เลเซอร์ Laser Engraving"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "14-20 วัน",
+  "colors": [
+   "5 สี"
+  ]
+ },
+ {
+  "sku": "EX137",
+  "slug": "ex137-drinkware",
+  "name": "แก้วเก็บความเย็น 40 oz รุ่นหนา",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "ทนทาน เก็บอุณหภูมิได้ดี ใช้งานง่าย",
+  "size": "1200 ml",
+  "material": "สแตนเลส 304",
+  "price_300_thb": 252,
+  "budget_tier": "premium",
+  "moq": 100,
+  "free_logo": [
+   "เลเซอร์ Laser Engraving"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "14-20 วัน",
+  "colors": [
+   "17 สี"
+  ]
+ },
+ {
+  "sku": "EX138",
+  "slug": "ex138-drinkware",
+  "name": "แก้วเก็บความเย็น 40 oz รุ่นฝากว้าง",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "ทนทาน เก็บอุณหภูมิได้ดี ใช้งานง่าย",
+  "size": "1200 ml",
+  "material": "สแตนเลส 304",
+  "price_300_thb": 252,
+  "budget_tier": "premium",
+  "moq": 100,
+  "free_logo": [
+   "เลเซอร์ Laser Engraving"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "14-20 วัน",
+  "colors": [
+   "15 สี"
+  ]
+ },
+ {
+  "sku": "EX139",
+  "slug": "ex139-drinkware",
+  "name": "แก้วเก็บความเย็น 40 oz รุ่นคลาสสิก",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "เก็บอุณหภูมิได้นาน ดีไซน์มินิมอล",
+  "size": "1200 ml",
+  "material": "สแตนเลส 304",
+  "price_300_thb": 236,
+  "budget_tier": "premium",
+  "moq": 100,
+  "free_logo": [
+   "เลเซอร์ Laser Engraving"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "14-20 วัน",
+  "colors": [
+   "6 สี"
+  ]
+ },
+ {
+  "sku": "EX140",
+  "slug": "ex140-drinkware",
+  "name": "แก้วเก็บความเย็น 40 oz มินิมอล",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "สีสวย ทนทาน เก็บอุณหภูมิได้ดี",
+  "size": "1200 ml",
+  "material": "สแตนเลส 304",
+  "price_300_thb": 260,
+  "budget_tier": "premium",
+  "moq": 100,
+  "free_logo": [
+   "เลเซอร์ Laser Engraving"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "14-20 วัน",
+  "colors": [
+   "7 สี"
+  ]
+ },
+ {
+  "sku": "EX141",
+  "slug": "ex141-drinkware",
+  "name": "กระบอกนํ้าคินโต",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "เก็บอุณหภูมิได้นาน ดีไซน์มินิมอล",
+  "size": "500 ml",
+  "material": "สแตนเลส 304",
+  "price_300_thb": 138,
+  "budget_tier": "smart",
+  "moq": 100,
+  "free_logo": [
+   "เลเซอร์ Laser Engraving"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "14-20 วัน",
+  "colors": [
+   "6 สี"
+  ]
+ },
+ {
+  "sku": "EX142",
+  "slug": "ex142-drinkware",
+  "name": "แก้ว cold Keeping cup 24 oz",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "สีสวย ทนทาน เก็บอุณหภูมิได้ดี",
+  "size": "750 ml",
+  "material": "สแตนเลส 316",
+  "price_300_thb": 203,
+  "budget_tier": "premium",
+  "moq": 100,
+  "free_logo": [
+   "เลเซอร์ Laser Engraving"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "14-20 วัน",
+  "colors": [
+   "6 สี"
+  ]
+ },
+ {
+  "sku": "EX143",
+  "slug": "ex143-drinkware",
+  "name": "กระติกนํ้า 1000 ml รุ่นPae",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "เก็บอุณหภูมิได้นาน ดีไซน์มินิมอล",
+  "size": "1000 ml",
+  "material": "สแตนเลส 316",
+  "price_300_thb": 195,
+  "budget_tier": "premium",
+  "moq": 100,
+  "free_logo": [
+   "เลเซอร์ Laser Engraving"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "14-20 วัน",
+  "colors": [
+   "5 สี"
+  ]
+ },
+ {
+  "sku": "EX144",
+  "slug": "ex144-drinkware",
+  "name": "กระติกนํ้า 1200 ml",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "เก็บอุณหภูมิได้นาน ดีไซน์มินิมอล",
+  "size": "1200 ml",
+  "material": "สแตนเลส 316",
+  "price_300_thb": 236,
+  "budget_tier": "premium",
+  "moq": 100,
+  "free_logo": [
+   "เลเซอร์ Laser Engraving"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "14-20 วัน",
+  "colors": [
+   "12 สี"
+  ]
+ },
+ {
+  "sku": "EX145",
+  "slug": "ex145-drinkware",
+  "name": "กระติกนํ้า 1300 ml",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "เก็บอุณหภูมิได้นาน ดีไซน์มินิมอล",
+  "size": "1300 ml",
+  "material": "สแตนเลส 316",
+  "price_300_thb": 244,
+  "budget_tier": "premium",
+  "moq": 100,
+  "free_logo": [
+   "เลเซอร์ Laser Engraving"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "14-20 วัน",
+  "colors": [
+   "5 สี"
+  ]
+ },
+ {
+  "sku": "EX146",
+  "slug": "ex146-drinkware",
+  "name": "กระติกนํ้า 1500 ml",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "เก็บอุณหภูมิได้นาน ดีไซน์มินิมอล",
+  "size": "1500 ml",
+  "material": "สแตนเลส 316",
+  "price_300_thb": 252,
+  "budget_tier": "premium",
+  "moq": 100,
+  "free_logo": [
+   "เลเซอร์ Laser Engraving"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "14-20 วัน",
+  "colors": [
+   "6 สี"
+  ]
+ },
+ {
+  "sku": "EX147",
+  "slug": "ex147-drinkware",
+  "name": "แก้วมาการอง have a good time",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "สีสวย ทนทาน เก็บอุณหภูมิได้ดี",
+  "size": "750 ml",
+  "material": "สแตนเลส 304",
+  "price_300_thb": 187,
+  "budget_tier": "premium",
+  "moq": 100,
+  "free_logo": [
+   "เลเซอร์ Laser Engraving"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "14-20 วัน",
+  "colors": [
+   "5 สี"
+  ]
+ },
+ {
+  "sku": "EX148",
+  "slug": "ex148-drinkware",
+  "name": "แก้วดอกไม้",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "สีสวย ทนทาน เก็บอุณหภูมิได้ดี",
+  "size": "550 ml",
+  "material": "สแตนเลส 316",
+  "price_300_thb": 212,
+  "budget_tier": "premium",
+  "moq": 100,
+  "free_logo": [
+   "เลเซอร์ Laser Engraving"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "14-20 วัน",
+  "colors": [
+   "4 สี"
+  ]
+ },
+ {
+  "sku": "EX149",
+  "slug": "ex149-drinkware",
+  "name": "แก้วมีลําโพง",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "เปิดเพลงได้ สีสันสดใส เก็บอุณหภูมิได้ดี",
+  "size": "480 ml",
+  "material": "สแตนเลส 304",
+  "price_300_thb": 236,
+  "budget_tier": "premium",
+  "moq": 100,
+  "free_logo": [
+   "เลเซอร์ Laser Engraving"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "14-20 วัน",
+  "colors": [
+   "9 สี"
+  ]
+ },
+ {
+  "sku": "EX150",
+  "slug": "ex150-drinkware",
+  "name": "แก้วเก็บความเย็นมีที่เปิดขวด",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "เปิดขวดได้ สีสันสดใส เก็บอุณหภูมิได้ดี",
+  "size": "600 ml",
+  "material": "สแตนเลส 304",
+  "price_300_thb": 179,
+  "budget_tier": "premium",
+  "moq": 100,
+  "free_logo": [
+   "เลเซอร์ Laser Engraving"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "14-20 วัน",
+  "colors": [
+   "8 สี"
+  ]
+ },
+ {
+  "sku": "EX151",
+  "slug": "ex151-drinkware",
+  "name": "แก้วเก็บความเย็น 40 oz รุ่นฝาใสผิวบาง",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "สีสวย ทนทาน เก็บอุณหภูมิได้ดี",
+  "size": "1200 ml",
+  "material": "สแตนเลส 304",
+  "price_300_thb": 236,
+  "budget_tier": "premium",
+  "moq": 100,
+  "free_logo": [
+   "เลเซอร์ Laser Engraving"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "14-20 วัน",
+  "colors": [
+   "7 สี"
+  ]
+ },
+ {
+  "sku": "EX152",
+  "slug": "ex152-drinkware",
+  "name": "แก้วมินิมอล 14 oz",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "สีสวย ทนทาน เก็บอุณหภูมิได้ดี",
+  "size": "410 ml",
+  "material": "สแตนเลส 304",
+  "price_300_thb": 146,
+  "budget_tier": "smart",
+  "moq": 100,
+  "free_logo": [
+   "เลเซอร์ Laser Engraving"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "14-20 วัน",
+  "colors": [
+   "8 สี"
+  ]
+ },
+ {
+  "sku": "EX153",
+  "slug": "ex153-drinkware",
+  "name": "แก้วเก็บความเย็น ทรงสตาร์บัค\nทูโทนการ์ตูน",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "ลายการ์ตูน สีสีนสดใส เก็บอุณหภูมิได้ดี",
+  "size": "710 ml",
+  "material": "สแตนเลส 316",
+  "price_300_thb": 244,
+  "budget_tier": "premium",
+  "moq": 100,
+  "free_logo": [
+   "เลเซอร์ Laser Engraving"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "14-20 วัน",
+  "colors": [
+   "3 สี"
+  ]
+ },
+ {
+  "sku": "EX154",
+  "slug": "ex154-drinkware",
+  "name": "แก้วเก็บความเย็นทูโทน มีหูหิ้ว",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "สีสวย ทนทาน เก็บอุณหภูมิได้ดี",
+  "size": "900 ml",
+  "material": "สแตนเลส 304",
+  "price_300_thb": 195,
+  "budget_tier": "premium",
+  "moq": 100,
+  "free_logo": [
+   "เลเซอร์ Laser Engraving"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "14-20 วัน",
+  "colors": [
+   "1 สี"
+  ]
+ },
+ {
+  "sku": "EX155",
+  "slug": "ex155-drinkware",
+  "name": "แก้วกาแฟ 480 ml",
+  "category": "Drinkware",
+  "category_slug": "drinkware",
+  "features": "สีสวย พกพาสะดวก",
+  "size": "480 ml",
+  "material": "สแตนเลส 304",
+  "price_300_thb": 187,
+  "budget_tier": "premium",
+  "moq": 100,
+  "free_logo": [
+   "เลเซอร์ Laser Engraving"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "14-20 วัน",
+  "colors": [
+   "4 สี"
+  ]
+ },
+ {
+  "sku": "EX156",
+  "slug": "ex156-garment",
+  "name": "เสื้อโปโล รุ่น CoolPlus Active",
+  "category": "Garment",
+  "category_slug": "garment",
+  "features": "ปกทอขลิบเส้น แขนจั้มรอบ เนื้อผ้าสัมผัสนุ่ม\nผู้ชาย มีกระเป้า ชายเสื้อผ่าข้าง / \nผู้หญิงเข้ารูปเล็กน้อย ไม่มีกระเป้า ชายเสื้อผ่าข้าง",
+  "size": "S - 2XL",
+  "material": "Cotton",
+  "price_300_thb": 448,
+  "budget_tier": "executive",
+  "moq": 100,
+  "free_logo": [
+   "สกรีน DFT"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "20-25 วัน",
+  "colors": [
+   "สีกรมท่า สีขาว สีดำ"
+  ]
+ },
+ {
+  "sku": "EX157",
+  "slug": "ex157-garment",
+  "name": "เสื้อโปโล รุ่น Signature Stripe",
+  "category": "Garment",
+  "category_slug": "garment",
+  "features": "สีสด\nรีดง่าย ไม่ต้องรีด \nไม่หดย้วย\nมีกระเป๋าเสื้อสำหรับผู้ชาย \nขอบแขนจั้มรอบ \nPolyester 100%\nผู้ชายเข้ารูปเล็กน้อย มีกระเป้า ชายเสื้อไม่ผ่าข้าง / \nผู้หญิงเข้ารูปเล็กน้อย ไม่มีกระเป้า ชายเสื้อผ่าข้าง",
+  "size": "XS - 2XL",
+  "material": "Micro Polyester",
+  "price_300_thb": 285,
+  "budget_tier": "premium",
+  "moq": 100,
+  "free_logo": [
+   "สกรีน DFT"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "20-25 วัน",
+  "colors": [
+   "ดำ ขาว เทา ฟ้า น้ำเงิน",
+   "เขียว ม่วง กรม"
+  ]
+ },
+ {
+  "sku": "EX158",
+  "slug": "ex158-garment",
+  "name": "เสื้อโปโล รุ่น Essential Solid",
+  "category": "Garment",
+  "category_slug": "garment",
+  "features": "สีสด\nรีดง่าย ไม่ต้องรีด \nไม่หดย้วย\nมีกระเป๋าเสื้อสำหรับผู้ชาย \nขอบแขนจั้มครึ่ง \nPolyester 100%\nผู้ชายเข้ารูปเล็กน้อย มีกระเป้า ชายเสื้อไม่ผ่าข้าง / \nผู้หญิงเข้ารูปเล็กน้อย ไม่มีกระเป้า ชายเสื้อผ่าข้าง",
+  "size": "XS - 2XL",
+  "material": "Micro Polyester",
+  "price_300_thb": 285,
+  "budget_tier": "premium",
+  "moq": 100,
+  "free_logo": [
+   "สกรีน DFT"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "20-25 วัน",
+  "colors": [
+   "ดำ ขาว เทา กรม น้ำเงิน"
+  ]
+ },
+ {
+  "sku": "EX159",
+  "slug": "ex159-lifestyle",
+  "name": "หมอนอิง รุ่น Super soft",
+  "category": "Lifestyle",
+  "category_slug": "lifestyle",
+  "features": "หมอนอิงใยสังเคราะห์",
+  "size": "13*13 นิ้ว",
+  "material": "ผ้า Super Soft",
+  "price_300_thb": 81,
+  "budget_tier": "smart",
+  "moq": 100,
+  "free_logo": [
+   "Sublimation"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "14-20 วัน",
+  "colors": []
+ },
+ {
+  "sku": "EX160",
+  "slug": "ex160-souvenir",
+  "name": "เข็มกลัดทรงกลม",
+  "category": "Souvenir",
+  "category_slug": "souvenir",
+  "features": "เข็มกลัดทรงกลม ฐานพลาสติกและเหล็ก",
+  "size": "25MM",
+  "material": "เหล็กและพลาสติก",
+  "price_300_thb": 18,
+  "budget_tier": "value",
+  "moq": 1000,
+  "free_logo": [
+   "Digital printing"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "7-10 วัน",
+  "colors": []
+ },
+ {
+  "sku": "EX161",
+  "slug": "ex161-souvenir",
+  "name": "พวงกุญแจกระจก",
+  "category": "Souvenir",
+  "category_slug": "souvenir",
+  "features": "พวงกุญแจกระจก พกพาสะดวก ใช้งานง่าย",
+  "size": "44MM",
+  "material": "เหล็กและพลาสติก",
+  "price_300_thb": 28,
+  "budget_tier": "value",
+  "moq": 1000,
+  "free_logo": [
+   "Digital printing"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "7-10 วัน",
+  "colors": []
+ },
+ {
+  "sku": "EX162",
+  "slug": "ex162-souvenir",
+  "name": "กระจกพกพา",
+  "category": "Souvenir",
+  "category_slug": "souvenir",
+  "features": "กระจกพกพา พกพาสะดวก",
+  "size": "58MM",
+  "material": "เหล็กและพลาสติก",
+  "price_300_thb": 30,
+  "budget_tier": "value",
+  "moq": 1000,
+  "free_logo": [
+   "Digital printing"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "7-10 วัน",
+  "colors": []
+ },
+ {
+  "sku": "EX163",
+  "slug": "ex163-stationery",
+  "name": "สมุดปกหนัง PU ไซส์ A5 แบบเรียบ",
+  "category": "Stationery",
+  "category_slug": "stationery",
+  "features": null,
+  "size": "A5",
+  "material": "PU",
+  "price_300_thb": 135,
+  "budget_tier": "smart",
+  "moq": 100,
+  "free_logo": [
+   "Silk Screen"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "7-10 วัน",
+  "colors": [
+   "5 สี"
+  ]
+ },
+ {
+  "sku": "EX164",
+  "slug": "ex164-stationery",
+  "name": "สมุดปกหนัง PU กระดุมแม่เหล็ก",
+  "category": "Stationery",
+  "category_slug": "stationery",
+  "features": null,
+  "size": "A5",
+  "material": "PU",
+  "price_300_thb": 163,
+  "budget_tier": "premium",
+  "moq": 100,
+  "free_logo": [
+   "Silk Screen"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "7-10 วัน",
+  "colors": [
+   "3 สี"
+  ]
+ },
+ {
+  "sku": "EX165",
+  "slug": "ex165-stationery",
+  "name": "สมุดปกหนัง PU แบบเว้า",
+  "category": "Stationery",
+  "category_slug": "stationery",
+  "features": null,
+  "size": "A5",
+  "material": "PU",
+  "price_300_thb": 181,
+  "budget_tier": "premium",
+  "moq": 100,
+  "free_logo": [
+   "Silk Screen"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "7-10 วัน",
+  "colors": [
+   "7 สี"
+  ]
+ },
+ {
+  "sku": "EX166",
+  "slug": "ex166-stationery",
+  "name": "สมุดปกหนังPU ลายผ้า 2 สีทูโทน",
+  "category": "Stationery",
+  "category_slug": "stationery",
+  "features": null,
+  "size": "A5",
+  "material": "PU",
+  "price_300_thb": 153,
+  "budget_tier": "premium",
+  "moq": 100,
+  "free_logo": [
+   "Silk Screen"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "7-10 วัน",
+  "colors": [
+   "2 สี"
+  ]
+ },
+ {
+  "sku": "EX167",
+  "slug": "ex167-stationery",
+  "name": "สมุดปกหนังPU ลายริ้ว",
+  "category": "Stationery",
+  "category_slug": "stationery",
+  "features": null,
+  "size": "A5",
+  "material": "PU",
+  "price_300_thb": 190,
+  "budget_tier": "premium",
+  "moq": 100,
+  "free_logo": [
+   "Silk Screen"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "7-10 วัน",
+  "colors": [
+   "2 สี"
+  ]
+ },
+ {
+  "sku": "EX168",
+  "slug": "ex168-stationery",
+  "name": "สมุดปกหนังPU กระดุมเเม่เหล็ก",
+  "category": "Stationery",
+  "category_slug": "stationery",
+  "features": null,
+  "size": "4.25x7 นิ้ว",
+  "material": "PU",
+  "price_300_thb": 129,
+  "budget_tier": "smart",
+  "moq": 100,
+  "free_logo": [
+   "Silk Screen"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "7-10 วัน",
+  "colors": [
+   "3 สี"
+  ]
+ },
+ {
+  "sku": "EX169",
+  "slug": "ex169-stationery",
+  "name": "สมุดโน๊ตปกหนัง ลายริ้ว",
+  "category": "Stationery",
+  "category_slug": "stationery",
+  "features": null,
+  "size": "A5",
+  "material": "หนัง",
+  "price_300_thb": 143,
+  "budget_tier": "smart",
+  "moq": 100,
+  "free_logo": [
+   "Silk Screen"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "7-10 วัน",
+  "colors": [
+   "4 สี"
+  ]
+ },
+ {
+  "sku": "EX170",
+  "slug": "ex170-stationery",
+  "name": "สมุดปกหนังPU หนังซูเอ็ด",
+  "category": "Stationery",
+  "category_slug": "stationery",
+  "features": null,
+  "size": "A5",
+  "material": "PU",
+  "price_300_thb": 138,
+  "budget_tier": "smart",
+  "moq": 100,
+  "free_logo": [
+   "Silk Screen"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "7-10 วัน",
+  "colors": [
+   "5 สี"
+  ]
+ },
+ {
+  "sku": "EX171",
+  "slug": "ex171-stationery",
+  "name": "เซ็ทสมุดโน๊ตปกหนัง PU",
+  "category": "Stationery",
+  "category_slug": "stationery",
+  "features": null,
+  "size": "4.5*6.75 นิ้ว",
+  "material": "PU",
+  "price_300_thb": 127,
+  "budget_tier": "smart",
+  "moq": 100,
+  "free_logo": [
+   "Silk Screen"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "7-10 วัน",
+  "colors": [
+   "5 สี"
+  ]
+ },
+ {
+  "sku": "EX172",
+  "slug": "ex172-stationery",
+  "name": "เซ็ทสมุดโน๊ตปกหนัง PU รุ่น Fullfill",
+  "category": "Stationery",
+  "category_slug": "stationery",
+  "features": null,
+  "size": "A5",
+  "material": "PU",
+  "price_300_thb": 260,
+  "budget_tier": "premium",
+  "moq": 100,
+  "free_logo": [
+   "Silk Screen"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "7-10 วัน",
+  "colors": [
+   "8 สี"
+  ]
+ },
+ {
+  "sku": "EX173",
+  "slug": "ex173-stationery",
+  "name": "เซ็ทสมุดโน๊ต ครบเซ็ต",
+  "category": "Stationery",
+  "category_slug": "stationery",
+  "features": null,
+  "size": "A6/A7",
+  "material": "PP",
+  "price_300_thb": 342,
+  "budget_tier": "executive",
+  "moq": 100,
+  "free_logo": [
+   "Silk Screen"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "7-10 วัน",
+  "colors": [
+   "สีใส"
+  ]
+ },
+ {
+  "sku": "EX174",
+  "slug": "ex174-lifestyle",
+  "name": "Griptok ที่จับโทรศัพท์ 3M",
+  "category": "Lifestyle",
+  "category_slug": "lifestyle",
+  "features": "Griptok ที่จับโทรศัพท์ ฐานทรงกลม สีสัน กาว 3M",
+  "size": "4*4 cm",
+  "material": "PC",
+  "price_300_thb": 33,
+  "budget_tier": "value",
+  "moq": 100,
+  "free_logo": [
+   "พิมพ์ UV printing"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "7-10 วัน",
+  "colors": [
+   "10"
+  ]
+ },
+ {
+  "sku": "EX175",
+  "slug": "ex175-lifestyle",
+  "name": "Griptok ที่จับโทรศัพท์ 3M Upgraded",
+  "category": "Lifestyle",
+  "category_slug": "lifestyle",
+  "features": "Griptok ที่จับโทรศัพท์ ฐาน กาว 3M",
+  "size": "5*5 cm",
+  "material": "อะคริลิค 3mm + ฐาน PC",
+  "price_300_thb": 40,
+  "budget_tier": "value",
+  "moq": 100,
+  "free_logo": [
+   "พิมพ์ UV printing"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "7-10 วัน",
+  "colors": []
+ },
+ {
+  "sku": "EX176",
+  "slug": "ex176-lifestyle",
+  "name": "Griptok ที่จับโทรศัพท์ Magsafe",
+  "category": "Lifestyle",
+  "category_slug": "lifestyle",
+  "features": "Griptok ที่จับโทรศัพท์ ฐานแม่เหล็ก Magsafe",
+  "size": "5*5 cm",
+  "material": "อะคริลิค 3mm + ฐานแม่เหล็ก",
+  "price_300_thb": 63,
+  "budget_tier": "smart",
+  "moq": 100,
+  "free_logo": [
+   "พิมพ์ UV printing"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "7-10 วัน",
+  "colors": []
+ },
+ {
+  "sku": "EX177",
+  "slug": "ex177-lifestyle",
+  "name": "Magsafe wallet รุ่น Pocket Pro",
+  "category": "Lifestyle",
+  "category_slug": "lifestyle",
+  "features": "Magsafe wallet \nCardholder แม่เหล็กในตัวใส่บัตรและ\nกางเป็นขาตั้งโทรศัพท์ได้",
+  "size": "6.3*9.3 cm",
+  "material": "PU leather",
+  "price_300_thb": 112,
+  "budget_tier": "smart",
+  "moq": 100,
+  "free_logo": [
+   "พิมพ์ UV printing"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "7-10 วัน",
+  "colors": [
+   "15"
+  ]
+ },
+ {
+  "sku": "EX178",
+  "slug": "ex178-lifestyle",
+  "name": "Magsafe wallet รุ่น Pocket",
+  "category": "Lifestyle",
+  "category_slug": "lifestyle",
+  "features": "Magsafe wallet \nCardholder แม่เหล็กในตัวใส่บัตรได้ 2-3 ใบ",
+  "size": "6.3*9.5 cm",
+  "material": "PU leather",
+  "price_300_thb": 91,
+  "budget_tier": "smart",
+  "moq": 100,
+  "free_logo": [
+   "พิมพ์ UV printing"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "7-10 วัน",
+  "colors": [
+   "10"
+  ]
  }
 ]

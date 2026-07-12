@@ -35,6 +35,7 @@ const PROVIDER = arg('--provider', 'fal');
 const MODEL = arg('--model', 'kontext-pro');
 const N = parseInt(arg('--n', '1'), 10);
 const PLAN = has('--plan');
+const GROUP = has('--group');   // keep the multi-colour line-up together (family shot), only clean bg+text
 const NOICON = has('--no-icon');
 
 const FAL_MODELS = {
@@ -45,8 +46,31 @@ const FAL_MODELS = {
 const GEMINI_PRICE = 0.039;
 const ICON = 'C:/Users/Golf/Gopremium-website/Gopremium new version/Logo/GoPremium Icon logo - navy.png';
 
+// ---- GROUP prompt: keep the whole multi-colour family together, only clean bg + text ----
+const PROMPT_GROUP =
+  `Re-photograph this EXACT group of products together as one high-end GO PREMIUM catalogue ` +
+  `"colour family" studio shot. The input shows the SAME product in SEVERAL COLOURS. ` +
+  `KEEP ALL of them: reproduce every unit and every colour shown, arranged as a clean, ` +
+  `evenly-spaced family group in a single frame (a neat row or tidy cluster) — do NOT reduce ` +
+  `to one unit, do NOT drop or add colours, do NOT merge them.\n\n` +
+  `STUDIO STYLE (match the catalogue exactly): a seamless warm off-white / soft cream studio ` +
+  `backdrop, bright high-key and airy, soft diffused daylight from the upper-left, soft ` +
+  `natural contact shadows under the products, calm minimal-classic premium mood, no harsh ` +
+  `shadows, no coloured light, generous negative space, slightly elevated three-quarter angle, ` +
+  `square 1:1 framing, the whole group centered and filling most of the frame.\n\n` +
+  `CRITICAL COLOUR RULE: neutral accurate white balance. Reproduce each unit's ORIGINAL colour ` +
+  `EXACTLY as in the input — do NOT add warm/yellow/amber tint to the products; the warm-cream ` +
+  `tone is ONLY for the backdrop. Each product keeps its real hue, shape, proportions, material.\n\n` +
+  `REMOVE every distraction and ALL text: supplier logos/brand names/watermarks, contact info ` +
+  `(LINE id, phone, QR), promo buttons/badges, colour-swatch cards, price tags, size charts, ` +
+  `foreign/Chinese/Thai overlay text, coloured borders, stickers, backgrounds clutter — keep ONLY ` +
+  `the bare products on the clean studio backdrop. The products themselves are BLANK: no logo, ` +
+  `text, letters, numbers or invented design on any of them.\n` +
+  `UPRIGHT: bottles, tumblers, flasks, cups, mugs stand VERTICAL on their base, never lying down.\n` +
+  `Photorealistic, sharp focus, absolutely no text or watermark anywhere.`;
+
 // ---- THE prompt: matches the live catalogue anchor + faithful edit ----
-const PROMPT =
+const PROMPT_SINGLE =
   `Re-photograph this exact product as a high-end GO PREMIUM catalogue studio shot. ` +
   `STUDIO STYLE (match it precisely so the photo blends into the existing catalogue): ` +
   `a seamless warm off-white / soft cream studio backdrop, bright high-key and airy, ` +
@@ -97,6 +121,8 @@ const PROMPT =
   `re-orient it to stand upright like a normal e-commerce product hero.\n` +
   `Photorealistic, sharp focus, absolutely no text or watermark anywhere.`;
 
+const PROMPT = GROUP ? PROMPT_GROUP : PROMPT_SINGLE;
+
 const OUT = join(REPO, 'scripts', 'image-pipeline', 'staged', 'studio-ab');
 const IMGMAP = JSON.parse(readFileSync(join(REPO, 'src', 'data', 'product-images.generated.json'), 'utf8'));
 const FROM_CURATE = has('--from-curate');   // source = curated Drive hero in staged-curate/<SKU>/
@@ -118,10 +144,12 @@ const realSquare = (sku) => {
   if (FROM_CURATE) {
     const d = join(CURATE_DIR, sku);
     if (!existsSync(d)) return null;
-    const files = readdirSync(d).filter(x => /\.jpg$/i.test(x));
+    const files = readdirSync(d).filter(x => /\.(jpg|jpeg|png|webp)$/i.test(x));
+    // explicit --pick wins (e.g. target the lineup source for --group)
+    if (PICKMAP[sku] && files.includes(PICKMAP[sku])) return join(d, PICKMAP[sku]);
     // pick the real product HERO, never a colour-chart/size-chart/detail file
     const f = files.find(x => /hero/i.test(x))
-           || files.filter(x => !/chart|size|detail/i.test(x)).sort()[0]
+           || files.filter(x => !/chart|size|detail|lineup|group/i.test(x)).sort()[0]
            || files.sort()[0];
     return f ? join(d, f) : null;
   }
