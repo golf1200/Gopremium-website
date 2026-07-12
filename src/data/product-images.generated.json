@@ -3381,24 +3381,6 @@
    "/images/products/ex163-stationery/ex163-stationery-04.jpg"
   ]
  },
- "EX164": {
-  "base": "ex164-stationery",
-  "gallery": [
-   "/images/products/ex164-stationery/ex164-stationery-square.jpg",
-   "/images/products/ex164-stationery/ex164-stationery-02.jpg",
-   "/images/products/ex164-stationery/ex164-stationery-03.jpg",
-   "/images/products/ex164-stationery/ex164-stationery-04.jpg"
-  ]
- },
- "EX165": {
-  "base": "ex165-stationery",
-  "gallery": [
-   "/images/products/ex165-stationery/ex165-stationery-square.jpg",
-   "/images/products/ex165-stationery/ex165-stationery-02.jpg",
-   "/images/products/ex165-stationery/ex165-stationery-03.jpg",
-   "/images/products/ex165-stationery/ex165-stationery-04.jpg"
-  ]
- },
  "EX166": {
   "base": "ex166-stationery",
   "gallery": [
@@ -3406,15 +3388,6 @@
    "/images/products/ex166-stationery/ex166-stationery-02.jpg",
    "/images/products/ex166-stationery/ex166-stationery-03.jpg",
    "/images/products/ex166-stationery/ex166-stationery-04.jpg"
-  ]
- },
- "EX167": {
-  "base": "ex167-stationery",
-  "gallery": [
-   "/images/products/ex167-stationery/ex167-stationery-square.jpg",
-   "/images/products/ex167-stationery/ex167-stationery-02.jpg",
-   "/images/products/ex167-stationery/ex167-stationery-03.jpg",
-   "/images/products/ex167-stationery/ex167-stationery-04.jpg"
   ]
  },
  "EX168": {
@@ -3426,15 +3399,6 @@
    "/images/products/ex168-stationery/ex168-stationery-04.jpg"
   ]
  },
- "EX169": {
-  "base": "ex169-stationery",
-  "gallery": [
-   "/images/products/ex169-stationery/ex169-stationery-square.jpg",
-   "/images/products/ex169-stationery/ex169-stationery-02.jpg",
-   "/images/products/ex169-stationery/ex169-stationery-03.jpg",
-   "/images/products/ex169-stationery/ex169-stationery-04.jpg"
-  ]
- },
  "EX170": {
   "base": "ex170-stationery",
   "gallery": [
@@ -3442,15 +3406,6 @@
    "/images/products/ex170-stationery/ex170-stationery-02.jpg",
    "/images/products/ex170-stationery/ex170-stationery-03.jpg",
    "/images/products/ex170-stationery/ex170-stationery-04.jpg"
-  ]
- },
- "EX171": {
-  "base": "ex171-stationery",
-  "gallery": [
-   "/images/products/ex171-stationery/ex171-stationery-square.jpg",
-   "/images/products/ex171-stationery/ex171-stationery-02.jpg",
-   "/images/products/ex171-stationery/ex171-stationery-03.jpg",
-   "/images/products/ex171-stationery/ex171-stationery-04.jpg"
   ]
  },
  "EX172": {
