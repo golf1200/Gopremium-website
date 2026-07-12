@@ -1197,7 +1197,7 @@ function viewAbout(){return `<section class="sec about" style="padding-top:34px"
 /* ===== EXPRESS (สินค้าส่งด่วน) =====
    รายการ SKU ที่ส่งด่วน — เติม sku ของสินค้าที่ผลิต/ส่งทันงานด่วนได้ที่นี่ เช่น ['DW001','BG002']
    ถ้าปล่อยว่าง หน้าจะแสดงเฉพาะข้อมูลบริการ + CTA (ไม่แสดงสินค้าปลอม) */
-const EXPRESS_SKUS=["EX004","EX005","EX006","EX025","EX026","EX027","EX028","EX029","EX030","EX031","EX032","EX033","EX034","EX035","EX036","EX037","EX038","EX039","EX040","EX041","EX082","EX083","EX084","EX085","EX086","EX087","EX088","EX089","EX001","EX002","EX003","EX007","EX042","EX044","EX045","EX046","EX047","EX048","EX049","EX050","EX051","EX052","EX076","EX077","EX078","EX079","EX080","EX081","EX090","EX091","EX092","EX093","EX008","EX009","EX043","EX053","EX054","EX055","EX062","EX064","EX010","EX011","EX012","EX013","EX014","EX015","EX016","EX017","EX018","EX019","EX094","EX095","EX096","EX097","EX098","EX099","EX100","EX020","EX021","EX110","EX111","EX022","EX023","EX024","EX101","EX102","EX103","EX104","EX105","EX106","EX107","EX108","EX109"];
+const EXPRESS_SKUS=["EX004","EX005","EX006","EX026","EX028","EX029","EX030","EX031","EX032","EX033","EX034","EX035","EX036","EX037","EX038","EX039","EX040","EX041","EX001","EX002","EX003","EX042","EX044","EX045","EX047","EX048","EX049","EX050","EX051","EX052","EX076","EX077","EX078","EX079","EX080","EX009","EX053","EX054","EX055","EX010","EX011","EX012","EX013","EX014","EX015","EX016","EX017","EX018","EX019","EX095","EX096","EX097","EX098","EX099","EX100","EX020","EX021","EX110","EX111","EX022","EX023","EX024"];
 const EXPRESS_CAT_ORDER=['drinkware','garment','hat','umbrella','bags','powerbank','fan','lifestyle'];
 function ecard(p){
   const sw=(p.swatches||[]);
