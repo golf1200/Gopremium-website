@@ -58,7 +58,8 @@ Look at this ONE product photo and answer STRICT JSON only, no prose:
 {
  "clean": true|false,            // TRUE if the PRODUCT ITSELF carries NO supplier/other brand name, logo, printed spec text, URL/website (e.g. www.xxx.com), QR, phone, or a placeholder "LOGO"/text, AND there is NO translucent watermark text overlaid across the image. Molded/printed brand words like "REMAX" => false. (The GO PREMIUM corner gift icon does NOT count.)
  "color_natural": true|false,    // product colours look natural/true, NOT heavily tinted yellow/amber/sepia
- "upright": true|false,          // bottles/cups/tumblers/mugs stand vertical on base; non-standing items => true
+ "upright": true|false,          // bottles/cups/tumblers/mugs/flasks stand VERTICAL on their base. If ANY such item is lying on its side / tipped / horizontal => false
+ "well_scaled": true|false,      // the product is shown at a sensible catalogue scale: fills a good part of the frame, fully in-frame (not cut off), correct proportions, not tiny/floating/distorted => false if bad framing or scale
  "studio_ok": true|false,        // TRUE only if the background is a plain seamless CREAM / off-white / light-grey studio backdrop. Any textured or real-world surface — fur/shag rug, wood, fabric, marble, table, floor, outdoor, coloured or busy background — => FALSE. NOTE: a wearable garment (shirt/cap/apron/polo) worn ON A HUMAN MODEL against a clean studio backdrop is EXPECTED and CORRECT => studio_ok true, clean true (judge only the garment itself for branding).
  "is_multicolor_group": true|false, // TRUE only if the frame shows the SAME product in 3+ DIFFERENT colours together as a family/lineup
  "issue": "" // <=12 words describing the worst REAL problem (ignore the corner gift icon), else empty
@@ -100,7 +101,7 @@ const queue = [...jobs];
 await Promise.all(Array.from({ length: POOL }, () => worker(queue)));
 
 // ---- analyse ----
-const fails = results.filter(r => r.kind === 'hero' && (r.clean === false || r.color_natural === false || r.upright === false || r.studio_ok === false));
+const fails = results.filter(r => r.kind === 'hero' && (r.clean === false || r.color_natural === false || r.upright === false || r.studio_ok === false || r.well_scaled === false));
 const goodGroups = results.filter(r => r.kind === 'group' && r.is_multicolor_group === true && r.clean !== false && r.studio_ok !== false && r.color_natural !== false);
 const weakGroups = results.filter(r => r.kind === 'group' && !(r.is_multicolor_group === true && r.clean !== false && r.studio_ok !== false && r.color_natural !== false));
 const errored = results.filter(r => r.error);
@@ -111,7 +112,7 @@ const report = {
   goodMulticolorGroups: goodGroups.map(g => g.sku),
   weakGroups: weakGroups.map(g => g.sku),
   errors: errored.map(e => ({ sku: e.sku, kind: e.kind, error: e.error })),
-  all: results.map(r => ({ sku: r.sku, kind: r.kind, clean: r.clean, color_natural: r.color_natural, upright: r.upright, studio_ok: r.studio_ok, is_multicolor_group: r.is_multicolor_group, issue: r.issue || '', error: r.error || '' })),
+  all: results.map(r => ({ sku: r.sku, kind: r.kind, clean: r.clean, color_natural: r.color_natural, upright: r.upright, studio_ok: r.studio_ok, well_scaled: r.well_scaled, is_multicolor_group: r.is_multicolor_group, issue: r.issue || '', error: r.error || '' })),
 };
 writeFileSync(join(REPO, '../Demo/express-verify-report.json'), JSON.stringify(report, null, 1));
 

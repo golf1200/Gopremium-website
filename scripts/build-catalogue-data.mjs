@@ -25,7 +25,7 @@ const swatchesOf = (colors) => {            // up to 8 deduped swatch hexes
 // /images/* is served immutable for 1 year, so when images are regenerated in
 // place we bump this to force browsers/CDN to fetch the new bytes. Bump on every
 // in-place image refresh. (v2 = 2026-06-08 studio covers + cleaned galleries.)
-const IMG_VER = '16'; // v16 = 2026-06-30 EX025 square re-genned (Gemini stainless, halo fixed) + express colour-swatch map expanded
+const IMG_VER = '17'; // v17 = 2026-07-13 regen 8 express heroes from proper Drive/1688 sources (upright, cut-off fixed, brand removed)
 const bust = (u) => (u ? u + '?v=' + IMG_VER : u);
 
 // Public fields only (never cost / supplier / 1688)
