@@ -25,7 +25,7 @@ const swatchesOf = (colors) => {            // up to 8 deduped swatch hexes
 // /images/* is served immutable for 1 year, so when images are regenerated in
 // place we bump this to force browsers/CDN to fetch the new bytes. Bump on every
 // in-place image refresh. (v2 = 2026-06-08 studio covers + cleaned galleries.)
-const IMG_VER = '19'; // v18 = 2026-07-13 identity-fix: 32 express heroes regenerated from correct Drive/1688 source (Fable-verified)
+const IMG_VER = '20'; // v18 = 2026-07-13 identity-fix: 32 express heroes regenerated from correct Drive/1688 source (Fable-verified)
 const bust = (u) => (u ? u + '?v=' + IMG_VER : u);
 
 // Public fields only (never cost / supplier / 1688)
