@@ -2129,6 +2129,7 @@
   "base": "ex030-drinkware",
   "gallery": [
    "/images/products/ex030-drinkware/ex030-drinkware-square.jpg",
+   "/images/products/ex030-drinkware/ex030-drinkware-group.jpg",
    "/images/products/ex030-drinkware/ex030-drinkware-02.jpg",
    "/images/products/ex030-drinkware/ex030-drinkware-03.jpg",
    "/images/products/ex030-drinkware/ex030-drinkware-04.jpg"
@@ -2138,6 +2139,7 @@
   "base": "ex031-drinkware",
   "gallery": [
    "/images/products/ex031-drinkware/ex031-drinkware-square.jpg",
+   "/images/products/ex031-drinkware/ex031-drinkware-group.jpg",
    "/images/products/ex031-drinkware/ex031-drinkware-02.jpg",
    "/images/products/ex031-drinkware/ex031-drinkware-03.jpg",
    "/images/products/ex031-drinkware/ex031-drinkware-04.jpg"
@@ -2177,6 +2179,7 @@
   "base": "ex035-drinkware",
   "gallery": [
    "/images/products/ex035-drinkware/ex035-drinkware-square.jpg",
+   "/images/products/ex035-drinkware/ex035-drinkware-group.jpg",
    "/images/products/ex035-drinkware/ex035-drinkware-02.jpg",
    "/images/products/ex035-drinkware/ex035-drinkware-03.jpg",
    "/images/products/ex035-drinkware/ex035-drinkware-04.jpg"
@@ -2698,6 +2701,7 @@
   "base": "ex098-bags",
   "gallery": [
    "/images/products/ex098-bags/ex098-bags-square.jpg",
+   "/images/products/ex098-bags/ex098-bags-group.jpg",
    "/images/products/ex098-bags/ex098-bags-02.jpg",
    "/images/products/ex098-bags/ex098-bags-03.jpg",
    "/images/products/ex098-bags/ex098-bags-04.jpg"
@@ -2713,6 +2717,7 @@
   "base": "ex100-bags",
   "gallery": [
    "/images/products/ex100-bags/ex100-bags-square.jpg",
+   "/images/products/ex100-bags/ex100-bags-group.jpg",
    "/images/products/ex100-bags/ex100-bags-02.jpg",
    "/images/products/ex100-bags/ex100-bags-03.jpg",
    "/images/products/ex100-bags/ex100-bags-04.jpg"
@@ -3018,6 +3023,7 @@
   "base": "ex125-drinkware",
   "gallery": [
    "/images/products/ex125-drinkware/ex125-drinkware-square.jpg",
+   "/images/products/ex125-drinkware/ex125-drinkware-group.jpg",
    "/images/products/ex125-drinkware/ex125-drinkware-02.jpg",
    "/images/products/ex125-drinkware/ex125-drinkware-03.jpg",
    "/images/products/ex125-drinkware/ex125-drinkware-04.jpg"
@@ -3115,6 +3121,7 @@
   "base": "ex135-drinkware",
   "gallery": [
    "/images/products/ex135-drinkware/ex135-drinkware-square.jpg",
+   "/images/products/ex135-drinkware/ex135-drinkware-group.jpg",
    "/images/products/ex135-drinkware/ex135-drinkware-02.jpg",
    "/images/products/ex135-drinkware/ex135-drinkware-03.jpg",
    "/images/products/ex135-drinkware/ex135-drinkware-04.jpg"
@@ -3124,6 +3131,7 @@
   "base": "ex136-drinkware",
   "gallery": [
    "/images/products/ex136-drinkware/ex136-drinkware-square.jpg",
+   "/images/products/ex136-drinkware/ex136-drinkware-group.jpg",
    "/images/products/ex136-drinkware/ex136-drinkware-02.jpg",
    "/images/products/ex136-drinkware/ex136-drinkware-03.jpg",
    "/images/products/ex136-drinkware/ex136-drinkware-04.jpg"
@@ -3170,6 +3178,7 @@
   "base": "ex141-drinkware",
   "gallery": [
    "/images/products/ex141-drinkware/ex141-drinkware-square.jpg",
+   "/images/products/ex141-drinkware/ex141-drinkware-group.jpg",
    "/images/products/ex141-drinkware/ex141-drinkware-02.jpg",
    "/images/products/ex141-drinkware/ex141-drinkware-03.jpg",
    "/images/products/ex141-drinkware/ex141-drinkware-04.jpg"
@@ -3292,6 +3301,7 @@
   "base": "ex154-drinkware",
   "gallery": [
    "/images/products/ex154-drinkware/ex154-drinkware-square.jpg",
+   "/images/products/ex154-drinkware/ex154-drinkware-group.jpg",
    "/images/products/ex154-drinkware/ex154-drinkware-02.jpg",
    "/images/products/ex154-drinkware/ex154-drinkware-03.jpg"
   ]
@@ -3392,6 +3402,7 @@
   "base": "ex168-stationery",
   "gallery": [
    "/images/products/ex168-stationery/ex168-stationery-square.jpg",
+   "/images/products/ex168-stationery/ex168-stationery-group.jpg",
    "/images/products/ex168-stationery/ex168-stationery-02.jpg",
    "/images/products/ex168-stationery/ex168-stationery-03.jpg",
    "/images/products/ex168-stationery/ex168-stationery-04.jpg"
