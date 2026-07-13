@@ -36,6 +36,7 @@ const MODEL = arg('--model', 'kontext-pro');
 const N = parseInt(arg('--n', '1'), 10);
 const PLAN = has('--plan');
 const GROUP = has('--group');   // keep the multi-colour line-up together (family shot), only clean bg+text
+const IDENTITY = has('--identity'); // strict product-fidelity re-shoot (fix wrong/AI-drifted images)
 const NOICON = has('--no-icon');
 
 const FAL_MODELS = {
@@ -121,7 +122,38 @@ const PROMPT_SINGLE =
   `re-orient it to stand upright like a normal e-commerce product hero.\n` +
   `Photorealistic, sharp focus, absolutely no text or watermark anywhere.`;
 
-const PROMPT = GROUP ? PROMPT_GROUP : PROMPT_SINGLE;
+// ---- IDENTITY prompt: strict fidelity re-shoot to FIX wrong / AI-drifted images ----
+const PROMPT_IDENTITY =
+  `Re-photograph the EXACT product in this input as a high-end GO PREMIUM catalogue studio shot. ` +
+  `The #1 rule is FIDELITY: the output MUST be the SAME physical product as the input — identical ` +
+  `product TYPE, overall shape and silhouette, proportions, lid/cap style, and colour. Do NOT ` +
+  `substitute a different product, do NOT change a bottle into a tumbler or a mug, do NOT restyle ` +
+  `it into another form.\n` +
+  `PRESERVE EVERY FUNCTIONAL PART exactly as in the input: handles, carry loops, straps/lanyards, ` +
+  `straws, spouts, flip lids, screw lids, buttons, kickstands, bottle-openers, chin straps, mesh ` +
+  `panels, brims. NEVER remove, add, or simplify a part (e.g. do not drop a handle, do not remove ` +
+  `a straw, do not turn a loop-handle lid into a plain cap).\n` +
+  `UPRIGHT: the product MUST stand vertically on its base in a natural e-commerce hero pose — ` +
+  `bottles, tumblers, flasks, cups, mugs, jars stand straight up, NEVER lying on their side, ` +
+  `tipped, fallen, floating or angled flat on the floor. If the input lies down, re-orient it to stand.\n` +
+  `COPYRIGHT-SAFE: if the product carries a customer/brand logo, a licensed cartoon character ` +
+  `(e.g. any well-known character), a printed brand name, or any copyrighted graphic/pattern, ` +
+  `you MUST replace it with a SUBTLE NEUTRAL generic decoration (soft abstract/geometric or plain), ` +
+  `keeping the product's BASE COLOUR and shape identical. Do NOT reproduce any real brand, logo, ` +
+  `character or copyrighted artwork. Plain areas stay plain — never invent a new logo.\n` +
+  `SINGLE HERO: if the input shows the product in several colours or several units (a colour ` +
+  `line-up, collage, or supplier spec sheet), output ONE single clean representative unit as the ` +
+  `hero — never a collage, grid, or multiple copies. (A product genuinely sold as a set/pair — ` +
+  `e.g. a notebook-and-pen gift set in a box — stays together as that set.)\n` +
+  `STUDIO STYLE: seamless warm off-white / soft cream backdrop, bright high-key, soft daylight from ` +
+  `upper-left, soft natural contact shadow, slightly elevated three-quarter angle, square 1:1, the ` +
+  `WHOLE product fully in frame at a generous catalogue scale — not cut off, not tiny, not distorted. ` +
+  `Neutral accurate white balance; keep the product's true colour, no yellow/amber tint on the product.\n` +
+  `REMOVE only: supplier watermarks/brand text, contact info, colour-swatch cards, price/size text, ` +
+  `boxes, hands, mannequin stands, background clutter. Keep ONLY the clean product on the studio backdrop.\n` +
+  `Photorealistic, sharp focus, no text or watermark anywhere.`;
+
+const PROMPT = IDENTITY ? PROMPT_IDENTITY : (GROUP ? PROMPT_GROUP : PROMPT_SINGLE);
 
 const OUT = join(REPO, 'scripts', 'image-pipeline', 'staged', 'studio-ab');
 const IMGMAP = JSON.parse(readFileSync(join(REPO, 'src', 'data', 'product-images.generated.json'), 'utf8'));
