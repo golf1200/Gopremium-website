@@ -44,11 +44,13 @@ for sku in live:
     # always keep hero (index 0) + any group first
     ordered = g['gallery'][:1] + [x for x in g['gallery'][1:] if 'group' in x] + [x for x in g['gallery'][1:] if 'group' not in x]
     for rel in ordered:
+        if len(kept) >= 4:  # cap: hero + group + up to 2 distinct angles
+            break
         p = os.path.join(ROOT, 'public', rel.split('?')[0].lstrip('/'))
         if not os.path.exists(p): continue
         h = ahash(p)
-        if h is not None and any(ham(h, k) <= 8 for k in hashes):
-            continue  # near-duplicate
+        if h is not None and any(ham(h, k) <= 12 for k in hashes):
+            continue  # near-duplicate (aggressive)
         if h is not None: hashes.append(h)
         kept.append(rel)
     if len(kept) != len(g['gallery']): deduped += 1
