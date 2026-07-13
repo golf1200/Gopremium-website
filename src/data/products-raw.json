@@ -5326,27 +5326,6 @@
   ]
  },
  {
-  "sku": "EX051",
-  "slug": "ex051-garment",
-  "name": "เสื้อช็อป",
-  "category": "Garment",
-  "category_slug": "garment",
-  "features": "เสื้อช็อป Active Pro\n-ซิปผ่าหน้า\n-กระเป้าแปะอก \n-ที่เสียบปากกา 2 ช่อง\n-แขนติดกระดุม\n-กระเป้าล้วง ซ้าย-ขวา\n-เอวจั้มกระดุม ปรับได้ 2 ระดับ",
-  "size": "M - 3XL",
-  "material": "ผ้า Cotton สูตรพิเศษ",
-  "price_300_thb": 744,
-  "budget_tier": "executive",
-  "moq": 100,
-  "free_logo": [
-   "สกรีน DFT"
-  ],
-  "logo_max_cm": "",
-  "occasions": [],
-  "express": true,
-  "lead_time": "20-25 วัน",
-  "colors": []
- },
- {
   "sku": "EX052",
   "slug": "ex052-garment",
   "name": "กางเกงช่าง",
@@ -7717,31 +7696,6 @@
    "น้ำเงิน",
    "น้ำตาล",
    "เทา"
-  ]
- },
- {
-  "sku": "EX172",
-  "slug": "ex172-stationery",
-  "name": "เซ็ทสมุดโน๊ตปกหนัง PU รุ่น Fullfill",
-  "category": "Stationery",
-  "category_slug": "stationery",
-  "features": null,
-  "size": "A5",
-  "material": "PU",
-  "price_300_thb": 260,
-  "budget_tier": "premium",
-  "moq": 100,
-  "free_logo": [
-   "Silk Screen"
-  ],
-  "logo_max_cm": "",
-  "occasions": [],
-  "express": true,
-  "lead_time": "7-10 วัน",
-  "colors": [
-   "ดำ",
-   "น้ำเงิน",
-   "เงิน"
   ]
  },
  {

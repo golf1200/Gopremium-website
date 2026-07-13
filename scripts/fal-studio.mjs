@@ -37,6 +37,7 @@ const N = parseInt(arg('--n', '1'), 10);
 const PLAN = has('--plan');
 const GROUP = has('--group');   // keep the multi-colour line-up together (family shot), only clean bg+text
 const IDENTITY = has('--identity'); // strict product-fidelity re-shoot (fix wrong/AI-drifted images)
+const PLAIN = has('--plain');    // force a COMPLETELY plain product (no invented pattern/print)
 const NOICON = has('--no-icon');
 
 const FAL_MODELS = {
@@ -153,7 +154,11 @@ const PROMPT_IDENTITY =
   `boxes, hands, mannequin stands, background clutter. Keep ONLY the clean product on the studio backdrop.\n` +
   `Photorealistic, sharp focus, no text or watermark anywhere.`;
 
-const PROMPT = IDENTITY ? PROMPT_IDENTITY : (GROUP ? PROMPT_GROUP : PROMPT_SINGLE);
+const PLAIN_CLAUSE = `\nABSOLUTELY PLAIN: this product is a blank sample with NO decoration — solid colour only. ` +
+  `Do NOT add or keep ANY printed pattern, graphic, motif, flower, geometric design, texture print, ` +
+  `logo, brand name or text anywhere on the product. Any pattern in the input is a customer sample ` +
+  `and MUST be removed, leaving a clean solid-colour surface.`;
+const PROMPT = (IDENTITY ? PROMPT_IDENTITY : (GROUP ? PROMPT_GROUP : PROMPT_SINGLE)) + (PLAIN ? PLAIN_CLAUSE : '');
 
 const OUT = join(REPO, 'scripts', 'image-pipeline', 'staged', 'studio-ab');
 const IMGMAP = JSON.parse(readFileSync(join(REPO, 'src', 'data', 'product-images.generated.json'), 'utf8'));
