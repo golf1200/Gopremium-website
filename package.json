@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node generate-sitemap.js && node scripts/build-product-static.mjs && vite build && node scripts/postbuild-home.mjs",
+    "build": "node scripts/sync-master-live.mjs && node scripts/build-catalogue-data.mjs && node generate-sitemap.js && node scripts/build-product-static.mjs && vite build && node scripts/postbuild-home.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

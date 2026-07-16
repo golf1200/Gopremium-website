@@ -35,6 +35,10 @@ const products = raw.map(p => {
   if (gi && Array.isArray(gi.gallery) && gi.gallery.length) {
     img = bust(gi.gallery.find(g => g.includes('-square')) || gi.gallery[0]);
     gallery = gi.gallery.map(bust);
+  } else if (Array.isArray(p.images) && p.images.length) {
+    // NPD products published from the pipeline carry their own image URLs (Supabase)
+    img = bust(p.images[0]);
+    gallery = p.images.map(bust);
   }
   return {
     sku: p.sku,
