@@ -61,7 +61,11 @@ async function main() {
   const ix = (name) => head.indexOf(name);
   const iSku = ix('SKU'), iName = ix('ชื่อสินค้า'), iCat = ix('หมวดหมู่'), iChan = ix('ช่องทาง'),
     iPrice = ix('ราคาขาย/ชิ้น(฿)'), iMoq = ix('MOQ'), iFeat = ix('คุณสมบัติเด่น'),
-    iSize = ix('ขนาด/ความจุ'), iMat = ix('วัสดุ'), iLogo = ix('เทคนิคโลโก้ฟรี'), iImg = ix('รูปภาพ(URL)');
+    iSize = ix('ขนาด/ความจุ'), iMat = ix('วัสดุ'), iImg = ix('รูปภาพ(URL)');
+  // free-logo techniques: the live Master has no 'เทคนิคโลโก้ฟรี' column — promote() writes
+  // them to 'วิธีcustomlogo' instead, so read whichever exists (both, preferring the dedicated one)
+  const iLogoDedicated = ix('เทคนิคโลโก้ฟรี'), iLogoFallback = ix('วิธีcustomlogo');
+  const iLogo = iLogoDedicated >= 0 ? iLogoDedicated : iLogoFallback;
   if (iSku < 0 || iName < 0 || iChan < 0) { warn('Master header missing SKU/ชื่อสินค้า/ช่องทาง — keeping committed catalogue.'); return; }
 
   // 3) load committed SSOT
