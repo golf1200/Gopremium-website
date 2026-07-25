@@ -7702,5 +7702,147 @@
    "น้ำตาล",
    "ดำ"
   ]
+ },
+ {
+  "sku": "EX164",
+  "slug": "ex164-stationery",
+  "name": "สมุดปกหนัง PU กระดุมแม่เหล็ก",
+  "category": "Stationery",
+  "category_slug": "stationery",
+  "features": null,
+  "size": "A5",
+  "material": "PU",
+  "price_300_thb": 163,
+  "budget_tier": "premium",
+  "moq": 100,
+  "free_logo": [
+   "Silk Screen"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "7-10 วัน",
+  "colors": [
+   "3 สี"
+  ]
+ },
+ {
+  "sku": "EX165",
+  "slug": "ex165-stationery",
+  "name": "สมุดปกหนัง PU แบบเว้า",
+  "category": "Stationery",
+  "category_slug": "stationery",
+  "features": null,
+  "size": "A5",
+  "material": "PU",
+  "price_300_thb": 181,
+  "budget_tier": "premium",
+  "moq": 100,
+  "free_logo": [
+   "Silk Screen"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "7-10 วัน",
+  "colors": [
+   "7 สี"
+  ]
+ },
+ {
+  "sku": "EX167",
+  "slug": "ex167-stationery",
+  "name": "สมุดปกหนังPU ลายริ้ว",
+  "category": "Stationery",
+  "category_slug": "stationery",
+  "features": null,
+  "size": "A5",
+  "material": "PU",
+  "price_300_thb": 190,
+  "budget_tier": "premium",
+  "moq": 100,
+  "free_logo": [
+   "Silk Screen"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "7-10 วัน",
+  "colors": [
+   "น้ำเงิน",
+   "น้ำตาล"
+  ]
+ },
+ {
+  "sku": "EX169",
+  "slug": "ex169-stationery",
+  "name": "สมุดโน๊ตปกหนัง ลายริ้ว",
+  "category": "Stationery",
+  "category_slug": "stationery",
+  "features": null,
+  "size": "A5",
+  "material": "หนัง",
+  "price_300_thb": 143,
+  "budget_tier": "smart",
+  "moq": 100,
+  "free_logo": [
+   "Silk Screen"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "7-10 วัน",
+  "colors": [
+   "เทา",
+   "น้ำตาล",
+   "ฟ้า",
+   "กรม"
+  ]
+ },
+ {
+  "sku": "EX171",
+  "slug": "ex171-stationery",
+  "name": "เซ็ทสมุดโน๊ตปกหนัง PU",
+  "category": "Stationery",
+  "category_slug": "stationery",
+  "features": null,
+  "size": "4.5*6.75 นิ้ว",
+  "material": "PU",
+  "price_300_thb": 127,
+  "budget_tier": "smart",
+  "moq": 100,
+  "free_logo": [
+   "Silk Screen"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "7-10 วัน",
+  "colors": [
+   "5 สี"
+  ]
+ },
+ {
+  "sku": "EX172",
+  "slug": "ex172-stationery",
+  "name": "เซ็ทสมุดโน๊ตปกหนัง PU รุ่น Fullfill",
+  "category": "Stationery",
+  "category_slug": "stationery",
+  "features": null,
+  "size": "A5",
+  "material": "PU",
+  "price_300_thb": 260,
+  "budget_tier": "premium",
+  "moq": 100,
+  "free_logo": [
+   "Silk Screen"
+  ],
+  "logo_max_cm": "",
+  "occasions": [],
+  "express": true,
+  "lead_time": "7-10 วัน",
+  "colors": [
+   "8 สี"
+  ]
  }
 ]

@@ -3138,5 +3138,41 @@
    "/images/products/ex178-lifestyle/ex178-lifestyle-square.jpg",
    "/images/products/ex178-lifestyle/ex178-lifestyle-group.jpg"
   ]
+ },
+ "EX164": {
+  "base": "ex164-stationery",
+  "gallery": [
+   "/images/products/ex164-stationery/ex164-stationery-square.jpg"
+  ]
+ },
+ "EX165": {
+  "base": "ex165-stationery",
+  "gallery": [
+   "/images/products/ex165-stationery/ex165-stationery-square.jpg"
+  ]
+ },
+ "EX167": {
+  "base": "ex167-stationery",
+  "gallery": [
+   "/images/products/ex167-stationery/ex167-stationery-square.jpg"
+  ]
+ },
+ "EX169": {
+  "base": "ex169-stationery",
+  "gallery": [
+   "/images/products/ex169-stationery/ex169-stationery-square.jpg"
+  ]
+ },
+ "EX171": {
+  "base": "ex171-stationery",
+  "gallery": [
+   "/images/products/ex171-stationery/ex171-stationery-square.jpg"
+  ]
+ },
+ "EX172": {
+  "base": "ex172-stationery",
+  "gallery": [
+   "/images/products/ex172-stationery/ex172-stationery-square.jpg"
+  ]
  }
 }
