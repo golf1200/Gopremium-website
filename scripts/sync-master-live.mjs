@@ -83,7 +83,9 @@ async function main() {
     const price = num(r[iPrice]);
     if (!name || !price || price <= 0) continue;                    // must be presentable
     have.add(sku);
-    const img = iImg >= 0 ? String(r[iImg] || '').trim() : '';
+    // promote() may write several image URLs joined by ' , ' (up to 10) — split them all into the gallery
+    const imgCell = iImg >= 0 ? String(r[iImg] || '').trim() : '';
+    const imgList = imgCell ? imgCell.split(/\s*,\s*/).map((x) => x.trim()).filter(Boolean).slice(0, 10) : [];
     const rec = {
       sku, slug: sku.toLowerCase(), name,
       category: (iCat >= 0 ? String(r[iCat] || '').trim() : '') || slugForCat(r[iCat]),
@@ -95,7 +97,7 @@ async function main() {
       moq: iMoq >= 0 ? (num(r[iMoq]) || 50) : 50,
       free_logo: iLogo >= 0 ? splitLogo(r[iLogo]) : [],
       logo_max_cm: '', colors: [], occasions: [],
-      images: img ? [img] : [],   // consumed by build-catalogue-data.mjs img fallback
+      images: imgList,            // consumed by build-catalogue-data.mjs (img fallback + gallery)
       express: false, npd: true,
     };
     raw.push(rec); added.push(sku);
