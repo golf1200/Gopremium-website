@@ -20,12 +20,19 @@ const swatchesOf = (colors) => {            // up to 8 deduped swatch hexes
   for (const c of colors) { const h = hexOf(c); if (h && !hexes.includes(h)) hexes.push(h); if (hexes.length >= 8) break; }
   return hexes.length ? hexes : null;
 };
+// Supplier confirmed only the colour COUNT, not the names: colors = ["8 สี"].
+// Show the true count with no fake swatch chips.
+const countOnlyOf = (colors) => {
+  if (!Array.isArray(colors) || colors.length !== 1) return null;
+  const m = /^(\d+)\s*สี$/.exec(String(colors[0]).trim());
+  return m ? parseInt(m[1], 10) : null;
+};
 
 // Cache-busting version for product image URLs. Filenames stay fixed but
 // /images/* is served immutable for 1 year, so when images are regenerated in
 // place we bump this to force browsers/CDN to fetch the new bytes. Bump on every
 // in-place image refresh. (v2 = 2026-06-08 studio covers + cleaned galleries.)
-const IMG_VER = '20'; // v18 = 2026-07-13 identity-fix: 32 express heroes regenerated from correct Drive/1688 source (Fable-verified)
+const IMG_VER = '21'; // v21 = 2026-07-25 feedback fixes: EX114 Spring hero corrected, EX020 hero swapped to clean shot
 const bust = (u) => (u ? u + '?v=' + IMG_VER : u);
 
 // Public fields only (never cost / supplier / 1688)
@@ -57,10 +64,10 @@ const products = raw.map(p => {
     img,        // real photo (square) or null → mockup fallback
     gallery,    // full photo set for product page, or null
     express: !!p.express,
-    nColors: Array.isArray(p.colors) ? p.colors.length : 0,
-    swatches: swatchesOf(p.colors),   // up to 8 hex chips for the card
-    colorNames: Array.isArray(p.colors) ? p.colors : [],            // full list for the product page
-    colorHexes: Array.isArray(p.colors) ? p.colors.map(hexOf) : [], // hex aligned 1:1 with colorNames
+    nColors: countOnlyOf(p.colors) ?? (Array.isArray(p.colors) ? p.colors.length : 0),
+    swatches: countOnlyOf(p.colors) ? null : swatchesOf(p.colors),   // up to 8 hex chips for the card
+    colorNames: countOnlyOf(p.colors) ? [] : (Array.isArray(p.colors) ? p.colors : []),            // full list for the product page
+    colorHexes: countOnlyOf(p.colors) ? [] : (Array.isArray(p.colors) ? p.colors.map(hexOf) : []), // hex aligned 1:1 with colorNames
   };
 });
 

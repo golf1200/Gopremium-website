@@ -164,7 +164,9 @@ function pageHtml(p) {
 
   const colorRow = (p.colorNames && p.colorNames.length)
     ? `<div style="grid-column:1/-1"><div class="k">สีที่มี (${p.colorNames.length} สี)</div><div class="colorlist">${p.colorNames.map((c, i) => `<span class="cchip"><i style="background:${escAttr((p.colorHexes && p.colorHexes[i]) || '#ccc')}"></i>${esc(c)}</span>`).join('')}</div></div>`
-    : '';
+    : (p.nColors > 1
+      ? `<div style="grid-column:1/-1"><div class="k">สีที่มี (${p.nColors} สี)</div><div class="v">มีให้เลือก ${p.nColors} สี — สอบถามสีที่ต้องการได้เลย</div></div>`
+      : '');
 
   const spec = `<div class="spec">
 ${p.size ? `<div><div class="k">ขนาด</div><div class="v">${esc(p.size)}</div></div>` : ''}

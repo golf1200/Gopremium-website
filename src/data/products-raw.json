@@ -4592,54 +4592,6 @@
   ]
  },
  {
-  "sku": "EX021",
-  "slug": "ex021-powerbank",
-  "name": "powerbank  รุ่น VOLT",
-  "category": "Powerbank",
-  "category_slug": "powerbank",
-  "features": "Power Bank 10000mAh \nFast Charging สายคล้องสามารถถอดออกมาเพื่อเป็นสายชาร์จได้",
-  "size": "ขนาดสินค้า 6x6.8x2.6 cm. \n\nน้ำหนัก 170 กรัม",
-  "material": "ABS และ Polycarbonate",
-  "price_300_thb": 798,
-  "budget_tier": "executive",
-  "moq": 100,
-  "free_logo": [
-   "พิมพ์ UV printing"
-  ],
-  "logo_max_cm": "",
-  "occasions": [],
-  "express": true,
-  "lead_time": "20-25 วัน",
-  "colors": [
-   "ดำ",
-   "เทา"
-  ]
- },
- {
-  "sku": "EX022",
-  "slug": "ex022-fan",
-  "name": "powerbank  รุ่น VOLT",
-  "category": "Mini Fan",
-  "category_slug": "fan",
-  "features": "Power Bank 10000mAh \nFast Charging สายคล้องสามารถถอดออกมาเพื่อเป็นสายชาร์จได้",
-  "size": "ขนาดสินค้า 6x6.8x2.6 cm. \n\nน้ำหนัก 170 กรัม",
-  "material": "ABS และ Polycarbonate",
-  "price_300_thb": 784,
-  "budget_tier": "executive",
-  "moq": 100,
-  "free_logo": [
-   "พิมพ์ UV printing"
-  ],
-  "logo_max_cm": "",
-  "occasions": [],
-  "express": true,
-  "lead_time": "20-25 วัน",
-  "colors": [
-   "ดำ",
-   "เทา"
-  ]
- },
- {
   "sku": "EX023",
   "slug": "ex023-fan",
   "name": "พัดลมไอเย็น Turbo air",
@@ -6232,31 +6184,6 @@
   "express": true
  },
  {
-  "sku": "EX111",
-  "slug": "ex111-powerbank",
-  "name": "powerbank  รุ่น Lumi",
-  "category": "Powerbank",
-  "category_slug": "powerbank",
-  "features": "Power Bank 10000mAh\n PD Charger ไร้สาย Wireless Charging",
-  "size": "ขนาดสินค้า 6.9x10.5x2 cm. \n\nน้ำหนัก 213 กรัม",
-  "material": "ABS และ Polycarbonate",
-  "price_300_thb": 762,
-  "budget_tier": "executive",
-  "moq": 100,
-  "free_logo": [
-   "พิมพ์ UV printing"
-  ],
-  "logo_max_cm": "",
-  "colors": [
-   "ดำ",
-   "ขาว",
-   "ฟ้า"
-  ],
-  "occasions": [],
-  "lead_time": "20-25 วัน",
-  "express": true
- },
- {
   "sku": "EX114",
   "slug": "ex114-drinkware",
   "name": "กระบอกน้ำพลาสติก รุ่น Spring",
@@ -6394,31 +6321,6 @@
   ]
  },
  {
-  "sku": "EX112",
-  "slug": "ex112-powerbank",
-  "name": "powerbank  รุ่น Lumi",
-  "category": "Powerbank",
-  "category_slug": "powerbank",
-  "features": "Power Bank 10000mAh\n PD Charger ไร้สาย Wireless Charging",
-  "size": "ขนาดสินค้า 6.9x10.5x2 cm. \n\nน้ำหนัก 213 กรัม",
-  "material": "ABS และ Polycarbonate",
-  "price_300_thb": 748,
-  "budget_tier": "executive",
-  "moq": 100,
-  "free_logo": [
-   "พิมพ์ UV printing"
-  ],
-  "logo_max_cm": "",
-  "occasions": [],
-  "express": true,
-  "lead_time": "20-25 วัน",
-  "colors": [
-   "ดำ",
-   "ขาว",
-   "ฟ้า"
-  ]
- },
- {
   "sku": "EX119",
   "slug": "ex119-powerbank",
   "name": "powerbank รุ่น EDGE",
@@ -6439,58 +6341,6 @@
   "lead_time": "20-25 วัน",
   "colors": [
    "เทา"
-  ]
- },
- {
-  "sku": "EX120",
-  "slug": "ex120-powerbank",
-  "name": "powerbank รุ่น Air",
-  "category": "Powerbank",
-  "category_slug": "powerbank",
-  "features": "Power Bank 10000mAh\nWireless Charge มีขาปลั๊กในตัวสามารถพับเก็บได้",
-  "size": "ขนาดสินค้า 6.3x9x2.8 cm. \n\nน้ำหนัก 230 กรัม",
-  "material": "ABS และ Polycarbonate",
-  "price_300_thb": 848,
-  "budget_tier": "executive",
-  "moq": 100,
-  "free_logo": [
-   "พิมพ์ UV printing"
-  ],
-  "logo_max_cm": "",
-  "occasions": [],
-  "express": true,
-  "lead_time": "20-25 วัน",
-  "colors": [
-   "ดำ",
-   "ขาว",
-   "ฟ้า",
-   "ขาวส้ม"
-  ]
- },
- {
-  "sku": "EX121",
-  "slug": "ex121-powerbank",
-  "name": "powerbank รุ่น Air",
-  "category": "Powerbank",
-  "category_slug": "powerbank",
-  "features": "Power Bank 10000mAh\nWireless Charge มีขาปลั๊กในตัวสามารถพับเก็บได้",
-  "size": "ขนาดสินค้า 6.3x9x2.8 cm. \n\nน้ำหนัก 230 กรัม",
-  "material": "ABS และ Polycarbonate",
-  "price_300_thb": 834,
-  "budget_tier": "executive",
-  "moq": 100,
-  "free_logo": [
-   "พิมพ์ UV printing"
-  ],
-  "logo_max_cm": "",
-  "occasions": [],
-  "express": true,
-  "lead_time": "20-25 วัน",
-  "colors": [
-   "ดำ",
-   "ขาว",
-   "ฟ้า",
-   "ขาวส้ม"
   ]
  },
  {
@@ -6563,13 +6413,7 @@
   "express": true,
   "lead_time": "14-20 วัน",
   "colors": [
-   "ขาว",
-   "ชมพู",
-   "แดง",
-   "ดำ",
-   "เงิน",
-   "น้ำเงิน",
-   "ทอง"
+   "6 สี"
   ]
  },
  {
@@ -6592,12 +6436,14 @@
   "express": true,
   "lead_time": "14-20 วัน",
   "colors": [
-   "ม่วง",
+   "กรม",
    "ดำ",
-   "น้ำเงิน",
+   "ขาว",
    "ชมพู",
-   "ฟ้า",
-   "ขาว"
+   "เขียว",
+   "ม่วง",
+   "แดง",
+   "เขียวมินต์"
   ]
  },
  {
@@ -6620,10 +6466,7 @@
   "express": true,
   "lead_time": "14-20 วัน",
   "colors": [
-   "ดำ",
-   "ขาว",
-   "แดง",
-   "น้ำเงิน"
+   "6 สี"
   ]
  },
  {
@@ -6674,12 +6517,7 @@
   "express": true,
   "lead_time": "14-20 วัน",
   "colors": [
-   "ฟ้า",
-   "ม่วง",
-   "ขาว",
-   "ดำ",
-   "แดง",
-   "ชมพู"
+   "8 สี"
   ]
  },
  {
@@ -6702,10 +6540,7 @@
   "express": true,
   "lead_time": "14-20 วัน",
   "colors": [
-   "ขาว",
-   "ดำ",
-   "เทา",
-   "ครีม"
+   "3 สี"
   ]
  },
  {
@@ -6754,7 +6589,16 @@
   "express": true,
   "lead_time": "14-20 วัน",
   "colors": [
-   "10 สี"
+   "ดำ",
+   "น้ำตาลแดง",
+   "เขียว",
+   "ฟ้า",
+   "ชมพู",
+   "เขียวมะกอก",
+   "ทอง",
+   "กรม",
+   "ครีม",
+   "ม่วง"
   ]
  },
  {
@@ -6856,10 +6700,7 @@
   "express": true,
   "lead_time": "14-20 วัน",
   "colors": [
-   "แดง",
-   "ขาว",
-   "ดำ",
-   "เงิน"
+   "6 สี"
   ]
  },
  {
@@ -6909,10 +6750,11 @@
   "express": true,
   "lead_time": "14-20 วัน",
   "colors": [
-   "เทา",
+   "เขียวเข้ม",
+   "ชมพู",
    "ครีม",
    "ม่วง",
-   "ชมพู"
+   "กรม"
   ]
  },
  {
@@ -7542,7 +7384,7 @@
   "category": "Souvenir",
   "category_slug": "souvenir",
   "features": "เข็มกลัดทรงกลม ฐานพลาสติกและเหล็ก",
-  "size": "25MM",
+  "size": "25MM / 32MM / 44MM / 58MM",
   "material": "เหล็กและพลาสติก",
   "price_300_thb": 18,
   "budget_tier": "value",
@@ -7563,7 +7405,7 @@
   "category": "Souvenir",
   "category_slug": "souvenir",
   "features": "พวงกุญแจกระจก พกพาสะดวก ใช้งานง่าย",
-  "size": "44MM",
+  "size": "44MM / 58MM",
   "material": "เหล็กและพลาสติก",
   "price_300_thb": 28,
   "budget_tier": "value",

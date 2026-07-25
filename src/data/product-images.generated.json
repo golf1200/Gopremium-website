@@ -1992,20 +1992,7 @@
  "EX020": {
   "base": "ex020-powerbank",
   "gallery": [
-   "/images/products/ex020-powerbank/ex020-powerbank-square.jpg",
-   "/images/products/ex020-powerbank/ex020-powerbank-02.jpg"
-  ]
- },
- "EX021": {
-  "base": "ex021-powerbank",
-  "gallery": [
-   "/images/products/ex021-powerbank/ex021-powerbank-square.jpg"
-  ]
- },
- "EX022": {
-  "base": "ex022-fan",
-  "gallery": [
-   "/images/products/ex022-fan/ex022-fan-square.jpg"
+   "/images/products/ex020-powerbank/ex020-powerbank-square.jpg"
   ]
  },
  "EX023": {
@@ -2533,12 +2520,6 @@
    "/images/products/ex110-powerbank/ex110-powerbank-group.jpg"
   ]
  },
- "EX111": {
-  "base": "ex111-powerbank",
-  "gallery": [
-   "/images/products/ex111-powerbank/ex111-powerbank-square.jpg"
-  ]
- },
  "EX095": {
   "base": "ex095-bags",
   "gallery": [
@@ -2789,30 +2770,10 @@
    "/images/products/ex118-garment/ex118-garment-group.jpg"
   ]
  },
- "EX112": {
-  "base": "ex112-powerbank",
-  "gallery": [
-   "/images/products/ex112-powerbank/ex112-powerbank-square.jpg"
-  ]
- },
  "EX119": {
   "base": "ex119-powerbank",
   "gallery": [
    "/images/products/ex119-powerbank/ex119-powerbank-square.jpg"
-  ]
- },
- "EX120": {
-  "base": "ex120-powerbank",
-  "gallery": [
-   "/images/products/ex120-powerbank/ex120-powerbank-square.jpg",
-   "/images/products/ex120-powerbank/ex120-powerbank-03.jpg",
-   "/images/products/ex120-powerbank/ex120-powerbank-04.jpg"
-  ]
- },
- "EX121": {
-  "base": "ex121-powerbank",
-  "gallery": [
-   "/images/products/ex121-powerbank/ex121-powerbank-square.jpg"
   ]
  },
  "EX113": {

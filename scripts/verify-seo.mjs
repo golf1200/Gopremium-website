@@ -9,11 +9,20 @@ const ok = (n, p, d = '') => results.push({ n, pass: p, d });
 const browser = await chromium.launch();
 const ctx = await browser.newContext();
 
-// Stub gtag before app code (gaId empty → initGA won't override it).
+// Capture gtag calls via a hooked dataLayer.push (gaId is live now, so initGA
+// overrides window.gtag — but it keeps a pre-existing dataLayer, whose push we
+// hook). Stub gtag stays as fallback for empty gaId.
 await ctx.addInitScript(() => {
   window.__events = [];
+  window.dataLayer = [];
+  const origPush = window.dataLayer.push.bind(window.dataLayer);
+  window.dataLayer.push = function (...items) {
+    for (const it of items) window.__events.push(Array.from(it));
+    return origPush(...items);
+  };
   window.gtag = (...a) => window.__events.push(a);
 });
+await ctx.route('**/googletagmanager.com/**', (r) => r.abort());
 await ctx.route('**/lin.ee/**', (r) => r.abort());
 await ctx.route('**/formspree.io/**', (r) => r.fulfill({ status: 200, contentType: 'application/json', body: '{"ok":true}' }));
 

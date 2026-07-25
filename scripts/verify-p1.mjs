@@ -10,13 +10,23 @@ const ok = (n, p, d = '') => results.push({ n, pass: p, d });
 const browser = await chromium.launch();
 const ctx = await browser.newContext();
 
-// Capture gtag calls: pre-inject a stub BEFORE app code runs. Because gaId is
-// empty, initGA() won't define window.gtag, so this stub stays and lets us
-// observe that track() fires the right events through the real plumbing.
+// Capture gtag calls: pre-inject BEFORE app code runs. With gaId now live,
+// initGA() overwrites window.gtag with its own dataLayer-pushing gtag, so a
+// plain stub no longer sees events — instead we pre-seed window.dataLayer with
+// a hooked push() (initGA keeps an existing dataLayer), capturing every gtag()
+// call whether GA is live or not. Stub gtag stays as fallback for empty gaId.
 await ctx.addInitScript(() => {
   window.__events = [];
+  window.dataLayer = [];
+  const origPush = window.dataLayer.push.bind(window.dataLayer);
+  window.dataLayer.push = function (...items) {
+    for (const it of items) window.__events.push(Array.from(it));
+    return origPush(...items);
+  };
   window.gtag = (...args) => window.__events.push(args);
 });
+// Never load the real GA script during verification.
+await ctx.route('**/googletagmanager.com/**', (r) => r.abort());
 
 // Block real LINE navigation (target=_blank) so clicks don't hit the network.
 await ctx.route('**/lin.ee/**', (r) => r.abort());
