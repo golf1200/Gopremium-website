@@ -88,6 +88,7 @@ const GTAG = `<script async src="https://www.googletagmanager.com/gtag/js?id=${G
 const CSS = `<style>
 :root{--navy:#13244a;--navy-700:#0d1a36;--gold:#f4b223;--gold-deep:#c98f0a;--gold-soft:#fbe7b5;--ink:#1A2230;--grey:#5B6472;--line:#E3E7ED;--cloud:#F5F6F8;--maxw:1180px;--gut:clamp(20px,5vw,56px);--head:'Anuphan',sans-serif;--body:'IBM Plex Sans Thai',sans-serif}
 *{box-sizing:border-box}body{margin:0;font-family:var(--body);color:var(--ink);background:#fff;line-height:1.65;-webkit-font-smoothing:antialiased}
+body,h1,h2,h3,h4,p,li,td,th,label,button,a,span,div{word-break:keep-all;overflow-wrap:break-word}
 h1,h2,h3,h4{font-family:var(--head);font-weight:600;line-height:1.16;margin:0;letter-spacing:-.01em}h1{font-weight:700}
 img{display:block;max-width:100%}a{color:inherit;text-decoration:none}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gut)}
@@ -113,7 +114,7 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}
 .muted{color:var(--grey)}
 .pd-price{font-family:var(--head);font-weight:700;font-size:30px;color:var(--navy);margin:14px 0}.pd-price small{font-family:var(--body);font-weight:400;font-size:14px;color:var(--grey)}
 .spec{display:grid;grid-template-columns:1fr 1fr;gap:14px 22px;margin:18px 0 4px;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.spec .k{font-size:12px;color:var(--grey);margin-bottom:3px}.spec .v{font-size:15px;font-weight:500}
+.spec .k{font-size:12px;color:var(--grey);margin-bottom:3px}.spec .v{font-size:15px;font-weight:500;white-space:pre-line}
 .chips,.colorlist{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
 .chips span{background:var(--cloud);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:13px}
 .cchip{display:inline-flex;align-items:center;gap:6px;background:var(--cloud);border:1px solid var(--line);border-radius:999px;padding:4px 11px;font-size:13px}
@@ -204,7 +205,7 @@ ${header}
 <p class="muted" style="font-size:16px;line-height:1.7">${esc(p.features || '')}</p>
 <div class="pd-price">${esc(baht(p.price))} <small>${p.price ? '/ ชิ้น (เริ่มที่ MOQ ' + esc(String(p.moq)) + ' ชิ้น)' : ''}</small></div>
 ${spec}
-<div class="pd-cta"><a class="btn btn-primary btn-lg" href="/quote">ขอใบเสนอราคาสินค้านี้</a><a class="btn btn-line btn-lg" href="https://lin.ee/z1GT1KR" target="_blank" rel="noopener">สอบถามทาง LINE</a></div>
+<div class="pd-cta"><a class="btn btn-primary btn-lg" href="/quote?sku=${encodeURIComponent(p.sku)}">ขอใบเสนอราคาสินค้านี้</a><a class="btn btn-line btn-lg" href="https://lin.ee/z1GT1KR" target="_blank" rel="noopener">สอบถามทาง LINE</a></div>
 <p class="muted" style="font-size:12.5px;margin-top:14px">* ราคาอ้างอิงที่ 300 ชิ้น พิมพ์โลโก้ · ทำ Mockup ให้ดูก่อนผลิตจริงทุกงาน · ตอบกลับใน 2 ชม.</p>
 </div>
 </div>
