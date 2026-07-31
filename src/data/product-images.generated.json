@@ -1946,8 +1946,7 @@
   "EX015": {
     "base": "ex015-umbrella",
     "gallery": [
-      "/images/products/ex015-umbrella/ex015-umbrella-studio.jpg",
-      "/images/products/ex015-umbrella/ex015-umbrella-square.jpg"
+      "/images/products/ex015-umbrella/ex015-umbrella-studio.jpg"
     ]
   },
   "EX016": {
@@ -1960,7 +1959,6 @@
     "base": "ex017-umbrella",
     "gallery": [
       "/images/products/ex017-umbrella/ex017-umbrella-studio.jpg",
-      "/images/products/ex017-umbrella/ex017-umbrella-square.jpg",
       "/images/products/ex017-umbrella/ex017-umbrella-group.jpg"
     ]
   },
