@@ -1,7 +1,8 @@
 {
   "redirects": [
     { "source": "/product/ex005-drinkware", "destination": "/product/ex141-drinkware", "permanent": true },
-    { "source": "/product/ex130-drinkware", "destination": "/product/ex006-drinkware", "permanent": true }
+    { "source": "/product/ex130-drinkware", "destination": "/product/ex006-drinkware", "permanent": true },
+    { "source": "/product/ex034-drinkware", "destination": "/product/ex031-drinkware", "permanent": true }
   ],
   "rewrites": [
     { "source": "/old", "destination": "/old.html" },

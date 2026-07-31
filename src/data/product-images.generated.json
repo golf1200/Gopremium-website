@@ -1916,7 +1916,7 @@
     "base": "ex010-umbrella",
     "gallery": [
       "/images/products/ex010-umbrella/ex010-umbrella-square.jpg",
-      "/images/products/ex010-umbrella/ex010-umbrella-colours.jpg"
+      "/images/products/ex010-umbrella/ex010-umbrella-colours-studio.jpg"
     ]
   },
   "EX011": {
@@ -1946,7 +1946,7 @@
   "EX015": {
     "base": "ex015-umbrella",
     "gallery": [
-      "/images/products/ex015-umbrella/ex015-umbrella-real1.jpg",
+      "/images/products/ex015-umbrella/ex015-umbrella-studio.jpg",
       "/images/products/ex015-umbrella/ex015-umbrella-square.jpg"
     ]
   },
@@ -1959,7 +1959,7 @@
   "EX017": {
     "base": "ex017-umbrella",
     "gallery": [
-      "/images/products/ex017-umbrella/ex017-umbrella-real1.jpg",
+      "/images/products/ex017-umbrella/ex017-umbrella-studio.jpg",
       "/images/products/ex017-umbrella/ex017-umbrella-square.jpg",
       "/images/products/ex017-umbrella/ex017-umbrella-group.jpg"
     ]
@@ -2025,7 +2025,8 @@
   "EX028": {
     "base": "ex028-drinkware",
     "gallery": [
-      "/images/products/ex028-drinkware/ex028-drinkware-real1.jpg"
+      "/images/products/ex028-drinkware/ex028-drinkware-studio.jpg",
+      "/images/products/ex028-drinkware/ex028-drinkware-colours.jpg"
     ]
   },
   "EX029": {
@@ -2045,8 +2046,7 @@
   "EX031": {
     "base": "ex031-drinkware",
     "gallery": [
-      "/images/products/ex031-drinkware/ex031-drinkware-square.jpg",
-      "/images/products/ex031-drinkware/ex031-drinkware-group.jpg"
+      "/images/products/ex031-drinkware/ex031-drinkware-studio.jpg"
     ]
   },
   "EX032": {
@@ -2061,13 +2061,6 @@
     "gallery": [
       "/images/products/ex033-drinkware/ex033-drinkware-square.jpg",
       "/images/products/ex033-drinkware/ex033-drinkware-group.jpg"
-    ]
-  },
-  "EX034": {
-    "base": "ex034-drinkware",
-    "gallery": [
-      "/images/products/ex034-drinkware/ex034-drinkware-square.jpg",
-      "/images/products/ex034-drinkware/ex034-drinkware-group.jpg"
     ]
   },
   "EX035": {
@@ -2101,7 +2094,7 @@
     "base": "ex039-drinkware",
     "gallery": [
       "/images/products/ex039-drinkware/ex039-drinkware-square.jpg",
-      "/images/products/ex039-drinkware/ex039-drinkware-colours.jpg"
+      "/images/products/ex039-drinkware/ex039-drinkware-colours-studio.jpg"
     ]
   },
   "EX040": {
@@ -2532,7 +2525,7 @@
   "EX099": {
     "base": "ex099-bags",
     "gallery": [
-      "/images/products/ex099-bags/ex099-bags-square.jpg"
+      "/images/products/ex099-bags/ex099-bags-plain.jpg"
     ]
   },
   "EX100": {
@@ -2734,7 +2727,7 @@
   "EX116": {
     "base": "ex116-garment",
     "gallery": [
-      "/images/products/ex116-garment/ex116-garment-real1.jpg",
+      "/images/products/ex116-garment/ex116-garment-studio.jpg",
       "/images/products/ex116-garment/ex116-garment-real2.jpg",
       "/images/products/ex116-garment/ex116-garment-real3.jpg",
       "/images/products/ex116-garment/ex116-garment-real4.jpg"
@@ -2797,7 +2790,8 @@
   "EX126": {
     "base": "ex126-drinkware",
     "gallery": [
-      "/images/products/ex126-drinkware/ex126-drinkware-square.jpg"
+      "/images/products/ex126-drinkware/ex126-drinkware-square.jpg",
+      "/images/products/ex126-drinkware/ex126-drinkware-colours-studio.jpg"
     ]
   },
   "EX127": {
@@ -2818,13 +2812,6 @@
       "/images/products/ex129-drinkware/ex129-drinkware-square.jpg",
       "/images/products/ex129-drinkware/ex129-drinkware-group.jpg",
       "/images/products/ex129-drinkware/ex129-drinkware-04.jpg"
-    ]
-  },
-  "EX131": {
-    "base": "ex131-drinkware",
-    "gallery": [
-      "/images/products/ex131-drinkware/ex131-drinkware-square.jpg",
-      "/images/products/ex131-drinkware/ex131-drinkware-02.jpg"
     ]
   },
   "EX132": {

@@ -95,6 +95,23 @@ await page.screenshot({ path: SHOT + '/ex116.png' });
 await go('/product/ex028-drinkware');
 await page.screenshot({ path: SHOT + '/ex028.png' });
 
+
+// 9. รอบ 2 — merge EX031+EX034 · EX099 กระเป๋าเปล่า · EX131 พักออกจากเว็บ · cache-bust
+await go('/product/ex031-drinkware');
+const t31 = await bodyText();
+ok('EX031 ชื่อรวม 20/30 oz', t31.includes('รุ่นหูเหลี่ยม 20/30 oz'));
+ok('EX031 มีสองขนาดในช่องขนาด', t31.includes('600 ml (20 oz) / 890 ml (30 oz)'));
+ok('EX031 มี 12 สี', t31.includes('สีที่มี (12 สี)'));
+const gone = await page.evaluate(() => (window.P || []).filter(p => ['EX034', 'EX131', 'EX005', 'EX130'].includes(p.sku)).map(p => p.sku));
+ok('EX034/EX131/EX005/EX130 ไม่อยู่ใน catalogue แล้ว', gone.length === 0, gone.join(','));
+const sm = await (await fetch(BASE + '/sitemap.xml')).text();
+ok('sitemap ไม่มี ex034/ex131/ex005/ex130', !/ex034-|ex131-|ex005-|ex130-/.test(sm));
+await go('/product/ex099-bags');
+ok('EX099 ใช้รูปกระเป๋าเปล่า', await page.evaluate(() => !!document.querySelector('img[src*="ex099-bags-plain"]')));
+ok('รูปมี cache-bust ?v=22', await page.evaluate(() => [...document.images].some(i => /\?v=22/.test(i.src))));
+const broken = await page.evaluate(() => [...document.images].filter(i => i.complete && i.naturalWidth === 0).map(i => i.src));
+ok('ไม่มีรูปเสียในหน้า', broken.length === 0, broken.slice(0, 2).join(' '));
+
 ok('ไม่มี console/page error', errs.length === 0, errs.slice(0, 3).join(' | '));
 
 await browser.close();

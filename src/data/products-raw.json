@@ -4748,13 +4748,13 @@
   {
     "sku": "EX031",
     "slug": "ex031-drinkware",
-    "name": "แก้วเก็บความเย็น 30oz รุ่นหูเหลี่ยม",
+    "name": "แก้วเก็บความเย็น รุ่นหูเหลี่ยม 20/30 oz",
     "category": "Drinkware",
     "category_slug": "drinkware",
-    "features": "ทนทาน เก็บอุณหภูมิได้ดี ใช้งานง่าย",
-    "size": "890 ml",
+    "features": "หูหิ้วทรงเหลี่ยม ฝาสไลด์ เก็บความเย็นได้นาน · มี 2 ขนาด 20 oz (฿142) และ 30 oz (฿150) ราคาต่อชิ้นที่ 300 ชิ้น",
+    "size": "600 ml (20 oz) / 890 ml (30 oz)",
     "material": "สแตนเลส 304",
-    "price_300_thb": 150,
+    "price_300_thb": 142,
     "budget_tier": "smart",
     "moq": 100,
     "free_logo": [
@@ -4831,34 +4831,6 @@
       "ขาว",
       "ชมพู",
       "ฟ้า"
-    ]
-  },
-  {
-    "sku": "EX034",
-    "slug": "ex034-drinkware",
-    "name": "แก้วเก็บความเย็น 20 oz รุ่นหูเหลี่ยม",
-    "category": "Drinkware",
-    "category_slug": "drinkware",
-    "features": "ทนทาน เก็บอุณหภูมิได้ดี ใช้งานง่าย",
-    "size": "600 ml",
-    "material": "สแตนเลส 304",
-    "price_300_thb": 142,
-    "budget_tier": "smart",
-    "moq": 100,
-    "free_logo": [
-      "เลเซอร์ Laser Engraving"
-    ],
-    "logo_max_cm": "",
-    "occasions": [],
-    "express": true,
-    "lead_time": "14-20 วัน",
-    "colors": [
-      "ดำ",
-      "เขียว",
-      "ฟ้า",
-      "ส้ม",
-      "ชมพู",
-      "ขาว"
     ]
   },
   {
@@ -6530,34 +6502,6 @@
       "ชมพู",
       "ฟ้า",
       "ม่วง"
-    ]
-  },
-  {
-    "sku": "EX131",
-    "slug": "ex131-drinkware",
-    "name": "แก้วชุดเซต",
-    "category": "Drinkware",
-    "category_slug": "drinkware",
-    "features": "คุ้มค่า เหมาะสำหรับให้ของขวัญ",
-    "size": "500 ml",
-    "material": "สแตนเลส 304",
-    "price_300_thb": 130,
-    "budget_tier": "smart",
-    "moq": 100,
-    "free_logo": [
-      "เลเซอร์ Laser Engraving"
-    ],
-    "logo_max_cm": "",
-    "occasions": [],
-    "express": true,
-    "lead_time": "14-20 วัน",
-    "colors": [
-      "ชมพู",
-      "เทา",
-      "ดำ",
-      "น้ำเงิน",
-      "เขียว",
-      "เงิน"
     ]
   },
   {

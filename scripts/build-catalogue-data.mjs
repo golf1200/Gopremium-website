@@ -32,7 +32,7 @@ const countOnlyOf = (colors) => {
 // /images/* is served immutable for 1 year, so when images are regenerated in
 // place we bump this to force browsers/CDN to fetch the new bytes. Bump on every
 // in-place image refresh. (v2 = 2026-06-08 studio covers + cleaned galleries.)
-const IMG_VER = '21'; // v21 = 2026-07-25 feedback fixes: EX114 Spring hero corrected, EX020 hero swapped to clean shot
+const IMG_VER = '22'; // v22 = 2026-07-31 express feedback: EX004 lid removed, EX028/031/099/116 Gemini studio heroes, EX010/015/017/039/126 studio group shots
 const bust = (u) => (u ? u + '?v=' + IMG_VER : u);
 
 // Public fields only (never cost / supplier / 1688)
