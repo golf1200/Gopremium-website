@@ -51,6 +51,10 @@
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;font-family:var(--body);color:var(--ink);background:#fff;line-height:1.65;-webkit-font-smoothing:antialiased}
+/* ตัดคำไทย: เบราว์เซอร์ชอบขึ้นบรรทัดใหม่กลางคำ ("ทุกออเด|อร์", "หลาก|หลาย")
+   keep-all = ขึ้นบรรทัดเฉพาะที่มีเว้นวรรคจริง · overflow-wrap กันคำยาวล้นกรอบ */
+body,h1,h2,h3,h4,p,li,td,th,label,button,a,span,div{word-break:keep-all;overflow-wrap:break-word}
+.nb{white-space:nowrap}
 h1,h2,h3,h4{font-family:var(--head);font-weight:600;line-height:1.14;margin:0;letter-spacing:-.01em}
 h1{font-weight:700}
 p{margin:0}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}button{font-family:inherit;cursor:pointer}
@@ -395,7 +399,7 @@ a.occ:hover{transform:translateY(-4px);box-shadow:var(--sh-md)}
 .pd-price{font-family:var(--head);font-size:30px;font-weight:700;color:var(--navy);margin:10px 0}.pd-price small{font-family:var(--body);font-size:14px;font-weight:400;color:var(--grey)}
 .spec{border-top:1px solid var(--line);margin-top:22px;padding-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:14px 20px}
 .spec .k{font-family:var(--head);font-size:12px;color:var(--grey-400);text-transform:uppercase;letter-spacing:.05em}
-.spec .v{font-size:15px;color:var(--navy);font-weight:600;margin-top:2px}
+.spec .v{font-size:15px;color:var(--navy);font-weight:600;margin-top:2px;white-space:pre-line}
 .colorlist{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px}
 .cchip{display:inline-flex;align-items:center;gap:5px;font-size:12.5px;background:var(--cloud-2,#f4f1ea);border-radius:20px;padding:3px 10px 3px 4px;color:var(--navy)}
 .cchip i{width:13px;height:13px;border-radius:50%;border:1px solid rgba(19,36,74,.18);flex:0 0 auto}
@@ -468,7 +472,8 @@ a.occ:hover{transform:translateY(-4px);box-shadow:var(--sh-md)}
    NEW HOME 2026 (.nh) — ดีไซน์ที่อนุมัติจาก mockup v1-warm-linen
    พื้นหลังแบบ 4: ขาวล้วน + ภาพกล่องของขวัญมุมขวาล่าง
    ============================================================ */
-.nh .eyebrow2{display:inline-flex;align-items:center;gap:12px;font-family:var(--en);font-size:11.5px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--mustard-deep)}
+.nh .eyebrow2{display:inline-flex;align-items:center;gap:12px;font-family:var(--en);font-size:11.5px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--mustard-deep);white-space:nowrap}
+@media(max-width:560px){.nh .eyebrow2{letter-spacing:.14em;font-size:10.5px;gap:8px}}
 .nh .eyebrow2::before{content:"";width:34px;height:1.5px;background:var(--mustard)}
 .nh .eyebrow2.center::after{content:"";width:34px;height:1.5px;background:var(--mustard)}
 .nh .h2{font-weight:700}
@@ -727,8 +732,11 @@ function quoteForm(){return `<form class="qcard" id="quoteForm" novalidate>
     <h3>แบบฟอร์มขอใบเสนอราคา</h3>
     <p style="font-size:12.5px;color:var(--grey);margin-bottom:18px">ใช้เวลาไม่ถึง 1 นาที · <span class="req">*</span> จำเป็น</p>
     <div class="fgrid">
-      <div class="field full"><label class="label" for="qf-name">ชื่อ-บริษัท <span class="req">*</span></label><input class="input" id="qf-name" name="name" autocomplete="organization" aria-required="true" placeholder="เช่น คุณแป้ง · บริษัท ABC"><span class="errmsg" data-e="name" role="alert" style="display:none">กรุณากรอกชื่อ-บริษัท</span></div>
-      <div class="field full"><label class="label" for="qf-contact">อีเมล หรือ เบอร์โทร <span class="req">*</span></label><input class="input" id="qf-contact" name="contact" autocomplete="email" aria-required="true" placeholder="you@company.com หรือ 08x-xxx-xxxx"><span class="errmsg" data-e="contact" role="alert" style="display:none">กรุณากรอกอีเมลหรือเบอร์โทร</span></div>
+      <div class="field"><label class="label" for="qf-name">ชื่อผู้ติดต่อ <span class="req">*</span></label><input class="input" id="qf-name" name="name" autocomplete="name" aria-required="true" placeholder="เช่น คุณแป้ง"><span class="errmsg" data-e="name" role="alert" style="display:none">กรุณากรอกชื่อผู้ติดต่อ</span></div>
+      <div class="field"><label class="label" for="qf-company">บริษัท / องค์กร</label><input class="input" id="qf-company" name="company" autocomplete="organization" placeholder="เช่น บริษัท ABC จำกัด"></div>
+      <div class="field"><label class="label" for="qf-email">อีเมล <span class="req">*</span></label><input class="input" id="qf-email" name="email" type="email" autocomplete="email" aria-required="true" placeholder="you@company.com"><span class="errmsg" data-e="email" role="alert" style="display:none">กรอกอีเมลหรือเบอร์โทรอย่างน้อยหนึ่งช่อง</span></div>
+      <div class="field"><label class="label" for="qf-phone">เบอร์โทร <span class="req">*</span></label><input class="input" id="qf-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" aria-required="true" placeholder="08x-xxx-xxxx"><span class="errmsg" data-e="phone" role="alert" style="display:none">กรอกอีเมลหรือเบอร์โทรอย่างน้อยหนึ่งช่อง</span></div>
+      <div class="field full" id="qf-product-wrap" style="display:none"><label class="label" for="qf-product">สินค้าที่สนใจ</label><input class="input" id="qf-product" name="product" readonly></div>
       <div class="field"><label class="label" for="qf-occasion">โอกาส / งาน</label><select class="select" id="qf-occasion" name="occasion">
         <option>ของขวัญปีใหม่พนักงาน</option><option>ของขวัญลูกค้า / คู่ค้า</option><option>อีเวนต์ / สัมมนา</option><option>ต้อนรับพนักงานใหม่</option><option>ของผู้บริหาร / VIP</option><option>รักษ์โลก / ESG</option><option>อื่น ๆ</option></select></div>
       <div class="field"><label class="label" for="qf-qty">จำนวน (ชิ้น)</label><input class="input" id="qf-qty" name="qty" inputmode="numeric" placeholder="เช่น 200"></div>
@@ -771,7 +779,7 @@ const SVCS=[
   ['จัดเซ็ตของขวัญ (Curation)','คัดและจัดหลายชิ้นเป็นเซ็ตเดียว เพิ่มมูลค่าและความน่าจดจำ เล่าเรื่องแบรนด์คุณ',0,'<path d="M4 7h16v13H4z"/><path d="M4 7l2-3h12l2 3M12 4v16"/>'],
   ['ออกแบบกล่อง & แพ็กเกจ','กล่อง การ์ดขอบคุณ และแท็กแบรนด์ ให้ของขวัญดูสมบูรณ์และน่าแกะ',0,'<path d="M3 8l9-5 9 5-9 5z"/><path d="M3 8v8l9 5 9-5V8"/>'],
   ['แพ็ก & จัดส่งรายคน','Kitting & fulfillment ส่งตรงถึงพนักงานหรือลูกค้าแต่ละคน หลายสาขาก็ทำได้',0,'<rect x="1" y="6" width="15" height="11"/><path d="M16 10h4l3 3v4h-7"/>'],
-  ['งานด่วน 7–14 วัน','สำหรับองค์กรที่มี deadline ชัด พร้อมผลิตและส่งมอบตรงเวลาทุกออเดอร์',0,'<path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1L12 16.8 5.7 21l2.3-7.1-6-4.5h7.6z"/>'],
+  ['งานด่วน 7–14 วัน','สำหรับองค์กรที่มี deadline ชัด พร้อมผลิตและส่งมอบตรงเวลา<span class="nb">ทุกออเดอร์</span>',0,'<path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1L12 16.8 5.7 21l2.3-7.1-6-4.5h7.6z"/>'],
 ];
 // [label, desc, categorySlug(สำหรับรูป), badge, occasionKey(→ OCC_FILTERS / route #/o/)]
 const OCCS=[
@@ -922,7 +930,7 @@ function viewHome(){
   </section>
 
   <section class="sec" style="background:#fff"><div class="wrap">
-    <div class="shead"><span class="eyebrow2">ประเภทสินค้า</span><h2 class="h2">เลือกหมวดที่ใช่</h2><p class="lead">ทุกชิ้นพิมพ์โลโก้ได้ ปรับสีตามแบรนด์ และมี Mockup ให้ดูก่อนผลิตทุกออเดอร์</p></div>
+    <div class="shead"><span class="eyebrow2">ประเภทสินค้า</span><h2 class="h2">เลือกหมวดที่ใช่</h2><p class="lead">ทุกชิ้นพิมพ์โลโก้ได้ ปรับสีตามแบรนด์ และมี Mockup ให้ดูก่อนผลิต<span class="nb">ทุกออเดอร์</span></p></div>
     <div class="catg">${CATS2.map(c=>`<a class="cat2" href="/category/${c[0]}"><div class="im"><img loading="lazy" src="${c[3]}" alt="${c[1].replace(/&amp;/g,'&')}"></div><div class="bd"><h4>${c[1]}</h4><small>${c[2]} · ${cnt(c[0])}</small></div></a>`).join('')}<a class="cat2 all" href="/products"><span class="n">${P.length}</span><h4>ดูสินค้าทั้งหมด →</h4></a></div>
   </div></section>
 
@@ -957,7 +965,7 @@ function viewHome(){
 
   <section style="padding:0"><div class="wrap">
     <div class="promo express">
-      <div class="tx"><span class="eyebrow2">Express Service</span><h3>งานด่วน?<br>พร้อมส่งใน 7–14 วัน</h3><p>สำหรับองค์กรที่มี deadline ชัด — คัดสินค้าพร้อมผลิต พิมพ์โลโก้ และส่งมอบตรงเวลาทุกออเดอร์</p><a class="btn btn-secondary" href="/express">⚡ ดูสินค้าส่งด่วน</a></div>
+      <div class="tx"><span class="eyebrow2">Express Service</span><h3>งานด่วน?<br>พร้อมส่งใน 7–14 วัน</h3><p>สำหรับองค์กรที่มี deadline ชัด — คัดสินค้าพร้อมผลิต พิมพ์โลโก้ และส่งมอบตรงเวลา<span class="nb">ทุกออเดอร์</span></p><a class="btn btn-secondary" href="/express">⚡ ดูสินค้าส่งด่วน</a></div>
       <div class="im"><img loading="lazy" src="banners/banner1.webp" alt="งานด่วนพร้อมส่ง 7–14 วัน"></div>
     </div>
   </div></section>
@@ -1174,7 +1182,7 @@ function viewProduct(sku){
           ${p.logoMax?`<div><div class="k">พื้นที่โลโก้สูงสุด</div><div class="v">${esc(p.logoMax)} ซม.</div></div>`:''}
           <div style="grid-column:1/-1"><div class="k">เทคนิคพิมพ์โลโก้ฟรี</div><div class="chips">${logos.map(x=>`<span>${esc(x)}</span>`).join('')}</div></div>
         </div>
-        <div class="pd-cta"><a class="btn btn-primary btn-lg" href="/quote">ขอใบเสนอราคาสินค้านี้</a><a class="btn btn-line-ghost btn-lg" href="https://lin.ee/z1GT1KR" target="_blank" rel="noopener">สอบถามทาง LINE</a></div>
+        <div class="pd-cta"><a class="btn btn-primary btn-lg" href="/quote?sku=${encodeURIComponent(p.sku)}">ขอใบเสนอราคาสินค้านี้</a><a class="btn btn-line-ghost btn-lg" href="https://lin.ee/z1GT1KR" target="_blank" rel="noopener">สอบถามทาง LINE</a></div>
         <p class="muted" style="font-size:12.5px;margin-top:14px">* ราคาอ้างอิงที่ 300 ชิ้น พิมพ์โลโก้ · ทำ Mockup ให้ดูก่อนผลิตจริงทุกงาน · ตอบกลับใน 2 ชม.</p>
       </div></div>
     <div class="related"><div class="shead center" style="margin-bottom:26px"><h2 class="h2" style="font-size:26px">สินค้าอื่นในหมวด ${esc(CL[p.catSlug]||p.cat)}</h2></div><div class="pgrid">${rel.map(p=>card(p)).join('')}</div></div>
@@ -1221,7 +1229,7 @@ function viewExpress(){
   const chips=cats.map(c=>`<a class="echip" href="#ecat-${c}">${esc(CL[c]||c)} (${groups[c].length})</a>`).join('');
   const sections=cats.map(c=>`<div class="ecat" id="ecat-${c}"><div class="ecat-head"><h3>${esc(CL[c]||c)}</h3><span class="ecat-n">${groups[c].length} รายการ · พร้อมผลิต</span></div><div class="pgrid">${groups[c].map(ecard).join('')}</div></div>`).join('');
   const body=list.length
-    ? `<div class="shead" style="margin-top:6px"><span class="eyebrow"><span class="dot"></span>พร้อมผลิตด่วน</span><h2 class="h2">สินค้าพร้อมส่ง · พร้อมผลิตทันงานด่วน</h2><p class="lead">คัดเฉพาะรุ่นที่ผลิตและส่งมอบได้ทันงานด่วน ${list.length} รายการ — เลือกสีได้หลากหลาย พิมพ์โลโก้ และยืนยันคิวผลิตตามจำนวนของคุณ</p><div class="ecount">⚡ <b>${list.length}</b> รุ่นพร้อมผลิต · ตอบกลับใน 2 ชม.</div></div><div class="echips">${chips}</div>${sections}`
+    ? `<div class="shead" style="margin-top:6px"><span class="eyebrow"><span class="dot"></span>พร้อมผลิตด่วน</span><h2 class="h2">สินค้าพร้อมส่ง · <span class="nb">พร้อมผลิตทันงานด่วน</span></h2><p class="lead">คัดเฉพาะรุ่นที่ผลิตและส่งมอบได้ทันงานด่วน ${list.length} รายการ — เลือกสีได้<span class="nb">หลากหลาย</span> พิมพ์โลโก้ และยืนยันคิวผลิตตามจำนวนของคุณ</p><div class="ecount">⚡ <b>${list.length}</b> รุ่นพร้อมผลิต · ตอบกลับใน 2 ชม.</div></div><div class="echips">${chips}</div>${sections}`
     : `<div class="card" style="text-align:center;padding:40px 24px;margin-top:8px"><h4 style="font-size:18px;color:var(--navy);margin-bottom:8px">บอกโจทย์งานด่วนของคุณ เราจัดให้</h4><p class="muted" style="max-width:48ch;margin:0 auto 18px">แจ้งจำนวน กำหนดส่ง และงบ/ชิ้น — ทีมเราจะเสนอรุ่นที่ผลิตได้ทันงานด่วนพร้อมช่วงราคาให้ภายใน 2 ชม.</p></div>`;
   return `<section class="sec" style="padding-top:34px"><div class="wrap">
     <div class="crumbs"><a href="/">หน้าแรก</a> / <b>สินค้าส่งด่วน</b></div>
@@ -1229,7 +1237,7 @@ function viewExpress(){
       <div class="tx">
         <span class="eyebrow2"><span class="flash">⚡</span> Express Service · งานด่วน</span>
         <h1 class="h2" style="margin:0">สินค้าส่งด่วน<br>พร้อมผลิต &amp; ส่งมอบใน 7–14 วัน</h1>
-        <p>มี deadline กระชั้น? เราคัดสินค้าพร้อมผลิต พิมพ์โลโก้ และวางแผนส่งมอบให้ทันงาน — พร้อม Mockup ก่อนผลิตทุกออเดอร์ ตอบกลับใน 2 ชม.</p>
+        <p>มี deadline กระชั้น? เราคัดสินค้าพร้อมผลิต พิมพ์โลโก้ และวางแผนส่งมอบให้ทันงาน — พร้อม Mockup ก่อนผลิต<span class="nb">ทุกออเดอร์</span> ตอบกลับใน 2 ชม.</p>
         <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:6px"><a class="btn btn-primary" href="https://lin.ee/z1GT1KR" target="_blank" rel="noopener">ทักด่วนทาง LINE →</a><a class="btn btn-ghost" style="border-color:rgba(31,58,95,.3);color:var(--navy)" href="/quote">ขอใบเสนอราคางานด่วน</a></div>
       </div>
       <div class="im"><img loading="eager" src="banners/banner1.webp" alt="งานด่วนพร้อมส่ง 7–14 วัน — GO PREMIUM"></div>
@@ -1524,15 +1532,24 @@ function bindQuote(){
       else if(/line/i.test(det))sel.value='LINE';
     }
   }catch(e){}
+  // สินค้าที่ลูกค้ากดมาจากหน้า SKU (/quote?sku=EX001) → เติมให้อัตโนมัติ + ส่งไปกับฟอร์ม
+  try{
+    const sku=(new URLSearchParams(location.search).get('sku')||'').trim().toUpperCase();
+    const p=sku&&P.find(x=>x.sku===sku);
+    if(p){const w=document.getElementById('qf-product-wrap');const i=document.getElementById('qf-product');
+      i.value=p.sku+' — '+p.name;w.style.display='';}
+  }catch(e){}
   f.addEventListener('submit',e=>{e.preventDefault();const el=f.elements;let ok=true;
-    const ck={name:el.name.value.trim()!=='',contact:/^[\d\s+\-()]{8,}$/.test(el.contact.value.trim())||/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(el.contact.value.trim())};
+    const email=el.email.value.trim(),phone=el.phone.value.trim();
+    const hasContact=/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)||/^[\d\s+\-()]{8,}$/.test(phone);
+    const ck={name:el.name.value.trim()!=='',email:hasContact,phone:hasContact};
     for(const k in ck){const i=el[k],m=f.querySelector('[data-e="'+k+'"]');if(!ck[k]){ok=false;i.classList.add('err');i.setAttribute('aria-invalid','true');if(m)m.style.display='block';}else{i.classList.remove('err');i.removeAttribute('aria-invalid');if(m)m.style.display='none';}}
     if(!ok){f.querySelector('.err').focus();return;}
     const btn=f.querySelector('button[type=submit]');btn.disabled=true;btn.style.opacity='.6';
     // ส่งเข้า Formspree (→ info@passiongrow.co.th) — ID เดียวกับ src/config.js
     fetch('https://formspree.io/f/xbdejbyr',{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}})
       .then(r=>{if(!r.ok)throw new Error('formspree '+r.status);
-        track('generate_lead',{source:'v2_quote_form',occasion:el.occasion.value||'',qty:el.qty.value||'',budget:el.budget.value||'',lead_source:el.source.value||'',lead_source_auto:el.source_auto.value||''});
+        track('generate_lead',{source:'v2_quote_form',occasion:el.occasion.value||'',qty:el.qty.value||'',budget:el.budget.value||'',lead_source:el.source.value||'',lead_source_auto:el.source_auto.value||'',product:(el.product&&el.product.value)||''});
         document.getElementById('qbody').style.display='none';document.getElementById('qok').classList.add('show');
         const q=document.getElementById('quote');if(q)q.scrollIntoView({behavior:'smooth'});})
       .catch(()=>{alert('ส่งคำขอไม่สำเร็จ กรุณาลองใหม่อีกครั้ง หรือทักทาง LINE @gopremium ได้เลยค่ะ');})
