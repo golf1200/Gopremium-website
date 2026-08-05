@@ -37,11 +37,14 @@ export default function ProductDetail() {
     ? `฿${product.price_300_thb.toLocaleString()}`
     : null;
 
+  // ชื่อสินค้าอาจมี \n ไว้บังคับตัดบรรทัดบนการ์ด/หัวข้อ — meta & JSON-LD ต้องบรรทัดเดียว
+  const flatName = String(product.name || '').replace(/\s+/g, ' ').trim();
+
   // JSON-LD for product
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Product',
-    name: product.name,
+    name: flatName,
     sku: product.sku,
     image: [`${site.siteUrl}${seoImage(product.images)}`],
     description: product.features,
@@ -67,13 +70,13 @@ export default function ProductDetail() {
       { '@type': 'ListItem', position: 1, name: 'หน้าแรก', item: site.siteUrl },
       { '@type': 'ListItem', position: 2, name: 'แคตตาล็อกสินค้า', item: `${site.siteUrl}/products` },
       { '@type': 'ListItem', position: 3, name: product.category, item: `${site.siteUrl}/category/${product.category_slug}` },
-      { '@type': 'ListItem', position: 4, name: product.name, item: `${site.siteUrl}/product/${product.slug}` },
+      { '@type': 'ListItem', position: 4, name: flatName, item: `${site.siteUrl}/product/${product.slug}` },
     ],
   };
 
   useMeta({
-    title: `${product.name} — GO PREMIUM`,
-    description: `${product.features || product.name} | ของพรีเมียมพิมพ์โลโก้ ${product.category} MOQ ${product.moq || ''} ชิ้น`,
+    title: `${flatName} — GO PREMIUM`,
+    description: `${product.features || flatName} | ของพรีเมียมพิมพ์โลโก้ ${product.category} MOQ ${product.moq || ''} ชิ้น`,
     canonical: `${site.siteUrl}/product/${product.slug}`,
     image: `${site.siteUrl}${seoImage(product.images)}`,
     jsonLd: [jsonLd, breadcrumbLd],
@@ -145,7 +148,7 @@ export default function ProductDetail() {
 
         {/* Right: details */}
         <div>
-          <h1 style={{ fontSize: 'clamp(20px,2.5vw,30px)', color: 'var(--gp-navy)', lineHeight: 1.25, marginBottom: 8 }}>
+          <h1 style={{ fontSize: 'clamp(20px,2.5vw,30px)', color: 'var(--gp-navy)', lineHeight: 1.25, marginBottom: 8, whiteSpace: 'pre-line' }}>
             {product.name}
           </h1>
 

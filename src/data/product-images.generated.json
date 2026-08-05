@@ -1915,7 +1915,6 @@
   "EX010": {
     "base": "ex010-umbrella",
     "gallery": [
-      "/images/products/ex010-umbrella/ex010-umbrella-square.jpg",
       "/images/products/ex010-umbrella/ex010-umbrella-colours-studio.jpg"
     ]
   },
@@ -2725,10 +2724,7 @@
   "EX116": {
     "base": "ex116-garment",
     "gallery": [
-      "/images/products/ex116-garment/ex116-garment-studio.jpg",
-      "/images/products/ex116-garment/ex116-garment-real2.jpg",
-      "/images/products/ex116-garment/ex116-garment-real3.jpg",
-      "/images/products/ex116-garment/ex116-garment-real4.jpg"
+      "/images/products/ex116-garment/ex116-garment-studio.jpg"
     ]
   },
   "EX117": {

@@ -103,7 +103,7 @@ export default function ProductCard({ product, compact = false }) {
           </span>
 
           {/* Name */}
-          <h3 style={{ fontSize: compact ? 14.5 : 15.5, color: 'var(--gp-navy)', fontWeight: 600, lineHeight: 1.35, flex: 1 }}>
+          <h3 style={{ fontSize: compact ? 14.5 : 15.5, color: 'var(--gp-navy)', fontWeight: 600, lineHeight: 1.35, flex: 1, whiteSpace: 'pre-line' }}>
             {product.name}
           </h3>
 
