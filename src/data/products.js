@@ -10,7 +10,7 @@ import generatedImages from './product-images.generated.json';
 import generatedColors from './product-colors.generated.json';
 
 // bump when product photos are replaced (files are served immutable, max-age=1yr)
-const IMG_VER = '20260705';
+const IMG_VER = '20260806';
 
 // ---------------------------------------------------------------------------
 // Occasion taxonomy (10 tags)
@@ -42,6 +42,19 @@ export const BUDGET_TIERS = [
 ];
 
 export const BUDGET_LABEL = Object.fromEntries(BUDGET_TIERS.map((b) => [b.slug, b.label]));
+
+// ---------------------------------------------------------------------------
+// Ship tiers — หมวด "ส่งด่วน" จัดชั้นตาม lead time จริง
+// ตั้งค่าในไฟล์ดิบโดย `scripts/express-retier.mjs` (ship_tier/ship_days_min/max/ship_label)
+// กฎ: ห้ามโฆษณาของที่ผลิตเกิน 25 วันว่าเป็นของส่งด่วน — สคริปต์ถอด express ออกให้แล้ว
+// ---------------------------------------------------------------------------
+export const SHIP_TIERS = [
+  { slug: 'rush',   label: 'ส่งด่วน 7–14 วัน',        short: 'ส่งด่วน',        maxDays: 14 },
+  { slug: 'ontime', label: 'ทันงาน 15–20 วัน',        short: 'ทันงาน',         maxDays: 20 },
+  { slug: 'plan',   label: 'วางแผนล่วงหน้า 21–25 วัน', short: 'วางแผนล่วงหน้า', maxDays: 25 },
+];
+
+export const SHIP_TIER_LABEL = Object.fromEntries(SHIP_TIERS.map((t) => [t.slug, t.label]));
 
 // ---------------------------------------------------------------------------
 // Category groupings for mega-menu
@@ -260,6 +273,18 @@ export function getByOccasion(slug) {
 
 export function getByBudget(slug) {
   return products.filter((p) => p.budget_tier === slug);
+}
+
+/** ของส่งด่วนทั้งหมด เรียงจากเร็วสุดไปช้าสุด */
+export function getExpress() {
+  return products
+    .filter((p) => p.express === true && p.ship_tier)
+    .sort((a, b) => (a.ship_days_max || 99) - (b.ship_days_max || 99));
+}
+
+/** ของส่งด่วนที่ส่งทันภายใน N วัน (ใช้กับฟิลเตอร์ "ต้องใช้ภายในกี่วัน") */
+export function getExpressWithin(days) {
+  return getExpress().filter((p) => p.ship_days_max <= days);
 }
 
 export function getRelated(product, limit = 6) {
