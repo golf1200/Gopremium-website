@@ -5486,7 +5486,7 @@
     "features": "สินค้าพร้อมส่งด่วน",
     "size": "S 19x25.5 cm กรอบสกรีน 10.5x9 cm M 32x40.5 cm , 32x41.5 cm กรอบสกรีน 25x21 cm, 8x9 cm L 27.5x47.5 cm กรอบสกรีน 16x16 cm",
     "material": "",
-    "price_300_thb": 272,
+    "price_300_thb": 255,
     "budget_tier": "premium",
     "moq": 100,
     "free_logo": [
@@ -5508,7 +5508,7 @@
     "features": "มีช่องใส่ของเล็ก มีกระดุกปิด หนังวีแกนหนา",
     "size": "- ไซต์S ขนาด 36.5 x 16 cm  ก้น 10x26 cm - ไซต์L ขนาด 48 x 29 cm  ก้น 15x30 cm",
     "material": "ผ้าคอต",
-    "price_300_thb": 272,
+    "price_300_thb": 255,
     "budget_tier": "premium",
     "moq": 100,
     "free_logo": [
@@ -5530,7 +5530,7 @@
     "features": "ร่มพับ 3 ตอน มือเปิด งานซัพ 8  ช่อง",
     "size": "",
     "material": "ผ้ายูวีสีดำ",
-    "price_300_thb": 375,
+    "price_300_thb": 352,
     "budget_tier": "executive",
     "moq": 300,
     "free_logo": [
@@ -5552,7 +5552,7 @@
     "features": "ร่มตอนเดียว 22  นิ้ว งานซัพ 8  ช่อง",
     "size": "",
     "material": "ผ้ายูวีสีดำ",
-    "price_300_thb": 352,
+    "price_300_thb": 331,
     "budget_tier": "executive",
     "moq": 300,
     "free_logo": [
@@ -5574,7 +5574,7 @@
     "features": "ร่มพับ 3 ตอนโครงเหล็ก 8 ช่อง",
     "size": "",
     "material": "ผ้าขาวยูวีดำ",
-    "price_300_thb": 252,
+    "price_300_thb": 236,
     "budget_tier": "premium",
     "moq": 50,
     "free_logo": [
@@ -5596,7 +5596,7 @@
     "features": "ร่มยาว 24 นิ้วโครงเหล็ก",
     "size": "",
     "material": "ผ้าขาวยูวีดำ",
-    "price_300_thb": 245,
+    "price_300_thb": 231,
     "budget_tier": "premium",
     "moq": 50,
     "free_logo": [
