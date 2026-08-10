@@ -12,6 +12,7 @@ import ProductDetail from './pages/ProductDetail';
 import CategoryPage from './pages/CategoryPage';
 import OccasionPage from './pages/OccasionPage';
 import BudgetPage from './pages/BudgetPage';
+import ExpressPage from './pages/ExpressPage';
 import QuotePage from './pages/QuotePage';
 import Privacy from './pages/Privacy';
 import NotFound from './pages/NotFound';
@@ -29,6 +30,7 @@ export default function App() {
             <Route path="/category/:slug" element={<CategoryPage />} />
             <Route path="/occasion/:slug" element={<OccasionPage />} />
             <Route path="/budget/:slug"   element={<BudgetPage />} />
+            <Route path="/express"        element={<ExpressPage />} />
             <Route path="/quote"          element={<QuotePage />} />
             <Route path="/privacy"        element={<Privacy />} />
             <Route path="*"              element={<NotFound />} />

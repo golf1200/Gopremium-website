@@ -1,0 +1,20 @@
+{
+  "facebook": {
+    "pageId": "",
+    "pageAccessToken": "",
+    "pageUrl": "https://www.facebook.com/gopremiums"
+  },
+  "line": {
+    "broadcast": {
+      "channelAccessToken": "",
+      "_comment": "OA GO PREMIUM (คุยกับลูกค้า / broadcast) — เติมทีหลังตอนทำช่องเผยแพร่"
+    },
+    "approval": {
+      "channelId": "",
+      "channelSecret": "",
+      "toUserId": "",
+      "_comment": "บอตอนุมัติภายใน (channel แยก) — channelId+channelSecret จาก Basic settings, toUserId = Your user ID (U...). ระบบ mint token เองจาก id+secret"
+    }
+  },
+  "_note": "คัดลอกเป็น .social-config.json (gitignored). approval = บอตส่ง draft ให้คุณกดอนุมัติ; broadcast = OA คุยกับลูกค้า — คนละ channel กัน"
+}

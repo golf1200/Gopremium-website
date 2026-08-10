@@ -1,0 +1,20 @@
+import fs from 'node:fs';
+const DATA='C:/Users/Golf/Documents/Claude/Projects/COWORK Agent/GoPremium-Platform/data';
+const m=JSON.parse(fs.readFileSync(`${DATA}/master-lossless.json`,'utf8'));
+const reg=JSON.parse(fs.readFileSync(`${DATA}/suppliers-registry.json`,'utf8'));
+const supCodes=new Set(reg.registered.map(s=>s.code));
+const q=(v)=>v===''||v==null?'null':`'${String(v).replace(/'/g,"''")}'`;
+const qt=(v,l)=>{const s=String(v??'').slice(0,l);return s===''?'null':`'${s.replace(/'/g,"''")}'`;};
+const n=(v)=>{const x=parseFloat(String(v).replace(/[, ]/g,''));return isFinite(x)?x:'null';};
+const bI=(v)=>/✓|true|yes|มี|ขึ้น/i.test(String(v))?'true':'false';
+const pref=(s)=>String(s).match(/^[A-Z]+/)?.[0]||'LS';
+const tier=(r)=>{const t={};for(const k of['100','300','500','1000','2000','5000']){const v=r['tier'+k];if(v!==''&&v!=null)t[k]=v;}return Object.keys(t).length?`'${JSON.stringify(t)}'::jsonb`:'null';};
+const P=[],C=[];
+for(const r of m.rows){const sc=supCodes.has(r['Supplier-code'])?q(r['Supplier-code']):'null';
+ P.push(`(${q(r.SKU)},${qt(r['ชื่อสินค้า'],110)},${q(pref(r.SKU))},${q(r['ช่องทาง'])},${q(r['สถานะ'])},${qt(r['MOQ'],24)},${n(r['ราคาขาย/ชิ้น(฿)'])},${tier(r)},${n(r['Margin%'])},${sc},${qt(r['ลูกค้า/Brand'],50)},${bI(r['มีรูป'])||(r['รูปภาพ(URL)']?'true':'false')},${bI(r['ขึ้นLive'])},${qt(r['แหล่งที่มา'],24)},${qt(r['หมายเหตุ'],70)})`);
+ C.push(`(${q(r.SKU)},${n(r['ต้นทุน¥'])},${n(r['เรท'])},${n(r['ต้นทุนบาท/ชิ้น'])},${n(r['ค่าโลโก้/ชิ้น'])},${n(r['ค่าแพ็ค/ชิ้น'])},${n(r['ค่าส่ง/ชิ้น'])},${n(r['รวมต้นทุน/ชิ้น'])},${n(r['กว้าง(cm)'])},${n(r['ยาว(cm)'])},${n(r['สูง(cm)'])},${n(r['CBM'])},${n(r['น้ำหนักกล่อง(kg)'])},${n(r['จำนวน/กล่อง'])==='null'?'null':n(r['จำนวน/กล่อง'])},${qt(r['โกดัง'],18)},${qt(r['ประเภทสินค้า'],18)},${qt(r['แหล่งต้นทุน'],18)})`);}
+const pc='sku,name,category_code,channel,status,moq,sell_price,price_tier,margin_pct,supplier_code,customer_brand,has_image,is_live,source,notes';
+const cc='sku,cost_yuan,rate,cost_thb,logo_cost,pack_cost,ship_per_unit,total_cost,width,length,height,cbm,box_weight,per_box,warehouse,product_type,cost_source';
+fs.writeFileSync(`${DATA}/seed/core_products.sql`,`insert into products(${pc}) values ${P.join(',')} on conflict(sku) do nothing;`);
+fs.writeFileSync(`${DATA}/seed/core_costs.sql`,`insert into product_costs(${cc}) values ${C.join(',')} on conflict(sku) do nothing;`);
+console.log('core products bytes:',fs.statSync(`${DATA}/seed/core_products.sql`).size,'| costs bytes:',fs.statSync(`${DATA}/seed/core_costs.sql`).size,'| rows',P.length);

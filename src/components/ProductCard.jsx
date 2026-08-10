@@ -72,6 +72,17 @@ export default function ProductCard({ product, compact = false }) {
               fontFamily: 'var(--gp-font-head)',
             }}>{budget_label}</span>
           )}
+          {/* Ship-time badge — ตอบความกลัวข้อ 1 "กลัวมาไม่ทันงาน" ตั้งแต่บนการ์ด */}
+          {product.ship_label && (
+            <span style={{
+              position: 'absolute', bottom: 9, left: 9,
+              background: product.ship_tier === 'rush' ? 'var(--gp-navy)' : '#fff',
+              color: product.ship_tier === 'rush' ? 'var(--gp-mustard)' : 'var(--gp-navy)',
+              borderRadius: 6, padding: '3px 8px', fontSize: 11, fontWeight: 600,
+              border: product.ship_tier === 'rush' ? 'none' : '1px solid var(--gp-grey-200)',
+              fontFamily: 'var(--gp-font-head)',
+            }}>{product.ship_tier === 'rush' ? '⚡ ' : ''}{product.ship_label}</span>
+          )}
           {/* Quote toggle */}
           <button
             onClick={toggleQuote}

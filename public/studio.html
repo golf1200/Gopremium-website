@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>GO PREMIUM Studio — ลองโลโก้ของคุณบนสินค้าจริง</title>
+<meta name="description" content="เลือกสินค้าจริงจากแคตตาล็อก อัปโหลดโลโก้ วางบนรูปสินค้าจริง แล้วขอใบเสนอราคาได้ทันที">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{ --navy:#13244a; --gold:#f4b223; --cream:#faf7f2; --ink:#1c2333; }
+  *{ margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  body{ font-family:'Anuphan',sans-serif; background:var(--cream); color:var(--ink); height:100dvh; display:flex; flex-direction:column; overflow:hidden; }
+  header{ background:var(--navy); color:#fff; padding:10px 16px; display:flex; align-items:center; gap:10px; z-index:10; flex-shrink:0; }
+  header .logo{ font-family:'Sora',sans-serif; font-weight:700; font-size:15px; letter-spacing:.06em; }
+  header .logo em{ color:var(--gold); font-style:normal; }
+  header .badge{ background:var(--gold); color:var(--navy); font-size:11px; font-weight:700; padding:2px 8px; border-radius:99px; }
+  header a.back{ margin-left:auto; color:#cfd8ea; font-size:13px; text-decoration:none; }
+
+  /* ---------- screen 1 : product picker ---------- */
+  #pick{ flex:1; overflow-y:auto; padding:22px 18px 40px; }
+  #pick .intro{ max-width:1060px; margin:0 auto 18px; }
+  #pick h1{ font-size:22px; color:var(--navy); }
+  #pick .sub{ font-size:13.5px; color:#6b7280; margin-top:4px; }
+  .grid{ max-width:1060px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:14px; }
+  .card{ background:#fff; border:1px solid #eee7d9; border-radius:16px; overflow:hidden; cursor:pointer; transition:.18s; display:flex; flex-direction:column; }
+  .card:hover{ transform:translateY(-3px); box-shadow:0 12px 28px rgba(19,36,74,.12); border-color:var(--gold); }
+  .card img{ width:100%; aspect-ratio:1; object-fit:cover; background:#f4f0e8; }
+  .card .inf{ padding:10px 12px 12px; display:flex; flex-direction:column; gap:3px; flex:1; }
+  .card .nm{ font-size:13.5px; font-weight:600; line-height:1.35; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; min-height:36px; }
+  .card .pr{ font-size:13px; color:var(--navy); font-weight:700; }
+  .card .pr small{ color:#9ca3af; font-weight:500; }
+  .card .mt{ margin-top:auto; display:flex; gap:5px; flex-wrap:wrap; }
+  .tag{ font-size:10.5px; background:#f1ede4; color:#6b7280; border-radius:99px; padding:2px 8px; font-weight:600; }
+  .tag.g{ background:#fdf3d7; color:#8a6410; }
+  .card .go{ background:var(--navy); color:#fff; text-align:center; font-size:12.5px; font-weight:700; padding:8px; border-radius:10px; margin-top:8px; }
+  .card:hover .go{ background:var(--gold); color:var(--navy); }
+
+  /* ---------- screen 2 : customizer ---------- */
+  #custom{ flex:1; display:none; min-height:0; }
+  #custom.on{ display:flex; flex-direction:column; }
+  #pbar{ background:#fff; border-bottom:1px solid #eee7d9; padding:8px 14px; display:flex; align-items:center; gap:10px; flex-shrink:0; }
+  #pbar button{ border:none; background:#f1ede4; border-radius:10px; width:34px; height:34px; font-size:16px; cursor:pointer; flex-shrink:0; }
+  #pbar img{ width:38px; height:38px; border-radius:9px; object-fit:cover; flex-shrink:0; }
+  #pbar .nm{ font-size:13.5px; font-weight:700; color:var(--navy); line-height:1.2; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  #pbar .dt{ font-size:11.5px; color:#6b7280; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  #pbar .wrap{ min-width:0; flex:1; }
+  #stage{ position:relative; flex:1; min-height:0; display:flex; align-items:center; justify-content:center; background:var(--cream); }
+  #mock{ max-width:100%; max-height:100%; border-radius:4px; cursor:grab; touch-action:none; }
+  #mock.drag{ cursor:grabbing; }
+  #hint{ position:absolute; top:12px; left:50%; transform:translateX(-50%); background:rgba(19,36,74,.78); color:#fff; font-size:12px; padding:5px 14px; border-radius:99px; pointer-events:none; transition:opacity .6s; white-space:nowrap; z-index:3; }
+
+  #panel{ background:#fff; border-top:1px solid #e8e2d6; padding:10px 14px calc(12px + env(safe-area-inset-bottom)); z-index:10; box-shadow:0 -8px 24px rgba(19,36,74,.08); max-height:46dvh; overflow-y:auto; flex-shrink:0; }
+  .row{ display:flex; align-items:center; gap:8px; margin-bottom:9px; flex-wrap:wrap; }
+  .row:last-child{ margin-bottom:0; }
+  .lbl{ font-size:12px; font-weight:600; color:#6b7280; width:70px; flex-shrink:0; }
+  .chip{ border:1.5px solid #e5e0d4; background:#fff; border-radius:99px; padding:6px 13px; font-family:inherit; font-size:13px; font-weight:500; cursor:pointer; transition:.15s; color:var(--ink); }
+  .chip.on{ background:var(--navy); border-color:var(--navy); color:#fff; }
+  .chip:active{ transform:scale(.96); }
+  .dot{ width:16px; height:16px; border-radius:50%; border:1.5px solid #fff; outline:1px solid #ddd; display:inline-block; }
+  input[type=range]{ flex:1; accent-color:var(--gold); min-width:70px; }
+  .btn{ font-family:inherit; font-weight:700; font-size:14px; border:none; border-radius:12px; padding:12px 16px; cursor:pointer; flex:1; transition:.15s; }
+  .btn:active{ transform:scale(.97); }
+  .btn.gold{ background:var(--gold); color:var(--navy); }
+  .btn.navy{ background:var(--navy); color:#fff; }
+  .btn.ghost{ background:#f1ede4; color:var(--ink); flex:0 0 auto; }
+  #logoName{ font-size:12px; color:#6b7280; max-width:130px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  #printNote{ font-size:11.5px; color:#8a6410; background:#fdf3d7; border-radius:9px; padding:5px 10px; width:100%; }
+  .colInfo{ display:flex; align-items:center; gap:4px; flex-wrap:wrap; font-size:11.5px; color:#9ca3af; }
+
+  #modal{ position:fixed; inset:0; background:rgba(19,36,74,.55); display:none; align-items:center; justify-content:center; z-index:50; padding:20px; }
+  #modal.open{ display:flex; }
+  #modal .card2{ background:#fff; border-radius:18px; max-width:400px; width:100%; padding:20px; text-align:center; max-height:92dvh; overflow-y:auto; }
+  #modal img{ width:100%; border-radius:12px; background:var(--cream); margin:12px 0; }
+  #modal h3{ font-size:17px; color:var(--navy); }
+  #modal p{ font-size:13px; color:#6b7280; margin-top:4px; }
+  #modal .btn{ margin-top:6px; width:100%; }
+
+  @media (min-width:900px){
+    #custom.on{ display:grid; grid-template-columns:1fr 360px; grid-template-rows:auto 1fr; }
+    #pbar{ grid-column:1 / 3; }
+    #stage{ grid-column:1; grid-row:2; }
+    #panel{ grid-column:2; grid-row:2; max-height:none; border-top:none; border-left:1px solid #e8e2d6; padding:22px; overflow-y:auto; }
+    .row{ margin-bottom:14px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <span class="logo">GO <em>PREMIUM</em> · Studio</span>
+  <span class="badge">DEMO</span>
+  <a class="back" href="/">&larr; กลับหน้าหลัก</a>
+</header>
+
+<div id="pick">
+  <div class="intro">
+    <h1>เลือกสินค้า แล้วลองโลโก้ของคุณบนสินค้าจริง</h1>
+    <div class="sub">รูปสินค้าจริงจากสตูดิโอ GO PREMIUM · อัปโหลดโลโก้ → ลากวางตำแหน่ง → ขอใบเสนอราคา · ฟรี ไม่ต้องสมัคร</div>
+  </div>
+  <div class="grid" id="grid"></div>
+</div>
+
+<div id="custom">
+  <div id="pbar">
+    <button id="backBtn" title="กลับไปเลือกสินค้า">←</button>
+    <img id="pImg" alt="">
+    <div class="wrap">
+      <div class="nm" id="pName"></div>
+      <div class="dt" id="pDetail"></div>
+    </div>
+  </div>
+  <div id="stage">
+    <canvas id="mock"></canvas>
+    <div id="hint">💡 ลากโลโก้บนรูปเพื่อย้ายตำแหน่งได้เลย</div>
+  </div>
+  <div id="panel">
+    <div class="row">
+      <span class="lbl">โลโก้</span>
+      <button class="chip" id="upBtn">⬆ อัปโหลดโลโก้</button>
+      <span id="logoName">ตัวอย่าง: YOUR LOGO</span>
+      <input type="file" id="upFile" accept="image/*" hidden>
+    </div>
+    <div class="row"><span id="printNote"></span></div>
+    <div class="row">
+      <span class="lbl">ตำแหน่ง</span>
+      <button class="chip" id="resetPos">↺ ตำแหน่งแนะนำ</button>
+      <span style="font-size:11.5px;color:#9ca3af">หรือลากบนรูป</span>
+    </div>
+    <div class="row">
+      <span class="lbl">ขนาดโลโก้</span>
+      <input type="range" id="scale" min="40" max="200" value="100">
+    </div>
+    <div class="row">
+      <span class="lbl">หมุน</span>
+      <input type="range" id="rot" min="-45" max="45" value="0">
+    </div>
+    <div class="row">
+      <span class="lbl">ความเข้ม</span>
+      <input type="range" id="alpha" min="55" max="100" value="92">
+    </div>
+    <div class="row">
+      <span class="lbl">สีสินค้า</span>
+      <span class="colInfo" id="colInfo"></span>
+    </div>
+    <div class="row">
+      <button class="btn ghost" id="snapBtn">📸</button>
+      <button class="btn gold" id="quoteBtn">ขอใบเสนอราคา</button>
+    </div>
+  </div>
+</div>
+
+<div id="modal">
+  <div class="card2">
+    <h3>ม็อคอัพของคุณพร้อมแล้ว 🎉</h3>
+    <p>ทีมงานจะใช้ภาพนี้ + สเปคที่คุณเลือก จัดทำใบเสนอราคาให้ครับ</p>
+    <img id="modalImg" alt="mockup">
+    <p id="modalSpec" style="font-weight:600;color:var(--navy)"></p>
+    <button class="btn navy" id="goQuote">ไปที่ฟอร์มขอใบเสนอราคา →</button>
+    <button class="btn ghost" id="dlBtn" style="width:100%">ดาวน์โหลดรูปม็อคอัพ</button>
+    <button class="btn" id="closeModal" style="background:none;color:#9ca3af;font-weight:500">ปิด</button>
+  </div>
+</div>
+
+<script>
+/* ============ real products — photo-based mockup (FREE, no 3D) ============
+   pos = researched print position on the CURRENT photo (fraction of image)
+   shape: 'cyl' wraps the logo around the body · 'flat' stamps as-is
+   printMode: 'full' | 'laser' (single-tone etch) | 'mono1' (1-colour screen) */
+const PRODUCTS = [
+  { sku:'EX001', name:'เสื้อยืดแขนสั้น รุ่น Basic Tee', price:93, moq:50, print:'Silk Screen', printMode:'full',
+    size:'S–2XL', img:'/images/products/ex001-garment/ex001-garment-square.jpg?v=16',
+    photo:'/images/products/ex001-garment/ex001-garment-square.jpg', shape:'flat',
+    pos:{ cx:0.46, cy:0.45, w:0.16 }, nColors:13,
+    dots:['#ffffff','#16181d','#efe6cf','#7a4f2a','#8a8d92','#1f49a6','#5aa7e0','#d12f2f','#7e3fb0','#f48fb1','#f4801f','#2f9e44','#f5c518'] },
+  { sku:'EX005', name:'กระบอกน้ำสแตนเลส รุ่น Sento', price:203, moq:100, print:'Silk Screen', printMode:'full',
+    size:'500 ml', img:'/images/products/ex005-drinkware/ex005-drinkware-square.jpg?v=16',
+    photo:'/images/products/ex005-drinkware/ex005-drinkware-square.jpg', shape:'cyl',
+    pos:{ cx:0.425, cy:0.54, w:0.20 }, nColors:5, dots:['#16181d','#ffffff','#d12f2f','#2f9e44','#8a8d92'] },
+  { sku:'DW001', name:'กระบอกน้ำสแตนเลส รุ่น Loopa', price:176, moq:50, print:'เลเซอร์', printMode:'laser', logoMax:'5×5 ซม.',
+    size:'500 ml', img:'/images/products/dw001-loopa/dw001-loopa-square.jpg?v=16',
+    photo:'/images/products/dw001-loopa/dw001-loopa-square.jpg', shape:'cyl',
+    pos:{ cx:0.50, cy:0.55, w:0.15 }, nColors:0, dots:[] },
+  { sku:'DW002', name:'แก้วน้ำสแตนเลส รุ่น Brewy', price:159, moq:50, print:'เลเซอร์', printMode:'laser', logoMax:'5×2 ซม.',
+    size:'500 ml', img:'/images/products/dw002-brewy/dw002-brewy-square.jpg?v=16',
+    photo:'/images/products/dw002-brewy/dw002-brewy-square.jpg', shape:'cyl',
+    pos:{ cx:0.50, cy:0.72, w:0.13 }, nColors:0, dots:[] },
+  { sku:'DW003', name:'แก้วน้ำสแตนเลส รุ่น Peak', price:143, moq:100, print:'เลเซอร์', printMode:'laser', logoMax:'4.5×4.5 ซม.',
+    size:'500 ml + หลอด', img:'/images/products/dw003-peak/dw003-peak-square.jpg?v=16',
+    photo:'/images/products/dw003-peak/dw003-peak-square.jpg', shape:'cyl',
+    pos:{ cx:0.50, cy:0.60, w:0.17 }, nColors:0, dots:[] },
+  { sku:'DW006', name:'แก้วน้ำสแตนเลส รุ่น Milo', price:147, moq:100, print:'เลเซอร์', printMode:'laser', logoMax:'4.5×4.5 ซม.',
+    size:'350 ml มีหูจับ', img:'/images/products/dw006-milo/dw006-milo-square.jpg?v=16',
+    photo:'/images/products/dw006-milo/dw006-milo-square.jpg', shape:'cyl',
+    pos:{ cx:0.475, cy:0.55, w:0.15 }, nColors:0, dots:[] },
+  { sku:'EX006', name:'แก้วใส พร้อมปลอกหนัง', price:88, moq:100, print:'Silk Screen', printMode:'full',
+    size:'350 ml', img:'/images/products/ex006-drinkware/ex006-drinkware-square.jpg?v=16',
+    photo:'/images/products/ex006-drinkware/ex006-drinkware-square.jpg', shape:'cyl',
+    pos:{ cx:0.49, cy:0.60, w:0.19 }, nColors:10,
+    dots:['#ffffff','#8a8d92','#d12f2f','#efe6cf','#f48fb1','#7a4f2a','#21304f','#2f9e44','#f5c518','#5aa7e0'] },
+  { sku:'EX009', name:'หมวกแก๊ป รุ่น LEVI', price:98, moq:100, print:'สกรีน DFT', printMode:'full',
+    size:'Free Size', img:'/images/products/ex009-hat/ex009-hat-square.jpg?v=16',
+    photo:'/images/products/ex009-hat/ex009-hat-square.jpg', shape:'flat',
+    pos:{ cx:0.50, cy:0.42, w:0.20 }, nColors:13,
+    dots:['#ffffff','#16181d','#efe6cf','#1f49a6','#5aa7e0','#d12f2f','#7e3fb0','#f48fb1','#f4801f','#2f9e44','#f5c518','#1f2d50','#d6308f'] },
+  { sku:'EX010', name:'ร่มพับ 3 ตอน รุ่น Standard', price:122, moq:100, print:'สกรีน 1 สี 1 จุด', printMode:'mono1',
+    size:'พับ 3 ตอน / กัน UV', img:'/images/products/ex010-umbrella/ex010-umbrella-square.jpg?v=16',
+    photo:'/images/products/ex010-umbrella/ex010-umbrella-02.jpg', shape:'flat',
+    pos:{ cx:0.755, cy:0.46, w:0.11 }, nColors:12,
+    dots:['#2f9e44','#f4801f','#5aa7e0','#e0408f','#2fa3a3','#f6c9d8','#7e3fb0','#bfe6a0','#d12f2f','#1f49a6','#16181d','#1f5d3a'] },
+  { sku:'EX020', name:'Powerbank รุ่น VOLT 10000mAh', price:812, moq:100, print:'พิมพ์ UV', printMode:'full',
+    size:'6×6.8×2.6 ซม.', img:'/images/products/ex020-powerbank/ex020-powerbank-square.jpg?v=16',
+    photo:'/images/products/ex020-powerbank/ex020-powerbank-square.jpg', shape:'flat',
+    pos:{ cx:0.52, cy:0.44, w:0.19, rot:-38, sy:0.72 }, nColors:2, dots:['#16181d','#8a8d92'] },
+];
+const PRINT_NOTES = {
+  full:  m => `วิธีพิมพ์: ${m} — โลโก้สีเต็มรูปแบบ`,
+  laser: m => `วิธีพิมพ์: ${m} — โลโก้จะถูกสลักโทนสีเดียวบนผิวโลหะ`,
+  mono1: m => `วิธีพิมพ์: ${m} — โลโก้แสดงเป็นสีเดียว 1 จุด`,
+};
+
+const $ = s => document.querySelector(s);
+const state = { p:null, cx:0.5, cy:0.5, scale:1, rot:0, alpha:0.92, logoImg:null, logoLabel:'YOUR LOGO', dragging:false };
+
+/* ---------- placeholder + logo processing ---------- */
+const rawLogo = document.createElement('canvas'); rawLogo.width = rawLogo.height = 512;
+function drawRawLogo() {
+  const g = rawLogo.getContext('2d');
+  g.clearRect(0,0,512,512);
+  if (state.logoImg) {
+    const im = state.logoImg, s = Math.min(500/im.width, 500/im.height);
+    g.drawImage(im, 256-im.width*s/2, 256-im.height*s/2, im.width*s, im.height*s);
+  } else {
+    g.strokeStyle = '#f4b223'; g.lineWidth = 10; g.setLineDash([28,18]);
+    g.strokeRect(40,150,432,212);
+    g.fillStyle = '#f4b223'; g.font = '700 74px Sora, Anuphan, sans-serif';
+    g.textAlign = 'center'; g.textBaseline = 'middle';
+    g.fillText('YOUR', 256, 218); g.fillText('LOGO', 256, 296);
+  }
+}
+// tint for laser / 1-colour screen, adaptive to surface darkness
+function processedLogo(dark) {
+  const c = document.createElement('canvas'); c.width = c.height = 512;
+  const g = c.getContext('2d');
+  g.drawImage(rawLogo, 0, 0);
+  const m = state.p.printMode;
+  if (m === 'laser') {
+    g.globalCompositeOperation = 'source-in';
+    g.fillStyle = dark ? '#d9dcdf' : '#4a4d52'; // exposed metal on dark coat / dark etch on light
+    g.fillRect(0,0,512,512);
+  } else if (m === 'mono1') {
+    g.globalCompositeOperation = 'source-in';
+    g.fillStyle = dark ? '#f4f4f2' : '#13244a';
+    g.fillRect(0,0,512,512);
+  }
+  return c;
+}
+// wrap the logo around a cylinder: strip-scale by sin, plus edge shading
+function cylWrap(src) {
+  const c = document.createElement('canvas'); c.width = c.height = 512;
+  const g = c.getContext('2d');
+  const A = 0.9, N = 64, half = 256; // wrap half-angle (rad)
+  for (let i = 0; i < N; i++) {
+    const u0 = i / N * 2 - 1, u1 = (i + 1) / N * 2 - 1;
+    const x0 = half + Math.sin(u0 * A) / Math.sin(A) * half;
+    const x1 = half + Math.sin(u1 * A) / Math.sin(A) * half;
+    g.drawImage(src, (i / N) * 512, 0, 512 / N, 512, x0, 0, Math.max(x1 - x0, 0.5), 512);
+  }
+  // subtle side falloff so it reads as curved
+  g.globalCompositeOperation = 'source-atop';
+  const gr = g.createLinearGradient(0, 0, 512, 0);
+  gr.addColorStop(0, 'rgba(0,0,0,.32)'); gr.addColorStop(0.22, 'rgba(0,0,0,0)');
+  gr.addColorStop(0.78, 'rgba(0,0,0,0)'); gr.addColorStop(1, 'rgba(0,0,0,.32)');
+  g.fillStyle = gr; g.fillRect(0,0,512,512);
+  return c;
+}
+
+/* ---------- canvas mockup renderer ---------- */
+const canvas = $('#mock'), ctx = canvas.getContext('2d');
+let photo = null, photoSmall = null; // photoSmall = tiny copy for luminance sampling
+
+function regionDark() {
+  if (!photoSmall) return false;
+  const g = photoSmall.getContext('2d', { willReadFrequently: true });
+  const s = 64, rw = Math.max(4, state.p.pos.w * state.scale * s * 0.8);
+  const rx = Math.max(0, Math.min(s - rw, state.cx * s - rw / 2));
+  const ry = Math.max(0, Math.min(s - rw, state.cy * s - rw / 2));
+  const d = g.getImageData(rx, ry, rw, rw).data;
+  let sum = 0;
+  for (let i = 0; i < d.length; i += 4) sum += 0.299 * d[i] + 0.587 * d[i+1] + 0.114 * d[i+2];
+  return (sum / (d.length / 4)) / 255 < 0.45;
+}
+
+function draw() {
+  if (!photo) return;
+  const W = canvas.width, H = canvas.height;
+  ctx.clearRect(0, 0, W, H);
+  ctx.drawImage(photo, 0, 0, W, H);
+
+  const dark = regionDark();
+  let logo = processedLogo(dark);
+  if (state.p.shape === 'cyl') logo = cylWrap(logo);
+
+  const w = state.p.pos.w * state.scale * W;
+  const sy = state.p.pos.sy || 1;
+  ctx.save();
+  ctx.translate(state.cx * W, state.cy * H);
+  ctx.rotate(((state.p.pos.rot || 0) + state.rot) * Math.PI / 180);
+  ctx.globalAlpha = state.alpha;
+  // multiply sinks ink into light surfaces; screen lifts it on dark; full-colour on dark = normal w/ white underbase
+  ctx.globalCompositeOperation =
+    state.p.printMode === 'full' ? (dark ? 'source-over' : 'multiply') : (dark ? 'screen' : 'multiply');
+  ctx.drawImage(logo, -w/2, -w*sy/2, w, w*sy);
+  ctx.restore();
+
+  if (state.dragging) { // dashed guide while dragging
+    ctx.save();
+    ctx.translate(state.cx * W, state.cy * H);
+    ctx.rotate(((state.p.pos.rot || 0) + state.rot) * Math.PI / 180);
+    ctx.strokeStyle = 'rgba(244,178,35,.9)'; ctx.setLineDash([6,5]); ctx.lineWidth = 2;
+    ctx.strokeRect(-w/2, -w*sy/2, w, w*sy);
+    ctx.restore();
+  }
+}
+
+function loadPhoto(p, done) {
+  const im = new Image();
+  im.onload = () => {
+    photo = im;
+    const stage = $('#stage');
+    const fit = Math.min(stage.clientWidth / im.width, stage.clientHeight / im.height, 1);
+    canvas.width = Math.round(im.width * Math.min(fit * (devicePixelRatio > 1 ? 1.5 : 1), 1));
+    canvas.height = Math.round(canvas.width * im.height / im.width);
+    photoSmall = document.createElement('canvas'); photoSmall.width = photoSmall.height = 64;
+    photoSmall.getContext('2d', { willReadFrequently: true }).drawImage(im, 0, 0, 64, 64);
+    done && done();
+  };
+  im.src = p.photo;
+}
+
+/* ---------- drag ---------- */
+canvas.addEventListener('pointerdown', e => {
+  const r = canvas.getBoundingClientRect();
+  const x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+  const w = state.p.pos.w * state.scale;
+  if (Math.abs(x - state.cx) < w && Math.abs(y - state.cy) < w) {
+    state.dragging = true; canvas.classList.add('drag'); canvas.setPointerCapture(e.pointerId);
+    $('#hint').style.opacity = 0;
+  }
+});
+canvas.addEventListener('pointermove', e => {
+  if (!state.dragging) return;
+  const r = canvas.getBoundingClientRect();
+  state.cx = Math.min(0.95, Math.max(0.05, (e.clientX - r.left) / r.width));
+  state.cy = Math.min(0.95, Math.max(0.05, (e.clientY - r.top) / r.height));
+  draw();
+});
+['pointerup','pointercancel'].forEach(ev => canvas.addEventListener(ev, () => {
+  if (state.dragging) { state.dragging = false; canvas.classList.remove('drag'); draw(); }
+}));
+
+/* ---------- screens ---------- */
+const grid = $('#grid');
+PRODUCTS.forEach(p => {
+  const c = document.createElement('div'); c.className = 'card';
+  c.innerHTML = `<img loading="lazy" src="${p.img}" alt="${p.name}">
+    <div class="inf">
+      <div class="nm">${p.name}</div>
+      <div class="pr">฿${p.price.toLocaleString()} <small>/ชิ้น · ขั้นต่ำ ${p.moq}</small></div>
+      <div class="mt"><span class="tag">${p.sku}</span><span class="tag g">${p.print}</span></div>
+      <div class="go">🎨 ลองโลโก้เลย</div>
+    </div>`;
+  c.onclick = () => openProduct(p);
+  grid.appendChild(c);
+});
+
+function openProduct(p) {
+  state.p = p;
+  state.cx = p.pos.cx; state.cy = p.pos.cy;
+  state.scale = 1; state.rot = 0; state.alpha = 0.92;
+  $('#scale').value = 100; $('#rot').value = 0; $('#alpha').value = 92;
+  $('#pick').style.display = 'none';
+  $('#custom').classList.add('on');
+  $('#pImg').src = p.img;
+  $('#pName').textContent = p.name;
+  $('#pDetail').textContent = `${p.sku} · ฿${p.price.toLocaleString()}/ชิ้น (ขั้นต่ำ ${p.moq}) · ${p.size}${p.logoMax ? ' · โลโก้สูงสุด ' + p.logoMax : ''}`;
+  $('#printNote').textContent = PRINT_NOTES[p.printMode](p.print);
+  $('#colInfo').innerHTML = p.nColors
+    ? `${p.dots.slice(0,10).map(h => `<span class="dot" style="background:${h}"></span>`).join('')} <span>มี ${p.nColors} สีให้เลือกตอนสั่ง (รูปตัวอย่าง 1 สี)</span>`
+    : '<span>สีตามรูปสินค้าจริง</span>';
+  $('#hint').style.opacity = 1;
+  loadPhoto(p, draw);
+  try { history.replaceState(null, '', '?sku=' + p.sku); } catch(e){}
+  track('studio_product_open');
+}
+$('#backBtn').onclick = () => {
+  $('#custom').classList.remove('on');
+  $('#pick').style.display = 'block';
+  try { history.replaceState(null, '', location.pathname); } catch(e){}
+};
+
+$('#resetPos').onclick = () => {
+  state.cx = state.p.pos.cx; state.cy = state.p.pos.cy;
+  state.scale = 1; state.rot = 0;
+  $('#scale').value = 100; $('#rot').value = 0;
+  draw();
+};
+$('#scale').oninput = e => { state.scale = e.target.value / 100; draw(); };
+$('#rot').oninput = e => { state.rot = +e.target.value; draw(); };
+$('#alpha').oninput = e => { state.alpha = e.target.value / 100; draw(); };
+$('#upBtn').onclick = () => $('#upFile').click();
+$('#upFile').onchange = e => {
+  const f = e.target.files[0]; if (!f) return;
+  const im = new Image();
+  im.onload = () => { state.logoImg = im; state.logoLabel = f.name; $('#logoName').textContent = f.name; drawRawLogo(); draw(); track('studio_upload_logo'); };
+  im.src = URL.createObjectURL(f);
+};
+
+/* ---------- snapshot / quote ---------- */
+function specText() {
+  const p = state.p;
+  return `${p.sku} ${p.name} · โลโก้ที่ ${(state.cx*100).toFixed(0)}%,${(state.cy*100).toFixed(0)}% ขนาด ${(state.p.pos.w*state.scale*100).toFixed(0)}% · ${p.print} · ขั้นต่ำ ${p.moq} ชิ้น · ~฿${p.price.toLocaleString()}/ชิ้น`;
+}
+let lastShot = null;
+function snap() { state.dragging = false; draw(); return canvas.toDataURL('image/png'); }
+$('#snapBtn').onclick = () => { lastShot = snap(); openModal(); };
+$('#quoteBtn').onclick = () => { lastShot = snap(); openModal(); track('studio_rfq_click'); };
+function openModal() {
+  $('#modalImg').src = lastShot;
+  $('#modalSpec').textContent = specText();
+  $('#modal').classList.add('open');
+}
+$('#closeModal').onclick = () => $('#modal').classList.remove('open');
+$('#dlBtn').onclick = () => {
+  const a = document.createElement('a');
+  a.href = lastShot; a.download = `gopremium-${state.p.sku}-mockup.png`; a.click();
+};
+$('#goQuote').onclick = () => {
+  try { sessionStorage.setItem('studioSpec', specText()); } catch(e){}
+  location.href = '/?from=studio#quote';
+};
+function track(ev) { if (typeof gtag === 'function') gtag('event', ev, { sku: state.p ? state.p.sku : '' }); }
+track('studio_open');
+
+/* ---------- boot ---------- */
+drawRawLogo();
+window.addEventListener('resize', () => { if (state.p && photo) loadPhoto(state.p, draw); });
+window.__studio = { state, openProduct, PRODUCTS, draw };
+const deepSku = new URLSearchParams(location.search).get('sku');
+const deepP = deepSku && PRODUCTS.find(p => p.sku === deepSku.toUpperCase());
+if (deepP) openProduct(deepP);
+</script>
+</body>
+</html>

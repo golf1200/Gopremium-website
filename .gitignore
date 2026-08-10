@@ -37,3 +37,17 @@ scripts/_picks/
 scripts/_*.json
 scripts/_*.txt
 scripts/__pycache__/
+
+.vercel
+.env*
+
+# ---- เก็บกวาด working tree 2026-08-10 (Golf สั่ง: ไม่ลบไฟล์ ให้ git มองข้ามแทน) ----
+# งานทำรูปจริง Express รอบ 2026 — 215MB (ภาพต้นฉบับ/ผลลัพธ์/ล็อก) เก็บไว้บนเครื่อง ไม่เข้า git
+express-realphoto-2026/
+# รายงานรีวิวที่ฝังรูป base64 ไว้ในไฟล์เดียว ไฟล์ละ 11–33MB — เปิดดูจากเครื่องได้ ไม่ต้องเข้า git
+docs/REVIEW-express-*.html
+docs/REPORT-express-MASTER.html
+# ภาพหน้าจอ QA ที่วางไว้ราก repo + ไฟล์ทดลอง + สำเนาสำรองของ data
+/*.png
+_cdp-tmp.mjs
+src/data/*.bak-*

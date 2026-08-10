@@ -108,6 +108,30 @@ function doPost(e) {
       return _json({ ok: true, deleted: body.sheet });
     }
 
+    if (a === 'readImages') {                 // ดึง URL รูปในเซลล์: {sheet, range?} -> 2D array ของ URL
+      const sh = ss.getSheetByName(body.sheet);
+      if (!sh) return _json({ ok: false, error: 'no sheet ' + body.sheet });
+      const rng = body.range ? sh.getRange(body.range) : sh.getDataRange();
+      const vals = rng.getValues();
+      const formulas = rng.getFormulas();
+      const rich = rng.getRichTextValues();
+      const out = vals.map((row, r) => row.map((cell, c) => {
+        // 1) in-cell image (Insert > Image in cell) -> CellImage
+        if (cell && typeof cell === 'object' && typeof cell.getContentUrl === 'function') {
+          try { return cell.getContentUrl() || cell.getAltTextDescription() || ''; } catch (e) { return ''; }
+        }
+        // 2) =IMAGE("url") formula
+        const f = formulas[r][c];
+        const mi = f && f.match(/IMAGE\(\s*"([^"]+)"/i);
+        if (mi) return mi[1];
+        // 3) rich-text hyperlink
+        try { const lk = rich[r][c] && rich[r][c].getLinkUrl(); if (lk) return lk; } catch (e) {}
+        // 4) plain url text
+        return /^https?:\/\//.test(String(cell)) ? String(cell) : '';
+      }));
+      return _json({ ok: true, images: out });
+    }
+
     return _json({ ok: false, error: 'unknown action: ' + a });
   } catch (err) {
     return _json({ ok: false, error: String(err) });

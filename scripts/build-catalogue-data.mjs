@@ -64,6 +64,11 @@ const products = raw.map(p => {
     img,        // real photo (square) or null → mockup fallback
     gallery,    // full photo set for product page, or null
     express: !!p.express,
+    // ชั้นส่งจริง — ตั้งค่าโดย scripts/express-retier.mjs (rush ≤14 / ontime ≤20 / plan ≤25 วัน)
+    shipTier: p.ship_tier || null,
+    shipMin: p.ship_days_min || null,
+    shipMax: p.ship_days_max || null,
+    shipLabel: p.ship_label || null,
     nColors: countOnlyOf(p.colors) ?? (Array.isArray(p.colors) ? p.colors.length : 0),
     swatches: countOnlyOf(p.colors) ? null : swatchesOf(p.colors),   // up to 8 hex chips for the card
     colorNames: countOnlyOf(p.colors) ? [] : (Array.isArray(p.colors) ? p.colors : []),            // full list for the product page

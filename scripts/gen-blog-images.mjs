@@ -42,6 +42,8 @@ const JOBS = [
     prompt: 'A sophisticated editorial hero scene of a curated collection of premium corporate gifts beautifully styled on a navy and white tabletop with gold accents, a designer at a desk reviewing a mockup just out of frame, magazine-quality lighting.' },
   { slug: 'unboxing',
     prompt: 'A premium unboxing moment: elegant hands gently opening a high-end navy gift box revealing a tumbler and accessories nestled in tidy packaging, gold tissue paper, soft cinematic light, sense of delight.' },
+  { slug: 'express-gift',
+    prompt: 'A sense of fast, ready-to-ship premium corporate gifts: neatly packed kraft shipping boxes and a metal tumbler, a notebook and a tote bag ready to go, a subtle motion-blur courier element in the soft background suggesting speed and on-time delivery, clean and organized.' },
 ];
 
 async function gen({ slug, prompt }) {

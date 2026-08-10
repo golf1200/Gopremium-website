@@ -14,6 +14,15 @@ Before fanning out work to multiple sub agents:
 
 This applies to the main loop too: don't launch parallel `Edit`/`Write` on the same path.
 
+## ⛔ RULE #2 — Confirm money (in baht) before every paid run
+
+**Any run that costs money (tokens, e.g. image generation, or any paid API) requires explicit confirmation FIRST — every single time, no matter how small.**
+
+1. **Quote the cost in Thai baht (฿) before running.** State the estimate (e.g. images × ฿ per image) and wait for the user's OK before any paid call. Convert from USD if the API bills in dollars.
+2. **Run small batches first.** Never fire a whole batch at once — do a few items, confirm the result and the actual spend, then continue. This prevents money from draining on a bad run.
+3. **After running, report the actual baht spent.**
+4. Prefer the free path (e.g. local `rembg`) wherever it works; reserve paid AI only for what genuinely needs it.
+
 ## File ownership map
 
 | File / area | Owner agent | Notes for others |
@@ -28,6 +37,8 @@ This applies to the main loop too: don't launch parallel `Edit`/`Write` on the s
 | build/verify/commit/push, `vercel.json` | **qa-deploy** | runs last, alone. |
 
 ## Ship workflow (standing request)
+> **หลัง deploy/push สำเร็จทุกครั้ง — ส่ง LINE อัปเดต Golf** (กฎ 2026-07-25): `node "../../COWORK Agent/GoPremium-Platform/scripts/notify-line.mjs" --message="✅ ..."` (ส่งตรงหา Golf ผ่าน OA ของ platform · ภาษาไทยได้ · ห้ามใช้ curl ตรงจาก shell — ไทยเพี้ยน)
+
 Finish code → `npm run build` → run applicable verifiers (`scripts/verify-p0/p1/seo.mjs`, Playwright mock Formspree so no real email) → only if all pass: `git add -A && git commit && git push origin main` → Vercel auto-deploys (re-aliases live domains: Thai IDN `xn--22ck4b1ansahhp4gvdtab7n8e.com` +www, and `gopremium-website.vercel.app`). If anything fails, stop and report — do not push.
 
 ## Brand & honesty

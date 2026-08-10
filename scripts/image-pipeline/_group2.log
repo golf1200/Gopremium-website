@@ -1,0 +1,19 @@
+
+  provider: gemini
+  skus:     EX123, EX124, EX125, EX126, EX127, EX128, EX129, EX009, EX115, EX116, EX117
+  images:   11 x 1 = 11
+  EST COST: ~$0.43  (~฿14.3)  @ $0.039/img
+
+  OK EX123 gemini #1  (running ฿1.3)
+  OK EX124 gemini #1  (running ฿2.6)
+  OK EX125 gemini #1  (running ฿3.9)
+  OK EX126 gemini #1  (running ฿5.2)
+  OK EX127 gemini #1  (running ฿6.5)
+  OK EX128 gemini #1  (running ฿7.8)
+  OK EX129 gemini #1  (running ฿9.1)
+  OK EX009 gemini #1  (running ฿10.4)
+  OK EX115 gemini #1  (running ฿11.7)
+  OK EX116 gemini #1  (running ฿13.0)
+  OK EX117 gemini #1  (running ฿14.3)
+
+  done: 11 ok, 0 fail. Billed ~$0.43 (~฿14.3) -> C:\Users\Golf\Documents\Claude\Projects\Gopremium Website LIVE\website\scripts\image-pipeline\staged\studio-ab

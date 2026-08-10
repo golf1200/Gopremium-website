@@ -313,6 +313,15 @@ a.occ:hover{transform:translateY(-4px);box-shadow:var(--sh-md)}
 /* === Express real-photo redesign (cohesive studio theme) === */
 .ecard .pthumb{background:#f7f6f1}
 .ebadge{position:absolute;top:11px;right:11px;background:var(--mustard);color:var(--navy);font-family:var(--head);font-weight:600;font-size:10.5px;padding:4px 9px;border-radius:var(--pill);box-shadow:0 2px 8px rgba(19,36,74,.18);display:inline-flex;align-items:center;gap:3px}
+/* ชั้นที่ไม่ใช่ "ด่วนสุด" ใช้ป้ายเงียบกว่า — กันไม่ให้ทุกชิ้นดูด่วนเท่ากัน */
+.ebadge.calm{background:#fff;color:var(--navy);border:1px solid rgba(19,36,74,.14);box-shadow:0 2px 6px rgba(19,36,74,.10)}
+/* ฟิลเตอร์เดดไลน์ของหน้าส่งด่วน */
+.dchips{display:flex;flex-wrap:wrap;gap:9px;margin:14px 0 10px}
+.dchip{padding:9px 16px;border-radius:11px;cursor:pointer;text-align:left;font-family:var(--head);font-size:14px;font-weight:600;background:#fff;color:var(--navy);border:1px solid rgba(19,36,74,.16);transition:.15s}
+.dchip:hover{border-color:var(--navy)}
+.dchip.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.dchip small{display:block;font-size:11.5px;font-weight:400;opacity:.75;margin-top:2px}
+.dnote{font-size:12.5px;color:var(--grey,#6b7280);line-height:1.75;max-width:78ch;margin-bottom:14px}
 .eswatches{display:flex;align-items:center;gap:5px;margin-top:4px;flex-wrap:wrap;min-height:16px}
 .edot{width:14px;height:14px;border-radius:50%;border:1.5px solid #fff;box-shadow:0 0 0 1px rgba(19,36,74,.16);flex:none}
 .emore{font-size:11px;color:var(--grey-400);font-weight:600}
@@ -965,7 +974,7 @@ function viewHome(){
 
   <section style="padding:0"><div class="wrap">
     <div class="promo express">
-      <div class="tx"><span class="eyebrow2">Express Service</span><h3>งานด่วน?<br>พร้อมส่งใน 7–14 วัน</h3><p>สำหรับองค์กรที่มี deadline ชัด — คัดสินค้าพร้อมผลิต พิมพ์โลโก้ และส่งมอบตรงเวลา<span class="nb">ทุกออเดอร์</span></p><a class="btn btn-secondary" href="/express">⚡ ดูสินค้าส่งด่วน</a></div>
+      <div class="tx"><span class="eyebrow2">Express Service</span><h3>งานด่วน?<br>รู้วันส่งก่อนสั่ง</h3><p>บอกเดดไลน์มา เราคัดเฉพาะรุ่นที่ทันจริง — ทุกชิ้นระบุจำนวนวัน ราคา และ MOQ ไว้แล้ว<span class="nb">ไม่ต้องรอใบเสนอราคา</span></p><a class="btn btn-secondary" href="/express">⚡ ดูสินค้าส่งด่วน</a></div>
       <div class="im"><img loading="lazy" src="banners/banner1.webp" alt="งานด่วนพร้อมส่ง 7–14 วัน"></div>
     </div>
   </div></section>
@@ -1205,42 +1214,67 @@ function viewAbout(){return `<section class="sec about" style="padding-top:34px"
 /* ===== EXPRESS (สินค้าส่งด่วน) =====
    รายการ SKU ที่ส่งด่วน — เติม sku ของสินค้าที่ผลิต/ส่งทันงานด่วนได้ที่นี่ เช่น ['DW001','BG002']
    ถ้าปล่อยว่าง หน้าจะแสดงเฉพาะข้อมูลบริการ + CTA (ไม่แสดงสินค้าปลอม) */
-const EXPRESS_SKUS=["EX004","EX005","EX006","EX026","EX028","EX029","EX030","EX031","EX032","EX033","EX034","EX035","EX036","EX037","EX038","EX039","EX040","EX041","EX001","EX002","EX003","EX042","EX044","EX045","EX047","EX048","EX049","EX050","EX052","EX076","EX077","EX078","EX079","EX080","EX009","EX053","EX054","EX055","EX010","EX011","EX012","EX013","EX014","EX015","EX016","EX017","EX018","EX019","EX095","EX096","EX097","EX098","EX099","EX100","EX020","EX110","EX023","EX024","EX114","EX115","EX116","EX117","EX118","EX119","EX113","EX122","EX123","EX124","EX125","EX126","EX127","EX128","EX129","EX130","EX131","EX132","EX133","EX134","EX135","EX136","EX137","EX138","EX139","EX140","EX141","EX142","EX143","EX144","EX145","EX146","EX147","EX148","EX149","EX150","EX151","EX152","EX153","EX154","EX155","EX156","EX157","EX158","EX159","EX160","EX161","EX162","EX163","EX166","EX168","EX170","EX173","EX174","EX175","EX176","EX177","EX178","EX164","EX165","EX167","EX169","EX171","EX172"];
+/* หมวดส่งด่วน = ขับด้วยข้อมูล ไม่ hardcode อีกต่อไป (แก้ 2026-08-04)
+   เดิมเป็นลิสต์ SKU ตายตัว 122 ตัว ที่ drift จาก products-raw.json และแปะป้าย "7–14 วัน"
+   ให้ทุกชิ้นทั้งที่ของจริงผลิต 7–25 วัน  →  ตอนนี้อ่าน p.shipTier/p.shipLabel ที่
+   scripts/express-retier.mjs คำนวณจาก lead_time จริง (rush ≤14 / ontime ≤20 / plan ≤25)
+   ⚠️ ห้ามกลับไป hardcode วันส่ง — ตัวเลขบนหน้านี้ต้อง derive จากข้อมูลเสมอ */
 const EXPRESS_CAT_ORDER=['drinkware','garment','hat','umbrella','bags','powerbank','fan','lifestyle'];
+const SHIP_TIERS=[
+  {slug:'rush',   label:'ส่งด่วน 7–14 วัน',        max:14, note:'เร็วที่สุด'},
+  {slug:'ontime', label:'ทันงาน 15–20 วัน',        max:20, note:'ทันงานส่วนใหญ่'},
+  {slug:'plan',   label:'วางแผนล่วงหน้า 21–25 วัน', max:25, note:'ทั้งหมด'},
+];
+function expressList(){return P.filter(p=>p.express&&p.shipTier&&p.img).sort((a,b)=>(a.shipMax||99)-(b.shipMax||99));}
 function ecard(p){
   const sw=(p.swatches||[]);
   const dots=sw.map(h=>`<span class="edot" style="background:${h}"></span>`).join('');
   const extra=(p.nColors||0)-sw.length;
   const more=(sw.length&&extra>0)?`<span class="emore">+${extra}</span>`:'';
   const colorRow=(p.nColors>1)?`<div class="eswatches">${dots}${more}<span class="encol">${p.nColors} สี</span></div>`:`<div class="eswatches"></div>`;
-  return `<a class="pcard ecard" href="/product/${p.slug||p.sku}"><div class="pthumb"><span class="pchip">${esc(CL[p.catSlug]||p.cat)}</span><span class="ebadge"><span class="flash">⚡</span> 7–14 วัน</span><img loading="lazy" src="${pimg(p)}" alt="${esc(p.name)}"></div>
+  return `<a class="pcard ecard" href="/product/${p.slug||p.sku}"><div class="pthumb"><span class="pchip">${esc(CL[p.catSlug]||p.cat)}</span>${p.shipLabel?`<span class="ebadge${p.shipTier==='rush'?'':' calm'}">${p.shipTier==='rush'?'<span class="flash">⚡</span> ':''}${esc(p.shipLabel)}</span>`:''}<img loading="lazy" src="${pimg(p)}" alt="${esc(p.name)}"></div>
     <div class="pbody"><div class="pname">${esc(p.name)}</div>${colorRow}
     <div class="pfoot"><span class="emoq">MOQ ${p.moq}</span><span class="ecta">ขอราคา →</span></div></div></a>`;
 }
 const EXPRESS_POINTS=[
-  ['ผลิต + ส่งมอบ 7–14 วัน','สำหรับองค์กรที่มี deadline ชัด เราวางแผนการผลิตให้ทันงาน'],
+  ['บอกวันส่งจริงรายชิ้น','ทุกรุ่นระบุจำนวนวันไว้บนการ์ด ไม่ใช่คำโฆษณาเดียวคลุมทั้งหมด'],
   ['ตอบกลับ + เสนอราคาใน 2 ชม.','แจ้งจำนวนและกำหนดรับงาน เราเช็กคิวผลิตและยืนยันให้ไว'],
   ['Mockup ก่อนผลิตเสมอ','แม้งานด่วนก็ยังเห็นแบบก่อนผลิตจริง ลดความเสี่ยงงานพลาด'],
 ];
+/* ฟิลเตอร์หลักของหน้าส่งด่วน = "คุณต้องใช้ภายในกี่วัน" (คำถามจริงของคนสั่ง ไม่ใช่หมวดสินค้า) */
+var EXP_DAYS=25;
+function expSetDays(d){EXP_DAYS=d;document.getElementById('app').innerHTML=viewExpress();window.scrollTo({top:0});if(window.gtag)gtag('event','filter_express_deadline',{days:d});}
 function viewExpress(){
-  const list=P.filter(p=>EXPRESS_SKUS.includes(p.sku)&&p.img);
+  const all=expressList();
+  const list=all.filter(p=>(p.shipMax||99)<=EXP_DAYS);
+  const nRush=all.filter(p=>p.shipTier==='rush').length;
+  const fastest=all.length?Math.min(...all.map(p=>p.shipMin||99)):7;
+  const dchips=SHIP_TIERS.map(t=>{
+    const n=all.filter(p=>(p.shipMax||99)<=t.max).length;
+    return `<button class="dchip${EXP_DAYS===t.max?' on':''}" onclick="expSetDays(${t.max})">ภายใน ${t.max} วัน<small>${t.note} · ${n} รายการ</small></button>`;
+  }).join('');
   const groups={};list.forEach(p=>{(groups[p.catSlug]=groups[p.catSlug]||[]).push(p);});
   const cats=EXPRESS_CAT_ORDER.filter(c=>groups[c]).concat(Object.keys(groups).filter(c=>!EXPRESS_CAT_ORDER.includes(c)));
   const chips=cats.map(c=>`<a class="echip" href="#ecat-${c}">${esc(CL[c]||c)} (${groups[c].length})</a>`).join('');
   const sections=cats.map(c=>`<div class="ecat" id="ecat-${c}"><div class="ecat-head"><h3>${esc(CL[c]||c)}</h3><span class="ecat-n">${groups[c].length} รายการ · พร้อมผลิต</span></div><div class="pgrid">${groups[c].map(ecard).join('')}</div></div>`).join('');
   const body=list.length
-    ? `<div class="shead" style="margin-top:6px"><span class="eyebrow"><span class="dot"></span>พร้อมผลิตด่วน</span><h2 class="h2">สินค้าพร้อมส่ง · <span class="nb">พร้อมผลิตทันงานด่วน</span></h2><p class="lead">คัดเฉพาะรุ่นที่ผลิตและส่งมอบได้ทันงานด่วน ${list.length} รายการ — เลือกสีได้<span class="nb">หลากหลาย</span> พิมพ์โลโก้ และยืนยันคิวผลิตตามจำนวนของคุณ</p><div class="ecount">⚡ <b>${list.length}</b> รุ่นพร้อมผลิต · ตอบกลับใน 2 ชม.</div></div><div class="echips">${chips}</div>${sections}`
+    ? `<div class="shead" style="margin-top:6px"><span class="eyebrow"><span class="dot"></span>ระบุวันส่งจริงทุกชิ้น</span><h2 class="h2">คุณต้องใช้ของ · <span class="nb">ภายในกี่วัน?</span></h2><p class="lead">เลือกจากเดดไลน์ของคุณ แล้วดูเฉพาะรุ่นที่ทันจริง — ทุกชิ้นบอกจำนวนวัน ราคา และ MOQ ไว้แล้ว<span class="nb">ไม่ต้องขอใบเสนอราคาก่อน</span></p></div>
+       <div class="dchips">${dchips}</div>
+       <p class="dnote">นับตั้งแต่อนุมัติ mockup โลโก้และชำระมัดจำ จนของถึงมือพร้อมโลโก้ (ไม่รวมวันหยุดนักขัตฤกษ์) — รุ่นที่ผลิตนานกว่า 25 วันเราไม่เอามาไว้ในหน้านี้</p>
+       <div class="ecount">แสดง <b>${list.length}</b> รายการ · เรียงจากส่งเร็วสุด</div><div class="echips">${chips}</div>${sections}`
     : `<div class="card" style="text-align:center;padding:40px 24px;margin-top:8px"><h4 style="font-size:18px;color:var(--navy);margin-bottom:8px">บอกโจทย์งานด่วนของคุณ เราจัดให้</h4><p class="muted" style="max-width:48ch;margin:0 auto 18px">แจ้งจำนวน กำหนดส่ง และงบ/ชิ้น — ทีมเราจะเสนอรุ่นที่ผลิตได้ทันงานด่วนพร้อมช่วงราคาให้ภายใน 2 ชม.</p></div>`;
   return `<section class="sec" style="padding-top:34px"><div class="wrap">
     <div class="crumbs"><a href="/">หน้าแรก</a> / <b>สินค้าส่งด่วน</b></div>
     <div class="nh" style="margin-bottom:32px"><div class="promo express">
       <div class="tx">
         <span class="eyebrow2"><span class="flash">⚡</span> Express Service · งานด่วน</span>
-        <h1 class="h2" style="margin:0">สินค้าส่งด่วน<br>พร้อมผลิต &amp; ส่งมอบใน 7–14 วัน</h1>
-        <p>มี deadline กระชั้น? เราคัดสินค้าพร้อมผลิต พิมพ์โลโก้ และวางแผนส่งมอบให้ทันงาน — พร้อม Mockup ก่อนผลิต<span class="nb">ทุกออเดอร์</span> ตอบกลับใน 2 ชม.</p>
+        <h1 class="h2" style="margin:0">สินค้าส่งด่วน<br>รู้วันส่ง<span class="nb">ก่อนสั่ง</span></h1>
+        <p>ไม่ต้องอีเมลไปถามว่า “ทันไหม” — ${all.length} รายการในหน้านี้ระบุจำนวนวันจริงไว้ทุกชิ้น เร็วสุด ${fastest}–14 วัน (${nRush} รายการ) พร้อม Mockup ก่อนผลิต<span class="nb">ทุกออเดอร์</span> ตอบกลับใน 2 ชม.</p>
         <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:6px"><a class="btn btn-primary" href="https://lin.ee/z1GT1KR" target="_blank" rel="noopener">ทักด่วนทาง LINE →</a><a class="btn btn-ghost" style="border-color:rgba(31,58,95,.3);color:var(--navy)" href="/quote">ขอใบเสนอราคางานด่วน</a></div>
       </div>
-      <div class="im"><img loading="eager" src="banners/banner1.webp" alt="งานด่วนพร้อมส่ง 7–14 วัน — GO PREMIUM"></div>
+      <!-- ⚠️ banner1.webp มีข้อความ "งานด่วนพร้อมส่ง 7–14 วัน" ฝังอยู่ในรูป ซึ่งเคลมเกินจริง
+           (ของด่วน ≤14 วัน มีแค่ 25 จาก 118 รายการ) — ต้องเปลี่ยนรูปเป็นเวอร์ชันไม่มีตัวเลข -->
+      <div class="im"><img loading="eager" src="banners/banner1.webp" alt="บริการงานด่วน GO PREMIUM — ระบุวันส่งจริงรายชิ้น"></div>
     </div></div>
     <div class="g-auto svc-grid">${EXPRESS_POINTS.map(s=>`<div class="card svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1L12 16.8 5.7 21l2.3-7.1-6-4.5h7.6z"/></svg></div><h4>${s[0]}</h4><p>${s[1]}</p></div>`).join('')}</div>
     ${body}
@@ -1673,7 +1707,7 @@ function render(){
     else setMeta(DEF_TITLE,DEF_DESC,'/');}
   else if(h==='/about'){app.innerHTML=viewAbout();setMeta('เกี่ยวกับเรา — GO PREMIUM by Passion Grow Trading','GO PREMIUM ผู้ออกแบบและผลิตของพรีเมียมและของขวัญองค์กร เชื่อในการให้ที่มีความหมาย ครบวงจรตั้งแต่ไอเดียถึงส่งมอบ','/about');}
   else if(h==='/portfolio'){app.innerHTML=viewPortfolio();bindQuote();initPortfolioVideo();initPortfolio();setMeta('ผลงานของเรา — องค์กรที่ไว้วางใจ ตัวอย่างสินค้าจริง + วิดีโอเครื่องพิมพ์ | GO PREMIUM','ขอบคุณองค์กรชั้นนำที่ไว้วางใจ GO PREMIUM รวมโลโก้ลูกค้า ตัวอย่างสินค้าจริงพร้อม Mockup และวิดีโอเบื้องหลังการพิมพ์','/portfolio');}
-  else if(h==='/express'){app.innerHTML=viewExpress();setMeta('สินค้าส่งด่วน 7–14 วัน — ของพรีเมียมงานด่วน | GO PREMIUM','ของพรีเมียมและของขวัญองค์กรงานด่วน ผลิตและส่งมอบใน 7–14 วัน ตอบกลับใน 2 ชม. พร้อม Mockup ก่อนผลิต','/express');}
+  else if(h==='/express'){app.innerHTML=viewExpress();setMeta('ของพรีเมียมส่งด่วน พิมพ์โลโก้ รู้วันส่งก่อนสั่ง | GO PREMIUM','ของขวัญองค์กรพิมพ์โลโก้ที่ระบุวันส่งจริงรายชิ้น เร็วสุด 7–14 วัน เห็นราคาและ MOQ ทุกชิ้นก่อนขอใบเสนอราคา ตอบกลับใน 2 ชม.','/express');}
   else if(h==='about'){app.innerHTML=viewHome();bindQuote();initHero();initAIType();setMeta(DEF_TITLE,DEF_DESC,'/');setTimeout(()=>{const a=document.getElementById('about');if(a)a.scrollIntoView();},60);return;}
   else{app.innerHTML=viewHome();bindQuote();setMeta(DEF_TITLE,DEF_DESC,'/');setFaqLD();}
   if(document.querySelector('.hero-slides')){initHero();initAIType();}
