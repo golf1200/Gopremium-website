@@ -2,7 +2,10 @@
   "redirects": [
     { "source": "/product/ex005-drinkware", "destination": "/product/ex141-drinkware", "permanent": true },
     { "source": "/product/ex130-drinkware", "destination": "/product/ex006-drinkware", "permanent": true },
-    { "source": "/product/ex034-drinkware", "destination": "/product/ex031-drinkware", "permanent": true }
+    { "source": "/product/ex034-drinkware", "destination": "/product/ex031-drinkware", "permanent": true },
+    { "source": "/product/dw011", "destination": "/category/drinkware", "permanent": true },
+    { "source": "/product/ex075-drinkware", "destination": "/category/drinkware", "permanent": true },
+    { "source": "/product/npd-0229", "destination": "/", "permanent": true }
   ],
   "rewrites": [
     { "source": "/old", "destination": "/old.html" },
