@@ -550,7 +550,7 @@
     "material": "ผ้า Polyester",
     "price_300_thb": 43,
     "budget_tier": "value",
-    "moq": 100,
+    "moq": 300,
     "free_logo": [
       "สกรีน"
     ],
@@ -568,7 +568,7 @@
     "material": "ผ้า Oxford",
     "price_300_thb": 28,
     "budget_tier": "value",
-    "moq": 100,
+    "moq": 300,
     "free_logo": [
       "สกรีน"
     ],
@@ -586,7 +586,7 @@
     "material": "ผ้า Polyester",
     "price_300_thb": 32,
     "budget_tier": "value",
-    "moq": 100,
+    "moq": 300,
     "free_logo": [
       "สกรีน"
     ],
@@ -604,7 +604,7 @@
     "material": "ผ้า Oxford",
     "price_300_thb": 51,
     "budget_tier": "value",
-    "moq": 100,
+    "moq": 300,
     "free_logo": [
       "สกรีน"
     ],
@@ -622,7 +622,7 @@
     "material": "ผ้า Oxford",
     "price_300_thb": 50,
     "budget_tier": "value",
-    "moq": 100,
+    "moq": 300,
     "free_logo": [
       "สกรีน"
     ],
@@ -640,7 +640,7 @@
     "material": "ผ้า Oxford",
     "price_300_thb": 54,
     "budget_tier": "value",
-    "moq": 100,
+    "moq": 300,
     "free_logo": [
       "สกรีน"
     ],
@@ -2010,22 +2010,6 @@
     "occasions": []
   },
   {
-    "sku": "DW011",
-    "slug": "dw011",
-    "name": "แก้วน้ำ รุ่น Ocean",
-    "category": "Drinkware",
-    "category_slug": "drinkware",
-    "features": "",
-    "size": "",
-    "material": "",
-    "price_300_thb": 160,
-    "budget_tier": "premium",
-    "moq": null,
-    "free_logo": [],
-    "logo_max_cm": "",
-    "occasions": []
-  },
-  {
     "sku": "DW012",
     "slug": "dw012",
     "name": "กระบอกน้ำสแตนเลส รุ่น Degree",
@@ -2172,7 +2156,7 @@
   {
     "sku": "DW021",
     "slug": "dw021",
-    "name": "กระบอกน้ำสแตนเลส รุ่น Noon",
+    "name": "กระบอกน้ำสแตนเลส รุ่น Sento",
     "category": "Drinkware",
     "category_slug": "drinkware",
     "features": "กระบอกน้ำสแตนเลส พร้อมที่หิ้ว ฝาชั้นแยกสำหรับใส่ชา",
@@ -2188,7 +2172,7 @@
   {
     "sku": "DW022",
     "slug": "dw022",
-    "name": "กระบอกน้ำสแตนเลส รุ่น Sento",
+    "name": "กระบอกน้ำสแตนเลส รุ่น Seen",
     "category": "Drinkware",
     "category_slug": "drinkware",
     "features": "กระบอกน้ำเก็บอุณหภูมิ \nทรงมินิมอล มีหูจับ พกพาสะดวก",
@@ -5945,36 +5929,6 @@
     "_source_drive": "Screenshot 2026-06-05 160824.png"
   },
   {
-    "sku": "EX075",
-    "slug": "ex075-drinkware",
-    "name": "แก้วทรงสูงเรียว ฝากระดกดำ · แถบยางจับกันลื่น",
-    "category": "Drinkware",
-    "category_slug": "drinkware",
-    "features": "tumbler ฝา press มีแถบยางกันลื่น",
-    "size": "",
-    "material": "",
-    "price_300_thb": null,
-    "budget_tier": "",
-    "moq": 50,
-    "free_logo": [],
-    "logo_max_cm": "",
-    "occasions": [],
-    "colors": [
-      "ชมพู",
-      "ม่วง",
-      "ฟ้าอมเขียว",
-      "แดง",
-      "ขาว",
-      "ม่วงบานเย็น",
-      "ฟ้า",
-      "เขียวมะกอก",
-      "เทา",
-      "ดำ"
-    ],
-    "_supplier": "SUP-00009",
-    "_source_drive": "Screenshot 2026-06-05 134544.png"
-  },
-  {
     "sku": "EX076",
     "slug": "ex076-garment",
     "name": "เสื้อแจ็คเก็ต รุ่น Inspire Jacket",
@@ -8213,7 +8167,7 @@
     "features": "หมอนอิงพิมพ์ลาย Custom ได้ตามต้องการ",
     "size": "18*18 นิ้ว",
     "material": "ผ้า supersoft",
-    "price_300_thb": 113,
+    "price_300_thb": 120,
     "budget_tier": "smart",
     "moq": 100,
     "free_logo": [
@@ -8229,26 +8183,32 @@
     "npd": true
   },
   {
-    "sku": "NPD-0229",
-    "slug": "npd-0229",
-    "name": "Test แก้วน้ำ",
-    "category": "แก้ว & กระบอกน้ำ",
-    "category_slug": "drinkware",
-    "features": "กระเป๋าเดินทางสีพาสเทล",
-    "size": "18 oz",
-    "material": "สแตนเลส 304",
-    "price_300_thb": 160,
-    "budget_tier": "premium",
-    "moq": 300,
+    "sku": "NPD-00246",
+    "slug": "npd-00246",
+    "name": "กล่องใส่ยา 4 in 1",
+    "category": "ไลฟ์สไตล์",
+    "category_slug": "lifestyle",
+    "features": "แบ่งช่องเป็นสัดส่วน ช่องบด/ตัดยาในตัว มาพร้อมที่คีบยา ขนาดกะทัดรัด พกพาง่าย",
+    "size": "12 x 6 x 2.5 cm",
+    "material": "PC",
+    "price_300_thb": 65,
+    "budget_tier": "smart",
+    "moq": 500,
     "free_logo": [
-      "UV Printing (ไม่จำกัดสี)"
+      "Silk Screen Printing"
     ],
     "logo_max_cm": "",
     "colors": [],
     "occasions": [],
     "images": [
-      "https://jrutfaqhhexgojmvioyn.supabase.co/storage/v1/object/public/marketing-images/npd/20260802-ghq4zg--p8nCI8Q_-_Pongsakon_Taksintaveesup.jpeg",
-      "https://jrutfaqhhexgojmvioyn.supabase.co/storage/v1/object/public/marketing-images/npd/20260802-sjfjyx-580cc7f-c5c5-487f-844c-56b45db5d632.jpeg"
+      "https://jrutfaqhhexgojmvioyn.supabase.co/storage/v1/object/public/marketing-images/npd/20260810-xlzbzy-cover.jpg",
+      "https://jrutfaqhhexgojmvioyn.supabase.co/storage/v1/object/public/marketing-images/npd/20260810-aibm06-0M3Be26LvAHqB1Lp_2215917667646-0-cib.jpg",
+      "https://jrutfaqhhexgojmvioyn.supabase.co/storage/v1/object/public/marketing-images/npd/20260810-6zosgk-4GwTz26LvACmBtou_2215917667646-0-cib.jpg",
+      "https://jrutfaqhhexgojmvioyn.supabase.co/storage/v1/object/public/marketing-images/npd/20260810-le8y6e-CKW1U26LvAGoHYBu_2215917667646-0-cib.jpg",
+      "https://jrutfaqhhexgojmvioyn.supabase.co/storage/v1/object/public/marketing-images/npd/20260810-sr1879-REniS26LvAGFwuoo_2215917667646-0-cib.jpg",
+      "https://jrutfaqhhexgojmvioyn.supabase.co/storage/v1/object/public/marketing-images/npd/20260810-3gsudx-Screenshot_2026-08-10_172919.png",
+      "https://jrutfaqhhexgojmvioyn.supabase.co/storage/v1/object/public/marketing-images/npd/20260810-1k03fa-Screenshot_2026-08-10_172907.png",
+      "https://jrutfaqhhexgojmvioyn.supabase.co/storage/v1/object/public/marketing-images/npd/20260810-s7704l-Screenshot_2026-08-10_172851.png"
     ],
     "express": false,
     "npd": true

@@ -151,7 +151,6 @@
   "BG012": {
     "base": "bg012-snap",
     "gallery": [
-      "/images/products/bg012-snap/bg012-snap-square.jpg",
       "/images/products/bg012-snap/bg012-snap-02.jpg",
       "/images/products/bg012-snap/bg012-snap-03.jpg",
       "/images/products/bg012-snap/bg012-snap-04.jpg",
@@ -971,11 +970,9 @@
   "DW015": {
     "base": "dw015-ring",
     "gallery": [
-      "/images/products/dw015-ring/dw015-ring-square.jpg",
       "/images/products/dw015-ring/dw015-ring-02.jpg",
       "/images/products/dw015-ring/dw015-ring-03.jpg",
-      "/images/products/dw015-ring/dw015-ring-04.jpg",
-      "/images/products/dw015-ring/dw015-ring-05.jpg"
+      "/images/products/dw015-ring/dw015-ring-04.jpg"
     ]
   },
   "DW016": {
@@ -2659,11 +2656,7 @@
   "DW022": {
     "base": "dw022",
     "gallery": [
-      "/images/products/dw022/dw022-square.jpg",
-      "/images/products/dw022/dw022-02.jpg",
-      "/images/products/dw022/dw022-03.jpg",
-      "/images/products/dw022/dw022-04.jpg",
-      "/images/products/dw022/dw022-05.jpg"
+      "/images/products/dw022/dw022-seen-square.jpg"
     ]
   },
   "FN013": {

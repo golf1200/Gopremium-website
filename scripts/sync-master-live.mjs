@@ -30,6 +30,9 @@ import { fileURLToPath } from 'node:url';
 const dir = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.join(dir, '..');
 const SHEET = '🗂️ PRODUCT MASTER (รวม)';
+// SKU ที่ถอดออกจากเว็บแล้ว — ยังอยู่ในชีตได้ แต่ห้าม sync กลับขึ้นเว็บอีก
+// (ไม่งั้น step 4 จะ append กลับมาทุกครั้งที่ build). ถอดเมื่อ 2026-08-14 ตามคอมเมนต์ 11 ส.ค.
+const RETIRED = new Set(['NPD-0229']);
 const warn = (m) => console.warn('[sync-master-live] ' + m);
 const tierOf = (n) => (n <= 60 ? 'value' : n <= 150 ? 'smart' : n <= 300 ? 'premium' : 'executive');
 
@@ -103,9 +106,32 @@ async function main() {
     } catch (e) { warn('pricing engine unavailable (' + (e && e.message) + ') — keeping committed prices.'); }
   } else { warn('sheet has no รวมต้นทุน/ชิ้น column — keeping committed prices.'); }
 
+  // 3b2) สินค้าที่มาจาก NPD — ราคาบนเว็บ = "ราคาที่เสนอขาย" ที่ผู้บริหารเคาะไว้ ห้ามให้เอนจินคิดใหม่ทับ
+  //      (Golf สั่ง 2026-08-14) แพลตฟอร์มเลือกราคาตามกติกา MOQ แล้วเขียนลงคอลัมน์ ราคาขาย/ชิ้น(฿)
+  //        • MOQ ≤ 300 → ราคาที่เสนอขายของเรท 300
+  //        • MOQ > 300 → ราคาที่เสนอขายของเรทขั้นต่ำที่รับผลิตจริง
+  //      เดิมเว็บ reprice ทุก build ด้วย engine × factor · SKU ที่เพิ่ง published ยังไม่มี factor (k=1)
+  //      → เว็บโชว์ราคาโมเดล ไม่ใช่ราคาที่คนเคาะ = ขัดเจตนา "ราคาที่อนุมัติแล้วคือราคาที่ลูกค้าเห็น"
+  //      กติกาตั้งราคาเต็ม ๆ: GoPremium-Platform/docs/PRICING-DECISIONS.md
+  const npdSku = new Set();
+  const npdPrice = new Map();
+  for (const r of rows.slice(1)) {
+    const sku = String(r[iSku] || '').trim();
+    if (!sku || String(r[iChan] || '').trim() !== 'NPD→Master') continue;
+    npdSku.add(sku);
+    const p = iPrice >= 0 ? num(r[iPrice]) : null;
+    if (!(p > 0)) continue;
+    // promote() append แถวใหม่ทุกครั้งที่กดขึ้นเว็บ → SKU เดียวมีได้หลายแถว
+    // เอาแถวล่าสุด (ล่างสุด) = ราคาที่อนุมัติครั้งหลังสุด · เตือนถ้าเจอราคาขัดกัน
+    const prev = npdPrice.get(sku);
+    if (prev != null && prev !== p) warn(`${sku}: ชีตมีหลายแถว ราคาต่างกัน (฿${prev} vs ฿${p}) — ใช้แถวล่าสุด ฿${p}`);
+    npdPrice.set(sku, p);
+  }
+  const isNpd = (p) => npdSku.has(String(p.sku)) || p.npd === true;
+
   // 3c) REPRICE existing products from live cost
   let repriced = 0;
-  if (priceOf) {
+  {
     const costBySku = new Map();
     for (const r of rows.slice(1)) {
       const sku = String(r[iSku] || '').trim();
@@ -113,15 +139,24 @@ async function main() {
       if (sku && cost > 0) costBySku.set(sku, cost);
     }
     for (const p of raw) {
-      const cost = costBySku.get(String(p.sku));
-      if (!(cost > 0)) continue;                    // ไม่มีต้นทุน = ไม่แตะราคาที่ commit ไว้
-      const next = priceOf(String(p.sku), cost);
-      if (!(next > 0)) continue;
+      let next;
+      if (isNpd(p)) {
+        next = npdPrice.get(String(p.sku));          // 🔒 ราคาที่เสนอขายจากชีตตรง ๆ ไม่ผ่านเอนจิน
+        if (!(next > 0)) continue;                   // ชีตไม่มีราคา = ไม่แตะราคาที่ commit ไว้
+      } else {
+        if (!priceOf) continue;                      // เอนจินใช้ไม่ได้ = คงราคาที่ commit ไว้
+        const cost = costBySku.get(String(p.sku));
+        if (!(cost > 0)) continue;                   // ไม่มีต้นทุน = ไม่แตะราคาที่ commit ไว้
+        next = priceOf(String(p.sku), cost);
+        if (!(next > 0)) continue;
+      }
+      next = Math.round(next);
       if (p.price_300_thb !== next) repriced++;
       p.price_300_thb = next;
       p.budget_tier = tierOf(next);
     }
-    console.log('[sync-master-live] repriced ' + repriced + ' product(s) from live cost');
+    console.log('[sync-master-live] repriced ' + repriced + ' product(s)'
+      + (priceOf ? ' (NPD ใช้ราคาที่เสนอขายจากชีต · ที่เหลือคิดจากต้นทุน)' : ' (เอนจินใช้ไม่ได้ — เฉพาะ NPD จากชีต)'));
   }
 
   // 4) collect NPD-published rows not already on the site
@@ -129,11 +164,13 @@ async function main() {
   for (const r of rows.slice(1)) {
     const sku = String(r[iSku] || '').trim();
     if (!sku || have.has(sku)) continue;
+    if (RETIRED.has(sku)) continue;                                 // ถอดออกจากเว็บแล้ว — ห้ามกลับมา
     if (String(r[iChan] || '').trim() !== 'NPD→Master') continue;   // ONLY products promoted via NPD
     const name = String(r[iName] || '').trim();
-    // ราคาของ NPD ที่เพิ่งขึ้นเว็บ: คิดจากต้นทุนด้วยเอนจินจริงก่อน ถ้าไม่มีต้นทุนค่อยใช้ราคาที่กรอกในชีต
+    // ราคาของ NPD ที่เพิ่งขึ้นเว็บ = **ราคาที่เสนอขาย** ที่ผู้บริหารเคาะไว้ในชีต (Golf 14 ส.ค.)
+    // เอนจินเป็นแค่ทางสำรองกรณีชีตไม่มีราคา — เดิมกลับกัน ทำให้ราคาที่อนุมัติแล้วถูกคิดใหม่ทับ
     const cost = iCost >= 0 ? num(r[iCost]) : null;
-    const price = (priceOf && cost > 0 ? priceOf(sku, cost) : null) || num(r[iPrice]);
+    const price = npdPrice.get(sku) || (priceOf && cost > 0 ? priceOf(sku, cost) : null);
     if (!name || !price || price <= 0) continue;                    // must be presentable
     have.add(sku);
     // promote() may write several image URLs joined by ' , ' (up to 10) — split them all into the gallery
