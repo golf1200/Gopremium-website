@@ -26,8 +26,14 @@ const ONLY = (arg('--skus', '') || '').split(',').map(s => s.trim().toUpperCase(
 const PRICE = 0.0008; // ~ per vision call
 
 const gen = JSON.parse(readFileSync(join(REPO, 'src/data/product-images.generated.json'), 'utf8'));
-const v2 = readFileSync(join(REPO, 'public/v2.html'), 'utf8');
-const EXPRESS = JSON.parse(v2.match(/const EXPRESS_SKUS=(\[[^\]]*\]);/)[1]);
+const products = JSON.parse(readFileSync(join(REPO, 'src/data/products-raw.json'), 'utf8'));
+// Express membership is data-driven. The old verifier scraped a removed
+// EXPRESS_SKUS constant from v2.html and crashed before even showing --plan.
+const EXPRESS = products
+  .filter((product) => product.express === true)
+  .map((product) => String(product.sku || '').trim().toUpperCase())
+  .filter(Boolean);
+if (new Set(EXPRESS).size !== EXPRESS.length) throw new Error('Duplicate Express SKU in products-raw.json');
 const STUDIO = join(REPO, 'scripts/image-pipeline/staged/studio-ab');
 
 // Build the work list: deployed hero + deployed gallery-2 (if any) + generated group shot.

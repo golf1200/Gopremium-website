@@ -1,93 +1,88 @@
-// Verify Tasks A/B/C — SEO landing content + analytics events + no console errors.
-// Run: BASE=http://localhost:5173 node scripts/verify-seo.mjs
+// SEO verification for the production v2 SPA landing pages.
+// Run after build against a Vite preview server on BASE.
 import { chromium } from 'playwright';
 
 const BASE = process.env.BASE || 'http://localhost:5173';
 const results = [];
-const ok = (n, p, d = '') => results.push({ n, pass: p, d });
+const ok = (name, pass, detail = '') => results.push({ name, pass: Boolean(pass), detail });
 
 const browser = await chromium.launch();
-const ctx = await browser.newContext();
-
-// Capture gtag calls via a hooked dataLayer.push (gaId is live now, so initGA
-// overrides window.gtag — but it keeps a pre-existing dataLayer, whose push we
-// hook). Stub gtag stays as fallback for empty gaId.
-await ctx.addInitScript(() => {
+const context = await browser.newContext();
+await context.addInitScript(() => {
   window.__events = [];
   window.dataLayer = [];
-  const origPush = window.dataLayer.push.bind(window.dataLayer);
+  const originalPush = window.dataLayer.push.bind(window.dataLayer);
   window.dataLayer.push = function (...items) {
-    for (const it of items) window.__events.push(Array.from(it));
-    return origPush(...items);
+    for (const item of items) window.__events.push(Array.from(item));
+    return originalPush(...items);
   };
-  window.gtag = (...a) => window.__events.push(a);
 });
-await ctx.route('**/googletagmanager.com/**', (r) => r.abort());
-await ctx.route('**/lin.ee/**', (r) => r.abort());
-await ctx.route('**/formspree.io/**', (r) => r.fulfill({ status: 200, contentType: 'application/json', body: '{"ok":true}' }));
+await context.route('**/_vercel/**', (route) => route.fulfill({ status: 200, contentType: 'text/javascript', body: '' }));
+await context.route('**/googletagmanager.com/**', (route) => route.fulfill({ status: 200, contentType: 'text/javascript', body: '' }));
 
-const page = await ctx.newPage();
+const page = await context.newPage();
 const consoleErrors = [];
-page.on('console', (m) => { if (m.type() === 'error') consoleErrors.push(m.text()); });
-page.on('pageerror', (e) => consoleErrors.push('pageerror: ' + e.message));
+page.on('console', (message) => {
+  if (message.type() !== 'error') return;
+  const location = message.location();
+  consoleErrors.push(`${message.text()}${location.url ? ` @ ${location.url}` : ''}`);
+});
+page.on('pageerror', (error) => consoleErrors.push(`pageerror: ${error.message}`));
 
-const events = () => page.evaluate(() => window.__events.map((a) => ({ ev: a[1], p: a[2] })));
-const reset = () => page.evaluate(() => { window.__events = []; });
-const hasJsonLdType = (t) => page.evaluate((type) =>
-  [...document.querySelectorAll('script[type="application/ld+json"]')]
-    .some((s) => { try { return JSON.stringify(JSON.parse(s.textContent)).includes(`"${type}"`); } catch { return false; } }), t);
+const canonicalPath = async () => {
+  const href = await page.locator('link[rel="canonical"]').getAttribute('href');
+  return href ? new URL(href).pathname : '';
+};
+const hasJsonLdType = (type) => page.evaluate((expectedType) =>
+  [...document.querySelectorAll('script[type="application/ld+json"]')].some((script) => {
+    try { return JSON.stringify(JSON.parse(script.textContent)).includes(`"${expectedType}"`); }
+    catch { return false; }
+  }), type);
 
-// ===== A: Occasion landing =====
 await page.goto(`${BASE}/occasion/new-year`, { waitUntil: 'networkidle' });
-const occH1 = (await page.locator('h1').first().innerText()).trim();
-ok('A1. occasion h1 has keyword', /พิมพ์โลโก้|ราคาส่ง|ของขวัญ/.test(occH1), `h1="${occH1}"`);
-ok('A2. occasion shows "สินค้าแนะนำสำหรับโอกาสนี้"', (await page.getByText('สินค้าแนะนำสำหรับโอกาสนี้').count()) > 0);
-ok('A3. occasion has product cards', (await page.locator('a[href^="/product/"]').count()) > 0);
-ok('A4. occasion has FAQ section', (await page.getByText('คำถามที่พบบ่อย').count()) > 0);
-ok('A5. occasion has FAQPage JSON-LD', await hasJsonLdType('FAQPage'));
-ok('A6. occasion fired select_occasion', (await events()).some((e) => e.ev === 'select_occasion' && e.p.slug === 'new-year'));
+const occasionH1 = (await page.locator('#app h1').first().innerText()).trim();
+ok('A1. occasion landing has one keyword-focused h1', await page.locator('#app h1').count() === 1 && /ของขวัญ|พิมพ์โลโก้|ปีใหม่/.test(occasionH1), `h1="${occasionH1}"`);
+ok('A2. occasion landing has product cards', await page.locator('#app a.pcard[href^="/product/"]').count() > 0);
+ok('A3. occasion canonical resolves to the clean canonical slug', await canonicalPath() === '/occasion/newyear', `canonical=${await canonicalPath()}`);
+ok('A4. occasion has BreadcrumbList JSON-LD', await hasJsonLdType('BreadcrumbList'));
 
-// ===== C: Category landing =====
-await reset();
 await page.goto(`${BASE}/category/drinkware`, { waitUntil: 'networkidle' });
-ok('C1. category has intro + FAQ', (await page.getByText('คำถามที่พบบ่อย').count()) > 0);
-ok('C2. category has FAQPage JSON-LD', await hasJsonLdType('FAQPage'));
-ok('C3. category fired select_category', (await events()).some((e) => e.ev === 'select_category' && e.p.slug === 'drinkware'));
-ok('C4. category has product cards', (await page.locator('a[href^="/product/"]').count()) > 0);
+ok('B1. category landing has exactly one h1', await page.locator('#app h1').count() === 1);
+ok('B2. category landing has product cards', await page.locator('#app a.pcard[href^="/product/"]').count() > 0);
+ok('B3. category canonical is clean', await canonicalPath() === '/category/drinkware', `canonical=${await canonicalPath()}`);
+ok('B4. category has BreadcrumbList JSON-LD', await hasJsonLdType('BreadcrumbList'));
 
-// ===== C: Budget landing =====
-await reset();
 await page.goto(`${BASE}/budget/premium`, { waitUntil: 'networkidle' });
-ok('C5. budget has FAQ', (await page.getByText('คำถามที่พบบ่อย').count()) > 0);
-ok('C6. budget fired select_budget', (await events()).some((e) => e.ev === 'select_budget' && e.p.slug === 'premium'));
+ok('C1. budget landing has exactly one h1', await page.locator('#app h1').count() === 1);
+ok('C2. budget landing has product cards', await page.locator('#app a.pcard[href^="/product/"]').count() > 0);
+ok('C3. budget canonical is clean', await canonicalPath() === '/budget/premium', `canonical=${await canonicalPath()}`);
 
-// ===== B: view_item + add_to_quote =====
-await reset();
+await page.evaluate(() => { window.__events = []; });
 await page.goto(`${BASE}/product/dw001`, { waitUntil: 'networkidle' });
-ok('B1. view_item fired with sku+category', (await events()).some((e) => e.ev === 'view_item' && e.p.sku && e.p.category));
-await reset();
-await page.getByRole('button', { name: /เพิ่มในใบขอราคา/ }).first().click();
-await page.waitForTimeout(200);
-ok('B2. add_to_quote fired with sku', (await events()).some((e) => e.ev === 'add_to_quote' && e.p.sku));
+const events = await page.evaluate(() => window.__events);
+const viewItem = events.find((event) => event[0] === 'event' && event[1] === 'view_item');
+ok('D1. product page fires view_item with sku + category', viewItem?.[2]?.sku === 'DW001' && Boolean(viewItem?.[2]?.item_category), JSON.stringify(viewItem?.[2] || null));
+ok('D2. product page has Product JSON-LD', await hasJsonLdType('Product'));
+ok('D3. product canonical is clean', await canonicalPath() === '/product/dw001', `canonical=${await canonicalPath()}`);
+const quoteCta = page.locator('.pd-cta a[href^="/quote?sku="]').first();
+const quoteHref = await quoteCta.getAttribute('href');
+ok('D4. product quote CTA carries the SKU', new URL(quoteHref, BASE).searchParams.get('sku') === 'DW001', `href=${quoteHref}`);
 
-// ===== B: ai_concierge_run =====
-await reset();
 await page.goto(`${BASE}/`, { waitUntil: 'networkidle' });
-await page.locator('#ai').scrollIntoViewIfNeeded().catch(() => {});
-await page.locator('#ai input').first().fill('ของขวัญปีใหม่ 100 ชิ้น');
-await page.locator('#ai').getByRole('button', { name: /ให้ AI ช่วยคิด/ }).click();
-await page.waitForTimeout(300);
-ok('B3. ai_concierge_run fired', (await events()).some((e) => e.ev === 'ai_concierge_run'));
-
-// ===== console clean =====
+ok('E1. home has FAQPage JSON-LD', await hasJsonLdType('FAQPage'));
+ok('E2. home renders the visible FAQ', await page.locator('#app .faq details').count() >= 6);
+ok('E3. home has exactly one h1', await page.locator('#app h1').count() === 1);
 ok('Z. no console errors across run', consoleErrors.length === 0, consoleErrors.slice(0, 6).join(' | '));
 
 await browser.close();
 
-let pass = 0;
-console.log('\n============ A/B/C VERIFICATION ============');
-for (const r of results) { console.log(`${r.pass ? 'PASS' : 'FAIL'}  ${r.n}${r.d ? `  — ${r.d}` : ''}`); if (r.pass) pass++; }
-console.log('-------------------------------------------');
-console.log(`${pass}/${results.length} checks passed`);
-console.log('===========================================\n');
-process.exit(pass === results.length ? 0 : 1);
+let passed = 0;
+console.log('\n================ SEO V2 VERIFICATION ================');
+for (const result of results) {
+  console.log(`${result.pass ? 'PASS' : 'FAIL'}  ${result.name}${result.detail ? `  — ${result.detail}` : ''}`);
+  if (result.pass) passed++;
+}
+console.log('-----------------------------------------------------');
+console.log(`${passed}/${results.length} checks passed`);
+console.log('=====================================================\n');
+process.exit(passed === results.length ? 0 : 1);

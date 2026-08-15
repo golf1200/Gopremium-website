@@ -737,6 +737,16 @@ function ctaBand(){return `<section class="sec" style="background:var(--cloud)">
 /* ===== quote form (shared) ===== */
 function quoteForm(){return `<form class="qcard" id="quoteForm" novalidate>
   <input type="hidden" name="source_auto" id="qf-source-auto">
+  <input type="hidden" name="lead_id" id="qf-lead-id">
+  <input type="hidden" name="landing_path" id="qf-landing-path">
+  <input type="hidden" name="gclid" id="qf-gclid">
+  <input type="hidden" name="gbraid" id="qf-gbraid">
+  <input type="hidden" name="wbraid" id="qf-wbraid">
+  <input type="hidden" name="utm_source" id="qf-utm-source">
+  <input type="hidden" name="utm_medium" id="qf-utm-medium">
+  <input type="hidden" name="utm_campaign" id="qf-utm-campaign">
+  <input type="hidden" name="utm_content" id="qf-utm-content">
+  <input type="hidden" name="utm_term" id="qf-utm-term">
   <div id="qbody">
     <h3>แบบฟอร์มขอใบเสนอราคา</h3>
     <p style="font-size:12.5px;color:var(--grey);margin-bottom:18px">ใช้เวลาไม่ถึง 1 นาที · <span class="req">*</span> จำเป็น</p>
@@ -1566,6 +1576,23 @@ function bindQuote(){
       else if(/line/i.test(det))sel.value='LINE';
     }
   }catch(e){}
+  // Keep only non-PII campaign attribution with the first-party lead record.
+  // The random lead ID is posted to the CRM/form endpoint, never sent to GA4.
+  try{
+    const sp=new URLSearchParams(location.search);
+    const attributionKeys=['gclid','gbraid','wbraid','utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+    const storageKey='gp_attribution_v1';let saved={};
+    try{saved=JSON.parse(sessionStorage.getItem(storageKey)||'{}')}catch(_e){}
+    attributionKeys.forEach((key)=>{const value=sp.get(key);if(value)saved[key]=value;});
+    sessionStorage.setItem(storageKey,JSON.stringify(saved));
+    attributionKeys.forEach((key)=>{if(f.elements[key])f.elements[key].value=saved[key]||'';});
+    if(f.elements.landing_path)f.elements.landing_path.value=location.pathname;
+    if(f.elements.lead_id){
+      let leadId=sessionStorage.getItem('gp_lead_id');
+      if(!leadId){leadId=(window.crypto&&crypto.randomUUID)?crypto.randomUUID():`lead_${Date.now()}_${Math.random().toString(36).slice(2,10)}`;sessionStorage.setItem('gp_lead_id',leadId);}
+      f.elements.lead_id.value=leadId;
+    }
+  }catch(e){}
   // สินค้าที่ลูกค้ากดมาจากหน้า SKU (/quote?sku=EX001) → เติมให้อัตโนมัติ + ส่งไปกับฟอร์ม
   try{
     const sku=(new URLSearchParams(location.search).get('sku')||'').trim().toUpperCase();
@@ -1583,7 +1610,12 @@ function bindQuote(){
     // ส่งเข้า Formspree (→ info@passiongrow.co.th) — ID เดียวกับ src/config.js
     fetch('https://formspree.io/f/xbdejbyr',{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}})
       .then(r=>{if(!r.ok)throw new Error('formspree '+r.status);
-        track('generate_lead',{source:'v2_quote_form',occasion:el.occasion.value||'',qty:el.qty.value||'',budget:el.budget.value||'',lead_source:el.source.value||'',lead_source_auto:el.source_auto.value||'',product:(el.product&&el.product.value)||''});
+        const attribution=el.gclid.value||el.gbraid.value||el.wbraid.value?'paid_click':(el.utm_source.value?'utm':'direct_or_referral');
+        const productSku=new URLSearchParams(location.search).get('sku')||'';
+        const qualified=Boolean(el.company.value&&el.qty.value&&el.budget.value&&el.date.value);
+        // No contact, company or click ID is sent to analytics.
+        track('generate_lead',{source:'v2_quote_form',occasion:el.occasion.value||'',qty:el.qty.value||'',budget:el.budget.value||'',lead_source:el.source.value||'',lead_source_auto:el.source_auto.value||'',product:(el.product&&el.product.value)||'',attribution,landing_path:el.landing_path.value||''});
+        if(qualified)track('qualified_rfq',{source:'v2_quote_form',product_sku:productSku,attribution,landing_path:el.landing_path.value||''});
         document.getElementById('qbody').style.display='none';document.getElementById('qok').classList.add('show');
         const q=document.getElementById('quote');if(q)q.scrollIntoView({behavior:'smooth'});})
       .catch(()=>{alert('ส่งคำขอไม่สำเร็จ กรุณาลองใหม่อีกครั้ง หรือทักทาง LINE @gopremium ได้เลยค่ะ');})
@@ -1716,7 +1748,7 @@ function render(){
 window.addEventListener('hashchange',render);
 /* ===== clean-path navigation (real /paths, intercepted → pushState, no reload) ===== */
 // SPA routes handled in-app; everything else (/exclusive, /blog/*, /old, external) navigates normally.
-function isSpaPath(p){return p==='/'||p==='/products'||p==='/catalogue'||p==='/quote'||p==='/portfolio'||p==='/express'||p==='/about'||/^\/category\//.test(p)||/^\/occasion\//.test(p)||/^\/budget\//.test(p)||/^\/product\//.test(p);}
+function isSpaPath(p){return p==='/'||p==='/products'||p==='/catalogue'||p==='/quote'||p==='/portfolio'||p==='/about'||/^\/category\//.test(p)||/^\/occasion\//.test(p)||/^\/budget\//.test(p)||/^\/product\//.test(p);}
 function nav(p){if(location.pathname!==p)history.pushState({},'',p);render();}
 document.addEventListener('click',e=>{
   if(e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;

@@ -38,6 +38,7 @@ const lines = [
   '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
   url('/', '1.0', 'weekly'),
   url('/products', '0.9', 'weekly'),
+  url('/express', '0.9', 'weekly'),
   url('/quote', '0.8', 'monthly'),
   url('/blog', '0.8', 'weekly'),
   '',

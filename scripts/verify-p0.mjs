@@ -1,90 +1,73 @@
-// P0 acceptance verification — drives the real app in a headless browser.
-// Run: node scripts/verify-p0.mjs  (dev server must be on BASE)
+// P0 acceptance verification for the production v2 homepage.
+// Run after build against a Vite preview server on BASE.
 import { chromium } from 'playwright';
 
 const BASE = process.env.BASE || 'http://localhost:5175';
 const results = [];
-const ok = (n, p, d = '') => results.push({ n, pass: p, d });
+const ok = (name, pass, detail = '') => results.push({ name, pass: Boolean(pass), detail });
 
 const browser = await chromium.launch();
-const ctx = await browser.newContext();
-const page = await ctx.newPage();
-
-// Collect console errors + page exceptions across the whole run
+const context = await browser.newContext();
+const page = await context.newPage();
 const consoleErrors = [];
-page.on('console', (m) => { if (m.type() === 'error') consoleErrors.push(m.text()); });
-page.on('pageerror', (e) => consoleErrors.push('pageerror: ' + e.message));
+page.on('console', (message) => { if (message.type() === 'error') consoleErrors.push(message.text()); });
+page.on('pageerror', (error) => consoleErrors.push(`pageerror: ${error.message}`));
 
-// Mock Formspree so the submit-path test sends NO real email
+// Local preview does not provide Vercel telemetry. Keep the gate local and deterministic.
+await context.route('**/_vercel/**', (route) => route.fulfill({ status: 200, contentType: 'text/javascript', body: '' }));
+await context.route('**/googletagmanager.com/**', (route) => route.fulfill({ status: 200, contentType: 'text/javascript', body: '' }));
+
 let formspreeHits = 0;
-let lastBody = null;
-await ctx.route('**/formspree.io/**', async (route) => {
+let lastBody = '';
+await context.route('**/formspree.io/**', async (route) => {
   formspreeHits++;
-  try { lastBody = route.request().postDataJSON(); } catch { lastBody = route.request().postData(); }
+  try { lastBody = JSON.stringify(route.request().postDataJSON()); }
+  catch { lastBody = route.request().postData() || ''; }
   await route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ ok: true }) });
 });
 
-// ---------- CHECK 4: /privacy direct load, not 404 ----------
-await page.goto(`${BASE}/privacy`, { waitUntil: 'networkidle' });
-const privacyH1 = (await page.locator('h1').first().innerText().catch(() => '')).trim();
-ok('4a. /privacy direct load renders policy (not 404)',
-  privacyH1.includes('นโยบายความเป็นส่วนตัว'), `h1="${privacyH1}"`);
-const hasCompanyTax = await page.getByText('0105567196422').count();
-ok('4b. /privacy shows company tax ID (COMPANY_INFO)', hasCompanyTax > 0);
+// The production homepage is public/v2.html after postbuild-home.mjs.
+const homeResponse = await page.goto(`${BASE}/`, { waitUntil: 'networkidle' });
+ok('1a. homepage responds successfully', homeResponse?.ok(), `status=${homeResponse?.status()}`);
+ok('1b. v2 footer renders', await page.locator('#footer').count() === 1);
+ok('1c. footer carries the legal company tax ID', (await page.locator('#footer').innerText()).includes('0105567196422'));
 
-// ---------- CHECK 4: footer privacy link navigates ----------
-await page.goto(`${BASE}/`, { waitUntil: 'networkidle' });
-const footerLink = page.locator('footer a[href="/privacy"]').first();
-ok('4c. footer has /privacy link', await footerLink.count() > 0);
-await footerLink.click();
-await page.waitForURL('**/privacy');
-ok('4d. footer link → /privacy (no 404)', page.url().endsWith('/privacy'));
+const footerQuote = page.locator('#footer a[href="/quote"]').first();
+ok('1d. footer has a quote CTA', await footerQuote.count() === 1);
+if (await footerQuote.count()) {
+  await footerQuote.click();
+  await page.waitForURL('**/quote');
+}
+ok('1e. footer quote CTA opens /quote', new URL(page.url()).pathname === '/quote', `url=${page.url()}`);
 
-// ---------- CHECK 3 + submit path: /quote ----------
-await page.goto(`${BASE}/quote`, { waitUntil: 'networkidle' });
-const qSubmit = page.getByRole('button', { name: /ส่งใบขอราคา/ });
-ok('3a. /quote submit DISABLED before consent', await qSubmit.isDisabled());
-await page.getByRole('checkbox').first().check();
-ok('3b. /quote submit ENABLED after consent', await qSubmit.isEnabled());
+const form = page.locator('#quoteForm');
+ok('2a. /quote renders the v2 quote form', await form.count() === 1);
+const submit = form.locator('button[type="submit"]');
 
-// ---------- CHECK 3 + submit path: home RFQ ----------
-await page.goto(`${BASE}/`, { waitUntil: 'networkidle' });
-// RFQ lives in an #rfq section on the home page
-await page.locator('#rfq').scrollIntoViewIfNeeded().catch(() => {});
-const rSubmit = page.locator('#rfq').getByRole('button', { name: /ส่งขอใบเสนอราคา|กำลังส่ง/ });
-ok('3c. home RFQ submit DISABLED before consent', await rSubmit.isDisabled());
-// fill required fields
-await page.locator('#rfq input').first().fill('ทดสอบ Playwright');
-await page.locator('#rfq input').nth(1).fill('golf1200s@gmail.com');
-const rConsent = page.locator('#rfq input[type="checkbox"]').first();
-await rConsent.check();
-ok('3d. home RFQ submit ENABLED after consent', await rSubmit.isEnabled());
+// Invalid submission must stay local and show validation instead of sending a lead.
+await submit.click();
+await page.waitForTimeout(150);
+ok('2b. incomplete form does not POST', formspreeHits === 0, `hits=${formspreeHits}`);
+ok('2c. incomplete form exposes validation state', await page.locator('#qf-name[aria-invalid="true"]').count() === 1);
 
-// ---------- CHECK 1 (client path): RFQ actually POSTs to Formspree ----------
-await rSubmit.click();
-await page.waitForTimeout(800);
-ok('1a. RFQ submit fires Formspree POST', formspreeHits > 0, `hits=${formspreeHits}`);
-ok('1b. POST body carries _subject + contact',
-  !!(lastBody && lastBody._subject && lastBody['ติดต่อ']),
-  lastBody ? `subject="${lastBody._subject}"` : 'no body');
-// success screen shows after ok:true
-const successShown = await page.getByText('ได้รับคำขอแล้ว').count();
-ok('1c. RFQ shows success state on ok:true', successShown > 0);
-
-// ---------- CHECK 5: console clean ----------
-ok('5. no console errors / page exceptions', consoleErrors.length === 0,
-  consoleErrors.slice(0, 5).join(' | '));
+await page.locator('#qf-name').fill('Playwright QA');
+await page.locator('#qf-email').fill('qa@example.com');
+await submit.click();
+await page.waitForTimeout(500);
+ok('3a. valid quote form fires one mocked Formspree POST', formspreeHits === 1, `hits=${formspreeHits}`);
+ok('3b. POST body carries the submitted contact', lastBody.includes('Playwright QA') && lastBody.includes('qa@example.com'));
+ok('3c. success state is shown after ok:true', await page.locator('#qok.show').count() === 1);
+ok('4. no console errors / page exceptions', consoleErrors.length === 0, consoleErrors.slice(0, 5).join(' | '));
 
 await browser.close();
 
-// ---------- report ----------
-let pass = 0;
-console.log('\n================ P0 BROWSER VERIFICATION ================');
-for (const r of results) {
-  console.log(`${r.pass ? 'PASS' : 'FAIL'}  ${r.n}${r.d ? `  — ${r.d}` : ''}`);
-  if (r.pass) pass++;
+let passed = 0;
+console.log('\n================ P0 V2 VERIFICATION ================');
+for (const result of results) {
+  console.log(`${result.pass ? 'PASS' : 'FAIL'}  ${result.name}${result.detail ? `  — ${result.detail}` : ''}`);
+  if (result.pass) passed++;
 }
-console.log(`--------------------------------------------------------`);
-console.log(`${pass}/${results.length} checks passed`);
-console.log('========================================================\n');
-process.exit(pass === results.length ? 0 : 1);
+console.log('----------------------------------------------------');
+console.log(`${passed}/${results.length} checks passed`);
+console.log('====================================================\n');
+process.exit(passed === results.length ? 0 : 1);

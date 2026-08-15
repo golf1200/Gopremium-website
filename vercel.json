@@ -11,6 +11,7 @@
     { "source": "/old", "destination": "/old.html" },
     { "source": "/old/(.*)", "destination": "/old.html" },
     { "source": "/exclusive", "destination": "/exclusive.html" },
+    { "source": "/express", "destination": "/express/index.html" },
     { "source": "/((?!api/).*)", "destination": "/index.html" }
   ],
   "headers": [

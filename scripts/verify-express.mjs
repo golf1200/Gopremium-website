@@ -4,7 +4,8 @@
  * รันหลัง build โดยชี้ที่ preview server:  node scripts/verify-express.mjs [baseUrl]
  */
 import { chromium } from 'playwright';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
+import { gaId } from '../src/config.js';
 
 const BASE = process.argv[2] || 'http://localhost:4177';
 const fails = [];
@@ -19,6 +20,51 @@ const counts = {
   ontime: ex.filter((p) => p.ship_tier === 'ontime').length,
   plan: ex.filter((p) => p.ship_tier === 'plan').length,
 };
+
+// When the standalone /express landing is active, its public Product Truth
+// must use the same per-SKU ship_label as the Website catalogue. This catches
+// blanket 7–14 (or any other) copy drifting away from the actual SKU contract.
+const vercel = JSON.parse(readFileSync('vercel.json', 'utf8'));
+const standaloneActive = (vercel.rewrites || []).some((rewrite) =>
+  rewrite.source === '/express' && rewrite.destination === '/express/index.html');
+if (standaloneActive) {
+  const landingPath = 'public/express/index.html';
+  const truthPath = 'public/marketing-product-truth.js';
+  if (!existsSync(landingPath) || !existsSync(truthPath)) {
+    bad('standalone /express rewrite is active but its landing or Product Truth file is missing');
+  } else {
+    const truthSource = readFileSync(truthPath, 'utf8');
+    const truthMatch = truthSource.match(/Object\.freeze\((\{[\s\S]*\})\);\s*$/);
+    if (!truthMatch) {
+      bad('public Marketing Product Truth is not parseable');
+    } else {
+      const truth = JSON.parse(truthMatch[1]);
+      const rawBySku = new Map(raw.map((product) => [product.sku, product]));
+      const drift = (truth.products || []).filter((product) =>
+        rawBySku.get(product.sku)?.ship_label !== product.express_message);
+      drift.length
+        ? bad(`Product Truth ship_label drift: ${drift.map((product) => product.sku).join(', ')}`)
+        : ok(`Product Truth ตรง ship_label ราย SKU ครบ ${truth.products.length} รายการ`);
+    }
+    const landingSource = readFileSync(landingPath, 'utf8');
+    /ส่งภายใน\s*7[–-]14\s*วัน/.test(landingSource)
+      ? bad('standalone landing hardcode 7–14 วันแบบเหมารวม')
+      : ok('standalone landing ไม่เหมารวมว่า Express ทุก SKU ส่ง 7–14 วัน');
+    const landingText = landingSource.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
+    /วันส่ง.{0,60}(?:จาก|ตาม|ตรวจจาก)\s*Product Master/i.test(landingText)
+      ? bad('standalone landing อ้างวันส่งว่าเป็นข้อมูลจาก Product Master ทั้งที่ source คือ Website snapshot ราย SKU')
+      : ok('standalone landing แยก authority ราคา/MOQ กับวันส่งถูกต้อง');
+    landingSource.includes(`googletagmanager.com/gtag/js?id=${gaId}`) && landingSource.includes(`gtag('config','${gaId}'`)
+      ? ok(`standalone landing ใช้ GA4 ID ตรง src/config.js (${gaId})`)
+      : bad(`standalone landing ไม่มี GA4 ID จาก src/config.js (${gaId})`);
+    /\bAW-\d+/i.test(landingSource)
+      ? bad('standalone landing มี Google Ads AW tag ที่ยังไม่ยืนยัน')
+      : ok('standalone landing ไม่มี Google Ads AW tag');
+    landingSource.includes("track('express_rfq_click'") && landingSource.includes("track('add_to_quote'")
+      ? ok('standalone landing มี event wiring สำหรับ Express CTA และ product RFQ')
+      : bad('standalone landing ขาด event wiring สำหรับ Express CTA/RFQ');
+  }
+}
 
 console.log(`\n🔍 ตรวจ ${BASE}/express  (ข้อมูลจริง: rush ${counts.rush} / ontime ${counts.ontime} / plan ${counts.plan})\n`);
 
@@ -56,6 +102,15 @@ const rushBadges = badges.filter((b) => b.includes('7–14') || b.includes('10�
 rushBadges.length <= counts.rush
   ? ok(`ป้าย "ด่วน ≤14 วัน" มี ${rushBadges.length} ใบ (ไม่เกิน ${counts.rush} ตามข้อมูล)`)
   : bad(`ป้าย ≤14 วัน มี ${rushBadges.length} ใบ แต่ข้อมูลมีแค่ ${counts.rush} — เคลมเกินจริง`);
+const renderedLabels = new Map(await page.locator('.ecard').evaluateAll((cards) => cards.map((card) => [
+  new URL(card.getAttribute('href'), location.href).pathname,
+  (card.querySelector('.ebadge')?.textContent || '').replace('⚡', '').trim(),
+])));
+const labelDrift = ex.filter((product) =>
+  renderedLabels.get(`/product/${product.slug || product.sku}`) !== product.ship_label);
+labelDrift.length
+  ? bad(`ป้ายวันส่งไม่ตรง ship_label: ${labelDrift.slice(0, 8).map((product) => product.sku).join(', ')}`)
+  : ok(`ป้ายวันส่งตรง ship_label ราย SKU ครบ ${ex.length} รายการ`);
 
 // 4. ฟิลเตอร์เดดไลน์ทำงาน: กด "ภายใน 14 วัน" ต้องเหลือเท่า rush
 await page.locator('.dchip', { hasText: 'ภายใน 14 วัน' }).first().click();
@@ -74,6 +129,54 @@ const h1 = (await page.locator('h1').first().innerText().catch(() => '')) || '';
 // 6. FAQ/หมายเหตุอธิบายวิธีนับวัน
 const body = await page.locator('body').innerText();
 /นับตั้งแต่/.test(body) ? ok('มีหมายเหตุอธิบายวิธีนับวัน') : bad('ไม่มีหมายเหตุอธิบายวิธีนับวัน');
+
+// Verify the standalone landing runtime separately. Vite preview resolves a
+// directory index at /express/, while Vercel applies /express -> /express/index.html.
+if (standaloneActive) {
+  const trackingContext = await browser.newContext();
+  await trackingContext.addInitScript(() => {
+    window.__events = [];
+    window.dataLayer = [];
+    const originalPush = window.dataLayer.push.bind(window.dataLayer);
+    window.dataLayer.push = function (...items) {
+      for (const item of items) window.__events.push(Array.from(item));
+      return originalPush(...items);
+    };
+  });
+  await trackingContext.route('**/googletagmanager.com/**', (route) =>
+    route.fulfill({ status: 200, contentType: 'text/javascript', body: '' }));
+  await trackingContext.route('https://fonts.googleapis.com/**', (route) =>
+    route.fulfill({ status: 200, contentType: 'text/css', body: '' }));
+  const trackingPage = await trackingContext.newPage();
+  await trackingPage.goto(`${BASE}/express/?gclid=qa-click&utm_source=google&utm_medium=cpc`, { waitUntil: 'networkidle' });
+  const quoteLinks = trackingPage.locator('[data-quote-link], [data-product-rfq]');
+  const attributionPreserved = (await quoteLinks.evaluateAll((links) => links.map((link) => {
+    const url = new URL(link.getAttribute('href'), location.href);
+    return url.searchParams.get('gclid') === 'qa-click' && url.searchParams.get('utm_source') === 'google' && url.searchParams.get('utm_medium') === 'cpc';
+  }))).every(Boolean);
+  attributionPreserved ? ok('standalone CTA เก็บ gclid/UTM ไปหน้า quote ครบ') : bad('standalone CTA ทำ gclid/UTM หลุด');
+
+  await trackingPage.evaluate(() => { window.__events = []; });
+  const heroCta = trackingPage.locator('[data-quote-link][data-placement="hero"]');
+  await heroCta.evaluate((link) => link.addEventListener('click', (event) => event.preventDefault(), { once: true }));
+  await heroCta.click();
+  let tracked = await trackingPage.evaluate(() => window.__events);
+  tracked.some((event) => event[0] === 'event' && event[1] === 'express_rfq_click' && event[2]?.placement === 'hero')
+    ? ok('standalone hero CTA ยิง express_rfq_click')
+    : bad('standalone hero CTA ไม่ยิง express_rfq_click');
+
+  await trackingPage.evaluate(() => { window.__events = []; });
+  const productCta = trackingPage.locator('[data-product-rfq]').first();
+  await productCta.evaluate((link) => link.addEventListener('click', (event) => event.preventDefault(), { once: true }));
+  await productCta.click();
+  tracked = await trackingPage.evaluate(() => window.__events);
+  const productSku = await productCta.getAttribute('data-product-rfq');
+  const addToQuote = tracked.find((event) => event[0] === 'event' && event[1] === 'add_to_quote');
+  addToQuote?.[2]?.sku === productSku && !('gclid' in (addToQuote?.[2] || {}))
+    ? ok(`standalone product CTA ยิง add_to_quote แบบไม่ส่ง click ID (${productSku})`)
+    : bad('standalone product CTA event ผิดหรือมี click ID ปน');
+  await trackingContext.close();
+}
 
 await browser.close();
 console.log(fails.length ? `\n❌ ไม่ผ่าน ${fails.length} ข้อ\n` : '\n✅ ผ่านทั้งหมด\n');
