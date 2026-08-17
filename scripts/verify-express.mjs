@@ -27,6 +27,12 @@ const counts = {
 const vercel = JSON.parse(readFileSync('vercel.json', 'utf8'));
 const standaloneActive = (vercel.rewrites || []).some((rewrite) =>
   rewrite.source === '/express' && rewrite.destination === '/express/index.html');
+standaloneActive
+  ? bad('/express ยังถูก standalone landing ทับอยู่')
+  : ok('/express ใช้ catalogue experience เดิม');
+existsSync('public/express/index.html')
+  ? bad('ไฟล์ standalone /express ยังอยู่และอาจแย่ง route เดิม')
+  : ok('ไม่มีไฟล์ standalone ที่แย่ง route /express');
 if (standaloneActive) {
   const landingPath = 'public/express/index.html';
   const truthPath = 'public/marketing-product-truth.js';
@@ -70,6 +76,8 @@ console.log(`\n🔍 ตรวจ ${BASE}/express  (ข้อมูลจริ�
 
 const browser = await chromium.launch();
 const page = await browser.newPage();
+await page.route('**/googletagmanager.com/**', (route) =>
+  route.fulfill({ status: 200, contentType: 'text/javascript', body: '' }));
 const errors = [];
 // _vercel/insights + speed-insights มีเฉพาะบน Vercel — รันในเครื่องจะ 404 เสมอ ไม่ใช่ error จริง
 const IGNORE = /_vercel\/(insights|speed-insights)/;
@@ -126,9 +134,39 @@ const h1 = (await page.locator('h1').first().innerText().catch(() => '')) || '';
   ? bad(`H1 ยังเคลมเวลาส่งเหมารวม: "${h1.replace(/\n/g, ' ')}"`)
   : ok(`H1 ไม่เคลมเวลาส่งเหมารวม: "${h1.replace(/\n/g, ' ')}"`);
 
-// 6. FAQ/หมายเหตุอธิบายวิธีนับวัน
+// 6. หมายเหตุชัดว่าเป็นช่วงคัดเบื้องต้นและต้องยืนยันคิวก่อนสั่ง
 const body = await page.locator('body').innerText();
-/นับตั้งแต่/.test(body) ? ok('มีหมายเหตุอธิบายวิธีนับวัน') : bad('ไม่มีหมายเหตุอธิบายวิธีนับวัน');
+/ไม่ใช่ SLA/.test(body) && /ยืนยัน.{0,40}คิวจริงก่อนสั่ง/.test(body)
+  ? ok('มีคำเตือน non-SLA และยืนยันคิวก่อนสั่ง')
+  : bad('ขาดคำเตือน non-SLA หรือการยืนยันคิวก่อนสั่ง');
+/ตอบกลับ.{0,20}2\s*ชม\.|Mockup ก่อนผลิตทุก/.test(body)
+  ? bad('หน้า Express ยังมีคำรับประกัน 2 ชม. หรือ Mockup ทุกงานที่ไม่มีหลักฐานรองรับ')
+  : ok('หน้า Express ไม่มีคำรับประกัน 2 ชม. หรือ Mockup ทุกงาน');
+
+// 7. Attribution and non-PII Express event survive the restored SPA route
+await page.goto(`${BASE}/express?gclid=qa-click&utm_source=google&utm_medium=cpc`, { waitUntil: 'networkidle' });
+const expressQuote = page.locator('[data-express-rfq="hero"]');
+const quoteHref = await expressQuote.getAttribute('href');
+const quoteUrl = new URL(quoteHref, BASE);
+quoteUrl.searchParams.get('gclid') === 'qa-click' && quoteUrl.searchParams.get('utm_source') === 'google' && quoteUrl.searchParams.get('utm_medium') === 'cpc'
+  ? ok('Express CTA เก็บ gclid/UTM ไปหน้า quote ครบ')
+  : bad('Express CTA ทำ gclid/UTM หลุด');
+await page.evaluate(() => { window.dataLayer = []; });
+await expressQuote.click();
+await page.waitForFunction(() => location.pathname === '/quote');
+const trackedEvents = await page.evaluate(() => (window.dataLayer || []).map((entry) => Array.from(entry)));
+const expressEvent = trackedEvents.find((entry) => entry[0] === 'event' && entry[1] === 'express_rfq_click');
+expressEvent && !('gclid' in (expressEvent[2] || {}))
+  ? ok('Express CTA ยิง express_rfq_click โดยไม่ส่ง click ID เข้า GA4')
+  : bad('Express CTA ไม่ยิง event หรือส่ง click ID เข้า GA4');
+const capturedAttribution = await page.locator('#quoteForm').evaluate((form) => ({
+  gclid: form.elements.gclid.value,
+  utmSource: form.elements.utm_source.value,
+  utmMedium: form.elements.utm_medium.value,
+}));
+capturedAttribution.gclid === 'qa-click' && capturedAttribution.utmSource === 'google' && capturedAttribution.utmMedium === 'cpc'
+  ? ok('ฟอร์ม quote รับ attribution ต่อจากหน้า Express ครบ')
+  : bad('ฟอร์ม quote รับ attribution จากหน้า Express ไม่ครบ');
 
 // Verify the standalone landing runtime separately. Vite preview resolves a
 // directory index at /express/, while Vercel applies /express -> /express/index.html.

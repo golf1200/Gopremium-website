@@ -558,6 +558,7 @@ a.occ:hover{transform:translateY(-4px);box-shadow:var(--sh-md)}
 .nh .promo.ai{background:linear-gradient(115deg,#fff 30%,#eef3fb)}
 .nh .promo.budget{background:linear-gradient(115deg,#fff 30%,#f6f0e3)}
 .nh .promo.express{background:linear-gradient(115deg,#fff 30%,#fdf3da)}
+.nh .promo.express .im::after{content:"";position:absolute;z-index:1;inset:0 auto 0 0;width:36%;pointer-events:none;background:linear-gradient(90deg,#fdf3da 72%,rgba(253,243,218,0))}
 /* occasions */
 .nh .occg{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .nh .occ2{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
@@ -717,7 +718,28 @@ const repImg=cat=>{const a=byCat[cat]||[];const r=a.find(p=>p.img)||a[0];return 
 
 /* ===== analytics (GA4 events — SPA) ===== */
 function track(ev,params){try{if(window.gtag)gtag('event',ev,params||{});}catch(e){}}
-document.addEventListener('click',e=>{const a=e.target.closest&&e.target.closest('a[href*="lin.ee"]');if(a)track('contact_line',{source:(location.pathname||'/')});});
+const ATTRIBUTION_KEYS=['gclid','gbraid','wbraid','utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+const ATTRIBUTION_STORAGE_KEY='gp_attribution_v1';
+function captureAttribution(){
+  try{
+    const current=new URLSearchParams(location.search);let saved={};
+    try{saved=JSON.parse(sessionStorage.getItem(ATTRIBUTION_STORAGE_KEY)||'{}')}catch(_e){}
+    ATTRIBUTION_KEYS.forEach(key=>{const value=current.get(key);if(value)saved[key]=value;});
+    sessionStorage.setItem(ATTRIBUTION_STORAGE_KEY,JSON.stringify(saved));return saved;
+  }catch(_e){return {};}
+}
+function attributedQuoteHref(sku=''){
+  const saved=captureAttribution(),params=new URLSearchParams();
+  ATTRIBUTION_KEYS.forEach(key=>{if(saved[key])params.set(key,saved[key]);});
+  if(sku)params.set('sku',sku);
+  const query=params.toString();return `/quote${query?`?${query}`:''}`;
+}
+captureAttribution();
+document.addEventListener('click',e=>{
+  const line=e.target.closest&&e.target.closest('a[href*="lin.ee"]');if(line)track('contact_line',{source:(location.pathname||'/')});
+  const expressRfq=e.target.closest&&e.target.closest('[data-express-rfq]');if(expressRfq)track('express_rfq_click',{source:'express_catalogue',placement:expressRfq.dataset.expressRfq||'page'});
+  const addToQuote=e.target.closest&&e.target.closest('[data-add-to-quote]');if(addToQuote)track('add_to_quote',{sku:addToQuote.dataset.addToQuote,source:'product_detail'});
+});
 
 /* ===== reusable bits ===== */
 const PTIER={value:'เริ่มต้นคุ้ม',smart:'คุ้มค่าน่าเลือก',premium:'พรีเมียม',executive:'ระดับผู้บริหาร'};
@@ -984,8 +1006,8 @@ function viewHome(){
 
   <section style="padding:0"><div class="wrap">
     <div class="promo express">
-      <div class="tx"><span class="eyebrow2">Express Service</span><h3>งานด่วน?<br>รู้วันส่งก่อนสั่ง</h3><p>บอกเดดไลน์มา เราคัดเฉพาะรุ่นที่ทันจริง — ทุกชิ้นระบุจำนวนวัน ราคา และ MOQ ไว้แล้ว<span class="nb">ไม่ต้องรอใบเสนอราคา</span></p><a class="btn btn-secondary" href="/express">⚡ ดูสินค้าส่งด่วน</a></div>
-      <div class="im"><img loading="lazy" src="banners/banner1.webp" alt="งานด่วนพร้อมส่ง 7–14 วัน"></div>
+      <div class="tx"><span class="eyebrow2">Express Service</span><h3>งานด่วน?<br>ดูช่วงวันส่งก่อนสั่ง</h3><p>บอกเดดไลน์มา แล้วคัดจากช่วงวันส่งราย SKU พร้อม MOQ — โปรดยืนยันรายละเอียดและคิวจริงก่อนสั่ง</p><a class="btn btn-secondary" href="/express">⚡ ดูสินค้าส่งด่วน</a></div>
+      <div class="im"><img loading="lazy" src="banners/banner1.webp" alt="บริการสินค้าส่งด่วน GO PREMIUM"></div>
     </div>
   </div></section>
 
@@ -1201,7 +1223,7 @@ function viewProduct(sku){
           ${p.logoMax?`<div><div class="k">พื้นที่โลโก้สูงสุด</div><div class="v">${esc(p.logoMax)} ซม.</div></div>`:''}
           <div style="grid-column:1/-1"><div class="k">เทคนิคพิมพ์โลโก้ฟรี</div><div class="chips">${logos.map(x=>`<span>${esc(x)}</span>`).join('')}</div></div>
         </div>
-        <div class="pd-cta"><a class="btn btn-primary btn-lg" href="/quote?sku=${encodeURIComponent(p.sku)}">ขอใบเสนอราคาสินค้านี้</a><a class="btn btn-line-ghost btn-lg" href="https://lin.ee/z1GT1KR" target="_blank" rel="noopener">สอบถามทาง LINE</a></div>
+        <div class="pd-cta"><a class="btn btn-primary btn-lg" data-add-to-quote="${esc(p.sku)}" href="${attributedQuoteHref(p.sku)}">ขอใบเสนอราคาสินค้านี้</a><a class="btn btn-line-ghost btn-lg" href="https://lin.ee/z1GT1KR" target="_blank" rel="noopener">สอบถามทาง LINE</a></div>
         <p class="muted" style="font-size:12.5px;margin-top:14px">* ราคาอ้างอิงที่ 300 ชิ้น พิมพ์โลโก้ · ทำ Mockup ให้ดูก่อนผลิตจริงทุกงาน · ตอบกลับใน 2 ชม.</p>
       </div></div>
     <div class="related"><div class="shead center" style="margin-bottom:26px"><h2 class="h2" style="font-size:26px">สินค้าอื่นในหมวด ${esc(CL[p.catSlug]||p.cat)}</h2></div><div class="pgrid">${rel.map(p=>card(p)).join('')}</div></div>
@@ -1247,9 +1269,9 @@ function ecard(p){
     <div class="pfoot"><span class="emoq">MOQ ${p.moq}</span><span class="ecta">ขอราคา →</span></div></div></a>`;
 }
 const EXPRESS_POINTS=[
-  ['บอกวันส่งจริงรายชิ้น','ทุกรุ่นระบุจำนวนวันไว้บนการ์ด ไม่ใช่คำโฆษณาเดียวคลุมทั้งหมด'],
-  ['ตอบกลับ + เสนอราคาใน 2 ชม.','แจ้งจำนวนและกำหนดรับงาน เราเช็กคิวผลิตและยืนยันให้ไว'],
-  ['Mockup ก่อนผลิตเสมอ','แม้งานด่วนก็ยังเห็นแบบก่อนผลิตจริง ลดความเสี่ยงงานพลาด'],
+  ['แสดงช่วงวันส่งรายชิ้น','ทุกรุ่นใช้ข้อมูลเว็บไซต์ราย SKU ไม่ใช้คำโฆษณาเดียวคลุมทั้งหมด'],
+  ['ส่งบรีฟเพื่อยืนยันคิว','แจ้งจำนวนและกำหนดรับงาน เพื่อให้ทีมตรวจความเป็นไปได้ก่อนสั่ง'],
+  ['ตรวจรายละเอียดก่อนเริ่มงาน','ทีมยืนยันงานพิมพ์ แบบ และเงื่อนไขจริงในใบเสนอราคา'],
 ];
 /* ฟิลเตอร์หลักของหน้าส่งด่วน = "คุณต้องใช้ภายในกี่วัน" (คำถามจริงของคนสั่ง ไม่ใช่หมวดสินค้า) */
 var EXP_DAYS=25;
@@ -1257,8 +1279,6 @@ function expSetDays(d){EXP_DAYS=d;document.getElementById('app').innerHTML=viewE
 function viewExpress(){
   const all=expressList();
   const list=all.filter(p=>(p.shipMax||99)<=EXP_DAYS);
-  const nRush=all.filter(p=>p.shipTier==='rush').length;
-  const fastest=all.length?Math.min(...all.map(p=>p.shipMin||99)):7;
   const dchips=SHIP_TIERS.map(t=>{
     const n=all.filter(p=>(p.shipMax||99)<=t.max).length;
     return `<button class="dchip${EXP_DAYS===t.max?' on':''}" onclick="expSetDays(${t.max})">ภายใน ${t.max} วัน<small>${t.note} · ${n} รายการ</small></button>`;
@@ -1266,25 +1286,24 @@ function viewExpress(){
   const groups={};list.forEach(p=>{(groups[p.catSlug]=groups[p.catSlug]||[]).push(p);});
   const cats=EXPRESS_CAT_ORDER.filter(c=>groups[c]).concat(Object.keys(groups).filter(c=>!EXPRESS_CAT_ORDER.includes(c)));
   const chips=cats.map(c=>`<a class="echip" href="#ecat-${c}">${esc(CL[c]||c)} (${groups[c].length})</a>`).join('');
-  const sections=cats.map(c=>`<div class="ecat" id="ecat-${c}"><div class="ecat-head"><h3>${esc(CL[c]||c)}</h3><span class="ecat-n">${groups[c].length} รายการ · พร้อมผลิต</span></div><div class="pgrid">${groups[c].map(ecard).join('')}</div></div>`).join('');
+  const sections=cats.map(c=>`<div class="ecat" id="ecat-${c}"><div class="ecat-head"><h3>${esc(CL[c]||c)}</h3><span class="ecat-n">${groups[c].length} รายการ · ตรวจคิวก่อนสั่ง</span></div><div class="pgrid">${groups[c].map(ecard).join('')}</div></div>`).join('');
   const body=list.length
-    ? `<div class="shead" style="margin-top:6px"><span class="eyebrow"><span class="dot"></span>ระบุวันส่งจริงทุกชิ้น</span><h2 class="h2">คุณต้องใช้ของ · <span class="nb">ภายในกี่วัน?</span></h2><p class="lead">เลือกจากเดดไลน์ของคุณ แล้วดูเฉพาะรุ่นที่ทันจริง — ทุกชิ้นบอกจำนวนวัน ราคา และ MOQ ไว้แล้ว<span class="nb">ไม่ต้องขอใบเสนอราคาก่อน</span></p></div>
+    ? `<div class="shead" style="margin-top:6px"><span class="eyebrow"><span class="dot"></span>แสดงช่วงวันส่งราย SKU</span><h2 class="h2">คุณต้องใช้ของ · <span class="nb">ภายในกี่วัน?</span></h2><p class="lead">เลือกช่วงเวลาที่ต้องการ แล้วดูรุ่นที่อยู่ในกลุ่มนั้น — การ์ดแสดงช่วงวันส่งและ MOQ เพื่อคัดเบื้องต้นก่อนส่งบรีฟ</p></div>
        <div class="dchips">${dchips}</div>
-       <p class="dnote">นับตั้งแต่อนุมัติ mockup โลโก้และชำระมัดจำ จนของถึงมือพร้อมโลโก้ (ไม่รวมวันหยุดนักขัตฤกษ์) — รุ่นที่ผลิตนานกว่า 25 วันเราไม่เอามาไว้ในหน้านี้</p>
+       <p class="dnote">ช่วงวันส่งมาจากข้อมูลเว็บไซต์ล่าสุดราย SKU ใช้เพื่อคัดสินค้าเบื้องต้น ไม่ใช่ SLA — โปรดยืนยันจำนวน รายละเอียดงานพิมพ์ และคิวจริงก่อนสั่ง</p>
        <div class="ecount">แสดง <b>${list.length}</b> รายการ · เรียงจากส่งเร็วสุด</div><div class="echips">${chips}</div>${sections}`
-    : `<div class="card" style="text-align:center;padding:40px 24px;margin-top:8px"><h4 style="font-size:18px;color:var(--navy);margin-bottom:8px">บอกโจทย์งานด่วนของคุณ เราจัดให้</h4><p class="muted" style="max-width:48ch;margin:0 auto 18px">แจ้งจำนวน กำหนดส่ง และงบ/ชิ้น — ทีมเราจะเสนอรุ่นที่ผลิตได้ทันงานด่วนพร้อมช่วงราคาให้ภายใน 2 ชม.</p></div>`;
+    : `<div class="card" style="text-align:center;padding:40px 24px;margin-top:8px"><h4 style="font-size:18px;color:var(--navy);margin-bottom:8px">บอกโจทย์งานด่วนของคุณ</h4><p class="muted" style="max-width:48ch;margin:0 auto 18px">แจ้งจำนวน กำหนดส่ง และงบ/ชิ้น เพื่อให้ทีมตรวจรุ่นและคิวที่เหมาะกับงาน</p></div>`;
   return `<section class="sec" style="padding-top:34px"><div class="wrap">
     <div class="crumbs"><a href="/">หน้าแรก</a> / <b>สินค้าส่งด่วน</b></div>
     <div class="nh" style="margin-bottom:32px"><div class="promo express">
       <div class="tx">
         <span class="eyebrow2"><span class="flash">⚡</span> Express Service · งานด่วน</span>
         <h1 class="h2" style="margin:0">สินค้าส่งด่วน<br>รู้วันส่ง<span class="nb">ก่อนสั่ง</span></h1>
-        <p>ไม่ต้องอีเมลไปถามว่า “ทันไหม” — ${all.length} รายการในหน้านี้ระบุจำนวนวันจริงไว้ทุกชิ้น เร็วสุด ${fastest}–14 วัน (${nRush} รายการ) พร้อม Mockup ก่อนผลิต<span class="nb">ทุกออเดอร์</span> ตอบกลับใน 2 ชม.</p>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:6px"><a class="btn btn-primary" href="https://lin.ee/z1GT1KR" target="_blank" rel="noopener">ทักด่วนทาง LINE →</a><a class="btn btn-ghost" style="border-color:rgba(31,58,95,.3);color:var(--navy)" href="/quote">ขอใบเสนอราคางานด่วน</a></div>
+        <p>${all.length} รายการในหน้านี้แสดงช่วงวันส่งจากข้อมูลเว็บไซต์ราย SKU เพื่อคัดเบื้องต้น พร้อม MOQ และรายละเอียดสินค้า — โปรดยืนยันจำนวน งานพิมพ์ และคิวจริงก่อนสั่ง</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:6px"><a class="btn btn-primary" href="https://lin.ee/z1GT1KR" target="_blank" rel="noopener">ทักด่วนทาง LINE →</a><a class="btn btn-ghost" data-express-rfq="hero" style="border-color:rgba(31,58,95,.3);color:var(--navy)" href="${attributedQuoteHref()}">ขอใบเสนอราคางานด่วน</a></div>
       </div>
-      <!-- ⚠️ banner1.webp มีข้อความ "งานด่วนพร้อมส่ง 7–14 วัน" ฝังอยู่ในรูป ซึ่งเคลมเกินจริง
-           (ของด่วน ≤14 วัน มีแค่ 25 จาก 118 รายการ) — ต้องเปลี่ยนรูปเป็นเวอร์ชันไม่มีตัวเลข -->
-      <div class="im"><img loading="eager" src="banners/banner1.webp" alt="บริการงานด่วน GO PREMIUM — ระบุวันส่งจริงรายชิ้น"></div>
+      <!-- ปิดข้อความ 7–14 วันในภาพด้วย overlay; ป้ายบนการ์ดเป็น authority ราย SKU -->
+      <div class="im"><img loading="eager" src="banners/banner1.webp" alt="บริการสินค้าส่งด่วน GO PREMIUM"></div>
     </div></div>
     <div class="g-auto svc-grid">${EXPRESS_POINTS.map(s=>`<div class="card svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1L12 16.8 5.7 21l2.3-7.1-6-4.5h7.6z"/></svg></div><h4>${s[0]}</h4><p>${s[1]}</p></div>`).join('')}</div>
     ${body}
@@ -1739,7 +1758,7 @@ function render(){
     else setMeta(DEF_TITLE,DEF_DESC,'/');}
   else if(h==='/about'){app.innerHTML=viewAbout();setMeta('เกี่ยวกับเรา — GO PREMIUM by Passion Grow Trading','GO PREMIUM ผู้ออกแบบและผลิตของพรีเมียมและของขวัญองค์กร เชื่อในการให้ที่มีความหมาย ครบวงจรตั้งแต่ไอเดียถึงส่งมอบ','/about');}
   else if(h==='/portfolio'){app.innerHTML=viewPortfolio();bindQuote();initPortfolioVideo();initPortfolio();setMeta('ผลงานของเรา — องค์กรที่ไว้วางใจ ตัวอย่างสินค้าจริง + วิดีโอเครื่องพิมพ์ | GO PREMIUM','ขอบคุณองค์กรชั้นนำที่ไว้วางใจ GO PREMIUM รวมโลโก้ลูกค้า ตัวอย่างสินค้าจริงพร้อม Mockup และวิดีโอเบื้องหลังการพิมพ์','/portfolio');}
-  else if(h==='/express'){app.innerHTML=viewExpress();setMeta('ของพรีเมียมส่งด่วน พิมพ์โลโก้ รู้วันส่งก่อนสั่ง | GO PREMIUM','ของขวัญองค์กรพิมพ์โลโก้ที่ระบุวันส่งจริงรายชิ้น เร็วสุด 7–14 วัน เห็นราคาและ MOQ ทุกชิ้นก่อนขอใบเสนอราคา ตอบกลับใน 2 ชม.','/express');}
+  else if(h==='/express'){app.innerHTML=viewExpress();setMeta('ของพรีเมียมส่งด่วน พิมพ์โลโก้ รู้วันส่งก่อนสั่ง | GO PREMIUM','รวมสินค้าส่งด่วนพร้อมช่วงวันส่งจากข้อมูลเว็บไซต์ราย SKU และ MOQ สำหรับคัดเบื้องต้น โปรดยืนยันรายละเอียดและคิวจริงก่อนสั่ง','/express');}
   else if(h==='about'){app.innerHTML=viewHome();bindQuote();initHero();initAIType();setMeta(DEF_TITLE,DEF_DESC,'/');setTimeout(()=>{const a=document.getElementById('about');if(a)a.scrollIntoView();},60);return;}
   else{app.innerHTML=viewHome();bindQuote();setMeta(DEF_TITLE,DEF_DESC,'/');setFaqLD();}
   if(document.querySelector('.hero-slides')){initHero();initAIType();}
@@ -1748,8 +1767,8 @@ function render(){
 window.addEventListener('hashchange',render);
 /* ===== clean-path navigation (real /paths, intercepted → pushState, no reload) ===== */
 // SPA routes handled in-app; everything else (/exclusive, /blog/*, /old, external) navigates normally.
-function isSpaPath(p){return p==='/'||p==='/products'||p==='/catalogue'||p==='/quote'||p==='/portfolio'||p==='/about'||/^\/category\//.test(p)||/^\/occasion\//.test(p)||/^\/budget\//.test(p)||/^\/product\//.test(p);}
-function nav(p){if(location.pathname!==p)history.pushState({},'',p);render();}
+function isSpaPath(p){return p==='/'||p==='/products'||p==='/catalogue'||p==='/quote'||p==='/portfolio'||p==='/express'||p==='/about'||/^\/category\//.test(p)||/^\/occasion\//.test(p)||/^\/budget\//.test(p)||/^\/product\//.test(p);}
+function nav(p){const next=new URL(p,location.origin);if(location.pathname+location.search!==next.pathname+next.search)history.pushState({},'',next.pathname+next.search);render();}
 document.addEventListener('click',e=>{
   if(e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
   const a=e.target.closest&&e.target.closest('a');if(!a)return;
@@ -1758,7 +1777,7 @@ document.addEventListener('click',e=>{
   if(/^(https?:|mailto:|tel:|#)/i.test(href))return;      // external + legacy hash links → default
   if(a.origin!==location.origin)return;
   if(!isSpaPath(a.pathname))return;                        // real static pages → let the browser load
-  e.preventDefault();nav(a.pathname);
+  e.preventDefault();nav(a.pathname+a.search);
 });
 window.addEventListener('popstate',render);
 

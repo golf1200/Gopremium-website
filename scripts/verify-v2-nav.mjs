@@ -79,12 +79,12 @@ ok('2b. /about shows brand story heading', aboutApp.includes('ประสบก
 ok('2c. /about is a dedicated page (no home hero headline)', !aboutApp.includes('คือประสบการณ์ที่น่าจดจำ') && !(await page.locator('#app .hero').count()));
 ok('2d. page scrolled to top (not mid-page)', (await page.evaluate(() => window.scrollY)) < 50);
 
-// 3. Express page renders the service banner
-await page.goto(`${BASE}/#/express`, { waitUntil: 'networkidle' });
+// 3. Express page renders the restored catalogue experience on the clean path
+await page.goto(`${BASE}/express`, { waitUntil: 'networkidle' });
 await page.waitForTimeout(150);
 const expApp = await page.locator('#app').innerText();
-ok('3a. /express shows "สินค้าส่งด่วน 7–14 วัน"', expApp.includes('สินค้าส่งด่วน') && expApp.includes('7–14 วัน'));
-ok('3b. /express shows service points', expApp.includes('ตอบกลับ') && expApp.includes('Mockup'));
+ok('3a. /express shows the catalogue and per-SKU delivery bands', expApp.includes('สินค้าส่งด่วน') && expApp.includes('ช่วงวันส่งราย SKU'));
+ok('3b. /express shows confirm-before-order service points', expApp.includes('ยืนยันคิว') && expApp.includes('ตรวจรายละเอียด'));
 ok('3c. /express has quote CTA', expApp.includes('ขอใบเสนอราคา'));
 
 // 6. Catalogue (สินค้าทั้งหมด) — new filters + AI filter
