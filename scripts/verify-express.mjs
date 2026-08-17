@@ -144,8 +144,9 @@ const body = await page.locator('body').innerText();
   : ok('หน้า Express ไม่มีคำรับประกัน 2 ชม. หรือ Mockup ทุกงาน');
 
 // 7. Attribution and non-PII Express event survive the restored SPA route
-await page.goto(`${BASE}/express?gclid=qa-click&utm_source=google&utm_medium=cpc`, { waitUntil: 'networkidle' });
+await page.goto(`${BASE}/express?gclid=qa-click&utm_source=google&utm_medium=cpc`, { waitUntil: 'domcontentloaded' });
 const expressQuote = page.locator('[data-express-rfq="hero"]');
+await expressQuote.waitFor({ state: 'visible' });
 const quoteHref = await expressQuote.getAttribute('href');
 const quoteUrl = new URL(quoteHref, BASE);
 quoteUrl.searchParams.get('gclid') === 'qa-click' && quoteUrl.searchParams.get('utm_source') === 'google' && quoteUrl.searchParams.get('utm_medium') === 'cpc'
