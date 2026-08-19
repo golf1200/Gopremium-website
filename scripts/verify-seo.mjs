@@ -1,6 +1,7 @@
 // SEO verification for the production v2 SPA landing pages.
 // Run after build against a Vite preview server on BASE.
 import { chromium } from 'playwright';
+import { readFileSync } from 'node:fs';
 
 const BASE = process.env.BASE || 'http://localhost:5173';
 const results = [];
@@ -84,6 +85,9 @@ ok('D3. product canonical is clean', await canonicalPath() === '/product/dw001',
 const quoteCta = page.locator('.pd-cta a[href^="/quote?sku="]').first();
 const quoteHref = await quoteCta.getAttribute('href');
 ok('D4. product quote CTA carries the SKU', new URL(quoteHref, BASE).searchParams.get('sku') === 'DW001', `href=${quoteHref}`);
+const staticProduct = readFileSync(new URL('../public/product/dw001/index.html', import.meta.url), 'utf8');
+ok('D5. static product entry fires view_item', staticProduct.includes("gtag('event','view_item'") && staticProduct.includes('"sku":"DW001"'));
+ok('D6. static product entry preserves ad attribution into quote', staticProduct.includes("'gp_attribution_v1'") && staticProduct.includes('data-product-quote'));
 
 await page.goto(`${BASE}/`, { waitUntil: 'domcontentloaded' });
 ok('E1. home has FAQPage JSON-LD', await hasJsonLdType('FAQPage'));

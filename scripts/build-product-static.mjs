@@ -183,6 +183,31 @@ ${p.logoMax ? `<div><div class="k">พื้นที่โลโก้สูง
     ? `<section class="related"><h2>สินค้าอื่นในหมวด ${esc(cat)}</h2><div class="pgrid">${rel.map((r) => `<a class="pcard" href="/product/${escAttr(r.slug || r.sku)}"><div class="pthumb"><span class="pchip">${esc(catLabel(r))}</span><img loading="lazy" src="${escAttr(r.img || main)}" alt="${escAttr(r.name)}"></div><div class="pbody"><div class="pname">${esc(r.name)}</div><div class="pprice">${esc(baht(r.price))}</div></div></a>`).join('')}</div></section>`
     : '';
 
+  const analyticsPayload = JSON.stringify({
+    sku: p.sku,
+    item_name: oneLine(p.name),
+    item_category: p.catSlug,
+    price: p.price || 0,
+  });
+  const productTracking = `<script>
+gtag('event','view_item',${analyticsPayload});
+try{
+  const keys=['gclid','gbraid','wbraid','utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+  const storageKey='gp_attribution_v1';const current=new URLSearchParams(location.search);let saved={};
+  try{saved=JSON.parse(sessionStorage.getItem(storageKey)||'{}')}catch(_e){}
+  keys.forEach((key)=>{const value=current.get(key);if(value)saved[key]=value;});
+  sessionStorage.setItem(storageKey,JSON.stringify(saved));
+  addEventListener('DOMContentLoaded',()=>{
+    const quote=document.querySelector('[data-product-quote]');
+    if(quote){
+      const params=new URLSearchParams();keys.forEach((key)=>{if(saved[key])params.set(key,saved[key]);});params.set('sku',${JSON.stringify(p.sku)});
+      quote.href='/quote?'+params.toString();
+      quote.addEventListener('click',()=>gtag('event','add_to_quote',{sku:${JSON.stringify(p.sku)},source:'product_detail_static'}));
+    }
+  });
+}catch(_e){}
+</script>`;
+
   return `<!doctype html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${escAttr(title)}</title>
 <meta name="description" content="${escAttr(desc)}">
@@ -192,7 +217,7 @@ ${p.logoMax ? `<div><div class="k">พื้นที่โลโก้สูง
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${escAttr(title)}"><meta name="twitter:description" content="${escAttr(desc)}"><meta name="twitter:image" content="${escAttr(ogImg)}">
 ${p.price ? `<meta property="product:price:amount" content="${escAttr(String(p.price))}"><meta property="product:price:currency" content="THB">` : ''}
 <link rel="icon" href="/favicon.png">${FONTS}${GTAG}${CSS}
-<script type="application/ld+json">${productLd(p)}</script>
+<script type="application/ld+json">${productLd(p)}</script>${productTracking}
 </head><body>
 ${header}
 <div class="wrap">
@@ -205,7 +230,7 @@ ${header}
 <p class="muted" style="font-size:16px;line-height:1.7">${esc(p.features || '')}</p>
 <div class="pd-price">${esc(baht(p.price))} <small>${p.price ? '/ ชิ้น (เริ่มที่ MOQ ' + esc(String(p.moq)) + ' ชิ้น)' : ''}</small></div>
 ${spec}
-<div class="pd-cta"><a class="btn btn-primary btn-lg" href="/quote?sku=${encodeURIComponent(p.sku)}">ขอใบเสนอราคาสินค้านี้</a><a class="btn btn-line btn-lg" href="https://lin.ee/z1GT1KR" target="_blank" rel="noopener">สอบถามทาง LINE</a></div>
+<div class="pd-cta"><a class="btn btn-primary btn-lg" data-product-quote href="/quote?sku=${encodeURIComponent(p.sku)}">ขอใบเสนอราคาสินค้านี้</a><a class="btn btn-line btn-lg" href="https://lin.ee/z1GT1KR" target="_blank" rel="noopener">สอบถามทาง LINE</a></div>
 <p class="muted" style="font-size:12.5px;margin-top:14px">* ราคาอ้างอิงที่ 300 ชิ้น พิมพ์โลโก้ · ทำ Mockup ให้ดูก่อนผลิตจริงทุกงาน · ตอบกลับใน 2 ชม.</p>
 </div>
 </div>
