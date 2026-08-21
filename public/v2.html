@@ -1060,6 +1060,46 @@ const OCC_FILTERS=[
   {k:'eco',label:'🌿 รักษ์โลก / ESG',cats:['lifestyle','bags','drinkware']},
   {k:'milestone',label:'🏆 ครบรอบ & Milestone',cats:['drinkware','giftset','souvenir']},
 ];
+// SEO money-page copy: grounded in Search Console demand (19 Aug 2026).
+// Keep this small and commercial; these pages are also the SEM landing pages.
+const SEO_LANDINGS={
+  cat:{
+    powerbank:{
+      h1:'พาวเวอร์แบงค์พรีเมี่ยม พิมพ์โลโก้ สำหรับองค์กร',
+      title:'พาวเวอร์แบงค์พรีเมี่ยม พิมพ์โลโก้ | GO PREMIUM',
+      desc:'รวมพาวเวอร์แบงค์พรีเมี่ยมสำหรับองค์กร พิมพ์โลโก้ได้ เลือกตามความจุ วัสดุ งบ และ MOQ พร้อมขอใบเสนอราคา',
+      intro:'เลือกพาวเวอร์แบงค์พรีเมี่ยมสำหรับแจกลูกค้า พนักงาน และงานอีเวนต์ เปรียบเทียบรุ่น ราคาเริ่มต้น และ MOQ ก่อนขอใบเสนอราคา'
+    },
+    souvenir:{
+      h1:'สั่งทำของชำร่วยองค์กร พิมพ์โลโก้',
+      title:'สั่งทำของชำร่วยองค์กร พิมพ์โลโก้ | GO PREMIUM',
+      desc:'สั่งทำของชำร่วยองค์กร ของแจกงานสัมมนาและอีเวนต์ พิมพ์โลโก้ เลือกตามงบ จำนวน และประเภทงาน พร้อมดูสินค้าและขอราคา',
+      intro:'รวมของชำร่วยองค์กรและของแจกสำหรับงานสัมมนา ออกบูธ และกิจกรรมบริษัท เลือกแบบที่เหมาะกับจำนวน งบ และภาพลักษณ์แบรนด์'
+    },
+    umbrella:{
+      h1:'ร่มพรีเมียม พิมพ์โลโก้ สำหรับองค์กร',
+      title:'ร่มพรีเมียม พิมพ์โลโก้ ราคาส่งองค์กร | GO PREMIUM',
+      desc:'ร่มพรีเมียมและร่มพับสำหรับองค์กร พิมพ์โลโก้ได้ เลือกขนาด สี งบ และ MOQ สำหรับแจกลูกค้า พนักงาน หรืองานอีเวนต์',
+      intro:'เลือกร่มพรีเมียมสำหรับแจกลูกค้า พนักงาน และงานกลางแจ้ง พร้อมเปรียบเทียบรุ่น ราคาเริ่มต้น และ MOQ ก่อนสั่งผลิต'
+    }
+  },
+  occ:{
+    welcome:{
+      h1:'ของขวัญต้อนรับพนักงานใหม่ และ Welcome Kit องค์กร',
+      title:'ของขวัญต้อนรับพนักงานใหม่ | Welcome Kit องค์กร',
+      desc:'ไอเดียของขวัญต้อนรับพนักงานใหม่และ Welcome Kit องค์กร เลือกกระบอกน้ำ กระเป๋า สมุด และของใช้ พิมพ์โลโก้ได้ตามงบ',
+      intro:'จัด Welcome Kit ให้พนักงานใหม่รู้สึกเป็นส่วนหนึ่งตั้งแต่วันแรก เลือกสินค้าให้เข้ากับงบ จำนวน และภาพลักษณ์องค์กร'
+    },
+    newyear:{
+      h1:'ของขวัญปีใหม่บริษัท 2027 สำหรับลูกค้าและพนักงาน',
+      title:'ของขวัญปีใหม่บริษัท 2027 พิมพ์โลโก้ | GO PREMIUM',
+      desc:'ไอเดียของขวัญปีใหม่บริษัท 2027 สำหรับลูกค้า พนักงาน และคู่ค้า เลือกตามงบ พิมพ์โลโก้ จัดเซ็ตได้ พร้อมวางแผนเวลาสั่งผลิต',
+      intro:'เริ่มวางแผนของขวัญปีใหม่บริษัท 2027 ล่วงหน้า เพื่อให้มีตัวเลือกครบและมีเวลาตรวจแบบ เลือกสินค้าตามผู้รับ งบ และจำนวนได้จากหน้านี้',
+      related:{href:'/blog/ของขวัญปีใหม่บริษัท-2027',label:'ดูไทม์ไลน์สั่งของขวัญปีใหม่ 2027'}
+    }
+  }
+};
+function seoLanding(type,key){return (SEO_LANDINGS[type]||{})[key]||null;}
 let FILTER={cat:'all',occ:'all',tier:'all',pmax:0,q:'',sort:'pop'};
 function viewCatalogue(opts){
   const o=typeof opts==='string'?{cat:opts}:(opts||{});
@@ -1069,14 +1109,17 @@ function viewCatalogue(opts){
   const catBtns=['all',...catList].map(c=>`<button data-cat="${c}" class="${c===FILTER.cat?'on':''}"><span class="lbl">${c==='all'?'ทั้งหมด':esc(CL[c])}</span><span class="n">${c==='all'?P.length:byCat[c].length}</span></button>`).join('');
   const tierBtns=['all','value','smart','premium','executive'].map(t=>`<button data-tier="${t}" class="${t===FILTER.tier?'on':''}"><span class="lbl">${t==='all'?'ทุกงบ':esc(TL[t])}</span></button>`).join('');
   const aiEx=['ของขวัญปีใหม่สำหรับพนักงาน งบ 150 บาท','ของขวัญลูกค้า VIP ดูพรีเมียม','ของแจกอีเวนต์ จำนวนมาก คุมงบได้','ของขวัญรักษ์โลก / ESG'];
+  const seo=o.cat&&o.cat!=='all'?seoLanding('cat',o.cat):(o.occ&&o.occ!=='all'?seoLanding('occ',o.occ):null);
   let pageH1;
-  if(o.cat&&o.cat!=='all')pageH1=(CL[o.cat]||o.cat)+' พิมพ์โลโก้ ของพรีเมียมองค์กร';
+  if(seo)pageH1=seo.h1;
+  else if(o.cat&&o.cat!=='all')pageH1=(CL[o.cat]||o.cat)+' พิมพ์โลโก้ ของพรีเมียมองค์กร';
   else if(o.occ&&o.occ!=='all')pageH1='ของขวัญ'+OCC_TITLE(o.occ)+' — ของพรีเมียมองค์กร';
   else if(o.tier&&o.tier!=='all')pageH1='ของพรีเมียมงบ '+(TL[o.tier]||o.tier);
   else pageH1='สินค้าทั้งหมด — ของพรีเมียมพิมพ์โลโก้';
   return `<section class="sec" style="padding-top:34px"><div class="wrap">
     <div class="crumbs"><a href="/">หน้าแรก</a> / <b id="crumbCat">สินค้าทั้งหมด</b></div>
     <h1 class="pageh1">${esc(pageH1)}</h1>
+    ${seo?`<div style="max-width:76ch;margin:10px 0 24px;color:var(--grey);font-size:15px;line-height:1.75"><p>${esc(seo.intro)}</p>${seo.related?`<p style="margin-top:8px"><a href="${seo.related.href}" style="color:var(--navy);font-family:var(--head);font-weight:700">${esc(seo.related.label)} →</a></p>`:''}</div>`:''}
     <div class="ai-hero">
       <div class="ai-hero-lead">
         <div><h2>✦ ให้ AI ช่วยคิดเซ็ตของขวัญ</h2><p>บอกโอกาส งบ และจำนวน — AI คัดสินค้าที่ตรงโจทย์ให้ทันที</p></div>
@@ -1749,8 +1792,8 @@ function render(){
   if(h==='/'){app.innerHTML=viewHome();bindQuote();setMeta(DEF_TITLE,DEF_DESC,'/');setFaqLD();}
   else if(h==='/all'){app.innerHTML=viewCatalogue('all');bindCatalogue();setMeta('สินค้าทั้งหมด '+P.length+' รายการ — ของพรีเมียมพิมพ์โลโก้ | GO PREMIUM','แคตตาล็อกของพรีเมียมพิมพ์โลโก้ '+P.length+' รายการ เลือกตามโอกาส งบประมาณ และหมวดสินค้า พร้อม Mockup ก่อนผลิต','/products');setListingLD('สินค้าทั้งหมด','/products');}
   else if(h==='/quote'){app.innerHTML=viewQuote();bindQuote();setMeta('ขอใบเสนอราคาของพรีเมียม — ตอบกลับใน 2 ชม. | GO PREMIUM','ขอใบเสนอราคาของขวัญองค์กรและของพรีเมียมพิมพ์โลโก้ ปรึกษาฟรี ตอบกลับพร้อมช่วงราคาภายใน 2 ชม.','/quote');}
-  else if((m=h.match(/^\/c\/(.+)$/))){const c=decodeURIComponent(m[1]);app.innerHTML=viewCatalogue({cat:c});bindCatalogue();setMeta((CL[c]||c)+' พิมพ์โลโก้ ราคาขายส่ง | GO PREMIUM',(CL[c]||c)+'สำหรับองค์กร พิมพ์โลโก้ได้ทุกชิ้น '+(byCat[c]?byCat[c].length+' รุ่น ':'')+'พร้อม Mockup ก่อนผลิต ขอใบเสนอราคาฟรี','/category/'+c);setListingLD(CL[c]||c,'/category/'+c);}
-  else if((m=h.match(/^\/o\/(.+)$/))){const o=decodeURIComponent(m[1]);app.innerHTML=viewCatalogue({occ:o});bindCatalogue();setMeta('ของขวัญ'+OCC_TITLE(o)+' — ของพรีเมียมองค์กร | GO PREMIUM','รวมของพรีเมียมและของขวัญองค์กรสำหรับ'+OCC_TITLE(o)+' พิมพ์โลโก้ จัดเซ็ตได้ พร้อม Mockup ก่อนผลิต','/occasion/'+o);setListingLD('ของขวัญ'+OCC_TITLE(o),'/occasion/'+o);}
+  else if((m=h.match(/^\/c\/(.+)$/))){const c=decodeURIComponent(m[1]),seo=seoLanding('cat',c);app.innerHTML=viewCatalogue({cat:c});bindCatalogue();setMeta(seo?seo.title:(CL[c]||c)+' พิมพ์โลโก้ ราคาขายส่ง | GO PREMIUM',seo?seo.desc:(CL[c]||c)+'สำหรับองค์กร พิมพ์โลโก้ได้ทุกชิ้น '+(byCat[c]?byCat[c].length+' รุ่น ':'')+'พร้อม Mockup ก่อนผลิต ขอใบเสนอราคาฟรี','/category/'+c);setListingLD(seo?seo.h1:(CL[c]||c),'/category/'+c);}
+  else if((m=h.match(/^\/o\/(.+)$/))){const o=decodeURIComponent(m[1]),seo=seoLanding('occ',o);app.innerHTML=viewCatalogue({occ:o});bindCatalogue();setMeta(seo?seo.title:'ของขวัญ'+OCC_TITLE(o)+' — ของพรีเมียมองค์กร | GO PREMIUM',seo?seo.desc:'รวมของพรีเมียมและของขวัญองค์กรสำหรับ'+OCC_TITLE(o)+' พิมพ์โลโก้ จัดเซ็ตได้ พร้อม Mockup ก่อนผลิต','/occasion/'+o);setListingLD(seo?seo.h1:'ของขวัญ'+OCC_TITLE(o),'/occasion/'+o);}
   else if((m=h.match(/^\/b\/(.+)$/))){const b=decodeURIComponent(m[1]);app.innerHTML=viewCatalogue({tier:b});bindCatalogue();setMeta('ของพรีเมียมงบ '+(TL[b]||b)+' | GO PREMIUM','ของขวัญองค์กรช่วงงบ '+(TL[b]||b)+' คัดแล้วว่าดูดีในงบ พิมพ์โลโก้ได้ พร้อมใบเสนอราคาใน 2 ชม.','/budget/'+b);setListingLD('งบ '+(TL[b]||b),'/budget/'+b);}
   else if((m=h.match(/^\/p\/(.+)$/))){const sku=decodeURIComponent(m[1]);app.innerHTML=viewProduct(sku);
     const p=P.find(x=>x.sku===sku);
