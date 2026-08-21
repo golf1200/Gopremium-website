@@ -4,6 +4,7 @@ import GpIcon from './shared/GpIcon';
 import { site } from '../config';
 import { sendQuote } from '../utils/sendQuote';
 import { track } from '../utils/analytics';
+import { getAttributionPayload, getAttributionSummary } from '../utils/attribution';
 
 export default function RFQ({ prefill }) {
   const [f, setF] = useState({ name: '', contact: '', occasion: 'ของขวัญปีใหม่พนักงาน', qty: '', date: '', budget: '', details: '' });
@@ -32,6 +33,7 @@ export default function RFQ({ prefill }) {
     setErr(e);
     if (Object.keys(e).length > 0) return;
 
+    const attribution = getAttributionPayload();
     const payload = {
       _subject: `[GO PREMIUM] ขอใบเสนอราคา — ${f.name}`,
       _gotcha: '',
@@ -42,12 +44,22 @@ export default function RFQ({ prefill }) {
       ต้องการรับงาน: f.date || '-',
       งบต่อชิ้น: f.budget || '-',
       รายละเอียด: f.details || '-',
+      ...attribution,
     };
 
     setStatus('submitting');
     const { ok } = await sendQuote(payload);
     if (ok) {
-      track('generate_lead', { source: 'home_rfq', occasion: f.occasion, budget: f.budget || undefined });
+      const attributionType = getAttributionSummary(attribution);
+      const eventParams = {
+        source: 'home_rfq',
+        occasion: f.occasion,
+        budget: f.budget || undefined,
+        attribution: attributionType,
+        landing_path: attribution.landing_path,
+      };
+      track('generate_lead', eventParams);
+      if (f.qty && f.budget && f.date) track('qualified_rfq', eventParams);
       setStatus('idle');
       setSent(true);
     } else {

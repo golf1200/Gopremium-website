@@ -12,11 +12,12 @@ import { useMeta } from '../hooks/useMeta';
 import { site } from '../config';
 import { sendQuote } from '../utils/sendQuote';
 import { track } from '../utils/analytics';
+import { ATTRIBUTION_KEYS, getAttributionPayload, getAttributionSummary } from '../utils/attribution';
 
 export default function QuotePage() {
   const { items, remove, updateQty, clear } = useQuoteCtx();
   const navigate = useNavigate();
-  const [f, setF] = useState({ name: '', company: '', contact: '', date: '', message: '' });
+  const [f, setF] = useState({ name: '', company: '', contact: '', date: '', budget: '', message: '' });
   const [err, setErr] = useState({});
   const [consent, setConsent] = useState(false);
   const [status, setStatus] = useState('idle'); // idle | submitting | success | error
@@ -54,6 +55,7 @@ export default function QuotePage() {
       return `- ${p?.name || it.name} (SKU: ${it.sku}) x${it.qty} ชิ้น`;
     }).join('\n');
 
+    const attribution = getAttributionPayload();
     const payload = {
       _subject: `[GO PREMIUM] ใบขอราคา — ${f.name} ${f.company ? `(${f.company})` : ''}`,
       _gotcha: '',
@@ -61,14 +63,23 @@ export default function QuotePage() {
       บริษัท: f.company || '-',
       ติดต่อ: f.contact,
       วันที่ต้องการ: f.date || '-',
+      งบประมาณรวม: f.budget || '-',
       รายการสินค้า: productLines,
       ข้อความเพิ่มเติม: f.message || '-',
+      ...attribution,
     };
 
     setStatus('submitting');
     const { ok } = await sendQuote(payload);
     if (ok) {
-      track('generate_lead', { source: 'quote_page', items: items.length });
+      const eventParams = {
+        source: 'quote_page',
+        items: items.length,
+        attribution: getAttributionSummary(attribution),
+        landing_path: attribution.landing_path,
+      };
+      track('generate_lead', eventParams);
+      if (f.company && f.date && f.budget && items.length > 0) track('qualified_rfq', eventParams);
       setStatus('success');
       clear();
     } else {
@@ -201,9 +212,14 @@ export default function QuotePage() {
           {/* Right: form */}
           <div style={{ background: '#fff', borderRadius: 16, padding: 'clamp(20px,3vw,32px)', boxShadow: 'var(--gp-shadow)' }}>
             <h2 style={{ fontSize: 20, color: 'var(--gp-navy)', marginBottom: 20, fontFamily: 'var(--gp-font-head)' }}>ข้อมูลการติดต่อ</h2>
-            <form onSubmit={submit} noValidate>
+            <form id="quoteForm" onSubmit={submit} noValidate>
               {/* honeypot */}
               <input type="text" name="_gotcha" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
+              {ATTRIBUTION_KEYS.map((key) => (
+                <input key={key} type="hidden" name={key} value={getAttributionPayload()[key]} readOnly />
+              ))}
+              <input type="hidden" name="landing_path" value={getAttributionPayload().landing_path} readOnly />
+              <input type="hidden" name="lead_id" value={getAttributionPayload().lead_id} readOnly />
 
               <Field label="ชื่อ *" error={err.name}>
                 <input className={`gp-input${err.name ? ' err' : ''}`} value={f.name} onChange={(e) => setField('name', e.target.value)} placeholder="ชื่อ-นามสกุล" />
@@ -216,6 +232,9 @@ export default function QuotePage() {
               </Field>
               <Field label="วันที่ต้องการรับสินค้า">
                 <input className="gp-input" type="date" value={f.date} onChange={(e) => setField('date', e.target.value)} />
+              </Field>
+              <Field label="งบประมาณรวม (฿)">
+                <input className="gp-input" inputMode="numeric" value={f.budget} onChange={(e) => setField('budget', e.target.value)} placeholder="เช่น 50,000" />
               </Field>
               <Field label="ข้อความเพิ่มเติม">
                 <textarea className="gp-textarea" value={f.message} onChange={(e) => setField('message', e.target.value)} placeholder="สี, ดีไซน์, ข้อกำหนดพิเศษ..." />

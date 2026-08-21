@@ -11,6 +11,7 @@ import ProductCard from '../components/ProductCard';
 import Breadcrumbs from '../components/Breadcrumbs';
 import { useMeta } from '../hooks/useMeta';
 import { track } from '../utils/analytics';
+import { buildAttributedPath } from '../utils/attribution';
 import { site, lineHref } from '../config';
 
 // ฟิลเตอร์หลักของหน้านี้ = "คุณต้องใช้ภายในกี่วัน" (ไม่ใช่หมวดสินค้า)
@@ -58,6 +59,7 @@ export default function ExpressPage() {
   const priced = all.filter((p) => p.price_300_thb != null);
   const minPrice = priced.length ? Math.min(...priced.map((p) => p.price_300_thb)) : null;
   const fastest = all.length ? Math.min(...all.map((p) => p.ship_days_min)) : null;
+  const quoteHref = buildAttributedPath('/quote');
 
   const breadcrumbLd = {
     '@context': 'https://schema.org',
@@ -183,8 +185,9 @@ export default function ExpressPage() {
           </p>
           <div style={{ display: 'flex', gap: 10, justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link
-              to="/quote"
-              onClick={() => track('cta_quote', { from: 'express' })}
+              to={quoteHref}
+              data-express-rfq="hero"
+              onClick={() => track('express_rfq_click', { placement: 'hero' })}
               className="gp-btn gp-btn-primary"
               style={{ textDecoration: 'none' }}
             >ขอใบเสนอราคา</Link>
