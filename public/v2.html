@@ -1363,9 +1363,7 @@ function viewPortfolio(){
   const ITM=[
     {s:'drink-chococrm-gold',cat:'drinkware',t:'กระบอกน้ำเก็บอุณหภูมิ สกรีนโลโก้',b:'ChocoCRM',f:1},
     {s:'drink-tumbler-copper',cat:'drinkware',t:'แก้วทัมเบลอร์สแตนเลส โทนทองแดง',b:'ChocoCRM',f:0},
-    {s:'drink-bottle-gift',cat:'drinkware',t:'ขวดน้ำพร้อมกล่องของขวัญ',b:'jobsdb',f:0},
     {s:'drink-tumbler-white',cat:'drinkware',t:'แก้วทัมเบลอร์ฝาหลอด มินิมอล',b:'NSC PR',f:0},
-    {s:'drink-bottles-pair',cat:'drinkware',t:'ขวดน้ำแก้วใสสกรีนโลโก้',b:'jobsdb',f:0},
     {s:'cap-lenso',cat:'cap',t:'หมวกแก๊ปปักโลโก้',b:'LENSO',f:0},
     {s:'cap-duo',cat:'cap',t:'หมวกแก๊ปทรงพรีเมียม',b:'LENSO · LION',f:0},
     {s:'bag-phoenix',cat:'bag',t:'กระเป๋าผ้าดีไซน์เฉพาะแบรนด์',b:'Phoenix',f:0},
@@ -1373,33 +1371,28 @@ function viewPortfolio(){
     {s:'bag-duffel',cat:'bag',t:'กระเป๋า Duffel พร้อมเซ็ตของขวัญ',b:'PBL',f:1},
     {s:'umb-vora-red',cat:'umbrella',t:'ร่มพับสกรีนโลโก้รอบปลอก',b:'Toyota วรจักร',f:1},
     {s:'umb-folded',cat:'umbrella',t:'ร่มพับทรงพรีเมียม',b:'KYONT',f:0},
-    {s:'fan-jobsdb',cat:'fan',t:'พัดลมพกพาสกรีนโลโก้ พร้อมกล่อง',b:'jobsdb',f:0},
     {s:'note-choco',cat:'stationery',t:'สมุดโน้ตปกสกรีนโลโก้',b:'ChocoCRM',f:0},
     {s:'pen-teal',cat:'stationery',t:'ปากกาโลหะสลักโลโก้',b:'GO PREMIUM',f:0},
-    {s:'pen-jobsdb',cat:'stationery',t:'ปากกาสกรีนโลโก้ สีประจำแบรนด์',b:'jobsdb',f:0},
     {s:'pillow-grey',cat:'lifestyle',t:'หมอนอิงสกรีนโลโก้แบรนด์',b:'OMODA · JAECOO',f:0},
     {s:'pillow-cream',cat:'lifestyle',t:'หมอนอิงปักโลโก้',b:'OMODA · JAECOO',f:0},
     {s:'gift-baankhanyt',cat:'giftset',t:'ชุดของขวัญงานหนังในกล่องไม้',b:'BAANKHANYT',f:1},
-    {s:'gift-jobsdb',cat:'giftset',t:'เซ็ตของขวัญพรีเมียมเพื่อการเข้าถึงลูกค้า',b:'jobsdb',f:1},
   ];
   const HS=[
     {img:'hero.jpg',b:'ChocoCRM'},
-    {img:'gift-jobsdb-lg.jpg',b:'jobsdb'},
     {img:'bag-lingoace-lg.jpg',b:'LingoAce Zoo'},
     {img:'gift-baankhanyt-lg.jpg',b:'BAANKHANYT'},
     {img:'umb-vora-red-lg.jpg',b:'Toyota วรจักร'},
   ];
   const FE=[
-    {s:'gift-jobsdb',num:'01',t:'เซ็ตของขวัญพรีเมียมเพื่อการเข้าถึงลูกค้า',b:'jobsdb',k:['โจทย์','สิ่งที่เราทำ','ผลลัพธ์'],v:['อยากเข้าถึงและสร้างความสัมพันธ์กับลูกค้ากลุ่มใหม่ให้กว้างขึ้น','จัดเซ็ตของพรีเมียมครบชุด (เสื้อ ขวดน้ำ พัดลม ปากกา) โทนแบรนด์ พร้อมกล่อง','ของพรีเมียมที่ส่งถึงมือลูกค้า ช่วยให้แบรนด์เข้าถึงและถูกจดจำในวงกว้าง']},
-    {s:'gift-baankhanyt',num:'02',t:'ชุดของขวัญงานหนังในกล่องไม้',b:'BAANKHANYT',k:['โจทย์','สิ่งที่เราทำ','ผลลัพธ์'],v:['ของขวัญลูกค้าคนสำคัญที่ต้องดูมีระดับ','งานหนังแท้สลักโลโก้ จัดวางในกล่องไม้พรีเมียม','ของขวัญที่สื่อถึงคุณค่าของแบรนด์ตั้งแต่แกะกล่อง']},
-    {s:'drink-chococrm-gold',num:'03',t:'กระบอกน้ำเก็บอุณหภูมิ สกรีนโลโก้',b:'ChocoCRM',k:['โจทย์','สิ่งที่เราทำ','ผลลัพธ์'],v:['ของพรีเมียมประจำแบรนด์ที่ใช้ได้จริงทุกวัน','กระบอกน้ำเก็บอุณหภูมิ โทนทอง สกรีนโลโก้คมชัด','ของที่ลูกค้าถือใช้ = แบรนด์ถูกเห็นซ้ำทุกวัน']},
-    {s:'bag-lingoace',num:'04',t:'กระเป๋าหูรูดดีไซน์สนุก',b:'LingoAce Zoo',k:['โจทย์','สิ่งที่เราทำ','ผลลัพธ์'],v:['ของพรีเมียมสำหรับกลุ่มเด็กและครอบครัว ต้องสดใสสะดุดตา','กระเป๋าหูรูดพิมพ์ลายเฉพาะแบรนด์เต็มใบ','ของแจกที่เด็กชอบ ใช้ต่อได้จริง แบรนด์จำง่าย']},
+    {s:'gift-baankhanyt',num:'01',t:'ชุดของขวัญงานหนังในกล่องไม้',b:'BAANKHANYT',k:['โจทย์','สิ่งที่เราทำ','ผลลัพธ์'],v:['ของขวัญลูกค้าคนสำคัญที่ต้องดูมีระดับ','งานหนังแท้สลักโลโก้ จัดวางในกล่องไม้พรีเมียม','ของขวัญที่สื่อถึงคุณค่าของแบรนด์ตั้งแต่แกะกล่อง']},
+    {s:'drink-chococrm-gold',num:'02',t:'กระบอกน้ำเก็บอุณหภูมิ สกรีนโลโก้',b:'ChocoCRM',k:['โจทย์','สิ่งที่เราทำ','ผลลัพธ์'],v:['ของพรีเมียมประจำแบรนด์ที่ใช้ได้จริงทุกวัน','กระบอกน้ำเก็บอุณหภูมิ โทนทอง สกรีนโลโก้คมชัด','ของที่ลูกค้าถือใช้ = แบรนด์ถูกเห็นซ้ำทุกวัน']},
+    {s:'bag-lingoace',num:'03',t:'กระเป๋าหูรูดดีไซน์สนุก',b:'LingoAce Zoo',k:['โจทย์','สิ่งที่เราทำ','ผลลัพธ์'],v:['ของพรีเมียมสำหรับกลุ่มเด็กและครอบครัว ต้องสดใสสะดุดตา','กระเป๋าหูรูดพิมพ์ลายเฉพาะแบรนด์เต็มใบ','ของแจกที่เด็กชอบ ใช้ต่อได้จริง แบรนด์จำง่าย']},
   ];
   const heroSlides=HS.map((s,i)=>`<div class="pf-slide${i?'':' on'}"><img src="${P_IMG}${s.img}" alt="งานจริงโดย GO PREMIUM — ${s.b}"${i?' loading="lazy"':''}><span class="pf-chip">งานจริง · <b>${s.b}</b></span></div>`).join('');
   const heroDots=HS.map((_,i)=>`<i class="${i?'':'on'}"></i>`).join('');
   const marq=[...CLIENTS,...CLIENTS].map(c=>`<img src="clients/${c}.png" alt="โลโก้ลูกค้าองค์กรของ GO PREMIUM" loading="lazy">`).join('');
   const featRows=FE.map((c,i)=>`<div class="pf-feat ${i%2?'rev':''} pf-rv"><div class="pf-media"><span class="bdg">${c.b}</span><img src="${P_IMG}${c.s}-lg.jpg" alt="${c.t} — งานจริงโดย GO PREMIUM" loading="lazy"></div><div><div class="pf-num">CASE ${c.num}</div><h3>${c.t}</h3><div class="pf-brand">ลูกค้า: ${c.b}</div><div class="pf-story">${c.k.map((k,j)=>`<div class="it"><div class="k">${k}</div><div class="v">${c.v[j]}</div></div>`).join('')}</div></div></div>`).join('');
-  const cats=['all',...Object.keys(CATL)];
+  const cats=['all',...Object.keys(CATL).filter(c=>ITM.some(i=>i.cat===c))];
   const filters=cats.map((c,i)=>`<button class="pf-chipf${i?'':' on'}" data-c="${c}">${c==='all'?'ทั้งหมด':CATL[c]}</button>`).join('');
   const cards=ITM.map(it=>`<div class="pf-card pf-rv" data-c="${it.cat}" data-img="${P_IMG}${it.f?it.s+'-lg':it.s}.jpg" data-t="${esc(it.t)}" data-b="${esc(it.b)}"><div class="im"><img src="${P_IMG}${it.s}.jpg" alt="${esc(it.t)}${it.b?' — '+esc(it.b):''} โดย GO PREMIUM" loading="lazy"></div><div class="tg">${CATL[it.cat]}</div><div class="ov"><div class="t">${esc(it.t)}</div>${it.b?`<div class="b">${esc(it.b)}</div>`:''}</div></div>`).join('');
   const steps=STEPS.map(s=>`<div class="pf-step pf-rv"><div class="nn">${s[0]}</div><div class="ic"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${s[4]}</svg></div><h4>${s[1]}${s[3]?'<span class="pf-aibadge">✦ AI</span>':''}</h4><p>${s[2]}</p></div>`).join('');
