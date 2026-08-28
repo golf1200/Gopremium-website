@@ -1,8 +1,8 @@
 // ============================================================
 // GO PREMIUM — /quote  Quote builder + RFQ submission
-// Email: info@passiongrow.co.th via Formspree
+// First-party /api/rfq handoff; email/CRM delivery happens downstream.
 // ============================================================
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useQuoteCtx } from '../contexts/QuoteContext';
 import { getProduct } from '../data/products';
@@ -10,7 +10,7 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import GpImage from '../components/shared/GpImage';
 import { useMeta } from '../hooks/useMeta';
 import { site } from '../config';
-import { sendQuote } from '../utils/sendQuote';
+import { buildQuotePayload, completeQuoteSubmission, restartQuoteSubmission, sendQuote } from '../utils/sendQuote';
 import { track } from '../utils/analytics';
 import { ATTRIBUTION_KEYS, getAttributionPayload, getAttributionSummary } from '../utils/attribution';
 
@@ -20,7 +20,11 @@ export default function QuotePage() {
   const [f, setF] = useState({ name: '', company: '', contact: '', date: '', budget: '', message: '' });
   const [err, setErr] = useState({});
   const [consent, setConsent] = useState(false);
+  const [honeypot, setHoneypot] = useState('');
   const [status, setStatus] = useState('idle'); // idle | submitting | success | error
+  const inFlightRef = useRef(false);
+  const pendingPayloadRef = useRef(null);
+  const isSubmitting = status === 'submitting';
 
   useMeta({
     title: 'ใบขอราคา — GO PREMIUM',
@@ -34,10 +38,29 @@ export default function QuotePage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  function setField(k, v) { setF((p) => ({ ...p, [k]: v })); if (err[k]) setErr((e) => ({ ...e, [k]: null })); }
+  function startNewLogicalSubmissionIfEdited() {
+    if (!pendingPayloadRef.current || inFlightRef.current) return;
+    pendingPayloadRef.current = null;
+    restartQuoteSubmission('quote_page');
+    setStatus('idle');
+  }
+
+  function setField(k, v) {
+    if (inFlightRef.current) return;
+    startNewLogicalSubmissionIfEdited();
+    setF((p) => ({ ...p, [k]: v }));
+    if (err[k]) setErr((e) => ({ ...e, [k]: null }));
+  }
+
+  function editCart(action) {
+    if (inFlightRef.current) return;
+    startNewLogicalSubmissionIfEdited();
+    action();
+  }
 
   async function submit(e) {
     e.preventDefault();
+    if (inFlightRef.current) return;
     const errs = {};
     if (!f.name.trim())    errs.name    = 'กรุณากรอกชื่อ';
     if (!f.contact.trim()) errs.contact = 'กรุณากรอกอีเมลหรือเบอร์';
@@ -56,21 +79,40 @@ export default function QuotePage() {
     }).join('\n');
 
     const attribution = getAttributionPayload();
-    const payload = {
-      _subject: `[GO PREMIUM] ใบขอราคา — ${f.name} ${f.company ? `(${f.company})` : ''}`,
-      _gotcha: '',
-      ชื่อ: f.name,
-      บริษัท: f.company || '-',
-      ติดต่อ: f.contact,
-      วันที่ต้องการ: f.date || '-',
-      งบประมาณรวม: f.budget || '-',
-      รายการสินค้า: productLines,
-      ข้อความเพิ่มเติม: f.message || '-',
-      ...attribution,
-    };
+    const contactIsEmail = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.contact.trim());
+    const payload = pendingPayloadRef.current || buildQuotePayload({
+      formType: 'quote_page',
+      contact: {
+        name: f.name,
+        company: f.company,
+        email: contactIsEmail ? f.contact.trim() : '',
+        phone: contactIsEmail ? '' : f.contact.trim(),
+      },
+      rfq: {
+        occasion: '',
+        qty: '',
+        date: f.date,
+        budget: f.budget,
+        source: '',
+        source_auto: '',
+        product: productLines,
+        details: f.message,
+        items: items.map((item) => ({
+          sku: item.sku,
+          name: getProduct(item.sku)?.name || item.name || '',
+          qty: item.qty,
+        })),
+      },
+      websiteQualified: Boolean(f.company.trim() && f.date && f.budget.trim() && items.length > 0),
+      consent,
+      honeypot,
+    });
+    pendingPayloadRef.current = payload;
 
+    inFlightRef.current = true;
     setStatus('submitting');
-    const { ok } = await sendQuote(payload);
+    const { ok, processing } = await sendQuote(payload);
+    inFlightRef.current = false;
     if (ok) {
       const eventParams = {
         source: 'quote_page',
@@ -79,9 +121,13 @@ export default function QuotePage() {
         landing_path: attribution.landing_path,
       };
       track('generate_lead', eventParams);
-      if (f.company && f.date && f.budget && items.length > 0) track('qualified_rfq', eventParams);
+      if (f.company.trim() && f.date && f.budget.trim() && items.length > 0) track('qualified_rfq', eventParams);
+      completeQuoteSubmission('quote_page');
+      pendingPayloadRef.current = null;
       setStatus('success');
       clear();
+    } else if (processing) {
+      setStatus('processing');
     } else {
       setStatus('error');
     }
@@ -156,23 +202,24 @@ export default function QuotePage() {
                         <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 8 }}>
                           <label style={{ fontSize: 12, color: 'var(--gp-grey)' }}>จำนวน:</label>
                           <div style={{ display: 'flex', alignItems: 'center', border: '1px solid var(--gp-grey-200)', borderRadius: 8, overflow: 'hidden' }}>
-                            <button onClick={() => updateQty(it.sku, Math.max((p?.moq || 50), it.qty - 50))}
+                            <button disabled={isSubmitting} onClick={() => editCart(() => updateQty(it.sku, Math.max((p?.moq || 50), it.qty - 50)))}
                               style={{ width: 28, height: 28, border: 'none', background: 'var(--gp-cloud)', cursor: 'pointer', fontSize: 16, color: 'var(--gp-navy)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>-</button>
                             <input
                               type="number"
                               value={it.qty}
                               min={p?.moq || 50}
                               step={50}
-                              onChange={(e) => updateQty(it.sku, Math.max(1, parseInt(e.target.value) || 1))}
+                              disabled={isSubmitting}
+                              onChange={(e) => editCart(() => updateQty(it.sku, Math.max(1, parseInt(e.target.value) || 1)))}
                               style={{ width: 52, border: 'none', textAlign: 'center', fontSize: 13, padding: '4px 0', outline: 'none' }}
                             />
-                            <button onClick={() => updateQty(it.sku, it.qty + 50)}
+                            <button disabled={isSubmitting} onClick={() => editCart(() => updateQty(it.sku, it.qty + 50))}
                               style={{ width: 28, height: 28, border: 'none', background: 'var(--gp-cloud)', cursor: 'pointer', fontSize: 16, color: 'var(--gp-navy)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>+</button>
                           </div>
                           <span style={{ fontSize: 12, color: 'var(--gp-grey)' }}>ชิ้น</span>
                         </div>
                       </div>
-                      <button onClick={() => remove(it.sku)}
+                      <button disabled={isSubmitting} onClick={() => editCart(() => remove(it.sku))}
                         aria-label="ลบ"
                         style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--gp-grey)', padding: 4, flexShrink: 0, fontSize: 18 }}>×</button>
                     </div>
@@ -182,11 +229,11 @@ export default function QuotePage() {
 
               {items.length > 0 && (
                 <div style={{ paddingBottom: 16, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <Link to="/products" style={{ fontSize: 13, color: 'var(--gp-navy)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 4 }}>
+                  <Link to="/products" aria-disabled={isSubmitting} tabIndex={isSubmitting ? -1 : undefined} onClick={(event) => { if (isSubmitting) event.preventDefault(); }} style={{ fontSize: 13, color: 'var(--gp-navy)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 4, pointerEvents: isSubmitting ? 'none' : undefined, opacity: isSubmitting ? 0.55 : 1 }}>
                     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 5v14M5 12h14"/></svg>
                     เพิ่มสินค้า
                   </Link>
-                  <button onClick={clear} style={{ fontSize: 12, color: 'var(--gp-danger)', background: 'none', border: 'none', cursor: 'pointer' }}>ล้างรายการ</button>
+                  <button disabled={isSubmitting} onClick={() => editCart(clear)} style={{ fontSize: 12, color: 'var(--gp-danger)', background: 'none', border: 'none', cursor: isSubmitting ? 'not-allowed' : 'pointer' }}>ล้างรายการ</button>
                 </div>
               )}
             </div>
@@ -212,9 +259,19 @@ export default function QuotePage() {
           {/* Right: form */}
           <div style={{ background: '#fff', borderRadius: 16, padding: 'clamp(20px,3vw,32px)', boxShadow: 'var(--gp-shadow)' }}>
             <h2 style={{ fontSize: 20, color: 'var(--gp-navy)', marginBottom: 20, fontFamily: 'var(--gp-font-head)' }}>ข้อมูลการติดต่อ</h2>
-            <form id="quoteForm" onSubmit={submit} noValidate>
+            <form id="quoteForm" onSubmit={submit} noValidate aria-busy={isSubmitting}>
               {/* honeypot */}
-              <input type="text" name="_gotcha" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
+              <input
+                type="text"
+                name="website"
+                value={honeypot}
+                onChange={(event) => { if (!inFlightRef.current) setHoneypot(event.target.value); }}
+                disabled={isSubmitting}
+                style={{ position: 'absolute', left: '-10000px', width: 1, height: 1, overflow: 'hidden' }}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+              />
               {ATTRIBUTION_KEYS.map((key) => (
                 <input key={key} type="hidden" name={key} value={getAttributionPayload()[key]} readOnly />
               ))}
@@ -222,22 +279,22 @@ export default function QuotePage() {
               <input type="hidden" name="lead_id" value={getAttributionPayload().lead_id} readOnly />
 
               <Field label="ชื่อ *" error={err.name}>
-                <input className={`gp-input${err.name ? ' err' : ''}`} value={f.name} onChange={(e) => setField('name', e.target.value)} placeholder="ชื่อ-นามสกุล" />
+                <input disabled={isSubmitting} className={`gp-input${err.name ? ' err' : ''}`} value={f.name} onChange={(e) => setField('name', e.target.value)} placeholder="ชื่อ-นามสกุล" />
               </Field>
               <Field label="บริษัท / องค์กร">
-                <input className="gp-input" value={f.company} onChange={(e) => setField('company', e.target.value)} placeholder="ชื่อบริษัท (ถ้ามี)" />
+                <input disabled={isSubmitting} className="gp-input" value={f.company} onChange={(e) => setField('company', e.target.value)} placeholder="ชื่อบริษัท (ถ้ามี)" />
               </Field>
               <Field label="อีเมล หรือ เบอร์โทร *" error={err.contact}>
-                <input className={`gp-input${err.contact ? ' err' : ''}`} value={f.contact} onChange={(e) => setField('contact', e.target.value)} placeholder="you@company.com หรือ 08x-xxx-xxxx" />
+                <input disabled={isSubmitting} className={`gp-input${err.contact ? ' err' : ''}`} value={f.contact} onChange={(e) => setField('contact', e.target.value)} placeholder="you@company.com หรือ 08x-xxx-xxxx" />
               </Field>
               <Field label="วันที่ต้องการรับสินค้า">
-                <input className="gp-input" type="date" value={f.date} onChange={(e) => setField('date', e.target.value)} />
+                <input disabled={isSubmitting} className="gp-input" type="date" value={f.date} onChange={(e) => setField('date', e.target.value)} />
               </Field>
               <Field label="งบประมาณรวม (฿)">
-                <input className="gp-input" inputMode="numeric" value={f.budget} onChange={(e) => setField('budget', e.target.value)} placeholder="เช่น 50,000" />
+                <input disabled={isSubmitting} className="gp-input" inputMode="numeric" value={f.budget} onChange={(e) => setField('budget', e.target.value)} placeholder="เช่น 50,000" />
               </Field>
               <Field label="ข้อความเพิ่มเติม">
-                <textarea className="gp-textarea" value={f.message} onChange={(e) => setField('message', e.target.value)} placeholder="สี, ดีไซน์, ข้อกำหนดพิเศษ..." />
+                <textarea disabled={isSubmitting} className="gp-textarea" value={f.message} onChange={(e) => setField('message', e.target.value)} placeholder="สี, ดีไซน์, ข้อกำหนดพิเศษ..." />
               </Field>
 
               {/* PDPA consent */}
@@ -245,12 +302,13 @@ export default function QuotePage() {
                 <input
                   type="checkbox"
                   checked={consent}
-                  onChange={(e) => { setConsent(e.target.checked); if (err.consent) setErr((p) => ({ ...p, consent: null })); }}
+                  disabled={isSubmitting}
+                  onChange={(e) => { if (inFlightRef.current) return; startNewLogicalSubmissionIfEdited(); setConsent(e.target.checked); if (err.consent) setErr((p) => ({ ...p, consent: null })); }}
                   style={{ width: 16, height: 16, marginTop: 2, accentColor: 'var(--gp-navy)', flex: '0 0 auto' }}
                 />
                 <span style={{ fontSize: 12.5, color: 'var(--gp-grey)', lineHeight: 1.55 }}>
-                  ฉันยินยอมให้ GO PREMIUM เก็บและใช้ข้อมูลเพื่อติดต่อกลับและเสนอราคา ตาม
-                  <Link to="/privacy" target="_blank" style={{ color: 'var(--gp-navy)', textDecoration: 'underline' }}>นโยบายความเป็นส่วนตัว</Link>
+                  ฉันยินยอมให้ GO PREMIUM เก็บและใช้ข้อมูลเพื่อติดต่อกลับ เสนอราคา และเชื่อมแหล่งที่มาของคำขอ ตาม
+                  <Link to="/privacy" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--gp-navy)', textDecoration: 'underline' }}>นโยบายความเป็นส่วนตัว (privacy-2026-08-28)</Link>
                 </span>
               </label>
               {err.consent && <p style={{ color: 'var(--gp-danger)', fontSize: 13, marginBottom: 8 }}>{err.consent}</p>}
@@ -260,15 +318,21 @@ export default function QuotePage() {
                   เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง หรือติดต่อ {site.email}
                 </p>
               )}
+              {status === 'processing' && (
+                <p style={{ color: 'var(--gp-navy)', fontSize: 13, marginBottom: 12 }}>
+                  ระบบกำลังตรวจสอบคำขอนี้ กดส่งอีกครั้งเพื่อตรวจสอบด้วยหมายเลขเดิม
+                </p>
+              )}
 
               <button
                 type="submit"
                 className="gp-btn gp-btn-primary gp-btn-lg"
                 style={{ width: '100%', marginTop: 4 }}
-                disabled={status === 'submitting' || !consent}
+                disabled={isSubmitting || !consent}
+                aria-busy={isSubmitting}
               >
-                {status === 'submitting' ? 'กำลังส่ง...' : 'ส่งใบขอราคา'}
-                {status !== 'submitting' && (
+                {isSubmitting ? 'กำลังส่ง...' : 'ส่งใบขอราคา'}
+                {!isSubmitting && (
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ marginLeft: 6 }}><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 )}
               </button>

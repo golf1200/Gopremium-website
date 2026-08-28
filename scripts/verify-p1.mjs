@@ -4,6 +4,7 @@ import { chromium } from 'playwright';
 import { site, gaId } from '../src/config.js';
 
 const BASE = process.env.BASE || 'http://localhost:5175';
+const HOME_URL = process.env.HOME_URL || `${BASE}/`;
 const results = [];
 const ok = (name, pass, detail = '') => results.push({ name, pass: Boolean(pass), detail });
 
@@ -21,15 +22,28 @@ await context.addInitScript(() => {
 });
 await context.route('**/_vercel/**', (route) => route.fulfill({ status: 200, contentType: 'text/javascript', body: '' }));
 await context.route('**/googletagmanager.com/**', (route) => route.fulfill({ status: 200, contentType: 'text/javascript', body: '' }));
-await context.route('**/formspree.io/**', (route) =>
-  route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ ok: true }) }));
+let submittedPayload = null;
+let formspreeHits = 0;
+await context.route('**/api/rfq', async (route) => {
+  submittedPayload = route.request().postDataJSON();
+  await route.fulfill({
+    status: 200,
+    contentType: 'application/json',
+    body: JSON.stringify({ ok: true, status: 'completed', submission_id: submittedPayload.submission_id, rfq_id: '7feee989-b36b-4893-bdec-72955fca398b' }),
+  });
+});
+await context.route('**/formspree.io/**', (route) => { formspreeHits++; return route.abort(); });
 
 const page = await context.newPage();
 const consoleErrors = [];
 page.on('console', (message) => { if (message.type() === 'error') consoleErrors.push(message.text()); });
 page.on('pageerror', (error) => consoleErrors.push(`pageerror: ${error.message}`));
 
-await page.goto(`${BASE}/`, { waitUntil: 'networkidle' });
+const trackedHome = new URL(HOME_URL);
+trackedHome.searchParams.set('gclid', 'qa-click');
+trackedHome.searchParams.set('utm_source', 'google');
+trackedHome.searchParams.set('utm_medium', 'cpc');
+await page.goto(trackedHome.href, { waitUntil: 'networkidle' });
 const canonical = await page.locator('link[rel="canonical"]').getAttribute('href');
 ok('1a. canonical follows config.siteUrl', canonical === site.siteUrl || canonical === `${site.siteUrl}/`, `canonical=${canonical}`);
 const ogUrl = await page.locator('meta[property="og:url"]').getAttribute('content');
@@ -54,13 +68,23 @@ ok('2c. LINE click fires contact_line', Boolean(lineEvent), JSON.stringify(lineE
 await page.evaluate(() => { window.__events = []; });
 await page.locator('#qf-name').fill('Playwright P1');
 await page.locator('#qf-email').fill('qa@example.com');
+await page.locator('#qf-company').fill('GO PREMIUM QA');
+await page.locator('#qf-qty').fill('200');
+await page.locator('#qf-date').fill('2026-09-30');
+await page.locator('#qf-budget').fill('300');
+await page.locator('#qf-consent').check();
 await page.locator('#quoteForm button[type="submit"]').click();
 await page.waitForTimeout(500);
 events = await page.evaluate(() => window.__events);
 const leadEvent = events.find((event) => event[0] === 'event' && event[1] === 'generate_lead');
 ok('3a. successful v2 RFQ fires generate_lead', Boolean(leadEvent), JSON.stringify(leadEvent?.[2] || null));
 ok('3b. generate_lead tags source=v2_quote_form', leadEvent?.[2]?.source === 'v2_quote_form');
-ok('3c. generate_lead carries a non-PII landing path', leadEvent?.[2]?.landing_path === '/');
+ok('3c. generate_lead carries a non-PII first landing path', leadEvent?.[2]?.landing_path === trackedHome.pathname);
+const qualifiedEvent = events.find((event) => event[0] === 'event' && event[1] === 'qualified_rfq');
+ok('3d. completed qualified form fires qualified_rfq', Boolean(qualifiedEvent), JSON.stringify(qualifiedEvent?.[2] || null));
+ok('3e. click ID stays in protected RFQ payload', submittedPayload?.attribution?.gclid === 'qa-click');
+ok('3f. click ID and PII never enter GA4 event params', !JSON.stringify(events).includes('qa-click') && !JSON.stringify(events).includes('qa@example.com') && !JSON.stringify(events).includes('Playwright P1'));
+ok('3g. browser does not call Formspree directly', formspreeHits === 0, `hits=${formspreeHits}`);
 ok('4. no console errors / page exceptions', consoleErrors.length === 0, consoleErrors.slice(0, 5).join(' | '));
 
 await browser.close();

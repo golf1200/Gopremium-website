@@ -29,13 +29,8 @@ export const site = {
 // LINE click handler target: real LINE link if set, else null (caller routes to form)
 export const lineHref = site.lineUrl || null;
 
-// ---------------------------------------------------------------------------
-// Formspree — RFQ email backend
-// 1. Go to https://formspree.io, sign up free, create a form
-// 2. Set the form email to info@passiongrow.co.th
-// 3. Paste the form ID here (the part after /f/ in the endpoint URL)
-// ---------------------------------------------------------------------------
-export const formspreeId = 'xbdejbyr'; // https://formspree.io/f/xbdejbyr → info@passiongrow.co.th
+// RFQs use the same-origin /api/rfq endpoint. CRM/email destinations and their
+// credentials are server-side Platform configuration, never browser config.
 
 // ---------------------------------------------------------------------------
 // GA4 — Google Analytics 4 (single source of truth)

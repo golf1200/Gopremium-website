@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "node scripts/sync-master-live.mjs && node scripts/build-catalogue-data.mjs && node generate-sitemap.js && node scripts/build-product-static.mjs && vite build && node scripts/postbuild-home.mjs",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:rfq": "node scripts/verify-rfq-attribution.mjs",
+    "test:rfq-react": "node scripts/verify-rfq-react.mjs"
   },
   "dependencies": {
     "@fal-ai/client": "^1.10.1",

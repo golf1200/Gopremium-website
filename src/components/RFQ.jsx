@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import GpIcon from './shared/GpIcon';
 import { site } from '../config';
-import { sendQuote } from '../utils/sendQuote';
+import { buildQuotePayload, completeQuoteSubmission, restartQuoteSubmission, sendQuote } from '../utils/sendQuote';
 import { track } from '../utils/analytics';
 import { getAttributionPayload, getAttributionSummary } from '../utils/attribution';
 
@@ -10,9 +10,13 @@ export default function RFQ({ prefill }) {
   const [f, setF] = useState({ name: '', contact: '', occasion: 'ของขวัญปีใหม่พนักงาน', qty: '', date: '', budget: '', details: '' });
   const [err, setErr] = useState({});
   const [consent, setConsent] = useState(false);
+  const [honeypot, setHoneypot] = useState('');
   const [status, setStatus] = useState('idle'); // idle | submitting | error
   const [sent, setSent] = useState(false);
   const ref = useRef(null);
+  const inFlightRef = useRef(false);
+  const pendingPayloadRef = useRef(null);
+  const isSubmitting = status === 'submitting';
 
   useEffect(() => {
     if (prefill && prefill.text) {
@@ -22,9 +26,22 @@ export default function RFQ({ prefill }) {
     }
   }, [prefill]);
 
-  function set(k, v) { setF((p) => ({ ...p, [k]: v })); if (err[k]) setErr((e) => ({ ...e, [k]: null })); }
+  function startNewLogicalSubmissionIfEdited() {
+    if (!pendingPayloadRef.current || inFlightRef.current) return;
+    pendingPayloadRef.current = null;
+    restartQuoteSubmission('home_rfq');
+    setStatus('idle');
+  }
+
+  function set(k, v) {
+    if (inFlightRef.current) return;
+    startNewLogicalSubmissionIfEdited();
+    setF((p) => ({ ...p, [k]: v }));
+    if (err[k]) setErr((e) => ({ ...e, [k]: null }));
+  }
 
   async function submit() {
+    if (inFlightRef.current) return;
     const e = {};
     if (!f.name.trim()) e.name = 'กรุณากรอกชื่อ-บริษัท';
     if (!f.contact.trim()) e.contact = 'กรุณากรอกอีเมลหรือเบอร์โทร';
@@ -34,21 +51,36 @@ export default function RFQ({ prefill }) {
     if (Object.keys(e).length > 0) return;
 
     const attribution = getAttributionPayload();
-    const payload = {
-      _subject: `[GO PREMIUM] ขอใบเสนอราคา — ${f.name}`,
-      _gotcha: '',
-      ชื่อ_บริษัท: f.name,
-      ติดต่อ: f.contact,
-      โอกาส_งาน: f.occasion,
-      จำนวน: f.qty || '-',
-      ต้องการรับงาน: f.date || '-',
-      งบต่อชิ้น: f.budget || '-',
-      รายละเอียด: f.details || '-',
-      ...attribution,
-    };
+    const contactIsEmail = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.contact.trim());
+    const payload = pendingPayloadRef.current || buildQuotePayload({
+      formType: 'home_rfq',
+      contact: {
+        name: f.name,
+        company: '',
+        email: contactIsEmail ? f.contact.trim() : '',
+        phone: contactIsEmail ? '' : f.contact.trim(),
+      },
+      rfq: {
+        occasion: f.occasion,
+        qty: f.qty,
+        date: f.date,
+        budget: f.budget,
+        source: '',
+        source_auto: '',
+        product: '',
+        details: f.details,
+        items: [],
+      },
+      websiteQualified: Boolean(f.qty.trim() && f.budget.trim() && f.date),
+      consent,
+      honeypot,
+    });
+    pendingPayloadRef.current = payload;
 
+    inFlightRef.current = true;
     setStatus('submitting');
-    const { ok } = await sendQuote(payload);
+    const { ok, processing } = await sendQuote(payload);
+    inFlightRef.current = false;
     if (ok) {
       const attributionType = getAttributionSummary(attribution);
       const eventParams = {
@@ -59,9 +91,13 @@ export default function RFQ({ prefill }) {
         landing_path: attribution.landing_path,
       };
       track('generate_lead', eventParams);
-      if (f.qty && f.budget && f.date) track('qualified_rfq', eventParams);
+      if (f.qty.trim() && f.budget.trim() && f.date) track('qualified_rfq', eventParams);
+      completeQuoteSubmission('home_rfq');
+      pendingPayloadRef.current = null;
       setStatus('idle');
       setSent(true);
+    } else if (processing) {
+      setStatus('processing');
     } else {
       setStatus('error');
     }
@@ -98,7 +134,7 @@ export default function RFQ({ prefill }) {
                 ทีม GO PREMIUM จะติดต่อกลับที่ <b style={{ color: 'var(--gp-navy)' }}>{f.contact}</b> พร้อมไอเดียและช่วงราคาภายใน 2 ชม.
               </p>
               <button className="gp-btn gp-btn-ghost" style={{ marginTop: 22 }}
-                onClick={() => { setSent(false); setF({ name:'', contact:'', occasion:'ของขวัญปีใหม่พนักงาน', qty:'', date:'', budget:'', details:'' }); }}>
+                onClick={() => { setSent(false); setConsent(false); setHoneypot(''); setF({ name:'', contact:'', occasion:'ของขวัญปีใหม่พนักงาน', qty:'', date:'', budget:'', details:'' }); }}>
                 ส่งคำขอใหม่
               </button>
             </div>
@@ -108,18 +144,18 @@ export default function RFQ({ prefill }) {
               <p style={{ fontSize: 12.5, color: 'var(--gp-grey)', marginBottom: 18 }}>ใช้เวลาไม่ถึง 1 นาที · <span style={{ color: 'var(--gp-danger)' }}>*</span> จำเป็น</p>
               <div className="gp-field" style={{ marginBottom: 13 }}>
                 <label className="gp-label">ชื่อ-บริษัท <span style={{ color: 'var(--gp-danger)' }}>*</span></label>
-                <input className={`gp-input${err.name ? ' err' : ''}`} value={f.name} onChange={(e) => set('name', e.target.value)} placeholder="เช่น คุณแป้ง · บริษัท ABC" />
+                <input disabled={isSubmitting} className={`gp-input${err.name ? ' err' : ''}`} value={f.name} onChange={(e) => set('name', e.target.value)} placeholder="เช่น คุณแป้ง · บริษัท ABC" />
                 {err.name && <span className="gp-errmsg">{err.name}</span>}
               </div>
               <div className="gp-field" style={{ marginBottom: 13 }}>
                 <label className="gp-label">อีเมล หรือ เบอร์โทร <span style={{ color: 'var(--gp-danger)' }}>*</span></label>
-                <input className={`gp-input${err.contact ? ' err' : ''}`} value={f.contact} onChange={(e) => set('contact', e.target.value)} placeholder="you@company.com หรือ 08x-xxx-xxxx" />
+                <input disabled={isSubmitting} className={`gp-input${err.contact ? ' err' : ''}`} value={f.contact} onChange={(e) => set('contact', e.target.value)} placeholder="you@company.com หรือ 08x-xxx-xxxx" />
                 {err.contact && <span className="gp-errmsg">{err.contact}</span>}
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 13, marginBottom: 13 }}>
                 <div className="gp-field">
                   <label className="gp-label">โอกาส / งาน</label>
-                  <select className="gp-select" value={f.occasion} onChange={(e) => set('occasion', e.target.value)}>
+                  <select disabled={isSubmitting} className="gp-select" value={f.occasion} onChange={(e) => set('occasion', e.target.value)}>
                     <option>ของขวัญปีใหม่พนักงาน</option>
                     <option>ของขวัญลูกค้า / คู่ค้า</option>
                     <option>อีเวนต์ / แคมเปญ</option>
@@ -129,38 +165,49 @@ export default function RFQ({ prefill }) {
                 </div>
                 <div className="gp-field">
                   <label className="gp-label">จำนวน (ชิ้น)</label>
-                  <input className="gp-input" value={f.qty} onChange={(e) => set('qty', e.target.value)} placeholder="เช่น 200" />
+                  <input disabled={isSubmitting} className="gp-input" value={f.qty} onChange={(e) => set('qty', e.target.value)} placeholder="เช่น 200" />
                 </div>
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 13, marginBottom: 13 }}>
                 <div className="gp-field">
                   <label className="gp-label">ต้องการรับงาน</label>
-                  <input className="gp-input" type="date" value={f.date} onChange={(e) => set('date', e.target.value)} />
+                  <input disabled={isSubmitting} className="gp-input" type="date" value={f.date} onChange={(e) => set('date', e.target.value)} />
                 </div>
                 <div className="gp-field">
                   <label className="gp-label">งบ/ชิ้น (฿)</label>
-                  <input className="gp-input" value={f.budget} onChange={(e) => set('budget', e.target.value)} placeholder="เช่น 300" />
+                  <input disabled={isSubmitting} className="gp-input" value={f.budget} onChange={(e) => set('budget', e.target.value)} placeholder="เช่น 300" />
                 </div>
               </div>
               <div className="gp-field" style={{ marginBottom: 18 }}>
                 <label className="gp-label">รายละเอียดเพิ่มเติม</label>
-                <textarea className="gp-textarea" value={f.details} onChange={(e) => set('details', e.target.value)} placeholder="บอกคอนเซ็ปต์หรือสินค้าที่สนใจ" />
+                <textarea disabled={isSubmitting} className="gp-textarea" value={f.details} onChange={(e) => set('details', e.target.value)} placeholder="บอกคอนเซ็ปต์หรือสินค้าที่สนใจ" />
               </div>
 
               {/* honeypot — hidden from users, traps bots */}
-              <input type="text" name="_gotcha" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
+              <input
+                type="text"
+                name="website"
+                value={honeypot}
+                onChange={(event) => { if (!inFlightRef.current) setHoneypot(event.target.value); }}
+                disabled={isSubmitting}
+                style={{ position: 'absolute', left: '-10000px', width: 1, height: 1, overflow: 'hidden' }}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+              />
 
               {/* PDPA consent */}
               <label style={{ display: 'flex', alignItems: 'flex-start', gap: 9, marginBottom: 6, cursor: 'pointer' }}>
                 <input
                   type="checkbox"
                   checked={consent}
-                  onChange={(ev) => { setConsent(ev.target.checked); if (err.consent) setErr((p) => ({ ...p, consent: null })); }}
+                  disabled={isSubmitting}
+                  onChange={(ev) => { if (inFlightRef.current) return; startNewLogicalSubmissionIfEdited(); setConsent(ev.target.checked); if (err.consent) setErr((p) => ({ ...p, consent: null })); }}
                   style={{ width: 16, height: 16, marginTop: 2, accentColor: 'var(--gp-navy)', flex: '0 0 auto' }}
                 />
                 <span style={{ fontSize: 12.5, color: 'var(--gp-grey)', lineHeight: 1.55 }}>
-                  ฉันยินยอมให้ GO PREMIUM เก็บและใช้ข้อมูลเพื่อติดต่อกลับและเสนอราคา ตาม
-                  <Link to="/privacy" target="_blank" style={{ color: 'var(--gp-navy)', textDecoration: 'underline' }}>นโยบายความเป็นส่วนตัว</Link>
+                  ฉันยินยอมให้ GO PREMIUM เก็บและใช้ข้อมูลเพื่อติดต่อกลับ เสนอราคา และเชื่อมแหล่งที่มาของคำขอ ตาม
+                  <Link to="/privacy" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--gp-navy)', textDecoration: 'underline' }}>นโยบายความเป็นส่วนตัว (privacy-2026-08-28)</Link>
                 </span>
               </label>
               {err.consent && <span className="gp-errmsg" style={{ display: 'block', marginBottom: 8 }}>{err.consent}</span>}
@@ -170,10 +217,15 @@ export default function RFQ({ prefill }) {
                   เกิดข้อผิดพลาด กรุณาลองใหม่ หรือติดต่อ {site.email}
                 </p>
               )}
+              {status === 'processing' && (
+                <p style={{ color: 'var(--gp-navy)', fontSize: 13, marginBottom: 12 }}>
+                  ระบบกำลังตรวจสอบคำขอนี้ กดส่งอีกครั้งเพื่อตรวจสอบด้วยหมายเลขเดิม
+                </p>
+              )}
 
               <button className="gp-btn gp-btn-primary gp-btn-lg" style={{ width: '100%' }} onClick={submit}
-                disabled={status === 'submitting' || !consent}>
-                {status === 'submitting' ? 'กำลังส่ง...' : <>ส่งขอใบเสนอราคา <GpIcon name="arrow" size={17} /></>}
+                disabled={isSubmitting || !consent} aria-busy={isSubmitting}>
+                {isSubmitting ? 'กำลังส่ง...' : <>ส่งขอใบเสนอราคา <GpIcon name="arrow" size={17} /></>}
               </button>
 
               {/* LINE alternative (brief §9.13) — lower-friction path for buyers who'd rather chat */}

@@ -650,6 +650,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       <li><a href="/exclusive">✦ Exclusive</a></li>
       <li><a href="/express">สินค้าส่งด่วน</a></li>
       <li><a href="/quote">ขอใบเสนอราคา</a></li>
+      <li><a href="/privacy">นโยบายความเป็นส่วนตัว</a></li>
       <li><a href="https://lin.ee/z1GT1KR" target="_blank" rel="noopener">ปรึกษาทาง LINE</a></li>
     </ul></div>
     <div><h4>ติดต่อเรา</h4><ul>
@@ -720,14 +721,38 @@ const repImg=cat=>{const a=byCat[cat]||[];const r=a.find(p=>p.img)||a[0];return 
 function track(ev,params){try{if(window.gtag)gtag('event',ev,params||{});}catch(e){}}
 const ATTRIBUTION_KEYS=['gclid','gbraid','wbraid','utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
 const ATTRIBUTION_STORAGE_KEY='gp_attribution_v1';
+const RFQ_CONTRACT_VERSION='rfq-attribution-v1';
+const RFQ_CONSENT_VERSION='privacy-2026-08-28';
+const RFQ_SUBMISSION_PREFIX='gp_rfq_submission_id_';
+const RFQ_SUBMITTED_AT_PREFIX='gp_rfq_submitted_at_';
+function correlationId(prefix=''){
+  if(window.crypto&&crypto.randomUUID)return crypto.randomUUID();
+  const bytes=new Uint8Array(16);if(window.crypto&&crypto.getRandomValues)crypto.getRandomValues(bytes);else for(let i=0;i<bytes.length;i++)bytes[i]=Math.floor(Math.random()*256);
+  bytes[6]=(bytes[6]&15)|64;bytes[8]=(bytes[8]&63)|128;const hex=[...bytes].map(value=>value.toString(16).padStart(2,'0')).join('');
+  return prefix+`${hex.slice(0,8)}-${hex.slice(8,12)}-${hex.slice(12,16)}-${hex.slice(16,20)}-${hex.slice(20)}`;
+}
 function captureAttribution(){
   try{
     const current=new URLSearchParams(location.search);let saved={};
     try{saved=JSON.parse(sessionStorage.getItem(ATTRIBUTION_STORAGE_KEY)||'{}')}catch(_e){}
-    ATTRIBUTION_KEYS.forEach(key=>{const value=current.get(key);if(value)saved[key]=value;});
+    const envelopeLocked=Object.prototype.hasOwnProperty.call(saved,'landing_path');
+    if(!envelopeLocked){ATTRIBUTION_KEYS.forEach(key=>{saved[key]=saved[key]||current.get(key)||'';});saved.landing_path=location.pathname||'/';saved.referrer_host='';if(document.referrer){try{saved.referrer_host=new URL(document.referrer).hostname}catch(_e){}}}
+    else{ATTRIBUTION_KEYS.forEach(key=>{if(typeof saved[key]!=='string')saved[key]='';});if(typeof saved.referrer_host!=='string')saved.referrer_host='';if(!saved.landing_path)saved.landing_path='/';}
+    saved.first_touch_locked=true;
+    let leadId=sessionStorage.getItem('gp_lead_id');if(!leadId){leadId=correlationId('lead_');sessionStorage.setItem('gp_lead_id',leadId);}saved.lead_id=leadId;
     sessionStorage.setItem(ATTRIBUTION_STORAGE_KEY,JSON.stringify(saved));return saved;
   }catch(_e){return {};}
 }
+function attributionSummary(saved=captureAttribution()){
+  if(saved.gclid||saved.gbraid||saved.wbraid)return 'paid_click';
+  if(saved.utm_source)return 'utm';
+  if(/google\./i.test(saved.referrer_host||''))return 'organic_search';
+  if(saved.referrer_host)return 'referral';
+  return 'direct';
+}
+function rfqSubmissionId(formType){const key=RFQ_SUBMISSION_PREFIX+formType;let id=sessionStorage.getItem(key);if(!id){id=correlationId();sessionStorage.setItem(key,id);}return id;}
+function rfqSubmittedAt(formType){const key=RFQ_SUBMITTED_AT_PREFIX+formType;let value=sessionStorage.getItem(key);if(!value){value=new Date().toISOString();sessionStorage.setItem(key,value);}return value;}
+function rotateRfqSubmissionId(formType){const id=correlationId();sessionStorage.setItem(RFQ_SUBMISSION_PREFIX+formType,id);sessionStorage.removeItem(RFQ_SUBMITTED_AT_PREFIX+formType);return id;}
 function attributedQuoteHref(sku=''){
   const saved=captureAttribution(),params=new URLSearchParams();
   ATTRIBUTION_KEYS.forEach(key=>{if(saved[key])params.set(key,saved[key]);});
@@ -758,6 +783,7 @@ function ctaBand(){return `<section class="sec" style="background:var(--cloud)">
 
 /* ===== quote form (shared) ===== */
 function quoteForm(){return `<form class="qcard" id="quoteForm" novalidate>
+  <input type="hidden" name="submission_id" id="qf-submission-id">
   <input type="hidden" name="source_auto" id="qf-source-auto">
   <input type="hidden" name="lead_id" id="qf-lead-id">
   <input type="hidden" name="landing_path" id="qf-landing-path">
@@ -769,6 +795,7 @@ function quoteForm(){return `<form class="qcard" id="quoteForm" novalidate>
   <input type="hidden" name="utm_campaign" id="qf-utm-campaign">
   <input type="hidden" name="utm_content" id="qf-utm-content">
   <input type="hidden" name="utm_term" id="qf-utm-term">
+  <input type="text" name="website" id="qf-website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden">
   <div id="qbody">
     <h3>แบบฟอร์มขอใบเสนอราคา</h3>
     <p style="font-size:12.5px;color:var(--grey);margin-bottom:18px">ใช้เวลาไม่ถึง 1 นาที · <span class="req">*</span> จำเป็น</p>
@@ -787,6 +814,11 @@ function quoteForm(){return `<form class="qcard" id="quoteForm" novalidate>
         <option value="">— เลือกช่องทาง —</option><option>Google ค้นหา</option><option>Facebook</option><option>LINE</option><option>เพื่อนแนะนำ / บอกต่อ</option><option>เคยสั่งกับเรามาก่อน</option><option>อีเวนต์ / งานแสดงสินค้า</option><option>อื่น ๆ</option></select></div>
       <div class="field full"><label class="label" for="qf-details">รายละเอียดเพิ่มเติม</label><textarea class="textarea" id="qf-details" name="details" placeholder="บอกคอนเซ็ปต์ สินค้าที่สนใจ ตำแหน่งโลโก้ สี แพ็กเกจ..."></textarea></div>
     </div>
+    <label style="display:flex;align-items:flex-start;gap:9px;margin-top:16px;cursor:pointer">
+      <input id="qf-consent" name="consent" type="checkbox" style="width:16px;height:16px;margin-top:2px;accent-color:var(--navy);flex:0 0 auto">
+      <span style="font-size:12.5px;color:var(--grey);line-height:1.55">ฉันยินยอมให้ GO PREMIUM เก็บและใช้ข้อมูลเพื่อติดต่อกลับ เสนอราคา และเชื่อมแหล่งที่มาของคำขอ ตาม <a href="/privacy" target="_blank" rel="noopener" style="color:var(--navy);text-decoration:underline">นโยบายความเป็นส่วนตัว (privacy-2026-08-28)</a></span>
+    </label>
+    <span class="errmsg" data-e="consent" role="alert" style="display:none;margin-top:5px">กรุณายอมรับนโยบายความเป็นส่วนตัวก่อนส่ง</span>
     <button type="submit" class="btn btn-primary btn-lg" style="width:100%;margin-top:18px">ส่งขอใบเสนอราคา
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
     <div style="display:flex;align-items:center;gap:12px;margin:14px 0;color:var(--grey-400);font-size:12.5px"><span style="flex:1;height:1px;background:var(--line)"></span>หรือ<span style="flex:1;height:1px;background:var(--line)"></span></div>
@@ -1273,6 +1305,33 @@ function viewProduct(sku){
   </div></section>`;
 }
 function viewQuote(){return `<section class="sec" style="padding-bottom:0"><div class="wrap"><div class="crumbs"><a href="/">หน้าแรก</a> / <b>ขอใบเสนอราคา</b></div></div></section>${quoteSection()}`;}
+function viewPrivacy(){return `<section class="sec" data-privacy-version="2026-08-28" style="background:var(--cloud);padding-top:118px"><div class="wrap" style="max-width:940px">
+  <div class="crumbs"><a href="/">หน้าแรก</a> / <b>นโยบายความเป็นส่วนตัว</b></div>
+  <div class="card" style="margin-top:22px;padding:clamp(24px,4vw,46px)">
+    <span class="eyebrow"><span class="dot"></span>Privacy Notice · privacy-2026-08-28</span>
+    <h1 class="h2" style="margin:14px 0 10px">นโยบายความเป็นส่วนตัว</h1>
+    <p class="muted" style="line-height:1.85">บริษัท แพชชั่น โกร เทรดดิ้ง จำกัด (“GO PREMIUM”, “เรา”) เคารพความเป็นส่วนตัวของคุณ ประกาศฉบับวันที่ 28 สิงหาคม 2569 นี้อธิบายการประมวลผลข้อมูลเมื่อคุณใช้เว็บไซต์หรือติดต่อขอใบเสนอราคา</p>
+    <h2 style="font-size:18px;margin-top:28px">1. ข้อมูลที่เราเก็บ</h2>
+    <ul style="margin:10px 0 0 22px;color:var(--grey);line-height:1.85">
+      <li>ข้อมูลติดต่อและองค์กร เช่น ชื่อ บริษัท อีเมล และเบอร์โทร</li>
+      <li>รายละเอียด RFQ เช่น สินค้า จำนวน งบ วันที่ต้องการรับงาน โอกาส แหล่งที่รู้จักเรา และข้อความเพิ่มเติม</li>
+      <li>lead_id, submission_id, เวลาส่งคำขอ และสถานะการส่งต่อ เพื่อเชื่อมรายการและป้องกันคำขอซ้ำ</li>
+      <li>ชุด first-touch ของ session ได้แก่ UTM, gclid/gbraid/wbraid (ถ้ามี), landing path และ referrer host ซึ่งล็อกพร้อมกันตั้งแต่หน้าแรกของ session</li>
+    </ul>
+    <p class="muted" style="line-height:1.85;margin-top:8px">เพื่อป้องกันสแปมและรักษาความปลอดภัย endpoint จะสร้าง HMAC fingerprint จากข้อมูลเครือข่ายที่ระบบโฮสติ้งส่งต่อ โดย RFQ ledger ไม่เก็บ raw IP</p>
+    <h2 style="font-size:18px;margin-top:28px">2. วัตถุประสงค์และฐานการประมวลผล</h2>
+    <p class="muted" style="line-height:1.85">เราใช้ข้อมูลเพื่อรับคำขอ ติดต่อกลับ จัดทำใบเสนอราคา ติดตามงานขาย เชื่อมแหล่งที่มาของคำขอกับ CRM ป้องกันสแปม/รายการซ้ำ รักษาความปลอดภัย ตรวจสอบเหตุขัดข้อง และปฏิบัติตามกฎหมาย โดยอาศัยความยินยอม การดำเนินการตามคำขอก่อนเข้าทำสัญญา ประโยชน์โดยชอบด้วยกฎหมาย และหน้าที่ตามกฎหมายตามแต่กรณี</p>
+    <h2 style="font-size:18px;margin-top:28px">3. ระบบหลังบ้านและผู้ให้บริการ</h2>
+    <p class="muted" style="line-height:1.85">ข้อมูลถูกส่งผ่าน Vercel และประมวลผลฝั่งเซิร์ฟเวอร์ อาจจัดเก็บใน Supabase เพื่อเป็น RFQ ledger ส่งต่อไป Pipedrive เพื่อบริหาร CRM/ติดตามงานขาย และส่งผ่าน Formspree เพื่อแจ้งอีเมลแก่ทีมที่เกี่ยวข้อง ผู้ให้บริการได้รับข้อมูลเท่าที่จำเป็นตามหน้าที่ เราไม่ขายข้อมูลส่วนบุคคลของคุณ ผู้ให้บริการอาจประมวลผลหรือจัดเก็บข้อมูลนอกประเทศไทยตามที่ตั้งของโครงสร้างพื้นฐานหรือผู้ประมวลผล โดยอยู่ภายใต้มาตรการที่เหมาะสมและข้อกำหนดกฎหมายที่ใช้บังคับ</p>
+    <h2 style="font-size:18px;margin-top:28px">4. GA4 และ Google Ads</h2>
+    <p class="muted" style="line-height:1.85">event ของ RFQ ที่เรากำหนดใน GA4 ไม่ส่งชื่อ บริษัท อีเมล เบอร์โทร lead_id, submission_id หรือ Google click identifiers ส่วน Google Analytics อาจประมวลผลข้อมูลทางเทคนิคมาตรฐานตามการตั้งค่าและนโยบายของ Google ณ เวอร์ชันนี้ ระบบยังไม่ส่งผลการขายหรือสถานะ RFQ เป็น Google Ads offline conversion</p>
+    <h2 style="font-size:18px;margin-top:28px">5. ระยะเวลาและความปลอดภัย</h2>
+    <p class="muted" style="line-height:1.85">เราเก็บข้อมูลเท่าที่จำเป็นต่อการตอบคำขอ จัดทำ/ติดตามใบเสนอราคา รักษาหลักฐานทางธุรกิจ ป้องกันเหตุขัดข้อง และปฏิบัติตามกฎหมาย จากนั้นจะลบ ทำลาย หรือทำให้ไม่ระบุตัวบุคคล เว้นแต่ต้องเก็บตามอายุความหรือข้อกำหนดบัญชี ภาษี และกฎหมาย เราใช้ validation, same-origin boundary, server-only credentials, HMAC fingerprint, protected database access และ submission ID เพื่อลดความเสี่ยง</p>
+    <h2 style="font-size:18px;margin-top:28px">6. สิทธิและช่องทางติดต่อ</h2>
+    <p class="muted" style="line-height:1.85">ภายใต้ PDPA และเงื่อนไขของกฎหมาย คุณอาจขอเข้าถึง แก้ไข ลบ ระงับ คัดค้าน โอนย้าย ถอนความยินยอม หรือร้องเรียนได้ เราอาจขอยืนยันตัวตนก่อนดำเนินการ ติดต่อ บริษัท แพชชั่น โกร เทรดดิ้ง จำกัด เลขประจำตัวผู้เสียภาษี 0105567196422 โทร <a href="tel:+6620966465">02-096-6465</a> หรืออีเมล <a href="mailto:info@passiongrow.co.th">info@passiongrow.co.th</a></p>
+    <p style="font-size:12.5px;color:var(--grey);margin-top:28px">เวอร์ชันความยินยอม: privacy-2026-08-28 · ปรับปรุงล่าสุด 28 สิงหาคม 2569 · <a href="/quote">กลับไปขอใบเสนอราคา</a></p>
+  </div>
+</div></section>`;}
 
 /* ===== ABOUT (เรื่องราวแบรนด์ — ใช้ทั้งใน section หน้าแรก และหน้า #/about) ===== */
 function aboutStory(tag){const HT=tag||'h2';return `<div class="story"><div class="dotgrid on-dark" style="position:absolute;inset:0;opacity:.4"></div><div style="position:relative">
@@ -1612,72 +1671,78 @@ function initPortfolioVideo(){
 }
 
 /* ===== quote form binding ===== */
+function applyV2QuoteContext(f){
+  const el=f.elements,saved=captureAttribution(),sp=new URLSearchParams(location.search);
+  ATTRIBUTION_KEYS.forEach(key=>{if(el[key])el[key].value=saved[key]||'';});
+  if(el.landing_path)el.landing_path.value=saved.landing_path||'/';
+  if(el.lead_id)el.lead_id.value=saved.lead_id||'';
+  if(el.submission_id)el.submission_id.value=rfqSubmissionId('v2_quote_form');
+  let det='';
+  if(saved.gclid||saved.gbraid||saved.wbraid)det='google_ads (click_id)';
+  else if(saved.utm_source)det='utm: '+saved.utm_source+(saved.utm_medium?'/'+saved.utm_medium:'');
+  else if(/google\./i.test(saved.referrer_host||''))det='google_organic';
+  else if(/facebook\.|fb\.me|l\.facebook/i.test(saved.referrer_host||''))det='facebook';
+  else if(/line\.me|liff\./i.test(saved.referrer_host||''))det='line';
+  else if(saved.referrer_host)det='referrer: '+saved.referrer_host;
+  if(el.source_auto)el.source_auto.value=det;
+  if(el.source&&!el.source.value){if(/google/i.test(det))el.source.value='Google ค้นหา';else if(/facebook/i.test(det))el.source.value='Facebook';else if(/line/i.test(det))el.source.value='LINE';}
+  const sku=(sp.get('sku')||'').trim().toUpperCase(),p=sku&&P.find(item=>item.sku===sku);
+  const wrap=document.getElementById('qf-product-wrap'),input=document.getElementById('qf-product');
+  if(p&&wrap&&input){input.value=p.sku+' — '+oneLine(p.name);wrap.style.display='';}
+}
+function buildV2QuotePayload(f){
+  const el=f.elements,saved=captureAttribution(),sku=(new URLSearchParams(location.search).get('sku')||'').trim().toUpperCase();
+  const product=sku&&P.find(item=>item.sku===sku),qualified=Boolean(el.company.value.trim()&&el.qty.value.trim()&&el.date.value&&el.budget.value.trim());
+  const email=el.email.value.trim(),phone=el.phone.value.trim();
+  const attribution={};ATTRIBUTION_KEYS.forEach(key=>{attribution[key]=saved[key]||'';});
+  attribution.landing_path=saved.landing_path||'/';attribution.referrer_host=saved.referrer_host||'';attribution.marketing_source=attributionSummary(saved);
+  return {
+    contractVersion:RFQ_CONTRACT_VERSION,
+    submission_id:rfqSubmissionId('v2_quote_form'),
+    lead_id:saved.lead_id||'',
+    form_type:'v2_quote_form',
+    submitted_at:rfqSubmittedAt('v2_quote_form'),
+    contact:{name:el.name.value.trim(),company:el.company.value.trim(),email:/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)?email:'',phone:/^[\d\s+\-()]{8,}$/.test(phone)?phone:''},
+    rfq:{occasion:el.occasion.value||'',qty:el.qty.value.trim(),date:el.date.value||'',budget:el.budget.value.trim(),source:el.source.value||'',source_auto:el.source_auto.value||'',product:(el.product&&el.product.value)||'',details:el.details.value.trim(),items:product?[{sku:product.sku,name:oneLine(product.name),qty:el.qty.value.trim()}]:[]},
+    attribution,
+    website_qualified:qualified,
+    consent:{accepted:el.consent.checked,version:RFQ_CONSENT_VERSION},
+    honeypot:el.website.value||''
+  };
+}
+function lockV2QuoteControls(f){
+  const controls=[...f.elements].filter(control=>control.type!=='hidden');
+  const snapshot=controls.map(control=>({control,value:control.value,checked:Boolean(control.checked),disabled:Boolean(control.disabled)}));
+  snapshot.forEach(({control})=>{control.disabled=true;});f.setAttribute('aria-busy','true');
+  return ()=>{snapshot.forEach(({control,value,checked,disabled})=>{control.value=value;if(control.type==='checkbox'||control.type==='radio')control.checked=checked;control.disabled=disabled;});f.removeAttribute('aria-busy');};
+}
 function bindQuote(){
-  const f=document.getElementById('quoteForm');if(!f)return;
-  // ตรวจช่องทางเข้าเว็บอัตโนมัติ (Ads/UTM/referrer) → เก็บลง hidden field ให้ทีมขายกรอก Pipedrive ถูกช่อง
-  try{
-    const sp=new URLSearchParams(location.search);const auto=f.elements.source_auto;const sel=f.elements.source;
-    let det='';
-    if(sp.has('gclid'))det='google_ads (gclid)';
-    else if(sp.get('utm_source'))det='utm: '+sp.get('utm_source')+(sp.get('utm_medium')?'/'+sp.get('utm_medium'):'');
-    else if(/google\./i.test(document.referrer))det='google_organic';
-    else if(/facebook\.|fb\.me|l\.facebook/i.test(document.referrer))det='facebook';
-    else if(/line\.me|liff\./i.test(document.referrer))det='line';
-    else if(document.referrer)det='referrer: '+document.referrer.split('/')[2];
-    if(auto)auto.value=det;
-    if(sel&&!sel.value){
-      if(/google/i.test(det))sel.value='Google ค้นหา';
-      else if(/facebook/i.test(det))sel.value='Facebook';
-      else if(/line/i.test(det))sel.value='LINE';
-    }
-  }catch(e){}
-  // Keep only non-PII campaign attribution with the first-party lead record.
-  // The random lead ID is posted to the CRM/form endpoint, never sent to GA4.
-  try{
-    const sp=new URLSearchParams(location.search);
-    const attributionKeys=['gclid','gbraid','wbraid','utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
-    const storageKey='gp_attribution_v1';let saved={};
-    try{saved=JSON.parse(sessionStorage.getItem(storageKey)||'{}')}catch(_e){}
-    attributionKeys.forEach((key)=>{const value=sp.get(key);if(value)saved[key]=value;});
-    sessionStorage.setItem(storageKey,JSON.stringify(saved));
-    attributionKeys.forEach((key)=>{if(f.elements[key])f.elements[key].value=saved[key]||'';});
-    if(f.elements.landing_path)f.elements.landing_path.value=location.pathname;
-    if(f.elements.lead_id){
-      let leadId=sessionStorage.getItem('gp_lead_id');
-      if(!leadId){leadId=(window.crypto&&crypto.randomUUID)?crypto.randomUUID():`lead_${Date.now()}_${Math.random().toString(36).slice(2,10)}`;sessionStorage.setItem('gp_lead_id',leadId);}
-      f.elements.lead_id.value=leadId;
-    }
-  }catch(e){}
-  // สินค้าที่ลูกค้ากดมาจากหน้า SKU (/quote?sku=EX001) → เติมให้อัตโนมัติ + ส่งไปกับฟอร์ม
-  try{
-    const sku=(new URLSearchParams(location.search).get('sku')||'').trim().toUpperCase();
-    const p=sku&&P.find(x=>x.sku===sku);
-    if(p){const w=document.getElementById('qf-product-wrap');const i=document.getElementById('qf-product');
-      i.value=p.sku+' — '+oneLine(p.name);w.style.display='';}
-  }catch(e){}
-  f.addEventListener('submit',e=>{e.preventDefault();const el=f.elements;let ok=true;
+  const f=document.getElementById('quoteForm');if(!f)return;applyV2QuoteContext(f);let pendingPayload=null;
+  f.addEventListener('input',()=>{if(pendingPayload&&f.dataset.submitting!=='true'){pendingPayload=null;rotateRfqSubmissionId('v2_quote_form');applyV2QuoteContext(f);}});
+  f.addEventListener('submit',async e=>{e.preventDefault();if(f.dataset.submitting==='true')return;const el=f.elements;let ok=true;
     const email=el.email.value.trim(),phone=el.phone.value.trim();
     const hasContact=/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)||/^[\d\s+\-()]{8,}$/.test(phone);
-    const ck={name:el.name.value.trim()!=='',email:hasContact,phone:hasContact};
-    for(const k in ck){const i=el[k],m=f.querySelector('[data-e="'+k+'"]');if(!ck[k]){ok=false;i.classList.add('err');i.setAttribute('aria-invalid','true');if(m)m.style.display='block';}else{i.classList.remove('err');i.removeAttribute('aria-invalid');if(m)m.style.display='none';}}
+    const ck={name:el.name.value.trim()!=='',email:hasContact,phone:hasContact,consent:el.consent.checked};
+    for(const key in ck){const input=el[key],message=f.querySelector('[data-e="'+key+'"]');if(!ck[key]){ok=false;input.classList.add('err');input.setAttribute('aria-invalid','true');if(message)message.style.display='block';}else{input.classList.remove('err');input.removeAttribute('aria-invalid');if(message)message.style.display='none';}}
     if(!ok){f.querySelector('.err').focus();return;}
-    const btn=f.querySelector('button[type=submit]');btn.disabled=true;btn.style.opacity='.6';
-    // ส่งเข้า Formspree (→ info@passiongrow.co.th) — ID เดียวกับ src/config.js
-    fetch('https://formspree.io/f/xbdejbyr',{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}})
-      .then(r=>{if(!r.ok)throw new Error('formspree '+r.status);
-        const attribution=el.gclid.value||el.gbraid.value||el.wbraid.value?'paid_click':(el.utm_source.value?'utm':'direct_or_referral');
-        const productSku=new URLSearchParams(location.search).get('sku')||'';
-        const qualified=Boolean(el.company.value&&el.qty.value&&el.budget.value&&el.date.value);
-        // No contact, company or click ID is sent to analytics.
-        track('generate_lead',{source:'v2_quote_form',occasion:el.occasion.value||'',qty:el.qty.value||'',budget:el.budget.value||'',lead_source:el.source.value||'',lead_source_auto:el.source_auto.value||'',product:(el.product&&el.product.value)||'',attribution,landing_path:el.landing_path.value||''});
-        if(qualified)track('qualified_rfq',{source:'v2_quote_form',product_sku:productSku,attribution,landing_path:el.landing_path.value||''});
-        document.getElementById('qbody').style.display='none';document.getElementById('qok').classList.add('show');
-        const q=document.getElementById('quote');if(q)q.scrollIntoView({behavior:'smooth'});})
-      .catch(()=>{alert('ส่งคำขอไม่สำเร็จ กรุณาลองใหม่อีกครั้ง หรือทักทาง LINE @gopremium ได้เลยค่ะ');})
-      .finally(()=>{btn.disabled=false;btn.style.opacity='';});
+    pendingPayload=pendingPayload||buildV2QuotePayload(f);
+    const btn=f.querySelector('button[type=submit]');f.dataset.submitting='true';const unlockControls=lockV2QuoteControls(f);btn.style.opacity='.6';
+    try{
+      const response=await fetch('/api/rfq',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(pendingPayload)});
+      let body=null;try{body=await response.json()}catch(_e){}
+      if(!(response.ok&&body&&body.ok===true&&body.status==='completed')){const error=new Error('rfq '+response.status);error.processing=response.status===202&&body&&body.ok===true&&body.status==='processing';throw error;}
+      const completedPayload=pendingPayload,attribution=attributionSummary(completedPayload.attribution),productSku=(new URLSearchParams(location.search).get('sku')||'').trim().toUpperCase();
+      const eventParams={source:'v2_quote_form',occasion:completedPayload.rfq.occasion,qty:completedPayload.rfq.qty,budget:completedPayload.rfq.budget,lead_source:completedPayload.rfq.source,lead_source_auto:completedPayload.rfq.source_auto,product:completedPayload.rfq.product,attribution,landing_path:completedPayload.attribution.landing_path};
+      // No contact, company, lead ID or click ID is sent to analytics.
+      track('generate_lead',eventParams);if(completedPayload.website_qualified)track('qualified_rfq',{source:'v2_quote_form',product_sku:productSku,attribution,landing_path:completedPayload.attribution.landing_path});
+      rotateRfqSubmissionId('v2_quote_form');pendingPayload=null;
+      document.getElementById('qbody').style.display='none';document.getElementById('qok').classList.add('show');
+      const q=document.getElementById('quote');if(q)q.scrollIntoView({behavior:'smooth'});
+    }catch(error){alert(error&&error.processing?'ระบบกำลังตรวจสอบคำขอนี้ กรุณากดส่งอีกครั้งในอีกสักครู่':'ส่งคำขอไม่สำเร็จ กรุณาลองใหม่อีกครั้ง หรือทักทาง LINE @gopremium ได้เลยค่ะ');}
+    finally{unlockControls();delete f.dataset.submitting;btn.style.opacity='';}
   });
 }
-function resetQuote(){const f=document.getElementById('quoteForm');if(!f)return;f.reset();document.getElementById('qok').classList.remove('show');document.getElementById('qbody').style.display='';}
+function resetQuote(){const f=document.getElementById('quoteForm');if(!f)return;f.reset();applyV2QuoteContext(f);document.getElementById('qok').classList.remove('show');document.getElementById('qbody').style.display='';}
 
 /* ===== hero carousel (click-to-go, auto-advance, hover-pause) ===== */
 function initHero(){
@@ -1765,6 +1830,7 @@ function routeFromPath(){
   let p;try{p=decodeURIComponent(location.pathname);}catch(e){p=location.pathname;}
   if(p==='/products'||p==='/catalogue')return '/all';
   if(p==='/quote')return '/quote';
+  if(p==='/privacy')return '/privacy';
   if(p==='/express')return '/express';
   if(p==='/portfolio')return '/portfolio';
   if(p==='/about')return '/about';
@@ -1785,6 +1851,7 @@ function render(){
   if(h==='/'){app.innerHTML=viewHome();bindQuote();setMeta(DEF_TITLE,DEF_DESC,'/');setFaqLD();}
   else if(h==='/all'){app.innerHTML=viewCatalogue('all');bindCatalogue();setMeta('สินค้าทั้งหมด '+P.length+' รายการ — ของพรีเมียมพิมพ์โลโก้ | GO PREMIUM','แคตตาล็อกของพรีเมียมพิมพ์โลโก้ '+P.length+' รายการ เลือกตามโอกาส งบประมาณ และหมวดสินค้า พร้อม Mockup ก่อนผลิต','/products');setListingLD('สินค้าทั้งหมด','/products');}
   else if(h==='/quote'){app.innerHTML=viewQuote();bindQuote();setMeta('ขอใบเสนอราคาของพรีเมียม — ตอบกลับใน 2 ชม. | GO PREMIUM','ขอใบเสนอราคาของขวัญองค์กรและของพรีเมียมพิมพ์โลโก้ ปรึกษาฟรี ตอบกลับพร้อมช่วงราคาภายใน 2 ชม.','/quote');}
+  else if(h==='/privacy'){app.innerHTML=viewPrivacy();setMeta('นโยบายความเป็นส่วนตัว — GO PREMIUM','รายละเอียดข้อมูล RFQ, attribution, ระบบหลังบ้าน ระยะเวลาการเก็บข้อมูล และสิทธิของเจ้าของข้อมูล','/privacy');}
   else if((m=h.match(/^\/c\/(.+)$/))){const c=decodeURIComponent(m[1]),seo=seoLanding('cat',c);app.innerHTML=viewCatalogue({cat:c});bindCatalogue();setMeta(seo?seo.title:(CL[c]||c)+' พิมพ์โลโก้ ราคาขายส่ง | GO PREMIUM',seo?seo.desc:(CL[c]||c)+'สำหรับองค์กร พิมพ์โลโก้ได้ทุกชิ้น '+(byCat[c]?byCat[c].length+' รุ่น ':'')+'พร้อม Mockup ก่อนผลิต ขอใบเสนอราคาฟรี','/category/'+c);setListingLD(seo?seo.h1:(CL[c]||c),'/category/'+c);}
   else if((m=h.match(/^\/o\/(.+)$/))){const o=decodeURIComponent(m[1]),seo=seoLanding('occ',o);app.innerHTML=viewCatalogue({occ:o});bindCatalogue();setMeta(seo?seo.title:'ของขวัญ'+OCC_TITLE(o)+' — ของพรีเมียมองค์กร | GO PREMIUM',seo?seo.desc:'รวมของพรีเมียมและของขวัญองค์กรสำหรับ'+OCC_TITLE(o)+' พิมพ์โลโก้ จัดเซ็ตได้ พร้อม Mockup ก่อนผลิต','/occasion/'+o);setListingLD(seo?seo.h1:'ของขวัญ'+OCC_TITLE(o),'/occasion/'+o);}
   else if((m=h.match(/^\/b\/(.+)$/))){const b=decodeURIComponent(m[1]);app.innerHTML=viewCatalogue({tier:b});bindCatalogue();setMeta('ของพรีเมียมงบ '+(TL[b]||b)+' | GO PREMIUM','ของขวัญองค์กรช่วงงบ '+(TL[b]||b)+' คัดแล้วว่าดูดีในงบ พิมพ์โลโก้ได้ พร้อมใบเสนอราคาใน 2 ชม.','/budget/'+b);setListingLD('งบ '+(TL[b]||b),'/budget/'+b);}
@@ -1803,7 +1870,7 @@ function render(){
 window.addEventListener('hashchange',render);
 /* ===== clean-path navigation (real /paths, intercepted → pushState, no reload) ===== */
 // SPA routes handled in-app; everything else (/exclusive, /blog/*, /old, external) navigates normally.
-function isSpaPath(p){return p==='/'||p==='/products'||p==='/catalogue'||p==='/quote'||p==='/portfolio'||p==='/express'||p==='/about'||/^\/category\//.test(p)||/^\/occasion\//.test(p)||/^\/budget\//.test(p)||/^\/product\//.test(p);}
+function isSpaPath(p){return p==='/'||p==='/products'||p==='/catalogue'||p==='/quote'||p==='/privacy'||p==='/portfolio'||p==='/express'||p==='/about'||/^\/category\//.test(p)||/^\/occasion\//.test(p)||/^\/budget\//.test(p)||/^\/product\//.test(p);}
 function nav(p){const next=new URL(p,location.origin);if(location.pathname+location.search!==next.pathname+next.search)history.pushState({},'',next.pathname+next.search);render();}
 document.addEventListener('click',e=>{
   if(e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
@@ -1821,7 +1888,7 @@ window.addEventListener('popstate',render);
 function buildChrome(){
   document.getElementById('megaMenu').innerHTML=GROUPS.map(g=>`<div><h5>${g.icon} ${esc(g.group)}</h5>${g.cats.filter(c=>byCat[c]).map(c=>`<a href="/category/${c}">${esc(CL[c])} <span style="color:var(--grey-400);font-size:12px">(${byCat[c].length})</span></a>`).join('')}</div>`).join('');
   document.getElementById('footCats').innerHTML=catList.slice(0,6).map(c=>`<li><a href="/category/${c}">${esc(CL[c])}</a></li>`).join('');
-  document.getElementById('drawer').innerHTML=`<div class="wrap" style="padding:8px 0 22px"><a href="/">หน้าแรก</a><a href="/express">⚡ สินค้าส่งด่วน</a><a href="/products">สินค้าทั้งหมด (${P.length})</a><a href="/exclusive">✦ Exclusive</a>${catList.map(c=>`<a href="/category/${c}">${esc(CL[c])} (${byCat[c].length})</a>`).join('')}<a href="/portfolio">ผลงานของเรา</a><div style="display:flex;flex-direction:column;gap:9px;padding-top:14px"><a class="btn btn-primary" href="/quote">ขอใบเสนอราคา</a><a class="btn btn-line-ghost" href="https://lin.ee/z1GT1KR" target="_blank" rel="noopener">ทักทาง LINE @gopremium</a></div></div>`;
+  document.getElementById('drawer').innerHTML=`<div class="wrap" style="padding:8px 0 22px"><a href="/">หน้าแรก</a><a href="/express">⚡ สินค้าส่งด่วน</a><a href="/products">สินค้าทั้งหมด (${P.length})</a><a href="/exclusive">✦ Exclusive</a>${catList.map(c=>`<a href="/category/${c}">${esc(CL[c])} (${byCat[c].length})</a>`).join('')}<a href="/portfolio">ผลงานของเรา</a><a href="/privacy">นโยบายความเป็นส่วนตัว</a><div style="display:flex;flex-direction:column;gap:9px;padding-top:14px"><a class="btn btn-primary" href="/quote">ขอใบเสนอราคา</a><a class="btn btn-line-ghost" href="https://lin.ee/z1GT1KR" target="_blank" rel="noopener">ทักทาง LINE @gopremium</a></div></div>`;
 }
 document.getElementById('burger').addEventListener('click',()=>document.getElementById('drawer').classList.toggle('open'));
 buildChrome();render();
