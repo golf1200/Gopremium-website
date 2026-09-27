@@ -1733,6 +1733,10 @@ function bindQuote(){
       if(!(response.ok&&body&&body.ok===true&&body.status==='completed')){const error=new Error('rfq '+response.status);error.processing=response.status===202&&body&&body.ok===true&&body.status==='processing';throw error;}
       const completedPayload=pendingPayload,attribution=attributionSummary(completedPayload.attribution),productSku=(new URLSearchParams(location.search).get('sku')||'').trim().toUpperCase();
       const eventParams={source:'v2_quote_form',occasion:completedPayload.rfq.occasion,qty:completedPayload.rfq.qty,budget:completedPayload.rfq.budget,lead_source:completedPayload.rfq.source,lead_source_auto:completedPayload.rfq.source_auto,product:completedPayload.rfq.product,attribution,landing_path:completedPayload.attribution.landing_path};
+      // Enhanced conversions: Google hashes user_data (SHA-256) before sending; not sent as event params.
+      try{const c=completedPayload.contact||{},ud={};if(c.email)ud.email=String(c.email).trim().toLowerCase();
+        const d=String(c.phone||'').replace(/\D/g,'').replace(/^0/,'').replace(/^66/,'');if(d.length>=8)ud.phone_number='+66'+d;
+        if(Object.keys(ud).length&&window.gtag)gtag('set','user_data',ud);}catch(_e){}
       // No contact, company, lead ID or click ID is sent to analytics.
       track('generate_lead',eventParams);if(completedPayload.website_qualified)track('qualified_rfq',{source:'v2_quote_form',product_sku:productSku,attribution,landing_path:completedPayload.attribution.landing_path});
       rotateRfqSubmissionId('v2_quote_form');pendingPayload=null;

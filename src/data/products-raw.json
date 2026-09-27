@@ -8212,5 +8212,58 @@
     ],
     "express": false,
     "npd": true
+  },
+  {
+    "sku": "NPD-00263",
+    "slug": "npd-00263",
+    "name": "กระเป๋าเดินทาง 16 นิ้ว Mini Square",
+    "category": "กระเป๋า",
+    "category_slug": "bags",
+    "features": "กระเป๋าลาก 16 นิ้ว ทรงเหลี่ยม ล้อลากง่าย ขนาดกะทันรัด",
+    "size": "36 x 24 x 42 cm",
+    "material": "PC/ABS",
+    "price_300_thb": 445,
+    "budget_tier": "executive",
+    "moq": 100,
+    "free_logo": [
+      "UV Printing (ไม่จำกัดสี)"
+    ],
+    "logo_max_cm": "",
+    "colors": [],
+    "occasions": [],
+    "images": [
+      "https://jrutfaqhhexgojmvioyn.supabase.co/storage/v1/object/public/marketing-images/npd/20260820-m8ubty-cover.jpg",
+      "https://drive.google.com/open?id=1ytYPGabteAzvJ0I97lc3rBtYMoxC0qDC"
+    ],
+    "express": false,
+    "npd": true
+  },
+  {
+    "sku": "NPD-00287",
+    "slug": "npd-00287",
+    "name": "ตะกร้าล้อลาก ZY-SAA",
+    "category": "ไลฟ์สไตล์",
+    "category_slug": "lifestyle",
+    "features": "ตะกร้าล้อลาก พับเก็บได้ ใช้งานได้อเนกประสงค์ พกพาสะดวก",
+    "size": "38*36*30cm (30L)",
+    "material": "PP,ABS,STEEL, PVC",
+    "price_300_thb": 429,
+    "budget_tier": "executive",
+    "moq": 500,
+    "free_logo": [
+      "Silk Screen Printing"
+    ],
+    "logo_max_cm": "",
+    "colors": [],
+    "occasions": [],
+    "images": [
+      "https://jrutfaqhhexgojmvioyn.supabase.co/storage/v1/object/public/marketing-images/npd/20260826-3uwca6-cover-NPD-00287.jpg",
+      "https://drive.google.com/open?id=1LYhCleC3RUd5deqWodHqQYUAOVIDXr0v",
+      "https://drive.google.com/open?id=1epATJaWYS83wkenCFIza7133Ak03MRXJ",
+      "https://drive.google.com/open?id=10-TvgtqvbxvRMBm9ZcEF_eujoKedJDWy",
+      "https://drive.google.com/open?id=1pDd3HuKgN3uTJMlfxj-LTg6_AaPHwLB0"
+    ],
+    "express": false,
+    "npd": true
   }
 ]
