@@ -14,8 +14,7 @@ events safely no-op and the page never errors.
 |---|---|---|---|
 | `generate_lead` | RFQ form submitted successfully (home) | `{ source: 'home_rfq', occasion, budget? }` | `src/components/RFQ.jsx` |
 | `generate_lead` | Quote form submitted successfully | `{ source: 'quote_page', items }` | `src/pages/QuotePage.jsx` |
-| `contact_line` | LINE button clicked (floating bar) | `{ source: 'floating' }` | `src/components/Floating.jsx` |
-| `contact_line` | LINE link clicked (footer) | `{ source: 'footer' }` | `src/components/Footer.jsx` |
+| `contact_line` | First outbound LINE click in the browser-tab session | `{ source, measurement_stage: 'outbound_click', dedupe_scope: 'browser_tab_session', dedupe_version: 'contact-line-v1', event_id }` | `public/contact-line-tracking.js` (shared by SPA/static pages) |
 | `add_to_quote` | Product added to the quote cart | `{ sku }` | `src/hooks/useQuote.js` |
 | `view_item` | Product detail page loaded / changed | `{ sku, category }` | `src/pages/ProductDetail.jsx` |
 | `view_quote` | `/quote` opened with ≥1 item in the cart | `{ items }` | `src/pages/QuotePage.jsx` |
@@ -40,5 +39,6 @@ Key metrics to build cards for:
 - Add-to-quote → generate_lead conversion rate
 - AI Concierge runs → lead correlation
 
-> `generate_lead` and `contact_line` map naturally to GA4 **Key Events**
-> (conversions). Mark them as Key Events in GA4 Admin → Events after data appears.
+> `generate_lead` maps naturally to a GA4 **Key Event**. `contact_line` is only an
+> outbound-click proxy (deduplicated to once per browser-tab session), not a verified
+> LINE conversation or sales-qualified lead. Keep it diagnostic/secondary in Google Ads.

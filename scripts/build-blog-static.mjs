@@ -74,7 +74,7 @@ const arts = files.map(f => {
 
 // ---------- shared chrome ----------
 const FONTS = `<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">`;
-const GTAG = `<script async src="https://www.googletagmanager.com/gtag/js?id=${GA}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA}');</script>`;
+const GTAG = `<script async src="https://www.googletagmanager.com/gtag/js?id=${GA}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA}');</script><script src="/contact-line-tracking.js"></script>`;
 const CSS = `<style>
 :root{--navy:#1F3A5F;--navy2:#2C4F7C;--gold:#F4BD44;--gold2:#F8D586;--golddeep:#C28A0E;--ink:#1A2230;--grey:#5B6472;--line:#E3E7ED;--cloud:#F5F6F8;--maxw:1160px;--gut:clamp(20px,5vw,56px)}
 *{box-sizing:border-box}body{margin:0;font-family:'Sarabun',sans-serif;color:var(--ink);background:#fff;line-height:1.75;-webkit-font-smoothing:antialiased}

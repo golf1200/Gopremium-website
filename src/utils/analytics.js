@@ -30,7 +30,11 @@ export function initGA() {
  * @param {object} params - optional event params
  */
 export function track(name, params = {}) {
-  if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
-    window.gtag('event', name, params);
+  if (typeof window === 'undefined') return false;
+  if (name === 'contact_line' && typeof window.gpTrackContactLine === 'function') {
+    return window.gpTrackContactLine(params);
   }
+  if (typeof window.gtag !== 'function') return false;
+  window.gtag('event', name, params);
+  return true;
 }

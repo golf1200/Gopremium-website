@@ -84,7 +84,7 @@ function productLd(p) {
 
 // ---------- shared chrome (on-brand: CI Navy #13244a · Gold #f4b223) ----------
 const FONTS = `<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">`;
-const GTAG = `<script async src="https://www.googletagmanager.com/gtag/js?id=${GA}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA}');document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="lin.ee"]');if(a)gtag('event','contact_line',{source:location.pathname});});</script>`;
+const GTAG = `<script async src="https://www.googletagmanager.com/gtag/js?id=${GA}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA}');</script><script src="/contact-line-tracking.js"></script>`;
 const CSS = `<style>
 :root{--navy:#13244a;--navy-700:#0d1a36;--gold:#f4b223;--gold-deep:#c98f0a;--gold-soft:#fbe7b5;--ink:#1A2230;--grey:#5B6472;--line:#E3E7ED;--cloud:#F5F6F8;--maxw:1180px;--gut:clamp(20px,5vw,56px);--head:'Anuphan',sans-serif;--body:'IBM Plex Sans Thai',sans-serif}
 *{box-sizing:border-box}body{margin:0;font-family:var(--body);color:var(--ink);background:#fff;line-height:1.65;-webkit-font-smoothing:antialiased}

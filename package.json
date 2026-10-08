@@ -7,6 +7,8 @@
     "dev": "vite",
     "build": "node scripts/sync-master-live.mjs && node scripts/build-catalogue-data.mjs && node generate-sitemap.js && node scripts/build-product-static.mjs && vite build && node scripts/postbuild-home.mjs",
     "preview": "vite preview",
+    "test:contact-line": "node scripts/verify-contact-line-dedup.mjs",
+    "test:contact-line-browser": "node scripts/verify-contact-line-browser.mjs",
     "test:rfq": "node scripts/verify-rfq-attribution.mjs",
     "test:rfq-react": "node scripts/verify-rfq-react.mjs"
   },

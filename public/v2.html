@@ -6,6 +6,7 @@
 <!-- Google tag (gtag.js) — GA4 G-JTMVQM245Y -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JTMVQM245Y"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JTMVQM245Y',{send_page_view:false});/* page_view ยิงจาก router (SPA) */</script>
+<script src="/contact-line-tracking.js"></script>
 <!-- Vercel Web Analytics + Speed Insights (enable in Vercel project settings) -->
 <script defer src="/_vercel/insights/script.js"></script>
 <script defer src="/_vercel/speed-insights/script.js"></script>
@@ -761,7 +762,6 @@ function attributedQuoteHref(sku=''){
 }
 captureAttribution();
 document.addEventListener('click',e=>{
-  const line=e.target.closest&&e.target.closest('a[href*="lin.ee"]');if(line)track('contact_line',{source:(location.pathname||'/')});
   const expressRfq=e.target.closest&&e.target.closest('[data-express-rfq]');if(expressRfq)track('express_rfq_click',{source:'express_catalogue',placement:expressRfq.dataset.expressRfq||'page'});
   const addToQuote=e.target.closest&&e.target.closest('[data-add-to-quote]');if(addToQuote)track('add_to_quote',{sku:addToQuote.dataset.addToQuote,source:'product_detail'});
 });
