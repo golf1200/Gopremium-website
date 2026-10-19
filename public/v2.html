@@ -339,6 +339,19 @@ a.occ:hover{transform:translateY(-4px);box-shadow:var(--sh-md)}
 .echip:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
 .ecount{display:inline-flex;align-items:center;gap:7px;font-size:13px;color:var(--grey);margin-top:4px}
 .ecount b{color:var(--navy);font-family:var(--head)}
+.exp-proof{margin:40px 0 44px;padding:clamp(24px,4vw,42px);background:linear-gradient(145deg,#f7f8fb,#fff 52%,#fdf3da);border:1px solid var(--line);border-radius:28px;box-shadow:var(--sh-sm)}
+.exp-proof-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.72fr);gap:28px;align-items:end;margin-bottom:24px}
+.exp-proof-head h2{font-family:var(--head);font-size:clamp(24px,3vw,34px);line-height:1.25;color:var(--navy);margin:8px 0 0}
+.exp-proof-head p{font-size:13.5px;color:var(--grey);line-height:1.75;margin:0}
+.exp-proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.exp-proof-card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--sh-sm)}
+.exp-proof-media{aspect-ratio:4/3;overflow:hidden;background:var(--cloud-2)}
+.exp-proof-media img{display:block;width:100%;height:100%;object-fit:cover}
+.exp-proof-body{padding:18px 18px 20px}
+.exp-proof-step{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:9px;background:var(--mustard);color:var(--navy);font-family:var(--en);font-size:12px;font-weight:800;margin-bottom:12px}
+.exp-proof-body h3{font-family:var(--head);font-size:16px;line-height:1.35;color:var(--navy);margin:0 0 6px}
+.exp-proof-body p{font-size:12.5px;line-height:1.65;color:var(--grey);margin:0}
+.exp-proof-note{font-size:11.5px;line-height:1.65;color:var(--grey-400);margin:18px 2px 0}
 
 /* catalogue layout */
 .cat-layout{display:grid;grid-template-columns:240px 1fr;gap:32px;align-items:start}
@@ -468,6 +481,7 @@ a.occ:hover{transform:translateY(-4px);box-shadow:var(--sh-md)}
   .hero-slides{height:auto;min-height:0;aspect-ratio:3/2}
   .cat-layout{grid-template-columns:1fr}.side{position:static;display:none}.side.open{display:block}.filter-toggle{display:inline-flex}
   .ft-grid{grid-template-columns:1fr 1fr;gap:26px}
+  .exp-proof-head{grid-template-columns:1fr;gap:10px}
 }
 @media(max-width:760px){
   .nav,.hd-cta .btn:not(.burger){display:none}.burger{display:inline-flex}
@@ -476,6 +490,7 @@ a.occ:hover{transform:translateY(-4px);box-shadow:var(--sh-md)}
   .line-fab{display:none}
   .mcta{display:grid;grid-template-columns:1fr 1fr;gap:9px;position:fixed;left:0;right:0;bottom:0;z-index:46;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-top:1px solid var(--line);box-shadow:0 -8px 28px -16px rgba(31,58,95,.4)}
   body{padding-bottom:72px}
+  .exp-proof-grid{grid-template-columns:1fr}
 }
 @media(max-width:480px){.pgrid{grid-template-columns:1fr 1fr}.ft-grid{grid-template-columns:1fr}.spec{grid-template-columns:1fr}}
 
@@ -1376,6 +1391,11 @@ const EXPRESS_POINTS=[
   ['ส่งบรีฟเพื่อยืนยันคิว','แจ้งจำนวนและกำหนดรับงาน เพื่อให้ทีมตรวจความเป็นไปได้ก่อนสั่ง'],
   ['ตรวจรายละเอียดก่อนเริ่มงาน','ทีมยืนยันงานพิมพ์ แบบ และเงื่อนไขจริงในใบเสนอราคา'],
 ];
+const EXPRESS_PROOF_STEPS=[
+  {img:'/images/express/quality-check.webp',alt:'การตรวจรายละเอียดงานพิมพ์ของสินค้าพรีเมียม',title:'ตรวจคุณภาพงานพิมพ์',desc:'เช็กตำแหน่ง สี และรายละเอียดโลโก้ก่อนแพ็ก'},
+  {img:'/images/express/packing-check.webp',alt:'การตรวจความเรียบร้อยของสินค้าก่อนบรรจุ',title:'ตรวจความเรียบร้อยก่อนแพ็ก',desc:'นับจำนวนและตรวจสภาพสินค้าให้ตรงกับรายการสั่ง'},
+  {img:'/images/express/packaging-fit.webp',alt:'การตรวจการจัดวางสินค้าในบรรจุภัณฑ์',title:'เช็กการจัดวางในบรรจุภัณฑ์',desc:'ตรวจความพอดีและความเรียบร้อยของชุดก่อนส่งมอบ'},
+];
 /* ฟิลเตอร์หลักของหน้าส่งด่วน = "คุณต้องใช้ภายในกี่วัน" (คำถามจริงของคนสั่ง ไม่ใช่หมวดสินค้า) */
 var EXP_DAYS=25;
 function expSetDays(d){EXP_DAYS=d;document.getElementById('app').innerHTML=viewExpress();window.scrollTo({top:0});if(window.gtag)gtag('event','filter_express_deadline',{days:d});}
@@ -1409,6 +1429,14 @@ function viewExpress(){
       <div class="im"><img loading="eager" src="banners/banner1.webp" alt="บริการสินค้าส่งด่วน GO PREMIUM"></div>
     </div></div>
     <div class="g-auto svc-grid">${EXPRESS_POINTS.map(s=>`<div class="card svc"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1L12 16.8 5.7 21l2.3-7.1-6-4.5h7.6z"/></svg></div><h4>${s[0]}</h4><p>${s[1]}</p></div>`).join('')}</div>
+    <section class="exp-proof" aria-labelledby="exp-proof-title">
+      <div class="exp-proof-head">
+        <div><span class="eyebrow"><span class="dot"></span>ขั้นตอนตรวจงาน</span><h2 id="exp-proof-title">งานด่วนก็ต้องผ่านจุดตรวจสำคัญ</h2></div>
+        <p>เราใช้ข้อมูลสินค้าและรายละเอียดจากบรีฟจริงในการตรวจงานแต่ละจุด โดยกำหนดส่งจะยืนยันหลังอนุมัติแบบและชำระมัดจำ</p>
+      </div>
+      <div class="exp-proof-grid">${EXPRESS_PROOF_STEPS.map((s,i)=>`<article class="exp-proof-card"><div class="exp-proof-media"><img src="${s.img}" alt="${s.alt}" width="720" height="540" loading="lazy" decoding="async"></div><div class="exp-proof-body"><span class="exp-proof-step">0${i+1}</span><h3>${s.title}</h3><p>${s.desc}</p></div></article>`).join('')}</div>
+      <p class="exp-proof-note">ภาพประกอบจากคลังแบรนด์ GO PREMIUM เพื่ออธิบายขั้นตอนการตรวจงาน ไม่ใช่การรับประกันกำหนดส่งของทุกออเดอร์</p>
+    </section>
     ${body}
   </div></section>${ctaBand()}`;
 }
