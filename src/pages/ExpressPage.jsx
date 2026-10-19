@@ -21,6 +21,27 @@ const DEADLINE_FILTERS = [
   { days: 25, label: 'ภายใน 25 วัน', sub: 'ทั้งหมด' },
 ];
 
+const EXPRESS_PROOF_STEPS = [
+  {
+    image: '/images/express/quality-check.webp',
+    alt: 'ภาพประกอบการตรวจรายละเอียดชิ้นงานของพรีเมียมก่อนส่งมอบ',
+    title: 'ตรวจรายละเอียดชิ้นงาน',
+    copy: 'เช็กตำแหน่ง ผิวงาน และความเรียบร้อยของงานโลโก้ก่อนเข้าสู่ขั้นตอนบรรจุ',
+  },
+  {
+    image: '/images/express/packing-check.webp',
+    alt: 'ภาพประกอบการตรวจกล่องและการบรรจุของพรีเมียม',
+    title: 'ตรวจสภาพก่อนปิดกล่อง',
+    copy: 'เช็กชิ้นงานและบรรจุภัณฑ์ให้พร้อมก่อนจัดส่งตามกำหนดที่ยืนยันไว้',
+  },
+  {
+    image: '/images/express/packaging-fit.webp',
+    alt: 'ภาพประกอบการตรวจความพอดีของบรรจุภัณฑ์สำหรับของพรีเมียม',
+    title: 'เช็กความพอดีของบรรจุภัณฑ์',
+    copy: 'ตรวจโครงสร้างและช่องวางสินค้าให้เหมาะกับรูปทรงของชิ้นงานแต่ละแบบ',
+  },
+];
+
 const FAQ = [
   {
     q: 'ของพรีเมียมส่งด่วน ใช้เวลากี่วัน?',
@@ -161,6 +182,60 @@ export default function ExpressPage() {
                 }}>{t.label} · {n}</span>
               );
             })}
+          </div>
+        </section>
+
+        {/* ---------- ภาพประกอบขั้นตอนตรวจงาน ---------- */}
+        <section aria-labelledby="express-proof-title" style={{ marginBottom: 32 }}>
+          <div style={{ maxWidth: '72ch', marginBottom: 16 }}>
+            <p style={{
+              color: 'var(--gp-mustard)', fontFamily: 'var(--gp-font-head)',
+              fontSize: 12, fontWeight: 700, letterSpacing: '.08em', marginBottom: 5,
+            }}>
+              READY BEFORE DELIVERY
+            </p>
+            <h2 id="express-proof-title" style={{
+              color: 'var(--gp-navy)', fontFamily: 'var(--gp-font-head)',
+              fontSize: 'clamp(20px,2.5vw,28px)', lineHeight: 1.35, marginBottom: 7,
+            }}>
+              งานด่วนก็ต้องผ่านจุดตรวจสำคัญ
+            </h2>
+            <p style={{ color: 'var(--gp-grey)', fontSize: 14.5, lineHeight: 1.75 }}>
+              ภาพประกอบจากคลังแบรนด์ช่วยให้เห็นสิ่งที่ทีมให้ความสำคัญก่อนส่งมอบ
+              โดยกำหนดส่งจริงยังยึดตามวันที่ยืนยันหลังอนุมัติแบบและชำระมัดจำ
+            </p>
+          </div>
+          <div style={{
+            display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))', gap: 16,
+          }}>
+            {EXPRESS_PROOF_STEPS.map((step) => (
+              <article key={step.title} style={{
+                overflow: 'hidden', borderRadius: 14, background: '#fff',
+                border: '1px solid var(--gp-grey-200)',
+                boxShadow: '0 8px 24px rgba(18,42,74,.07)',
+              }}>
+                <img
+                  src={step.image}
+                  alt={step.alt}
+                  width="720"
+                  height="540"
+                  loading="lazy"
+                  decoding="async"
+                  style={{ display: 'block', width: '100%', height: 'auto', aspectRatio: '4 / 3', objectFit: 'cover' }}
+                />
+                <div style={{ padding: '15px 16px 17px' }}>
+                  <h3 style={{
+                    color: 'var(--gp-navy)', fontFamily: 'var(--gp-font-head)',
+                    fontSize: 16, lineHeight: 1.4, marginBottom: 5,
+                  }}>
+                    {step.title}
+                  </h3>
+                  <p style={{ color: 'var(--gp-grey)', fontSize: 13.5, lineHeight: 1.65 }}>
+                    {step.copy}
+                  </p>
+                </div>
+              </article>
+            ))}
           </div>
         </section>
 
